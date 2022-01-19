@@ -1,0 +1,17 @@
+{
+  "name": "cloaks",
+  "version": "1.0.0",
+  "description": "热爱技术，乐于分享！",
+  "license": "MIT",
+  "type": ,
+  "scripts": {
+    "build": "vuepress build hope",
+    "clean-dev": "vuepress dev hope --no-cache",
+    "dev": "vuepress dev hope",
+    "eject-theme": "vuepress eject-hope hope"
+  },
+  "devDependencies": {
+    "vuepress": "^1.9.7",
+    "vuepress-theme-hope": "^1.23.0"
+  }
+}
