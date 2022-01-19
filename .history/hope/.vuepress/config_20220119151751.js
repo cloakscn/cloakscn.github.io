@@ -134,9 +134,9 @@ module.exports = config({
 
       // all other options of Vssue are allowed
       owner: "cloakscn",
-      repo: "cloaks.github.io",
-      clientId: "56b83c57d772180c7906",
-      clientSecret: "d5b185999c6982295c4ae491b211021ae63253c1",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
     },
 
     copyright: {

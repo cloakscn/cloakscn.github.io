@@ -62,18 +62,7 @@ module.exports = config({
     ],
 
     sidebar: {
-      "/": [
-        "",
-        "home",
-        "slides",
-        "layout",
-        {
-          title: "如何使用",
-          icon: "creative",
-          prefix: "guide/",
-          children: ["", "page", "markdown", "disable", "encrypt"],
-        },
-      ],
+
     },
 
     locales: {
@@ -99,12 +88,11 @@ module.exports = config({
             "slides",
             "layout",
             {
-              title: "Guide",
+              title: "如何使用",
               icon: "creative",
               prefix: "guide/",
               children: ["", "page", "markdown", "disable", "encrypt"],
             },
-            
           ],
         },
       },
@@ -128,15 +116,8 @@ module.exports = config({
     },
 
     comment: {
-      type: "vssue",
-      // set `platform` rather than `api`
-      platform: "github",
-
-      // all other options of Vssue are allowed
-      owner: "cloakscn",
-      repo: "cloaks.github.io",
-      clientId: "56b83c57d772180c7906",
-      clientSecret: "d5b185999c6982295c4ae491b211021ae63253c1",
+      type: "waline",
+      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
     copyright: {

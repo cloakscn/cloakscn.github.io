@@ -47,17 +47,17 @@ module.exports = config({
     repo: "https://github.com/cloakscn/cloakscn.github.io",
 
     nav: [
-      { text: "博客主页", link: "/en/", icon: "home" },
-      { text: "项目主页", link: "/en/home/", icon: "home" },
+      { text: "Blog Home", link: "/", icon: "home" },
+      { text: "Project Home", link: "/home/", icon: "home" },
       {
-        text: "如何使用",
+        text: "Guide",
         icon: "creative",
-        link: "/en/guide/",
+        link: "/guide/",
       },
       {
-        text: "主题文档",
+        text: "Docs",
+        link: "https://vuepress-theme-hope.github.io/",
         icon: "note",
-        link: "https://vuepress-theme-hope.github.io/zh/",
       },
     ],
 
@@ -68,7 +68,7 @@ module.exports = config({
         "slides",
         "layout",
         {
-          title: "如何使用",
+          title: "Guide",
           icon: "creative",
           prefix: "guide/",
           children: ["", "page", "markdown", "disable", "encrypt"],
@@ -79,18 +79,7 @@ module.exports = config({
     locales: {
       "/en/": {
         nav: [
-          { text: "Blog Home", link: "/", icon: "home" },
-          { text: "Project Home", link: "/home/", icon: "home" },
-          {
-            text: "Guide",
-            icon: "creative",
-            link: "/guide/",
-          },
-          {
-            text: "Docs",
-            link: "https://vuepress-theme-hope.github.io/",
-            icon: "note",
-          },
+
         ],
         sidebar: {
           "/en/": [
@@ -99,12 +88,11 @@ module.exports = config({
             "slides",
             "layout",
             {
-              title: "Guide",
+              title: "如何使用",
               icon: "creative",
               prefix: "guide/",
               children: ["", "page", "markdown", "disable", "encrypt"],
             },
-            
           ],
         },
       },
@@ -128,15 +116,8 @@ module.exports = config({
     },
 
     comment: {
-      type: "vssue",
-      // set `platform` rather than `api`
-      platform: "github",
-
-      // all other options of Vssue are allowed
-      owner: "cloakscn",
-      repo: "cloaks.github.io",
-      clientId: "56b83c57d772180c7906",
-      clientSecret: "d5b185999c6982295c4ae491b211021ae63253c1",
+      type: "waline",
+      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
     },
 
     copyright: {

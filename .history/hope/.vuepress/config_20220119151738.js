@@ -133,11 +133,14 @@ module.exports = config({
       platform: "github",
 
       // all other options of Vssue are allowed
-      owner: "cloakscn",
-      repo: "cloaks.github.io",
-      clientId: "56b83c57d772180c7906",
-      clientSecret: "d5b185999c6982295c4ae491b211021ae63253c1",
+      owner: "OWNER_OF_REPO",
+      repo: "NAME_OF_REPO",
+      clientId: "YOUR_CLIENT_ID",
+      clientSecret: "YOUR_CLIENT_SECRET",
     },
+-----
+著作权归Mr.Hope所有。
+链接: https://vuepress-theme-hope.github.io/zh/guide/feature/comment/#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6
 
     copyright: {
       status: "global",
