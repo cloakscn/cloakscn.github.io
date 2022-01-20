@@ -8,6 +8,9 @@ tag:
   - 中间件
 ---
 
+简要介绍常见中间件
+
+<!-- more -->
 ## Redis
 
 ## Zookeeper
