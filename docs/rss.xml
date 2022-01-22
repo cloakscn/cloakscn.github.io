@@ -6,18 +6,56 @@
     <link>https:/cloaks.cn/</link>
     <description>热爱技术，乐于分享！</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 21 Jan 2022 06:12:29 GMT</pubDate>
-    <lastBuildDate>Fri, 21 Jan 2022 06:12:29 GMT</lastBuildDate>
+    <pubDate>Sat, 22 Jan 2022 16:48:26 GMT</pubDate>
+    <lastBuildDate>Sat, 22 Jan 2022 16:48:26 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright by Cloaks</copyright>
+    <category>英语</category>
     <category>心得</category>
     <category>微服务</category>
-    <category>英语</category>
     <category>力扣</category>
     <category>面试</category>
-    <category>使用指南</category>
+    <category>主流框架</category>
     <category>参考</category>
+    <category>使用指南</category>
+    <item>
+      <title>六级</title>
+      <link>https:/cloaks.cn/blogs/cet6/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/cet6/</guid>
+      <source url="https:/cloaks.cn/rss.xml">六级</source>
+      <description>&amp;lt;p&amp;gt;英语六级学习计划。&amp;lt;/p&amp;gt;
+</description>
+      <category>英语</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>英语六级学习计划。</p>
+
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201091942261.jpg" alt="" /></p>
+<h2 id="真题词汇、词组、长难句"> 真题词汇、词组、长难句</h2>
+<h3 id="长难句"> 长难句</h3>
+<ol>
+<li>
+<p>However, <u>a further increase in farming area</u> <em>without impacting unfavourably</em> <u>on</u> <em>what remains of the world's natural ecosystems</em> <u><strong>appears</strong> unlikely.</u></p>
+<p>然而，在不对现有的全球自然生态系统产生不利影响的条件下，进一步扩大耕地面积似乎不太可能。</p>
+<blockquote>
+<p>further 进一步<br>
+world's natural ecosystems 全球自然生态系统</p>
+</blockquote>
+</li>
+<li>
+<p><u>The MSc curriculum should prepare students for their professional career</u> <em>by allowing them to focus on acquiring practical skills through projects.</em></p>
+<p>理科硕士课程应该让学生专注于通过项目获得实际技能，从而为他们的职业生涯做好准备。</p>
+<blockquote>
+<p>curriculum 课程<br>
+acquiring 获得</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="翻译"> 翻译</h2>
+<h2 id="写作"> 写作</h2>
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201091942261.jpg" type="image/jpeg"/>
+    </item>
     <item>
       <title>如何快速提高 Coding Quality</title>
       <link>https:/cloaks.cn/blogs/codingQuality/</link>
@@ -97,6 +135,144 @@
 ]]></content:encoded>
     </item>
     <item>
+      <title>链表</title>
+      <link>https:/cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8/</guid>
+      <source url="https:/cloaks.cn/rss.xml">链表</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="链表"> 链表</h1>
+<p>优点：真正的动态，不需要处理固定容量的问题</p>
+<p>缺点：丧失了随机访问的能力</p>
+<h2 id="数据结构"> 数据结构</h2>
+<div><pre><code><span>private</span> <span>class</span> <span>Node</span> <span>{</span>
+    <span>public</span> <span>E</span> e<span>;</span>
+    <span>public</span> <span>Node</span> next<span>;</span>
+    <span>// 构造方法</span>
+    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>,</span> <span>Node</span> next<span>)</span> <span>{</span>
+        <span>this</span><span>.</span>e <span>=</span> e<span>;</span>
+        <span>this</span><span>.</span>next <span>=</span> next<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+        <span>this</span><span>(</span>e<span>,</span> <span>null</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>Node</span><span>(</span><span>)</span> <span>{</span>
+        <span>this</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>@Override</span>
+    <span>public</span> <span>String</span> <span>toString</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> e<span>.</span><span>toString</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>private</span> <span>Node</span> head<span>;</span>
+<span>private</span> <span>int</span> size<span>;</span>
+
+<span>// 链表初始化</span>
+<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
+    head <span>=</span> <span>null</span><span>;</span>
+    size <span>=</span> <span>0</span><span>;</span>
+<span>}</span>
+
+<span>// 获取链表的元素个数</span>
+<span>public</span> <span>int</span> <span>getSize</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> size<span>;</span>
+<span>}</span>
+
+<span>// 返回链表是否为空</span>
+<span>public</span> <span>boolean</span> <span>isEmpty</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> size <span>==</span> <span>0</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><h2 id="crud"> CRUD</h2>
+<h3 id="create"> Create</h3>
+<div><pre><code><span>// 在链表头添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>// Node node = new Node(e);</span>
+    <span>// node.next = head;</span>
+    <span>// head = node;</span>
+    <span>// 对其优化后的写法</span>
+    head <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> head<span>)</span><span>;</span>
+    size<span>++</span><span>;</span>
+<span>}</span>
+
+<span>/**
+    * 在链表的index(0-based)位置添加新的元素
+    * 这个方法在链表中并不是一个常用的操作，只是练习使用
+    */</span>
+<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>// 判断索引位置是否是头结点</span>
+    <span>if</span> <span>(</span>index <span>==</span> <span>0</span><span>)</span> <span>{</span>
+        <span>addFirst</span><span>(</span>e<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>if</span> <span>(</span>index <span>!=</span> <span>0</span><span>)</span> <span>{</span>
+        <span>Node</span> prev <span>=</span> head<span>;</span>
+        <span>// 使指针指向索引前一个位置</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span>
+            prev <span>=</span> prev<span>.</span>next<span>;</span>
+
+        <span>// Node node = new Node(e);</span>
+        <span>// node.next = prev.next;</span>
+        <span>// prev.next = node;</span>
+
+        prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
+        size<span>++</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>// 在链表末尾添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br></div></div><p>为链表设置虚拟的头结点，可以统一在不同位置添加结点的操作</p>
+<div><pre><code><span>private</span> <span>Node</span> dummyHead<span>;</span>
+<span>private</span> <span>int</span> size<span>;</span>
+
+<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
+    dummyHead <span>=</span> <span>new</span> <span>Node</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
+    size <span>=</span> <span>0</span><span>;</span>
+<span>}</span>
+
+<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>Node</span> prev <span>=</span> dummyHead<span>;</span>
+    <span>// 使指针指向索引前一个位置</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index<span>;</span> i<span>++</span><span>)</span>
+        prev <span>=</span> prev<span>.</span>next<span>;</span>
+
+    <span>// Node node = new Node(e);</span>
+    <span>// node.next = prev.next;</span>
+    <span>// prev.next = node;</span>
+
+    prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
+    size<span>++</span><span>;</span>
+<span>}</span>
+
+<span>// 在链表头添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>add</span><span>(</span>e<span>,</span> <span>0</span><span>)</span><span>;</span>
+<span>}</span>
+
+<span>// 在链表末尾添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="read"> Read</h3>
+<h3 id="update"> Update</h3>
+<h3 id="delete"> Delete</h3>
+<h2 id="完整代码"> 完整代码</h2>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Docker</title>
       <link>https:/cloaks.cn/blogs/docker/</link>
       <guid isPermaLink="false">https:/cloaks.cn/blogs/docker/</guid>
@@ -117,108 +293,13 @@
 <div><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># rabbitmq</span>
 <span>docker</span> run -d --hostname my-rabbit --name rabbit -p <span>15672</span>:15672 -p <span>5672</span>:5672 rabbitmq:3.6.10-management
 </code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><div><pre><code><span>docker</span> run --name zookeeper -v /opt/data/zksingle:/data -p <span>2181</span>:2181 -e <span>ZOO_LOG4J_PRPO</span><span>=</span><span>"INFO,ROLLINGFILE"</span> -d zookeeper:3.4.13
+<div><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># zookeeper</span>
+<span>docker</span> run --name zookeeper -v /opt/data/zksingle:/data -p <span>2181</span>:2181 -e <span>ZOO_LOG4J_PRPO</span><span>=</span><span>"INFO,ROLLINGFILE"</span> -d zookeeper:3.4.13
 </code></pre>
-<div><span>1</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>介绍</title>
-      <link>https:/cloaks.cn/blogs/dataStrcture/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/dataStrcture/</guid>
-      <source url="https:/cloaks.cn/rss.xml">介绍</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="介绍"> 介绍</h1>
-<h2 id="数组和链表的对比"> 数组和链表的对比</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>优点</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数组</td>
-<td>支持快速查询</td>
-<td>数组最好用于索引有语意的情况</td>
-</tr>
-<tr>
-<td>链表</td>
-<td>动态</td>
-<td>链表不适合用于索引有语意的情况</td>
-</tr>
-</tbody>
-</table>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>六级</title>
-      <link>https:/cloaks.cn/blogs/cet6/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/cet6/</guid>
-      <source url="https:/cloaks.cn/rss.xml">六级</source>
-      <description>&amp;lt;p&amp;gt;英语六级学习计划。&amp;lt;/p&amp;gt;
-</description>
-      <category>英语</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>英语六级学习计划。</p>
-
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201091942261.jpg" alt="" /></p>
-<h2 id="真题词汇、词组、长难句"> 真题词汇、词组、长难句</h2>
-<h3 id="长难句"> 长难句</h3>
-<ol>
-<li>
-<p>However, <u>a further increase in farming area</u> <em>without impacting unfavourably</em> <u>on</u> <em>what remains of the world's natural ecosystems</em> <u><strong>appears</strong> unlikely.</u></p>
-<p>然而，在不对现有的全球自然生态系统产生不利影响的条件下，进一步扩大耕地面积似乎不太可能。</p>
-<blockquote>
-<p>further 进一步<br>
-world's natural ecosystems 全球自然生态系统</p>
-</blockquote>
-</li>
-<li>
-<p><u>The MSc curriculum should prepare students for their professional career</u> <em>by allowing them to focus on acquiring practical skills through projects.</em></p>
-<p>理科硕士课程应该让学生专注于通过项目获得实际技能，从而为他们的职业生涯做好准备。</p>
-<blockquote>
-<p>curriculum 课程<br>
-acquiring 获得</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="翻译"> 翻译</h2>
-<h2 id="写作"> 写作</h2>
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201091942261.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>英语</title>
-      <link>https:/cloaks.cn/blogs/english/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/english/</guid>
-      <source url="https:/cloaks.cn/rss.xml">英语</source>
-      <category>英语</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="美文摘抄"> 美文摘抄</h2>
-<ol>
-<li>
-<p>Attitude, not aptitude, determines altitude.</p>
-<p>决定高度的是态度，而不是能力。</p>
-</li>
-<li>
-<p>Strong reasons make strong actions.</p>
-<p>强有力的理由产生强有力的行动。</p>
-</li>
-<li>
-<p>Until that shift takes place, the global recovery will be fragile and probably quit feeble.</p>
-<p>在这样的变化发生之前，全球的经济复苏都将是脆弱的和无力的。</p>
-</li>
-</ol>
-<h2 id="写作模板"> 写作模板</h2>
-<ol>
-<li>
-<p>Examples abound. // For instance, 例一 // Similarly, 例二 // Likewise, 例三... // In nutshell</p>
-<p>例子有很多，首先，同样的，类似还有，总之</p>
-</li>
-</ol>
-]]></content:encoded>
+<div><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># jenkins</span>
+<span>docker</span> run   --name jenkins-blueocean   -d   -p <span>8080</span>:8080   -p <span>50000</span>:50000   -v jenkins-data:/opt/data/jenkins_home   jenkinsci/blueocean
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>基础篇</title>
@@ -1077,6 +1158,37 @@ cards <span>=</span> <span>getStaticCards</span><span>(</span><span>)</span><spa
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201021147765.png" type="image/png"/>
     </item>
     <item>
+      <title>英语</title>
+      <link>https:/cloaks.cn/blogs/english/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/english/</guid>
+      <source url="https:/cloaks.cn/rss.xml">英语</source>
+      <category>英语</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="美文摘抄"> 美文摘抄</h2>
+<ol>
+<li>
+<p>Attitude, not aptitude, determines altitude.</p>
+<p>决定高度的是态度，而不是能力。</p>
+</li>
+<li>
+<p>Strong reasons make strong actions.</p>
+<p>强有力的理由产生强有力的行动。</p>
+</li>
+<li>
+<p>Until that shift takes place, the global recovery will be fragile and probably quit feeble.</p>
+<p>在这样的变化发生之前，全球的经济复苏都将是脆弱的和无力的。</p>
+</li>
+</ol>
+<h2 id="写作模板"> 写作模板</h2>
+<ol>
+<li>
+<p>Examples abound. // For instance, 例一 // Similarly, 例二 // Likewise, 例三... // In nutshell</p>
+<p>例子有很多，首先，同样的，类似还有，总之</p>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
       <title>虚拟机</title>
       <link>https:/cloaks.cn/blogs/interview/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
       <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
@@ -1743,142 +1855,67 @@ cards <span>=</span> <span>getStaticCards</span><span>(</span><span>)</span><spa
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201071119700.png" type="image/png"/>
     </item>
     <item>
-      <title>链表</title>
-      <link>https:/cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8/</guid>
-      <source url="https:/cloaks.cn/rss.xml">链表</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="链表"> 链表</h1>
-<p>优点：真正的动态，不需要处理固定容量的问题</p>
-<p>缺点：丧失了随机访问的能力</p>
-<h2 id="数据结构"> 数据结构</h2>
-<div><pre><code><span>private</span> <span>class</span> <span>Node</span> <span>{</span>
-    <span>public</span> <span>E</span> e<span>;</span>
-    <span>public</span> <span>Node</span> next<span>;</span>
-    <span>// 构造方法</span>
-    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>,</span> <span>Node</span> next<span>)</span> <span>{</span>
-        <span>this</span><span>.</span>e <span>=</span> e<span>;</span>
-        <span>this</span><span>.</span>next <span>=</span> next<span>;</span>
-    <span>}</span>
-    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-        <span>this</span><span>(</span>e<span>,</span> <span>null</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>public</span> <span>Node</span><span>(</span><span>)</span> <span>{</span>
-        <span>this</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>@Override</span>
-    <span>public</span> <span>String</span> <span>toString</span><span>(</span><span>)</span> <span>{</span>
-        <span>return</span> e<span>.</span><span>toString</span><span>(</span><span>)</span><span>;</span>
+      <title>斐波那契数列</title>
+      <link>https:/cloaks.cn/blogs/lintcode/fibonacci/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/fibonacci/</guid>
+      <source url="https:/cloaks.cn/rss.xml">斐波那契数列</source>
+      <category>力扣</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>题号：<a href="https://www.lintcode.com/problem/366/" target="_blank" rel="noopener noreferrer">366</a><br>
+描述：查找斐波纳契数列中第 N 个数。<br>
+所谓的斐波纳契数列是指：<br>
+前2个数是 0 和 1 。<br>
+第 i 个数是第 i-1 个数和第i-2 个数的和。<br>
+斐波纳契数列的前10个数字是：<br>
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...</p>
+</blockquote>
+<p>python</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
+    <span>"""
+    @param n: an integer
+    @return: an ineger f(n)
+    """</span>
+    <span>def</span> <span>fibonacci</span><span>(</span>self<span>,</span> n<span>)</span><span>:</span>
+        <span># write your code here</span>
+        <span>if</span> n <span>&lt;=</span> <span>2</span><span>:</span>
+            <span>return</span> n <span>-</span> <span>1</span>
+        
+        <span>return</span> self<span>.</span>fibonacci<span>(</span>n <span>-</span> <span>1</span><span>)</span> <span>+</span> self<span>.</span>fibonacci<span>(</span>n <span>-</span> <span>2</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
+<div><pre><code><span>// 循环</span>
+<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>/**
+     * @param n: an integer
+     * @return: an ineger f(n)
+     */</span>
+    <span>public</span> <span>int</span> <span>fibonacci</span><span>(</span><span>int</span> n<span>)</span> <span>{</span>
+        <span>int</span> a <span>=</span> <span>0</span><span>;</span>
+        <span>int</span> b <span>=</span> <span>1</span><span>;</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>int</span> c <span>=</span> a <span>+</span> b<span>;</span>
+            a <span>=</span> b<span>;</span>
+            b <span>=</span> c<span>;</span>
+        <span>}</span>
+        <span>return</span> a<span>;</span>
     <span>}</span>
 <span>}</span>
-
-<span>private</span> <span>Node</span> head<span>;</span>
-<span>private</span> <span>int</span> size<span>;</span>
-
-<span>// 链表初始化</span>
-<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
-    head <span>=</span> <span>null</span><span>;</span>
-    size <span>=</span> <span>0</span><span>;</span>
-<span>}</span>
-
-<span>// 获取链表的元素个数</span>
-<span>public</span> <span>int</span> <span>getSize</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> size<span>;</span>
-<span>}</span>
-
-<span>// 返回链表是否为空</span>
-<span>public</span> <span>boolean</span> <span>isEmpty</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> size <span>==</span> <span>0</span><span>;</span>
+<span>// 递归</span>
+<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>/**
+     * @param n: an integer
+     * @return: an ineger f(n)
+     */</span>
+    <span>public</span> <span>int</span> <span>fibonacci</span><span>(</span><span>int</span> n<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>n <span>&lt;=</span> <span>2</span><span>)</span> <span>{</span>
+            <span>return</span> n <span>-</span> <span>1</span><span>;</span>
+        <span>}</span>
+        <span>return</span> <span>fibonacci</span><span>(</span>n <span>-</span> <span>1</span><span>)</span> <span>+</span> <span>fibonacci</span><span>(</span>n <span>-</span> <span>2</span><span>)</span><span>;</span>
+    <span>}</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><h2 id="crud"> CRUD</h2>
-<h3 id="create"> Create</h3>
-<div><pre><code><span>// 在链表头添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>// Node node = new Node(e);</span>
-    <span>// node.next = head;</span>
-    <span>// head = node;</span>
-    <span>// 对其优化后的写法</span>
-    head <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> head<span>)</span><span>;</span>
-    size<span>++</span><span>;</span>
-<span>}</span>
-
-<span>/**
-    * 在链表的index(0-based)位置添加新的元素
-    * 这个方法在链表中并不是一个常用的操作，只是练习使用
-    */</span>
-<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
-        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>// 判断索引位置是否是头结点</span>
-    <span>if</span> <span>(</span>index <span>==</span> <span>0</span><span>)</span> <span>{</span>
-        <span>addFirst</span><span>(</span>e<span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>if</span> <span>(</span>index <span>!=</span> <span>0</span><span>)</span> <span>{</span>
-        <span>Node</span> prev <span>=</span> head<span>;</span>
-        <span>// 使指针指向索引前一个位置</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span>
-            prev <span>=</span> prev<span>.</span>next<span>;</span>
-
-        <span>// Node node = new Node(e);</span>
-        <span>// node.next = prev.next;</span>
-        <span>// prev.next = node;</span>
-
-        prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
-        size<span>++</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-
-<span>// 在链表末尾添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br></div></div><p>为链表设置虚拟的头结点，可以统一在不同位置添加结点的操作</p>
-<div><pre><code><span>private</span> <span>Node</span> dummyHead<span>;</span>
-<span>private</span> <span>int</span> size<span>;</span>
-
-<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
-    dummyHead <span>=</span> <span>new</span> <span>Node</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
-    size <span>=</span> <span>0</span><span>;</span>
-<span>}</span>
-
-<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
-        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>Node</span> prev <span>=</span> dummyHead<span>;</span>
-    <span>// 使指针指向索引前一个位置</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index<span>;</span> i<span>++</span><span>)</span>
-        prev <span>=</span> prev<span>.</span>next<span>;</span>
-
-    <span>// Node node = new Node(e);</span>
-    <span>// node.next = prev.next;</span>
-    <span>// prev.next = node;</span>
-
-    prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
-    size<span>++</span><span>;</span>
-<span>}</span>
-
-<span>// 在链表头添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>add</span><span>(</span>e<span>,</span> <span>0</span><span>)</span><span>;</span>
-<span>}</span>
-
-<span>// 在链表末尾添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="read"> Read</h3>
-<h3 id="update"> Update</h3>
-<h3 id="delete"> Delete</h3>
-<h2 id="完整代码"> 完整代码</h2>
-]]></content:encoded>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>并发篇</title>
@@ -2462,586 +2499,6 @@ cards <span>=</span> <span>getStaticCards</span><span>(</span><span>)</span><spa
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201040920672.png" type="image/png"/>
     </item>
     <item>
-      <title>框架篇</title>
-      <link>https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</guid>
-      <source url="https:/cloaks.cn/rss.xml">框架篇</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="框架篇"> 框架篇</h1>
-<h2 id="spring-refresh-流程"> Spring refresh 流程</h2>
-<h3 id="要求"> 要求</h3>
-<ul>
-<li>掌握 <code>refresh</code> 的 12 个步骤</li>
-</ul>
-<h3 id="spring-refresh-概述"> Spring refresh 概述</h3>
-<p><code>refresh</code> 是 <code>AbstractApplicationContext</code> 中的一个方法，负责初始化 <code>ApplicationContext</code> 容器，容器必须调用 <code>refresh</code> 才能正常工作。它的内部主要会调用 12 个方法，我们把它们称为 <code>refresh</code> 的 12 个步骤：</p>
-<div><pre><code><span># 准备环境</span>
-<span>prepareRefresh</span><span>:</span> 1 做好准备工作
-<span># 准备 BeanFactory</span>
-<span>obtainFreshBeanFactory</span><span>:</span> 2 创建或获取 BeanFactory
-<span>prepareBeanFactory</span><span>:</span> 3 准备 BeanFactory
-<span>postProcessBeanFactory</span><span>:</span> 4 子类扩展 BeanFactory
-<span>invokeBeanFactoryPostProcessors</span><span>:</span> 5 后处理器扩展 BeanFactory
-<span>registerBeanPostProcessors</span><span>:</span> 6 准备 Bean 后处理器
-<span># 准备 ApplicationContext</span>
-<span>initMessageSource</span><span>:</span> 7 为 ApplicationContext 提供国际化功能
-<span>initApplicationEventMulticaster</span><span>:</span> 8 为 ApplicationContext 提供事件发布器
-<span>onRefresh</span><span>:</span> 9 留给子类扩展
-<span>registerListeners</span><span>:</span> 10 为 ApplicationContext 准备监听器
-<span>finishRefresh</span><span>:</span> 12 准备生命周期管理器，发布ContextRefreshed 事件
-<span># 初始化 BeanFactory 中非延迟单例 bean</span>
-<span>finishBeanFactoryInitialization</span><span>:</span> 11 初始化单例 Bean，执行 Bean 后处理器扩展
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h4 id="_1-preparerefresh"> 1. prepareRefresh</h4>
-<p>这一步创建和准备了 <code>Environment</code> 对象，它作为 <code>ApplicationContext</code> 的一个成员变量</p>
-<p><code>Environment</code> 对象的作用之一是为后续 <code>@Value</code> 值注入时提供键值</p>
-<p><code>Environment</code> 分成三个主要部分</p>
-<ul>
-<li>
-<p><code>systemProperties</code> - 保存 <code>java</code> 环境键值</p>
-</li>
-<li>
-<p><code>systemEnvironment</code> - 保存系统环境键值</p>
-</li>
-<li>
-<p>自定义 <code>PropertySource</code> - 保存自定义键值，例如来自于 <code>*.properties</code> 文件的键值</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" alt="" /></p>
-<h4 id="_2-obtainfreshbeanfactory"> 2. obtainFreshBeanFactory</h4>
-<ul>
-<li>
-<p>这一步获取（或创建） <code>BeanFactory</code> 也是作为 <code>ApplicationContext</code> 的一个成员变量</p>
-</li>
-<li>
-<p><code>BeanFactory</code> 的作用是负责 <code>bean</code> 的创建、依赖注入和初始化，<code>bean</code> 的各项特征由 <code>BeanDefinition</code> 定义</p>
-<ul>
-<li>
-<p><code>BeanDefinition</code> 作为 <code>bean</code> 的设计蓝图，规定了 <code>bean</code> 的特征，如单例多例、依赖关系、初始销毁方法等</p>
-</li>
-<li>
-<p><code>BeanDefinition</code> 的来源有多种多样，可以是通过 <code>xml</code> 获得、配置类获得、组件扫描获得，也可以是编程添加</p>
-</li>
-</ul>
-</li>
-<li>
-<p>所有的 <code>BeanDefinition</code> 会存入 <code>BeanFactory</code> 中的 <code>beanDefinitionMap</code> 集合</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057632.png" alt="" /></p>
-<h4 id="_3-preparebeanfactory"> 3. prepareBeanFactory</h4>
-<ul>
-<li>这一步会进一步完善 <code>BeanFactory</code>，为它的各项成员变量赋值</li>
-<li><code>beanExpressionResolver</code> 用来解析 <code>SpEL</code>，常见实现为 <code>StandardBeanExpressionResolver</code></li>
-<li><code>propertyEditorRegistrars</code> 会注册类型转换器
-<ul>
-<li>它在这里使用了 <code>ResourceEditorRegistrar</code> 实现类</li>
-<li>并应用 <code>ApplicationContext</code> 提供的 <code>Environment</code> 完成 <code>${ }</code> 解析</li>
-</ul>
-</li>
-<li><code>registerResolvableDependency</code> 来注册 <code>beanFactory</code> 以及 <code>ApplicationContext</code>，让它们也能用于依赖注入</li>
-<li><code>beanPostProcessors</code> 是 <code>bean</code> 后处理器集合，会工作在 <code>bean</code> 的生命周期各个阶段，此处会添加两个：
-<ul>
-<li><code>ApplicationContextAwareProcessor</code> 用来解析 <code>Aware</code> 接口</li>
-<li><code>ApplicationListenerDetector</code> 用来识别容器中 <code>ApplicationListener</code> 类型的 <code>bean</code></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057394.png" alt="" /></p>
-<h4 id="_4-postprocessbeanfactory"> 4. postProcessBeanFactory</h4>
-<ul>
-<li>这一步是空实现，留给子类扩展。
-<ul>
-<li>一般 <code>Web</code> 环境的 <code>ApplicationContext</code> 都要利用它注册新的 <code>Scope</code>，完善 <code>Web</code> 下的 <code>BeanFactory</code></li>
-</ul>
-</li>
-<li>这里体现的是模板方法设计模式</li>
-</ul>
-<h4 id="_5-invokebeanfactorypostprocessors"> 5. invokeBeanFactoryPostProcessors</h4>
-<ul>
-<li>这一步会调用 <code>beanFactory</code> 后处理器</li>
-<li><code>beanFactory</code> 后处理器，充当 <code>beanFactory</code> 的扩展点，可以用来补充或修改 <code>BeanDefinition</code></li>
-<li>常见的 <code>beanFactory</code> 后处理器有
-<ul>
-<li><code>ConfigurationClassPostProcessor</code> – 解析 <code>@Configuration、@Bean、@Import、@PropertySource</code> 等</li>
-<li><code>PropertySourcesPlaceHolderConfigurer</code> – 替换 <code>BeanDefinition</code> 中的 <code>${ }</code></li>
-<li><code>MapperScannerConfigurer</code> – 补充 <code>Mapper</code> 接口对应的 <code>BeanDefinition</code></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058642.png" alt="" /></p>
-<h4 id="_6-registerbeanpostprocessors"> 6. registerBeanPostProcessors</h4>
-<ul>
-<li>这一步是继续从 <code>beanFactory</code> 中找出 <code>bean</code> 后处理器，添加至 <code>beanPostProcessors</code> 集合中</li>
-<li><code>bean</code> 后处理器，充当 <code>bean</code> 的扩展点，可以工作在 <code>bean</code> 的实例化、依赖注入、初始化阶段，常见的有：
-<ul>
-<li><code>AutowiredAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Autowired，@Value</code> 注解</li>
-<li><code>CommonAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Resource，@PostConstruct，@PreDestroy</code></li>
-<li><code>AnnotationAwareAspectJAutoProxyCreator</code> 功能有：为符合切点的目标 <code>bean</code> 自动创建代理</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058548.png" alt="" /></p>
-<h4 id="_7-initmessagesource"> 7. initMessageSource</h4>
-<ul>
-<li>这一步是为 <code>ApplicationContext</code> 添加 <code>messageSource</code> 成员，实现国际化功能</li>
-<li>去 <code>beanFactory</code> 内找名为 <code>messageSource</code> 的 <code>bean</code>，如果没有，则提供空的 <code>MessageSource</code> 实现</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058233.png" alt="" /></p>
-<h4 id="_8-initapplicationcontexteventmulticaster"> 8. initApplicationContextEventMulticaster</h4>
-<ul>
-<li>这一步为 <code>ApplicationContext</code> 添加事件广播器成员，即 <code>applicationContextEventMulticaster</code></li>
-<li>它的作用是发布事件给监听器</li>
-<li>去 <code>beanFactory</code> 找名为 <code>applicationEventMulticaster</code> 的 <code>bean</code> 作为事件广播器，若没有，会创建默认的事件广播器</li>
-<li>之后就可以调用 <code>ApplicationContext.publishEvent</code>(事件对象) 来发布事件</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058783.png" alt="" /></p>
-<h4 id="_9-onrefresh"> 9. onRefresh</h4>
-<ul>
-<li>这一步是空实现，留给子类扩展
-<ul>
-<li><code>SpringBoot</code> 中的子类在这里准备了 <code>WebServer</code>，即内嵌 <code>web</code> 容器</li>
-</ul>
-</li>
-<li>体现的是模板方法设计模式</li>
-</ul>
-<h4 id="_10-registerlisteners"> 10. registerListeners</h4>
-<ul>
-<li>这一步会从多种途径找到事件监听器，并添加至 <code>applicationEventMulticaster</code></li>
-<li>事件监听器顾名思义，用来接收事件广播器发布的事件，有如下来源
-<ul>
-<li>事先编程添加的</li>
-<li>来自容器中的 <code>bean</code></li>
-<li>来自于 <code>@EventListener</code> 的解析</li>
-</ul>
-</li>
-<li>要实现事件监听器，只需要实现 <code>ApplicationListener</code> 接口，重写其中 <code>onApplicationEvent(E e)</code> 方法即可</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059510.png" alt="" /></p>
-<h4 id="_11-finishbeanfactoryinitialization"> 11. finishBeanFactoryInitialization</h4>
-<ul>
-<li>这一步会将 <code>beanFactory</code> 的成员补充完毕，并初始化所有非延迟单例 <code>bean</code></li>
-<li><code>conversionService</code> 也是一套转换机制，作为对 <code>PropertyEditor</code> 的补充</li>
-<li><code>embeddedValueResolvers</code> 即内嵌值解析器，用来解析 <code>@Value</code> 中的 <code>${ }</code>，借用的是 <code>Environment</code> 的功能</li>
-<li><code>singletonObjects</code> 即单例池，缓存所有单例对象
-<ul>
-<li>对象的创建都分三个阶段，每一阶段都有不同的 <code>bean</code> 后处理器参与进来，扩展功能</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059692.png" alt="" /></p>
-<h4 id="_12-finishrefresh"> 12. finishRefresh</h4>
-<ul>
-<li>这一步会为 <code>ApplicationContext</code> 添加 <code>lifecycleProcessor</code> 成员，用来控制容器内需要生命周期管理的 <code>bean</code></li>
-<li>如果容器中有名称为 <code>lifecycleProcessor</code> 的 <code>bean</code> 就用它，否则创建默认的生命周期管理器</li>
-<li>准备好生命周期管理器，就可以实现
-<ul>
-<li>调用 <code>context</code> 的 <code>start</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>start</code></li>
-<li>调用 <code>context</code> 的 <code>stop</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>stop</code></li>
-</ul>
-</li>
-<li>发布 <code>ContextRefreshed</code> 事件，整个 <code>refresh</code> 执行完成</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059816.png" alt="" /></p>
-<h2 id="spring-bean-生命周期"> Spring bean 生命周期</h2>
-<h3 id="要求-2"> 要求</h3>
-<ul>
-<li>掌握 <code>Spring bean</code> 的生命周期</li>
-</ul>
-<h3 id="bean-生命周期-概述"> bean 生命周期 概述</h3>
-<p><code>bean</code> 的生命周期从调用 <code>beanFactory</code> 的 <code>getBean</code> 开始，到这个 <code>bean</code> 被销毁，可以总结为以下七个阶段：</p>
-<div><pre><code>1. 处理名称，检查缓存
-
-2. 处理父子容器
-
-3. 处理 `dependsOn`
-
-4. 选择 `scope` 策略
-
-5. 创建 `bean`
-
-6. 类型转换处理
-
-7. 销毁 `bean`
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><blockquote>
-<p><em><strong>注意</strong></em></p>
-<ul>
-<li>划分的阶段和名称并不重要，重要的是理解整个过程中做了哪些事情</li>
-</ul>
-</blockquote>
-<h4 id="_1-处理名称-检查缓存"> 1. 处理名称，检查缓存</h4>
-<ul>
-<li>
-<p>这一步会处理别名，将别名解析为实际名称</p>
-</li>
-<li>
-<p>对 <code>FactoryBean</code> 也会特殊处理，如果以 <code>&amp;</code> 开头表示要获取 <code>FactoryBean</code> 本身，否则表示要获取其产品</p>
-</li>
-<li>
-<p>这里针对单例对象会检查一级、二级、三级缓存</p>
-<ul>
-<li>
-<p><code>singletonFactories</code> 三级缓存，存放单例工厂对象</p>
-</li>
-<li>
-<p><code>earlySingletonObjects</code> 二级缓存，存放单例工厂的产品对象</p>
-<ul>
-<li>如果发生循环依赖，产品是代理；无循环依赖，产品是原始对象</li>
-</ul>
-</li>
-<li>
-<p><code>singletonObjects</code> 一级缓存，存放单例成品对象</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="_2-处理父子容器"> 2. 处理父子容器</h4>
-<ul>
-<li>
-<p>如果当前容器根据名字找不到这个 <code>bean</code>，此时若父容器存在，则执行父容器的 <code>getBean</code> 流程</p>
-</li>
-<li>
-<p>父子容器的 <code>bean</code> 名称可以重复</p>
-</li>
-</ul>
-<h4 id="_3-处理-dependson"> 3. 处理 dependsOn</h4>
-<ul>
-<li>
-<p>如果当前 <code>bean</code> 有通过 <code>dependsOn</code> 指定了非显式依赖的 <code>bean</code>，这一步会提前创建这些 <code>dependsOn</code> 的 <code>bean</code></p>
-</li>
-<li>
-<p>所谓非显式依赖，就是指两个 <code>bean</code> 之间不存在直接依赖关系，但需要控制它们的创建先后顺序</p>
-</li>
-</ul>
-<h4 id="_4-选择-scope-策略"> 4. 选择 scope 策略</h4>
-<ul>
-<li>
-<p>对于 <code>singleton scope</code>，首先到单例池去获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
-</li>
-<li>
-<p>对于 <code>prototype scope</code>，每次都会进入创建流程</p>
-</li>
-<li>
-<p>对于自定义 <code>scope</code>，例如 <code>request</code>，首先到 <code>request</code> 域获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
-</li>
-</ul>
-<h4 id="_5-1-创建-bean-创建-bean-实例"> 5.1 创建 bean - 创建 bean 实例</h4>
-<table>
-<thead>
-<tr>
-<th><strong>要点</strong></th>
-<th><strong>总结</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>有自定义 <code>TargetSource</code> 的情况</td>
-<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建代理返回</td>
-</tr>
-<tr>
-<td><code>Supplier</code> 方式创建 <code>bean</code> 实例</td>
-<td>为 <code>Spring 5.0</code> 新增功能，方便编程方式创建  <code>bean</code>  实例</td>
-</tr>
-<tr>
-<td><code>FactoryMethod</code> 方式  创建 <code>bean</code>  实例</td>
-<td>① 分成静态工厂与实例工厂；② 工厂方法若有参数，需要对工厂方法参数进行解析，利用 <code>resolveDependency</code>；③ 如果有多个工厂方法候选者，还要进一步按权重筛选</td>
-</tr>
-<tr>
-<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
-<td>① 优先选择带  <code>@Autowired</code>  注解的构造；② 若有唯一的带参构造，也会入选</td>
-</tr>
-<tr>
-<td><code>mbd.getPreferredConstructors</code></td>
-<td>选择所有公共构造，这些构造之间按权重筛选</td>
-</tr>
-<tr>
-<td>采用默认构造</td>
-<td>如果上面的后处理器和 <code>BeanDefiniation</code> 都没找到构造，采用默认构造，即使是私有的</td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5-2-创建-bean-依赖注入"> 5.2 创建 bean - 依赖注入</h4>
-<table>
-<thead>
-<tr>
-<th><strong>要点</strong></th>
-<th><strong>总结</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
-<td>识别 <code>@Autowired</code> 及 <code>@Value</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
-</tr>
-<tr>
-<td><code>CommonAnnotationBeanPostProcessor</code></td>
-<td>识别 <code>@Resource</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
-</tr>
-<tr>
-<td><code>resolveDependency</code></td>
-<td>用来查找要装配的值，可以识别：① <code>Optional</code>；② <code>ObjectFactory</code> 及 <code>ObjectProvider</code>；③ <code>@Lazy</code>  注解；④ <code>@Value</code> 注解（<code>${ }</code>, <code>#{ }</code>, 类型转换）；⑤ 集合类型（<code>Collection</code>，<code>Map</code>，数组等）；⑥ 泛型和  <code>@Qualifier</code>（用来区分类型歧义）；⑦ <code>primary</code>  及名字匹配（用来区分类型歧义）</td>
-</tr>
-<tr>
-<td><code>AUTOWIRE_BY_NAME</code></td>
-<td>根据成员名字找 <code>bean</code> 对象，修改 <code>mbd</code> 的 <code>propertyValues</code>，不会考虑简单类型的成员</td>
-</tr>
-<tr>
-<td><code>AUTOWIRE_BY_TYPE</code></td>
-<td>根据成员类型执行 <code>resolveDependency</code> 找到依赖注入的值，修改  <code>mbd</code> 的 <code>propertyValues</code></td>
-</tr>
-<tr>
-<td><code>applyPropertyValues</code></td>
-<td>根据 <code>mbd</code> 的 <code>propertyValues</code> 进行依赖注入（即 <code>xml</code> 中 <code>&lt;property name ref|value/&gt;</code>）</td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5-3-创建-bean-初始化"> 5.3 创建 bean - 初始化</h4>
-<table>
-<thead>
-<tr>
-<th><strong>要点</strong></th>
-<th><strong>总结</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>内置 <code>Aware</code> 接口的装配</td>
-<td>包括 <code>BeanNameAware</code>，<code>BeanFactoryAware</code> 等</td>
-</tr>
-<tr>
-<td>扩展 <code>Aware</code> 接口的装配</td>
-<td>由 <code>ApplicationContextAwareProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
-</tr>
-<tr>
-<td><code>@PostConstruct</code></td>
-<td>由 <code>CommonAnnotationBeanPostProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
-</tr>
-<tr>
-<td><code>InitializingBean</code></td>
-<td>通过接口回调执行初始化</td>
-</tr>
-<tr>
-<td><code>initMethod</code></td>
-<td>根据 <code>BeanDefinition</code> 得到的初始化方法执行初始化，即 <code>&lt;bean init-method&gt;</code> 或 <code>@Bean</code>(<code>initMethod</code>)</td>
-</tr>
-<tr>
-<td>创建 <code>aop</code> 代理</td>
-<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建，执行时机在  <code>postProcessAfterInitialization</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5-4-创建-bean-注册可销毁-bean"> 5.4 创建 bean - 注册可销毁 bean</h4>
-<p>在这一步判断并登记可销毁 <code>bean</code></p>
-<ul>
-<li>
-<p>判断依据</p>
-<ul>
-<li>
-<p>如果实现了 <code>DisposableBean</code> 或 <code>AutoCloseable</code> 接口，则为可销毁 <code>bean</code></p>
-</li>
-<li>
-<p>如果自定义了 <code>destroyMethod</code>，则为可销毁 <code>bean</code></p>
-</li>
-<li>
-<p>如果采用 <code>@Bean</code> 没有指定 <code>destroyMethod</code>，则采用自动推断方式获取销毁方法名（<code>close，shutdown</code>）</p>
-</li>
-<li>
-<p>如果有 <code>@PreDestroy</code> 标注的方法</p>
-</li>
-</ul>
-</li>
-<li>
-<p>存储位置</p>
-<ul>
-<li>
-<p><code>singleton scope</code> 的可销毁 <code>bean</code> 会存储于 <code>beanFactory</code> 的成员当中</p>
-</li>
-<li>
-<p>自定义 <code>scope</code> 的可销毁 <code>bean</code> 会存储于对应的域对象当中</p>
-</li>
-<li>
-<p><code>prototype scope</code> 不会存储，需要自己找到此对象销毁</p>
-</li>
-</ul>
-</li>
-<li>
-<p>存储时都会封装为 <code>DisposableBeanAdapter</code> 类型对销毁方法的调用进行适配</p>
-</li>
-</ul>
-<h4 id="_6-类型转换处理"> 6. 类型转换处理</h4>
-<ul>
-<li>如果 <code>getBean</code> 的 <code>requiredType</code> 参数与实际得到的对象类型不同，会尝试进行类型转换</li>
-</ul>
-<h4 id="_7-销毁-bean"> 7. 销毁 bean</h4>
-<ul>
-<li>
-<p>销毁时机</p>
-<ul>
-<li>
-<p><code>singleton bean</code> 的销毁在 <code>ApplicationContext.close</code> 时，此时会找到所有 <code>DisposableBean</code> 的名字，逐一销毁</p>
-</li>
-<li>
-<p>自定义 <code>scope bean</code> 的销毁在作用域对象生命周期结束时</p>
-</li>
-<li>
-<p><code>prototype bean</code> 的销毁可以通过自己手动调用 <code>AutowireCapableBeanFactory.destroyBean</code> 方法执行销毁</p>
-</li>
-</ul>
-</li>
-<li>
-<p>同一 <code>bean</code> 中不同形式销毁方法的调用次序</p>
-<ul>
-<li>
-<p>优先后处理器销毁，即 <code>@PreDestroy</code></p>
-</li>
-<li>
-<p>其次 <code>DisposableBean</code> 接口销毁</p>
-</li>
-<li>
-<p>最后 <code>destroyMethod</code> 销毁（包括自定义名称，推断名称，<code>AutoCloseable</code> 接口 多选一）</p>
-</li>
-</ul>
-</li>
-</ul>
-
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" type="image/png"/>
-    </item>
-    <item>
-      <title>最长回文子串</title>
-      <link>https:/cloaks.cn/blogs/lintcode/longestPalindrome/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/longestPalindrome/</guid>
-      <source url="https:/cloaks.cn/rss.xml">最长回文子串</source>
-      <category>力扣</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>题号：<a href="https://www.lintcode.com/problem/200/" target="_blank" rel="noopener noreferrer">200</a><br>
-描述：给出一个字符串（假设长度最长为1000），求出它的最长回文子串，你可以假定只有一个满足条件的最长回文串。<br>
-挑战：时间复杂度可为O(n2)，你能将其优化为O(n)吗</p>
-</blockquote>
-<h2 id="使用时间复杂度为o-n-3-的算法"> 使用时间复杂度为O(n^3)的算法</h2>
-<p>java 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
-            <span>return</span> <span>null</span><span>;</span>
-        <span>}</span>
-
-        <span>for</span> <span>(</span><span>int</span> length <span>=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> length <span>></span> <span>0</span><span>;</span> length<span>--</span><span>)</span> <span>{</span>
-            <span>for</span> <span>(</span><span>int</span> start <span>=</span> <span>0</span><span>;</span> start <span>+</span> length <span>&lt;=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> start<span>++</span><span>)</span> <span>{</span>
-                <span>if</span> <span>(</span><span>isPalindrome</span><span>(</span>s<span>,</span> start<span>,</span> start <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>)</span> <span>{</span>
-                    <span>return</span> s<span>.</span><span>substring</span><span>(</span>start<span>,</span> start <span>+</span> length<span>)</span><span>;</span>
-                <span>}</span>
-            <span>}</span>
-        <span>}</span>
-
-        <span>return</span> <span>""</span><span>;</span>
-    <span>}</span>
-
-    <span>private</span> <span>boolean</span> <span>isPalindrome</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
-        <span>while</span> <span>(</span>left <span>&lt;</span> right <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>==</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
-            left<span>++</span><span>;</span> right<span>--</span><span>;</span>
-        <span>}</span>
-        <span>return</span> left <span>>=</span> right<span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><p>python 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
-    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
-        <span>"""
-        :type s: str
-        :rtype: str
-        """</span>
-        <span>if</span> s <span>is</span> <span>None</span><span>:</span>
-            <span>return</span> <span>None</span>
-
-        <span>for</span> length <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>,</span> <span>0</span><span>,</span> <span>-</span><span>1</span><span>)</span><span>:</span>
-            <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span> <span>-</span> length <span>+</span> <span>1</span><span>)</span><span>:</span>
-                <span>if</span> self<span>.</span>is_palindrome<span>(</span>s<span>,</span> i<span>,</span> i <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>:</span>
-                    <span>return</span> s<span>[</span>i<span>:</span> i <span>+</span> length<span>]</span>
-
-        <span>return</span> <span>""</span>
-
-    <span>def</span> <span>is_palindrome</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
-        <span>while</span> left <span>&lt;</span> right <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
-            left <span>+=</span> <span>1</span>
-            right <span>-=</span> <span>1</span>
-
-        <span>return</span> left <span>>=</span> right
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于中心线枚举的算法"> 基于中心线枚举的算法</h2>
-<p>java 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
-            <span>return</span> <span>null</span><span>;</span>
-        <span>}</span>
-
-        <span>String</span> longest <span>=</span> <span>""</span><span>;</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>String</span> oddPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i<span>)</span><span>;</span>
-            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> oddPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-                longest <span>=</span> oddPalindrome<span>;</span>
-            <span>}</span>
-
-            <span>String</span> evenPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i <span>+</span><span>1</span><span>)</span><span>;</span>
-            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> evenPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-                longest <span>=</span> evenPalindrome<span>;</span>
-            <span>}</span>
-        <span>}</span>
-        
-        <span>return</span> longest<span>;</span>
-    <span>}</span>
-
-    <span>private</span> <span>String</span> <span>getPalindromeFrom</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
-        <span>while</span> <span>(</span>left <span>>=</span> <span>0</span> <span>&amp;&amp;</span> right <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-            <span>if</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>!=</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
-                <span>break</span><span>;</span>
-            <span>}</span>
-            left<span>--</span><span>;</span>
-            right<span>++</span><span>;</span>
-        <span>}</span>
-
-        <span>return</span> s<span>.</span><span>substring</span><span>(</span>left <span>+</span> <span>1</span><span>,</span> right<span>)</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br></div></div><p>python 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
-    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
-        <span>"""
-        :type s: str
-        :rtype: str
-        """</span>
-        <span>if</span> <span>not</span> s<span>:</span>
-            <span>return</span> s
-        
-        answer <span>=</span> <span>(</span><span>0</span><span>,</span> <span>0</span><span>)</span>
-        <span>for</span> mid <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>)</span><span>:</span>
-            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid<span>)</span><span>)</span>
-            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid <span>+</span> <span>1</span><span>)</span><span>)</span>
-
-        <span>return</span> s<span>[</span>answer<span>[</span><span>1</span><span>]</span><span>:</span> answer<span>[</span><span>0</span><span>]</span> <span>+</span> answer<span>[</span><span>1</span><span>]</span><span>]</span>
-
-    <span>def</span> <span>get_palindrome_from</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
-        <span>while</span> left <span>>=</span> <span>0</span> <span>and</span> right <span>&lt;</span> <span>len</span><span>(</span>s<span>)</span> <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
-            left <span>-=</span> <span>1</span>
-            right <span>+=</span> <span>1</span>
-
-        <span>return</span> right <span>-</span> left <span>-</span> <span>1</span><span>,</span> left <span>+</span> <span>1</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于动态规划的算法"> 基于动态规划的算法</h2>
-<p>java 实现</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><p>python 实现</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>LRU 算法 &amp;&amp; 爬台阶递归算法</title>
       <link>https:/cloaks.cn/blogs/lintcode/LRU/</link>
       <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/LRU/</guid>
@@ -3236,166 +2693,134 @@ cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <s
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201131455479.png" type="image/png"/>
     </item>
     <item>
-      <title>斐波那契数列</title>
-      <link>https:/cloaks.cn/blogs/lintcode/fibonacci/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/fibonacci/</guid>
-      <source url="https:/cloaks.cn/rss.xml">斐波那契数列</source>
+      <title>最长回文子串</title>
+      <link>https:/cloaks.cn/blogs/lintcode/longestPalindrome/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/longestPalindrome/</guid>
+      <source url="https:/cloaks.cn/rss.xml">最长回文子串</source>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>题号：<a href="https://www.lintcode.com/problem/366/" target="_blank" rel="noopener noreferrer">366</a><br>
-描述：查找斐波纳契数列中第 N 个数。<br>
-所谓的斐波纳契数列是指：<br>
-前2个数是 0 和 1 。<br>
-第 i 个数是第 i-1 个数和第i-2 个数的和。<br>
-斐波纳契数列的前10个数字是：<br>
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...</p>
+<p>题号：<a href="https://www.lintcode.com/problem/200/" target="_blank" rel="noopener noreferrer">200</a><br>
+描述：给出一个字符串（假设长度最长为1000），求出它的最长回文子串，你可以假定只有一个满足条件的最长回文串。<br>
+挑战：时间复杂度可为O(n2)，你能将其优化为O(n)吗</p>
 </blockquote>
-<p>python</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
-    <span>"""
-    @param n: an integer
-    @return: an ineger f(n)
-    """</span>
-    <span>def</span> <span>fibonacci</span><span>(</span>self<span>,</span> n<span>)</span><span>:</span>
-        <span># write your code here</span>
-        <span>if</span> n <span>&lt;=</span> <span>2</span><span>:</span>
-            <span>return</span> n <span>-</span> <span>1</span>
+<h2 id="使用时间复杂度为o-n-3-的算法"> 使用时间复杂度为O(n^3)的算法</h2>
+<p>java 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
+            <span>return</span> <span>null</span><span>;</span>
+        <span>}</span>
+
+        <span>for</span> <span>(</span><span>int</span> length <span>=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> length <span>></span> <span>0</span><span>;</span> length<span>--</span><span>)</span> <span>{</span>
+            <span>for</span> <span>(</span><span>int</span> start <span>=</span> <span>0</span><span>;</span> start <span>+</span> length <span>&lt;=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> start<span>++</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span><span>isPalindrome</span><span>(</span>s<span>,</span> start<span>,</span> start <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>)</span> <span>{</span>
+                    <span>return</span> s<span>.</span><span>substring</span><span>(</span>start<span>,</span> start <span>+</span> length<span>)</span><span>;</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+
+        <span>return</span> <span>""</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>boolean</span> <span>isPalindrome</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
+        <span>while</span> <span>(</span>left <span>&lt;</span> right <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>==</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
+            left<span>++</span><span>;</span> right<span>--</span><span>;</span>
+        <span>}</span>
+        <span>return</span> left <span>>=</span> right<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><p>python 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
+    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
+        <span>"""
+        :type s: str
+        :rtype: str
+        """</span>
+        <span>if</span> s <span>is</span> <span>None</span><span>:</span>
+            <span>return</span> <span>None</span>
+
+        <span>for</span> length <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>,</span> <span>0</span><span>,</span> <span>-</span><span>1</span><span>)</span><span>:</span>
+            <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span> <span>-</span> length <span>+</span> <span>1</span><span>)</span><span>:</span>
+                <span>if</span> self<span>.</span>is_palindrome<span>(</span>s<span>,</span> i<span>,</span> i <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>:</span>
+                    <span>return</span> s<span>[</span>i<span>:</span> i <span>+</span> length<span>]</span>
+
+        <span>return</span> <span>""</span>
+
+    <span>def</span> <span>is_palindrome</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
+        <span>while</span> left <span>&lt;</span> right <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
+            left <span>+=</span> <span>1</span>
+            right <span>-=</span> <span>1</span>
+
+        <span>return</span> left <span>>=</span> right
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于中心线枚举的算法"> 基于中心线枚举的算法</h2>
+<p>java 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
+            <span>return</span> <span>null</span><span>;</span>
+        <span>}</span>
+
+        <span>String</span> longest <span>=</span> <span>""</span><span>;</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>String</span> oddPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i<span>)</span><span>;</span>
+            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> oddPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+                longest <span>=</span> oddPalindrome<span>;</span>
+            <span>}</span>
+
+            <span>String</span> evenPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i <span>+</span><span>1</span><span>)</span><span>;</span>
+            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> evenPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+                longest <span>=</span> evenPalindrome<span>;</span>
+            <span>}</span>
+        <span>}</span>
         
-        <span>return</span> self<span>.</span>fibonacci<span>(</span>n <span>-</span> <span>1</span><span>)</span> <span>+</span> self<span>.</span>fibonacci<span>(</span>n <span>-</span> <span>2</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
-<div><pre><code><span>// 循环</span>
-<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>/**
-     * @param n: an integer
-     * @return: an ineger f(n)
-     */</span>
-    <span>public</span> <span>int</span> <span>fibonacci</span><span>(</span><span>int</span> n<span>)</span> <span>{</span>
-        <span>int</span> a <span>=</span> <span>0</span><span>;</span>
-        <span>int</span> b <span>=</span> <span>1</span><span>;</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> n <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>int</span> c <span>=</span> a <span>+</span> b<span>;</span>
-            a <span>=</span> b<span>;</span>
-            b <span>=</span> c<span>;</span>
-        <span>}</span>
-        <span>return</span> a<span>;</span>
+        <span>return</span> longest<span>;</span>
     <span>}</span>
-<span>}</span>
-<span>// 递归</span>
-<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>/**
-     * @param n: an integer
-     * @return: an ineger f(n)
-     */</span>
-    <span>public</span> <span>int</span> <span>fibonacci</span><span>(</span><span>int</span> n<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>n <span>&lt;=</span> <span>2</span><span>)</span> <span>{</span>
-            <span>return</span> n <span>-</span> <span>1</span><span>;</span>
-        <span>}</span>
-        <span>return</span> <span>fibonacci</span><span>(</span>n <span>-</span> <span>1</span><span>)</span> <span>+</span> <span>fibonacci</span><span>(</span>n <span>-</span> <span>2</span><span>)</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>排序算法</title>
-      <link>https:/cloaks.cn/blogs/lintcode/sortIntegers/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/sortIntegers/</guid>
-      <source url="https:/cloaks.cn/rss.xml">排序算法</source>
-      <category>力扣</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>题号：<a href="https://www.lintcode.com/problem/463/" target="_blank" rel="noopener noreferrer">463</a><br>
-描述：给一组整数，按照升序排序，使用选择排序，冒泡排序，插入排序或者任何 O(n2) 的排序算法。</p>
-</blockquote>
-<h2 id="选择排序"> 选择排序</h2>
-<p>python</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
-    <span>"""
-    @param A: an integer array
-    @return: nothing
-    """</span>
-    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
-        <span># write your code here</span>
-        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
-            <span>for</span> j <span>in</span> <span>range</span><span>(</span>i <span>+</span> <span>1</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
-                <span>if</span> A<span>[</span>i<span>]</span> <span>></span> A<span>[</span>j<span>]</span><span>:</span>
-                    A<span>[</span>i<span>]</span><span>,</span> A<span>[</span>j<span>]</span> <span>=</span> A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>i<span>]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
-<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>/**
-     * @param A: an integer array
-     * @return: nothing
-     */</span>
-    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
-        <span>// write your code here</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
-                <span>if</span> <span>(</span><span>A</span><span>[</span>i<span>]</span> <span>></span> <span>A</span><span>[</span>j<span>]</span><span>)</span> <span>{</span>
-                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>+</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
-                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
-                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
-                <span>}</span>
+
+    <span>private</span> <span>String</span> <span>getPalindromeFrom</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
+        <span>while</span> <span>(</span>left <span>>=</span> <span>0</span> <span>&amp;&amp;</span> right <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+            <span>if</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>!=</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
+                <span>break</span><span>;</span>
             <span>}</span>
+            left<span>--</span><span>;</span>
+            right<span>++</span><span>;</span>
         <span>}</span>
+
+        <span>return</span> s<span>.</span><span>substring</span><span>(</span>left <span>+</span> <span>1</span><span>,</span> right<span>)</span><span>;</span>
     <span>}</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="冒泡排序"> 冒泡排序</h2>
-<p>python</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
-    <span>"""
-    @param A: an integer array
-    @return: nothing
-    """</span>
-    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
-        <span># write your code here</span>
-        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
-            <span>for</span> j <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
-                <span>if</span> A<span>[</span>j<span>]</span> <span>></span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>:</span>
-                    A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>,</span> A<span>[</span>j<span>]</span>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br></div></div><p>python 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
+    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
+        <span>"""
+        :type s: str
+        :rtype: str
+        """</span>
+        <span>if</span> <span>not</span> s<span>:</span>
+            <span>return</span> s
+        
+        answer <span>=</span> <span>(</span><span>0</span><span>,</span> <span>0</span><span>)</span>
+        <span>for</span> mid <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>)</span><span>:</span>
+            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid<span>)</span><span>)</span>
+            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid <span>+</span> <span>1</span><span>)</span><span>)</span>
+
+        <span>return</span> s<span>[</span>answer<span>[</span><span>1</span><span>]</span><span>:</span> answer<span>[</span><span>0</span><span>]</span> <span>+</span> answer<span>[</span><span>1</span><span>]</span><span>]</span>
+
+    <span>def</span> <span>get_palindrome_from</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
+        <span>while</span> left <span>>=</span> <span>0</span> <span>and</span> right <span>&lt;</span> <span>len</span><span>(</span>s<span>)</span> <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
+            left <span>-=</span> <span>1</span>
+            right <span>+=</span> <span>1</span>
+
+        <span>return</span> right <span>-</span> left <span>-</span> <span>1</span><span>,</span> left <span>+</span> <span>1</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
-<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>/**
-     * @param A: an integer array
-     * @return: nothing
-     */</span>
-    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
-        <span>// write your code here</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>for</span> <span>(</span><span>int</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
-                <span>if</span> <span>(</span><span>A</span><span>[</span>j<span>]</span> <span>></span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>)</span> <span>{</span>
-                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>+</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
-                    <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
-                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
-                <span>}</span>
-            <span>}</span>
-        <span>}</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="插入排序"> 插入排序</h2>
-<p>python</p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于动态规划的算法"> 基于动态规划的算法</h2>
+<p>java 实现</p>
 <div><pre><code>
 </code></pre>
-<div><span>1</span><br></div></div><p>java</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="归并排序"> 归并排序</h2>
-<p>python</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><p>java</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="快速排序"> 快速排序</h2>
-<p>python</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><p>java</p>
+<div><span>1</span><br></div></div><p>python 实现</p>
 <div><pre><code>
 </code></pre>
 <div><span>1</span><br></div></div>]]></content:encoded>
@@ -4078,301 +3503,106 @@ class TreeNode:
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>中间件</title>
-      <link>https:/cloaks.cn/blogs/middleware/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/middleware/</guid>
-      <source url="https:/cloaks.cn/rss.xml">中间件</source>
-      <description>&amp;lt;p&amp;gt;简要介绍常见中间件&amp;lt;/p&amp;gt;
-</description>
-      <category>微服务</category>
+      <title>排序算法</title>
+      <link>https:/cloaks.cn/blogs/lintcode/sortIntegers/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/sortIntegers/</guid>
+      <source url="https:/cloaks.cn/rss.xml">排序算法</source>
+      <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>简要介绍常见中间件</p>
-
-<h2 id="redis"> Redis</h2>
-<h2 id="zookeeper"> Zookeeper</h2>
-<p><code>zookeeper</code> 是一个分布式服务框架，是 <code>Apache Hadoop</code> 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如：统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等。</p>
-<ul>
-<li>
-<p>结点类型：</p>
-<ul>
-<li>
-<p>临时节点：临时节点的生命周期和客户端会话绑定在一起，客户端会话失效，则这个节点就会被自动清除。</p>
-</li>
-<li>
-<p>永久节点：该数据节点被创建后，就会一直存在于 <code>zookeeper</code> 服务器上，直到有删除操作来主动删除这个节点。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="使用场景"> 使用场景</h3>
-<p>配置中心：配置中心，顾名思义就是将配置数据写到 <code>ZK</code> 节点上，供各个分布式机器获取配置，同时监听自己对应的节点。实现配置信息的集中式管理和动态更新。</p>
-<p>命名服务：在分布式系统中，通过使用命名服务，客户端应用能够根据指定名字来获取资源或服务的地址，提供者等信息。被命名的实体通常可以是集群中的机器，提供的服务地址，远程对象等等，这些我们都可以统称他们为名字(<code>Name</code>)。通过调用 <code>ZK</code> 提供的创建节点的 <code>API</code>，能够很容易创建一个全局唯一的 <code>path</code>，这个 <code>path</code> 就可以作为一个名称。</p>
-<p>分布式通知：<code>ZooKeeper</code> 的 <code>watcher</code> 注册与异步通知机制，能够很好的实现分布式环境下不同系统之间的通知与协调，实现对数据变更的实时处理。不同系统都对 <code>ZK</code> 上同一个 <code>znode</code> 进行注册，监听 <code>znode</code> 的变化（包括 <code>znode</code> 本身内容及子节点的)，其中一个系统 <code>update</code> 了 <code>znode</code>，那么另一个系统能够收到通知，并作出相应处理</p>
-<p>选主：利用 <code>ZooKeeper</code> 的一致性，能够保证在分布式高并发情况下节点创建的全局唯一性，即：同时有多个客户端请求创建 <code>/currentMaster</code> 节点，最终一定只有一个客户端请求能够创建成功。利用这个特性，就能很轻易的在分布式环境中进行集群选取了。</p>
-<p>分布式锁：分布式锁，这个主要得益于 <code>ZooKeeper</code> 的节点创建和事件监听机制。</p>
-<h2 id="rabbit-mq"> Rabbit MQ</h2>
-<p><code>Rabbit MQ</code> 是一个由 <code>erlang</code> 开发的 <code>AMQP（Advanced Message Queue）</code> 的开源实现</p>
-<h3 id="模块介绍"> 模块介绍</h3>
-<p><code>Broker</code>：可以简单理解为一台物理机器。</p>
-<p><code>Producer</code>：消息生产者，就是投递消息的程序。</p>
-<p><code>Consumer</code>：消息消费者，就是接受消息的程序。</p>
-<p><code>Exchange</code>：消息交换机，它指定消息按什么规则，路由到哪个队列。
-<code>fanout|direct|topic|headerQueue</code>：消息的载体，每个消息都会被投到一个或多个队列。</p>
-<p><code>Binding</code>：绑定，它的作用就是把 <code>exchange</code> 和 <code>queue</code> 按照路由规则绑定起来。</p>
-<p><code>Routing Key</code>：路由关键字，<code>exchange</code> 根据这个关键字进行消息投递。</p>
-<p><code>vhost</code>：虚拟主机，一个 <code>broker</code> 里可以有多个 <code>vhost</code>，用作不同用户的权限分离。</p>
-<h3 id="应用"> 应用</h3>
-<p>消息传递、异步处理、应用解耦、流量削峰</p>
-<h3 id="高可用"> 高可用</h3>
-<p>发送方：<code>confirm</code> 机制（发送成功后有异步通知）</p>
-<p>消费端：<code>ACK</code> 消息应答机制</p>
-<p><code>rabbit</code>：<code>queue</code> 持久化，消息持久化（<code>deliveryMode = 2</code>）</p>
-<h2 id="nginx"> Nginx</h2>
-<p><code>Nginx</code> 是一款轻量级的 <code>Web</code> 服务器/反向代理服务器及电子邮件<code>（IMAP/POP3)</code>代理服务器，在 <code>BSD-like</code> 协议下发行。其特点是占有内存少，并发能力强，事实上 <code>nginx</code> 的并发能力在同类型的网页服务器中几乎成为公认的标杆，在百度、京东、新浪、网易、腾讯、淘宝等互联网公司中均有应用。</p>
-<h3 id="动静分离"> 动静分离</h3>
-<p>静态资源：由 <code>nginx</code> 作为 <code>web</code> 服务器身份，直接返回</p>
-<p>动态资源：<code>nginx</code> 将请求转发出去，交给后端应用服务器处理</p>
-<h3 id="负载均衡"> 负载均衡</h3>
-<p>当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群提升并行处理能力。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。这时使用 <code>nginx</code> 实现了机器之间的负载均衡。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>计算机网络面试</title>
-      <link>https:/cloaks.cn/blogs/network/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/network/</guid>
-      <source url="https:/cloaks.cn/rss.xml">计算机网络面试</source>
-      <category>面试</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="osi七层模型"> OSI七层模型</h2>
-<h3 id="物理层"> 物理层</h3>
-<p>建立、维护、断开物理连接</p>
-<h3 id="数据链路层"> 数据链路层</h3>
-<p>建立逻辑连接、进行硬件地址寻址、差错校验</p>
-<h3 id="网络层"> 网络层</h3>
-<p>进行逻辑地址寻址，实现不同网络之间的路径选择</p>
-<h3 id="传输层"> 传输层</h3>
-<p>定义传输数据的协议端口号，以及流控和差错校验</p>
-<p>常见协议：<strong>TCP、UDP</strong></p>
-<p>数据包一旦离开网卡即进入网络传输层</p>
-<p><strong>TCP三次握手</strong></p>
-<p>所谓三次握手(Three-way Handshake)，是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。</p>
-<p>三次握手的目的是连接服务器指定端口，建立TCP连接,并同步连接双方的序列号和确认号并交换 TCP 窗口大小信息.在socket编程中，客户端执行connect()时。将触发三次握手。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" alt="" /></p>
-<p>第一次握手:
-客户端发送一个TCP的SYN标志位置1的包指明客户打算连接的服务器的端口，以及初始序号X,保存在包头的序列号(Sequence Number)字段里。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236854.png" alt="" /></p>
-<p>第二次握手:
-服务器发回确认包(ACK)应答。即SYN标志位和ACK标志位均为1同时，将确认序号(Acknowledgement Number)设置为客户的I S N加1以.即X+1。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237932.png" alt="" /></p>
-<p>第三次握手.
-客户端再次发送确认包(ACK) SYN标志位为0,ACK标志位为1.并且把服务器发来ACK的序号字段+1,放在确定字段中发送给对方.并且在数据段放写ISN的+1</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237689.png" alt="" /></p>
-<p><strong>TCP四次握手</strong></p>
-<p>TCP的连接的拆除需要发送四个包，因此称为四次挥手(four-way handshake)。客户端或服务器均可主动发起挥手动作，在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061235996.png" alt="" /></p>
-<h3 id="会话层"> 会话层</h3>
-<p>简历、管理、终止会话</p>
-<h3 id="表示层"> 表示层</h3>
-<p>数据表示、安全、压缩</p>
-<h3 id="应用层"> 应用层</h3>
-<p>网络服务与最终用户的一个接口</p>
-<h4 id="常见网络协议含义及端口"> 常见网络协议含义及端口</h4>
-<table>
-<thead>
-<tr>
-<th>协议</th>
-<th>含义</th>
-<th>端口</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FTP</td>
-<td>文件传输协议</td>
-<td>21</td>
-</tr>
-<tr>
-<td>Telnet</td>
-<td>远程登陆</td>
-<td>23</td>
-</tr>
-<tr>
-<td>SMTP</td>
-<td>简单邮件传输协议</td>
-<td>25</td>
-</tr>
-<tr>
-<td>POP3</td>
-<td>邮件接收协议</td>
-<td>110</td>
-</tr>
-<tr>
-<td>HTTP</td>
-<td>超文本传输协议</td>
-<td>80</td>
-</tr>
-<tr>
-<td>DNS</td>
-<td>域名解析</td>
-<td>53</td>
-</tr>
-</tbody>
-</table>
-<h4 id="http协议"> HTTP协议</h4>
-<h5 id="状态码"> 状态码</h5>
-<p>五类响应：1XX(信息类状态码) 2XX(成功状态码) 3XX(重定向状态码) 4XX(客户端错误状态码) 5XX(服务器错误状态码)</p>
-<p>常见状态码</p>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>成功</td>
-</tr>
-<tr>
-<td>204</td>
-<td>成功处理，报文不含内容</td>
-</tr>
-<tr>
-<td>206</td>
-<td>部分成功</td>
-</tr>
-<tr>
-<td>301</td>
-<td>永久性重定向</td>
-</tr>
-<tr>
-<td>302、307</td>
-<td>临时性重定向</td>
-</tr>
-<tr>
-<td>303</td>
-<td></td>
-</tr>
-<tr>
-<td>304</td>
-<td></td>
-</tr>
-<tr>
-<td>400</td>
-<td>请求错误</td>
-</tr>
-<tr>
-<td>401</td>
-<td>需要HTTP认证信息</td>
-</tr>
-<tr>
-<td>403</td>
-<td>请求拒绝</td>
-</tr>
-<tr>
-<td>404</td>
-<td>未找到请求地址</td>
-</tr>
-<tr>
-<td>500</td>
-<td>执行请求错误</td>
-</tr>
-<tr>
-<td>503</td>
-<td>超负载、停机维护</td>
-</tr>
-</tbody>
-</table>
-<h5 id="请求头-响应头"> 请求头/响应头</h5>
-<div><pre><code><span>Content-Type</span><span>:</span> 
-<span>Accept</span><span>:</span> 
-<span>Origin</span><span>:</span> 
-<span>Cache-Control</span><span>:</span> 
-<span>Cookie</span><span>:</span> 
-<span>User-Agent</span><span>:</span> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML<span>,</span> like Gecko) Chrome/96.0.4664.45 Safari/537.36
-<span>Referer</span><span>:</span> 
-<span>X-Forwarded-For</span><span>:</span> 
-<span>Access-Control-Allow-Origin</span><span>:</span> 允许特定域名访问
-<span>Last-Modify</span><span>:</span> 
+      <content:encoded><![CDATA[<blockquote>
+<p>题号：<a href="https://www.lintcode.com/problem/463/" target="_blank" rel="noopener noreferrer">463</a><br>
+描述：给一组整数，按照升序排序，使用选择排序，冒泡排序，插入排序或者任何 O(n2) 的排序算法。</p>
+</blockquote>
+<h2 id="选择排序"> 选择排序</h2>
+<p>python</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
+    <span>"""
+    @param A: an integer array
+    @return: nothing
+    """</span>
+    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
+        <span># write your code here</span>
+        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
+            <span>for</span> j <span>in</span> <span>range</span><span>(</span>i <span>+</span> <span>1</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
+                <span>if</span> A<span>[</span>i<span>]</span> <span>></span> A<span>[</span>j<span>]</span><span>:</span>
+                    A<span>[</span>i<span>]</span><span>,</span> A<span>[</span>j<span>]</span> <span>=</span> A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>i<span>]</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h5 id="请求方法"> 请求方法</h5>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>用于数据读取，幂等操作</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>向指定资源提交数据，非幂等操作</td>
-</tr>
-<tr>
-<td>HEAD</td>
-<td>向服务器请求头信息</td>
-</tr>
-<tr>
-<td>OPTIONS</td>
-<td>查看服务器支持HTTP请求方法，测试功能是否正常</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>请求服务器修改信息</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>请求服务器删除数据</td>
-</tr>
-<tr>
-<td>TRACE</td>
-<td>请求服务器回显信息，测试诊断服务器状态</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>
-<p>HTTP协议和GET和POST请求方法的区别</p>
-<ol>
-<li>
-<p>在进行后退操作时 GET 是无害的，但是 POST 请求会进行重新提交</p>
-</li>
-<li>
-<p>GET 可以收藏为书签，POST 不可以</p>
-</li>
-<li>
-<p>GET 可以被浏览器缓存，POST 不可以</p>
-</li>
-<li>
-<p>GET 可以被浏览器存到历史当中，POST 不可以</p>
-</li>
-<li>
-<p>GET URL限制为2038个字符，POST 没有限制</p>
-</li>
-<li>
-<p>GET 安全性较差</p>
-</li>
-</ol>
-</li>
-<li>
-<p>HTTPS 的工作原理</p>
-<ol>
-<li>
-<p>HTTPS 是一种基于 SSL/TLS 的 HTTP 协议，所有的HTTP数据都是在 SSL/TLS 协议封装之上传输的</p>
-</li>
-<li>
-<p>HTTPS 协议在 HTTP 协议的基础上，添加了 SSL/TLS 握手以及数据加密传输，也属于应用层协议</p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
+<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>/**
+     * @param A: an integer array
+     * @return: nothing
+     */</span>
+    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
+        <span>// write your code here</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span><span>A</span><span>[</span>i<span>]</span> <span>></span> <span>A</span><span>[</span>j<span>]</span><span>)</span> <span>{</span>
+                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>+</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="冒泡排序"> 冒泡排序</h2>
+<p>python</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
+    <span>"""
+    @param A: an integer array
+    @return: nothing
+    """</span>
+    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
+        <span># write your code here</span>
+        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
+            <span>for</span> j <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
+                <span>if</span> A<span>[</span>j<span>]</span> <span>></span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>:</span>
+                    A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>,</span> A<span>[</span>j<span>]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
+<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>/**
+     * @param A: an integer array
+     * @return: nothing
+     */</span>
+    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
+        <span>// write your code here</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>for</span> <span>(</span><span>int</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span><span>A</span><span>[</span>j<span>]</span> <span>></span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>)</span> <span>{</span>
+                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>+</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
+                    <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
+                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="插入排序"> 插入排序</h2>
+<p>python</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><p>java</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="归并排序"> 归并排序</h2>
+<p>python</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><p>java</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="快速排序"> 快速排序</h2>
+<p>python</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><p>java</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>双指针算法</title>
@@ -4676,20 +3906,748 @@ class TreeNode:
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>介绍</title>
-      <link>https:/cloaks.cn/blogs/nowcoder/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/nowcoder/</guid>
-      <source url="https:/cloaks.cn/rss.xml">介绍</source>
+      <title>框架篇</title>
+      <link>https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</guid>
+      <source url="https:/cloaks.cn/rss.xml">框架篇</source>
       <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="介绍"> 介绍</h1>
+      <content:encoded><![CDATA[<h1 id="框架篇"> 框架篇</h1>
+<h2 id="spring-refresh-流程"> Spring refresh 流程</h2>
+<h3 id="要求"> 要求</h3>
+<ul>
+<li>掌握 <code>refresh</code> 的 12 个步骤</li>
+</ul>
+<h3 id="spring-refresh-概述"> Spring refresh 概述</h3>
+<p><code>refresh</code> 是 <code>AbstractApplicationContext</code> 中的一个方法，负责初始化 <code>ApplicationContext</code> 容器，容器必须调用 <code>refresh</code> 才能正常工作。它的内部主要会调用 12 个方法，我们把它们称为 <code>refresh</code> 的 12 个步骤：</p>
+<div><pre><code><span># 准备环境</span>
+<span>prepareRefresh</span><span>:</span> 1 做好准备工作
+<span># 准备 BeanFactory</span>
+<span>obtainFreshBeanFactory</span><span>:</span> 2 创建或获取 BeanFactory
+<span>prepareBeanFactory</span><span>:</span> 3 准备 BeanFactory
+<span>postProcessBeanFactory</span><span>:</span> 4 子类扩展 BeanFactory
+<span>invokeBeanFactoryPostProcessors</span><span>:</span> 5 后处理器扩展 BeanFactory
+<span>registerBeanPostProcessors</span><span>:</span> 6 准备 Bean 后处理器
+<span># 准备 ApplicationContext</span>
+<span>initMessageSource</span><span>:</span> 7 为 ApplicationContext 提供国际化功能
+<span>initApplicationEventMulticaster</span><span>:</span> 8 为 ApplicationContext 提供事件发布器
+<span>onRefresh</span><span>:</span> 9 留给子类扩展
+<span>registerListeners</span><span>:</span> 10 为 ApplicationContext 准备监听器
+<span>finishRefresh</span><span>:</span> 12 准备生命周期管理器，发布ContextRefreshed 事件
+<span># 初始化 BeanFactory 中非延迟单例 bean</span>
+<span>finishBeanFactoryInitialization</span><span>:</span> 11 初始化单例 Bean，执行 Bean 后处理器扩展
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h4 id="_1-preparerefresh"> 1. prepareRefresh</h4>
+<p>这一步创建和准备了 <code>Environment</code> 对象，它作为 <code>ApplicationContext</code> 的一个成员变量</p>
+<p><code>Environment</code> 对象的作用之一是为后续 <code>@Value</code> 值注入时提供键值</p>
+<p><code>Environment</code> 分成三个主要部分</p>
+<ul>
+<li>
+<p><code>systemProperties</code> - 保存 <code>java</code> 环境键值</p>
+</li>
+<li>
+<p><code>systemEnvironment</code> - 保存系统环境键值</p>
+</li>
+<li>
+<p>自定义 <code>PropertySource</code> - 保存自定义键值，例如来自于 <code>*.properties</code> 文件的键值</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" alt="" /></p>
+<h4 id="_2-obtainfreshbeanfactory"> 2. obtainFreshBeanFactory</h4>
+<ul>
+<li>
+<p>这一步获取（或创建） <code>BeanFactory</code> 也是作为 <code>ApplicationContext</code> 的一个成员变量</p>
+</li>
+<li>
+<p><code>BeanFactory</code> 的作用是负责 <code>bean</code> 的创建、依赖注入和初始化，<code>bean</code> 的各项特征由 <code>BeanDefinition</code> 定义</p>
+<ul>
+<li>
+<p><code>BeanDefinition</code> 作为 <code>bean</code> 的设计蓝图，规定了 <code>bean</code> 的特征，如单例多例、依赖关系、初始销毁方法等</p>
+</li>
+<li>
+<p><code>BeanDefinition</code> 的来源有多种多样，可以是通过 <code>xml</code> 获得、配置类获得、组件扫描获得，也可以是编程添加</p>
+</li>
+</ul>
+</li>
+<li>
+<p>所有的 <code>BeanDefinition</code> 会存入 <code>BeanFactory</code> 中的 <code>beanDefinitionMap</code> 集合</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057632.png" alt="" /></p>
+<h4 id="_3-preparebeanfactory"> 3. prepareBeanFactory</h4>
+<ul>
+<li>这一步会进一步完善 <code>BeanFactory</code>，为它的各项成员变量赋值</li>
+<li><code>beanExpressionResolver</code> 用来解析 <code>SpEL</code>，常见实现为 <code>StandardBeanExpressionResolver</code></li>
+<li><code>propertyEditorRegistrars</code> 会注册类型转换器
+<ul>
+<li>它在这里使用了 <code>ResourceEditorRegistrar</code> 实现类</li>
+<li>并应用 <code>ApplicationContext</code> 提供的 <code>Environment</code> 完成 <code>${ }</code> 解析</li>
+</ul>
+</li>
+<li><code>registerResolvableDependency</code> 来注册 <code>beanFactory</code> 以及 <code>ApplicationContext</code>，让它们也能用于依赖注入</li>
+<li><code>beanPostProcessors</code> 是 <code>bean</code> 后处理器集合，会工作在 <code>bean</code> 的生命周期各个阶段，此处会添加两个：
+<ul>
+<li><code>ApplicationContextAwareProcessor</code> 用来解析 <code>Aware</code> 接口</li>
+<li><code>ApplicationListenerDetector</code> 用来识别容器中 <code>ApplicationListener</code> 类型的 <code>bean</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057394.png" alt="" /></p>
+<h4 id="_4-postprocessbeanfactory"> 4. postProcessBeanFactory</h4>
+<ul>
+<li>这一步是空实现，留给子类扩展。
+<ul>
+<li>一般 <code>Web</code> 环境的 <code>ApplicationContext</code> 都要利用它注册新的 <code>Scope</code>，完善 <code>Web</code> 下的 <code>BeanFactory</code></li>
+</ul>
+</li>
+<li>这里体现的是模板方法设计模式</li>
+</ul>
+<h4 id="_5-invokebeanfactorypostprocessors"> 5. invokeBeanFactoryPostProcessors</h4>
+<ul>
+<li>这一步会调用 <code>beanFactory</code> 后处理器</li>
+<li><code>beanFactory</code> 后处理器，充当 <code>beanFactory</code> 的扩展点，可以用来补充或修改 <code>BeanDefinition</code></li>
+<li>常见的 <code>beanFactory</code> 后处理器有
+<ul>
+<li><code>ConfigurationClassPostProcessor</code> – 解析 <code>@Configuration、@Bean、@Import、@PropertySource</code> 等</li>
+<li><code>PropertySourcesPlaceHolderConfigurer</code> – 替换 <code>BeanDefinition</code> 中的 <code>${ }</code></li>
+<li><code>MapperScannerConfigurer</code> – 补充 <code>Mapper</code> 接口对应的 <code>BeanDefinition</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058642.png" alt="" /></p>
+<h4 id="_6-registerbeanpostprocessors"> 6. registerBeanPostProcessors</h4>
+<ul>
+<li>这一步是继续从 <code>beanFactory</code> 中找出 <code>bean</code> 后处理器，添加至 <code>beanPostProcessors</code> 集合中</li>
+<li><code>bean</code> 后处理器，充当 <code>bean</code> 的扩展点，可以工作在 <code>bean</code> 的实例化、依赖注入、初始化阶段，常见的有：
+<ul>
+<li><code>AutowiredAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Autowired，@Value</code> 注解</li>
+<li><code>CommonAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Resource，@PostConstruct，@PreDestroy</code></li>
+<li><code>AnnotationAwareAspectJAutoProxyCreator</code> 功能有：为符合切点的目标 <code>bean</code> 自动创建代理</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058548.png" alt="" /></p>
+<h4 id="_7-initmessagesource"> 7. initMessageSource</h4>
+<ul>
+<li>这一步是为 <code>ApplicationContext</code> 添加 <code>messageSource</code> 成员，实现国际化功能</li>
+<li>去 <code>beanFactory</code> 内找名为 <code>messageSource</code> 的 <code>bean</code>，如果没有，则提供空的 <code>MessageSource</code> 实现</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058233.png" alt="" /></p>
+<h4 id="_8-initapplicationcontexteventmulticaster"> 8. initApplicationContextEventMulticaster</h4>
+<ul>
+<li>这一步为 <code>ApplicationContext</code> 添加事件广播器成员，即 <code>applicationContextEventMulticaster</code></li>
+<li>它的作用是发布事件给监听器</li>
+<li>去 <code>beanFactory</code> 找名为 <code>applicationEventMulticaster</code> 的 <code>bean</code> 作为事件广播器，若没有，会创建默认的事件广播器</li>
+<li>之后就可以调用 <code>ApplicationContext.publishEvent</code>(事件对象) 来发布事件</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058783.png" alt="" /></p>
+<h4 id="_9-onrefresh"> 9. onRefresh</h4>
+<ul>
+<li>这一步是空实现，留给子类扩展
+<ul>
+<li><code>SpringBoot</code> 中的子类在这里准备了 <code>WebServer</code>，即内嵌 <code>web</code> 容器</li>
+</ul>
+</li>
+<li>体现的是模板方法设计模式</li>
+</ul>
+<h4 id="_10-registerlisteners"> 10. registerListeners</h4>
+<ul>
+<li>这一步会从多种途径找到事件监听器，并添加至 <code>applicationEventMulticaster</code></li>
+<li>事件监听器顾名思义，用来接收事件广播器发布的事件，有如下来源
+<ul>
+<li>事先编程添加的</li>
+<li>来自容器中的 <code>bean</code></li>
+<li>来自于 <code>@EventListener</code> 的解析</li>
+</ul>
+</li>
+<li>要实现事件监听器，只需要实现 <code>ApplicationListener</code> 接口，重写其中 <code>onApplicationEvent(E e)</code> 方法即可</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059510.png" alt="" /></p>
+<h4 id="_11-finishbeanfactoryinitialization"> 11. finishBeanFactoryInitialization</h4>
+<ul>
+<li>这一步会将 <code>beanFactory</code> 的成员补充完毕，并初始化所有非延迟单例 <code>bean</code></li>
+<li><code>conversionService</code> 也是一套转换机制，作为对 <code>PropertyEditor</code> 的补充</li>
+<li><code>embeddedValueResolvers</code> 即内嵌值解析器，用来解析 <code>@Value</code> 中的 <code>${ }</code>，借用的是 <code>Environment</code> 的功能</li>
+<li><code>singletonObjects</code> 即单例池，缓存所有单例对象
+<ul>
+<li>对象的创建都分三个阶段，每一阶段都有不同的 <code>bean</code> 后处理器参与进来，扩展功能</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059692.png" alt="" /></p>
+<h4 id="_12-finishrefresh"> 12. finishRefresh</h4>
+<ul>
+<li>这一步会为 <code>ApplicationContext</code> 添加 <code>lifecycleProcessor</code> 成员，用来控制容器内需要生命周期管理的 <code>bean</code></li>
+<li>如果容器中有名称为 <code>lifecycleProcessor</code> 的 <code>bean</code> 就用它，否则创建默认的生命周期管理器</li>
+<li>准备好生命周期管理器，就可以实现
+<ul>
+<li>调用 <code>context</code> 的 <code>start</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>start</code></li>
+<li>调用 <code>context</code> 的 <code>stop</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>stop</code></li>
+</ul>
+</li>
+<li>发布 <code>ContextRefreshed</code> 事件，整个 <code>refresh</code> 执行完成</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059816.png" alt="" /></p>
+<h2 id="spring-bean-生命周期"> Spring bean 生命周期</h2>
+<h3 id="要求-2"> 要求</h3>
+<ul>
+<li>掌握 <code>Spring bean</code> 的生命周期</li>
+</ul>
+<h3 id="bean-生命周期-概述"> bean 生命周期 概述</h3>
+<p><code>bean</code> 的生命周期从调用 <code>beanFactory</code> 的 <code>getBean</code> 开始，到这个 <code>bean</code> 被销毁，可以总结为以下七个阶段：</p>
+<div><pre><code>1. 处理名称，检查缓存
+
+2. 处理父子容器
+
+3. 处理 `dependsOn`
+
+4. 选择 `scope` 策略
+
+5. 创建 `bean`
+
+6. 类型转换处理
+
+7. 销毁 `bean`
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><blockquote>
+<p><em><strong>注意</strong></em></p>
+<ul>
+<li>划分的阶段和名称并不重要，重要的是理解整个过程中做了哪些事情</li>
+</ul>
+</blockquote>
+<h4 id="_1-处理名称-检查缓存"> 1. 处理名称，检查缓存</h4>
+<ul>
+<li>
+<p>这一步会处理别名，将别名解析为实际名称</p>
+</li>
+<li>
+<p>对 <code>FactoryBean</code> 也会特殊处理，如果以 <code>&amp;</code> 开头表示要获取 <code>FactoryBean</code> 本身，否则表示要获取其产品</p>
+</li>
+<li>
+<p>这里针对单例对象会检查一级、二级、三级缓存</p>
+<ul>
+<li>
+<p><code>singletonFactories</code> 三级缓存，存放单例工厂对象</p>
+</li>
+<li>
+<p><code>earlySingletonObjects</code> 二级缓存，存放单例工厂的产品对象</p>
+<ul>
+<li>如果发生循环依赖，产品是代理；无循环依赖，产品是原始对象</li>
+</ul>
+</li>
+<li>
+<p><code>singletonObjects</code> 一级缓存，存放单例成品对象</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="_2-处理父子容器"> 2. 处理父子容器</h4>
+<ul>
+<li>
+<p>如果当前容器根据名字找不到这个 <code>bean</code>，此时若父容器存在，则执行父容器的 <code>getBean</code> 流程</p>
+</li>
+<li>
+<p>父子容器的 <code>bean</code> 名称可以重复</p>
+</li>
+</ul>
+<h4 id="_3-处理-dependson"> 3. 处理 dependsOn</h4>
+<ul>
+<li>
+<p>如果当前 <code>bean</code> 有通过 <code>dependsOn</code> 指定了非显式依赖的 <code>bean</code>，这一步会提前创建这些 <code>dependsOn</code> 的 <code>bean</code></p>
+</li>
+<li>
+<p>所谓非显式依赖，就是指两个 <code>bean</code> 之间不存在直接依赖关系，但需要控制它们的创建先后顺序</p>
+</li>
+</ul>
+<h4 id="_4-选择-scope-策略"> 4. 选择 scope 策略</h4>
+<ul>
+<li>
+<p>对于 <code>singleton scope</code>，首先到单例池去获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
+</li>
+<li>
+<p>对于 <code>prototype scope</code>，每次都会进入创建流程</p>
+</li>
+<li>
+<p>对于自定义 <code>scope</code>，例如 <code>request</code>，首先到 <code>request</code> 域获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
+</li>
+</ul>
+<h4 id="_5-1-创建-bean-创建-bean-实例"> 5.1 创建 bean - 创建 bean 实例</h4>
+<table>
+<thead>
+<tr>
+<th><strong>要点</strong></th>
+<th><strong>总结</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有自定义 <code>TargetSource</code> 的情况</td>
+<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建代理返回</td>
+</tr>
+<tr>
+<td><code>Supplier</code> 方式创建 <code>bean</code> 实例</td>
+<td>为 <code>Spring 5.0</code> 新增功能，方便编程方式创建  <code>bean</code>  实例</td>
+</tr>
+<tr>
+<td><code>FactoryMethod</code> 方式  创建 <code>bean</code>  实例</td>
+<td>① 分成静态工厂与实例工厂；② 工厂方法若有参数，需要对工厂方法参数进行解析，利用 <code>resolveDependency</code>；③ 如果有多个工厂方法候选者，还要进一步按权重筛选</td>
+</tr>
+<tr>
+<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
+<td>① 优先选择带  <code>@Autowired</code>  注解的构造；② 若有唯一的带参构造，也会入选</td>
+</tr>
+<tr>
+<td><code>mbd.getPreferredConstructors</code></td>
+<td>选择所有公共构造，这些构造之间按权重筛选</td>
+</tr>
+<tr>
+<td>采用默认构造</td>
+<td>如果上面的后处理器和 <code>BeanDefiniation</code> 都没找到构造，采用默认构造，即使是私有的</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5-2-创建-bean-依赖注入"> 5.2 创建 bean - 依赖注入</h4>
+<table>
+<thead>
+<tr>
+<th><strong>要点</strong></th>
+<th><strong>总结</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
+<td>识别 <code>@Autowired</code> 及 <code>@Value</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
+</tr>
+<tr>
+<td><code>CommonAnnotationBeanPostProcessor</code></td>
+<td>识别 <code>@Resource</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
+</tr>
+<tr>
+<td><code>resolveDependency</code></td>
+<td>用来查找要装配的值，可以识别：① <code>Optional</code>；② <code>ObjectFactory</code> 及 <code>ObjectProvider</code>；③ <code>@Lazy</code>  注解；④ <code>@Value</code> 注解（<code>${ }</code>, <code>#{ }</code>, 类型转换）；⑤ 集合类型（<code>Collection</code>，<code>Map</code>，数组等）；⑥ 泛型和  <code>@Qualifier</code>（用来区分类型歧义）；⑦ <code>primary</code>  及名字匹配（用来区分类型歧义）</td>
+</tr>
+<tr>
+<td><code>AUTOWIRE_BY_NAME</code></td>
+<td>根据成员名字找 <code>bean</code> 对象，修改 <code>mbd</code> 的 <code>propertyValues</code>，不会考虑简单类型的成员</td>
+</tr>
+<tr>
+<td><code>AUTOWIRE_BY_TYPE</code></td>
+<td>根据成员类型执行 <code>resolveDependency</code> 找到依赖注入的值，修改  <code>mbd</code> 的 <code>propertyValues</code></td>
+</tr>
+<tr>
+<td><code>applyPropertyValues</code></td>
+<td>根据 <code>mbd</code> 的 <code>propertyValues</code> 进行依赖注入（即 <code>xml</code> 中 <code>&lt;property name ref|value/&gt;</code>）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5-3-创建-bean-初始化"> 5.3 创建 bean - 初始化</h4>
+<table>
+<thead>
+<tr>
+<th><strong>要点</strong></th>
+<th><strong>总结</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内置 <code>Aware</code> 接口的装配</td>
+<td>包括 <code>BeanNameAware</code>，<code>BeanFactoryAware</code> 等</td>
+</tr>
+<tr>
+<td>扩展 <code>Aware</code> 接口的装配</td>
+<td>由 <code>ApplicationContextAwareProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
+</tr>
+<tr>
+<td><code>@PostConstruct</code></td>
+<td>由 <code>CommonAnnotationBeanPostProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
+</tr>
+<tr>
+<td><code>InitializingBean</code></td>
+<td>通过接口回调执行初始化</td>
+</tr>
+<tr>
+<td><code>initMethod</code></td>
+<td>根据 <code>BeanDefinition</code> 得到的初始化方法执行初始化，即 <code>&lt;bean init-method&gt;</code> 或 <code>@Bean</code>(<code>initMethod</code>)</td>
+</tr>
+<tr>
+<td>创建 <code>aop</code> 代理</td>
+<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建，执行时机在  <code>postProcessAfterInitialization</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5-4-创建-bean-注册可销毁-bean"> 5.4 创建 bean - 注册可销毁 bean</h4>
+<p>在这一步判断并登记可销毁 <code>bean</code></p>
+<ul>
+<li>
+<p>判断依据</p>
+<ul>
+<li>
+<p>如果实现了 <code>DisposableBean</code> 或 <code>AutoCloseable</code> 接口，则为可销毁 <code>bean</code></p>
+</li>
+<li>
+<p>如果自定义了 <code>destroyMethod</code>，则为可销毁 <code>bean</code></p>
+</li>
+<li>
+<p>如果采用 <code>@Bean</code> 没有指定 <code>destroyMethod</code>，则采用自动推断方式获取销毁方法名（<code>close，shutdown</code>）</p>
+</li>
+<li>
+<p>如果有 <code>@PreDestroy</code> 标注的方法</p>
+</li>
+</ul>
+</li>
+<li>
+<p>存储位置</p>
+<ul>
+<li>
+<p><code>singleton scope</code> 的可销毁 <code>bean</code> 会存储于 <code>beanFactory</code> 的成员当中</p>
+</li>
+<li>
+<p>自定义 <code>scope</code> 的可销毁 <code>bean</code> 会存储于对应的域对象当中</p>
+</li>
+<li>
+<p><code>prototype scope</code> 不会存储，需要自己找到此对象销毁</p>
+</li>
+</ul>
+</li>
+<li>
+<p>存储时都会封装为 <code>DisposableBeanAdapter</code> 类型对销毁方法的调用进行适配</p>
+</li>
+</ul>
+<h4 id="_6-类型转换处理"> 6. 类型转换处理</h4>
+<ul>
+<li>如果 <code>getBean</code> 的 <code>requiredType</code> 参数与实际得到的对象类型不同，会尝试进行类型转换</li>
+</ul>
+<h4 id="_7-销毁-bean"> 7. 销毁 bean</h4>
+<ul>
+<li>
+<p>销毁时机</p>
+<ul>
+<li>
+<p><code>singleton bean</code> 的销毁在 <code>ApplicationContext.close</code> 时，此时会找到所有 <code>DisposableBean</code> 的名字，逐一销毁</p>
+</li>
+<li>
+<p>自定义 <code>scope bean</code> 的销毁在作用域对象生命周期结束时</p>
+</li>
+<li>
+<p><code>prototype bean</code> 的销毁可以通过自己手动调用 <code>AutowireCapableBeanFactory.destroyBean</code> 方法执行销毁</p>
+</li>
+</ul>
+</li>
+<li>
+<p>同一 <code>bean</code> 中不同形式销毁方法的调用次序</p>
+<ul>
+<li>
+<p>优先后处理器销毁，即 <code>@PreDestroy</code></p>
+</li>
+<li>
+<p>其次 <code>DisposableBean</code> 接口销毁</p>
+</li>
+<li>
+<p>最后 <code>destroyMethod</code> 销毁（包括自定义名称，推断名称，<code>AutoCloseable</code> 接口 多选一）</p>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" type="image/png"/>
+    </item>
+    <item>
+      <title>中间件</title>
+      <link>https:/cloaks.cn/blogs/middleware/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/middleware/</guid>
+      <source url="https:/cloaks.cn/rss.xml">中间件</source>
+      <description>&amp;lt;p&amp;gt;简要介绍常见中间件&amp;lt;/p&amp;gt;
+</description>
+      <category>微服务</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>简要介绍常见中间件</p>
+
+<h2 id="redis"> Redis</h2>
+<h2 id="zookeeper"> Zookeeper</h2>
+<p><code>zookeeper</code> 是一个分布式服务框架，是 <code>Apache Hadoop</code> 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如：统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等。</p>
+<ul>
+<li>
+<p>结点类型：</p>
+<ul>
+<li>
+<p>临时节点：临时节点的生命周期和客户端会话绑定在一起，客户端会话失效，则这个节点就会被自动清除。</p>
+</li>
+<li>
+<p>永久节点：该数据节点被创建后，就会一直存在于 <code>zookeeper</code> 服务器上，直到有删除操作来主动删除这个节点。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用场景"> 使用场景</h3>
+<p>配置中心：配置中心，顾名思义就是将配置数据写到 <code>ZK</code> 节点上，供各个分布式机器获取配置，同时监听自己对应的节点。实现配置信息的集中式管理和动态更新。</p>
+<p>命名服务：在分布式系统中，通过使用命名服务，客户端应用能够根据指定名字来获取资源或服务的地址，提供者等信息。被命名的实体通常可以是集群中的机器，提供的服务地址，远程对象等等，这些我们都可以统称他们为名字(<code>Name</code>)。通过调用 <code>ZK</code> 提供的创建节点的 <code>API</code>，能够很容易创建一个全局唯一的 <code>path</code>，这个 <code>path</code> 就可以作为一个名称。</p>
+<p>分布式通知：<code>ZooKeeper</code> 的 <code>watcher</code> 注册与异步通知机制，能够很好的实现分布式环境下不同系统之间的通知与协调，实现对数据变更的实时处理。不同系统都对 <code>ZK</code> 上同一个 <code>znode</code> 进行注册，监听 <code>znode</code> 的变化（包括 <code>znode</code> 本身内容及子节点的)，其中一个系统 <code>update</code> 了 <code>znode</code>，那么另一个系统能够收到通知，并作出相应处理</p>
+<p>选主：利用 <code>ZooKeeper</code> 的一致性，能够保证在分布式高并发情况下节点创建的全局唯一性，即：同时有多个客户端请求创建 <code>/currentMaster</code> 节点，最终一定只有一个客户端请求能够创建成功。利用这个特性，就能很轻易的在分布式环境中进行集群选取了。</p>
+<p>分布式锁：分布式锁，这个主要得益于 <code>ZooKeeper</code> 的节点创建和事件监听机制。</p>
+<h2 id="rabbit-mq"> Rabbit MQ</h2>
+<p><code>Rabbit MQ</code> 是一个由 <code>erlang</code> 开发的 <code>AMQP（Advanced Message Queue）</code> 的开源实现</p>
+<h3 id="模块介绍"> 模块介绍</h3>
+<p><code>Broker</code>：可以简单理解为一台物理机器。</p>
+<p><code>Producer</code>：消息生产者，就是投递消息的程序。</p>
+<p><code>Consumer</code>：消息消费者，就是接受消息的程序。</p>
+<p><code>Exchange</code>：消息交换机，它指定消息按什么规则，路由到哪个队列。
+<code>fanout|direct|topic|headerQueue</code>：消息的载体，每个消息都会被投到一个或多个队列。</p>
+<p><code>Binding</code>：绑定，它的作用就是把 <code>exchange</code> 和 <code>queue</code> 按照路由规则绑定起来。</p>
+<p><code>Routing Key</code>：路由关键字，<code>exchange</code> 根据这个关键字进行消息投递。</p>
+<p><code>vhost</code>：虚拟主机，一个 <code>broker</code> 里可以有多个 <code>vhost</code>，用作不同用户的权限分离。</p>
+<h3 id="应用"> 应用</h3>
+<p>消息传递、异步处理、应用解耦、流量削峰</p>
+<h3 id="高可用"> 高可用</h3>
+<p>发送方：<code>confirm</code> 机制（发送成功后有异步通知）</p>
+<p>消费端：<code>ACK</code> 消息应答机制</p>
+<p><code>rabbit</code>：<code>queue</code> 持久化，消息持久化（<code>deliveryMode = 2</code>）</p>
+<h2 id="nginx"> Nginx</h2>
+<p><code>Nginx</code> 是一款轻量级的 <code>Web</code> 服务器/反向代理服务器及电子邮件<code>（IMAP/POP3)</code>代理服务器，在 <code>BSD-like</code> 协议下发行。其特点是占有内存少，并发能力强，事实上 <code>nginx</code> 的并发能力在同类型的网页服务器中几乎成为公认的标杆，在百度、京东、新浪、网易、腾讯、淘宝等互联网公司中均有应用。</p>
+<h3 id="动静分离"> 动静分离</h3>
+<p>静态资源：由 <code>nginx</code> 作为 <code>web</code> 服务器身份，直接返回</p>
+<p>动态资源：<code>nginx</code> 将请求转发出去，交给后端应用服务器处理</p>
+<h3 id="负载均衡"> 负载均衡</h3>
+<p>当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群提升并行处理能力。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。这时使用 <code>nginx</code> 实现了机器之间的负载均衡。</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>我的书屋</title>
-      <link>https:/cloaks.cn/book/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/book/</guid>
-      <source url="https:/cloaks.cn/rss.xml">我的书屋</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+      <title>计算机网络面试</title>
+      <link>https:/cloaks.cn/blogs/network/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/network/</guid>
+      <source url="https:/cloaks.cn/rss.xml">计算机网络面试</source>
+      <category>面试</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="osi七层模型"> OSI七层模型</h2>
+<h3 id="物理层"> 物理层</h3>
+<p>建立、维护、断开物理连接</p>
+<h3 id="数据链路层"> 数据链路层</h3>
+<p>建立逻辑连接、进行硬件地址寻址、差错校验</p>
+<h3 id="网络层"> 网络层</h3>
+<p>进行逻辑地址寻址，实现不同网络之间的路径选择</p>
+<h3 id="传输层"> 传输层</h3>
+<p>定义传输数据的协议端口号，以及流控和差错校验</p>
+<p>常见协议：<strong>TCP、UDP</strong></p>
+<p>数据包一旦离开网卡即进入网络传输层</p>
+<p><strong>TCP三次握手</strong></p>
+<p>所谓三次握手(Three-way Handshake)，是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。</p>
+<p>三次握手的目的是连接服务器指定端口，建立TCP连接,并同步连接双方的序列号和确认号并交换 TCP 窗口大小信息.在socket编程中，客户端执行connect()时。将触发三次握手。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" alt="" /></p>
+<p>第一次握手:
+客户端发送一个TCP的SYN标志位置1的包指明客户打算连接的服务器的端口，以及初始序号X,保存在包头的序列号(Sequence Number)字段里。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236854.png" alt="" /></p>
+<p>第二次握手:
+服务器发回确认包(ACK)应答。即SYN标志位和ACK标志位均为1同时，将确认序号(Acknowledgement Number)设置为客户的I S N加1以.即X+1。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237932.png" alt="" /></p>
+<p>第三次握手.
+客户端再次发送确认包(ACK) SYN标志位为0,ACK标志位为1.并且把服务器发来ACK的序号字段+1,放在确定字段中发送给对方.并且在数据段放写ISN的+1</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237689.png" alt="" /></p>
+<p><strong>TCP四次握手</strong></p>
+<p>TCP的连接的拆除需要发送四个包，因此称为四次挥手(four-way handshake)。客户端或服务器均可主动发起挥手动作，在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061235996.png" alt="" /></p>
+<h3 id="会话层"> 会话层</h3>
+<p>简历、管理、终止会话</p>
+<h3 id="表示层"> 表示层</h3>
+<p>数据表示、安全、压缩</p>
+<h3 id="应用层"> 应用层</h3>
+<p>网络服务与最终用户的一个接口</p>
+<h4 id="常见网络协议含义及端口"> 常见网络协议含义及端口</h4>
+<table>
+<thead>
+<tr>
+<th>协议</th>
+<th>含义</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FTP</td>
+<td>文件传输协议</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Telnet</td>
+<td>远程登陆</td>
+<td>23</td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td>简单邮件传输协议</td>
+<td>25</td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>邮件接收协议</td>
+<td>110</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>超文本传输协议</td>
+<td>80</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>域名解析</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<h4 id="http协议"> HTTP协议</h4>
+<h5 id="状态码"> 状态码</h5>
+<p>五类响应：1XX(信息类状态码) 2XX(成功状态码) 3XX(重定向状态码) 4XX(客户端错误状态码) 5XX(服务器错误状态码)</p>
+<p>常见状态码</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>204</td>
+<td>成功处理，报文不含内容</td>
+</tr>
+<tr>
+<td>206</td>
+<td>部分成功</td>
+</tr>
+<tr>
+<td>301</td>
+<td>永久性重定向</td>
+</tr>
+<tr>
+<td>302、307</td>
+<td>临时性重定向</td>
+</tr>
+<tr>
+<td>303</td>
+<td></td>
+</tr>
+<tr>
+<td>304</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>请求错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>需要HTTP认证信息</td>
+</tr>
+<tr>
+<td>403</td>
+<td>请求拒绝</td>
+</tr>
+<tr>
+<td>404</td>
+<td>未找到请求地址</td>
+</tr>
+<tr>
+<td>500</td>
+<td>执行请求错误</td>
+</tr>
+<tr>
+<td>503</td>
+<td>超负载、停机维护</td>
+</tr>
+</tbody>
+</table>
+<h5 id="请求头-响应头"> 请求头/响应头</h5>
+<div><pre><code><span>Content-Type</span><span>:</span> 
+<span>Accept</span><span>:</span> 
+<span>Origin</span><span>:</span> 
+<span>Cache-Control</span><span>:</span> 
+<span>Cookie</span><span>:</span> 
+<span>User-Agent</span><span>:</span> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML<span>,</span> like Gecko) Chrome/96.0.4664.45 Safari/537.36
+<span>Referer</span><span>:</span> 
+<span>X-Forwarded-For</span><span>:</span> 
+<span>Access-Control-Allow-Origin</span><span>:</span> 允许特定域名访问
+<span>Last-Modify</span><span>:</span> 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h5 id="请求方法"> 请求方法</h5>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>用于数据读取，幂等操作</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>向指定资源提交数据，非幂等操作</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>向服务器请求头信息</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>查看服务器支持HTTP请求方法，测试功能是否正常</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>请求服务器修改信息</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求服务器删除数据</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>请求服务器回显信息，测试诊断服务器状态</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>HTTP协议和GET和POST请求方法的区别</p>
+<ol>
+<li>
+<p>在进行后退操作时 GET 是无害的，但是 POST 请求会进行重新提交</p>
+</li>
+<li>
+<p>GET 可以收藏为书签，POST 不可以</p>
+</li>
+<li>
+<p>GET 可以被浏览器缓存，POST 不可以</p>
+</li>
+<li>
+<p>GET 可以被浏览器存到历史当中，POST 不可以</p>
+</li>
+<li>
+<p>GET URL限制为2038个字符，POST 没有限制</p>
+</li>
+<li>
+<p>GET 安全性较差</p>
+</li>
+</ol>
+</li>
+<li>
+<p>HTTPS 的工作原理</p>
+<ol>
+<li>
+<p>HTTPS 是一种基于 SSL/TLS 的 HTTP 协议，所有的HTTP数据都是在 SSL/TLS 协议封装之上传输的</p>
+</li>
+<li>
+<p>HTTPS 协议在 HTTP 协议的基础上，添加了 SSL/TLS 握手以及数据加密传输，也属于应用层协议</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
     </item>
     <item>
       <title>反转链表</title>
@@ -4733,16 +4691,758 @@ public class ListNode {
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>密码加密的文章</title>
-      <link>https:/cloaks.cn/guide/encrypt/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/guide/encrypt/</guid>
-      <source url="https:/cloaks.cn/rss.xml">密码加密的文章</source>
-      <category>使用指南</category>
-      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="密码加密的文章"> 密码加密的文章</h1>
-<p>实际的文章内容。</p>
-<p>段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字。</p>
-<p>段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字。</p>
+      <title>Spring</title>
+      <link>https:/cloaks.cn/blogs/spring/spring/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/spring/spring/</guid>
+      <source url="https:/cloaks.cn/rss.xml">Spring</source>
+      <description>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;Spring&amp;lt;/code&amp;gt; 是分层的 &amp;lt;code&amp;gt;JavaSE/EE&amp;lt;/code&amp;gt; 应用 &amp;lt;code&amp;gt;full-stack&amp;lt;/code&amp;gt; 轻量级开源框架&amp;lt;/p&amp;gt;
+</description>
+      <category>主流框架</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p><code>Spring</code> 是分层的 <code>JavaSE/EE</code> 应用 <code>full-stack</code> 轻量级开源框架</p>
+
+<h2 id="spring-体系结构"> Spring 体系结构</h2>
+<ul>
+<li>
+<p>底层：Beans、Core、Context、SpringEI表达式</p>
+</li>
+<li>
+<p>中间层技术：AOP、Aspects</p>
+</li>
+<li>
+<p>应用层技术：数据访问与数据集成、Web集成、Web实现</p>
+</li>
+<li>
+<p>基于 Test 测试</p>
+</li>
+</ul>
+<h2 id="spring-优势"> Spring 优势</h2>
+<ul>
+<li>
+<p>方便解耦，简化开发</p>
+</li>
+<li>
+<p>方便集成各种优秀框架</p>
+</li>
+<li>
+<p>方便程序的测试</p>
+</li>
+<li>
+<p>AOP 编程的支持</p>
+</li>
+<li>
+<p>声明式事务的支持</p>
+</li>
+<li>
+<p>降低 JavaEE API 的使用难度</p>
+</li>
+<li>
+<p><strong>Java 源码是经典学习范例</strong></p>
+</li>
+</ul>
+<h2 id="关于-ioc"> 关于 IoC</h2>
+<ul>
+<li>
+<p>IoC（Inversion Of Control）控制反转，Spring 反向控制应用程序所需要使用的外部资源</p>
+</li>
+<li>
+<p>Spring 控制的资源全部放置在 Spring 容器中，该容器称为 IoC 容器</p>
+</li>
+</ul>
+<h3 id="ioc-配置-xml-格式"> IoC 配置（XML 格式）</h3>
+<h4 id="bean"> Bean</h4>
+<ul>
+<li>
+<p>名称：bean</p>
+</li>
+<li>
+<p>类型：<strong>标签</strong></p>
+</li>
+<li>
+<p>归属：beans 标签</p>
+</li>
+<li>
+<p>作用：定义 spring 中的资源，受此标签定义的资源将受到 spring 控制</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>beans</span><span>></span></span>
+  <span><span><span>&lt;</span>bean</span> <span>/></span></span>
+<span><span><span>&lt;/</span>beans</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>基本属性：</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span> <span>id</span><span><span>=</span><span>"</span>beanId<span>"</span></span> <span>name</span><span><span>=</span><span>"</span>beanName1,beanName2<span>"</span></span> <span>class</span><span><span>=</span><span>"</span>ClassName<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><p>id：bean 的名称，通过 id 值获取 bean</p>
+<p>class：bean 的类型</p>
+<p>name：bean 的名称，可以通过 name 值获取 bean，用于多人配合时给 bean 起别名</p>
+</li>
+</ul>
+<h4 id="bean属性scope"> bean属性scope</h4>
+<ul>
+<li>
+<p>名称：scope</p>
+</li>
+<li>
+<p>类型：<strong>属性</strong></p>
+</li>
+<li>
+<p>归属：bean 标签</p>
+</li>
+<li>
+<p>作用：定义 bean 的作用范围</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span> <span>scope</span><span><span>=</span><span>"</span>singleton<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>取值：</p>
+<ul>
+<li>
+<p>singleton：设定创建出的对象保存在 spring 容器中，是一个单例的对象</p>
+</li>
+<li>
+<p>prototype：设定创建出的对象保存在 spring 容器中，是一个非单例的对象</p>
+</li>
+<li>
+<p>request、session、application、 websocket ：设定创建出的对象放置在 web 容器对应的位置</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean生命周期"> bean生命周期</h4>
+<ul>
+<li>
+<p>名称：init-method，destroy-method</p>
+</li>
+<li>
+<p>类型：<strong>属性</strong></p>
+</li>
+<li>
+<p>归属：bean 标签</p>
+</li>
+<li>
+<p>作用：定义 bean 对象在初始化或销毁时完成的工作</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code>&lt;bean init-method="init" destroy-method="destroy><span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>取值：bean 对应的类中对应的具体方法名</p>
+</li>
+<li>
+<p>注意事项：</p>
+<ul>
+<li>
+<p>当 scope=“singleton” 时，spring 容器中有且仅有一个对象，init 方法在创建容器时仅执行一次</p>
+</li>
+<li>
+<p>当 scope=“prototype” 时，spring容器要创建同一类型的多个对象，init 方法在每个对象创建时均执行一次</p>
+</li>
+<li>
+<p>当 scope=“singleton” 时，关闭容器会导致bean实例的销毁，调用 destroy 方法一次</p>
+</li>
+<li>
+<p>当 scope=“prototype” 时，对象的销毁由垃圾回收机制 gc() 控制，destroy 方法将不会被执行</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean对象创建方式-了解"> bean对象创建方式（了解）</h4>
+<ol>
+<li>factory-bean</li>
+</ol>
+<ul>
+<li>
+<p>名称：factory-bean</p>
+</li>
+<li>
+<p>类型：<strong>属性</strong></p>
+</li>
+<li>
+<p>归属：bean 标签</p>
+</li>
+<li>
+<p>作用：定义 bean 对象创建方式，使用静态工厂的形式创建 bean，兼容早期遗留系统的升级工作</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span> <span>class</span><span><span>=</span><span>"</span>FactoryClassName<span>"</span></span> <span>factory-method</span><span><span>=</span><span>"</span>factoryMethodName<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>取值：工厂 bean 中用于获取对象的静态方法名</p>
+</li>
+<li>
+<p>注意事项：</p>
+<ul>
+<li>class 属性必须配置成静态工厂的类名</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>factory-bean，factory-method</li>
+</ol>
+<ul>
+<li>
+<p>名称：factory-bean，factory-method</p>
+</li>
+<li>
+<p>类型：<strong>属性</strong></p>
+</li>
+<li>
+<p>归属：bean标签</p>
+</li>
+<li>
+<p>作用：定义 bean 对象创建方式，使用实例工厂的形式创建 bean，兼容早期遗留系统的升级工作</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span> <span>factory-bean</span><span><span>=</span><span>"</span>factoryBeanId<span>"</span></span> <span>factory-method</span><span><span>=</span><span>"</span>factoryMethodName<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>取值：工厂 bean 中用于获取对象的实例方法名</p>
+</li>
+<li>
+<p>注意事项：</p>
+<ul>
+<li>
+<p>使用实例工厂创建 bean 首先需要将实例工厂配置bean，交由 spring 进行管理</p>
+</li>
+<li>
+<p>factory-bean 是实例工厂的 beanId</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="di"> DI</h4>
+<ul>
+<li>
+<p>IoC（Inversion Of Control）控制翻转，Spring 反向控制应用程序所需要使用的外部资源</p>
+</li>
+<li>
+<p>DI（Dependency Injection）依赖注入，应用程序运行依赖的资源由 Spring 为其提供，资源进入应用程序的方式称为注入</p>
+</li>
+</ul>
+<h4 id="set注入-主流"> set注入（主流）</h4>
+<ul>
+<li>
+<p>名称：property</p>
+</li>
+<li>
+<p>类型：<strong>标签</strong></p>
+</li>
+<li>
+<p>归属：bean标签</p>
+</li>
+<li>
+<p>作用：使用 set 方法的形式为 bean 提供资源</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span>&lt;</span>bean<span>></span></span>
+  <span>&lt;</span>property <span>/</span><span>></span>
+<span>&lt;</span><span>/</span>bean<span>></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>基本属性：</p>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>propertyName<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>propertyValue<span>"</span></span> <span>ref</span><span><span>=</span><span>"</span>beanId<span>"</span></span><span>/></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><p>name：对应 bean 中的属性名，要求该属性必须提供可访问的 set 方法（严格规范为此名称是 set 方法对应名称）</p>
+<p>value：设定非引用类型属性对应的值，不能与 ref 同时使用</p>
+<p>ref：设定引用类型属性对应 bean 的 id ，不能与 value 同时使用</p>
+</li>
+<li>
+<p>注意：一个 bean 可以有多个 property 标签</p>
+</li>
+</ul>
+<h4 id="构造器注入"> 构造器注入</h4>
+<ul>
+<li>
+<p>名称：constructor-arg</p>
+</li>
+<li>
+<p>类型：<strong>标签</strong></p>
+</li>
+<li>
+<p>归属：bean 标签</p>
+</li>
+<li>
+<p>作用：使用构造方法的形式为 bean 提供资源，兼容早期遗留系统的升级工作</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span><span>></span></span>
+  <span><span><span>&lt;</span>constructor-arg</span> <span>/></span></span>
+<span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>基本属性：</p>
+<div><pre><code>&lt;constructor-arg name="argsName" value="argsValue />
+</code></pre>
+<div><span>1</span><br></div></div><p>name：对应 bean 中的构造方法所携带的参数名</p>
+<p>value：设定非引用类型构造方法参数对应的值，不能与 ref 同时使用</p>
+</li>
+</ul>
+<p>其他属性：</p>
+<div><pre><code><span><span><span>&lt;</span>constructor-arg</span> <span>index</span><span><span>=</span><span>"</span>arg-index<span>"</span></span> <span>type</span><span><span>=</span><span>"</span>arg-type<span>"</span></span> <span>ref</span><span><span>=</span><span>"</span>beanId<span>"</span></span><span>/></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><p>ref：设定引用类型构造方法参数对应 bean 的 id ，不能与 value 同时使用</p>
+<p>type ：设定构造方法参数的类型，用于按类型匹配参数或进行类型校验</p>
+<p>index ：设定构造方法参数的位置，用于按位置匹配参数，参数 index 值从 0 开始计数</p>
+<ul>
+<li>注意：一个 bean 可以有多个 constructor-arg 标签</li>
+</ul>
+<h4 id="集合类型数据注入"> 集合类型数据注入</h4>
+<ul>
+<li>
+<p>名称：array，list，set，map，props</p>
+</li>
+<li>
+<p>类型：<strong>标签</strong></p>
+</li>
+<li>
+<p>归属：property 标签或 constructor-arg 标签</p>
+</li>
+<li>
+<p>作用：注入集合数据类型属性</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>property</span><span>></span></span>
+  <span><span><span>&lt;</span>list</span><span>></span></span><span><span><span>&lt;/</span>list</span><span>></span></span>
+<span><span><span>&lt;/</span>property</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+</ul>
+<ol>
+<li>集合类型数据注入——list</li>
+</ol>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>al<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>list</span><span>></span></span>
+        <span><span><span>&lt;</span>value</span><span>></span></span>itheima<span><span><span>&lt;/</span>value</span><span>></span></span>
+        <span><span><span>&lt;</span>value</span><span>></span></span>66666<span><span><span>&lt;/</span>value</span><span>></span></span>
+    <span><span><span>&lt;/</span>list</span><span>></span></span>
+<span><span><span>&lt;/</span>property</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ol start="2">
+<li>集合类型数据注入——props</li>
+</ol>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>properties<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>props</span><span>></span></span>
+        <span><span><span>&lt;</span>prop</span> <span>key</span><span><span>=</span><span>"</span>name<span>"</span></span><span>></span></span>itheima666<span><span><span>&lt;/</span>prop</span><span>></span></span>
+        <span><span><span>&lt;</span>prop</span> <span>key</span><span><span>=</span><span>"</span>value<span>"</span></span><span>></span></span>666666<span><span><span>&lt;/</span>prop</span><span>></span></span>
+    <span><span><span>&lt;/</span>props</span><span>></span></span>
+<span><span><span>&lt;/</span>property</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ol start="3">
+<li>集合类型数据注入——array （了解）</li>
+</ol>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>arr<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>array</span><span>></span></span>
+        <span><span><span>&lt;</span>value</span><span>></span></span>123456<span><span><span>&lt;/</span>value</span><span>></span></span>
+        <span><span><span>&lt;</span>value</span><span>></span></span>66666<span><span><span>&lt;/</span>value</span><span>></span></span>
+    <span><span><span>&lt;/</span>array</span><span>></span></span>
+<span><span><span>&lt;/</span>property</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ol start="4">
+<li>集合类型数据注入——set（了解）</li>
+</ol>
+<div><pre><code> <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>hs<span>"</span></span><span>></span></span>
+     <span><span><span>&lt;</span>set</span><span>></span></span>
+         <span><span><span>&lt;</span>value</span><span>></span></span>itheima<span><span><span>&lt;/</span>value</span><span>></span></span>
+         <span><span><span>&lt;</span>value</span><span>></span></span>66666<span><span><span>&lt;/</span>value</span><span>></span></span>
+     <span><span><span>&lt;/</span>set</span><span>></span></span>
+<span><span><span>&lt;/</span>property</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><ol start="5">
+<li>集合类型数据注入——map（了解）</li>
+</ol>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>hm<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>map</span><span>></span></span>
+        <span><span><span>&lt;</span>entry</span> <span>key</span><span><span>=</span><span>"</span>name<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>itheima66666<span>"</span></span><span>/></span></span>
+        <span><span><span>&lt;</span>entry</span> <span>key</span><span><span>=</span><span>"</span>value<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>6666666666<span>"</span></span><span>/></span></span>
+    <span><span><span>&lt;/</span>map</span><span>></span></span>
+<span><span><span>&lt;/</span>property</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h4 id="使用p命名空间简化配置"> 使用p命名空间简化配置</h4>
+<ul>
+<li>
+<p>名称：p:propertyName，p:propertyName-ref</p>
+</li>
+<li>
+<p>类型：<strong>属性</strong></p>
+</li>
+<li>
+<p>归属：bean标签</p>
+</li>
+<li>
+<p>作用：为 bean 注入属性值</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span> <span><span>p:</span>propertyName</span><span><span>=</span><span>"</span>propertyValue<span>"</span></span> <span><span>p:</span>propertyName-ref</span><span><span>=</span><span>"</span>beanId<span>"</span></span><span>/></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>注意：使用 p 命令空间需要先开启 spring 对 p 命令空间的的支持，在 beans 标签中添加对应空间支持</p>
+<div><pre><code><span><span><span>&lt;</span>beans</span> <span>xmlns</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/beans<span>"</span></span>    <span><span>xmlns:</span>xsi</span><span><span>=</span><span>"</span>http://www.w3.org/2001/XMLSchema-instance<span>"</span></span>    <span><span>xmlns:</span>p</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/p<span>"</span></span>       <span><span>xsi:</span>schemaLocation</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/beans     https://www.springframework.org/schema/beans/spring-beans.xsd<span>"</span></span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><p>后续课程中还将开启其他的命名空间，方式同上</p>
+</li>
+<li>
+<p>案例：</p>
+<div><pre><code> <span><span><span>&lt;</span>bean</span>
+       <span>id</span><span><span>=</span><span>"</span>userService<span>"</span></span>
+       <span>class</span><span><span>=</span><span>"</span>com.itheima.service.impl.UserServiceImpl<span>"</span></span>
+       <span><span>p:</span>userDao-ref</span><span><span>=</span><span>"</span>userDao<span>"</span></span>
+       <span><span>p:</span>bookDao-ref</span><span><span>=</span><span>"</span>bookDao<span>"</span></span>
+       <span>/></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
+</ul>
+<h4 id="spel"> SpEL</h4>
+<ul>
+<li>
+<p>Spring 提供了对 EL 表达式的支持，统一属性注入格式</p>
+</li>
+<li>
+<p>类型：<strong>属性值</strong></p>
+</li>
+<li>
+<p>归属：value 属性值</p>
+</li>
+<li>
+<p>作用：为 bean 注入属性值</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>value</span><span><span>=</span><span>"</span>EL<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>注意：所有属性值不区分是否引用类型，统一使用 value 赋值</p>
+</li>
+<li>
+<p>所有格式统一使用  value = “********”</p>
+<ul>
+<li>
+<p>常量  #{10}  #{3.14}  #{2e5}  #{‘itcast’}</p>
+</li>
+<li>
+<p>引用 bean  #{beanId}</p>
+</li>
+<li>
+<p>引用 bean 属性  #{beanId.propertyName}</p>
+</li>
+<li>
+<p>引用 bean 方法  beanId.methodName().method2()</p>
+</li>
+<li>
+<p>引用静态方法  T(java.lang.Math).PI</p>
+</li>
+<li>
+<p>运算符支持  #{3 lt 4 == 4 ge 3}</p>
+</li>
+<li>
+<p>正则表达式支持  #{user.name matches‘[a-z]{6,}’}</p>
+</li>
+<li>
+<p>集合支持  #{likes[3]}</p>
+</li>
+</ul>
+</li>
+<li>
+<p>案例：</p>
+<div><pre><code> <span><span><span>&lt;</span>bean</span> <span>id</span><span><span>=</span><span>"</span>userService<span>"</span></span> <span>class</span><span><span>=</span><span>"</span>com.itheima.service.impl.UserServiceImpl<span>"</span></span><span>></span></span>
+     <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>userDao<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>#{userDao}<span>"</span></span><span>/></span></span>
+     <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>bookDao<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>#{bookDao}<span>"</span></span><span>/></span></span>
+     <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>num<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>#{666666666}<span>"</span></span><span>/></span></span>
+     <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>version<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>#{<span>'</span>itcast<span>'</span>}<span>"</span></span><span>/></span></span>
+<span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
+</ul>
+<h4 id="properties文件"> properties文件</h4>
+<ul>
+<li>
+<p>Spring 提供了读取外部 properties 文件的机制，使用读取到的数据为 bean 的属性赋值</p>
+</li>
+<li>
+<p>操作步骤</p>
+<p>1.准备外部 properties 文件</p>
+<p>2.开启 context 命名空间支持</p>
+<div><pre><code><span><span><span>&lt;</span>beans</span> <span>xmlns</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/beans<span>"</span></span>
+     <span><span>xmlns:</span>xsi</span><span><span>=</span><span>"</span>http://www.w3.org/2001/XMLSchema-instance<span>"</span></span>
+     <span><span>xmlns:</span>p</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/p<span>"</span></span>
+     <span><span>xmlns:</span>context</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/context<span>"</span></span>
+     <span><span>xsi:</span>schemaLocation</span><span><span>=</span><span>"</span>http://www.springframework.org/schema/beans
+      https://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context
+      https://www.springframework.org/schema/context/spring-context.xsd<span>"</span></span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>3.加载指定的 properties 文件</p>
+<div><pre><code><span><span><span>&lt;</span><span>context:</span>property-placeholder</span> <span>location</span><span><span>=</span><span>"</span>classpath:*.properties<span>"</span></span><span>></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><p>4.使用加载的数据</p>
+<div><pre><code><span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>propertyName<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>${propertiesName}<span>"</span></span><span>/></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>注意：如果需要加载所有的 properties 文件，可以使用<code>*.properties</code>表示加载所有的 properties 文件</p>
+</li>
+<li>
+<p>注意：读取数据使用**${propertiesName}<strong>格式进行，其中</strong>propertiesName**指 properties 文件中的属性名</p>
+</li>
+</ul>
+<h4 id="团队开发"> 团队开发</h4>
+<ul>
+<li>
+<p>名称：import</p>
+</li>
+<li>
+<p>类型：<strong>标签</strong></p>
+</li>
+<li>
+<p>归属：beans 标签</p>
+</li>
+<li>
+<p>作用：在当前配置文件中导入其他配置文件中的项</p>
+</li>
+<li>
+<p>格式：</p>
+<div><pre><code><span><span><span>&lt;</span>beans</span><span>></span></span>
+    <span><span><span>&lt;</span>import</span> <span>/></span></span>
+<span><span><span>&lt;/</span>beans</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>基本属性：</p>
+<div><pre><code>&lt;import resource=“config.xml"/>
+</code></pre>
+<div><span>1</span><br></div></div><p>resource：加载的配置文件名</p>
+</li>
+<li>
+<p>Spring 容器加载多个配置文件</p>
+<div><pre><code><span>new</span> <span>ClassPathXmlApplicationContext</span><span>(</span><span>"config1.xml"</span><span>,</span><span>"config2.xml"</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>Spring 容器中的 bean 定义冲突问题</p>
+<ul>
+<li>
+<p>同 id 的 bean，后定义的覆盖先定义的</p>
+</li>
+<li>
+<p>导入配置文件可以理解为将导入的配置文件复制粘贴到对应位置</p>
+</li>
+<li>
+<p>导入配置文件的顺序与位置不同可能会导致最终程序运行结果不同</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="applicationcontext"> ApplicationContext</h4>
+<ol>
+<li>
+<p><code>ApplicationContext</code> 是一个接口，提供了访问 spring 容器的 API</p>
+</li>
+<li>
+<p><code>ClassPathXmlApplicationContext</code> 是一个类，实现了上述功能</p>
+</li>
+<li>
+<p><code>ApplicationContext</code> 的顶层接口是 <code>BeanFactory</code></p>
+</li>
+<li>
+<p><code>BeanFactory</code> 定义了 bean 相关的最基本操作</p>
+</li>
+<li>
+<p><code>ApplicationContext</code> 在 <code>BeanFactory</code> 基础上追加了若干新功能</p>
+</li>
+</ol>
+<p><strong>对比BeanFactory</strong></p>
+<ol>
+<li>
+<p><code>BeanFactory</code> 创建的 bean 采用延迟加载形式，使用才创建</p>
+</li>
+<li>
+<p><code>ApplicationContext</code> 创建的 bean 默认采用立即加载形式</p>
+</li>
+</ol>
+<p><strong>FileSystemXmlApplicationContext</strong></p>
+<p>可以加载文件系统中任意位置的配置文件，而 <code>ClassPathXmlApplicationContext</code> 只能加载类路径下的配置文件</p>
+<p><strong>BeanFactory</strong></p>
+<div><pre><code><span>Resource</span> res <span>=</span> <span>new</span> <span>ClassPathResource</span><span>(</span><span>"applicationContext.xml"</span><span>)</span><span>;</span>
+<span>BeanFactory</span> bf <span>=</span> <span>new</span> <span>XmlBeanFactory</span><span>(</span>res<span>)</span><span>;</span>
+<span>UserService</span> userService <span>=</span> <span>(</span><span>UserService</span><span>)</span>bf<span>.</span><span>getBean</span><span>(</span><span>"userService"</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h4 id="第三方资源配置"> 第三方资源配置</h4>
+<ul>
+<li>
+<p>阿里数据源方案 Druid</p>
+<div><pre><code><span><span><span>&lt;</span>bean</span> <span>id</span><span><span>=</span><span>"</span>dataSource<span>"</span></span> <span>class</span><span><span>=</span><span>"</span>com.alibaba.druid.pool.DruidDataSource<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>driverClassName<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>com.mysql.jdbc.Driver<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>property</span><span>></span></span>
+    <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>url<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>jdbc:mysql://localhost:3306/spring_ioc<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>property</span><span>></span></span>
+    <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>username<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>root<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>property</span><span>></span></span>
+    <span><span><span>&lt;</span>property</span> <span>name</span><span><span>=</span><span>"</span>password<span>"</span></span> <span>value</span><span><span>=</span><span>"</span>root<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>property</span><span>></span></span>
+<span><span><span>&lt;/</span>bean</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
+</ul>
+<h3 id="综合案例"> 综合案例</h3>
+<h4 id="案例介绍"> 案例介绍</h4>
+<ul>
+<li>
+<p>使用 spring 整合 mybatis 技术，完成账户模块（Account）的基础增删改查功能</p>
+</li>
+<li>
+<p>账户模块对应字段</p>
+<ul>
+<li>
+<p>编号：id</p>
+</li>
+<li>
+<p>账户名：name</p>
+</li>
+<li>
+<p>余额：money</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="案例分析"> 案例分析</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">非 spring 环境</th>
+<th style="text-align:left">spring环境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1. 实体类与表<br/>2. 业务层接口与实现<br/>3. 数据层接口<br/>4. Mybatis 核心配置<br/>5. Mybatis 映射配置<br/>6. 客户端程序测试功能</td>
+<td style="text-align:left">1. 实体类与表<br/>2. 业务层接口与实现（提供数据层接口的注入操作）<br/>3. 数据层接口<br/>4. Mybatis 核心配置（交给 spring 控制，该文件省略）<br/>5. Mybatis 映射配置<br/>6. 客户端程序测试功能（使用 spring 方式获取 bean）<br/>7. Spring 核心配置文件<br/>8. Druid 数据源的应用（可选）<br/>9. Spring 整合 MyBatis</td>
+</tr>
+</tbody>
+</table>
+<h4 id="案例制作步骤-基础准备工作"> 案例制作步骤——基础准备工作</h4>
+<ul>
+<li>
+<p>环境准备</p>
+<ol>
+<li>导入 Spring 坐标，MyBatis 坐标，MySQL 坐标，Druid 坐标</li>
+</ol>
+</li>
+<li>
+<p>业务类与接口准备</p>
+<ol start="2">
+<li>
+<p>创建数据库表，并制作相应的实体类 Account</p>
+</li>
+<li>
+<p>定义业务层接口与数据层接口</p>
+</li>
+<li>
+<p>在业务层调用数据层接口，并实现业务方法的调用</p>
+</li>
+</ol>
+</li>
+<li>
+<p>基础配置文件</p>
+<ol start="5">
+<li>
+<p>jdbc.properties</p>
+</li>
+<li>
+<p>MyBatis 映射配置文件</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="案例制作步骤-整合准备工作"> 案例制作步骤——整合准备工作</h4>
+<ul>
+<li>
+<p>整合前基础准备工作</p>
+<ol>
+<li>
+<p>spring 配置文件，加上 context 命名空间，用于加载 properties 文件</p>
+</li>
+<li>
+<p>开启加载 properties 文件</p>
+</li>
+<li>
+<p>配置数据源 druid（备用）</p>
+</li>
+<li>
+<p>定义 service 层 bean，注入 dao 层 bean</p>
+</li>
+<li>
+<p>dao 的 bean 无需定义，使用代理自动生成</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="案例制作步骤-整合工作"> 案例制作步骤——整合工作</h4>
+<ul>
+<li>
+<p>整合工作</p>
+<ol>
+<li>
+<p>导入 Spring 整合 MyBatis 坐标</p>
+</li>
+<li>
+<p>将 mybatis 配置成 spring 管理的 bean（SqlSessionFactoryBean）</p>
+<p>将原始配置文件中的所有项，转入到当前配置中</p>
+<p>数据源转换</p>
+<p>映射转换</p>
+</li>
+<li>
+<p>通过 spring 加载 mybatis 的映射配置文件到 spring 环境中</p>
+</li>
+<li>
+<p>设置类型别名</p>
+</li>
+</ol>
+</li>
+<li>
+<p>测试结果</p>
+<ol start="5">
+<li>使用 spring 环境加载业务层 bean，执行操作</li>
+</ol>
+</li>
+</ul>
+<h4 id="小节"> 小节</h4>
+<ul>
+<li>
+<p>需要专用的 spring 整合 mybatis 的 jar 包</p>
+</li>
+<li>
+<p>Mybatis 核心配置文件消失</p>
+<ul>
+<li>
+<p>环境 environment 转换成数据源对象</p>
+</li>
+<li>
+<p>映射 Mapper 扫描工作交由 spring 处理</p>
+</li>
+<li>
+<p>类型别名交由 spring 处理</p>
+</li>
+</ul>
+</li>
+<li>
+<p>业务发起使用 spring 上下文对象获取对应的 bean</p>
+</li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -4874,45 +5574,11 @@ c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></spa
 ]]></content:encoded>
     </item>
     <item>
-      <title>主要功能与配置演示</title>
-      <link>https:/cloaks.cn/guide/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/guide/</guid>
-      <source url="https:/cloaks.cn/rss.xml">主要功能与配置演示</source>
-      <category>使用指南</category>
-      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="主要功能与配置演示"> 主要功能与配置演示</h1>
-<ul>
-<li>
-<p><a href="./page.html">页面展示</a></p>
-</li>
-<li>
-<p><a href="./markdown.html">Markdown 展示</a></p>
-</li>
-<li>
-<p><a href="./disable.html">禁用展示</a></p>
-</li>
-<li>
-<p><a href="./encrypt.html">加密展示</a></p>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>主页</title>
-      <link>https:/cloaks.cn/project/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/project/</guid>
-      <source url="https:/cloaks.cn/rss.xml">主页</source>
+      <title>我的书屋</title>
+      <link>https:/cloaks.cn/book/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/book/</guid>
+      <source url="https:/cloaks.cn/rss.xml">我的书屋</source>
       <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>主页</title>
-      <link>https:/cloaks.cn/project/redPacket/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/project/redPacket/</guid>
-      <source url="https:/cloaks.cn/rss.xml">主页</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="项目介绍"> 项目介绍</h2>
-<p>关于项目介绍我有很多话想说</p>
-]]></content:encoded>
     </item>
     <item>
       <title>页面配置</title>
@@ -4961,6 +5627,19 @@ c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></spa
 <li>评论</li>
 <li>页脚</li>
 </ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>密码加密的文章</title>
+      <link>https:/cloaks.cn/guide/encrypt/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/guide/encrypt/</guid>
+      <source url="https:/cloaks.cn/rss.xml">密码加密的文章</source>
+      <category>使用指南</category>
+      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="密码加密的文章"> 密码加密的文章</h1>
+<p>实际的文章内容。</p>
+<p>段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字。</p>
+<p>段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -5421,6 +6100,37 @@ $$
 ]]></content:encoded>
     </item>
     <item>
+      <title>主要功能与配置演示</title>
+      <link>https:/cloaks.cn/guide/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/guide/</guid>
+      <source url="https:/cloaks.cn/rss.xml">主要功能与配置演示</source>
+      <category>使用指南</category>
+      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="主要功能与配置演示"> 主要功能与配置演示</h1>
+<ul>
+<li>
+<p><a href="./page.html">页面展示</a></p>
+</li>
+<li>
+<p><a href="./markdown.html">Markdown 展示</a></p>
+</li>
+<li>
+<p><a href="./disable.html">禁用展示</a></p>
+</li>
+<li>
+<p><a href="./encrypt.html">加密展示</a></p>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>主页</title>
+      <link>https:/cloaks.cn/project/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/project/</guid>
+      <source url="https:/cloaks.cn/rss.xml">主页</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+    </item>
+    <item>
       <title>自定义布局</title>
       <link>https:/cloaks.cn/layout/</link>
       <guid isPermaLink="false">https:/cloaks.cn/layout/</guid>
@@ -5451,6 +6161,16 @@ $$
       <guid isPermaLink="false">https:/cloaks.cn/</guid>
       <source url="https:/cloaks.cn/rss.xml">博客主页</source>
       <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
+    </item>
+    <item>
+      <title>主页</title>
+      <link>https:/cloaks.cn/project/redPacket/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/project/redPacket/</guid>
+      <source url="https:/cloaks.cn/rss.xml">主页</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="项目介绍"> 项目介绍</h2>
+<p>关于项目介绍我有很多话想说</p>
+]]></content:encoded>
     </item>
     <item>
       <title>幻灯片页</title>
