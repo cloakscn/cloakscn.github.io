@@ -6,14 +6,14 @@
     <link>https:/cloaks.cn/</link>
     <description>热爱技术，乐于分享！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 22 Jan 2022 16:48:26 GMT</pubDate>
-    <lastBuildDate>Sat, 22 Jan 2022 16:48:26 GMT</lastBuildDate>
+    <pubDate>Sun, 23 Jan 2022 15:37:29 GMT</pubDate>
+    <lastBuildDate>Sun, 23 Jan 2022 15:37:29 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright by Cloaks</copyright>
     <category>英语</category>
-    <category>心得</category>
     <category>微服务</category>
+    <category>心得</category>
     <category>力扣</category>
     <category>面试</category>
     <category>主流框架</category>
@@ -55,84 +55,6 @@ acquiring 获得</p>
 <h2 id="写作"> 写作</h2>
 ]]></content:encoded>
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201091942261.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>如何快速提高 Coding Quality</title>
-      <link>https:/cloaks.cn/blogs/codingQuality/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/codingQuality/</guid>
-      <source url="https:/cloaks.cn/rss.xml">如何快速提高 Coding Quality</source>
-      <category>心得</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>程序员的代码就是自己的脸面，比自己张什么样更重要！</p>
-</blockquote>
-<h2 id="coding-style"> Coding Style</h2>
-<ol>
-<li>
-<p>二元运算符两边加空格，单元运算符不加空格</p>
-</li>
-<li>
-<p>花括号和 <code>for, if</code> 之间要加空格（Java），圆括号和 <code>if</code> 之间要加空格</p>
-</li>
-<li>
-<p>用空行分隔开不同的逻辑块</p>
-</li>
-<li>
-<p>逗号后面加空格</p>
-</li>
-</ol>
-<h2 id="readability"> Readability</h2>
-<ol>
-<li>
-<p>函数名和变量名用1-2个单词作为名称</p>
-</li>
-<li>
-<p>确保一个函数内部不超过3层缩进（indention）</p>
-</li>
-<li>
-<p>多用子函数来减少入口函数的代码量</p>
-</li>
-<li>
-<p>多用 <code>continue</code> 少用 <code>if</code></p>
-<div><pre><code> <span># 范例一：</span>
- <span>if</span> a<span>:</span>
-     <span>.</span><span>.</span><span>.</span>
-     <span>if</span> b<span>:</span>
-        <span>.</span><span>.</span><span>.</span>
-
- <span># 优化后减少嵌套</span>
- <span>if</span> !a<span>:</span>
-     <span>continue</span>
- <span>.</span><span>.</span><span>.</span>
- <span>if</span> !b<span>:</span>
-     <span>continue</span>
-
- <span># 范例二：</span>
- <span>if</span> a<span>:</span>
-     <span>.</span><span>.</span><span>.</span> <span># 假设此处有1000行逻辑</span>
- <span># 优化后</span>
- <span>if</span> !a<span>:</span>
-     <span>continue</span>
- <span>.</span><span>.</span><span>.</span> <span># 这样优化有可提高运行效率</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div></li>
-</ol>
-<h2 id="bug-free"> Bug Free</h2>
-<ol>
-<li>
-<p>不管有没有可能出问题，都要对入口函数的参数进行异常检测</p>
-</li>
-<li>
-<p>访问一个下表的时候，一定要确保这个下标不会越界</p>
-</li>
-<li>
-<p>访问一个对象的属性或者方法时，一定要确保这个对象不是空</p>
-</li>
-<li>
-<p>不用全局变量</p>
-</li>
-</ol>
-]]></content:encoded>
     </item>
     <item>
       <title>链表</title>
@@ -300,6 +222,1143 @@ acquiring 获得</p>
 <span>docker</span> run   --name jenkins-blueocean   -d   -p <span>8080</span>:8080   -p <span>50000</span>:50000   -v jenkins-data:/opt/data/jenkins_home   jenkinsci/blueocean
 </code></pre>
 <div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>如何快速提高 Coding Quality</title>
+      <link>https:/cloaks.cn/blogs/codingQuality/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/codingQuality/</guid>
+      <source url="https:/cloaks.cn/rss.xml">如何快速提高 Coding Quality</source>
+      <category>心得</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>程序员的代码就是自己的脸面，比自己张什么样更重要！</p>
+</blockquote>
+<h2 id="coding-style"> Coding Style</h2>
+<ol>
+<li>
+<p>二元运算符两边加空格，单元运算符不加空格</p>
+</li>
+<li>
+<p>花括号和 <code>for, if</code> 之间要加空格（Java），圆括号和 <code>if</code> 之间要加空格</p>
+</li>
+<li>
+<p>用空行分隔开不同的逻辑块</p>
+</li>
+<li>
+<p>逗号后面加空格</p>
+</li>
+</ol>
+<h2 id="readability"> Readability</h2>
+<ol>
+<li>
+<p>函数名和变量名用1-2个单词作为名称</p>
+</li>
+<li>
+<p>确保一个函数内部不超过3层缩进（indention）</p>
+</li>
+<li>
+<p>多用子函数来减少入口函数的代码量</p>
+</li>
+<li>
+<p>多用 <code>continue</code> 少用 <code>if</code></p>
+<div><pre><code> <span># 范例一：</span>
+ <span>if</span> a<span>:</span>
+     <span>.</span><span>.</span><span>.</span>
+     <span>if</span> b<span>:</span>
+        <span>.</span><span>.</span><span>.</span>
+
+ <span># 优化后减少嵌套</span>
+ <span>if</span> !a<span>:</span>
+     <span>continue</span>
+ <span>.</span><span>.</span><span>.</span>
+ <span>if</span> !b<span>:</span>
+     <span>continue</span>
+
+ <span># 范例二：</span>
+ <span>if</span> a<span>:</span>
+     <span>.</span><span>.</span><span>.</span> <span># 假设此处有1000行逻辑</span>
+ <span># 优化后</span>
+ <span>if</span> !a<span>:</span>
+     <span>continue</span>
+ <span>.</span><span>.</span><span>.</span> <span># 这样优化有可提高运行效率</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div></li>
+</ol>
+<h2 id="bug-free"> Bug Free</h2>
+<ol>
+<li>
+<p>不管有没有可能出问题，都要对入口函数的参数进行异常检测</p>
+</li>
+<li>
+<p>访问一个下表的时候，一定要确保这个下标不会越界</p>
+</li>
+<li>
+<p>访问一个对象的属性或者方法时，一定要确保这个对象不是空</p>
+</li>
+<li>
+<p>不用全局变量</p>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>英语</title>
+      <link>https:/cloaks.cn/blogs/english/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/english/</guid>
+      <source url="https:/cloaks.cn/rss.xml">英语</source>
+      <category>英语</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="美文摘抄"> 美文摘抄</h2>
+<ol>
+<li>
+<p>Attitude, not aptitude, determines altitude.</p>
+<p>决定高度的是态度，而不是能力。</p>
+</li>
+<li>
+<p>Strong reasons make strong actions.</p>
+<p>强有力的理由产生强有力的行动。</p>
+</li>
+<li>
+<p>Until that shift takes place, the global recovery will be fragile and probably quit feeble.</p>
+<p>在这样的变化发生之前，全球的经济复苏都将是脆弱的和无力的。</p>
+</li>
+</ol>
+<h2 id="写作模板"> 写作模板</h2>
+<ol>
+<li>
+<p>Examples abound. // For instance, 例一 // Similarly, 例二 // Likewise, 例三... // In nutshell</p>
+<p>例子有很多，首先，同样的，类似还有，总之</p>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>并发篇</title>
+      <link>https:/cloaks.cn/blogs/interview/%E5%B9%B6%E5%8F%91%E7%AF%87/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E5%B9%B6%E5%8F%91%E7%AF%87/</guid>
+      <source url="https:/cloaks.cn/rss.xml">并发篇</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="并发篇"> 并发篇</h1>
+<h2 id="线程状态"> 线程状态</h2>
+<h3 id="要求"> 要求</h3>
+<ol>
+<li>
+<p>掌握 Java 线程六种状态</p>
+</li>
+<li>
+<p>掌握 Java 线程状态转换</p>
+</li>
+<li>
+<p>能理解五种状态与六种状态两种说法的区别</p>
+</li>
+</ol>
+<h3 id="六种状态及转换"> 六种状态及转换</h3>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201040920672.png" alt="" /></p>
+<p>分别是</p>
+<ol>
+<li>
+<p>新建</p>
+<ol>
+<li>
+<p>当一个线程对象被创建，但还未调用 start 方法时处于<strong>新建</strong>状态</p>
+</li>
+<li>
+<p>此时未与操作系统底层线程关联</p>
+</li>
+</ol>
+</li>
+<li>
+<p>可运行</p>
+<ol>
+<li>
+<p>调用了 start 方法，就会由<strong>新建</strong>进入<strong>可运行</strong></p>
+</li>
+<li>
+<p>此时与底层线程关联，由操作系统调度执行</p>
+</li>
+</ol>
+</li>
+<li>
+<p>终结</p>
+<ol>
+<li>
+<p>线程内代码已经执行完毕，由<strong>可运行</strong>进入<strong>终结</strong></p>
+</li>
+<li>
+<p>此时会取消与底层线程关联</p>
+</li>
+</ol>
+</li>
+<li>
+<p>阻塞</p>
+<ol>
+<li>
+<p>当获取锁失败后，由<strong>可运行</strong>进入 Monitor 的阻塞队列<strong>阻塞</strong>，此时不占用 cpu 时间</p>
+</li>
+<li>
+<p>当持锁线程释放锁时，会按照一定规则唤醒阻塞队列中的<strong>阻塞</strong>线程，唤醒后的线程进入<strong>可运行</strong>状态</p>
+</li>
+</ol>
+</li>
+<li>
+<p>等待</p>
+<ol>
+<li>
+<p>当获取锁成功后，但由于条件不满足，调用了 wait() 方法，此时从<strong>可运行</strong>状态释放锁进入 Monitor 等待集合<strong>等待</strong>，同样不占用 cpu 时间</p>
+</li>
+<li>
+<p>当其它持锁线程调用 notify() 或 notifyAll() 方法，会按照一定规则唤醒等待集合中的<strong>等待</strong>线程，恢复为<strong>可运行</strong>状态</p>
+</li>
+</ol>
+</li>
+<li>
+<p>有时限等待</p>
+<ol>
+<li>
+<p>当获取锁成功后，但由于条件不满足，调用了 wait(long) 方法，此时从<strong>可运行</strong>状态释放锁进入 Monitor 等待集合进行<strong>有时限等待</strong>，同样不占用 cpu 时间</p>
+</li>
+<li>
+<p>当其它持锁线程调用 notify() 或 notifyAll() 方法，会按照一定规则唤醒等待集合中的<strong>有时限等待</strong>线程，恢复为<strong>可运行</strong>状态，并重新去竞争锁</p>
+</li>
+<li>
+<p>如果等待超时，也会从<strong>有时限等待</strong>状态恢复为<strong>可运行</strong>状态，并重新去竞争锁</p>
+</li>
+<li>
+<p>还有一种情况是调用 sleep(long) 方法也会从<strong>可运行</strong>状态进入<strong>有时限等待</strong>状态，但与 Monitor 无关，不需要主动唤醒，超时时间到自然恢复为<strong>可运行</strong>状态</p>
+</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p><em><strong>其它情况（只需了解）</strong></em></p>
+<ul>
+<li>可以用 interrupt() 方法打断<strong>等待</strong>、<strong>有时限等待</strong>的线程，让它们恢复为<strong>可运行</strong>状态</li>
+<li>park，unpark 等方法也可以让线程等待和唤醒</li>
+</ul>
+</blockquote>
+<h3 id="五种状态"> 五种状态</h3>
+<p>五种状态的说法来自于操作系统层面的划分</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201040920941.png" alt="" /></p>
+<ol>
+<li>
+<p>运行态：分到 cpu 时间，能真正执行线程内代码的</p>
+</li>
+<li>
+<p>就绪态：有资格分到 cpu 时间，但还未轮到它的</p>
+</li>
+<li>
+<p>阻塞态：没资格分到 cpu 时间的</p>
+<ol>
+<li>
+<p>涵盖了 java 状态中提到的<strong>阻塞</strong>、<strong>等待</strong>、<strong>有时限等待</strong></p>
+</li>
+<li>
+<p>多出了阻塞 I/O，指线程在调用阻塞 I/O 时，实际活由 I/O 设备完成，此时线程无事可做，只能干等</p>
+</li>
+<li>
+<p>新建与终结态：与 java 中同名状态类似，不再啰嗦</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="线程池"> 线程池</h2>
+<h3 id="要求-2"> 要求</h3>
+<ol>
+<li>掌握线程池的 7 大核心参数</li>
+</ol>
+<h3 id="七大参数"> 七大参数</h3>
+<ol>
+<li>
+<p>corePoolSize 核心线程数目 - 池中会保留的最多线程数</p>
+</li>
+<li>
+<p>maximumPoolSize 最大线程数目 - 核心线程+救急线程的最大数目</p>
+</li>
+<li>
+<p>keepAliveTime 生存时间 - 救急线程的生存时间，生存时间内没有新任务，此线程资源会释放</p>
+</li>
+<li>
+<p>unit 时间单位 - 救急线程的生存时间单位，如秒、毫秒等</p>
+</li>
+<li>
+<p>workQueue - 当没有空闲核心线程时，新来任务会加入到此队列排队，队列满会创建救急线程执行任务</p>
+</li>
+<li>
+<p>threadFactory 线程工厂 - 可以定制线程对象的创建，例如设置线程名字、是否是守护线程等</p>
+</li>
+<li>
+<p>handler 拒绝策略 - 当所有线程都在繁忙，workQueue 也放满时，会触发拒绝策略</p>
+<ol>
+<li>
+<p>抛异常 java.util.concurrent.ThreadPoolExecutor.AbortPolicy</p>
+</li>
+<li>
+<p>由调用者执行任务 java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy</p>
+</li>
+<li>
+<p>丢弃任务 java.util.concurrent.ThreadPoolExecutor.DiscardPolicy</p>
+</li>
+<li>
+<p>丢弃最早排队任务 java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201040921944.png" alt="" /></p>
+<h2 id="wait-vs-sleep"> wait vs sleep</h2>
+<h3 id="要求-3"> 要求</h3>
+<ol>
+<li>能够说出二者区别</li>
+</ol>
+<h3 id="一个共同点-三个不同点"> 一个共同点，三个不同点</h3>
+<p>共同点</p>
+<ol>
+<li>wait() ，wait(long) 和 sleep(long) 的效果都是让当前线程暂时放弃 CPU 的使用权，进入<strong>阻塞</strong>状态</li>
+</ol>
+<p>不同点</p>
+<ol>
+<li>
+<p>方法归属不同</p>
+<ol>
+<li>
+<p><code>sleep(long)</code> 是 <code>Thread</code> 的静态方法</p>
+</li>
+<li>
+<p>而 <code>wait()</code>，<code>wait(long)</code> 都是 <code>Object</code> 的成员方法，每个对象都有</p>
+</li>
+</ol>
+</li>
+<li>
+<p>醒来时机不同</p>
+<ol>
+<li>
+<p>执行 <code>sleep(long)</code> 和 <code>wait(long)</code> 的线程都会在等待相应毫秒后醒来</p>
+</li>
+<li>
+<p><code>wait(long)</code> 和 <code>wait()</code> 还可以被 <code>notify</code> 唤醒，<code>wait()</code> 如果不唤醒就一直等下去</p>
+</li>
+<li>
+<p>它们都可以被打断唤醒</p>
+</li>
+</ol>
+</li>
+<li>
+<p>锁特性不同（重点）</p>
+<ol>
+<li>
+<p><code>wait</code> 方法的调用必须先获取 <code>wait</code> 对象的锁，而 <code>sleep</code> 则无此限制</p>
+</li>
+<li>
+<p><code>wait</code> 方法执行后会释放对象锁，允许其它线程获得该对象锁（我放弃 <code>cpu</code>，但你们还可以用）</p>
+</li>
+<li>
+<p>而 <code>sleep</code> 如果在 <code>synchronized</code> 代码块中执行，并不会释放对象锁（我放弃 <code>cpu</code>，你们也用不了）</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="lock-vs-synchronized"> lock vs synchronized</h2>
+<h3 id="要求-4"> 要求</h3>
+<ol>
+<li>
+<p>掌握 lock 与 synchronized 的区别</p>
+</li>
+<li>
+<p>理解 ReentrantLock 的公平、非公平锁</p>
+</li>
+<li>
+<p>理解 ReentrantLock 中的条件变量</p>
+</li>
+</ol>
+<h3 id="三个层面"> 三个层面</h3>
+<p>不同点</p>
+<ol>
+<li>
+<p>语法层面</p>
+<ol>
+<li>
+<p><code>synchronized</code> 是关键字，源码在 <code>jvm</code> 中，用 <code>c++</code> 语言实现</p>
+</li>
+<li>
+<p><code>Lock</code> 是接口，源码由 <code>jdk</code> 提供，用 <code>java</code> 语言实现</p>
+</li>
+<li>
+<p>使用 <code>synchronized</code> 时，退出同步代码块锁会自动释放，而使用 <code>Lock</code> 时，需要手动调用 <code>unlock</code> 方法释放锁</p>
+</li>
+</ol>
+</li>
+<li>
+<p>功能层面</p>
+<ol>
+<li>
+<p>二者均属于悲观锁、都具备基本的<strong>互斥、同步、锁重入</strong>功能</p>
+</li>
+<li>
+<p><code>Lock</code> 提供了许多 <code>synchronized</code> 不具备的功能，例如<strong>获取等待状态、公平锁、可打断、可超时、多条件变量</strong></p>
+</li>
+<li>
+<p><code>Lock</code> 有适合不同场景的实现，如 <code>ReentrantLock</code>、 <code>ReentrantReadWriteLock</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>性能层面</p>
+<ol>
+<li>
+<p>在没有竞争时，<code>synchronized</code> 做了很多优化，如偏向锁、轻量级锁，性能不赖</p>
+</li>
+<li>
+<p>在竞争激烈时，<code>Lock</code> 的实现通常会提供更好的性能</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="公平锁"> 公平锁</h3>
+<ol>
+<li>
+<p>公平锁的公平体现</p>
+<ol>
+<li>
+<p><strong>已经处在阻塞队列</strong>中的线程（不考虑超时）始终都是公平的，先进先出</p>
+</li>
+<li>
+<p>公平锁是指<strong>未处于阻塞队列</strong>中的线程来争抢锁，如果队列不为空，则老实到队尾等待</p>
+</li>
+<li>
+<p>非公平锁是指<strong>未处于阻塞队列</strong>中的线程来争抢锁，与队列头唤醒的线程去竞争，谁抢到算谁的</p>
+</li>
+</ol>
+</li>
+<li>
+<p>公平锁会降低吞吐量，一般不用</p>
+</li>
+</ol>
+<h3 id="条件变量"> 条件变量</h3>
+<ol>
+<li>
+<p>ReentrantLock 中的条件变量功能类似于普通 synchronized 的 wait，notify，用在当线程获得锁后，发现条件不满足时，临时等待的链表结构</p>
+</li>
+<li>
+<p>与 synchronized 的等待集合不同之处在于，ReentrantLock 中的条件变量可以有多个，可以实现更精细的等待、唤醒控制</p>
+</li>
+</ol>
+<h2 id="volatile"> volatile</h2>
+<h3 id="要求-5"> 要求</h3>
+<ol>
+<li>
+<p>掌握线程安全要考虑的三个问题</p>
+</li>
+<li>
+<p>掌握 <code>volatile</code> 能解决哪些问题</p>
+</li>
+</ol>
+<h3 id="原子性"> 原子性</h3>
+<ol>
+<li>
+<p>起因：多线程下，不同线程的<strong>指令发生了交错</strong>导致的共享变量的读写混乱</p>
+</li>
+<li>
+<p>解决：用悲观锁或乐观锁解决，<code>volatile</code> 并不能解决原子性</p>
+</li>
+</ol>
+<h3 id="可见性"> 可见性</h3>
+<ol>
+<li>
+<p>起因：由于<strong>编译器优化、或缓存优化、或 CPU 指令重排序优化</strong>导致的对共享变量所做的修改另外的线程看不到</p>
+</li>
+<li>
+<p>解决：用 <code>volatile</code> 修饰共享变量，能够防止编译器等优化发生，让一个线程对共享变量的修改对另一个线程可见</p>
+</li>
+</ol>
+<h3 id="有序性"> 有序性</h3>
+<ol>
+<li>
+<p>起因：由于<strong>编译器优化、或缓存优化、或 CPU 指令重排序优化</strong>导致指令的实际执行顺序与编写顺序不一致</p>
+</li>
+<li>
+<p>解决：用 <code>volatile</code> 修饰共享变量会在读、写共享变量时加入不同的屏障，阻止其他读写操作越过屏障，从而达到阻止重排序的效果</p>
+</li>
+</ol>
+<p><strong>注意：</strong></p>
+<ol>
+<li>
+<p><strong>volatile 变量写</strong>加的屏障是阻止上方其它写操作越过屏障排到 <strong>volatile 变量写</strong>之下</p>
+</li>
+<li>
+<p><strong>volatile 变量读</strong>加的屏障是阻止下方其它读操作越过屏障排到 <strong>volatile 变量读</strong>之上</p>
+</li>
+<li>
+<p>volatile 读写加入的屏障只能防止同一线程内的指令重排</p>
+</li>
+</ol>
+<h2 id="悲观锁-vs-乐观锁"> 悲观锁 vs 乐观锁</h2>
+<h3 id="要求-6"> 要求</h3>
+<ol>
+<li>掌握悲观锁和乐观锁的区别</li>
+</ol>
+<h3 id="对比悲观锁与乐观锁"> 对比悲观锁与乐观锁</h3>
+<ol>
+<li>
+<p>悲观锁的代表是 synchronized 和 Lock 锁</p>
+<ol>
+<li>
+<p>其核心思想是【线程只有占有了锁，才能去操作共享变量，每次只有一个线程占锁成功，获取锁失败的线程，都得停下来等待】</p>
+</li>
+<li>
+<p>线程从运行到阻塞、再从阻塞到唤醒，涉及线程上下文切换，如果频繁发生，影响性能</p>
+</li>
+<li>
+<p>实际上，线程在获取 synchronized 和 Lock 锁时，如果锁已被占用，都会做几次重试操作，减少阻塞的机会</p>
+</li>
+</ol>
+</li>
+<li>
+<p>乐观锁的代表是 AtomicInteger，使用 cas 来保证原子性</p>
+<ol>
+<li>
+<p>其核心思想是【无需加锁，每次只有一个线程能成功修改共享变量，其它失败的线程不需要停止，不断重试直至成功】</p>
+</li>
+<li>
+<p>由于线程一直运行，不需要阻塞，因此不涉及线程上下文切换</p>
+</li>
+<li>
+<p>它需要多核 cpu 支持，且线程数不应超过 cpu 核数</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="hashtable-vs-concurrenthashmap"> Hashtable vs ConcurrentHashMap</h2>
+<h3 id="要求-7"> 要求</h3>
+<ol>
+<li>
+<p>掌握 Hashtable 与 ConcurrentHashMap 的区别</p>
+</li>
+<li>
+<p>掌握 ConcurrentHashMap 在不同版本的实现区别</p>
+</li>
+</ol>
+<h3 id="hashtable-对比-concurrenthashmap"> Hashtable 对比 ConcurrentHashMap</h3>
+<ol>
+<li>
+<p>Hashtable 与 ConcurrentHashMap 都是线程安全的 Map 集合</p>
+</li>
+<li>
+<p>Hashtable 并发度低，整个 Hashtable 对应一把锁，同一时刻，只能有一个线程操作它</p>
+</li>
+<li>
+<p>ConcurrentHashMap 并发度高，整个 ConcurrentHashMap 对应多把锁，只要线程访问的是不同锁，那么不会冲突</p>
+</li>
+</ol>
+<h3 id="concurrenthashmap-1-7"> ConcurrentHashMap 1.7</h3>
+<ol>
+<li>
+<p>数据结构：<code>Segment(大数组) + HashEntry(小数组) + 链表</code>，每个 Segment 对应一把锁，如果多个线程访问不同的 Segment，则不会冲突</p>
+</li>
+<li>
+<p>并发度：Segment 数组大小即并发度，决定了同一时刻最多能有多少个线程并发访问。Segment 数组不能扩容，意味着并发度在 ConcurrentHashMap 创建时就固定了</p>
+</li>
+<li>
+<p>索引计算</p>
+<ol>
+<li>
+<p>假设大数组长度是 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6644em;"></span><span><span>2</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>m</span></span></span></span></span></span></span></span></span></span></span>，key 在大数组内的索引是 key 的二次 hash 值的高 m 位</p>
+</li>
+<li>
+<p>假设小数组长度是 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6644em;"></span><span><span>2</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>n</span></span></span></span></span></span></span></span></span></span></span>，key 在小数组内的索引是 key 的二次 hash 值的低 n 位</p>
+</li>
+<li>
+<p>扩容：每个小数组的扩容相对独立，小数组在超过扩容因子时会触发扩容，每次扩容翻倍</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Segment[0] 原型：首次创建其它小数组时，会以此原型为依据，数组长度，扩容因子都会以原型为准</p>
+</li>
+</ol>
+<h3 id="concurrenthashmap-1-8"> ConcurrentHashMap 1.8</h3>
+<ol>
+<li>
+<p>数据结构：<code>Node 数组 + 链表或红黑树</code>，数组的每个头节点作为锁，如果多个线程访问的头节点不同，则不会冲突。首次生成头节点时如果发生竞争，利用 cas 而非 syncronized，进一步提升性能</p>
+</li>
+<li>
+<p>并发度：Node 数组有多大，并发度就有多大，与 1.7 不同，Node 数组可以扩容</p>
+</li>
+<li>
+<p>扩容条件：Node 数组满 3/4 时就会扩容</p>
+</li>
+<li>
+<p>扩容单位：以链表为单位从后向前迁移链表，迁移完成的将旧数组头节点替换为 ForwardingNode</p>
+</li>
+<li>
+<p>扩容时并发 get</p>
+<ol>
+<li>
+<p>根据是否为 ForwardingNode 来决定是在新数组查找还是在旧数组查找，不会阻塞</p>
+</li>
+<li>
+<p>如果链表长度超过 1，则需要对节点进行复制（创建新节点），怕的是节点迁移后 next 指针改变</p>
+</li>
+<li>
+<p>如果链表最后几个元素扩容后索引不变，则节点无需复制</p>
+</li>
+</ol>
+</li>
+<li>
+<p>扩容时并发 put</p>
+<ol>
+<li>
+<p>如果 put 的线程与扩容线程操作的链表是同一个，put 线程会阻塞</p>
+</li>
+<li>
+<p>如果 put 的线程操作的链表还未迁移完成，即头节点不是ForwardingNode，则可以并发执行</p>
+</li>
+<li>
+<p>如果 put 的线程操作的链表已经迁移完成，即头结点是 ForwardingNode，则可以协助扩容</p>
+</li>
+</ol>
+</li>
+<li>
+<p>与 1.7 相比是懒惰初始化</p>
+</li>
+<li>
+<p>capacity 代表预估的元素个数，capacity / factory 来计算出初始数组大小，需要贴近 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6644em;"></span><span><span>2</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>n</span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>loadFactor 只在计算初始数组大小时被使用，之后扩容固定为 3/4</p>
+</li>
+<li>
+<p>超过树化阈值时的扩容问题，如果容量已经是 64，直接树化，否则在原来容量基础上做 3 轮扩容</p>
+</li>
+</ol>
+<h2 id="threadlocal"> ThreadLocal</h2>
+<h3 id="要求-8"> 要求</h3>
+<ol>
+<li>
+<p>掌握 ThreadLocal 的作用与原理</p>
+</li>
+<li>
+<p>掌握 ThreadLocal 的内存释放时机</p>
+</li>
+</ol>
+<h3 id="作用"> 作用</h3>
+<ol>
+<li>
+<p>ThreadLocal 可以实现【资源对象】的线程隔离，让每个线程各用各的【资源对象】，避免争用引发的线程安全问题</p>
+</li>
+<li>
+<p>ThreadLocal 同时实现了线程内的资源共享</p>
+</li>
+</ol>
+<h3 id="原理"> 原理</h3>
+<p>每个线程内有一个 ThreadLocalMap 类型的成员变量，用来存储资源对象</p>
+<ol>
+<li>
+<p>调用 set 方法，就是以 ThreadLocal 自己作为 key，资源对象作为 value，放入当前线程的 ThreadLocalMap 集合中</p>
+</li>
+<li>
+<p>调用 get 方法，就是以 ThreadLocal 自己作为 key，到当前线程中查找关联的资源值</p>
+</li>
+<li>
+<p>调用 remove 方法，就是以 ThreadLocal 自己作为 key，移除当前线程关联的资源值</p>
+</li>
+</ol>
+<p>ThreadLocalMap 的一些特点</p>
+<ol>
+<li>
+<p>key 的 hash 值统一分配</p>
+</li>
+<li>
+<p>初始容量 16，扩容因子 2/3，扩容容量翻倍</p>
+</li>
+<li>
+<p>key 索引冲突后用开放寻址法解决冲突</p>
+</li>
+</ol>
+<h3 id="弱引用-key"> 弱引用 key</h3>
+<p>ThreadLocalMap 中的 key 被设计为弱引用，原因如下</p>
+<ol>
+<li>Thread 可能需要长时间运行（如线程池中的线程），如果 key 不再使用，需要在内存不足（GC）时释放其占用的内存</li>
+</ol>
+<h3 id="内存释放时机"> 内存释放时机</h3>
+<ol>
+<li>
+<p>被动 GC 释放 key</p>
+<ol>
+<li>仅是让 key 的内存释放，关联 value 的内存并不会释放</li>
+</ol>
+</li>
+<li>
+<p>懒惰被动释放 value</p>
+<ol>
+<li>
+<p>get key 时，发现是 null key，则释放其 value 内存</p>
+</li>
+<li>
+<p>set key 时，会使用启发式扫描，清除临近的 null key 的 value 内存，启发次数与元素个数，是否发现 null key 有关</p>
+</li>
+</ol>
+</li>
+<li>
+<p>主动 remove 释放 key，value</p>
+<ol>
+<li>
+<p>会同时释放 key，value 的内存，也会清除临近的 null key 的 value 内存</p>
+</li>
+<li>
+<p>推荐使用它，因为一般使用 ThreadLocal 时都把它作为静态变量（即强引用），因此无法被动依靠 GC 回收</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201040920672.png" type="image/png"/>
+    </item>
+    <item>
+      <title>框架篇</title>
+      <link>https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</guid>
+      <source url="https:/cloaks.cn/rss.xml">框架篇</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="框架篇"> 框架篇</h1>
+<h2 id="spring-refresh-流程"> Spring refresh 流程</h2>
+<h3 id="要求"> 要求</h3>
+<ul>
+<li>掌握 <code>refresh</code> 的 12 个步骤</li>
+</ul>
+<h3 id="spring-refresh-概述"> Spring refresh 概述</h3>
+<p><code>refresh</code> 是 <code>AbstractApplicationContext</code> 中的一个方法，负责初始化 <code>ApplicationContext</code> 容器，容器必须调用 <code>refresh</code> 才能正常工作。它的内部主要会调用 12 个方法，我们把它们称为 <code>refresh</code> 的 12 个步骤：</p>
+<div><pre><code><span># 准备环境</span>
+<span>prepareRefresh</span><span>:</span> 1 做好准备工作
+<span># 准备 BeanFactory</span>
+<span>obtainFreshBeanFactory</span><span>:</span> 2 创建或获取 BeanFactory
+<span>prepareBeanFactory</span><span>:</span> 3 准备 BeanFactory
+<span>postProcessBeanFactory</span><span>:</span> 4 子类扩展 BeanFactory
+<span>invokeBeanFactoryPostProcessors</span><span>:</span> 5 后处理器扩展 BeanFactory
+<span>registerBeanPostProcessors</span><span>:</span> 6 准备 Bean 后处理器
+<span># 准备 ApplicationContext</span>
+<span>initMessageSource</span><span>:</span> 7 为 ApplicationContext 提供国际化功能
+<span>initApplicationEventMulticaster</span><span>:</span> 8 为 ApplicationContext 提供事件发布器
+<span>onRefresh</span><span>:</span> 9 留给子类扩展
+<span>registerListeners</span><span>:</span> 10 为 ApplicationContext 准备监听器
+<span>finishRefresh</span><span>:</span> 12 准备生命周期管理器，发布ContextRefreshed 事件
+<span># 初始化 BeanFactory 中非延迟单例 bean</span>
+<span>finishBeanFactoryInitialization</span><span>:</span> 11 初始化单例 Bean，执行 Bean 后处理器扩展
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h4 id="_1-preparerefresh"> 1. prepareRefresh</h4>
+<p>这一步创建和准备了 <code>Environment</code> 对象，它作为 <code>ApplicationContext</code> 的一个成员变量</p>
+<p><code>Environment</code> 对象的作用之一是为后续 <code>@Value</code> 值注入时提供键值</p>
+<p><code>Environment</code> 分成三个主要部分</p>
+<ul>
+<li>
+<p><code>systemProperties</code> - 保存 <code>java</code> 环境键值</p>
+</li>
+<li>
+<p><code>systemEnvironment</code> - 保存系统环境键值</p>
+</li>
+<li>
+<p>自定义 <code>PropertySource</code> - 保存自定义键值，例如来自于 <code>*.properties</code> 文件的键值</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" alt="" /></p>
+<h4 id="_2-obtainfreshbeanfactory"> 2. obtainFreshBeanFactory</h4>
+<ul>
+<li>
+<p>这一步获取（或创建） <code>BeanFactory</code> 也是作为 <code>ApplicationContext</code> 的一个成员变量</p>
+</li>
+<li>
+<p><code>BeanFactory</code> 的作用是负责 <code>bean</code> 的创建、依赖注入和初始化，<code>bean</code> 的各项特征由 <code>BeanDefinition</code> 定义</p>
+<ul>
+<li>
+<p><code>BeanDefinition</code> 作为 <code>bean</code> 的设计蓝图，规定了 <code>bean</code> 的特征，如单例多例、依赖关系、初始销毁方法等</p>
+</li>
+<li>
+<p><code>BeanDefinition</code> 的来源有多种多样，可以是通过 <code>xml</code> 获得、配置类获得、组件扫描获得，也可以是编程添加</p>
+</li>
+</ul>
+</li>
+<li>
+<p>所有的 <code>BeanDefinition</code> 会存入 <code>BeanFactory</code> 中的 <code>beanDefinitionMap</code> 集合</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057632.png" alt="" /></p>
+<h4 id="_3-preparebeanfactory"> 3. prepareBeanFactory</h4>
+<ul>
+<li>这一步会进一步完善 <code>BeanFactory</code>，为它的各项成员变量赋值</li>
+<li><code>beanExpressionResolver</code> 用来解析 <code>SpEL</code>，常见实现为 <code>StandardBeanExpressionResolver</code></li>
+<li><code>propertyEditorRegistrars</code> 会注册类型转换器
+<ul>
+<li>它在这里使用了 <code>ResourceEditorRegistrar</code> 实现类</li>
+<li>并应用 <code>ApplicationContext</code> 提供的 <code>Environment</code> 完成 <code>${ }</code> 解析</li>
+</ul>
+</li>
+<li><code>registerResolvableDependency</code> 来注册 <code>beanFactory</code> 以及 <code>ApplicationContext</code>，让它们也能用于依赖注入</li>
+<li><code>beanPostProcessors</code> 是 <code>bean</code> 后处理器集合，会工作在 <code>bean</code> 的生命周期各个阶段，此处会添加两个：
+<ul>
+<li><code>ApplicationContextAwareProcessor</code> 用来解析 <code>Aware</code> 接口</li>
+<li><code>ApplicationListenerDetector</code> 用来识别容器中 <code>ApplicationListener</code> 类型的 <code>bean</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057394.png" alt="" /></p>
+<h4 id="_4-postprocessbeanfactory"> 4. postProcessBeanFactory</h4>
+<ul>
+<li>这一步是空实现，留给子类扩展。
+<ul>
+<li>一般 <code>Web</code> 环境的 <code>ApplicationContext</code> 都要利用它注册新的 <code>Scope</code>，完善 <code>Web</code> 下的 <code>BeanFactory</code></li>
+</ul>
+</li>
+<li>这里体现的是模板方法设计模式</li>
+</ul>
+<h4 id="_5-invokebeanfactorypostprocessors"> 5. invokeBeanFactoryPostProcessors</h4>
+<ul>
+<li>这一步会调用 <code>beanFactory</code> 后处理器</li>
+<li><code>beanFactory</code> 后处理器，充当 <code>beanFactory</code> 的扩展点，可以用来补充或修改 <code>BeanDefinition</code></li>
+<li>常见的 <code>beanFactory</code> 后处理器有
+<ul>
+<li><code>ConfigurationClassPostProcessor</code> – 解析 <code>@Configuration、@Bean、@Import、@PropertySource</code> 等</li>
+<li><code>PropertySourcesPlaceHolderConfigurer</code> – 替换 <code>BeanDefinition</code> 中的 <code>${ }</code></li>
+<li><code>MapperScannerConfigurer</code> – 补充 <code>Mapper</code> 接口对应的 <code>BeanDefinition</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058642.png" alt="" /></p>
+<h4 id="_6-registerbeanpostprocessors"> 6. registerBeanPostProcessors</h4>
+<ul>
+<li>这一步是继续从 <code>beanFactory</code> 中找出 <code>bean</code> 后处理器，添加至 <code>beanPostProcessors</code> 集合中</li>
+<li><code>bean</code> 后处理器，充当 <code>bean</code> 的扩展点，可以工作在 <code>bean</code> 的实例化、依赖注入、初始化阶段，常见的有：
+<ul>
+<li><code>AutowiredAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Autowired，@Value</code> 注解</li>
+<li><code>CommonAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Resource，@PostConstruct，@PreDestroy</code></li>
+<li><code>AnnotationAwareAspectJAutoProxyCreator</code> 功能有：为符合切点的目标 <code>bean</code> 自动创建代理</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058548.png" alt="" /></p>
+<h4 id="_7-initmessagesource"> 7. initMessageSource</h4>
+<ul>
+<li>这一步是为 <code>ApplicationContext</code> 添加 <code>messageSource</code> 成员，实现国际化功能</li>
+<li>去 <code>beanFactory</code> 内找名为 <code>messageSource</code> 的 <code>bean</code>，如果没有，则提供空的 <code>MessageSource</code> 实现</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058233.png" alt="" /></p>
+<h4 id="_8-initapplicationcontexteventmulticaster"> 8. initApplicationContextEventMulticaster</h4>
+<ul>
+<li>这一步为 <code>ApplicationContext</code> 添加事件广播器成员，即 <code>applicationContextEventMulticaster</code></li>
+<li>它的作用是发布事件给监听器</li>
+<li>去 <code>beanFactory</code> 找名为 <code>applicationEventMulticaster</code> 的 <code>bean</code> 作为事件广播器，若没有，会创建默认的事件广播器</li>
+<li>之后就可以调用 <code>ApplicationContext.publishEvent</code>(事件对象) 来发布事件</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058783.png" alt="" /></p>
+<h4 id="_9-onrefresh"> 9. onRefresh</h4>
+<ul>
+<li>这一步是空实现，留给子类扩展
+<ul>
+<li><code>SpringBoot</code> 中的子类在这里准备了 <code>WebServer</code>，即内嵌 <code>web</code> 容器</li>
+</ul>
+</li>
+<li>体现的是模板方法设计模式</li>
+</ul>
+<h4 id="_10-registerlisteners"> 10. registerListeners</h4>
+<ul>
+<li>这一步会从多种途径找到事件监听器，并添加至 <code>applicationEventMulticaster</code></li>
+<li>事件监听器顾名思义，用来接收事件广播器发布的事件，有如下来源
+<ul>
+<li>事先编程添加的</li>
+<li>来自容器中的 <code>bean</code></li>
+<li>来自于 <code>@EventListener</code> 的解析</li>
+</ul>
+</li>
+<li>要实现事件监听器，只需要实现 <code>ApplicationListener</code> 接口，重写其中 <code>onApplicationEvent(E e)</code> 方法即可</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059510.png" alt="" /></p>
+<h4 id="_11-finishbeanfactoryinitialization"> 11. finishBeanFactoryInitialization</h4>
+<ul>
+<li>这一步会将 <code>beanFactory</code> 的成员补充完毕，并初始化所有非延迟单例 <code>bean</code></li>
+<li><code>conversionService</code> 也是一套转换机制，作为对 <code>PropertyEditor</code> 的补充</li>
+<li><code>embeddedValueResolvers</code> 即内嵌值解析器，用来解析 <code>@Value</code> 中的 <code>${ }</code>，借用的是 <code>Environment</code> 的功能</li>
+<li><code>singletonObjects</code> 即单例池，缓存所有单例对象
+<ul>
+<li>对象的创建都分三个阶段，每一阶段都有不同的 <code>bean</code> 后处理器参与进来，扩展功能</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059692.png" alt="" /></p>
+<h4 id="_12-finishrefresh"> 12. finishRefresh</h4>
+<ul>
+<li>这一步会为 <code>ApplicationContext</code> 添加 <code>lifecycleProcessor</code> 成员，用来控制容器内需要生命周期管理的 <code>bean</code></li>
+<li>如果容器中有名称为 <code>lifecycleProcessor</code> 的 <code>bean</code> 就用它，否则创建默认的生命周期管理器</li>
+<li>准备好生命周期管理器，就可以实现
+<ul>
+<li>调用 <code>context</code> 的 <code>start</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>start</code></li>
+<li>调用 <code>context</code> 的 <code>stop</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>stop</code></li>
+</ul>
+</li>
+<li>发布 <code>ContextRefreshed</code> 事件，整个 <code>refresh</code> 执行完成</li>
+</ul>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059816.png" alt="" /></p>
+<h2 id="spring-bean-生命周期"> Spring bean 生命周期</h2>
+<h3 id="要求-2"> 要求</h3>
+<ul>
+<li>掌握 <code>Spring bean</code> 的生命周期</li>
+</ul>
+<h3 id="bean-生命周期-概述"> bean 生命周期 概述</h3>
+<p><code>bean</code> 的生命周期从调用 <code>beanFactory</code> 的 <code>getBean</code> 开始，到这个 <code>bean</code> 被销毁，可以总结为以下七个阶段：</p>
+<div><pre><code>1. 处理名称，检查缓存
+
+2. 处理父子容器
+
+3. 处理 `dependsOn`
+
+4. 选择 `scope` 策略
+
+5. 创建 `bean`
+
+6. 类型转换处理
+
+7. 销毁 `bean`
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><blockquote>
+<p><em><strong>注意</strong></em></p>
+<ul>
+<li>划分的阶段和名称并不重要，重要的是理解整个过程中做了哪些事情</li>
+</ul>
+</blockquote>
+<h4 id="_1-处理名称-检查缓存"> 1. 处理名称，检查缓存</h4>
+<ul>
+<li>
+<p>这一步会处理别名，将别名解析为实际名称</p>
+</li>
+<li>
+<p>对 <code>FactoryBean</code> 也会特殊处理，如果以 <code>&amp;</code> 开头表示要获取 <code>FactoryBean</code> 本身，否则表示要获取其产品</p>
+</li>
+<li>
+<p>这里针对单例对象会检查一级、二级、三级缓存</p>
+<ul>
+<li>
+<p><code>singletonFactories</code> 三级缓存，存放单例工厂对象</p>
+</li>
+<li>
+<p><code>earlySingletonObjects</code> 二级缓存，存放单例工厂的产品对象</p>
+<ul>
+<li>如果发生循环依赖，产品是代理；无循环依赖，产品是原始对象</li>
+</ul>
+</li>
+<li>
+<p><code>singletonObjects</code> 一级缓存，存放单例成品对象</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="_2-处理父子容器"> 2. 处理父子容器</h4>
+<ul>
+<li>
+<p>如果当前容器根据名字找不到这个 <code>bean</code>，此时若父容器存在，则执行父容器的 <code>getBean</code> 流程</p>
+</li>
+<li>
+<p>父子容器的 <code>bean</code> 名称可以重复</p>
+</li>
+</ul>
+<h4 id="_3-处理-dependson"> 3. 处理 dependsOn</h4>
+<ul>
+<li>
+<p>如果当前 <code>bean</code> 有通过 <code>dependsOn</code> 指定了非显式依赖的 <code>bean</code>，这一步会提前创建这些 <code>dependsOn</code> 的 <code>bean</code></p>
+</li>
+<li>
+<p>所谓非显式依赖，就是指两个 <code>bean</code> 之间不存在直接依赖关系，但需要控制它们的创建先后顺序</p>
+</li>
+</ul>
+<h4 id="_4-选择-scope-策略"> 4. 选择 scope 策略</h4>
+<ul>
+<li>
+<p>对于 <code>singleton scope</code>，首先到单例池去获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
+</li>
+<li>
+<p>对于 <code>prototype scope</code>，每次都会进入创建流程</p>
+</li>
+<li>
+<p>对于自定义 <code>scope</code>，例如 <code>request</code>，首先到 <code>request</code> 域获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
+</li>
+</ul>
+<h4 id="_5-1-创建-bean-创建-bean-实例"> 5.1 创建 bean - 创建 bean 实例</h4>
+<table>
+<thead>
+<tr>
+<th><strong>要点</strong></th>
+<th><strong>总结</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>有自定义 <code>TargetSource</code> 的情况</td>
+<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建代理返回</td>
+</tr>
+<tr>
+<td><code>Supplier</code> 方式创建 <code>bean</code> 实例</td>
+<td>为 <code>Spring 5.0</code> 新增功能，方便编程方式创建  <code>bean</code>  实例</td>
+</tr>
+<tr>
+<td><code>FactoryMethod</code> 方式  创建 <code>bean</code>  实例</td>
+<td>① 分成静态工厂与实例工厂；② 工厂方法若有参数，需要对工厂方法参数进行解析，利用 <code>resolveDependency</code>；③ 如果有多个工厂方法候选者，还要进一步按权重筛选</td>
+</tr>
+<tr>
+<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
+<td>① 优先选择带  <code>@Autowired</code>  注解的构造；② 若有唯一的带参构造，也会入选</td>
+</tr>
+<tr>
+<td><code>mbd.getPreferredConstructors</code></td>
+<td>选择所有公共构造，这些构造之间按权重筛选</td>
+</tr>
+<tr>
+<td>采用默认构造</td>
+<td>如果上面的后处理器和 <code>BeanDefiniation</code> 都没找到构造，采用默认构造，即使是私有的</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5-2-创建-bean-依赖注入"> 5.2 创建 bean - 依赖注入</h4>
+<table>
+<thead>
+<tr>
+<th><strong>要点</strong></th>
+<th><strong>总结</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
+<td>识别 <code>@Autowired</code> 及 <code>@Value</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
+</tr>
+<tr>
+<td><code>CommonAnnotationBeanPostProcessor</code></td>
+<td>识别 <code>@Resource</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
+</tr>
+<tr>
+<td><code>resolveDependency</code></td>
+<td>用来查找要装配的值，可以识别：① <code>Optional</code>；② <code>ObjectFactory</code> 及 <code>ObjectProvider</code>；③ <code>@Lazy</code>  注解；④ <code>@Value</code> 注解（<code>${ }</code>, <code>#{ }</code>, 类型转换）；⑤ 集合类型（<code>Collection</code>，<code>Map</code>，数组等）；⑥ 泛型和  <code>@Qualifier</code>（用来区分类型歧义）；⑦ <code>primary</code>  及名字匹配（用来区分类型歧义）</td>
+</tr>
+<tr>
+<td><code>AUTOWIRE_BY_NAME</code></td>
+<td>根据成员名字找 <code>bean</code> 对象，修改 <code>mbd</code> 的 <code>propertyValues</code>，不会考虑简单类型的成员</td>
+</tr>
+<tr>
+<td><code>AUTOWIRE_BY_TYPE</code></td>
+<td>根据成员类型执行 <code>resolveDependency</code> 找到依赖注入的值，修改  <code>mbd</code> 的 <code>propertyValues</code></td>
+</tr>
+<tr>
+<td><code>applyPropertyValues</code></td>
+<td>根据 <code>mbd</code> 的 <code>propertyValues</code> 进行依赖注入（即 <code>xml</code> 中 <code>&lt;property name ref|value/&gt;</code>）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5-3-创建-bean-初始化"> 5.3 创建 bean - 初始化</h4>
+<table>
+<thead>
+<tr>
+<th><strong>要点</strong></th>
+<th><strong>总结</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内置 <code>Aware</code> 接口的装配</td>
+<td>包括 <code>BeanNameAware</code>，<code>BeanFactoryAware</code> 等</td>
+</tr>
+<tr>
+<td>扩展 <code>Aware</code> 接口的装配</td>
+<td>由 <code>ApplicationContextAwareProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
+</tr>
+<tr>
+<td><code>@PostConstruct</code></td>
+<td>由 <code>CommonAnnotationBeanPostProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
+</tr>
+<tr>
+<td><code>InitializingBean</code></td>
+<td>通过接口回调执行初始化</td>
+</tr>
+<tr>
+<td><code>initMethod</code></td>
+<td>根据 <code>BeanDefinition</code> 得到的初始化方法执行初始化，即 <code>&lt;bean init-method&gt;</code> 或 <code>@Bean</code>(<code>initMethod</code>)</td>
+</tr>
+<tr>
+<td>创建 <code>aop</code> 代理</td>
+<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建，执行时机在  <code>postProcessAfterInitialization</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_5-4-创建-bean-注册可销毁-bean"> 5.4 创建 bean - 注册可销毁 bean</h4>
+<p>在这一步判断并登记可销毁 <code>bean</code></p>
+<ul>
+<li>
+<p>判断依据</p>
+<ul>
+<li>
+<p>如果实现了 <code>DisposableBean</code> 或 <code>AutoCloseable</code> 接口，则为可销毁 <code>bean</code></p>
+</li>
+<li>
+<p>如果自定义了 <code>destroyMethod</code>，则为可销毁 <code>bean</code></p>
+</li>
+<li>
+<p>如果采用 <code>@Bean</code> 没有指定 <code>destroyMethod</code>，则采用自动推断方式获取销毁方法名（<code>close，shutdown</code>）</p>
+</li>
+<li>
+<p>如果有 <code>@PreDestroy</code> 标注的方法</p>
+</li>
+</ul>
+</li>
+<li>
+<p>存储位置</p>
+<ul>
+<li>
+<p><code>singleton scope</code> 的可销毁 <code>bean</code> 会存储于 <code>beanFactory</code> 的成员当中</p>
+</li>
+<li>
+<p>自定义 <code>scope</code> 的可销毁 <code>bean</code> 会存储于对应的域对象当中</p>
+</li>
+<li>
+<p><code>prototype scope</code> 不会存储，需要自己找到此对象销毁</p>
+</li>
+</ul>
+</li>
+<li>
+<p>存储时都会封装为 <code>DisposableBeanAdapter</code> 类型对销毁方法的调用进行适配</p>
+</li>
+</ul>
+<h4 id="_6-类型转换处理"> 6. 类型转换处理</h4>
+<ul>
+<li>如果 <code>getBean</code> 的 <code>requiredType</code> 参数与实际得到的对象类型不同，会尝试进行类型转换</li>
+</ul>
+<h4 id="_7-销毁-bean"> 7. 销毁 bean</h4>
+<ul>
+<li>
+<p>销毁时机</p>
+<ul>
+<li>
+<p><code>singleton bean</code> 的销毁在 <code>ApplicationContext.close</code> 时，此时会找到所有 <code>DisposableBean</code> 的名字，逐一销毁</p>
+</li>
+<li>
+<p>自定义 <code>scope bean</code> 的销毁在作用域对象生命周期结束时</p>
+</li>
+<li>
+<p><code>prototype bean</code> 的销毁可以通过自己手动调用 <code>AutowireCapableBeanFactory.destroyBean</code> 方法执行销毁</p>
+</li>
+</ul>
+</li>
+<li>
+<p>同一 <code>bean</code> 中不同形式销毁方法的调用次序</p>
+<ul>
+<li>
+<p>优先后处理器销毁，即 <code>@PreDestroy</code></p>
+</li>
+<li>
+<p>其次 <code>DisposableBean</code> 接口销毁</p>
+</li>
+<li>
+<p>最后 <code>destroyMethod</code> 销毁（包括自定义名称，推断名称，<code>AutoCloseable</code> 接口 多选一）</p>
+</li>
+</ul>
+</li>
+</ul>
+
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" type="image/png"/>
     </item>
     <item>
       <title>基础篇</title>
@@ -1158,35 +2217,198 @@ cards <span>=</span> <span>getStaticCards</span><span>(</span><span>)</span><spa
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201021147765.png" type="image/png"/>
     </item>
     <item>
-      <title>英语</title>
-      <link>https:/cloaks.cn/blogs/english/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/english/</guid>
-      <source url="https:/cloaks.cn/rss.xml">英语</source>
-      <category>英语</category>
+      <title>LRU 算法 &amp;&amp; 爬台阶递归算法</title>
+      <link>https:/cloaks.cn/blogs/lintcode/LRU/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/LRU/</guid>
+      <source url="https:/cloaks.cn/rss.xml">LRU 算法 &amp;&amp; 爬台阶递归算法</source>
+      <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="美文摘抄"> 美文摘抄</h2>
+      <content:encoded><![CDATA[<blockquote>
+<p>题号：<a href="https://www.lintcode.com/problem/134/" target="_blank" rel="noopener noreferrer">134</a><br>
+描述：为最近最少使用（LRU）缓存策略设计一个数据结构，它应该支持以下操作：获取数据和写入数据。</p>
+<ul>
+<li>get(key) 获取数据：如果缓存中存在key，则获取其数据值（通常是正数），否则返回-1。</li>
+<li>set(key, value) 写入数据：如果key还没有在缓存中，则设置或插入其数据值。当缓存达到上限，它应该在写入新数据之前删除最近最少使用的数据用来腾出空闲位置。</li>
+</ul>
+<p>最终, 你需要返回每次 get 的数据</p>
+</blockquote>
+<h2 id="算法描述"> 算法描述</h2>
+<div><pre><code><span>/* 缓存容量为 2 */</span>
+<span>LRUCache</span> cache <span>=</span> <span>new</span> <span>LRUCache</span><span>(</span><span>2</span><span>)</span><span>;</span>
+<span>// 你可以把 cache 理解成一个队列</span>
+<span>// 假设左边是队头，右边是队尾</span>
+<span>// 最近使用的排在队头，久未使用的排在队尾</span>
+<span>// 圆括号表示键值对 (key, val)</span>
+
+cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <span>1</span><span>)</span><span>;</span>
+<span>// cache = [(1, 1)]</span>
+cache<span>.</span><span>set</span><span>(</span><span>2</span><span>,</span> <span>2</span><span>)</span><span>;</span>
+<span>// cache = [(2, 2), (1, 1)]</span>
+cache<span>.</span><span>get</span><span>(</span><span>1</span><span>)</span><span>;</span>       <span>// 返回 1</span>
+<span>// cache = [(1, 1), (2, 2)]</span>
+<span>// 解释：因为最近访问了键 1，所以提前至队头</span>
+<span>// 返回键 1 对应的值 1</span>
+cache<span>.</span><span>set</span><span>(</span><span>3</span><span>,</span> <span>3</span><span>)</span><span>;</span>
+<span>// cache = [(3, 3), (1, 1)]</span>
+<span>// 解释：缓存容量已满，需要删除内容空出位置</span>
+<span>// 优先删除久未使用的数据，也就是队尾的数据</span>
+<span>// 然后把新的数据插入队头</span>
+cache<span>.</span><span>get</span><span>(</span><span>2</span><span>)</span><span>;</span>       <span>// 返回 -1 (未找到)</span>
+<span>// cache = [(3, 3), (1, 1)]</span>
+<span>// 解释：cache 中不存在键为 2 的数据</span>
+cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <span>4</span><span>)</span><span>;</span>    
+<span>// cache = [(1, 4), (3, 3)]</span>
+<span>// 解释：键 1 已存在，把原始值 1 覆盖为 4</span>
+<span>// 不要忘了也要将键值对提前到队头</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><h2 id="算法设计"> 算法设计</h2>
+<p>分析上面的操作过程，要让 set 和 get 方法的时间复杂度为 O(1)，我们可以总结出 cache 这个数据结构必要的条件：查找快，插入快，删除快，有顺序之分。</p>
+<p>因为显然 cache 必须有顺序之分，以区分最近使用的和久未使用的数据；而且我们要在 cache 中查找键是否已存在；如果容量满了要删除最后一个数据；每次访问还要把数据插入到队头。</p>
+<p>那么，什么数据结构同时符合上述条件呢？哈希表查找快，但是数据无固定顺序；链表有顺序之分，插入删除快，但是查找慢。所以结合一下，形成一种新的数据结构：哈希链表。</p>
+<p>LRU 缓存算法的核心数据结构就是哈希链表，双向链表和哈希表的结合体。这个数据结构长这样：</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201131455479.png" alt="" /></p>
+<blockquote>
+<p>双链表可以保证对链表操作的时间复杂度为 <code>O(1)</code></p>
+</blockquote>
+<h2 id="算法实现"> 算法实现</h2>
+<p>双链表结点类型</p>
+<div><pre><code><span>class</span> <span>Node</span> <span>{</span>
+    <span>public</span> <span>int</span> key<span>,</span> val<span>;</span>
+    <span>public</span> <span>Node</span> next<span>,</span> prev<span>;</span>
+    <span>public</span> <span>Node</span><span>(</span><span>int</span> k<span>,</span> <span>int</span> v<span>)</span> <span>{</span>
+        <span>this</span><span>.</span>key <span>=</span> k<span>;</span>
+        <span>this</span><span>.</span>val <span>=</span> v<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>双链表的基本 <code>API</code></p>
+<div><pre><code><span>class</span> <span>DoubleList</span> <span>{</span>  
+    <span>// 在链表头部添加节点 x</span>
+    <span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>Node</span> x<span>)</span><span>;</span>
+
+    <span>// 删除链表中的 x 节点（x 一定存在）</span>
+    <span>public</span> <span>void</span> <span>remove</span><span>(</span><span>Node</span> x<span>)</span><span>;</span>
+
+    <span>// 删除链表中最后一个节点，并返回该节点</span>
+    <span>public</span> <span>Node</span> <span>removeLast</span><span>(</span><span>)</span><span>;</span>
+
+    <span>// 返回链表长度</span>
+    <span>public</span> <span>int</span> <span>size</span><span>(</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>在 <code>LRU</code> 算法中把双链表和 <code>HashMap</code> 结合起来</p>
+<p><strong>伪代码</strong></p>
+<div><pre><code><span>HashMap</span><span><span>&lt;</span><span>Interger</span><span>,</span> <span>Node</span><span>></span></span> map<span>;</span>
+
+<span>DoubleList</span> cache<span>;</span>
+
+<span>int</span> <span>get</span><span>(</span><span>int</span> key<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>key 不存在<span>)</span> <span>{</span>
+        <span>return</span> <span>-</span><span>1</span><span>;</span>
+    <span>}</span> <span>else</span> <span>{</span>
+        <span>// 将数据 (key, val) 提到表头；</span>
+        <span>return</span> val<span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>void</span> <span>put</span><span>(</span><span>int</span> key<span>,</span> <span>int</span> val<span>)</span> <span>{</span>
+    <span>Node</span> x <span>=</span> <span>new</span> <span>Node</span><span>(</span>key<span>,</span> val<span>)</span><span>;</span>
+    <span>if</span> <span>(</span>key 已存在<span>)</span> <span>{</span>
+        <span>// 把旧的数据删除</span>
+        <span>// 将新的结点 x 插入到开头</span>
+    <span>}</span> <span>else</span> <span>{</span>
+        <span>if</span> <span>(</span>cache 已满<span>)</span> <span>{</span>
+            <span>// 删除链表的最后一个数据腾位置</span>
+            <span>// 删除 map 中映射到该数据的键</span>
+        <span>}</span>
+        <span>// 将新节点 x 插入到表头</span>
+        <span>// map 中新建 key 对新节点 x 的映射</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><p><strong>将上述的逻辑，翻译成代码</strong></p>
+<div><pre><code><span>class</span> <span>LRUCache</span> <span>{</span>
+    <span>// key -> Node(key, val)</span>
+    <span>private</span> <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Node</span><span>></span></span> map<span>;</span>
+    <span>// Node(k1, v1) &lt;-> Node(k2, v2)</span>
+    <span>private</span> <span>DoubleList</span> cache<span>;</span>
+    <span>// 缓存容量</span>
+    <span>private</span> <span>int</span> capacity<span>;</span>
+
+    <span>public</span> <span>LRUCache</span><span>(</span><span>int</span> capacity<span>)</span> <span>{</span>
+        <span>this</span><span>.</span>capacity <span>=</span> capacity<span>;</span>
+        map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>></span></span><span>(</span><span>)</span><span>;</span>
+        cache <span>=</span> <span>new</span> <span>DoubleList</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>public</span> <span>int</span> <span>get</span><span>(</span><span>int</span> key<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span><span>!</span>map<span>.</span><span>containsKey</span><span>(</span>key<span>)</span><span>)</span>
+            <span>return</span> <span>-</span><span>1</span><span>;</span>
+        <span>int</span> val <span>=</span> map<span>.</span><span>get</span><span>(</span>key<span>)</span><span>.</span>val<span>;</span>
+        <span>set</span><span>(</span>key<span>,</span> val<span>)</span><span>;</span>
+        <span>return</span> val<span>;</span>
+    <span>}</span>
+
+    <span>public</span> <span>int</span> <span>set</span><span>(</span><span>int</span> key<span>,</span> <span>int</span> val<span>)</span> <span>{</span>
+        <span>// 先初始化节点</span>
+        <span>Node</span> x <span>=</span> <span>new</span> <span>Node</span><span>(</span>key<span>,</span> val<span>)</span><span>;</span>
+
+        <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>key<span>)</span><span>)</span> <span>{</span>
+            <span>// 删除旧节点， 新节点插到头部</span>
+            cache<span>.</span><span>remove</span><span>(</span>map<span>.</span><span>get</span><span>(</span>key<span>)</span><span>)</span><span>;</span>
+            cache<span>.</span><span>addFirst</span><span>(</span>x<span>)</span><span>;</span>
+            <span>// 更新 map 中对应的数据</span>
+            map<span>.</span><span>set</span><span>(</span>key<span>,</span> x<span>)</span><span>;</span>
+        <span>}</span> <span>else</span> <span>{</span>
+            <span>if</span> <span>(</span>cap <span>==</span> cache<span>.</span><span>size</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+                <span>// 删除链表最后的一个数据</span>
+                <span>Node</span> last <span>=</span> cache<span>.</span><span>removeLast</span><span>(</span><span>)</span><span>;</span>
+                map<span>.</span><span>remove</span><span>(</span>last<span>.</span>key<span>)</span><span>;</span>
+            <span>}</span>
+            <span>// 直接添加到头部</span>
+            chache<span>.</span><span>addFirst</span><span>(</span>x<span>)</span><span>;</span>
+            map<span>.</span><span>put</span><span>(</span>key<span>,</span> x<span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><h2 id="爬台阶递归算法"> 爬台阶递归算法</h2>
+<h3 id="算法设计-2"> 算法设计</h3>
+<p>很长时间没有接触递归了，昨天突然遇到思维一下没有转过来😭</p>
 <ol>
 <li>
-<p>Attitude, not aptitude, determines altitude.</p>
-<p>决定高度的是态度，而不是能力。</p>
+<p>n=0 和 n=1 的时候 并没有其他可选择的，所以可以得出f(0)=0;f(1)=1;</p>
 </li>
 <li>
-<p>Strong reasons make strong actions.</p>
-<p>强有力的理由产生强有力的行动。</p>
+<p>n&gt;=2时情况就变复杂起来，但是这个时候可以操作的步骤也就2种，也就是走1步(n-1)与走2步(n-2)。所以可以得到f(n)=f(n-1)+f(n-2);从当前状态转为下一状态的通用算法既可。</p>
 </li>
 <li>
-<p>Until that shift takes place, the global recovery will be fragile and probably quit feeble.</p>
-<p>在这样的变化发生之前，全球的经济复苏都将是脆弱的和无力的。</p>
+<p>验证，使用2以上的数字验证几次。</p>
 </li>
 </ol>
-<h2 id="写作模板"> 写作模板</h2>
-<ol>
-<li>
-<p>Examples abound. // For instance, 例一 // Similarly, 例二 // Likewise, 例三... // In nutshell</p>
-<p>例子有很多，首先，同样的，类似还有，总之</p>
-</li>
-</ol>
-]]></content:encoded>
+<h3 id="算法实现-2"> 算法实现</h3>
+<p>使用递归的方法，本质上是穷举所有可以实现的</p>
+<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
+    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
+    <span>int</span> x <span>=</span> <span>f</span><span>(</span>n<span>-</span><span>1</span><span>)</span><span>+</span><span>f</span><span>(</span>n<span>-</span><span>2</span><span>)</span><span>;</span>
+    <span>return</span> x<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>针对这个问题我使用循环的方法实现了这个过程，这种方法相较于递归效率更高没有冗余计算</p>
+<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
+    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
+    <span>int</span> first<span>=</span><span>1</span><span>,</span>second<span>=</span><span>2</span><span>;</span>
+    <span>int</span> third<span>=</span><span>0</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i<span>=</span><span>3</span><span>;</span>i<span>&lt;=</span>n<span>;</span>i<span>++</span><span>)</span><span>{</span>
+        third <span>=</span> first<span>+</span>second<span>;</span>
+        first <span>=</span> second<span>;</span>
+        second <span>=</span> third<span>;</span>
+    <span>}</span>
+    <span>return</span> third<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201131455479.png" type="image/png"/>
     </item>
     <item>
       <title>虚拟机</title>
@@ -1918,914 +3140,6 @@ cards <span>=</span> <span>getStaticCards</span><span>(</span><span>)</span><spa
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>并发篇</title>
-      <link>https:/cloaks.cn/blogs/interview/%E5%B9%B6%E5%8F%91%E7%AF%87/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E5%B9%B6%E5%8F%91%E7%AF%87/</guid>
-      <source url="https:/cloaks.cn/rss.xml">并发篇</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="并发篇"> 并发篇</h1>
-<h2 id="线程状态"> 线程状态</h2>
-<h3 id="要求"> 要求</h3>
-<ol>
-<li>
-<p>掌握 Java 线程六种状态</p>
-</li>
-<li>
-<p>掌握 Java 线程状态转换</p>
-</li>
-<li>
-<p>能理解五种状态与六种状态两种说法的区别</p>
-</li>
-</ol>
-<h3 id="六种状态及转换"> 六种状态及转换</h3>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201040920672.png" alt="" /></p>
-<p>分别是</p>
-<ol>
-<li>
-<p>新建</p>
-<ol>
-<li>
-<p>当一个线程对象被创建，但还未调用 start 方法时处于<strong>新建</strong>状态</p>
-</li>
-<li>
-<p>此时未与操作系统底层线程关联</p>
-</li>
-</ol>
-</li>
-<li>
-<p>可运行</p>
-<ol>
-<li>
-<p>调用了 start 方法，就会由<strong>新建</strong>进入<strong>可运行</strong></p>
-</li>
-<li>
-<p>此时与底层线程关联，由操作系统调度执行</p>
-</li>
-</ol>
-</li>
-<li>
-<p>终结</p>
-<ol>
-<li>
-<p>线程内代码已经执行完毕，由<strong>可运行</strong>进入<strong>终结</strong></p>
-</li>
-<li>
-<p>此时会取消与底层线程关联</p>
-</li>
-</ol>
-</li>
-<li>
-<p>阻塞</p>
-<ol>
-<li>
-<p>当获取锁失败后，由<strong>可运行</strong>进入 Monitor 的阻塞队列<strong>阻塞</strong>，此时不占用 cpu 时间</p>
-</li>
-<li>
-<p>当持锁线程释放锁时，会按照一定规则唤醒阻塞队列中的<strong>阻塞</strong>线程，唤醒后的线程进入<strong>可运行</strong>状态</p>
-</li>
-</ol>
-</li>
-<li>
-<p>等待</p>
-<ol>
-<li>
-<p>当获取锁成功后，但由于条件不满足，调用了 wait() 方法，此时从<strong>可运行</strong>状态释放锁进入 Monitor 等待集合<strong>等待</strong>，同样不占用 cpu 时间</p>
-</li>
-<li>
-<p>当其它持锁线程调用 notify() 或 notifyAll() 方法，会按照一定规则唤醒等待集合中的<strong>等待</strong>线程，恢复为<strong>可运行</strong>状态</p>
-</li>
-</ol>
-</li>
-<li>
-<p>有时限等待</p>
-<ol>
-<li>
-<p>当获取锁成功后，但由于条件不满足，调用了 wait(long) 方法，此时从<strong>可运行</strong>状态释放锁进入 Monitor 等待集合进行<strong>有时限等待</strong>，同样不占用 cpu 时间</p>
-</li>
-<li>
-<p>当其它持锁线程调用 notify() 或 notifyAll() 方法，会按照一定规则唤醒等待集合中的<strong>有时限等待</strong>线程，恢复为<strong>可运行</strong>状态，并重新去竞争锁</p>
-</li>
-<li>
-<p>如果等待超时，也会从<strong>有时限等待</strong>状态恢复为<strong>可运行</strong>状态，并重新去竞争锁</p>
-</li>
-<li>
-<p>还有一种情况是调用 sleep(long) 方法也会从<strong>可运行</strong>状态进入<strong>有时限等待</strong>状态，但与 Monitor 无关，不需要主动唤醒，超时时间到自然恢复为<strong>可运行</strong>状态</p>
-</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p><em><strong>其它情况（只需了解）</strong></em></p>
-<ul>
-<li>可以用 interrupt() 方法打断<strong>等待</strong>、<strong>有时限等待</strong>的线程，让它们恢复为<strong>可运行</strong>状态</li>
-<li>park，unpark 等方法也可以让线程等待和唤醒</li>
-</ul>
-</blockquote>
-<h3 id="五种状态"> 五种状态</h3>
-<p>五种状态的说法来自于操作系统层面的划分</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201040920941.png" alt="" /></p>
-<ol>
-<li>
-<p>运行态：分到 cpu 时间，能真正执行线程内代码的</p>
-</li>
-<li>
-<p>就绪态：有资格分到 cpu 时间，但还未轮到它的</p>
-</li>
-<li>
-<p>阻塞态：没资格分到 cpu 时间的</p>
-<ol>
-<li>
-<p>涵盖了 java 状态中提到的<strong>阻塞</strong>、<strong>等待</strong>、<strong>有时限等待</strong></p>
-</li>
-<li>
-<p>多出了阻塞 I/O，指线程在调用阻塞 I/O 时，实际活由 I/O 设备完成，此时线程无事可做，只能干等</p>
-</li>
-<li>
-<p>新建与终结态：与 java 中同名状态类似，不再啰嗦</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="线程池"> 线程池</h2>
-<h3 id="要求-2"> 要求</h3>
-<ol>
-<li>掌握线程池的 7 大核心参数</li>
-</ol>
-<h3 id="七大参数"> 七大参数</h3>
-<ol>
-<li>
-<p>corePoolSize 核心线程数目 - 池中会保留的最多线程数</p>
-</li>
-<li>
-<p>maximumPoolSize 最大线程数目 - 核心线程+救急线程的最大数目</p>
-</li>
-<li>
-<p>keepAliveTime 生存时间 - 救急线程的生存时间，生存时间内没有新任务，此线程资源会释放</p>
-</li>
-<li>
-<p>unit 时间单位 - 救急线程的生存时间单位，如秒、毫秒等</p>
-</li>
-<li>
-<p>workQueue - 当没有空闲核心线程时，新来任务会加入到此队列排队，队列满会创建救急线程执行任务</p>
-</li>
-<li>
-<p>threadFactory 线程工厂 - 可以定制线程对象的创建，例如设置线程名字、是否是守护线程等</p>
-</li>
-<li>
-<p>handler 拒绝策略 - 当所有线程都在繁忙，workQueue 也放满时，会触发拒绝策略</p>
-<ol>
-<li>
-<p>抛异常 java.util.concurrent.ThreadPoolExecutor.AbortPolicy</p>
-</li>
-<li>
-<p>由调用者执行任务 java.util.concurrent.ThreadPoolExecutor.CallerRunsPolicy</p>
-</li>
-<li>
-<p>丢弃任务 java.util.concurrent.ThreadPoolExecutor.DiscardPolicy</p>
-</li>
-<li>
-<p>丢弃最早排队任务 java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy</p>
-</li>
-</ol>
-</li>
-</ol>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201040921944.png" alt="" /></p>
-<h2 id="wait-vs-sleep"> wait vs sleep</h2>
-<h3 id="要求-3"> 要求</h3>
-<ol>
-<li>能够说出二者区别</li>
-</ol>
-<h3 id="一个共同点-三个不同点"> 一个共同点，三个不同点</h3>
-<p>共同点</p>
-<ol>
-<li>wait() ，wait(long) 和 sleep(long) 的效果都是让当前线程暂时放弃 CPU 的使用权，进入<strong>阻塞</strong>状态</li>
-</ol>
-<p>不同点</p>
-<ol>
-<li>
-<p>方法归属不同</p>
-<ol>
-<li>
-<p><code>sleep(long)</code> 是 <code>Thread</code> 的静态方法</p>
-</li>
-<li>
-<p>而 <code>wait()</code>，<code>wait(long)</code> 都是 <code>Object</code> 的成员方法，每个对象都有</p>
-</li>
-</ol>
-</li>
-<li>
-<p>醒来时机不同</p>
-<ol>
-<li>
-<p>执行 <code>sleep(long)</code> 和 <code>wait(long)</code> 的线程都会在等待相应毫秒后醒来</p>
-</li>
-<li>
-<p><code>wait(long)</code> 和 <code>wait()</code> 还可以被 <code>notify</code> 唤醒，<code>wait()</code> 如果不唤醒就一直等下去</p>
-</li>
-<li>
-<p>它们都可以被打断唤醒</p>
-</li>
-</ol>
-</li>
-<li>
-<p>锁特性不同（重点）</p>
-<ol>
-<li>
-<p><code>wait</code> 方法的调用必须先获取 <code>wait</code> 对象的锁，而 <code>sleep</code> 则无此限制</p>
-</li>
-<li>
-<p><code>wait</code> 方法执行后会释放对象锁，允许其它线程获得该对象锁（我放弃 <code>cpu</code>，但你们还可以用）</p>
-</li>
-<li>
-<p>而 <code>sleep</code> 如果在 <code>synchronized</code> 代码块中执行，并不会释放对象锁（我放弃 <code>cpu</code>，你们也用不了）</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="lock-vs-synchronized"> lock vs synchronized</h2>
-<h3 id="要求-4"> 要求</h3>
-<ol>
-<li>
-<p>掌握 lock 与 synchronized 的区别</p>
-</li>
-<li>
-<p>理解 ReentrantLock 的公平、非公平锁</p>
-</li>
-<li>
-<p>理解 ReentrantLock 中的条件变量</p>
-</li>
-</ol>
-<h3 id="三个层面"> 三个层面</h3>
-<p>不同点</p>
-<ol>
-<li>
-<p>语法层面</p>
-<ol>
-<li>
-<p><code>synchronized</code> 是关键字，源码在 <code>jvm</code> 中，用 <code>c++</code> 语言实现</p>
-</li>
-<li>
-<p><code>Lock</code> 是接口，源码由 <code>jdk</code> 提供，用 <code>java</code> 语言实现</p>
-</li>
-<li>
-<p>使用 <code>synchronized</code> 时，退出同步代码块锁会自动释放，而使用 <code>Lock</code> 时，需要手动调用 <code>unlock</code> 方法释放锁</p>
-</li>
-</ol>
-</li>
-<li>
-<p>功能层面</p>
-<ol>
-<li>
-<p>二者均属于悲观锁、都具备基本的<strong>互斥、同步、锁重入</strong>功能</p>
-</li>
-<li>
-<p><code>Lock</code> 提供了许多 <code>synchronized</code> 不具备的功能，例如<strong>获取等待状态、公平锁、可打断、可超时、多条件变量</strong></p>
-</li>
-<li>
-<p><code>Lock</code> 有适合不同场景的实现，如 <code>ReentrantLock</code>、 <code>ReentrantReadWriteLock</code></p>
-</li>
-</ol>
-</li>
-<li>
-<p>性能层面</p>
-<ol>
-<li>
-<p>在没有竞争时，<code>synchronized</code> 做了很多优化，如偏向锁、轻量级锁，性能不赖</p>
-</li>
-<li>
-<p>在竞争激烈时，<code>Lock</code> 的实现通常会提供更好的性能</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="公平锁"> 公平锁</h3>
-<ol>
-<li>
-<p>公平锁的公平体现</p>
-<ol>
-<li>
-<p><strong>已经处在阻塞队列</strong>中的线程（不考虑超时）始终都是公平的，先进先出</p>
-</li>
-<li>
-<p>公平锁是指<strong>未处于阻塞队列</strong>中的线程来争抢锁，如果队列不为空，则老实到队尾等待</p>
-</li>
-<li>
-<p>非公平锁是指<strong>未处于阻塞队列</strong>中的线程来争抢锁，与队列头唤醒的线程去竞争，谁抢到算谁的</p>
-</li>
-</ol>
-</li>
-<li>
-<p>公平锁会降低吞吐量，一般不用</p>
-</li>
-</ol>
-<h3 id="条件变量"> 条件变量</h3>
-<ol>
-<li>
-<p>ReentrantLock 中的条件变量功能类似于普通 synchronized 的 wait，notify，用在当线程获得锁后，发现条件不满足时，临时等待的链表结构</p>
-</li>
-<li>
-<p>与 synchronized 的等待集合不同之处在于，ReentrantLock 中的条件变量可以有多个，可以实现更精细的等待、唤醒控制</p>
-</li>
-</ol>
-<h2 id="volatile"> volatile</h2>
-<h3 id="要求-5"> 要求</h3>
-<ol>
-<li>
-<p>掌握线程安全要考虑的三个问题</p>
-</li>
-<li>
-<p>掌握 <code>volatile</code> 能解决哪些问题</p>
-</li>
-</ol>
-<h3 id="原子性"> 原子性</h3>
-<ol>
-<li>
-<p>起因：多线程下，不同线程的<strong>指令发生了交错</strong>导致的共享变量的读写混乱</p>
-</li>
-<li>
-<p>解决：用悲观锁或乐观锁解决，<code>volatile</code> 并不能解决原子性</p>
-</li>
-</ol>
-<h3 id="可见性"> 可见性</h3>
-<ol>
-<li>
-<p>起因：由于<strong>编译器优化、或缓存优化、或 CPU 指令重排序优化</strong>导致的对共享变量所做的修改另外的线程看不到</p>
-</li>
-<li>
-<p>解决：用 <code>volatile</code> 修饰共享变量，能够防止编译器等优化发生，让一个线程对共享变量的修改对另一个线程可见</p>
-</li>
-</ol>
-<h3 id="有序性"> 有序性</h3>
-<ol>
-<li>
-<p>起因：由于<strong>编译器优化、或缓存优化、或 CPU 指令重排序优化</strong>导致指令的实际执行顺序与编写顺序不一致</p>
-</li>
-<li>
-<p>解决：用 <code>volatile</code> 修饰共享变量会在读、写共享变量时加入不同的屏障，阻止其他读写操作越过屏障，从而达到阻止重排序的效果</p>
-</li>
-</ol>
-<p><strong>注意：</strong></p>
-<ol>
-<li>
-<p><strong>volatile 变量写</strong>加的屏障是阻止上方其它写操作越过屏障排到 <strong>volatile 变量写</strong>之下</p>
-</li>
-<li>
-<p><strong>volatile 变量读</strong>加的屏障是阻止下方其它读操作越过屏障排到 <strong>volatile 变量读</strong>之上</p>
-</li>
-<li>
-<p>volatile 读写加入的屏障只能防止同一线程内的指令重排</p>
-</li>
-</ol>
-<h2 id="悲观锁-vs-乐观锁"> 悲观锁 vs 乐观锁</h2>
-<h3 id="要求-6"> 要求</h3>
-<ol>
-<li>掌握悲观锁和乐观锁的区别</li>
-</ol>
-<h3 id="对比悲观锁与乐观锁"> 对比悲观锁与乐观锁</h3>
-<ol>
-<li>
-<p>悲观锁的代表是 synchronized 和 Lock 锁</p>
-<ol>
-<li>
-<p>其核心思想是【线程只有占有了锁，才能去操作共享变量，每次只有一个线程占锁成功，获取锁失败的线程，都得停下来等待】</p>
-</li>
-<li>
-<p>线程从运行到阻塞、再从阻塞到唤醒，涉及线程上下文切换，如果频繁发生，影响性能</p>
-</li>
-<li>
-<p>实际上，线程在获取 synchronized 和 Lock 锁时，如果锁已被占用，都会做几次重试操作，减少阻塞的机会</p>
-</li>
-</ol>
-</li>
-<li>
-<p>乐观锁的代表是 AtomicInteger，使用 cas 来保证原子性</p>
-<ol>
-<li>
-<p>其核心思想是【无需加锁，每次只有一个线程能成功修改共享变量，其它失败的线程不需要停止，不断重试直至成功】</p>
-</li>
-<li>
-<p>由于线程一直运行，不需要阻塞，因此不涉及线程上下文切换</p>
-</li>
-<li>
-<p>它需要多核 cpu 支持，且线程数不应超过 cpu 核数</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="hashtable-vs-concurrenthashmap"> Hashtable vs ConcurrentHashMap</h2>
-<h3 id="要求-7"> 要求</h3>
-<ol>
-<li>
-<p>掌握 Hashtable 与 ConcurrentHashMap 的区别</p>
-</li>
-<li>
-<p>掌握 ConcurrentHashMap 在不同版本的实现区别</p>
-</li>
-</ol>
-<h3 id="hashtable-对比-concurrenthashmap"> Hashtable 对比 ConcurrentHashMap</h3>
-<ol>
-<li>
-<p>Hashtable 与 ConcurrentHashMap 都是线程安全的 Map 集合</p>
-</li>
-<li>
-<p>Hashtable 并发度低，整个 Hashtable 对应一把锁，同一时刻，只能有一个线程操作它</p>
-</li>
-<li>
-<p>ConcurrentHashMap 并发度高，整个 ConcurrentHashMap 对应多把锁，只要线程访问的是不同锁，那么不会冲突</p>
-</li>
-</ol>
-<h3 id="concurrenthashmap-1-7"> ConcurrentHashMap 1.7</h3>
-<ol>
-<li>
-<p>数据结构：<code>Segment(大数组) + HashEntry(小数组) + 链表</code>，每个 Segment 对应一把锁，如果多个线程访问不同的 Segment，则不会冲突</p>
-</li>
-<li>
-<p>并发度：Segment 数组大小即并发度，决定了同一时刻最多能有多少个线程并发访问。Segment 数组不能扩容，意味着并发度在 ConcurrentHashMap 创建时就固定了</p>
-</li>
-<li>
-<p>索引计算</p>
-<ol>
-<li>
-<p>假设大数组长度是 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6644em;"></span><span><span>2</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>m</span></span></span></span></span></span></span></span></span></span></span>，key 在大数组内的索引是 key 的二次 hash 值的高 m 位</p>
-</li>
-<li>
-<p>假设小数组长度是 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6644em;"></span><span><span>2</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>n</span></span></span></span></span></span></span></span></span></span></span>，key 在小数组内的索引是 key 的二次 hash 值的低 n 位</p>
-</li>
-<li>
-<p>扩容：每个小数组的扩容相对独立，小数组在超过扩容因子时会触发扩容，每次扩容翻倍</p>
-</li>
-</ol>
-</li>
-<li>
-<p>Segment[0] 原型：首次创建其它小数组时，会以此原型为依据，数组长度，扩容因子都会以原型为准</p>
-</li>
-</ol>
-<h3 id="concurrenthashmap-1-8"> ConcurrentHashMap 1.8</h3>
-<ol>
-<li>
-<p>数据结构：<code>Node 数组 + 链表或红黑树</code>，数组的每个头节点作为锁，如果多个线程访问的头节点不同，则不会冲突。首次生成头节点时如果发生竞争，利用 cas 而非 syncronized，进一步提升性能</p>
-</li>
-<li>
-<p>并发度：Node 数组有多大，并发度就有多大，与 1.7 不同，Node 数组可以扩容</p>
-</li>
-<li>
-<p>扩容条件：Node 数组满 3/4 时就会扩容</p>
-</li>
-<li>
-<p>扩容单位：以链表为单位从后向前迁移链表，迁移完成的将旧数组头节点替换为 ForwardingNode</p>
-</li>
-<li>
-<p>扩容时并发 get</p>
-<ol>
-<li>
-<p>根据是否为 ForwardingNode 来决定是在新数组查找还是在旧数组查找，不会阻塞</p>
-</li>
-<li>
-<p>如果链表长度超过 1，则需要对节点进行复制（创建新节点），怕的是节点迁移后 next 指针改变</p>
-</li>
-<li>
-<p>如果链表最后几个元素扩容后索引不变，则节点无需复制</p>
-</li>
-</ol>
-</li>
-<li>
-<p>扩容时并发 put</p>
-<ol>
-<li>
-<p>如果 put 的线程与扩容线程操作的链表是同一个，put 线程会阻塞</p>
-</li>
-<li>
-<p>如果 put 的线程操作的链表还未迁移完成，即头节点不是ForwardingNode，则可以并发执行</p>
-</li>
-<li>
-<p>如果 put 的线程操作的链表已经迁移完成，即头结点是 ForwardingNode，则可以协助扩容</p>
-</li>
-</ol>
-</li>
-<li>
-<p>与 1.7 相比是懒惰初始化</p>
-</li>
-<li>
-<p>capacity 代表预估的元素个数，capacity / factory 来计算出初始数组大小，需要贴近 <span><span><i>Not supported content</i></span><span aria-hidden="true"><span><span style="height:0.6644em;"></span><span><span>2</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>n</span></span></span></span></span></span></span></span></span></span></span></p>
-</li>
-<li>
-<p>loadFactor 只在计算初始数组大小时被使用，之后扩容固定为 3/4</p>
-</li>
-<li>
-<p>超过树化阈值时的扩容问题，如果容量已经是 64，直接树化，否则在原来容量基础上做 3 轮扩容</p>
-</li>
-</ol>
-<h2 id="threadlocal"> ThreadLocal</h2>
-<h3 id="要求-8"> 要求</h3>
-<ol>
-<li>
-<p>掌握 ThreadLocal 的作用与原理</p>
-</li>
-<li>
-<p>掌握 ThreadLocal 的内存释放时机</p>
-</li>
-</ol>
-<h3 id="作用"> 作用</h3>
-<ol>
-<li>
-<p>ThreadLocal 可以实现【资源对象】的线程隔离，让每个线程各用各的【资源对象】，避免争用引发的线程安全问题</p>
-</li>
-<li>
-<p>ThreadLocal 同时实现了线程内的资源共享</p>
-</li>
-</ol>
-<h3 id="原理"> 原理</h3>
-<p>每个线程内有一个 ThreadLocalMap 类型的成员变量，用来存储资源对象</p>
-<ol>
-<li>
-<p>调用 set 方法，就是以 ThreadLocal 自己作为 key，资源对象作为 value，放入当前线程的 ThreadLocalMap 集合中</p>
-</li>
-<li>
-<p>调用 get 方法，就是以 ThreadLocal 自己作为 key，到当前线程中查找关联的资源值</p>
-</li>
-<li>
-<p>调用 remove 方法，就是以 ThreadLocal 自己作为 key，移除当前线程关联的资源值</p>
-</li>
-</ol>
-<p>ThreadLocalMap 的一些特点</p>
-<ol>
-<li>
-<p>key 的 hash 值统一分配</p>
-</li>
-<li>
-<p>初始容量 16，扩容因子 2/3，扩容容量翻倍</p>
-</li>
-<li>
-<p>key 索引冲突后用开放寻址法解决冲突</p>
-</li>
-</ol>
-<h3 id="弱引用-key"> 弱引用 key</h3>
-<p>ThreadLocalMap 中的 key 被设计为弱引用，原因如下</p>
-<ol>
-<li>Thread 可能需要长时间运行（如线程池中的线程），如果 key 不再使用，需要在内存不足（GC）时释放其占用的内存</li>
-</ol>
-<h3 id="内存释放时机"> 内存释放时机</h3>
-<ol>
-<li>
-<p>被动 GC 释放 key</p>
-<ol>
-<li>仅是让 key 的内存释放，关联 value 的内存并不会释放</li>
-</ol>
-</li>
-<li>
-<p>懒惰被动释放 value</p>
-<ol>
-<li>
-<p>get key 时，发现是 null key，则释放其 value 内存</p>
-</li>
-<li>
-<p>set key 时，会使用启发式扫描，清除临近的 null key 的 value 内存，启发次数与元素个数，是否发现 null key 有关</p>
-</li>
-</ol>
-</li>
-<li>
-<p>主动 remove 释放 key，value</p>
-<ol>
-<li>
-<p>会同时释放 key，value 的内存，也会清除临近的 null key 的 value 内存</p>
-</li>
-<li>
-<p>推荐使用它，因为一般使用 ThreadLocal 时都把它作为静态变量（即强引用），因此无法被动依靠 GC 回收</p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201040920672.png" type="image/png"/>
-    </item>
-    <item>
-      <title>LRU 算法 &amp;&amp; 爬台阶递归算法</title>
-      <link>https:/cloaks.cn/blogs/lintcode/LRU/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/LRU/</guid>
-      <source url="https:/cloaks.cn/rss.xml">LRU 算法 &amp;&amp; 爬台阶递归算法</source>
-      <category>力扣</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>题号：<a href="https://www.lintcode.com/problem/134/" target="_blank" rel="noopener noreferrer">134</a><br>
-描述：为最近最少使用（LRU）缓存策略设计一个数据结构，它应该支持以下操作：获取数据和写入数据。</p>
-<ul>
-<li>get(key) 获取数据：如果缓存中存在key，则获取其数据值（通常是正数），否则返回-1。</li>
-<li>set(key, value) 写入数据：如果key还没有在缓存中，则设置或插入其数据值。当缓存达到上限，它应该在写入新数据之前删除最近最少使用的数据用来腾出空闲位置。</li>
-</ul>
-<p>最终, 你需要返回每次 get 的数据</p>
-</blockquote>
-<h2 id="算法描述"> 算法描述</h2>
-<div><pre><code><span>/* 缓存容量为 2 */</span>
-<span>LRUCache</span> cache <span>=</span> <span>new</span> <span>LRUCache</span><span>(</span><span>2</span><span>)</span><span>;</span>
-<span>// 你可以把 cache 理解成一个队列</span>
-<span>// 假设左边是队头，右边是队尾</span>
-<span>// 最近使用的排在队头，久未使用的排在队尾</span>
-<span>// 圆括号表示键值对 (key, val)</span>
-
-cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <span>1</span><span>)</span><span>;</span>
-<span>// cache = [(1, 1)]</span>
-cache<span>.</span><span>set</span><span>(</span><span>2</span><span>,</span> <span>2</span><span>)</span><span>;</span>
-<span>// cache = [(2, 2), (1, 1)]</span>
-cache<span>.</span><span>get</span><span>(</span><span>1</span><span>)</span><span>;</span>       <span>// 返回 1</span>
-<span>// cache = [(1, 1), (2, 2)]</span>
-<span>// 解释：因为最近访问了键 1，所以提前至队头</span>
-<span>// 返回键 1 对应的值 1</span>
-cache<span>.</span><span>set</span><span>(</span><span>3</span><span>,</span> <span>3</span><span>)</span><span>;</span>
-<span>// cache = [(3, 3), (1, 1)]</span>
-<span>// 解释：缓存容量已满，需要删除内容空出位置</span>
-<span>// 优先删除久未使用的数据，也就是队尾的数据</span>
-<span>// 然后把新的数据插入队头</span>
-cache<span>.</span><span>get</span><span>(</span><span>2</span><span>)</span><span>;</span>       <span>// 返回 -1 (未找到)</span>
-<span>// cache = [(3, 3), (1, 1)]</span>
-<span>// 解释：cache 中不存在键为 2 的数据</span>
-cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <span>4</span><span>)</span><span>;</span>    
-<span>// cache = [(1, 4), (3, 3)]</span>
-<span>// 解释：键 1 已存在，把原始值 1 覆盖为 4</span>
-<span>// 不要忘了也要将键值对提前到队头</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><h2 id="算法设计"> 算法设计</h2>
-<p>分析上面的操作过程，要让 set 和 get 方法的时间复杂度为 O(1)，我们可以总结出 cache 这个数据结构必要的条件：查找快，插入快，删除快，有顺序之分。</p>
-<p>因为显然 cache 必须有顺序之分，以区分最近使用的和久未使用的数据；而且我们要在 cache 中查找键是否已存在；如果容量满了要删除最后一个数据；每次访问还要把数据插入到队头。</p>
-<p>那么，什么数据结构同时符合上述条件呢？哈希表查找快，但是数据无固定顺序；链表有顺序之分，插入删除快，但是查找慢。所以结合一下，形成一种新的数据结构：哈希链表。</p>
-<p>LRU 缓存算法的核心数据结构就是哈希链表，双向链表和哈希表的结合体。这个数据结构长这样：</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201131455479.png" alt="" /></p>
-<blockquote>
-<p>双链表可以保证对链表操作的时间复杂度为 <code>O(1)</code></p>
-</blockquote>
-<h2 id="算法实现"> 算法实现</h2>
-<p>双链表结点类型</p>
-<div><pre><code><span>class</span> <span>Node</span> <span>{</span>
-    <span>public</span> <span>int</span> key<span>,</span> val<span>;</span>
-    <span>public</span> <span>Node</span> next<span>,</span> prev<span>;</span>
-    <span>public</span> <span>Node</span><span>(</span><span>int</span> k<span>,</span> <span>int</span> v<span>)</span> <span>{</span>
-        <span>this</span><span>.</span>key <span>=</span> k<span>;</span>
-        <span>this</span><span>.</span>val <span>=</span> v<span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>双链表的基本 <code>API</code></p>
-<div><pre><code><span>class</span> <span>DoubleList</span> <span>{</span>  
-    <span>// 在链表头部添加节点 x</span>
-    <span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>Node</span> x<span>)</span><span>;</span>
-
-    <span>// 删除链表中的 x 节点（x 一定存在）</span>
-    <span>public</span> <span>void</span> <span>remove</span><span>(</span><span>Node</span> x<span>)</span><span>;</span>
-
-    <span>// 删除链表中最后一个节点，并返回该节点</span>
-    <span>public</span> <span>Node</span> <span>removeLast</span><span>(</span><span>)</span><span>;</span>
-
-    <span>// 返回链表长度</span>
-    <span>public</span> <span>int</span> <span>size</span><span>(</span><span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><p>在 <code>LRU</code> 算法中把双链表和 <code>HashMap</code> 结合起来</p>
-<p><strong>伪代码</strong></p>
-<div><pre><code><span>HashMap</span><span><span>&lt;</span><span>Interger</span><span>,</span> <span>Node</span><span>></span></span> map<span>;</span>
-
-<span>DoubleList</span> cache<span>;</span>
-
-<span>int</span> <span>get</span><span>(</span><span>int</span> key<span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>key 不存在<span>)</span> <span>{</span>
-        <span>return</span> <span>-</span><span>1</span><span>;</span>
-    <span>}</span> <span>else</span> <span>{</span>
-        <span>// 将数据 (key, val) 提到表头；</span>
-        <span>return</span> val<span>;</span>
-    <span>}</span>
-<span>}</span>
-
-<span>void</span> <span>put</span><span>(</span><span>int</span> key<span>,</span> <span>int</span> val<span>)</span> <span>{</span>
-    <span>Node</span> x <span>=</span> <span>new</span> <span>Node</span><span>(</span>key<span>,</span> val<span>)</span><span>;</span>
-    <span>if</span> <span>(</span>key 已存在<span>)</span> <span>{</span>
-        <span>// 把旧的数据删除</span>
-        <span>// 将新的结点 x 插入到开头</span>
-    <span>}</span> <span>else</span> <span>{</span>
-        <span>if</span> <span>(</span>cache 已满<span>)</span> <span>{</span>
-            <span>// 删除链表的最后一个数据腾位置</span>
-            <span>// 删除 map 中映射到该数据的键</span>
-        <span>}</span>
-        <span>// 将新节点 x 插入到表头</span>
-        <span>// map 中新建 key 对新节点 x 的映射</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><p><strong>将上述的逻辑，翻译成代码</strong></p>
-<div><pre><code><span>class</span> <span>LRUCache</span> <span>{</span>
-    <span>// key -> Node(key, val)</span>
-    <span>private</span> <span>HashMap</span><span><span>&lt;</span><span>Integer</span><span>,</span> <span>Node</span><span>></span></span> map<span>;</span>
-    <span>// Node(k1, v1) &lt;-> Node(k2, v2)</span>
-    <span>private</span> <span>DoubleList</span> cache<span>;</span>
-    <span>// 缓存容量</span>
-    <span>private</span> <span>int</span> capacity<span>;</span>
-
-    <span>public</span> <span>LRUCache</span><span>(</span><span>int</span> capacity<span>)</span> <span>{</span>
-        <span>this</span><span>.</span>capacity <span>=</span> capacity<span>;</span>
-        map <span>=</span> <span>new</span> <span>HashMap</span><span><span>&lt;</span><span>></span></span><span>(</span><span>)</span><span>;</span>
-        cache <span>=</span> <span>new</span> <span>DoubleList</span><span>(</span><span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>public</span> <span>int</span> <span>get</span><span>(</span><span>int</span> key<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span><span>!</span>map<span>.</span><span>containsKey</span><span>(</span>key<span>)</span><span>)</span>
-            <span>return</span> <span>-</span><span>1</span><span>;</span>
-        <span>int</span> val <span>=</span> map<span>.</span><span>get</span><span>(</span>key<span>)</span><span>.</span>val<span>;</span>
-        <span>set</span><span>(</span>key<span>,</span> val<span>)</span><span>;</span>
-        <span>return</span> val<span>;</span>
-    <span>}</span>
-
-    <span>public</span> <span>int</span> <span>set</span><span>(</span><span>int</span> key<span>,</span> <span>int</span> val<span>)</span> <span>{</span>
-        <span>// 先初始化节点</span>
-        <span>Node</span> x <span>=</span> <span>new</span> <span>Node</span><span>(</span>key<span>,</span> val<span>)</span><span>;</span>
-
-        <span>if</span> <span>(</span>map<span>.</span><span>containsKey</span><span>(</span>key<span>)</span><span>)</span> <span>{</span>
-            <span>// 删除旧节点， 新节点插到头部</span>
-            cache<span>.</span><span>remove</span><span>(</span>map<span>.</span><span>get</span><span>(</span>key<span>)</span><span>)</span><span>;</span>
-            cache<span>.</span><span>addFirst</span><span>(</span>x<span>)</span><span>;</span>
-            <span>// 更新 map 中对应的数据</span>
-            map<span>.</span><span>set</span><span>(</span>key<span>,</span> x<span>)</span><span>;</span>
-        <span>}</span> <span>else</span> <span>{</span>
-            <span>if</span> <span>(</span>cap <span>==</span> cache<span>.</span><span>size</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-                <span>// 删除链表最后的一个数据</span>
-                <span>Node</span> last <span>=</span> cache<span>.</span><span>removeLast</span><span>(</span><span>)</span><span>;</span>
-                map<span>.</span><span>remove</span><span>(</span>last<span>.</span>key<span>)</span><span>;</span>
-            <span>}</span>
-            <span>// 直接添加到头部</span>
-            chache<span>.</span><span>addFirst</span><span>(</span>x<span>)</span><span>;</span>
-            map<span>.</span><span>put</span><span>(</span>key<span>,</span> x<span>)</span><span>;</span>
-        <span>}</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><h2 id="爬台阶递归算法"> 爬台阶递归算法</h2>
-<h3 id="算法设计-2"> 算法设计</h3>
-<p>很长时间没有接触递归了，昨天突然遇到思维一下没有转过来😭</p>
-<ol>
-<li>
-<p>n=0 和 n=1 的时候 并没有其他可选择的，所以可以得出f(0)=0;f(1)=1;</p>
-</li>
-<li>
-<p>n&gt;=2时情况就变复杂起来，但是这个时候可以操作的步骤也就2种，也就是走1步(n-1)与走2步(n-2)。所以可以得到f(n)=f(n-1)+f(n-2);从当前状态转为下一状态的通用算法既可。</p>
-</li>
-<li>
-<p>验证，使用2以上的数字验证几次。</p>
-</li>
-</ol>
-<h3 id="算法实现-2"> 算法实现</h3>
-<p>使用递归的方法，本质上是穷举所有可以实现的</p>
-<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
-    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
-    <span>int</span> x <span>=</span> <span>f</span><span>(</span>n<span>-</span><span>1</span><span>)</span><span>+</span><span>f</span><span>(</span>n<span>-</span><span>2</span><span>)</span><span>;</span>
-    <span>return</span> x<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>针对这个问题我使用循环的方法实现了这个过程，这种方法相较于递归效率更高没有冗余计算</p>
-<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
-    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
-    <span>int</span> first<span>=</span><span>1</span><span>,</span>second<span>=</span><span>2</span><span>;</span>
-    <span>int</span> third<span>=</span><span>0</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i<span>=</span><span>3</span><span>;</span>i<span>&lt;=</span>n<span>;</span>i<span>++</span><span>)</span><span>{</span>
-        third <span>=</span> first<span>+</span>second<span>;</span>
-        first <span>=</span> second<span>;</span>
-        second <span>=</span> third<span>;</span>
-    <span>}</span>
-    <span>return</span> third<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201131455479.png" type="image/png"/>
-    </item>
-    <item>
-      <title>最长回文子串</title>
-      <link>https:/cloaks.cn/blogs/lintcode/longestPalindrome/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/longestPalindrome/</guid>
-      <source url="https:/cloaks.cn/rss.xml">最长回文子串</source>
-      <category>力扣</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>题号：<a href="https://www.lintcode.com/problem/200/" target="_blank" rel="noopener noreferrer">200</a><br>
-描述：给出一个字符串（假设长度最长为1000），求出它的最长回文子串，你可以假定只有一个满足条件的最长回文串。<br>
-挑战：时间复杂度可为O(n2)，你能将其优化为O(n)吗</p>
-</blockquote>
-<h2 id="使用时间复杂度为o-n-3-的算法"> 使用时间复杂度为O(n^3)的算法</h2>
-<p>java 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
-            <span>return</span> <span>null</span><span>;</span>
-        <span>}</span>
-
-        <span>for</span> <span>(</span><span>int</span> length <span>=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> length <span>></span> <span>0</span><span>;</span> length<span>--</span><span>)</span> <span>{</span>
-            <span>for</span> <span>(</span><span>int</span> start <span>=</span> <span>0</span><span>;</span> start <span>+</span> length <span>&lt;=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> start<span>++</span><span>)</span> <span>{</span>
-                <span>if</span> <span>(</span><span>isPalindrome</span><span>(</span>s<span>,</span> start<span>,</span> start <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>)</span> <span>{</span>
-                    <span>return</span> s<span>.</span><span>substring</span><span>(</span>start<span>,</span> start <span>+</span> length<span>)</span><span>;</span>
-                <span>}</span>
-            <span>}</span>
-        <span>}</span>
-
-        <span>return</span> <span>""</span><span>;</span>
-    <span>}</span>
-
-    <span>private</span> <span>boolean</span> <span>isPalindrome</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
-        <span>while</span> <span>(</span>left <span>&lt;</span> right <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>==</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
-            left<span>++</span><span>;</span> right<span>--</span><span>;</span>
-        <span>}</span>
-        <span>return</span> left <span>>=</span> right<span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><p>python 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
-    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
-        <span>"""
-        :type s: str
-        :rtype: str
-        """</span>
-        <span>if</span> s <span>is</span> <span>None</span><span>:</span>
-            <span>return</span> <span>None</span>
-
-        <span>for</span> length <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>,</span> <span>0</span><span>,</span> <span>-</span><span>1</span><span>)</span><span>:</span>
-            <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span> <span>-</span> length <span>+</span> <span>1</span><span>)</span><span>:</span>
-                <span>if</span> self<span>.</span>is_palindrome<span>(</span>s<span>,</span> i<span>,</span> i <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>:</span>
-                    <span>return</span> s<span>[</span>i<span>:</span> i <span>+</span> length<span>]</span>
-
-        <span>return</span> <span>""</span>
-
-    <span>def</span> <span>is_palindrome</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
-        <span>while</span> left <span>&lt;</span> right <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
-            left <span>+=</span> <span>1</span>
-            right <span>-=</span> <span>1</span>
-
-        <span>return</span> left <span>>=</span> right
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于中心线枚举的算法"> 基于中心线枚举的算法</h2>
-<p>java 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
-    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
-        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
-            <span>return</span> <span>null</span><span>;</span>
-        <span>}</span>
-
-        <span>String</span> longest <span>=</span> <span>""</span><span>;</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>String</span> oddPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i<span>)</span><span>;</span>
-            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> oddPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-                longest <span>=</span> oddPalindrome<span>;</span>
-            <span>}</span>
-
-            <span>String</span> evenPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i <span>+</span><span>1</span><span>)</span><span>;</span>
-            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> evenPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-                longest <span>=</span> evenPalindrome<span>;</span>
-            <span>}</span>
-        <span>}</span>
-        
-        <span>return</span> longest<span>;</span>
-    <span>}</span>
-
-    <span>private</span> <span>String</span> <span>getPalindromeFrom</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
-        <span>while</span> <span>(</span>left <span>>=</span> <span>0</span> <span>&amp;&amp;</span> right <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
-            <span>if</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>!=</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
-                <span>break</span><span>;</span>
-            <span>}</span>
-            left<span>--</span><span>;</span>
-            right<span>++</span><span>;</span>
-        <span>}</span>
-
-        <span>return</span> s<span>.</span><span>substring</span><span>(</span>left <span>+</span> <span>1</span><span>,</span> right<span>)</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br></div></div><p>python 实现</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
-    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
-        <span>"""
-        :type s: str
-        :rtype: str
-        """</span>
-        <span>if</span> <span>not</span> s<span>:</span>
-            <span>return</span> s
-        
-        answer <span>=</span> <span>(</span><span>0</span><span>,</span> <span>0</span><span>)</span>
-        <span>for</span> mid <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>)</span><span>:</span>
-            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid<span>)</span><span>)</span>
-            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid <span>+</span> <span>1</span><span>)</span><span>)</span>
-
-        <span>return</span> s<span>[</span>answer<span>[</span><span>1</span><span>]</span><span>:</span> answer<span>[</span><span>0</span><span>]</span> <span>+</span> answer<span>[</span><span>1</span><span>]</span><span>]</span>
-
-    <span>def</span> <span>get_palindrome_from</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
-        <span>while</span> left <span>>=</span> <span>0</span> <span>and</span> right <span>&lt;</span> <span>len</span><span>(</span>s<span>)</span> <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
-            left <span>-=</span> <span>1</span>
-            right <span>+=</span> <span>1</span>
-
-        <span>return</span> right <span>-</span> left <span>-</span> <span>1</span><span>,</span> left <span>+</span> <span>1</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于动态规划的算法"> 基于动态规划的算法</h2>
-<p>java 实现</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><p>python 实现</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>查询</title>
       <link>https:/cloaks.cn/blogs/lintcode/search/</link>
       <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/search/</guid>
@@ -3503,103 +3817,134 @@ class TreeNode:
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>排序算法</title>
-      <link>https:/cloaks.cn/blogs/lintcode/sortIntegers/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/sortIntegers/</guid>
-      <source url="https:/cloaks.cn/rss.xml">排序算法</source>
+      <title>最长回文子串</title>
+      <link>https:/cloaks.cn/blogs/lintcode/longestPalindrome/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/longestPalindrome/</guid>
+      <source url="https:/cloaks.cn/rss.xml">最长回文子串</source>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>题号：<a href="https://www.lintcode.com/problem/463/" target="_blank" rel="noopener noreferrer">463</a><br>
-描述：给一组整数，按照升序排序，使用选择排序，冒泡排序，插入排序或者任何 O(n2) 的排序算法。</p>
+<p>题号：<a href="https://www.lintcode.com/problem/200/" target="_blank" rel="noopener noreferrer">200</a><br>
+描述：给出一个字符串（假设长度最长为1000），求出它的最长回文子串，你可以假定只有一个满足条件的最长回文串。<br>
+挑战：时间复杂度可为O(n2)，你能将其优化为O(n)吗</p>
 </blockquote>
-<h2 id="选择排序"> 选择排序</h2>
-<p>python</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
-    <span>"""
-    @param A: an integer array
-    @return: nothing
-    """</span>
-    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
-        <span># write your code here</span>
-        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
-            <span>for</span> j <span>in</span> <span>range</span><span>(</span>i <span>+</span> <span>1</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
-                <span>if</span> A<span>[</span>i<span>]</span> <span>></span> A<span>[</span>j<span>]</span><span>:</span>
-                    A<span>[</span>i<span>]</span><span>,</span> A<span>[</span>j<span>]</span> <span>=</span> A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>i<span>]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
-<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>/**
-     * @param A: an integer array
-     * @return: nothing
-     */</span>
-    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
-        <span>// write your code here</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
-                <span>if</span> <span>(</span><span>A</span><span>[</span>i<span>]</span> <span>></span> <span>A</span><span>[</span>j<span>]</span><span>)</span> <span>{</span>
-                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>+</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
-                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
-                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+<h2 id="使用时间复杂度为o-n-3-的算法"> 使用时间复杂度为O(n^3)的算法</h2>
+<p>java 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
+            <span>return</span> <span>null</span><span>;</span>
+        <span>}</span>
+
+        <span>for</span> <span>(</span><span>int</span> length <span>=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> length <span>></span> <span>0</span><span>;</span> length<span>--</span><span>)</span> <span>{</span>
+            <span>for</span> <span>(</span><span>int</span> start <span>=</span> <span>0</span><span>;</span> start <span>+</span> length <span>&lt;=</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> start<span>++</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span><span>isPalindrome</span><span>(</span>s<span>,</span> start<span>,</span> start <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>)</span> <span>{</span>
+                    <span>return</span> s<span>.</span><span>substring</span><span>(</span>start<span>,</span> start <span>+</span> length<span>)</span><span>;</span>
                 <span>}</span>
             <span>}</span>
         <span>}</span>
+
+        <span>return</span> <span>""</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>boolean</span> <span>isPalindrome</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
+        <span>while</span> <span>(</span>left <span>&lt;</span> right <span>&amp;&amp;</span> s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>==</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
+            left<span>++</span><span>;</span> right<span>--</span><span>;</span>
+        <span>}</span>
+        <span>return</span> left <span>>=</span> right<span>;</span>
     <span>}</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="冒泡排序"> 冒泡排序</h2>
-<p>python</p>
-<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
-    <span>"""
-    @param A: an integer array
-    @return: nothing
-    """</span>
-    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
-        <span># write your code here</span>
-        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
-            <span>for</span> j <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
-                <span>if</span> A<span>[</span>j<span>]</span> <span>></span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>:</span>
-                    A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>,</span> A<span>[</span>j<span>]</span>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><p>python 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
+    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
+        <span>"""
+        :type s: str
+        :rtype: str
+        """</span>
+        <span>if</span> s <span>is</span> <span>None</span><span>:</span>
+            <span>return</span> <span>None</span>
+
+        <span>for</span> length <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>,</span> <span>0</span><span>,</span> <span>-</span><span>1</span><span>)</span><span>:</span>
+            <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span> <span>-</span> length <span>+</span> <span>1</span><span>)</span><span>:</span>
+                <span>if</span> self<span>.</span>is_palindrome<span>(</span>s<span>,</span> i<span>,</span> i <span>+</span> length <span>-</span> <span>1</span><span>)</span><span>:</span>
+                    <span>return</span> s<span>[</span>i<span>:</span> i <span>+</span> length<span>]</span>
+
+        <span>return</span> <span>""</span>
+
+    <span>def</span> <span>is_palindrome</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
+        <span>while</span> left <span>&lt;</span> right <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
+            left <span>+=</span> <span>1</span>
+            right <span>-=</span> <span>1</span>
+
+        <span>return</span> left <span>>=</span> right
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
-<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>/**
-     * @param A: an integer array
-     * @return: nothing
-     */</span>
-    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
-        <span>// write your code here</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
-            <span>for</span> <span>(</span><span>int</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
-                <span>if</span> <span>(</span><span>A</span><span>[</span>j<span>]</span> <span>></span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>)</span> <span>{</span>
-                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>+</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
-                    <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
-                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
-                <span>}</span>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于中心线枚举的算法"> 基于中心线枚举的算法</h2>
+<p>java 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
+    <span>public</span> <span>String</span> <span>longestPalindrome</span><span>(</span><span>String</span> s<span>)</span> <span>{</span>
+        <span>if</span> <span>(</span>s <span>==</span> <span>null</span><span>)</span> <span>{</span>
+            <span>return</span> <span>null</span><span>;</span>
+        <span>}</span>
+
+        <span>String</span> longest <span>=</span> <span>""</span><span>;</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>String</span> oddPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i<span>)</span><span>;</span>
+            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> oddPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+                longest <span>=</span> oddPalindrome<span>;</span>
+            <span>}</span>
+
+            <span>String</span> evenPalindrome <span>=</span> <span>getPalindromeFrom</span><span>(</span>s<span>,</span> i<span>,</span> i <span>+</span><span>1</span><span>)</span><span>;</span>
+            <span>if</span> <span>(</span>longest<span>.</span><span>length</span><span>(</span><span>)</span> <span>&lt;</span> evenPalindrome<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+                longest <span>=</span> evenPalindrome<span>;</span>
             <span>}</span>
         <span>}</span>
+        
+        <span>return</span> longest<span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>String</span> <span>getPalindromeFrom</span><span>(</span><span>String</span> s<span>,</span> <span>int</span> left<span>,</span> <span>int</span> right<span>)</span> <span>{</span>
+        <span>while</span> <span>(</span>left <span>>=</span> <span>0</span> <span>&amp;&amp;</span> right <span>&lt;</span> s<span>.</span><span>length</span><span>(</span><span>)</span><span>)</span> <span>{</span>
+            <span>if</span> <span>(</span>s<span>.</span><span>charAt</span><span>(</span>left<span>)</span> <span>!=</span> s<span>.</span><span>charAt</span><span>(</span>right<span>)</span><span>)</span> <span>{</span>
+                <span>break</span><span>;</span>
+            <span>}</span>
+            left<span>--</span><span>;</span>
+            right<span>++</span><span>;</span>
+        <span>}</span>
+
+        <span>return</span> s<span>.</span><span>substring</span><span>(</span>left <span>+</span> <span>1</span><span>,</span> right<span>)</span><span>;</span>
     <span>}</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="插入排序"> 插入排序</h2>
-<p>python</p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br></div></div><p>python 实现</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>(</span><span>object</span><span>)</span><span>:</span>
+    <span>def</span> <span>longestPalindrome</span><span>(</span>self<span>,</span> s<span>)</span><span>:</span>
+        <span>"""
+        :type s: str
+        :rtype: str
+        """</span>
+        <span>if</span> <span>not</span> s<span>:</span>
+            <span>return</span> s
+        
+        answer <span>=</span> <span>(</span><span>0</span><span>,</span> <span>0</span><span>)</span>
+        <span>for</span> mid <span>in</span> <span>range</span><span>(</span><span>len</span><span>(</span>s<span>)</span><span>)</span><span>:</span>
+            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid<span>)</span><span>)</span>
+            answer <span>=</span> <span>max</span><span>(</span>answer<span>,</span> self<span>.</span>get_palindrome_from<span>(</span>s<span>,</span> mid<span>,</span> mid <span>+</span> <span>1</span><span>)</span><span>)</span>
+
+        <span>return</span> s<span>[</span>answer<span>[</span><span>1</span><span>]</span><span>:</span> answer<span>[</span><span>0</span><span>]</span> <span>+</span> answer<span>[</span><span>1</span><span>]</span><span>]</span>
+
+    <span>def</span> <span>get_palindrome_from</span><span>(</span>self<span>,</span> s<span>,</span> left<span>,</span> right<span>)</span><span>:</span>
+        <span>while</span> left <span>>=</span> <span>0</span> <span>and</span> right <span>&lt;</span> <span>len</span><span>(</span>s<span>)</span> <span>and</span> s<span>[</span>left<span>]</span> <span>==</span> s<span>[</span>right<span>]</span><span>:</span>
+            left <span>-=</span> <span>1</span>
+            right <span>+=</span> <span>1</span>
+
+        <span>return</span> right <span>-</span> left <span>-</span> <span>1</span><span>,</span> left <span>+</span> <span>1</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="基于动态规划的算法"> 基于动态规划的算法</h2>
+<p>java 实现</p>
 <div><pre><code>
 </code></pre>
-<div><span>1</span><br></div></div><p>java</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="归并排序"> 归并排序</h2>
-<p>python</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><p>java</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="快速排序"> 快速排序</h2>
-<p>python</p>
-<div><pre><code>
-</code></pre>
-<div><span>1</span><br></div></div><p>java</p>
+<div><span>1</span><br></div></div><p>python 实现</p>
 <div><pre><code>
 </code></pre>
 <div><span>1</span><br></div></div>]]></content:encoded>
@@ -3906,510 +4251,106 @@ class TreeNode:
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>框架篇</title>
-      <link>https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/interview/%E6%A1%86%E6%9E%B6%E7%AF%87/</guid>
-      <source url="https:/cloaks.cn/rss.xml">框架篇</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="框架篇"> 框架篇</h1>
-<h2 id="spring-refresh-流程"> Spring refresh 流程</h2>
-<h3 id="要求"> 要求</h3>
-<ul>
-<li>掌握 <code>refresh</code> 的 12 个步骤</li>
-</ul>
-<h3 id="spring-refresh-概述"> Spring refresh 概述</h3>
-<p><code>refresh</code> 是 <code>AbstractApplicationContext</code> 中的一个方法，负责初始化 <code>ApplicationContext</code> 容器，容器必须调用 <code>refresh</code> 才能正常工作。它的内部主要会调用 12 个方法，我们把它们称为 <code>refresh</code> 的 12 个步骤：</p>
-<div><pre><code><span># 准备环境</span>
-<span>prepareRefresh</span><span>:</span> 1 做好准备工作
-<span># 准备 BeanFactory</span>
-<span>obtainFreshBeanFactory</span><span>:</span> 2 创建或获取 BeanFactory
-<span>prepareBeanFactory</span><span>:</span> 3 准备 BeanFactory
-<span>postProcessBeanFactory</span><span>:</span> 4 子类扩展 BeanFactory
-<span>invokeBeanFactoryPostProcessors</span><span>:</span> 5 后处理器扩展 BeanFactory
-<span>registerBeanPostProcessors</span><span>:</span> 6 准备 Bean 后处理器
-<span># 准备 ApplicationContext</span>
-<span>initMessageSource</span><span>:</span> 7 为 ApplicationContext 提供国际化功能
-<span>initApplicationEventMulticaster</span><span>:</span> 8 为 ApplicationContext 提供事件发布器
-<span>onRefresh</span><span>:</span> 9 留给子类扩展
-<span>registerListeners</span><span>:</span> 10 为 ApplicationContext 准备监听器
-<span>finishRefresh</span><span>:</span> 12 准备生命周期管理器，发布ContextRefreshed 事件
-<span># 初始化 BeanFactory 中非延迟单例 bean</span>
-<span>finishBeanFactoryInitialization</span><span>:</span> 11 初始化单例 Bean，执行 Bean 后处理器扩展
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h4 id="_1-preparerefresh"> 1. prepareRefresh</h4>
-<p>这一步创建和准备了 <code>Environment</code> 对象，它作为 <code>ApplicationContext</code> 的一个成员变量</p>
-<p><code>Environment</code> 对象的作用之一是为后续 <code>@Value</code> 值注入时提供键值</p>
-<p><code>Environment</code> 分成三个主要部分</p>
-<ul>
-<li>
-<p><code>systemProperties</code> - 保存 <code>java</code> 环境键值</p>
-</li>
-<li>
-<p><code>systemEnvironment</code> - 保存系统环境键值</p>
-</li>
-<li>
-<p>自定义 <code>PropertySource</code> - 保存自定义键值，例如来自于 <code>*.properties</code> 文件的键值</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" alt="" /></p>
-<h4 id="_2-obtainfreshbeanfactory"> 2. obtainFreshBeanFactory</h4>
-<ul>
-<li>
-<p>这一步获取（或创建） <code>BeanFactory</code> 也是作为 <code>ApplicationContext</code> 的一个成员变量</p>
-</li>
-<li>
-<p><code>BeanFactory</code> 的作用是负责 <code>bean</code> 的创建、依赖注入和初始化，<code>bean</code> 的各项特征由 <code>BeanDefinition</code> 定义</p>
-<ul>
-<li>
-<p><code>BeanDefinition</code> 作为 <code>bean</code> 的设计蓝图，规定了 <code>bean</code> 的特征，如单例多例、依赖关系、初始销毁方法等</p>
-</li>
-<li>
-<p><code>BeanDefinition</code> 的来源有多种多样，可以是通过 <code>xml</code> 获得、配置类获得、组件扫描获得，也可以是编程添加</p>
-</li>
-</ul>
-</li>
-<li>
-<p>所有的 <code>BeanDefinition</code> 会存入 <code>BeanFactory</code> 中的 <code>beanDefinitionMap</code> 集合</p>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057632.png" alt="" /></p>
-<h4 id="_3-preparebeanfactory"> 3. prepareBeanFactory</h4>
-<ul>
-<li>这一步会进一步完善 <code>BeanFactory</code>，为它的各项成员变量赋值</li>
-<li><code>beanExpressionResolver</code> 用来解析 <code>SpEL</code>，常见实现为 <code>StandardBeanExpressionResolver</code></li>
-<li><code>propertyEditorRegistrars</code> 会注册类型转换器
-<ul>
-<li>它在这里使用了 <code>ResourceEditorRegistrar</code> 实现类</li>
-<li>并应用 <code>ApplicationContext</code> 提供的 <code>Environment</code> 完成 <code>${ }</code> 解析</li>
-</ul>
-</li>
-<li><code>registerResolvableDependency</code> 来注册 <code>beanFactory</code> 以及 <code>ApplicationContext</code>，让它们也能用于依赖注入</li>
-<li><code>beanPostProcessors</code> 是 <code>bean</code> 后处理器集合，会工作在 <code>bean</code> 的生命周期各个阶段，此处会添加两个：
-<ul>
-<li><code>ApplicationContextAwareProcessor</code> 用来解析 <code>Aware</code> 接口</li>
-<li><code>ApplicationListenerDetector</code> 用来识别容器中 <code>ApplicationListener</code> 类型的 <code>bean</code></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081057394.png" alt="" /></p>
-<h4 id="_4-postprocessbeanfactory"> 4. postProcessBeanFactory</h4>
-<ul>
-<li>这一步是空实现，留给子类扩展。
-<ul>
-<li>一般 <code>Web</code> 环境的 <code>ApplicationContext</code> 都要利用它注册新的 <code>Scope</code>，完善 <code>Web</code> 下的 <code>BeanFactory</code></li>
-</ul>
-</li>
-<li>这里体现的是模板方法设计模式</li>
-</ul>
-<h4 id="_5-invokebeanfactorypostprocessors"> 5. invokeBeanFactoryPostProcessors</h4>
-<ul>
-<li>这一步会调用 <code>beanFactory</code> 后处理器</li>
-<li><code>beanFactory</code> 后处理器，充当 <code>beanFactory</code> 的扩展点，可以用来补充或修改 <code>BeanDefinition</code></li>
-<li>常见的 <code>beanFactory</code> 后处理器有
-<ul>
-<li><code>ConfigurationClassPostProcessor</code> – 解析 <code>@Configuration、@Bean、@Import、@PropertySource</code> 等</li>
-<li><code>PropertySourcesPlaceHolderConfigurer</code> – 替换 <code>BeanDefinition</code> 中的 <code>${ }</code></li>
-<li><code>MapperScannerConfigurer</code> – 补充 <code>Mapper</code> 接口对应的 <code>BeanDefinition</code></li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058642.png" alt="" /></p>
-<h4 id="_6-registerbeanpostprocessors"> 6. registerBeanPostProcessors</h4>
-<ul>
-<li>这一步是继续从 <code>beanFactory</code> 中找出 <code>bean</code> 后处理器，添加至 <code>beanPostProcessors</code> 集合中</li>
-<li><code>bean</code> 后处理器，充当 <code>bean</code> 的扩展点，可以工作在 <code>bean</code> 的实例化、依赖注入、初始化阶段，常见的有：
-<ul>
-<li><code>AutowiredAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Autowired，@Value</code> 注解</li>
-<li><code>CommonAnnotationBeanPostProcessor</code> 功能有：解析 <code>@Resource，@PostConstruct，@PreDestroy</code></li>
-<li><code>AnnotationAwareAspectJAutoProxyCreator</code> 功能有：为符合切点的目标 <code>bean</code> 自动创建代理</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058548.png" alt="" /></p>
-<h4 id="_7-initmessagesource"> 7. initMessageSource</h4>
-<ul>
-<li>这一步是为 <code>ApplicationContext</code> 添加 <code>messageSource</code> 成员，实现国际化功能</li>
-<li>去 <code>beanFactory</code> 内找名为 <code>messageSource</code> 的 <code>bean</code>，如果没有，则提供空的 <code>MessageSource</code> 实现</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058233.png" alt="" /></p>
-<h4 id="_8-initapplicationcontexteventmulticaster"> 8. initApplicationContextEventMulticaster</h4>
-<ul>
-<li>这一步为 <code>ApplicationContext</code> 添加事件广播器成员，即 <code>applicationContextEventMulticaster</code></li>
-<li>它的作用是发布事件给监听器</li>
-<li>去 <code>beanFactory</code> 找名为 <code>applicationEventMulticaster</code> 的 <code>bean</code> 作为事件广播器，若没有，会创建默认的事件广播器</li>
-<li>之后就可以调用 <code>ApplicationContext.publishEvent</code>(事件对象) 来发布事件</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081058783.png" alt="" /></p>
-<h4 id="_9-onrefresh"> 9. onRefresh</h4>
-<ul>
-<li>这一步是空实现，留给子类扩展
-<ul>
-<li><code>SpringBoot</code> 中的子类在这里准备了 <code>WebServer</code>，即内嵌 <code>web</code> 容器</li>
-</ul>
-</li>
-<li>体现的是模板方法设计模式</li>
-</ul>
-<h4 id="_10-registerlisteners"> 10. registerListeners</h4>
-<ul>
-<li>这一步会从多种途径找到事件监听器，并添加至 <code>applicationEventMulticaster</code></li>
-<li>事件监听器顾名思义，用来接收事件广播器发布的事件，有如下来源
-<ul>
-<li>事先编程添加的</li>
-<li>来自容器中的 <code>bean</code></li>
-<li>来自于 <code>@EventListener</code> 的解析</li>
-</ul>
-</li>
-<li>要实现事件监听器，只需要实现 <code>ApplicationListener</code> 接口，重写其中 <code>onApplicationEvent(E e)</code> 方法即可</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059510.png" alt="" /></p>
-<h4 id="_11-finishbeanfactoryinitialization"> 11. finishBeanFactoryInitialization</h4>
-<ul>
-<li>这一步会将 <code>beanFactory</code> 的成员补充完毕，并初始化所有非延迟单例 <code>bean</code></li>
-<li><code>conversionService</code> 也是一套转换机制，作为对 <code>PropertyEditor</code> 的补充</li>
-<li><code>embeddedValueResolvers</code> 即内嵌值解析器，用来解析 <code>@Value</code> 中的 <code>${ }</code>，借用的是 <code>Environment</code> 的功能</li>
-<li><code>singletonObjects</code> 即单例池，缓存所有单例对象
-<ul>
-<li>对象的创建都分三个阶段，每一阶段都有不同的 <code>bean</code> 后处理器参与进来，扩展功能</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059692.png" alt="" /></p>
-<h4 id="_12-finishrefresh"> 12. finishRefresh</h4>
-<ul>
-<li>这一步会为 <code>ApplicationContext</code> 添加 <code>lifecycleProcessor</code> 成员，用来控制容器内需要生命周期管理的 <code>bean</code></li>
-<li>如果容器中有名称为 <code>lifecycleProcessor</code> 的 <code>bean</code> 就用它，否则创建默认的生命周期管理器</li>
-<li>准备好生命周期管理器，就可以实现
-<ul>
-<li>调用 <code>context</code> 的 <code>start</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>start</code></li>
-<li>调用 <code>context</code> 的 <code>stop</code>，即可触发所有实现 <code>LifeCycle</code> 接口 <code>bean</code> 的 <code>stop</code></li>
-</ul>
-</li>
-<li>发布 <code>ContextRefreshed</code> 事件，整个 <code>refresh</code> 执行完成</li>
-</ul>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201081059816.png" alt="" /></p>
-<h2 id="spring-bean-生命周期"> Spring bean 生命周期</h2>
-<h3 id="要求-2"> 要求</h3>
-<ul>
-<li>掌握 <code>Spring bean</code> 的生命周期</li>
-</ul>
-<h3 id="bean-生命周期-概述"> bean 生命周期 概述</h3>
-<p><code>bean</code> 的生命周期从调用 <code>beanFactory</code> 的 <code>getBean</code> 开始，到这个 <code>bean</code> 被销毁，可以总结为以下七个阶段：</p>
-<div><pre><code>1. 处理名称，检查缓存
-
-2. 处理父子容器
-
-3. 处理 `dependsOn`
-
-4. 选择 `scope` 策略
-
-5. 创建 `bean`
-
-6. 类型转换处理
-
-7. 销毁 `bean`
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><blockquote>
-<p><em><strong>注意</strong></em></p>
-<ul>
-<li>划分的阶段和名称并不重要，重要的是理解整个过程中做了哪些事情</li>
-</ul>
-</blockquote>
-<h4 id="_1-处理名称-检查缓存"> 1. 处理名称，检查缓存</h4>
-<ul>
-<li>
-<p>这一步会处理别名，将别名解析为实际名称</p>
-</li>
-<li>
-<p>对 <code>FactoryBean</code> 也会特殊处理，如果以 <code>&amp;</code> 开头表示要获取 <code>FactoryBean</code> 本身，否则表示要获取其产品</p>
-</li>
-<li>
-<p>这里针对单例对象会检查一级、二级、三级缓存</p>
-<ul>
-<li>
-<p><code>singletonFactories</code> 三级缓存，存放单例工厂对象</p>
-</li>
-<li>
-<p><code>earlySingletonObjects</code> 二级缓存，存放单例工厂的产品对象</p>
-<ul>
-<li>如果发生循环依赖，产品是代理；无循环依赖，产品是原始对象</li>
-</ul>
-</li>
-<li>
-<p><code>singletonObjects</code> 一级缓存，存放单例成品对象</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="_2-处理父子容器"> 2. 处理父子容器</h4>
-<ul>
-<li>
-<p>如果当前容器根据名字找不到这个 <code>bean</code>，此时若父容器存在，则执行父容器的 <code>getBean</code> 流程</p>
-</li>
-<li>
-<p>父子容器的 <code>bean</code> 名称可以重复</p>
-</li>
-</ul>
-<h4 id="_3-处理-dependson"> 3. 处理 dependsOn</h4>
-<ul>
-<li>
-<p>如果当前 <code>bean</code> 有通过 <code>dependsOn</code> 指定了非显式依赖的 <code>bean</code>，这一步会提前创建这些 <code>dependsOn</code> 的 <code>bean</code></p>
-</li>
-<li>
-<p>所谓非显式依赖，就是指两个 <code>bean</code> 之间不存在直接依赖关系，但需要控制它们的创建先后顺序</p>
-</li>
-</ul>
-<h4 id="_4-选择-scope-策略"> 4. 选择 scope 策略</h4>
-<ul>
-<li>
-<p>对于 <code>singleton scope</code>，首先到单例池去获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
-</li>
-<li>
-<p>对于 <code>prototype scope</code>，每次都会进入创建流程</p>
-</li>
-<li>
-<p>对于自定义 <code>scope</code>，例如 <code>request</code>，首先到 <code>request</code> 域获取 <code>bean</code>，如果有则直接返回，没有再进入创建流程</p>
-</li>
-</ul>
-<h4 id="_5-1-创建-bean-创建-bean-实例"> 5.1 创建 bean - 创建 bean 实例</h4>
-<table>
-<thead>
-<tr>
-<th><strong>要点</strong></th>
-<th><strong>总结</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>有自定义 <code>TargetSource</code> 的情况</td>
-<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建代理返回</td>
-</tr>
-<tr>
-<td><code>Supplier</code> 方式创建 <code>bean</code> 实例</td>
-<td>为 <code>Spring 5.0</code> 新增功能，方便编程方式创建  <code>bean</code>  实例</td>
-</tr>
-<tr>
-<td><code>FactoryMethod</code> 方式  创建 <code>bean</code>  实例</td>
-<td>① 分成静态工厂与实例工厂；② 工厂方法若有参数，需要对工厂方法参数进行解析，利用 <code>resolveDependency</code>；③ 如果有多个工厂方法候选者，还要进一步按权重筛选</td>
-</tr>
-<tr>
-<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
-<td>① 优先选择带  <code>@Autowired</code>  注解的构造；② 若有唯一的带参构造，也会入选</td>
-</tr>
-<tr>
-<td><code>mbd.getPreferredConstructors</code></td>
-<td>选择所有公共构造，这些构造之间按权重筛选</td>
-</tr>
-<tr>
-<td>采用默认构造</td>
-<td>如果上面的后处理器和 <code>BeanDefiniation</code> 都没找到构造，采用默认构造，即使是私有的</td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5-2-创建-bean-依赖注入"> 5.2 创建 bean - 依赖注入</h4>
-<table>
-<thead>
-<tr>
-<th><strong>要点</strong></th>
-<th><strong>总结</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AutowiredAnnotationBeanPostProcessor</code></td>
-<td>识别 <code>@Autowired</code> 及 <code>@Value</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
-</tr>
-<tr>
-<td><code>CommonAnnotationBeanPostProcessor</code></td>
-<td>识别 <code>@Resource</code> 标注的成员，封装为 <code>InjectionMetadata</code> 进行依赖注入</td>
-</tr>
-<tr>
-<td><code>resolveDependency</code></td>
-<td>用来查找要装配的值，可以识别：① <code>Optional</code>；② <code>ObjectFactory</code> 及 <code>ObjectProvider</code>；③ <code>@Lazy</code>  注解；④ <code>@Value</code> 注解（<code>${ }</code>, <code>#{ }</code>, 类型转换）；⑤ 集合类型（<code>Collection</code>，<code>Map</code>，数组等）；⑥ 泛型和  <code>@Qualifier</code>（用来区分类型歧义）；⑦ <code>primary</code>  及名字匹配（用来区分类型歧义）</td>
-</tr>
-<tr>
-<td><code>AUTOWIRE_BY_NAME</code></td>
-<td>根据成员名字找 <code>bean</code> 对象，修改 <code>mbd</code> 的 <code>propertyValues</code>，不会考虑简单类型的成员</td>
-</tr>
-<tr>
-<td><code>AUTOWIRE_BY_TYPE</code></td>
-<td>根据成员类型执行 <code>resolveDependency</code> 找到依赖注入的值，修改  <code>mbd</code> 的 <code>propertyValues</code></td>
-</tr>
-<tr>
-<td><code>applyPropertyValues</code></td>
-<td>根据 <code>mbd</code> 的 <code>propertyValues</code> 进行依赖注入（即 <code>xml</code> 中 <code>&lt;property name ref|value/&gt;</code>）</td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5-3-创建-bean-初始化"> 5.3 创建 bean - 初始化</h4>
-<table>
-<thead>
-<tr>
-<th><strong>要点</strong></th>
-<th><strong>总结</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>内置 <code>Aware</code> 接口的装配</td>
-<td>包括 <code>BeanNameAware</code>，<code>BeanFactoryAware</code> 等</td>
-</tr>
-<tr>
-<td>扩展 <code>Aware</code> 接口的装配</td>
-<td>由 <code>ApplicationContextAwareProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
-</tr>
-<tr>
-<td><code>@PostConstruct</code></td>
-<td>由 <code>CommonAnnotationBeanPostProcessor</code> 解析，执行时机在  <code>postProcessBeforeInitialization</code></td>
-</tr>
-<tr>
-<td><code>InitializingBean</code></td>
-<td>通过接口回调执行初始化</td>
-</tr>
-<tr>
-<td><code>initMethod</code></td>
-<td>根据 <code>BeanDefinition</code> 得到的初始化方法执行初始化，即 <code>&lt;bean init-method&gt;</code> 或 <code>@Bean</code>(<code>initMethod</code>)</td>
-</tr>
-<tr>
-<td>创建 <code>aop</code> 代理</td>
-<td>由 <code>AnnotationAwareAspectJAutoProxyCreator</code> 创建，执行时机在  <code>postProcessAfterInitialization</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="_5-4-创建-bean-注册可销毁-bean"> 5.4 创建 bean - 注册可销毁 bean</h4>
-<p>在这一步判断并登记可销毁 <code>bean</code></p>
-<ul>
-<li>
-<p>判断依据</p>
-<ul>
-<li>
-<p>如果实现了 <code>DisposableBean</code> 或 <code>AutoCloseable</code> 接口，则为可销毁 <code>bean</code></p>
-</li>
-<li>
-<p>如果自定义了 <code>destroyMethod</code>，则为可销毁 <code>bean</code></p>
-</li>
-<li>
-<p>如果采用 <code>@Bean</code> 没有指定 <code>destroyMethod</code>，则采用自动推断方式获取销毁方法名（<code>close，shutdown</code>）</p>
-</li>
-<li>
-<p>如果有 <code>@PreDestroy</code> 标注的方法</p>
-</li>
-</ul>
-</li>
-<li>
-<p>存储位置</p>
-<ul>
-<li>
-<p><code>singleton scope</code> 的可销毁 <code>bean</code> 会存储于 <code>beanFactory</code> 的成员当中</p>
-</li>
-<li>
-<p>自定义 <code>scope</code> 的可销毁 <code>bean</code> 会存储于对应的域对象当中</p>
-</li>
-<li>
-<p><code>prototype scope</code> 不会存储，需要自己找到此对象销毁</p>
-</li>
-</ul>
-</li>
-<li>
-<p>存储时都会封装为 <code>DisposableBeanAdapter</code> 类型对销毁方法的调用进行适配</p>
-</li>
-</ul>
-<h4 id="_6-类型转换处理"> 6. 类型转换处理</h4>
-<ul>
-<li>如果 <code>getBean</code> 的 <code>requiredType</code> 参数与实际得到的对象类型不同，会尝试进行类型转换</li>
-</ul>
-<h4 id="_7-销毁-bean"> 7. 销毁 bean</h4>
-<ul>
-<li>
-<p>销毁时机</p>
-<ul>
-<li>
-<p><code>singleton bean</code> 的销毁在 <code>ApplicationContext.close</code> 时，此时会找到所有 <code>DisposableBean</code> 的名字，逐一销毁</p>
-</li>
-<li>
-<p>自定义 <code>scope bean</code> 的销毁在作用域对象生命周期结束时</p>
-</li>
-<li>
-<p><code>prototype bean</code> 的销毁可以通过自己手动调用 <code>AutowireCapableBeanFactory.destroyBean</code> 方法执行销毁</p>
-</li>
-</ul>
-</li>
-<li>
-<p>同一 <code>bean</code> 中不同形式销毁方法的调用次序</p>
-<ul>
-<li>
-<p>优先后处理器销毁，即 <code>@PreDestroy</code></p>
-</li>
-<li>
-<p>其次 <code>DisposableBean</code> 接口销毁</p>
-</li>
-<li>
-<p>最后 <code>destroyMethod</code> 销毁（包括自定义名称，推断名称，<code>AutoCloseable</code> 接口 多选一）</p>
-</li>
-</ul>
-</li>
-</ul>
-
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201081057917.png" type="image/png"/>
-    </item>
-    <item>
-      <title>中间件</title>
-      <link>https:/cloaks.cn/blogs/middleware/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/middleware/</guid>
-      <source url="https:/cloaks.cn/rss.xml">中间件</source>
-      <description>&amp;lt;p&amp;gt;简要介绍常见中间件&amp;lt;/p&amp;gt;
-</description>
-      <category>微服务</category>
+      <title>排序算法</title>
+      <link>https:/cloaks.cn/blogs/lintcode/sortIntegers/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/lintcode/sortIntegers/</guid>
+      <source url="https:/cloaks.cn/rss.xml">排序算法</source>
+      <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>简要介绍常见中间件</p>
-
-<h2 id="redis"> Redis</h2>
-<h2 id="zookeeper"> Zookeeper</h2>
-<p><code>zookeeper</code> 是一个分布式服务框架，是 <code>Apache Hadoop</code> 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如：统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等。</p>
-<ul>
-<li>
-<p>结点类型：</p>
-<ul>
-<li>
-<p>临时节点：临时节点的生命周期和客户端会话绑定在一起，客户端会话失效，则这个节点就会被自动清除。</p>
-</li>
-<li>
-<p>永久节点：该数据节点被创建后，就会一直存在于 <code>zookeeper</code> 服务器上，直到有删除操作来主动删除这个节点。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="使用场景"> 使用场景</h3>
-<p>配置中心：配置中心，顾名思义就是将配置数据写到 <code>ZK</code> 节点上，供各个分布式机器获取配置，同时监听自己对应的节点。实现配置信息的集中式管理和动态更新。</p>
-<p>命名服务：在分布式系统中，通过使用命名服务，客户端应用能够根据指定名字来获取资源或服务的地址，提供者等信息。被命名的实体通常可以是集群中的机器，提供的服务地址，远程对象等等，这些我们都可以统称他们为名字(<code>Name</code>)。通过调用 <code>ZK</code> 提供的创建节点的 <code>API</code>，能够很容易创建一个全局唯一的 <code>path</code>，这个 <code>path</code> 就可以作为一个名称。</p>
-<p>分布式通知：<code>ZooKeeper</code> 的 <code>watcher</code> 注册与异步通知机制，能够很好的实现分布式环境下不同系统之间的通知与协调，实现对数据变更的实时处理。不同系统都对 <code>ZK</code> 上同一个 <code>znode</code> 进行注册，监听 <code>znode</code> 的变化（包括 <code>znode</code> 本身内容及子节点的)，其中一个系统 <code>update</code> 了 <code>znode</code>，那么另一个系统能够收到通知，并作出相应处理</p>
-<p>选主：利用 <code>ZooKeeper</code> 的一致性，能够保证在分布式高并发情况下节点创建的全局唯一性，即：同时有多个客户端请求创建 <code>/currentMaster</code> 节点，最终一定只有一个客户端请求能够创建成功。利用这个特性，就能很轻易的在分布式环境中进行集群选取了。</p>
-<p>分布式锁：分布式锁，这个主要得益于 <code>ZooKeeper</code> 的节点创建和事件监听机制。</p>
-<h2 id="rabbit-mq"> Rabbit MQ</h2>
-<p><code>Rabbit MQ</code> 是一个由 <code>erlang</code> 开发的 <code>AMQP（Advanced Message Queue）</code> 的开源实现</p>
-<h3 id="模块介绍"> 模块介绍</h3>
-<p><code>Broker</code>：可以简单理解为一台物理机器。</p>
-<p><code>Producer</code>：消息生产者，就是投递消息的程序。</p>
-<p><code>Consumer</code>：消息消费者，就是接受消息的程序。</p>
-<p><code>Exchange</code>：消息交换机，它指定消息按什么规则，路由到哪个队列。
-<code>fanout|direct|topic|headerQueue</code>：消息的载体，每个消息都会被投到一个或多个队列。</p>
-<p><code>Binding</code>：绑定，它的作用就是把 <code>exchange</code> 和 <code>queue</code> 按照路由规则绑定起来。</p>
-<p><code>Routing Key</code>：路由关键字，<code>exchange</code> 根据这个关键字进行消息投递。</p>
-<p><code>vhost</code>：虚拟主机，一个 <code>broker</code> 里可以有多个 <code>vhost</code>，用作不同用户的权限分离。</p>
-<h3 id="应用"> 应用</h3>
-<p>消息传递、异步处理、应用解耦、流量削峰</p>
-<h3 id="高可用"> 高可用</h3>
-<p>发送方：<code>confirm</code> 机制（发送成功后有异步通知）</p>
-<p>消费端：<code>ACK</code> 消息应答机制</p>
-<p><code>rabbit</code>：<code>queue</code> 持久化，消息持久化（<code>deliveryMode = 2</code>）</p>
-<h2 id="nginx"> Nginx</h2>
-<p><code>Nginx</code> 是一款轻量级的 <code>Web</code> 服务器/反向代理服务器及电子邮件<code>（IMAP/POP3)</code>代理服务器，在 <code>BSD-like</code> 协议下发行。其特点是占有内存少，并发能力强，事实上 <code>nginx</code> 的并发能力在同类型的网页服务器中几乎成为公认的标杆，在百度、京东、新浪、网易、腾讯、淘宝等互联网公司中均有应用。</p>
-<h3 id="动静分离"> 动静分离</h3>
-<p>静态资源：由 <code>nginx</code> 作为 <code>web</code> 服务器身份，直接返回</p>
-<p>动态资源：<code>nginx</code> 将请求转发出去，交给后端应用服务器处理</p>
-<h3 id="负载均衡"> 负载均衡</h3>
-<p>当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群提升并行处理能力。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。这时使用 <code>nginx</code> 实现了机器之间的负载均衡。</p>
-]]></content:encoded>
+      <content:encoded><![CDATA[<blockquote>
+<p>题号：<a href="https://www.lintcode.com/problem/463/" target="_blank" rel="noopener noreferrer">463</a><br>
+描述：给一组整数，按照升序排序，使用选择排序，冒泡排序，插入排序或者任何 O(n2) 的排序算法。</p>
+</blockquote>
+<h2 id="选择排序"> 选择排序</h2>
+<p>python</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
+    <span>"""
+    @param A: an integer array
+    @return: nothing
+    """</span>
+    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
+        <span># write your code here</span>
+        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
+            <span>for</span> j <span>in</span> <span>range</span><span>(</span>i <span>+</span> <span>1</span><span>,</span> <span>len</span><span>(</span>A<span>)</span><span>)</span><span>:</span>
+                <span>if</span> A<span>[</span>i<span>]</span> <span>></span> A<span>[</span>j<span>]</span><span>:</span>
+                    A<span>[</span>i<span>]</span><span>,</span> A<span>[</span>j<span>]</span> <span>=</span> A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>i<span>]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
+<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>/**
+     * @param A: an integer array
+     * @return: nothing
+     */</span>
+    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
+        <span>// write your code here</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>for</span> <span>(</span><span>int</span> j <span>=</span> i <span>+</span> <span>1</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length<span>;</span> j<span>++</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span><span>A</span><span>[</span>i<span>]</span> <span>></span> <span>A</span><span>[</span>j<span>]</span><span>)</span> <span>{</span>
+                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>+</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+                    <span>A</span><span>[</span>i<span>]</span> <span>=</span> <span>A</span><span>[</span>i<span>]</span> <span>-</span> <span>A</span><span>[</span>j<span>]</span><span>;</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="冒泡排序"> 冒泡排序</h2>
+<p>python</p>
+<div><pre><code><span>class</span> <span>Solution</span><span>:</span>
+    <span>"""
+    @param A: an integer array
+    @return: nothing
+    """</span>
+    <span>def</span> <span>sortIntegers</span><span>(</span>self<span>,</span> A<span>)</span><span>:</span>
+        <span># write your code here</span>
+        <span>for</span> i <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
+            <span>for</span> j <span>in</span> <span>range</span><span>(</span><span>0</span><span>,</span> <span>len</span><span>(</span>A<span>)</span> <span>-</span> <span>1</span><span>)</span><span>:</span>
+                <span>if</span> A<span>[</span>j<span>]</span> <span>></span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>:</span>
+                    A<span>[</span>j<span>]</span><span>,</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> A<span>[</span>j <span>+</span> <span>1</span><span>]</span><span>,</span> A<span>[</span>j<span>]</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>java</p>
+<div><pre><code><span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>/**
+     * @param A: an integer array
+     * @return: nothing
+     */</span>
+    <span>public</span> <span>void</span> <span>sortIntegers</span><span>(</span><span>int</span><span>[</span><span>]</span> <span>A</span><span>)</span> <span>{</span>
+        <span>// write your code here</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span> <span>{</span>
+            <span>for</span> <span>(</span><span>int</span> j <span>=</span> <span>0</span><span>;</span> j <span>&lt;</span> <span>A</span><span>.</span>length <span>-</span> <span>1</span><span>;</span> j<span>++</span><span>)</span> <span>{</span>
+                <span>if</span> <span>(</span><span>A</span><span>[</span>j<span>]</span> <span>></span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>)</span> <span>{</span>
+                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>+</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
+                    <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
+                    <span>A</span><span>[</span>j<span>]</span> <span>=</span> <span>A</span><span>[</span>j<span>]</span> <span>-</span> <span>A</span><span>[</span>j <span>+</span> <span>1</span><span>]</span><span>;</span>
+                <span>}</span>
+            <span>}</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="插入排序"> 插入排序</h2>
+<p>python</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><p>java</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="归并排序"> 归并排序</h2>
+<p>python</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><p>java</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="快速排序"> 快速排序</h2>
+<p>python</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div><p>java</p>
+<div><pre><code>
+</code></pre>
+<div><span>1</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>计算机网络面试</title>
@@ -4650,45 +4591,63 @@ class TreeNode:
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
     </item>
     <item>
-      <title>反转链表</title>
-      <link>https:/cloaks.cn/blogs/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/blogs/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
-      <source url="https:/cloaks.cn/rss.xml">反转链表</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="反转链表"> 反转链表</h1>
-<blockquote>
-<p>题号：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca" target="_blank" rel="noopener noreferrer">200</a><br>
-描述：给定一个单链表的头结点pHead，长度为n，反转该链表后，返回新链表的表头。数据范围： n&lt;=1000<br>
-要求：空间复杂度 O(1)O(1) ，时间复杂度 O(n)O(n) 。如当输入链表{1,2,3}时，经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。</p>
-</blockquote>
-<h3 id="解题思路"> 解题思路</h3>
-<p>官方给的第二种解法很不错，大概意识从头结点开始把每一个结点用头插法的方式插入空指针pre中，这个反向指针的说法还是不好理解的。</p>
-<h3 id="算法实现"> 算法实现</h3>
-<div><pre><code><span>/*
-public class ListNode {
-    int val;
-    ListNode next = null;
+      <title>中间件</title>
+      <link>https:/cloaks.cn/blogs/middleware/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/middleware/</guid>
+      <source url="https:/cloaks.cn/rss.xml">中间件</source>
+      <description>&amp;lt;p&amp;gt;简要介绍常见中间件&amp;lt;/p&amp;gt;
+</description>
+      <category>微服务</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>简要介绍常见中间件</p>
 
-    ListNode(int val) {
-        this.val = val;
-    }
-}*/</span>
-<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>public</span> <span>ListNode</span> <span>ReverseList</span><span>(</span><span>ListNode</span> head<span>)</span> <span>{</span>
-        <span>ListNode</span> pre <span>=</span> <span>null</span><span>;</span>
-        <span>ListNode</span> cur <span>=</span> head<span>;</span>
-        <span>ListNode</span> next <span>=</span> <span>null</span><span>;</span>
-        <span>while</span> <span>(</span>cur <span>!=</span> <span>null</span><span>)</span> <span>{</span>
-            next <span>=</span> cur<span>.</span>next<span>;</span>
-            cur<span>.</span>next <span>=</span> pre<span>;</span>
-            pre <span>=</span> cur<span>;</span>
-            cur <span>=</span> next<span>;</span>
-        <span>}</span>
-        <span>return</span> pre<span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+<h2 id="redis"> Redis</h2>
+<h2 id="zookeeper"> Zookeeper</h2>
+<p><code>zookeeper</code> 是一个分布式服务框架，是 <code>Apache Hadoop</code> 的一个子项目，它主要是用来解决分布式应用中经常遇到的一些数据管理问题，如：统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等。</p>
+<ul>
+<li>
+<p>结点类型：</p>
+<ul>
+<li>
+<p>临时节点：临时节点的生命周期和客户端会话绑定在一起，客户端会话失效，则这个节点就会被自动清除。</p>
+</li>
+<li>
+<p>永久节点：该数据节点被创建后，就会一直存在于 <code>zookeeper</code> 服务器上，直到有删除操作来主动删除这个节点。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用场景"> 使用场景</h3>
+<p>配置中心：配置中心，顾名思义就是将配置数据写到 <code>ZK</code> 节点上，供各个分布式机器获取配置，同时监听自己对应的节点。实现配置信息的集中式管理和动态更新。</p>
+<p>命名服务：在分布式系统中，通过使用命名服务，客户端应用能够根据指定名字来获取资源或服务的地址，提供者等信息。被命名的实体通常可以是集群中的机器，提供的服务地址，远程对象等等，这些我们都可以统称他们为名字(<code>Name</code>)。通过调用 <code>ZK</code> 提供的创建节点的 <code>API</code>，能够很容易创建一个全局唯一的 <code>path</code>，这个 <code>path</code> 就可以作为一个名称。</p>
+<p>分布式通知：<code>ZooKeeper</code> 的 <code>watcher</code> 注册与异步通知机制，能够很好的实现分布式环境下不同系统之间的通知与协调，实现对数据变更的实时处理。不同系统都对 <code>ZK</code> 上同一个 <code>znode</code> 进行注册，监听 <code>znode</code> 的变化（包括 <code>znode</code> 本身内容及子节点的)，其中一个系统 <code>update</code> 了 <code>znode</code>，那么另一个系统能够收到通知，并作出相应处理</p>
+<p>选主：利用 <code>ZooKeeper</code> 的一致性，能够保证在分布式高并发情况下节点创建的全局唯一性，即：同时有多个客户端请求创建 <code>/currentMaster</code> 节点，最终一定只有一个客户端请求能够创建成功。利用这个特性，就能很轻易的在分布式环境中进行集群选取了。</p>
+<p>分布式锁：分布式锁，这个主要得益于 <code>ZooKeeper</code> 的节点创建和事件监听机制。</p>
+<h2 id="rabbit-mq"> Rabbit MQ</h2>
+<p><code>Rabbit MQ</code> 是一个由 <code>erlang</code> 开发的 <code>AMQP（Advanced Message Queue）</code> 的开源实现</p>
+<h3 id="模块介绍"> 模块介绍</h3>
+<p><code>Broker</code>：可以简单理解为一台物理机器。</p>
+<p><code>Producer</code>：消息生产者，就是投递消息的程序。</p>
+<p><code>Consumer</code>：消息消费者，就是接受消息的程序。</p>
+<p><code>Exchange</code>：消息交换机，它指定消息按什么规则，路由到哪个队列。
+<code>fanout|direct|topic|headerQueue</code>：消息的载体，每个消息都会被投到一个或多个队列。</p>
+<p><code>Binding</code>：绑定，它的作用就是把 <code>exchange</code> 和 <code>queue</code> 按照路由规则绑定起来。</p>
+<p><code>Routing Key</code>：路由关键字，<code>exchange</code> 根据这个关键字进行消息投递。</p>
+<p><code>vhost</code>：虚拟主机，一个 <code>broker</code> 里可以有多个 <code>vhost</code>，用作不同用户的权限分离。</p>
+<h3 id="应用"> 应用</h3>
+<p>消息传递、异步处理、应用解耦、流量削峰</p>
+<h3 id="高可用"> 高可用</h3>
+<p>发送方：<code>confirm</code> 机制（发送成功后有异步通知）</p>
+<p>消费端：<code>ACK</code> 消息应答机制</p>
+<p><code>rabbit</code>：<code>queue</code> 持久化，消息持久化（<code>deliveryMode = 2</code>）</p>
+<h2 id="nginx"> Nginx</h2>
+<p><code>Nginx</code> 是一款轻量级的 <code>Web</code> 服务器/反向代理服务器及电子邮件<code>（IMAP/POP3)</code>代理服务器，在 <code>BSD-like</code> 协议下发行。其特点是占有内存少，并发能力强，事实上 <code>nginx</code> 的并发能力在同类型的网页服务器中几乎成为公认的标杆，在百度、京东、新浪、网易、腾讯、淘宝等互联网公司中均有应用。</p>
+<h3 id="动静分离"> 动静分离</h3>
+<p>静态资源：由 <code>nginx</code> 作为 <code>web</code> 服务器身份，直接返回</p>
+<p>动态资源：<code>nginx</code> 将请求转发出去，交给后端应用服务器处理</p>
+<h3 id="负载均衡"> 负载均衡</h3>
+<p>当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群提升并行处理能力。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。这时使用 <code>nginx</code> 实现了机器之间的负载均衡。</p>
+]]></content:encoded>
     </item>
     <item>
       <title>Spring</title>
@@ -5443,6 +5402,805 @@ public class ListNode {
 <p>业务发起使用 spring 上下文对象获取对应的 bean</p>
 </li>
 </ul>
+<h2 id="注解开发"> 注解开发</h2>
+<h3 id="注解驱动的意义"> 注解驱动的意义</h3>
+<h4 id="什么是注解驱动"> 什么是注解驱动</h4>
+<p>注解启动时使用注解的形式替代 xml 配置，将繁杂的 spring 配置文件从工程中彻底消除掉，简化书写</p>
+<h4 id="注解驱动的弊端"> 注解驱动的弊端</h4>
+<ul>
+<li>
+<p>为了达成注解驱动的目的，可能会将原先很简单的书写，变的更加复杂</p>
+</li>
+<li>
+<p>XML中配置第三方开发的资源是很方便的，但使用注解驱动无法在第三方开发的资源中进行编辑，因此会增大开发工作量</p>
+</li>
+</ul>
+<h3 id="常用注解"> 常用注解</h3>
+<h4 id="启动注解功能"> 启动注解功能</h4>
+<ul>
+<li>
+<p>启动注解扫描，加载类中配置的注解项</p>
+<div><pre><code><span><span><span>&lt;</span><span>context:</span>component-scan</span> <span>base-package</span><span><span>=</span><span>"</span>packageName<span>"</span></span><span>/></span></span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>
+<p>在进行包所扫描时，会对配置的包及其子包中所有文件进行扫描</p>
+</li>
+<li>
+<p>扫描过程是以文件夹递归迭代的形式进行的</p>
+</li>
+<li>
+<p>扫描过程仅读取合法的 java 文件</p>
+</li>
+<li>
+<p>扫描时仅读取 spring 可识别的注解</p>
+</li>
+<li>
+<p>扫描结束后会将可识别的有效注解转化为 spring 对应的资源加入 IoC 容器</p>
+</li>
+</ul>
+</li>
+<li>
+<p>注意：</p>
+<ul>
+<li>
+<p>无论是注解格式还是 XML 配置格式，最终都是将资源加载到 IoC 容器中，差别仅仅是数据读取方式不同</p>
+</li>
+<li>
+<p>从加载效率上来说注解优于 XML 配置文件</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean的定义"> bean的定义</h4>
+<ul>
+<li>
+<p>名称：@Component    @Controller    @Service    @Repository</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：设置该类为 spring 管理的 bean</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Component</span>
+<span>public</span> <span>class</span> <span>ClassName</span><span>{</span><span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>@Controller、@Service 、@Repository是 @Component 的衍生注解，功能同 @Component</li>
+</ul>
+</li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>value（默认）：定义 bean 的访问 id</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean的作用域"> bean的作用域</h4>
+<ul>
+<li>
+<p>名称：@Scope</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：设置该类作为 bean 对应的 scope 属性</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Scope</span>
+<span>public</span> <span>class</span> <span>ClassName</span><span>{</span><span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>value（默认）：定义 bean 的作用域，默认为 singleton</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean的生命周期"> bean的生命周期</h4>
+<ul>
+<li>
+<p>名称：@PostConstruct、@PreDestroy</p>
+</li>
+<li>
+<p>类型：<strong>方法注解</strong></p>
+</li>
+<li>
+<p>位置：方法定义上方</p>
+</li>
+<li>
+<p>作用：设置该类作为 bean 对应的生命周期方法</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@PostConstruct</span>
+<span>public</span> <span>void</span> <span>init</span><span>(</span><span>)</span> <span>{</span> <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"init..."</span><span>)</span><span>;</span> <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+</ul>
+<h4 id="加载第三方资源"> 加载第三方资源</h4>
+<ul>
+<li>
+<p>名称：@Bean</p>
+</li>
+<li>
+<p>类型：<strong>方法注解</strong></p>
+</li>
+<li>
+<p>位置：方法定义上方</p>
+</li>
+<li>
+<p>作用：设置该方法的返回值作为 spring 管理的 bean</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Bean</span><span>(</span><span>"dataSource"</span><span>)</span>
+<span>public</span> <span>DruidDataSource</span> <span>createDataSource</span><span>(</span><span>)</span> <span>{</span>    <span>return</span> ……<span>;</span>    <span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>
+<p>因为第三方 bean 无法在其源码上进行修改，使用 @Bean 解决第三方 bean 的引入问题</p>
+</li>
+<li>
+<p>该注解用于替代 XML 配置中的静态工厂与实例工厂创建 bean，不区分方法是否为静态或非静态</p>
+</li>
+<li>
+<p>@Bean 所在的类必须被 spring 扫描加载，否则该注解无法生效</p>
+</li>
+</ul>
+</li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>value（默认）：定义 bean 的访问 id</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean-的非引用类型属性注入"> bean 的非引用类型属性注入</h4>
+<ul>
+<li>
+<p>名称：@Value</p>
+</li>
+<li>
+<p>类型：<strong>属性注解、方法注解</strong></p>
+</li>
+<li>
+<p>位置：属性定义上方，方法定义上方</p>
+</li>
+<li>
+<p>作用：设置对应属性的值或对方法进行传参</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Value</span><span>(</span><span>"${jdbc.username}"</span><span>)</span>
+<span>private</span> <span>String</span> username<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>
+<p>value 值仅支持非引用类型数据，赋值时对方法的所有参数全部赋值</p>
+</li>
+<li>
+<p>value 值支持读取 properties 文件中的属性值，通过类属性将 properties 中数据传入类中</p>
+</li>
+<li>
+<p>value 值支持SpEL</p>
+</li>
+<li>
+<p>@value 注解如果添加在属性上方，可以省略 set 方法（set方法的目的是为属性赋值）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>value（默认）：定义对应的属性值或参数值</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean的引用类型属性注入"> bean的引用类型属性注入</h4>
+<ul>
+<li>
+<p>名称：@Autowired、@Qualifier</p>
+</li>
+<li>
+<p>类型：<strong>属性注解、方法注解</strong></p>
+</li>
+<li>
+<p>位置：属性定义上方，方法定义上方</p>
+</li>
+<li>
+<p>作用：设置对应属性的对象或对方法进行引用类型传参</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Autowired</span><span>(</span>required <span>=</span> <span>false</span><span>)</span>
+<span>@Qualifier</span><span>(</span><span>"userDao"</span><span>)</span>
+<span>private</span> <span>UserDao</span> userDao<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>@Autowired默认按类型装配，指定@Qualifier后可以指定自动装配的bean的id</li>
+</ul>
+</li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>required：定义该属性是否允许为null</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean的引用类型属性注入-2"> bean的引用类型属性注入</h4>
+<ul>
+<li>
+<p>名称：@Primary</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：设置类对应的bean按类型装配时优先装配</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Primary</span>
+<span>public</span> <span>class</span> <span>ClassName</span><span>{</span><span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>@Autowired默认按类型装配，当出现相同类型的bean，使用@Primary提高按类型自动装配的优先级，多个@Primary会导致优先级设置无效</li>
+</ul>
+</li>
+</ul>
+<h4 id="bean的引用类型属性注入-3"> bean的引用类型属性注入</h4>
+<ul>
+<li>
+<p>名称：@Inject、@Named、@Resource</p>
+</li>
+<li>
+<p>说明：</p>
+<ul>
+<li>@Inject与@Named是JSR330规范中的注解，功能与@Autowired和@Qualifier完全相同，适用于不同架构场景</li>
+<li>@Resource是JSR250规范中的注解，可以简化书写格式</li>
+</ul>
+</li>
+<li>
+<p>@Resource相关属性</p>
+<ul>
+<li>
+<p>name：设置注入的bean的id</p>
+</li>
+<li>
+<p>type：设置注入的bean的类型，接收的参数为Class类型</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="加载properties文件"> 加载properties文件</h4>
+<ul>
+<li>
+<p>名称：@PropertySource</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：加载properties文件中的属性值</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@PropertySource</span><span>(</span>value <span>=</span> <span>"classpath:filename.properties"</span><span>)</span>
+<span>public</span> <span>class</span> <span>ClassName</span> <span>{</span>
+    <span>@Value</span><span>(</span><span>"${propertiesAttributeName}"</span><span>)</span>
+    <span>private</span> <span>String</span> attributeName<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>不支持*通配格式，一旦加载，所有spring控制的bean中均可使用对应属性值</li>
+</ul>
+</li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>
+<p>value（默认）：设置加载的properties文件名</p>
+</li>
+<li>
+<p>ignoreResourceNotFound：如果资源未找到，是否忽略，默认为false</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="纯注解格式"> 纯注解格式</h4>
+<ul>
+<li>
+<p>名称：@Configuration、@ComponentScan</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：设置当前类为 spring 核心配置加载类</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Configuration</span>
+<span>@ComponentScan</span><span>(</span><span>"scanPackageName"</span><span>)</span>
+<span>public</span> <span>class</span> <span>SpringConfigClassName</span><span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>
+<p>核心配合类用于替换 spring 核心配置文件，此类可以设置空的，不设置变量与属性</p>
+</li>
+<li>
+<p>bean扫描工作使用注解@ComponentScan替代</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>AnnotationConfigApplicationContext</strong></p>
+<ul>
+<li>
+<p>加载纯注解格式上下文对象，需要使用 <code>AnnotationConfigApplicationContext</code></p>
+<div><pre><code><span>AnnotationConfigApplicationContext</span> ctx <span>=</span> <span>new</span> <span>AnnotationConfigApplicationContext</span><span>(</span><span>SpringConfig</span><span>.</span><span>class</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+</ul>
+<h4 id="第三方bean配置与管理"> 第三方bean配置与管理</h4>
+<ul>
+<li>
+<p>名称：@Import</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：导入第三方 bean 作为 spring 控制的资源</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Configuration</span>
+<span>@Import</span><span>(</span><span>OtherClassName</span><span>.</span><span>class</span><span>)</span>
+<span>public</span> <span>class</span> <span>ClassName</span> <span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>
+<p>@Import 注解在同一个类上，仅允许添加一次，如果需要导入多个，使用数组的形式进行设定</p>
+</li>
+<li>
+<p>在被导入的类中可以继续使用 @Import 导入其他资源（了解）</p>
+</li>
+<li>
+<p>@Bean 所在的类可以使用导入的形式进入 spring 容器，无需声明为 bean</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="bean加载控制"> bean加载控制</h3>
+<h4 id="依赖加载"> 依赖加载</h4>
+<ol>
+<li>@DependsOn</li>
+</ol>
+<ul>
+<li>
+<p>名称：@DependsOn</p>
+</li>
+<li>
+<p>类型：类注解、方法注解</p>
+</li>
+<li>
+<p>位置：bean 定义的位置（类上或方法上）</p>
+</li>
+<li>
+<p>作用：控制bean的加载顺序，使其在指定 bean 加载完毕后再加载</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@DependsOn</span><span>(</span><span>"beanId"</span><span>)</span>
+<span>public</span> <span>class</span> <span>ClassName</span> <span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>说明：</p>
+<ul>
+<li>
+<p>配置在方法上，使 @DependsOn 指定的 bean 优先于 @Bean 配置的 bean 进行加载</p>
+</li>
+<li>
+<p>配置在类上，使 @DependsOn 指定的 bean 优先于当前类中所有 @Bean 配置的 bean 进行加载</p>
+</li>
+<li>
+<p>配置在类上，使 @DependsOn 指定的 bean 优先于 @Component 等配置的 bean 进行加载</p>
+</li>
+</ul>
+</li>
+<li>
+<p>相关属性</p>
+<ul>
+<li>value（默认）：设置当前 bean 所依赖的 bean 的 id</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>@Order</li>
+</ol>
+<ul>
+<li>
+<p>名称：@Order</p>
+</li>
+<li>
+<p>类型：<strong>配置类注解</strong></p>
+</li>
+<li>
+<p>位置：配置类定义的位置（类上）</p>
+</li>
+<li>
+<p>作用：控制配置类的加载顺序</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Order</span><span>(</span><span>1</span><span>)</span>
+<span>public</span> <span>class</span> <span>SpringConfigClassName</span> <span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+</ul>
+<ol start="3">
+<li>@Lazy</li>
+</ol>
+<ul>
+<li>
+<p>名称：@Lazy</p>
+</li>
+<li>
+<p>类型：<strong>类注解、方法注解</strong></p>
+</li>
+<li>
+<p>位置：bean 定义的位置（类上或方法上）</p>
+</li>
+<li>
+<p>作用：控制 bean 的加载时机，使其延迟加载</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@Lazy</span>
+<span>public</span> <span>class</span> <span>ClassName</span> <span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+</ul>
+<h4 id="依赖加载应用场景"> 依赖加载应用场景</h4>
+<p>@DependsOn</p>
+<ul>
+<li>
+<p>微信订阅号，发布消息和订阅消息的 bean 的加载顺序控制</p>
+</li>
+<li>
+<p>双11活动期间，零点前是结算策略A，零点后是结算策略B，策略B操作的数据为促销数据。策略B加载顺序与促销数据的加载顺序</p>
+</li>
+</ul>
+<p>@Lazy</p>
+<ul>
+<li>程序灾难出现后对应的应急预案处理是启动容器时加载时机</li>
+</ul>
+<p>@Order</p>
+<ul>
+<li>多个种类的配置出现后，优先加载系统级的，然后加载业务级的，避免细粒度的加载控制</li>
+</ul>
+<h3 id="整合第三方技术"> 整合第三方技术</h3>
+<h4 id="综合案例改版-注解整合mybatis"> 综合案例改版（注解整合MyBatis）</h4>
+<h4 id="注解整合mybatis分析"> 注解整合MyBatis分析</h4>
+<ul>
+<li>
+<p>业务类使用注解形式声明 bean，属性采用注解注入</p>
+</li>
+<li>
+<p>建立独立的配置管理类，分类管理外部资源，根据功能进行分类，并提供对应的方法获取bean</p>
+</li>
+<li>
+<p>使用注解形式启动bean扫描，加载所有注解配置的资源（bean）</p>
+</li>
+<li>
+<p>使用AnnotationConfigApplicationContext对象加载所有的启动配置类，内部使用导入方式进行关联</p>
+</li>
+</ul>
+<h4 id="注解整合mybatis步骤"> 注解整合MyBatis步骤</h4>
+<ol>
+<li>
+<p>修改 mybatis 外部配置文件格式为注解格式</p>
+</li>
+<li>
+<p>业务类使用 @Component 声明 bean，使用 @Autowired 注入对象</p>
+</li>
+<li>
+<p>建立配置文件 JDBCConfig 与 MyBatisConfig 类，并将其导入到核心配置类 SpringConfig</p>
+</li>
+<li>
+<p>开启注解扫描</p>
+</li>
+<li>
+<p>使用 <code>AnnotationConfigApplicationContext</code> 对象加载配置项</p>
+</li>
+</ol>
+<h4 id="综合案例改版-注解整合junit"> 综合案例改版（注解整合Junit）</h4>
+<ol>
+<li>
+<p>Spring 接管 Junit 的运行权，使用 Spring 专用的 Junit 类加载器</p>
+</li>
+<li>
+<p>为 Junit 测试用例设定对应的 spring 容器：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>从 Spring5.0 以后，要求 Junit 的版本必须是 4.12 及以上</p>
+</li>
+<li>
+<p>Junit 仅用于单元测试，不能将 Junit 的测试类配置成 spring 的 bean，否则该配置将会被打包进入工程中</p>
+</li>
+</ul>
+<p>导入Spring整合Junit坐标</p>
+<div><pre><code><span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>junit<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>junit<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>4.12<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+    <span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+    <span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-test<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+    <span><span><span>&lt;</span>version</span><span>></span></span>5.1.9.RELEASE<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p>Spring 整合 Junit 测试用例注解格式</p>
+<div><pre><code><span>@RunWith</span><span>(</span><span>SpringJUnit4ClassRunner</span><span>.</span><span>class</span><span>)</span>
+<span>@ContextConfiguration</span><span>(</span>classes <span>=</span> <span>SpringConfig</span><span>.</span><span>class</span><span>)</span>
+<span>public</span> <span>class</span> <span>UserServiceTest</span> <span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="ioc-底层核心原理"> IoC 底层核心原理</h2>
+<h3 id="组件扫描器"> 组件扫描器</h3>
+<ul>
+<li>开发过程中，需要根据需求加载必要的 bean，排除指定 bean</li>
+</ul>
+<h3 id="设定组件扫描加载过滤器"> 设定组件扫描加载过滤器</h3>
+<ul>
+<li>
+<p>名称：@ComponentScan</p>
+</li>
+<li>
+<p>类型：<strong>类注解</strong></p>
+</li>
+<li>
+<p>位置：类定义上方</p>
+</li>
+<li>
+<p>作用：设置 spring 配置加载类扫描规则</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>@ComponentScan</span><span>(</span>
+    value<span>=</span><span>"com.itheima"</span><span>,</span>	           <span>//设置基础扫描路径</span>
+    excludeFilters <span>=</span>                          <span>//设置过滤规则，当前为排除过滤</span>
+  <span>@ComponentScan.Filter</span><span>(</span>            <span>//设置过滤器</span>
+      type<span>=</span> <span>FilterType</span><span>.</span>ANNOTATION<span>,</span>  <span>//设置过滤方式为按照注解进行过滤</span>
+      classes<span>=</span><span>Repository</span><span>.</span><span>class</span><span>)</span>     <span>//设置具体的过滤项，过滤所有@Repository修饰的bean</span>
+    <span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>includeFilters：设置包含性过滤器</p>
+<p>excludeFilters：设置排除性过滤器</p>
+<p>type：设置过滤器类型</p>
+</li>
+</ul>
+<h3 id="自定义组件过滤器"> 自定义组件过滤器</h3>
+<ul>
+<li>
+<p>名称：TypeFilter</p>
+</li>
+<li>
+<p>类型：<strong>接口</strong></p>
+</li>
+<li>
+<p>作用：自定义类型过滤器</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>public</span> <span>class</span> <span>MyTypeFilter</span> <span>implements</span> <span>TypeFilter</span> <span>{</span>
+    <span>public</span> <span>boolean</span> <span>match</span><span>(</span><span>MetadataReader</span> mr<span>,</span> <span>MetadataReaderFactory</span> mrf<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>ClassMetadata</span> cm <span>=</span> metadataReader<span>.</span><span>getClassMetadata</span><span>(</span><span>)</span><span>;</span>
+        tring className <span>=</span> cm<span>.</span><span>getClassName</span><span>(</span><span>)</span><span>;</span>
+        <span>if</span><span>(</span>className<span>.</span><span>equals</span><span>(</span><span>"com.itheima.dao.impl.BookDaoImpl"</span><span>)</span><span>)</span><span>{</span>
+            <span>return</span> <span>false</span><span>;</span>
+        <span>}</span>
+        <span>return</span> <span>false</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></li>
+</ul>
+<h3 id="自定义导入器"> 自定义导入器</h3>
+<ul>
+<li>
+<p>bean 只有通过配置才可以进入 spring 容器，被 spring 加载并控制</p>
+</li>
+<li>
+<p>配置 bean 的方式如下：</p>
+<ul>
+<li>
+<p>XML 文件中使用 <code>&lt;bean/&gt;</code> 标签配置</p>
+</li>
+<li>
+<p>使用 @Component 及衍生注解配置</p>
+</li>
+</ul>
+</li>
+<li>
+<p>企业开发过程中，通常需要配置大量的 bean，需要一种快速高效配置大量 bean 的方式</p>
+</li>
+</ul>
+<p><strong>ImportSelector</strong></p>
+<ul>
+<li>
+<p>名称： ImportSelector</p>
+</li>
+<li>
+<p>类型：<strong>接口</strong></p>
+</li>
+<li>
+<p>作用：自定义 bean 导入器</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>public</span> <span>class</span> <span>MyImportSelector</span> <span>implements</span> <span>ImportSelector</span> <span>{</span>
+    <span>public</span> <span>String</span><span>[</span><span>]</span> <span>selectImports</span><span>(</span><span>AnnotationMetadata</span> icm<span>)</span> <span>{</span>
+        <span>return</span> <span>new</span> <span>String</span><span>[</span><span>]</span><span>{</span><span>"com.itheima.dao.impl.AccountDaoImpl"</span><span>}</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code><span>@Configuration</span>
+<span>@ComponentScan</span><span>(</span><span>"com.itheima"</span><span>)</span>
+<span>@Import</span><span>(</span><span>MyImportSelector</span><span>.</span><span>class</span><span>)</span>
+<span>public</span> <span>class</span> <span>SpringConfig</span> <span>{</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div></li>
+</ul>
+<h3 id="自定义注册器"> 自定义注册器</h3>
+<ul>
+<li>
+<p>名称：ImportBeanDefinitionRegistrar</p>
+</li>
+<li>
+<p>类型：<strong>接口</strong></p>
+</li>
+<li>
+<p>作用：自定义 bean 定义注册器</p>
+</li>
+<li>
+<p>范例：</p>
+<div><pre><code><span>public</span> <span>class</span> <span>MyImportBeanDefinitionRegistrar</span> <span>implements</span> <span>ImportBeanDefinitionRegistrar</span> <span>{</span>
+    <span>public</span> <span>void</span> <span>registerBeanDefinitions</span><span>(</span><span>AnnotationMetadata</span> icm<span>,</span> <span>BeanDefinitionRegistry</span> r<span>)</span> <span>{</span>
+        <span>ClassPathBeanDefinitionScanner</span> scanner <span>=</span> <span>new</span> <span>ClassPathBeanDefinitionScanner</span><span>(</span>r<span>,</span> <span>false</span><span>)</span><span>;</span>
+        <span>TypeFilter</span> tf <span>=</span> <span>new</span> <span>TypeFilter</span><span>(</span><span>)</span> <span>{</span>
+            <span>public</span> <span>boolean</span> <span>match</span><span>(</span><span>MetadataReader</span> mr<span>,</span> <span>MetadataReaderFactory</span> mrf<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+                <span>return</span> <span>true</span><span>;</span>
+            <span>}</span>
+        <span>}</span><span>;</span>
+        scanner<span>.</span><span>addIncludeFilter</span><span>(</span>tf<span>)</span><span>;</span>
+        <span>//scanner.addExcludeFilter(tf);</span>
+        scanner<span>.</span><span>scan</span><span>(</span><span>"com.itheima"</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div></li>
+</ul>
+<h3 id="bean-初始化过程解析"> bean 初始化过程解析</h3>
+<ul>
+<li>
+<p>BeanFactoryPostProcessor</p>
+<ul>
+<li>
+<p>作用：定义了在 bean 工厂对象创建后，bean 对象创建前执行的动作，用于对工厂进行创建后业务处理</p>
+</li>
+<li>
+<p>运行时机：当前操作用于对工厂进行处理，仅运行一次</p>
+</li>
+</ul>
+</li>
+<li>
+<p>BeanPostProcessor</p>
+<ul>
+<li>
+<p>作用：定义了所有 bean 初始化前后进行的统一动作，用于对 bean 进行创建前业务处理与创建后业务处理</p>
+</li>
+<li>
+<p>运行时机：当前操作伴随着每个 bean 的创建过程，每次创建 bean 均运行该操作</p>
+</li>
+</ul>
+</li>
+<li>
+<p>InitializingBean</p>
+<ul>
+<li>
+<p>作用：定义了每个 bean 的初始化前进行的动作，属于非统一性动作，用于对 bean 进行创建前业务处理</p>
+</li>
+<li>
+<p>运行时机：当前操作伴随着任意一个 bean 的创建过程，保障其个性化业务处理</p>
+</li>
+</ul>
+</li>
+<li>
+<p>注意：上述操作均需要被 spring 容器加载放可运行</p>
+</li>
+</ul>
+<h3 id="繁琐的-bean-初始化过程处理"> 繁琐的 bean 初始化过程处理</h3>
+<ul>
+<li>
+<p>FactoryBean</p>
+<ul>
+<li>对单一的 bean 的初始化过程进行封装，达到简化配置的目的</li>
+</ul>
+</li>
+</ul>
+<p><strong>FactoryBean与BeanFactory区别</strong></p>
+<ul>
+<li>
+<p>FactoryBean：封装单个 bean 的创建过程</p>
+</li>
+<li>
+<p>BeanFactory：Spring 容器顶层接口，定义了 bean 相关的获取操作</p>
+</li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -5547,6 +6305,67 @@ c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></spa
 ]]></content:encoded>
     </item>
     <item>
+      <title>我的书屋</title>
+      <link>https:/cloaks.cn/book/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/book/</guid>
+      <source url="https:/cloaks.cn/rss.xml">我的书屋</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>反转链表</title>
+      <link>https:/cloaks.cn/blogs/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/blogs/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</guid>
+      <source url="https:/cloaks.cn/rss.xml">反转链表</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="反转链表"> 反转链表</h1>
+<blockquote>
+<p>题号：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca" target="_blank" rel="noopener noreferrer">200</a><br>
+描述：给定一个单链表的头结点pHead，长度为n，反转该链表后，返回新链表的表头。数据范围： n&lt;=1000<br>
+要求：空间复杂度 O(1)O(1) ，时间复杂度 O(n)O(n) 。如当输入链表{1,2,3}时，经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。</p>
+</blockquote>
+<h3 id="解题思路"> 解题思路</h3>
+<p>官方给的第二种解法很不错，大概意识从头结点开始把每一个结点用头插法的方式插入空指针pre中，这个反向指针的说法还是不好理解的。</p>
+<h3 id="算法实现"> 算法实现</h3>
+<div><pre><code><span>/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/</span>
+<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>public</span> <span>ListNode</span> <span>ReverseList</span><span>(</span><span>ListNode</span> head<span>)</span> <span>{</span>
+        <span>ListNode</span> pre <span>=</span> <span>null</span><span>;</span>
+        <span>ListNode</span> cur <span>=</span> head<span>;</span>
+        <span>ListNode</span> next <span>=</span> <span>null</span><span>;</span>
+        <span>while</span> <span>(</span>cur <span>!=</span> <span>null</span><span>)</span> <span>{</span>
+            next <span>=</span> cur<span>.</span>next<span>;</span>
+            cur<span>.</span>next <span>=</span> pre<span>;</span>
+            pre <span>=</span> cur<span>;</span>
+            cur <span>=</span> next<span>;</span>
+        <span>}</span>
+        <span>return</span> pre<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>密码加密的文章</title>
+      <link>https:/cloaks.cn/guide/encrypt/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/guide/encrypt/</guid>
+      <source url="https:/cloaks.cn/rss.xml">密码加密的文章</source>
+      <category>使用指南</category>
+      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="密码加密的文章"> 密码加密的文章</h1>
+<p>实际的文章内容。</p>
+<p>段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字。</p>
+<p>段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字。</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>组件禁用</title>
       <link>https:/cloaks.cn/guide/disable/</link>
       <guid isPermaLink="false">https:/cloaks.cn/guide/disable/</guid>
@@ -5571,75 +6390,6 @@ c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></spa
 <li>页脚</li>
 <li>返回顶部按钮</li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>我的书屋</title>
-      <link>https:/cloaks.cn/book/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/book/</guid>
-      <source url="https:/cloaks.cn/rss.xml">我的书屋</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>页面配置</title>
-      <link>https:/cloaks.cn/guide/page/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/guide/page/</guid>
-      <source url="https:/cloaks.cn/rss.xml">页面配置</source>
-      <category>使用指南</category>
-      <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="页面信息"> 页面信息</h2>
-<p>你可以在 Markdown 的 Frontmatter 中设置页面信息。</p>
-<ul>
-<li>
-<p>作者设置为 Ms.Hope。</p>
-</li>
-<li>
-<p>写作时间应为 2020 年 1 月 1 日</p>
-</li>
-<li>
-<p>分类为 “使用指南”</p>
-</li>
-<li>
-<p>标签为 “页面配置” 和 “使用指南”</p>
-</li>
-</ul>
-<h2 id="页面内容"> 页面内容</h2>
-<p>你可以自由在这里书写你的 Markdown。</p>
-<div><p>提示</p>
-<ul>
-<li>
-<p>Markdown 文件夹的图片请使用相对链接 <code>./</code> 进行引用。</p>
-</li>
-<li>
-<p><code>.vuepress/public</code> 文件夹的图片，请使用绝对链接 <code>/</code> 进行引用</p>
-</li>
-</ul>
-</div>
-<p>主题包含了一个自定义徽章章可以使用:</p>
-<blockquote>
-<p>文字结尾应该有深蓝色的 徽章文字 徽章。 <i>Not supported content</i></p>
-</blockquote>
-<h2 id="页面结构"> 页面结构</h2>
-<p>此页面应当包含：</p>
-<ul>
-<li>返回顶部按钮</li>
-<li>路径导航</li>
-<li>评论</li>
-<li>页脚</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>密码加密的文章</title>
-      <link>https:/cloaks.cn/guide/encrypt/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/guide/encrypt/</guid>
-      <source url="https:/cloaks.cn/rss.xml">密码加密的文章</source>
-      <category>使用指南</category>
-      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="密码加密的文章"> 密码加密的文章</h1>
-<p>实际的文章内容。</p>
-<p>段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字段落 1 文字。</p>
-<p>段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字段落 2 文字。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -6100,6 +6850,55 @@ $$
 ]]></content:encoded>
     </item>
     <item>
+      <title>页面配置</title>
+      <link>https:/cloaks.cn/guide/page/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/guide/page/</guid>
+      <source url="https:/cloaks.cn/rss.xml">页面配置</source>
+      <category>使用指南</category>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="页面信息"> 页面信息</h2>
+<p>你可以在 Markdown 的 Frontmatter 中设置页面信息。</p>
+<ul>
+<li>
+<p>作者设置为 Ms.Hope。</p>
+</li>
+<li>
+<p>写作时间应为 2020 年 1 月 1 日</p>
+</li>
+<li>
+<p>分类为 “使用指南”</p>
+</li>
+<li>
+<p>标签为 “页面配置” 和 “使用指南”</p>
+</li>
+</ul>
+<h2 id="页面内容"> 页面内容</h2>
+<p>你可以自由在这里书写你的 Markdown。</p>
+<div><p>提示</p>
+<ul>
+<li>
+<p>Markdown 文件夹的图片请使用相对链接 <code>./</code> 进行引用。</p>
+</li>
+<li>
+<p><code>.vuepress/public</code> 文件夹的图片，请使用绝对链接 <code>/</code> 进行引用</p>
+</li>
+</ul>
+</div>
+<p>主题包含了一个自定义徽章章可以使用:</p>
+<blockquote>
+<p>文字结尾应该有深蓝色的 徽章文字 徽章。 <i>Not supported content</i></p>
+</blockquote>
+<h2 id="页面结构"> 页面结构</h2>
+<p>此页面应当包含：</p>
+<ul>
+<li>返回顶部按钮</li>
+<li>路径导航</li>
+<li>评论</li>
+<li>页脚</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>主要功能与配置演示</title>
       <link>https:/cloaks.cn/guide/</link>
       <guid isPermaLink="false">https:/cloaks.cn/guide/</guid>
@@ -6122,13 +6921,6 @@ $$
 </li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>主页</title>
-      <link>https:/cloaks.cn/project/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/project/</guid>
-      <source url="https:/cloaks.cn/rss.xml">主页</source>
-      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
     </item>
     <item>
       <title>自定义布局</title>
@@ -6156,13 +6948,6 @@ $$
 ]]></content:encoded>
     </item>
     <item>
-      <title>博客主页</title>
-      <link>https:/cloaks.cn/</link>
-      <guid isPermaLink="false">https:/cloaks.cn/</guid>
-      <source url="https:/cloaks.cn/rss.xml">博客主页</source>
-      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
-    </item>
-    <item>
       <title>主页</title>
       <link>https:/cloaks.cn/project/redPacket/</link>
       <guid isPermaLink="false">https:/cloaks.cn/project/redPacket/</guid>
@@ -6171,6 +6956,20 @@ $$
       <content:encoded><![CDATA[<h2 id="项目介绍"> 项目介绍</h2>
 <p>关于项目介绍我有很多话想说</p>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>主页</title>
+      <link>https:/cloaks.cn/project/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/project/</guid>
+      <source url="https:/cloaks.cn/rss.xml">主页</source>
+      <pubDate>Thu, 20 Jan 2022 17:05:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>博客主页</title>
+      <link>https:/cloaks.cn/</link>
+      <guid isPermaLink="false">https:/cloaks.cn/</guid>
+      <source url="https:/cloaks.cn/rss.xml">博客主页</source>
+      <pubDate>Wed, 19 Jan 2022 07:13:56 GMT</pubDate>
     </item>
     <item>
       <title>幻灯片页</title>
