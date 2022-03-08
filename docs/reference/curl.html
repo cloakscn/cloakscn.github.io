@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-beta.36" />
+    <meta property="og:url" content="https://www.cloaks.cn/reference/curl.html"><meta property="og:title" content="CURL 命令"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary_large_image"><meta property="article:tag" content="指令"><meta property="article:published_time" content="2022-03-07T00:00:00.000Z"><link rel="stylesheet" href="//at.alicdn.com/t/font_2410206_mfj6e1vbwo.css"><link rel="icon" href="/favicon.ico"><link rel="icon" href="/assets/icon/android-chrome-256x256.png" type="image/png" sizes="256x256"><link rel="icon" href="/assets/icon/android-chrome-192x192.png" type="image/png" sizes="192x192"><link rel="manifest" href="/manifest.webmanifest" crossorigin="use-credentials"><meta name="theme-color" content="#46bd87"><link rel="apple-touch-icon" href="/assets/icon/android-chrome-256x256.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="msapplication-TileImage" content="/assets/icon/mstile-150x150.png"><meta name="msapplication-TileColor" content="#ffffff"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"><title>CURL 命令 | Cloaks</title><meta name="description" content="热爱技术，乐于分享！">
+    <style>
+      :root {
+        --bg-color: #fff;
+      }
+
+      html[data-theme="dark"] {
+        --bg-color: #1d2025;
+      }
+
+      html,
+      body {
+        background-color: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.querySelector("html").setAttribute("data-theme", "dark");
+      }
+    </script>
+    <link rel="stylesheet" href="/assets/style.1826da80.css">
+    <link rel="modulepreload" href="/assets/app.dd16a3d5.js"><link rel="modulepreload" href="/assets/curl.html.e855e0c5.js"><link rel="modulepreload" href="/assets/curl.html.47512cb2.js">
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="skip-link sr-only">Skip to content</a><!--]--><div class="theme-container has-toc"><!--[--><header class="navbar"><button class="toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><a href="/" class="home-link"><img class="logo" src="/logo.svg" alt="Cloaks"><!----><span class="site-name hide-in-pad">Cloaks</span><!--[--><!----><!--]--></a><nav class="nav-links" style=""><div class="nav-item hide-in-mobile"><a href="/" class="nav-link" arialabel="博客主页"><i class="icon iconfont icon-home"></i>博客主页<!----></a></div><div class="nav-item hide-in-mobile"><a href="/home.html" class="nav-link" arialabel="项目主页"><i class="icon iconfont icon-home"></i>项目主页<!----></a></div><div class="nav-item hide-in-mobile"><a href="https://mirrors.cloaks.cn" rel="noopener noreferrer" target="_blank" arialabel="镜像" class="nav-link"><i class="icon iconfont icon-snow"></i>镜像<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!----></a></div></nav><div class="nav-actions-wrapper"><!--[--><!----><!--]--><div class="nav-item"><!----></div><!----><div class="nav-item hide-in-mobile"><button class="outlook-button" tabindex="-1" ariahidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon outlook-icon" viewbox="0 0 1024 1024" arialabelledby="outlook"><title id="outlook" lang="en">outlook icon</title><g fill="currentColor"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4 38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32 51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0 102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2 6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4 0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2 9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224 419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4 470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0 22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6 12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128 505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2 16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8 86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4 80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6 6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></g></svg><div class="outlook-dropdown"><!----></div></button></div><!----><button class="toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span class="button-container"><span class="button-top"></span><span class="button-middle"></span><span class="button-bottom"></span></span></button><!--[--><!----><!--]--></div></header><!----><!--]--><!----><aside class="sidebar"><!--[--><!----><!--]--><ul class="sidebar-links"><li><!--[--><p class="sidebar-link sidebar-page" exact="true"><i class="icon iconfont icon-page"></i>CURL 命令</p><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a aria-current="page" href="/reference/curl.html#语法" class="router-link-active router-link-exact-active nav-link sidebar-link heading" arialabel="语法"><!---->语法<!----></a><ul class="sidebar-sub-headers"></ul></li><li class="sidebar-sub-header"><a aria-current="page" href="/reference/curl.html#实例" class="router-link-active router-link-exact-active nav-link sidebar-link heading" arialabel="实例"><!---->实例<!----></a><ul class="sidebar-sub-headers"></ul></li></ul><!--]--></li></ul><!--[--><!----><!--]--></aside><!--[--><main class="page" id="main-content"><!----><nav class="breadcrumb disable"></nav><div class="page-title"><h1><i class="icon iconfont icon-page"></i>CURL 命令</h1><div class="article-info"><span class="author-info" arialabel="作者🖊" data-balloon-pos="down" isoriginal="false" pageview="true" color="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon author-icon" viewbox="0 0 1024 1024" arialabelledby="author"><title id="author" lang="en">author icon</title><g fill="currentColor"><path d="M649.6 633.6c86.4-48 147.2-144 147.2-249.6 0-160-128-288-288-288s-288 128-288 288c0 108.8 57.6 201.6 147.2 249.6-121.6 48-214.4 153.6-240 288-3.2 9.6 0 19.2 6.4 25.6 3.2 9.6 12.8 12.8 22.4 12.8h704c9.6 0 19.2-3.2 25.6-12.8 6.4-6.4 9.6-16 6.4-25.6-25.6-134.4-121.6-240-243.2-288z"></path></g></svg><span><a class="author-item" href="https://www.cloaks.cn" target="_blank" rel="noopener noreferrer">Cloaks</a></span><span property="author" content="Cloaks"></span></span><!----><span class="visitor-info" arialabel="访问量🔢" data-balloon-pos="down" isoriginal="false" color="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon eye-icon" viewbox="0 0 1024 1024" arialabelledby="eye"><title id="eye" lang="en">eye icon</title><g fill="currentColor"><path d="M992 512.096c0-5.76-.992-10.592-1.28-11.136-.192-2.88-1.152-8.064-2.08-10.816-.256-.672-.544-1.376-.832-2.08-.48-1.568-1.024-3.104-1.6-4.32C897.664 290.112 707.104 160 512 160c-195.072 0-385.632 130.016-473.76 322.592-1.056 2.112-1.792 4.096-2.272 5.856a55.512 55.512 0 00-.64 1.6c-1.76 5.088-1.792 8.64-1.632 7.744-.832 3.744-1.568 11.168-1.568 11.168-.224 2.272-.224 4.032.032 6.304 0 0 .736 6.464 1.088 7.808.128 1.824.576 4.512 1.12 6.976h-.032c.448 2.08 1.12 4.096 1.984 6.08.48 1.536.992 2.976 1.472 4.032C126.432 733.856 316.992 864 512 864c195.136 0 385.696-130.048 473.216-321.696 1.376-2.496 2.24-4.832 2.848-6.912.256-.608.48-1.184.672-1.728 1.536-4.48 1.856-8.32 1.728-8.32l-.032.032c.608-3.104 1.568-7.744 1.568-13.28zM512 672c-88.224 0-160-71.776-160-160s71.776-160 160-160 160 71.776 160 160-71.776 160-160 160z"></path></g></svg><span class="waline-visitor-count" id="/reference/curl.html">...</span></span><span class="date-info" arialabel="写作日期📅" data-balloon-pos="down" isoriginal="false" pageview="true" color="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon calendar-icon" viewbox="0 0 1024 1024" arialabelledby="calendar"><title id="calendar" lang="en">calendar icon</title><g fill="currentColor"><path d="M716.4 110.137c0-18.753-14.72-33.473-33.472-33.473-18.753 0-33.473 14.72-33.473 33.473v33.473h66.993v-33.473zm-334.87 0c0-18.753-14.72-33.473-33.473-33.473s-33.52 14.72-33.52 33.473v33.473h66.993v-33.473zm468.81 33.52H716.4v100.465c0 18.753-14.72 33.473-33.472 33.473a33.145 33.145 0 01-33.473-33.473V143.657H381.53v100.465c0 18.753-14.72 33.473-33.473 33.473a33.145 33.145 0 01-33.473-33.473V143.657H180.6A134.314 134.314 0 0046.66 277.595v535.756A134.314 134.314 0 00180.6 947.289h669.74a134.36 134.36 0 00133.94-133.938V277.595a134.314 134.314 0 00-133.94-133.938zm33.473 267.877H147.126a33.145 33.145 0 01-33.473-33.473c0-18.752 14.72-33.473 33.473-33.473h736.687c18.752 0 33.472 14.72 33.472 33.473a33.145 33.145 0 01-33.472 33.473z"></path></g></svg><span>2022年3月7日</span><meta property="datePublished" content="2022-03-07T00:00:00.000Z"></span><span class="category-info" arialabel="分类🌈" data-balloon-pos="down" isoriginal="false" pageview="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon category-icon" viewbox="0 0 1024 1024" arialabelledby="category"><title id="category" lang="en">category icon</title><g fill="currentColor"><path d="M148.41 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H148.41c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.311-40.31zM147.556 553.478H429.73c22.263 0 40.311 18.048 40.311 40.31v282.176c0 22.263-18.048 40.312-40.31 40.312H147.555c-22.263 0-40.311-18.049-40.311-40.312V593.79c0-22.263 18.048-40.311 40.31-40.311zM593.927 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H593.927c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.31-40.31zM730.22 920.502H623.926c-40.925 0-74.22-33.388-74.22-74.425V623.992c0-41.038 33.387-74.424 74.425-74.424h222.085c41.038 0 74.424 33.226 74.424 74.067v114.233c0 10.244-8.304 18.548-18.547 18.548s-18.548-8.304-18.548-18.548V623.635c0-20.388-16.746-36.974-37.33-36.974H624.13c-20.585 0-37.331 16.747-37.331 37.33v222.086c0 20.585 16.654 37.331 37.126 37.331H730.22c10.243 0 18.547 8.304 18.547 18.547 0 10.244-8.304 18.547-18.547 18.547z"></path></g></svg><ul class="categories-wrapper"><li class="category category0 clickable" role="navigation">参考</li><meta property="articleSection" content="参考"></ul></span><span arialabel="标签🏷" data-balloon-pos="down" isoriginal="false" pageview="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon tag-icon" viewbox="0 0 1024 1024" arialabelledby="tag"><title id="tag" lang="en">tag icon</title><g fill="currentColor"><path d="M939.902 458.563L910.17 144.567c-1.507-16.272-14.465-29.13-30.737-30.737L565.438 84.098h-.402c-3.215 0-5.726 1.005-7.634 2.913l-470.39 470.39a10.004 10.004 0 000 14.164l365.423 365.424c1.909 1.908 4.42 2.913 7.132 2.913s5.223-1.005 7.132-2.913l470.39-470.39c2.01-2.11 3.014-5.023 2.813-8.036zm-240.067-72.121c-35.458 0-64.286-28.828-64.286-64.286s28.828-64.285 64.286-64.285 64.286 28.828 64.286 64.285-28.829 64.286-64.286 64.286z"></path></g></svg><ul class="tags-wrapper"><li class="tag tag0 clickable" role="navigation">指令</li></ul><meta property="keywords" content="指令"></span><span class="reading-time-info" arialabel="阅读时间⌛" data-balloon-pos="down" isoriginal="false" pageview="true" color="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon timer-icon" viewbox="0 0 1024 1024" arialabelledby="timer"><title id="timer" lang="en">timer icon</title><g fill="currentColor"><path d="M799.387 122.15c4.402-2.978 7.38-7.897 7.38-13.463v-1.165c0-8.933-7.38-16.312-16.312-16.312H256.33c-8.933 0-16.311 7.38-16.311 16.312v1.165c0 5.825 2.977 10.874 7.637 13.592 4.143 194.44 97.22 354.963 220.201 392.763-122.204 37.542-214.893 196.511-220.2 389.397-4.661 5.049-7.638 11.651-7.638 19.03v5.825h566.49v-5.825c0-7.379-2.849-13.981-7.509-18.9-5.049-193.016-97.867-351.985-220.2-389.527 123.24-37.67 216.446-198.453 220.588-392.892zM531.16 450.445v352.632c117.674 1.553 211.787 40.778 211.787 88.676H304.097c0-48.286 95.149-87.382 213.728-88.676V450.445c-93.077-3.107-167.901-81.297-167.901-177.093 0-8.803 6.99-15.793 15.793-15.793 8.803 0 15.794 6.99 15.794 15.793 0 80.261 63.69 145.635 142.01 145.635s142.011-65.374 142.011-145.635c0-8.803 6.99-15.793 15.794-15.793s15.793 6.99 15.793 15.793c0 95.019-73.789 172.82-165.96 177.093z"></path></g></svg><span>大约 7 分钟</span><meta property="timeRequired" content="PT7M"></span></div><hr></div><div class="toc-place-holder"><aside id="toc-list"><div class="toc-header">此页内容</div><div class="toc-wrapper"><ul class="toc-list"><!--[--><li class="toc-item"><a aria-current="page" href="/reference/curl.html#语法" class="router-link-active router-link-exact-active toc-link level2">语法</a></li><!----><!--]--><!--[--><li class="toc-item"><a aria-current="page" href="/reference/curl.html#实例" class="router-link-active router-link-exact-active toc-link level2">实例</a></li><!----><!--]--></ul></div></aside></div><!----><div class="theme-hope-content"><!--[--><p>该命令设计用于在没有用户交互的情况下工作。</p><p>curl 是一个工具，用于传输来自服务器或者到服务器的数据。「向服务器传输数据或者获取来自服务器的数据」</p><p>可支持的协议有（DICT、FILE、FTP、FTPS、GOPHER、HTTP、HTTPS、IMAP、IMAPS、LDAP、LDAPS、POP3、POP3S、RTMP、RTSP、SCP、SFTP、SMTP、SMTPS、TELNET和TFTP）。</p><p>curl提供了大量有用的技巧，比如代理支持、用户身份验证、FTP上传、HTTP post、SSL连接、cookie、文件断点续传、Metalink等等。正如你将在下面看到的，这些特性的数量会让您头晕目眩！</p><h2 id="语法" tabindex="-1"><a class="header-anchor" href="#语法" aria-hidden="true">#</a> 语法</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Usage: curl [options...] &lt;url&gt;
+     --abstract-unix-socket &lt;path&gt;  Connect via abstract Unix domain socket
+     --alt-svc &lt;file name&gt;  Enable alt-svc with this cache file
+     --anyauth       Pick any authentication method
+ -a, --append        Append to target file when uploading
+     --aws-sigv4 &lt;provider1[:provider2[:region[:service]]]&gt;  Use AWS V4 signature authentication
+     --basic         Use HTTP Basic Authentication
+     --cacert &lt;file&gt;  CA certificate to verify peer against
+     --capath &lt;dir&gt;  CA directory to verify peer against
+ -E, --cert &lt;certificate[:password]&gt;  Client certificate file and password
+     --cert-status   Verify the status of the server cert via OCSP-staple
+     --cert-type &lt;type&gt;  Certificate type (DER/PEM/ENG)
+     --ciphers &lt;list of ciphers&gt;  SSL ciphers to use
+     --compressed    Request compressed response
+     --compressed-ssh  Enable SSH compression
+ -K, --config &lt;file&gt;  Read config from a file
+     --connect-timeout &lt;fractional seconds&gt;  Maximum time allowed for connection
+     --connect-to &lt;HOST1:PORT1:HOST2:PORT2&gt;  Connect to host
+ -C, --continue-at &lt;offset&gt;  Resumed transfer offset
+ -b, --cookie &lt;data|filename&gt;  Send cookies from string/file
+ -c, --cookie-jar &lt;filename&gt;  Write cookies to &lt;filename&gt; after operation
+     --create-dirs   Create necessary local directory hierarchy
+     --create-file-mode &lt;mode&gt;  File mode (octal) for created files
+     --crlf          Convert LF to CRLF in upload
+     --crlfile &lt;file&gt;  Use this CRL list
+     --curves &lt;algorithm list&gt;  (EC) TLS key exchange algorithm(s) to request
+ -d, --data &lt;data&gt;   HTTP POST data
+     --data-ascii &lt;data&gt;  HTTP POST ASCII data
+     --data-binary &lt;data&gt;  HTTP POST binary data
+     --data-raw &lt;data&gt;  HTTP POST data, &#39;@&#39; allowed
+     --data-urlencode &lt;data&gt;  HTTP POST data url encoded
+     --delegation &lt;LEVEL&gt;  GSS-API delegation permission
+     --digest        Use HTTP Digest Authentication
+ -q, --disable       Disable .curlrc
+     --disable-eprt  Inhibit using EPRT or LPRT
+     --disable-epsv  Inhibit using EPSV
+     --disallow-username-in-url  Disallow username in url
+     --dns-interface &lt;interface&gt;  Interface to use for DNS requests
+     --dns-ipv4-addr &lt;address&gt;  IPv4 address to use for DNS requests
+     --dns-ipv6-addr &lt;address&gt;  IPv6 address to use for DNS requests
+     --dns-servers &lt;addresses&gt;  DNS server addrs to use
+     --doh-cert-status  Verify the status of the DoH server cert via OCSP-staple
+     --doh-insecure  Allow insecure DoH server connections
+     --doh-url &lt;URL&gt;  Resolve host names over DoH
+ -D, --dump-header &lt;filename&gt;  Write the received headers to &lt;filename&gt;
+     --egd-file &lt;file&gt;  EGD socket path for random data
+     --engine &lt;name&gt;  Crypto engine to use
+     --etag-compare &lt;file&gt;  Pass an ETag from a file as a custom header
+     --etag-save &lt;file&gt;  Parse ETag from a request and save it to a file
+     --expect100-timeout &lt;seconds&gt;  How long to wait for 100-continue
+ -f, --fail          Fail silently (no output at all) on HTTP errors
+     --fail-early    Fail on first transfer error, do not continue
+     --fail-with-body  Fail on HTTP errors but save the body
+     --false-start   Enable TLS False Start
+ -F, --form &lt;name=content&gt;  Specify multipart MIME data
+     --form-string &lt;name=string&gt;  Specify multipart MIME data
+     --ftp-account &lt;data&gt;  Account data string
+     --ftp-alternative-to-user &lt;command&gt;  String to replace USER [name]
+     --ftp-create-dirs  Create the remote dirs if not present
+     --ftp-method &lt;method&gt;  Control CWD usage
+     --ftp-pasv      Use PASV/EPSV instead of PORT
+ -P, --ftp-port &lt;address&gt;  Use PORT instead of PASV
+     --ftp-pret      Send PRET before PASV
+     --ftp-skip-pasv-ip  Skip the IP address for PASV
+     --ftp-ssl-ccc   Send CCC after authenticating
+     --ftp-ssl-ccc-mode &lt;active/passive&gt;  Set CCC mode
+     --ftp-ssl-control  Require SSL/TLS for FTP login, clear for transfer
+ -G, --get           Put the post data in the URL and use GET
+ -g, --globoff       Disable URL sequences and ranges using {} and []
+     --happy-eyeballs-timeout-ms &lt;milliseconds&gt;  Time for IPv6 before trying IPv4
+     --haproxy-protocol  Send HAProxy PROXY protocol v1 header
+ -I, --head          Show document info only
+ -H, --header &lt;header/@file&gt;  Pass custom header(s) to server
+ -h, --help &lt;category&gt;  Get help for commands
+     --hostpubmd5 &lt;md5&gt;  Acceptable MD5 hash of the host public key
+     --hsts &lt;file name&gt;  Enable HSTS with this cache file
+     --http0.9       Allow HTTP 0.9 responses
+ -0, --http1.0       Use HTTP 1.0
+     --http1.1       Use HTTP 1.1
+     --http2         Use HTTP 2
+     --http2-prior-knowledge  Use HTTP 2 without HTTP/1.1 Upgrade
+     --http3         Use HTTP v3
+     --ignore-content-length  Ignore the size of the remote resource
+ -i, --include       Include protocol response headers in the output
+ -k, --insecure      Allow insecure server connections when using SSL
+     --interface &lt;name&gt;  Use network INTERFACE (or address)
+ -4, --ipv4          Resolve names to IPv4 addresses
+ -6, --ipv6          Resolve names to IPv6 addresses
+ -j, --junk-session-cookies  Ignore session cookies read from file
+     --keepalive-time &lt;seconds&gt;  Interval time for keepalive probes
+     --key &lt;key&gt;     Private key file name
+     --key-type &lt;type&gt;  Private key file type (DER/PEM/ENG)
+     --krb &lt;level&gt;   Enable Kerberos with security &lt;level&gt;
+     --libcurl &lt;file&gt;  Dump libcurl equivalent code of this command line
+     --limit-rate &lt;speed&gt;  Limit transfer speed to RATE
+ -l, --list-only     List only mode
+     --local-port &lt;num/range&gt;  Force use of RANGE for local port numbers
+ -L, --location      Follow redirects
+     --location-trusted  Like --location, and send auth to other hosts
+     --login-options &lt;options&gt;  Server login options
+     --mail-auth &lt;address&gt;  Originator address of the original email
+     --mail-from &lt;address&gt;  Mail from this address
+     --mail-rcpt &lt;address&gt;  Mail to this address
+     --mail-rcpt-allowfails  Allow RCPT TO command to fail for some recipients
+ -M, --manual        Display the full manual
+     --max-filesize &lt;bytes&gt;  Maximum file size to download
+     --max-redirs &lt;num&gt;  Maximum number of redirects allowed
+ -m, --max-time &lt;fractional seconds&gt;  Maximum time allowed for the transfer
+     --metalink      Process given URLs as metalink XML file
+     --negotiate     Use HTTP Negotiate (SPNEGO) authentication
+ -n, --netrc         Must read .netrc for user name and password
+     --netrc-file &lt;filename&gt;  Specify FILE for netrc
+     --netrc-optional  Use either .netrc or URL
+ -:, --next          Make next URL use its separate set of options
+     --no-alpn       Disable the ALPN TLS extension
+ -N, --no-buffer     Disable buffering of the output stream
+     --no-keepalive  Disable TCP keepalive on the connection
+     --no-npn        Disable the NPN TLS extension
+     --no-progress-meter  Do not show the progress meter
+     --no-sessionid  Disable SSL session-ID reusing
+     --noproxy &lt;no-proxy-list&gt;  List of hosts which do not use proxy
+     --ntlm          Use HTTP NTLM authentication
+     --ntlm-wb       Use HTTP NTLM authentication with winbind
+     --oauth2-bearer &lt;token&gt;  OAuth 2 Bearer Token
+ -o, --output &lt;file&gt;  Write to file instead of stdout
+     --output-dir &lt;dir&gt;  Directory to save files in
+ -Z, --parallel      Perform transfers in parallel
+     --parallel-immediate  Do not wait for multiplexing (with --parallel)
+     --parallel-max &lt;num&gt;  Maximum concurrency for parallel transfers
+     --pass &lt;phrase&gt;  Pass phrase for the private key
+     --path-as-is    Do not squash .. sequences in URL path
+     --pinnedpubkey &lt;hashes&gt;  FILE/HASHES Public key to verify peer against
+     --post301       Do not switch to GET after following a 301
+     --post302       Do not switch to GET after following a 302
+     --post303       Do not switch to GET after following a 303
+     --preproxy [protocol://]host[:port]  Use this proxy first
+ -#, --progress-bar  Display transfer progress as a bar
+     --proto &lt;protocols&gt;  Enable/disable PROTOCOLS
+     --proto-default &lt;protocol&gt;  Use PROTOCOL for any URL missing a scheme
+     --proto-redir &lt;protocols&gt;  Enable/disable PROTOCOLS on redirect
+ -x, --proxy [protocol://]host[:port]  Use this proxy
+     --proxy-anyauth  Pick any proxy authentication method
+     --proxy-basic   Use Basic authentication on the proxy
+     --proxy-cacert &lt;file&gt;  CA certificate to verify peer against for proxy
+     --proxy-capath &lt;dir&gt;  CA directory to verify peer against for proxy
+     --proxy-cert &lt;cert[:passwd]&gt;  Set client certificate for proxy
+     --proxy-cert-type &lt;type&gt;  Client certificate type for HTTPS proxy
+     --proxy-ciphers &lt;list&gt;  SSL ciphers to use for proxy
+     --proxy-crlfile &lt;file&gt;  Set a CRL list for proxy
+     --proxy-digest  Use Digest authentication on the proxy
+     --proxy-header &lt;header/@file&gt;  Pass custom header(s) to proxy
+     --proxy-insecure  Do HTTPS proxy connections without verifying the proxy
+     --proxy-key &lt;key&gt;  Private key for HTTPS proxy
+     --proxy-key-type &lt;type&gt;  Private key file type for proxy
+     --proxy-negotiate  Use HTTP Negotiate (SPNEGO) authentication on the proxy
+     --proxy-ntlm    Use NTLM authentication on the proxy
+     --proxy-pass &lt;phrase&gt;  Pass phrase for the private key for HTTPS proxy
+     --proxy-pinnedpubkey &lt;hashes&gt;  FILE/HASHES public key to verify proxy with
+     --proxy-service-name &lt;name&gt;  SPNEGO proxy service name
+     --proxy-ssl-allow-beast  Allow security flaw for interop for HTTPS proxy
+     --proxy-ssl-auto-client-cert  Use auto client certificate for proxy (Schannel)
+     --proxy-tls13-ciphers &lt;ciphersuite list&gt;  TLS 1.3 proxy cipher suites
+     --proxy-tlsauthtype &lt;type&gt;  TLS authentication type for HTTPS proxy
+     --proxy-tlspassword &lt;string&gt;  TLS password for HTTPS proxy
+     --proxy-tlsuser &lt;name&gt;  TLS username for HTTPS proxy
+     --proxy-tlsv1   Use TLSv1 for HTTPS proxy
+ -U, --proxy-user &lt;user:password&gt;  Proxy user and password
+     --proxy1.0 &lt;host[:port]&gt;  Use HTTP/1.0 proxy on given port
+ -p, --proxytunnel   Operate through an HTTP proxy tunnel (using CONNECT)
+     --pubkey &lt;key&gt;  SSH Public key file name
+ -Q, --quote &lt;command&gt;  Send command(s) to server before transfer
+     --random-file &lt;file&gt;  File for reading random data from
+ -r, --range &lt;range&gt;  Retrieve only the bytes within RANGE
+     --raw           Do HTTP &quot;raw&quot;; no transfer decoding
+ -e, --referer &lt;URL&gt;  Referrer URL
+ -J, --remote-header-name  Use the header-provided filename
+ -O, --remote-name   Write output to a file named as the remote file
+     --remote-name-all  Use the remote file name for all URLs
+ -R, --remote-time   Set the remote file&#39;s time on the local output
+ -X, --request &lt;command&gt;  Specify request command to use
+     --request-target &lt;path&gt;  Specify the target for this request
+     --resolve &lt;[+]host:port:addr[,addr]...&gt;  Resolve the host+port to this address
+     --retry &lt;num&gt;   Retry request if transient problems occur
+     --retry-all-errors  Retry all errors (use with --retry)
+     --retry-connrefused  Retry on connection refused (use with --retry)
+     --retry-delay &lt;seconds&gt;  Wait time between retries
+     --retry-max-time &lt;seconds&gt;  Retry only within this period
+     --sasl-authzid &lt;identity&gt;  Identity for SASL PLAIN authentication
+     --sasl-ir       Enable initial response in SASL authentication
+     --service-name &lt;name&gt;  SPNEGO service name
+ -S, --show-error    Show error even when -s is used
+ -s, --silent        Silent mode
+     --socks4 &lt;host[:port]&gt;  SOCKS4 proxy on given host + port
+     --socks4a &lt;host[:port]&gt;  SOCKS4a proxy on given host + port
+     --socks5 &lt;host[:port]&gt;  SOCKS5 proxy on given host + port
+     --socks5-basic  Enable username/password auth for SOCKS5 proxies
+     --socks5-gssapi  Enable GSS-API auth for SOCKS5 proxies
+     --socks5-gssapi-nec  Compatibility with NEC SOCKS5 server
+     --socks5-gssapi-service &lt;name&gt;  SOCKS5 proxy service name for GSS-API
+     --socks5-hostname &lt;host[:port]&gt;  SOCKS5 proxy, pass host name to proxy
+ -Y, --speed-limit &lt;speed&gt;  Stop transfers slower than this
+ -y, --speed-time &lt;seconds&gt;  Trigger &#39;speed-limit&#39; abort after this time
+     --ssl           Try SSL/TLS
+     --ssl-allow-beast  Allow security flaw to improve interop
+     --ssl-auto-client-cert  Use auto client certificate (Schannel)
+     --ssl-no-revoke  Disable cert revocation checks (Schannel)
+     --ssl-reqd      Require SSL/TLS
+     --ssl-revoke-best-effort  Ignore missing/offline cert CRL dist points
+ -2, --sslv2         Use SSLv2
+ -3, --sslv3         Use SSLv3
+     --stderr &lt;file&gt;  Where to redirect stderr
+     --styled-output  Enable styled output for HTTP headers
+     --suppress-connect-headers  Suppress proxy CONNECT response headers
+     --tcp-fastopen  Use TCP Fast Open
+     --tcp-nodelay   Use the TCP_NODELAY option
+ -t, --telnet-option &lt;opt=val&gt;  Set telnet option
+     --tftp-blksize &lt;value&gt;  Set TFTP BLKSIZE option
+     --tftp-no-options  Do not send any TFTP options
+ -z, --time-cond &lt;time&gt;  Transfer based on a time condition
+     --tls-max &lt;VERSION&gt;  Set maximum allowed TLS version
+     --tls13-ciphers &lt;ciphersuite list&gt;  TLS 1.3 cipher suites to use
+     --tlsauthtype &lt;type&gt;  TLS authentication type
+     --tlspassword &lt;string&gt;  TLS password
+     --tlsuser &lt;name&gt;  TLS user name
+ -1, --tlsv1         Use TLSv1.0 or greater
+     --tlsv1.0       Use TLSv1.0 or greater
+     --tlsv1.1       Use TLSv1.1 or greater
+     --tlsv1.2       Use TLSv1.2 or greater
+     --tlsv1.3       Use TLSv1.3 or greater
+     --tr-encoding   Request compressed transfer encoding
+     --trace &lt;file&gt;  Write a debug trace to FILE
+     --trace-ascii &lt;file&gt;  Like --trace, but without hex output
+     --trace-time    Add time stamps to trace/verbose output
+     --unix-socket &lt;path&gt;  Connect through this Unix domain socket
+ -T, --upload-file &lt;file&gt;  Transfer local FILE to destination
+     --url &lt;url&gt;     URL to work with
+ -B, --use-ascii     Use ASCII/text transfer
+ -u, --user &lt;user:password&gt;  Server user and password
+ -A, --user-agent &lt;name&gt;  Send User-Agent &lt;name&gt; to server
+ -v, --verbose       Make the operation more talkative
+ -V, --version       Show version number and quit
+ -w, --write-out &lt;format&gt;  Use output FORMAT after completion
+     --xattr         Store metadata in extended file attributes
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br></div></div><h2 id="实例" tabindex="-1"><a class="header-anchor" href="#实例" aria-hidden="true">#</a> 实例</h2><!--]--></div><!----><footer class="page-meta"><!----><div class="meta-item update-time"><span class="label">上次编辑于: </span><span class="info">2022/3/8 上午10:09:35</span></div><div class="meta-item contributors"><span class="label">贡献者: </span><!--[--><!--[--><span class="contributor" title="email: wy0329@foxmail.com">王艺</span><!--]--><!--]--></div></footer><!----><!----><!----></main><!--]--><footer class="footer-wrapper"><div class="footer">忽有故人心上过，回首山河已是秋！</div><div class="copyright">Copyright © 2022 Cloaks</div></footer></div><!--]--><!----><!--[--><!-- Root element of PhotoSwipe. Must have class pswp. --><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><!-- Background of PhotoSwipe. 
+    It’s a separate element, as animating opacity is faster than rgba().--><div class="pswp__bg"></div><!-- Slides wrapper with overflow:hidden. --><div class="pswp__scroll-wrap"><!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. --><div class="pswp__container"><!-- don’t modify these 3 pswp__item elements, data is added later on --><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. --><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><!--  Controls are self-explanatory. Order can be changed. --><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="关闭"></button><button class="pswp__button pswp__button--share" title="分享"></button><button class="pswp__button pswp__button--fs" title="切换全屏"></button><button class="pswp__button pswp__button--zoom" title="缩放"></button><!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR --><!-- element will get class pswp__preloader--active when preloader is running --><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="上一个 (左箭头)"></button><button class="pswp__button pswp__button--arrow--right" title="下一个 (右箭头)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div><!--]--><!----><div id="pwa-install"><!----><div id="install-modal-wrapper" style="display:none;"><div class="background"></div><div class="install-modal"><div class="header"><button class="close-button" aria-label="关闭"><svg xmlns="http://www.w3.org/2000/svg" class="icon close-icon" viewbox="0 0 1024 1024" arialabelledby="close"><title id="close" lang="en">close icon</title><g fill="currentColor"><path d="M589.654 511.965 1007.212 84.22a49.777 49.777 0 0 0-.73-70.02 49.046 49.046 0 0 0-69.687.665L519.967 441.946 85.882 14.2a49.08 49.08 0 0 0-69.687.664 49.777 49.777 0 0 0 .664 70.019l433.454 427.082L16.859 939.048a49.777 49.777 0 0 0-.664 70.019 49.013 49.013 0 0 0 69.687.663l434.085-427.746 416.828 427.083A49.013 49.013 0 0 0 972.037 1024a48.416 48.416 0 0 0 34.512-14.27 49.777 49.777 0 0 0 .73-70.019z"></path></g></svg></button><div class="logo"><!--v-if--><div class="title"><h1></h1><p class="desc">该应用可以安装在您的 PC 或移动设备上。这将使该 Web 应用程序外观和行为与其他应用程序相同。它将在出现在应用程序列表中，并可以固定到主屏幕，开始菜单或任务栏。此 Web 应用程序还将能够与其他应用程序和您的操作系统安全地进行交互。</p></div></div></div><div class="content"><div class="highlight"><!--v-if--><!--v-if--></div><div class="description"><h3>详情</h3><p></p></div></div><div class="button-wrapper"><button class="install-button">安装 <span></span></button><button class="cancel-button">取消</button></div></div></div></div><!--]--></div>
+    <script type="module" src="/assets/app.dd16a3d5.js" defer></script>
+  </body>
+</html>
