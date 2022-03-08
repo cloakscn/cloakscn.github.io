@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[23],{520:function(t,e,n){"use strict";n.r(e);var s=n(1),l=Object(s.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("p",[this._v("本文简单介绍一下通过微软提供的接口建立一个自动化的 CVE&KB 数据库任务。")])])}),[],!1,null,null,null);e.default=l.exports}}]);
