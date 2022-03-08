@@ -48,6 +48,11 @@ module.exports = config({
               { text: "读书笔记", link: "/book/" },
             ],
           },
+          {
+            text: "镜像",
+            link: "https://mirrors.cloaks.cn",
+            icon: "module"
+          },
         ],
       },
       { text: "Gitee", link: "https://gitee.com/biliit" },
