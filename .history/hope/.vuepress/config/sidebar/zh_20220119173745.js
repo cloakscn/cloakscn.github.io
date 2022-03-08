@@ -1,3 +1,0 @@
-cons
-
-module.exports = zh;

@@ -1,4 +1,5 @@
 ---
+icon: info
 sidebar: false
 
 breadcrumb: false

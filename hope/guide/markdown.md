@@ -1,125 +1,206 @@
 ---
 icon: markdown
-title: Markdown 增强
+title: Markdown Enhance
+category:
+  - Guide
+tag:
+  - markdown
 ---
 
-`vuepress-theme-hope` 通过内置 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance)，在 Markdown 中启用了更多的语法与新功能。
+Every document page in VuePress is rendered by Markdown.
+
+You need to build your document or blog page by creating and writing Markdown in the corresponding path.
 
 <!-- more -->
 
-## 一键启用
+## Markdown introduction
 
-你可以设置 `themeconfig.mdEnhance.enableAll` 启用 [md-enhance](https://vuepress-theme-hope.github.io/md-enhance) 插件的所有功能。
+If you are a new learner and don’t know how to write Markdown, please read [Markdown Intro](https://vuepress-theme-hope.github.io/v2/basic/markdown/README.html) and [Markdown Demo](https://vuepress-theme-hope.github.io/v2/basic/markdown/demo.html).
+
+::: info Frontmatter
+
+Frontmatter is a important concept in VuePress. If you don’t know it, you need to read [Frontmatter Introduction](https://vuepress-theme-hope.github.io/v2/basic/vuepress/page.html#front-matter).
+
+:::
+
+## VuePress enhance
+
+To enrich document writing, VuePress has extended Markdown syntax.
+
+For these extensions, please read [Markdown extensions in VuePress](https://vuepress-theme-hope.github.io/v2/basic/vuepress/markdown.html).
+
+## Theme enhance
+
+### Enable all
+
+You can set `themeconfig.plugins.htmlEnhance.enableAll` to enable all features of the [md-enhance](https://vuepress-theme-hope.github.io/v2/md-enhance/) plugin.
 
 ```js {3-5}
 module.exports = {
   themeConfig: {
-    mdEnhance: {
-      enableAll: true,
+    plugins: {
+      mdEnhance: {
+        enableAll: true,
+      },
     },
   },
 };
 ```
 
-## 新增的更多语法
+## New Feature
 
-### 上下角标
+### Custom Container
 
-19^th^ H~2~O
+::: v-pre
 
-::: details 代码
+Safely use {{ variable }} in markdown.
 
-```md
-19^th^ H~2~O
+:::
+
+::: info Custom Title
+
+A custom information container with `code`, [link](#markdown).
+
+```js
+const a = 1;
 ```
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/sup-sub/)
+::: tip Custom Title
 
-### 自定义对齐
-
-::: center
-
-我是居中的
+A custom tip container
 
 :::
 
-::: right
+::: warning Custom Title
 
-我在右对齐
+A custom warning container
 
 :::
 
-:::: details 代码
+::: danger Custom Title
+
+A custom danger container
+
+:::
+
+::: details Custom Title
+
+A custom details container
+
+:::
+
+:::: details Code
 
 ```md
-::: center
+::: v-pre
 
-我是居中的
+Safely use {{ variable }} in markdown.
 
 :::
 
-::: right
+::: info Custom Title
 
-我在右对齐
+A custom information container
+
+:::
+
+::: tip Custom Title
+
+A custom tip container
+
+:::
+
+::: warning Custom Title
+
+A custom warning container
+
+:::
+
+::: danger Custom Title
+
+A custom danger container
+
+:::
+
+::: details Custom Title
+
+A custom details container
 
 :::
 ```
 
 ::::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/align/)
+### CodeGroup
 
-### 脚注
+:::: code-group
 
-此文字有脚注[^first].
+::: code-group-item yarn
 
-[^first]: 这是脚注内容
-
-::: details 代码
-
-```md
-此文字有脚注[^first].
-
-[^first]: 这是脚注内容
+```bash
+yarn add -D vuepress-theme-hope
 ```
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/footnote/)
+::: code-group-item npm:active
 
-### 标记
-
-你可以标记 ==重要的内容== 。
-
-::: details 代码
-
-```md
-你可以标记 ==重要的内容== 。
+```bash
+npm i -D vuepress-theme-hope
 ```
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/mark/)
+::::
 
-### 任务列表
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/code-group.html)
 
-- [x] 计划 1
-- [ ] 计划 2
+### Superscript and Subscript
 
-::: details Code
+19^th^ H~2~O
 
-```md
-- [x] 计划 1
-- [ ] 计划 2
-```
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/sup-sub.html)
+
+### Align
+
+::: center
+
+I am center
 
 :::
 
-- [点击查看](https://vuepress-theme-hope.github.io/guide/markdown/tasklist/)
+::: right
 
-### 流程图
+I am right align
+
+:::
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/align.html)
+
+### Footnote
+
+This text has footnote[^first].
+
+[^first]: This is footnote content
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/footnote.html)
+
+### Mark
+
+You can mark ==important words== .
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/mark.html)
+
+### Tasklist
+
+- [x] Plan A
+- [ ] Plan B
+
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/tasklist.html)
+
+### Flowchart
 
 ```flow
 cond=>condition: Process?
@@ -130,81 +211,50 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-::: details 代码
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/flowchart.html)
 
-````md
-```flow
-cond=>condition: Process?
-process=>operation: Process
-e=>end: End
-
-cond(yes)->process->e
-cond(no)->e
-```
-````
-
-:::
-
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/flowchart/)
-
-## Mermaid
+### Mermaid
 
 ```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+flowchart TB
+    c1-->a2
+    subgraph one
+    a1-->a2
+    end
+    subgraph two
+    b1-->b2
+    end
+    subgraph three
+    c1-->c2
+    end
+    one --> two
+    three --> two
+    two --> c2
 ```
 
-::: details 代码
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/mermaid.html)
 
-````md
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-````
-
-:::
-
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/mermaid/)
-
-### Tex 语法
+### Tex
 
 $$
 \frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-::: details 代码
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/tex.html)
 
-```md
-$$
-\frac {\partial^r} {\partial \omega^r} \left(\frac {y^{\omega}} {\omega}\right)
-= \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
-$$
-```
+### Code Demo
 
-:::
-
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/tex/)
-
-### 代码案例
-
-::: demo 一个普通 Demo
+::: demo A normal demo
 
 ```html
-<h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
+<h1>VuePress Theme Hope</h1>
+<p>Is <span id="very">very</span> powerful!</p>
 ```
 
 ```js
 document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
+  alert("Very powerful!");
 });
 ```
 
@@ -216,219 +266,26 @@ span {
 
 :::
 
-:::: details 代码
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/demo.html)
 
-````md
-::: demo 一个普通 Demo
-
-```html
-<h1>Mr.Hope</h1>
-<p><span id="very">十分</span> 帅</p>
-```
-
-```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("十分帅");
-});
-```
-
-```css
-span {
-  color: red;
-}
-```
-
-:::
-````
-
-::::
-
-::: demo [react] 一个 React Demo
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "十分帅" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-```
-
-```css
-.box-react span {
-  color: red;
-}
-```
-
-:::
-
-:::: details 代码
-
-````md
-::: demo [react] 一个 React Demo
-
-```js
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { message: "十分帅" };
-  }
-  render() {
-    return (
-      <div className="box-react">
-        Mr.Hope <span>{this.state.message}</span>
-      </div>
-    );
-  }
-}
-```
-
-```css
-.box-react span {
-  color: red;
-}
-```
-
-:::
-````
-
-::::
-
-::: demo [vue] 一个 Vue Demo
-
-```vue
-<template>
-  <div class="box">
-    Mr.Hope <span>{{ message }}</span>
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({ message: "十分帅" }),
-};
-</script>
-<style>
-.box span {
-  color: red;
-}
-</style>
-```
-
-:::
-
-:::: details 代码
-
-````md
-::: demo [vue] 一个 Vue Demo
-
-```vue
-<template>
-  <div class="box">
-    Mr.Hope <span>{{ message }}</span>
-  </div>
-</template>
-<script>
-export default {
-  data: () => ({ message: "十分帅" }),
-};
-</script>
-<style>
-.box span {
-  color: red;
-}
-</style>
-```
-
-:::
-````
-
-::::
-
-::: demo 一个普通 Demo
-
-```md
-# 标题
-
-十分帅
-```
-
-```ts
-const message: string = "Mr.Hope";
-
-document.querySelector("h1").innerHTML = message;
-```
-
-```scss
-h1 {
-  font-style: italic;
-
-  + p {
-    color: red;
-  }
-}
-```
-
-:::
-
-:::: details 代码
-
-````md
-::: demo 一个普通 Demo
-
-```md
-# 标题
-
-十分帅
-```
-
-```ts
-const message: string = "Mr.Hope";
-
-document.querySelector("h1").innerHTML = message;
-```
-
-```scss
-h1 {
-  font-style: italic;
-
-  + p {
-    color: red;
-  }
-}
-```
-
-:::
-````
-
-::::
-
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/demo/)
-
-### 幻灯片
+### Presentation
 
 @slidestart
 
-## 幻灯片 1
+## Slide 1
 
-一个有文字和 [链接](https://mrhope.site) 的段落
-
----
-
-## 幻灯片 2
-
-- 列表 1
-- 列表 2
+A paragraph with some text and a [link](https://mrhope.site)
 
 ---
 
-## 幻灯片 3.1
+## Slide 2
+
+- Item 1
+- Item 2
+
+---
+
+## Slide 3.1
 
 ```js
 const a = 1;
@@ -436,7 +293,7 @@ const a = 1;
 
 --
 
-## 幻灯片 3.2
+## Slide 3.2
 
 $$
 J(\theta_0,\theta_1) = \sum_{i=0}
@@ -444,109 +301,4 @@ $$
 
 @slideend
 
-::: details 代码
-
-````md
-@slidestart
-
-## 幻灯片 1
-
-一个有文字和 [链接](https://mrhope.site) 的段落
-
----
-
-## 幻灯片 2
-
-- 列表 1
-- 列表 2
-
----
-
-## 幻灯片 3.1
-
-```js
-const a = 1;
-```
-
---
-
-## 幻灯片 3.2
-
-$$
-J(\theta_0,\theta_1) = \sum_{i=0}
-$$
-
-@slideend
-````
-
-:::
-
-- [点击查看](https://vuepress-theme-hope.github.io/zh/guide/markdown/presentation/)
-
-## 其他语法
-
-::: info 自定义标题
-
-信息容器
-
-:::
-
-::: tip 自定义标题
-
-提示容器
-
-:::
-
-::: warning 自定义标题
-
-警告容器
-
-:::
-
-::: danger 自定义标题
-
-危险容器
-
-:::
-
-::: details 自定义标题
-
-详情容器
-
-:::
-
-:::: details 代码
-
-```md
-::: info 自定义标题
-
-信息容器
-
-:::
-
-::: tip 自定义标题
-
-提示容器
-
-:::
-
-::: warning 自定义标题
-
-警告容器
-
-:::
-
-::: danger 自定义标题
-
-危险容器
-
-:::
-
-::: details 自定义标题
-
-详情容器
-
-:::
-```
-
-::::
+- [View Detail](https://vuepress-theme-hope.github.io/v2/guide/markdown/presentation.html)

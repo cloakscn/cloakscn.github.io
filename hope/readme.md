@@ -1,12 +1,12 @@
 ---
-blog: true
 home: true
-icon: icon-alias
+layout: Blog
+icon: home
 title: 博客主页
 heroImage: /logo.svg
 heroText: Cloaks
-heroFullScreen: false
 tagline: 热爱技术，乐于分享！
+heroFullScreen: false
 # project:
 #   - type: project
 #     name: 项目名称
