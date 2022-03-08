@@ -1,7 +1,7 @@
 import { defineSidebarConfig } from "vuepress-theme-hope";
 
 export const zh = defineSidebarConfig({
-  "/zh/": [
+  "/": [
     "",
     "home",
     "slide",
