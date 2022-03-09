@@ -6,8 +6,8 @@
     <link>https://www.cloaks.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Tue, 08 Mar 2022 17:28:39 GMT</pubDate>
-    <lastBuildDate>Tue, 08 Mar 2022 17:28:39 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Mar 2022 02:13:01 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Mar 2022 02:13:01 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>网络</category>
@@ -8883,6 +8883,140 @@ class TreeNode:
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>链表</title>
+      <link>https://www.cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8.html</link>
+      <guid>https://www.cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">链表</source>
+      <content:encoded><![CDATA[<h1 id="链表" tabindex="-1"> 链表</h1>
+<p>优点：真正的动态，不需要处理固定容量的问题</p>
+<p>缺点：丧失了随机访问的能力</p>
+<h2 id="数据结构" tabindex="-1"> 数据结构</h2>
+<div><pre><code><span>private</span> <span>class</span> <span>Node</span> <span>{</span>
+    <span>public</span> <span>E</span> e<span>;</span>
+    <span>public</span> <span>Node</span> next<span>;</span>
+    <span>// 构造方法</span>
+    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>,</span> <span>Node</span> next<span>)</span> <span>{</span>
+        <span>this</span><span>.</span>e <span>=</span> e<span>;</span>
+        <span>this</span><span>.</span>next <span>=</span> next<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+        <span>this</span><span>(</span>e<span>,</span> <span>null</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>public</span> <span>Node</span><span>(</span><span>)</span> <span>{</span>
+        <span>this</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>@Override</span>
+    <span>public</span> <span>String</span> <span>toString</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> e<span>.</span><span>toString</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>private</span> <span>Node</span> head<span>;</span>
+<span>private</span> <span>int</span> size<span>;</span>
+
+<span>// 链表初始化</span>
+<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
+    head <span>=</span> <span>null</span><span>;</span>
+    size <span>=</span> <span>0</span><span>;</span>
+<span>}</span>
+
+<span>// 获取链表的元素个数</span>
+<span>public</span> <span>int</span> <span>getSize</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> size<span>;</span>
+<span>}</span>
+
+<span>// 返回链表是否为空</span>
+<span>public</span> <span>boolean</span> <span>isEmpty</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> size <span>==</span> <span>0</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><h2 id="crud" tabindex="-1"> CRUD</h2>
+<h3 id="create" tabindex="-1"> Create</h3>
+<div><pre><code><span>// 在链表头添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>// Node node = new Node(e);</span>
+    <span>// node.next = head;</span>
+    <span>// head = node;</span>
+    <span>// 对其优化后的写法</span>
+    head <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> head<span>)</span><span>;</span>
+    size<span>++</span><span>;</span>
+<span>}</span>
+
+<span>/**
+    * 在链表的index(0-based)位置添加新的元素
+    * 这个方法在链表中并不是一个常用的操作，只是练习使用
+    */</span>
+<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>// 判断索引位置是否是头结点</span>
+    <span>if</span> <span>(</span>index <span>==</span> <span>0</span><span>)</span> <span>{</span>
+        <span>addFirst</span><span>(</span>e<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>if</span> <span>(</span>index <span>!=</span> <span>0</span><span>)</span> <span>{</span>
+        <span>Node</span> prev <span>=</span> head<span>;</span>
+        <span>// 使指针指向索引前一个位置</span>
+        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span>
+            prev <span>=</span> prev<span>.</span>next<span>;</span>
+
+        <span>// Node node = new Node(e);</span>
+        <span>// node.next = prev.next;</span>
+        <span>// prev.next = node;</span>
+
+        prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
+        size<span>++</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>// 在链表末尾添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br></div></div><p>为链表设置虚拟的头结点，可以统一在不同位置添加结点的操作</p>
+<div><pre><code><span>private</span> <span>Node</span> dummyHead<span>;</span>
+<span>private</span> <span>int</span> size<span>;</span>
+
+<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
+    dummyHead <span>=</span> <span>new</span> <span>Node</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
+    size <span>=</span> <span>0</span><span>;</span>
+<span>}</span>
+
+<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
+    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
+        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>Node</span> prev <span>=</span> dummyHead<span>;</span>
+    <span>// 使指针指向索引前一个位置</span>
+    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index<span>;</span> i<span>++</span><span>)</span>
+        prev <span>=</span> prev<span>.</span>next<span>;</span>
+
+    <span>// Node node = new Node(e);</span>
+    <span>// node.next = prev.next;</span>
+    <span>// prev.next = node;</span>
+
+    prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
+    size<span>++</span><span>;</span>
+<span>}</span>
+
+<span>// 在链表头添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>add</span><span>(</span>e<span>,</span> <span>0</span><span>)</span><span>;</span>
+<span>}</span>
+
+<span>// 在链表末尾添加新的元素e</span>
+<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
+    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="read" tabindex="-1"> Read</h3>
+<h3 id="update" tabindex="-1"> Update</h3>
+<h3 id="delete" tabindex="-1"> Delete</h3>
+<h2 id="完整代码" tabindex="-1"> 完整代码</h2>
+]]></content:encoded>
+    </item>
+    <item>
       <title>基础篇</title>
       <link>https://www.cloaks.cn/blogs/interview/%E5%9F%BA%E7%A1%80%E7%AF%87.html</link>
       <guid>https://www.cloaks.cn/blogs/interview/%E5%9F%BA%E7%A1%80%E7%AF%87.html</guid>
@@ -11407,140 +11541,6 @@ cards <span>=</span> <span>getStaticCards</span><span>(</span><span>)</span><spa
 </blockquote>
 ]]></content:encoded>
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201071119700.png" type="image/png"/>
-    </item>
-    <item>
-      <title>链表</title>
-      <link>https://www.cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8.html</link>
-      <guid>https://www.cloaks.cn/blogs/dataStrcture/%E9%93%BE%E8%A1%A8.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">链表</source>
-      <content:encoded><![CDATA[<h1 id="链表" tabindex="-1"> 链表</h1>
-<p>优点：真正的动态，不需要处理固定容量的问题</p>
-<p>缺点：丧失了随机访问的能力</p>
-<h2 id="数据结构" tabindex="-1"> 数据结构</h2>
-<div><pre><code><span>private</span> <span>class</span> <span>Node</span> <span>{</span>
-    <span>public</span> <span>E</span> e<span>;</span>
-    <span>public</span> <span>Node</span> next<span>;</span>
-    <span>// 构造方法</span>
-    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>,</span> <span>Node</span> next<span>)</span> <span>{</span>
-        <span>this</span><span>.</span>e <span>=</span> e<span>;</span>
-        <span>this</span><span>.</span>next <span>=</span> next<span>;</span>
-    <span>}</span>
-    <span>public</span> <span>Node</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-        <span>this</span><span>(</span>e<span>,</span> <span>null</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>public</span> <span>Node</span><span>(</span><span>)</span> <span>{</span>
-        <span>this</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>@Override</span>
-    <span>public</span> <span>String</span> <span>toString</span><span>(</span><span>)</span> <span>{</span>
-        <span>return</span> e<span>.</span><span>toString</span><span>(</span><span>)</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-
-<span>private</span> <span>Node</span> head<span>;</span>
-<span>private</span> <span>int</span> size<span>;</span>
-
-<span>// 链表初始化</span>
-<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
-    head <span>=</span> <span>null</span><span>;</span>
-    size <span>=</span> <span>0</span><span>;</span>
-<span>}</span>
-
-<span>// 获取链表的元素个数</span>
-<span>public</span> <span>int</span> <span>getSize</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> size<span>;</span>
-<span>}</span>
-
-<span>// 返回链表是否为空</span>
-<span>public</span> <span>boolean</span> <span>isEmpty</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> size <span>==</span> <span>0</span><span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><h2 id="crud" tabindex="-1"> CRUD</h2>
-<h3 id="create" tabindex="-1"> Create</h3>
-<div><pre><code><span>// 在链表头添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>// Node node = new Node(e);</span>
-    <span>// node.next = head;</span>
-    <span>// head = node;</span>
-    <span>// 对其优化后的写法</span>
-    head <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> head<span>)</span><span>;</span>
-    size<span>++</span><span>;</span>
-<span>}</span>
-
-<span>/**
-    * 在链表的index(0-based)位置添加新的元素
-    * 这个方法在链表中并不是一个常用的操作，只是练习使用
-    */</span>
-<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
-        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>// 判断索引位置是否是头结点</span>
-    <span>if</span> <span>(</span>index <span>==</span> <span>0</span><span>)</span> <span>{</span>
-        <span>addFirst</span><span>(</span>e<span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>if</span> <span>(</span>index <span>!=</span> <span>0</span><span>)</span> <span>{</span>
-        <span>Node</span> prev <span>=</span> head<span>;</span>
-        <span>// 使指针指向索引前一个位置</span>
-        <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index <span>-</span> <span>1</span><span>;</span> i<span>++</span><span>)</span>
-            prev <span>=</span> prev<span>.</span>next<span>;</span>
-
-        <span>// Node node = new Node(e);</span>
-        <span>// node.next = prev.next;</span>
-        <span>// prev.next = node;</span>
-
-        prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
-        size<span>++</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-
-<span>// 在链表末尾添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br></div></div><p>为链表设置虚拟的头结点，可以统一在不同位置添加结点的操作</p>
-<div><pre><code><span>private</span> <span>Node</span> dummyHead<span>;</span>
-<span>private</span> <span>int</span> size<span>;</span>
-
-<span>public</span> <span>LinkList</span><span>(</span><span>)</span> <span>{</span>
-    dummyHead <span>=</span> <span>new</span> <span>Node</span><span>(</span><span>null</span><span>,</span> <span>null</span><span>)</span><span>;</span>
-    size <span>=</span> <span>0</span><span>;</span>
-<span>}</span>
-
-<span>public</span> <span>void</span> <span>add</span><span>(</span><span>E</span> e<span>,</span> <span>int</span> index<span>)</span> <span>{</span>
-    <span>if</span> <span>(</span>index <span>&lt;</span> <span>0</span> <span>||</span> index <span>></span> size<span>)</span> <span>{</span>
-        <span>throw</span> <span>new</span> <span>IllegalArgumentException</span><span>(</span><span>"add failed. Illegal index."</span><span>)</span><span>;</span>
-    <span>}</span>
-
-    <span>Node</span> prev <span>=</span> dummyHead<span>;</span>
-    <span>// 使指针指向索引前一个位置</span>
-    <span>for</span> <span>(</span><span>int</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> index<span>;</span> i<span>++</span><span>)</span>
-        prev <span>=</span> prev<span>.</span>next<span>;</span>
-
-    <span>// Node node = new Node(e);</span>
-    <span>// node.next = prev.next;</span>
-    <span>// prev.next = node;</span>
-
-    prev<span>.</span>next <span>=</span> <span>new</span> <span>Node</span><span>(</span>e<span>,</span> prev<span>)</span><span>;</span>
-    size<span>++</span><span>;</span>
-<span>}</span>
-
-<span>// 在链表头添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addFirst</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>add</span><span>(</span>e<span>,</span> <span>0</span><span>)</span><span>;</span>
-<span>}</span>
-
-<span>// 在链表末尾添加新的元素e</span>
-<span>public</span> <span>void</span> <span>addLast</span><span>(</span><span>E</span> e<span>)</span> <span>{</span>
-    <span>add</span><span>(</span>e<span>,</span> size<span>)</span><span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="read" tabindex="-1"> Read</h3>
-<h3 id="update" tabindex="-1"> Update</h3>
-<h3 id="delete" tabindex="-1"> Delete</h3>
-<h2 id="完整代码" tabindex="-1"> 完整代码</h2>
-]]></content:encoded>
     </item>
     <item>
       <title>反转链表</title>
