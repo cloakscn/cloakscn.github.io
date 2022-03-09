@@ -2,6 +2,8 @@ import { defineThemeConfig } from "vuepress-theme-hope";
 import * as navbar from "./navbar";
 import * as sidebar from "./sidebar";
 
+const event = new Date();
+
 export default defineThemeConfig({
   hostname: "https://www.cloaks.cn",
   author: {
@@ -11,7 +13,7 @@ export default defineThemeConfig({
   iconPrefix: "iconfont icon-",
 
   logo: "/logo.svg",
-
+  pure: true,
   // repo: "https://github.com/cloakscn/cloakscn.github.io",
   repoDisplay: false,
 
@@ -80,8 +82,8 @@ export default defineThemeConfig({
       navbar: navbar.zh,
 
       // sidebar
-      sidebar: 'auto',
-      // sidebar: sidebar.zh,
+      // sidebar: 'auto',
+      sidebar: sidebar.zh,
 
       footer: "忽有故人心上过，回首山河已是秋！",
 
@@ -99,12 +101,12 @@ export default defineThemeConfig({
     },
   },
 
-  encrypt: {
-    config: {
-      "/guide/encrypt.html": ["1234"],
-      "/zh/guide/encrypt.html": ["1234"],
-    },
-  },
+  // encrypt: {
+  //   config: {
+  //     "/guide/encrypt.html": ["1234"],
+  //     "/zh/guide/encrypt.html": ["1234"],
+  //   },
+  // },
 
   plugins: {
 
@@ -181,7 +183,20 @@ export default defineThemeConfig({
 
     feed: {
       rss: true,
-      channel: {},
+      channel: {
+        title: "Cloaks' Blog",
+        link: "https://cloaks.cn",
+        description: "The Sun in My Heart!",
+        copyright: "MIT Licensed | Copyright © 2018-present Cloaks",
+        // pubDate: event.toISOString(),
+        ttl: 360,
+        author: {
+            name: "Cloaks",
+            email: "wy03290019@163.com",
+            url: "https://www.cloaks.cn",
+            // avator: 'string'
+        }
+      },
     },
 
     pwa: {
