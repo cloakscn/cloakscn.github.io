@@ -3,7 +3,7 @@ import themeConfig from "./themeConfig";
 
 export default defineHopeConfig({
   base: "/",
-
+  port: 8081,
   dest: "./docs",
 
   head: [

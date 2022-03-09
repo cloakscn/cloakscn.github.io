@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: CDN 内容分发网络
-time: 2022-03-07
+date: 2022-03-07
 category: 网络
 author: Cloaks
 # 此页面会在文章列表置顶

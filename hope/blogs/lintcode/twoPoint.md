@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: 双指针算法
-time: 2022-01-19
+date: 2022-01-19
 category: 力扣
 tag:
   - 数据结构

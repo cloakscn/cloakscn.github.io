@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: CURL 命令
-time: 2022-03-07
+date: 2022-03-07
 category: 参考
 tag:
   - 指令

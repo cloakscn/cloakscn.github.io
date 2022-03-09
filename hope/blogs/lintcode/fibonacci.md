@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: 斐波那契数列
-time: 2022-01-19
+date: 2022-01-19
 category: 力扣
 tag:
   - 数据结构

@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: Dubbo
-time: 2022-01-24
+date: 2022-01-24
 category: 主流框架
 tag:
   - 分布式

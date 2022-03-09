@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: Spring Annotation(注解开发)
-time: 2022-01-23
+date: 2022-01-23
 category: 主流框架
 tag:
   - Spring

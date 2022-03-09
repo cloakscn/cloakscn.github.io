@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: Spring IoC(控制反转)
-time: 2022-01-22
+date: 2022-01-22
 category: 主流框架
 tag:
   - Spring

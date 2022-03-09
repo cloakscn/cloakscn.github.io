@@ -6,8 +6,8 @@
     <link>https://www.cloaks.cn/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Wed, 09 Mar 2022 02:13:01 GMT</pubDate>
-    <lastBuildDate>Wed, 09 Mar 2022 02:13:01 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Mar 2022 12:42:17 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Mar 2022 12:42:17 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>网络</category>
@@ -7459,6 +7459,64 @@ acquiring 获得</p>
 </ol>
 ]]></content:encoded>
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
+    </item>
+    <item>
+      <title>计算机网络面试</title>
+      <link>https://www.cloaks.cn/blogs/test.html</link>
+      <guid>https://www.cloaks.cn/blogs/test.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">计算机网络面试</source>
+      <category>面试</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<CodeGroup>
+<CodeGroupItem title="yarn">
+<div><pre><code><span>yarn</span> <span>add</span> -D vuepress-theme-hope
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div></CodeGroupItem>
+<CodeGroupItem title="npm" active>
+<div><pre><code><span>npm</span> i -D vuepress-theme-hope
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div></CodeGroupItem>
+</CodeGroup>
+<p>脚注 1 链接<sup></sup>.</p>
+<p>脚注 2 链接<sup></sup>.</p>
+<p>行内的脚注<sup></sup> 定义.</p>
+<p>重复的页脚定义<sup></sup>.</p>
+<ul>
+<li><input type="checkbox"  disabled="disabled" id="task-item-0"><label for="task-item-0"> Plan A</label></li>
+<li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
+</ul>
+<p class='katex-block'><span><span><span aria-hidden="true"><span><span style="height:2.4em;vertical-align:-0.95em;"></span><span><span></span><span><span><span><span style="height:1.3714em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span style="margin-right:0.05556em;">∂</span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.05556em;">∂</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="margin-right:0.1667em;"></span><span><span style="top:0em;"><span>(</span></span><span><span></span><span><span><span><span style="height:1.3414em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span style="margin-right:0.03588em;">ω</span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03588em;">y</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.03588em;">ω</span></span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="top:0em;"><span>)</span></span></span><span style="margin-right:0.2778em;"></span><span>=</span><span style="margin-right:0.2778em;"></span></span><span><span style="height:3.0277em;vertical-align:-1.2777em;"></span><span><span style="top:0em;"><span>(</span></span><span><span></span><span><span><span><span style="height:1.3414em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span style="margin-right:0.03588em;">ω</span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03588em;">y</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.03588em;">ω</span></span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="top:0em;"><span>)</span></span></span><span style="margin-right:0.1667em;"></span><span><span style="top:0em;"><span>{</span></span><span>(</span><span>lo<span style="margin-right:0.01389em;">g</span></span><span style="margin-right:0.1667em;"></span><span style="margin-right:0.03588em;">y</span><span><span>)</span><span><span><span><span style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span><span style="margin-right:0.2222em;"></span><span>+</span><span style="margin-right:0.2222em;"></span><span><span><span><span style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>1</span></span></span></span><span style="top:-3.05em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span style="height:3.05em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span><span>​</span></span><span><span style="height:1.2777em;"><span></span></span></span></span></span><span style="margin-right:0.1667em;"></span><span><span></span><span><span><span><span style="height:1.5017em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.7507em;"><span style="top:-2.989em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>i</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span>(</span><span>−</span><span>1</span><span><span>)</span><span><span><span><span style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>i</span></span></span></span></span></span></span></span><span style="margin-right:0.02778em;">r</span><span style="margin-right:0.1667em;"></span><span>⋯</span><span style="margin-right:0.1667em;"></span><span>(</span><span style="margin-right:0.02778em;">r</span><span style="margin-right:0.2222em;"></span><span>−</span><span style="margin-right:0.2222em;"></span><span>i</span><span style="margin-right:0.2222em;"></span><span>+</span><span style="margin-right:0.2222em;"></span><span>1</span><span>)</span><span>(</span><span>lo<span style="margin-right:0.01389em;">g</span></span><span style="margin-right:0.1667em;"></span><span style="margin-right:0.03588em;">y</span><span><span>)</span><span><span><span><span style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.02778em;">r</span><span>−</span><span>i</span></span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="top:0em;"><span>}</span></span></span></span></span></span></span></p>
+<i>Content not supported</i><MermaidChart id="mermaid-382ee187" data-code="flowchart%20TB%0A%20%20%20%20c1--%3Ea2%0A%20%20%20%20subgraph%20one%0A%20%20%20%20a1--%3Ea2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20two%0A%20%20%20%20b1--%3Eb2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20three%0A%20%20%20%20c1--%3Ec2%0A%20%20%20%20end%0A%20%20%20%20one%20--%3E%20two%0A%20%20%20%20three%20--%3E%20two%0A%20%20%20%20two%20--%3E%20c2%0A"></MermaidChart>
+<div id="code-demo-3c31404e"  data-title="Demo%20%E6%BC%94%E7%A4%BA"  data-code="%7B%22html%22%3A%22%3Ch1%3EVuePress%20Theme%20Hope%3C%2Fh1%3E%5Cn%3Cp%3E%3Cspan%20id%3D%5C%22very%5C%22%3E%E9%9D%9E%E5%B8%B8%3C%2Fspan%3E%E5%BC%BA%E5%A4%A7!%3C%2Fp%3E%5Cn%22%2C%22js%22%3A%22document.querySelector(%5C%22%23very%5C%22).addEventListener(%5C%22click%5C%22%2C%20()%20%3D%3E%20%7B%5Cn%20%20alert(%5C%22%E9%9D%9E%E5%B8%B8%E5%BC%BA%E5%A4%A7%5C%22)%3B%5Cn%7D)%3B%5Cn%22%2C%22css%22%3A%22span%20%7B%5Cn%20%20color%3A%20red%3B%5Cn%7D%5Cn%22%7D">
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div>
+<div><pre><code><span><span><span>&lt;</span>h1</span><span>></span></span>VuePress Theme Hope<span><span><span>&lt;/</span>h1</span><span>></span></span>
+<span><span><span>&lt;</span>p</span><span>></span></span><span><span><span>&lt;</span>span</span> <span>id</span><span><span>=</span><span>"</span>very<span>"</span></span><span>></span></span>非常<span><span><span>&lt;/</span>span</span><span>></span></span>强大!<span><span><span>&lt;/</span>p</span><span>></span></span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code>document<span>.</span><span>querySelector</span><span>(</span><span>"#very"</span><span>)</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>alert</span><span>(</span><span>"非常强大"</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>span</span> <span>{</span>
+  <span>color</span><span>:</span> red<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div>
+    </div>
+  </div>
+  <div></div>
+</div>
+<hr>
+<section>
+<ol>
+<li id="footnote1"><p>脚注 <strong>可以包含特殊标记</strong></p>
+<p>也可以由多个段落组成 </p>
+</li>
+<li id="footnote2"><p>脚注文字。  </p>
+</li>
+<li id="footnote3"><p>Text of inline footnote </p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
     </item>
     <item>
       <title>斐波那契数列</title>

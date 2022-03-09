@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: LRU 算法 && 爬台阶递归算法
-time: 2022-01-19
+date: 2022-01-19
 category: 力扣
 tag:
   - 数据结构

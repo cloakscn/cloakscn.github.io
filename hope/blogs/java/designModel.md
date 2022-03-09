@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: 设计模式
-time: 2022-01-24
+date: 2022-01-24
 category: 架构
 tag:
   - 设计模式

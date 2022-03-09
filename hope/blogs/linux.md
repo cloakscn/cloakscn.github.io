@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: Linux 问题总结
-time: 2022-02-24
+date: 2022-02-24
 category: 问题总结
 tag:
   - Linux

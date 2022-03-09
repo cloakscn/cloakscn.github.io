@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: JDBC
-time: 2022-01-24
+date: 2022-01-24
 category: Java
 tag:
   - 工具类

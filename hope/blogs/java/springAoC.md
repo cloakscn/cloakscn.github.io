@@ -2,7 +2,7 @@
 icon: page
 # 这是文章的标题
 title: Spring AoC(面向切面编程)
-time: 2022-01-24
+date: 2022-01-24
 category: 主流框架
 tag:
   - Spring
