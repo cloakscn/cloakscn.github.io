@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 09 Mar 2022 13:44:45 GMT</pubDate>
-    <lastBuildDate>Wed, 09 Mar 2022 13:44:45 GMT</lastBuildDate>
+    <pubDate>Thu, 10 Mar 2022 14:28:24 GMT</pubDate>
+    <lastBuildDate>Thu, 10 Mar 2022 14:28:24 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -21,6 +21,7 @@
     <category>微服务</category>
     <category>面试</category>
     <category>力扣</category>
+    <category>Java 基础</category>
     <item>
       <title>Windows CVE漏洞与补丁号对应关系</title>
       <link>https://www.cloaks.cn/cyber_security/cve_kb.html</link>
@@ -2417,6 +2418,96 @@ class TreeNode:
     <span>}</span>
 <span>}</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>正则表达式</title>
+      <link>https://www.cloaks.cn/java/base/regex.html</link>
+      <guid>https://www.cloaks.cn/java/base/regex.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">正则表达式</source>
+      <description>&amp;lt;p&amp;gt;Java 正则表达式知识点梳理。&amp;lt;/p&amp;gt;
+</description>
+      <author>wy03290019@163.com (Cloaks)</author>
+      <category>Java 基础</category>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Java 正则表达式知识点梳理。</p>
+
+<h2 id="源码包" tabindex="-1"> 源码包</h2>
+<p>Java 提供了支持正则表达式的工具包：<code>java.util.regex</code></p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" alt="java.util.regex"></p>
+<ul>
+<li><strong>Pattern 类</strong></li>
+</ul>
+<p>pattern 对象是一个正则表达式的编译表示。Pattern 类没有公共构造方法。要创建一个 Pattern 对象，你必须首先调用其公共静态编译方法，它返回一个 Pattern 对象。该方法接受一个正则表达式作为它的第一个参数。</p>
+<ul>
+<li><strong>Matcher 类</strong></li>
+</ul>
+<p>Matcher 对象是对输入字符串进行解释和匹配操作的引擎。与Pattern 类一样，Matcher 也没有公共构造方法。你需要调用 Pattern 对象的 matcher 方法来获得一个 Matcher 对象。</p>
+<ul>
+<li><strong>PatternSyntaxException</strong></li>
+</ul>
+<p>PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误。</p>
+<h2 id="捕获组" tabindex="-1"> 捕获组</h2>
+<p>捕获组是把多个字符当一个单独单元进行处理的方法，它通过对括号内的字符分组来创建。</p>
+<p>例如，正则表达式 (dog) 创建了单一分组，组里包含&quot;d&quot;，&quot;o&quot;，和&quot;g&quot;。</p>
+<p>捕获组是通过从左至右计算其开括号来编号。例如，在表达式（（A）（B（C））），有四个这样的组：</p>
+<ul>
+<li>
+<p>((A)(B(C)))</p>
+</li>
+<li>
+<p>(A)</p>
+</li>
+<li>
+<p>(B(C))</p>
+</li>
+<li>
+<p>(C)</p>
+</li>
+</ul>
+<p>可以通过调用 matcher 对象的 groupCount 方法来查看表达式有多少个分组。groupCount 方法返回一个 int 值，表示matcher对象当前有多个捕获组。</p>
+<p>还有一个特殊的组（group(0)），它总是代表整个表达式。该组不包括在 groupCount 的返回值中。</p>
+<h2 id="实例" tabindex="-1"> 实例</h2>
+<p>下面的例子说明如何从一个给定的字符串中找到数字串：</p>
+<div><pre><code><span>import</span> <span>java<span>.</span>util<span>.</span>regex<span>.</span></span><span>Matcher</span><span>;</span>
+<span>import</span> <span>java<span>.</span>util<span>.</span>regex<span>.</span></span><span>Pattern</span><span>;</span>
+ 
+<span>public</span> <span>class</span> <span>RegexMatches</span>
+<span>{</span>
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span> <span>String</span><span>[</span><span>]</span> args <span>)</span><span>{</span>
+ 
+      <span>// 按指定模式在字符串查找</span>
+      <span>String</span> line <span>=</span> <span>"This order was placed for QT3000! OK?"</span><span>;</span>
+      <span>String</span> pattern <span>=</span> <span>"(\\D*)(\\d+)(.*)"</span><span>;</span>
+ 
+      <span>// 创建 Pattern 对象</span>
+      <span>Pattern</span> r <span>=</span> <span>Pattern</span><span>.</span><span>compile</span><span>(</span>pattern<span>)</span><span>;</span>
+ 
+      <span>// 现在创建 matcher 对象</span>
+      <span>Matcher</span> m <span>=</span> r<span>.</span><span>matcher</span><span>(</span>line<span>)</span><span>;</span>
+      <span>if</span> <span>(</span>m<span>.</span><span>find</span><span>(</span> <span>)</span><span>)</span> <span>{</span>
+         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>0</span><span>)</span> <span>)</span><span>;</span>
+         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>1</span><span>)</span> <span>)</span><span>;</span>
+         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>2</span><span>)</span> <span>)</span><span>;</span>
+         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>3</span><span>)</span> <span>)</span><span>;</span> 
+      <span>}</span> <span>else</span> <span>{</span>
+         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"NO MATCH"</span><span>)</span><span>;</span>
+      <span>}</span>
+   <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102221769.png" alt="RegexMatches groupCount"></p>
+<p>根据捕获组的介绍，我们可以知道 <code>(\\D*)(\\d+)(.*)</code> 可以分为以下三组：</p>
+<div><pre><code><span>(\\D*)</span><span>:</span> 匹配非数字字符串
+<span>(\\d+)</span><span>:</span> 匹配多个数字字符串
+<span>(.*)</span><span>:</span> 这个我目前也没看懂
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>这个解释应该是有些问题，还需要继续打磨。</p>
+<h2 id="正则表达式语法" tabindex="-1"> <a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">正则表达式语法<ExternalLinkIcon/></a></h2>
+<blockquote>
+<p>参考文章</p>
+<p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/java/java-regular-expressions.html<ExternalLinkIcon/></a></p>
+<p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/java/java-regular-expressions.html<ExternalLinkIcon/></a></p>
+</blockquote>
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" type="image/png"/>
     </item>
     <item>
       <title>链表</title>
