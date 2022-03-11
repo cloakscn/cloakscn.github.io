@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 11 Mar 2022 08:53:46 GMT</pubDate>
-    <lastBuildDate>Fri, 11 Mar 2022 08:53:46 GMT</lastBuildDate>
+    <pubDate>Fri, 11 Mar 2022 10:47:45 GMT</pubDate>
+    <lastBuildDate>Fri, 11 Mar 2022 10:47:45 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -22,6 +22,222 @@
     <category>微服务</category>
     <category>面试</category>
     <category>力扣</category>
+    <item>
+      <title>Java 读取文本文件</title>
+      <link>https://www.cloaks.cn/java/base/file_reader.html</link>
+      <guid>https://www.cloaks.cn/java/base/file_reader.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">Java 读取文本文件</source>
+      <description>&amp;lt;p&amp;gt;在 java 中有很多读取文本文件的方法。文本文件由字符组成，因此可以使用 Reader 类。在 java 中读取文本文件也有一些实用程序类。&amp;lt;/p&amp;gt;
+</description>
+      <category>Java 基础</category>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>在 java 中有很多读取文本文件的方法。文本文件由字符组成，因此可以使用 Reader 类。在 java 中读取文本文件也有一些实用程序类。</p>
+
+<ul>
+<li>
+<p>使用 Files 类读取文本文件；</p>
+</li>
+<li>
+<p>使用 FileReader 类读取文本文件；</p>
+</li>
+<li>
+<p>使用 BufferedReader 类读取文本文件；</p>
+</li>
+<li>
+<p>使用 Scanner 类读取文本文件；</p>
+</li>
+</ul>
+<h2 id="使用-java-nio-file-files-读取文本文件" tabindex="-1"> 使用 java.nio.file.Files 读取文本文件</h2>
+<p>使用 Files 类将文件的所有内容读入字节数组。</p>
+<p>Files 类还有一个方法可以读取所有行到字符串列表。</p>
+<p>Files 类是在 Java 7 中引入的，<strong>如果想加载所有文件内容，使用这个类是比较适合的</strong>。</p>
+<p>只有在处理小文件并且需要加载所有文件内容到内存中时才应使用此方法。</p>
+<div><pre><code><span>String</span> fileName <span>=</span> <span>"D:/docs/source.txt"</span><span>;</span>
+<span>Path</span> path <span>=</span> <span>Paths</span><span>.</span><span>get</span><span>(</span>fileName<span>)</span><span>;</span>
+<span>byte</span><span>[</span><span>]</span> bytes <span>=</span> <span>Files</span><span>.</span><span>readAllBytes</span><span>(</span>path<span>)</span><span>;</span>
+<span>List</span><span><span>&lt;</span><span>String</span><span>></span></span> allLines <span>=</span> <span>Files</span><span>.</span><span>readAllLines</span><span>(</span>path<span>,</span> <span>StandardCharsets</span><span>.</span>UTF_8<span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="使用-java-io-filereader-类" tabindex="-1"> 使用 java.io.FileReader 类</h2>
+<p>可以使用 FileReader 获取 BufferedReader，然后逐行读取文件。</p>
+<p><strong>FileReader 不是一种 java 中读取文本文件的非常有效的方法<sup></sup></strong>。</p>
+<div><pre><code><span>File</span> file <span>=</span> <span>new</span> <span>File</span><span>(</span><span>"D:/docs/source.txt"</span><span>)</span><span>;</span>
+<span>FileReader</span> fileReader <span>=</span> <span>new</span> <span>FileReader</span><span>(</span>file<span>)</span><span>;</span>
+<span>BufferedReader</span> bufferedReader <span>=</span> <span>new</span> <span>BufferedReader</span><span>(</span>fileReader<span>)</span><span>;</span>
+<span>String</span> line <span>=</span> <span>""</span><span>;</span>
+<span>while</span> <span>(</span><span>(</span>line <span>=</span> bufferedReader<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span> <span>{</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="使用-java-io-bufferedreader" tabindex="-1"> 使用 java.io.BufferedReader</h2>
+<p>如果想逐行读取文件并对它们进行处理，那么 BufferedReader 是非常合适的。</p>
+<p><strong>它适用于处理大文件，也支持编码。</strong></p>
+<p>BufferedReader 是同步的，因此可以安全地从多个线程完成对 BufferedReader 的读取操作。</p>
+<p>BufferedReader的默认缓冲区大小为：8KB。</p>
+<div><pre><code><span>String</span> fileName <span>=</span> <span>"D:/maxsu/docs/source.txt"</span><span>;</span>
+<span>File</span> file <span>=</span> <span>new</span> <span>File</span><span>(</span>fileName<span>)</span><span>;</span>
+<span>FileInputStream</span> fis <span>=</span> <span>new</span> <span>FileInputStream</span><span>(</span>file<span>)</span><span>;</span>
+<span>InputStreamReader</span> isr <span>=</span> <span>new</span> <span>InputStreamReader</span><span>(</span>fis<span>,</span> cs<span>)</span><span>;</span>
+<span>BufferedReader</span> br <span>=</span> <span>new</span> <span>BufferedReader</span><span>(</span>isr<span>)</span><span>;</span>
+
+<span>String</span> line<span>;</span>
+<span>while</span><span>(</span><span>(</span>line <span>=</span> br<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span><span>{</span>
+     <span>//process the line</span>
+     <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+<span>}</span>
+br<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h2 id="使用-scanner-读取文本文件" tabindex="-1"> 使用 Scanner 读取文本文件</h2>
+<p>如果要逐行读取文件或基于某些 java 正则表达式读取文件，则可使用 Scanner 类。</p>
+<p>Scanner 类使用分隔符模式将其输入分解为标记，分隔符模式默认匹配空格。</p>
+<p>然后可以使用各种下一种方法将得到的标记转换成不同类型的值。</p>
+<p>Scanner 类不同步，因此不是线程安全的。</p>
+<div><pre><code><span>Path</span> path <span>=</span> <span>Paths</span><span>.</span><span>get</span><span>(</span>fileName<span>)</span><span>;</span>
+<span>Scanner</span> scanner <span>=</span> <span>new</span> <span>Scanner</span><span>(</span>path<span>)</span><span>;</span>
+<span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Read text file using Scanner"</span><span>)</span><span>;</span>
+<span>// 一行一行地读取</span>
+<span>while</span><span>(</span>scanner<span>.</span><span>hasNextLine</span><span>(</span><span>)</span><span>)</span><span>{</span>
+    <span>//process each line</span>
+    <span>String</span> line <span>=</span> scanner<span>.</span><span>nextLine</span><span>(</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+<span>}</span>
+scanner<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h2 id="实例" tabindex="-1"> 实例</h2>
+<p>以下是显示如何在 java 中读取文本文件的示例。</p>
+<p>分别使用：Scanner，Files，BufferedReader 编码和 FileReader 实现。</p>
+<div><pre><code><span>package</span> <span>com<span>.</span>journaldev<span>.</span>files</span><span>;</span>
+
+<span>import</span> <span>java<span>.</span>io<span>.</span></span><span>BufferedReader</span><span>;</span>
+<span>import</span> <span>java<span>.</span>io<span>.</span></span><span>File</span><span>;</span>
+<span>import</span> <span>java<span>.</span>io<span>.</span></span><span>FileInputStream</span><span>;</span>
+<span>import</span> <span>java<span>.</span>io<span>.</span></span><span>FileReader</span><span>;</span>
+<span>import</span> <span>java<span>.</span>io<span>.</span></span><span>IOException</span><span>;</span>
+<span>import</span> <span>java<span>.</span>io<span>.</span></span><span>InputStreamReader</span><span>;</span>
+<span>import</span> <span>java<span>.</span>nio<span>.</span>charset<span>.</span></span><span>Charset</span><span>;</span>
+<span>import</span> <span>java<span>.</span>nio<span>.</span>charset<span>.</span></span><span>StandardCharsets</span><span>;</span>
+<span>import</span> <span>java<span>.</span>nio<span>.</span>file<span>.</span></span><span>Files</span><span>;</span>
+<span>import</span> <span>java<span>.</span>nio<span>.</span>file<span>.</span></span><span>Path</span><span>;</span>
+<span>import</span> <span>java<span>.</span>nio<span>.</span>file<span>.</span></span><span>Paths</span><span>;</span>
+<span>import</span> <span>java<span>.</span>util<span>.</span></span><span>List</span><span>;</span>
+<span>import</span> <span>java<span>.</span>util<span>.</span></span><span>Scanner</span><span>;</span>
+
+<span>public</span> <span>class</span> <span>JavaReadFile</span> <span>{</span>
+
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span><span>String</span><span>[</span><span>]</span> args<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>String</span> fileName <span>=</span> <span>"D:/docs/source.txt"</span><span>;</span>
+
+        <span>//使用Java 7中的Files类处理小文件，获取完整的文件数据</span>
+        <span>readUsingFiles</span><span>(</span>fileName<span>)</span><span>;</span>
+
+        <span>//使用Scanner类来处理大文件，逐行读取</span>
+        <span>readUsingScanner</span><span>(</span>fileName<span>)</span><span>;</span>
+
+        <span>//使用BufferedReader读取，逐行读取</span>
+        <span>readUsingBufferedReader</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>readUsingBufferedReaderJava7</span><span>(</span>fileName<span>,</span> <span>StandardCharsets</span><span>.</span>UTF_8<span>)</span><span>;</span>
+        <span>readUsingBufferedReader</span><span>(</span>fileName<span>,</span> <span>StandardCharsets</span><span>.</span>UTF_8<span>)</span><span>;</span>
+
+        <span>//使用FileReader读取，没有编码支持，效率不高</span>
+        <span>readUsingFileReader</span><span>(</span>fileName<span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>static</span> <span>void</span> <span>readUsingFileReader</span><span>(</span><span>String</span> fileName<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>File</span> file <span>=</span> <span>new</span> <span>File</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>FileReader</span> fr <span>=</span> <span>new</span> <span>FileReader</span><span>(</span>file<span>)</span><span>;</span>
+        <span>BufferedReader</span> br <span>=</span> <span>new</span> <span>BufferedReader</span><span>(</span>fr<span>)</span><span>;</span>
+        <span>String</span> line<span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Reading text file using FileReader"</span><span>)</span><span>;</span>
+        <span>while</span><span>(</span><span>(</span>line <span>=</span> br<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span><span>{</span>
+            <span>//逐行读取</span>
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+        <span>}</span>
+        br<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+        fr<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+
+    <span>}</span>
+
+    <span>private</span> <span>static</span> <span>void</span> <span>readUsingBufferedReader</span><span>(</span><span>String</span> fileName<span>,</span> <span>Charset</span> cs<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>File</span> file <span>=</span> <span>new</span> <span>File</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>FileInputStream</span> fis <span>=</span> <span>new</span> <span>FileInputStream</span><span>(</span>file<span>)</span><span>;</span>
+        <span>InputStreamReader</span> isr <span>=</span> <span>new</span> <span>InputStreamReader</span><span>(</span>fis<span>,</span> cs<span>)</span><span>;</span>
+        <span>BufferedReader</span> br <span>=</span> <span>new</span> <span>BufferedReader</span><span>(</span>isr<span>)</span><span>;</span>
+        <span>String</span> line<span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Read text file using InputStreamReader"</span><span>)</span><span>;</span>
+        <span>while</span><span>(</span><span>(</span>line <span>=</span> br<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span><span>{</span>
+            <span>//逐行读取</span>
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+        <span>}</span>
+        br<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+
+    <span>}</span>
+
+    <span>private</span> <span>static</span> <span>void</span> <span>readUsingBufferedReaderJava7</span><span>(</span><span>String</span> fileName<span>,</span> <span>Charset</span> cs<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>Path</span> path <span>=</span> <span>Paths</span><span>.</span><span>get</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>BufferedReader</span> br <span>=</span> <span>Files</span><span>.</span><span>newBufferedReader</span><span>(</span>path<span>,</span> cs<span>)</span><span>;</span>
+        <span>String</span> line<span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Read text file using BufferedReader Java 7 improvement"</span><span>)</span><span>;</span>
+        <span>while</span><span>(</span><span>(</span>line <span>=</span> br<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span><span>{</span>
+            <span>//逐行读取</span>
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+        <span>}</span>
+        br<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>static</span> <span>void</span> <span>readUsingBufferedReader</span><span>(</span><span>String</span> fileName<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>File</span> file <span>=</span> <span>new</span> <span>File</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>FileReader</span> fr <span>=</span> <span>new</span> <span>FileReader</span><span>(</span>file<span>)</span><span>;</span>
+        <span>BufferedReader</span> br <span>=</span> <span>new</span> <span>BufferedReader</span><span>(</span>fr<span>)</span><span>;</span>
+        <span>String</span> line<span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Read text file using BufferedReader"</span><span>)</span><span>;</span>
+        <span>while</span><span>(</span><span>(</span>line <span>=</span> br<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span><span>{</span>
+            <span>//逐行读取</span>
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+        <span>}</span>
+        <span>//close resources</span>
+        br<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+        fr<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>static</span> <span>void</span> <span>readUsingScanner</span><span>(</span><span>String</span> fileName<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>Path</span> path <span>=</span> <span>Paths</span><span>.</span><span>get</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>Scanner</span> scanner <span>=</span> <span>new</span> <span>Scanner</span><span>(</span>path<span>)</span><span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Read text file using Scanner"</span><span>)</span><span>;</span>
+        <span>//逐行读取</span>
+        <span>while</span><span>(</span>scanner<span>.</span><span>hasNextLine</span><span>(</span><span>)</span><span>)</span><span>{</span>
+            <span>//逐行处理</span>
+            <span>String</span> line <span>=</span> scanner<span>.</span><span>nextLine</span><span>(</span><span>)</span><span>;</span>
+            <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>line<span>)</span><span>;</span>
+        <span>}</span>
+        scanner<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+
+    <span>private</span> <span>static</span> <span>void</span> <span>readUsingFiles</span><span>(</span><span>String</span> fileName<span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+        <span>Path</span> path <span>=</span> <span>Paths</span><span>.</span><span>get</span><span>(</span>fileName<span>)</span><span>;</span>
+        <span>//将文件读取到字节数组</span>
+        <span>byte</span><span>[</span><span>]</span> bytes <span>=</span> <span>Files</span><span>.</span><span>readAllBytes</span><span>(</span>path<span>)</span><span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Read text file using Files class"</span><span>)</span><span>;</span>
+        <span>//read file to String list</span>
+        <span>@SuppressWarnings</span><span>(</span><span>"unused"</span><span>)</span>
+        <span>List</span><span><span>&lt;</span><span>String</span><span>></span></span> allLines <span>=</span> <span>Files</span><span>.</span><span>readAllLines</span><span>(</span>path<span>,</span> <span>StandardCharsets</span><span>.</span>UTF_8<span>)</span><span>;</span>
+        <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>new</span> <span>String</span><span>(</span>bytes<span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br><span>82</span><br><span>83</span><br><span>84</span><br><span>85</span><br><span>86</span><br><span>87</span><br><span>88</span><br><span>89</span><br><span>90</span><br><span>91</span><br><span>92</span><br><span>93</span><br><span>94</span><br><span>95</span><br><span>96</span><br><span>97</span><br><span>98</span><br><span>99</span><br><span>100</span><br><span>101</span><br><span>102</span><br><span>103</span><br><span>104</span><br><span>105</span><br><span>106</span><br><span>107</span><br><span>108</span><br><span>109</span><br><span>110</span><br><span>111</span><br><span>112</span><br><span>113</span><br><span>114</span><br><span>115</span><br><span>116</span><br><span>117</span><br></div></div><p>选择使用哪个方法来读取文件取决于项目要求。</p>
+<p>例如，如果只是日志记录文件，则可以使用Files和BufferedReader。</p>
+<p>如果要查找基于分隔符的文件，则应使用Scanner类。</p>
+<p>顺便提及一下RandomAccessFile。也可以用它来读取文本文件。如下示例代码:</p>
+<div><pre><code><span>RandomAccessFile</span> file <span>=</span> <span>new</span> <span>RandomAccessFile</span><span>(</span><span>"D:/maxsu/docs/readme.txt"</span><span>,</span> <span>"r"</span><span>)</span><span>;</span>
+<span>String</span> str<span>;</span>
+
+<span>while</span> <span>(</span><span>(</span>str <span>=</span> file<span>.</span><span>readLine</span><span>(</span><span>)</span><span>)</span> <span>!=</span> <span>null</span><span>)</span> <span>{</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>str<span>)</span><span>;</span>
+<span>}</span>
+file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><hr>
+<section>
+<ol>
+<li id="footnote1"><p>不支持编码并使用系统默认编码 </p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
+    </item>
     <item>
       <title>正则表达式</title>
       <link>https://www.cloaks.cn/java/base/regex.html</link>

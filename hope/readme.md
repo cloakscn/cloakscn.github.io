@@ -1,7 +1,7 @@
 ---
 home: true
 layout: Blog
-icon: home
+icon: alias
 title: 博客主页
 heroImage: /logo.svg
 heroText: Cloaks

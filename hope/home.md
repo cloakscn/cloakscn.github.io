@@ -1,6 +1,6 @@
 ---
 home: true
-icon: home
+icon: launch
 title: 项目主页
 heroImage: /logo.svg
 heroText: Project name

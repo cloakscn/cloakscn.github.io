@@ -267,7 +267,7 @@ export const zh = defineSidebarConfig({
       icon: "creative",
       collapsable: true,
       prefix: "base/",
-      children: ["regex"],
+      children: ["regex", "file_reader"],
     },
     // {
     //   text: "文章",
