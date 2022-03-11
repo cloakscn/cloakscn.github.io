@@ -6,12 +6,13 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 11 Mar 2022 03:04:03 GMT</pubDate>
-    <lastBuildDate>Fri, 11 Mar 2022 03:04:03 GMT</lastBuildDate>
+    <pubDate>Fri, 11 Mar 2022 08:53:46 GMT</pubDate>
+    <lastBuildDate>Fri, 11 Mar 2022 08:53:46 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>Java 基础</category>
     <category>网络安全</category>
     <category>网络</category>
     <category>参考</category>
@@ -21,7 +22,170 @@
     <category>微服务</category>
     <category>面试</category>
     <category>力扣</category>
-    <category>Java 基础</category>
+    <item>
+      <title>正则表达式</title>
+      <link>https://www.cloaks.cn/java/base/regex.html</link>
+      <guid>https://www.cloaks.cn/java/base/regex.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">正则表达式</source>
+      <description>&amp;lt;p&amp;gt;Java 正则表达式知识点梳理。&amp;lt;/p&amp;gt;
+</description>
+      <category>Java 基础</category>
+      <pubDate>Fri, 11 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Java 正则表达式知识点梳理。</p>
+
+<h2 id="源码包" tabindex="-1"> 源码包</h2>
+<p>Java 提供了支持正则表达式的工具包：<code>java.util.regex</code></p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" alt="java.util.regex."></p>
+<ul>
+<li><strong>Pattern 类</strong></li>
+</ul>
+<p>pattern 对象是一个正则表达式的编译表示。Pattern 类没有公共构造方法。要创建一个 Pattern 对象，你必须首先调用其公共静态编译方法，它返回一个 Pattern 对象。该方法接受一个正则表达式作为它的第一个参数。</p>
+<ul>
+<li><strong>Matcher 类</strong></li>
+</ul>
+<p>Matcher 对象是对输入字符串进行解释和匹配操作的引擎。与Pattern 类一样，Matcher 也没有公共构造方法。你需要调用 Pattern 对象的 matcher 方法来获得一个 Matcher 对象。</p>
+<ul>
+<li><strong>PatternSyntaxException</strong></li>
+</ul>
+<p>PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误。</p>
+<h3 id="matcher-类的方法" tabindex="-1"> Matcher 类的方法</h3>
+<p><strong>start 和 end 方法</strong></p>
+<p>Start 方法返回在以前的匹配操作期间，由给定组所捕获的子序列的初始索引，end 方法最后一个匹配字符的索引加 1。</p>
+<p><strong>matches 和 lookingAt 方法</strong></p>
+<p>matches 和 lookingAt 方法都用来尝试匹配一个输入序列模式。它们的不同是 matches 要求整个序列都匹配，而lookingAt 不要求。</p>
+<p>lookingAt 方法虽然不需要整句都匹配，但是需要从第一个字符开始匹配。</p>
+<p>这两个方法经常在输入字符串的开始使用。</p>
+<p><strong>replaceFirst 和 replaceAll 方法</strong></p>
+<p>replaceFirst 和 replaceAll 方法用来替换匹配正则表达式的文本。不同的是，replaceFirst 替换首次匹配，replaceAll 替换所有匹配。</p>
+<h2 id="捕获组" tabindex="-1"> 捕获组</h2>
+<p>捕获组是把多个字符当一个单独单元进行处理的方法，它通过对括号内的字符分组来创建。</p>
+<p>例如，正则表达式 (dog) 创建了单一分组，组里包含&quot;d&quot;，&quot;o&quot;，和&quot;g&quot;。</p>
+<p>捕获组是通过从左至右计算其开括号来编号。例如，在表达式（（A）（B（C））），有四个这样的组：</p>
+<ul>
+<li>
+<p>((A)(B(C)))</p>
+</li>
+<li>
+<p>(A)</p>
+</li>
+<li>
+<p>(B(C))</p>
+</li>
+<li>
+<p>(C)</p>
+</li>
+</ul>
+<p>可以通过调用 matcher 对象的 groupCount 方法来查看表达式有多少个分组。groupCount 方法返回一个 int 值，表示matcher对象当前有多个捕获组。</p>
+<p>还有一个特殊的组（group(0)），它总是代表整个表达式。该组不包括在 groupCount 的返回值中。</p>
+<p>根据捕获组的介绍，我们可以知道 <code>(\\D*)(\\d+)(.*)</code> 可以分为以下三组：</p>
+<div><pre><code><span>(\\D*)</span><span>:</span> 匹配非数字字符串
+<span>(\\d+)</span><span>:</span> 匹配多个数字字符串
+<span>(.*)</span><span>:</span> 这个我目前也没看懂
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>这个解释应该是有些问题，还需要继续打磨。</p>
+<h2 id="正则表达式语法" tabindex="-1"> <a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">正则表达式语法<ExternalLinkIcon/></a></h2>
+<p>在其他语言中，<code>\\</code> 表示：我想要在正则表达式中插入一个普通的（字面上的）反斜杠，请不要给它任何特殊的意义。</p>
+<p>在 Java 中，<code>\\</code> 表示：我要插入一个正则表达式的反斜线，所以其后的字符具有特殊的意义。</p>
+<p>所以，在其他的语言中（如 Perl），一个反斜杠 \ 就足以具有转义的作用，而在 Java 中正则表达式中则需要有两个反斜杠才能被解析为其他语言中的转义作用。也可以简单的理解在 Java 的正则表达式中，两个 <code>\\</code> 代表其他语言中的一个 \，这也就是为什么表示一位数字的正则表达式是 <code>\\d</code>，而表示一个普通的反斜杠是 <code>\\</code>。</p>
+<div><pre><code><span>System</span><span>.</span>out<span>.</span><span>print</span><span>(</span><span>"\\"</span><span>)</span><span>;</span>    <span>// 输出为 \</span>
+<span>System</span><span>.</span>out<span>.</span><span>print</span><span>(</span><span>"\\\\"</span><span>)</span><span>;</span>  <span>// 输出为 \\</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><p><code>根据 Java Language Specification 的要求，Java 源代码的字符串中的反斜线被解释为 Unicode 转义或其他字符转义。因此必须在字符串字面值中使用两个反斜线，表示正则表达式受到保护，不被 Java 字节码编译器解释。例如，当解释为正则表达式时，字符串字面值 &quot;\b&quot; 与单个退格字符匹配，而 &quot;\\b&quot; 与单词边界匹配。字符串字面值 &quot;\(hello\)&quot; 是非法的，将导致编译时错误；要与字符串 (hello) 匹配，必须使用字符串字面值 &quot;\\(hello\\)&quot;。</code></p>
+<p>根据我对 regex 表达式的了解，我简单将 regex 字符进行简单划分，但不见的很准确。</p>
+<h3 id="基础工具类" tabindex="-1"> 基础工具类</h3>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203111559074.png" alt=""></p>
+<p><strong><code>* + ?</code> 与 <code>{n} {n,} {n,m}</code> 的区别</strong></p>
+<p>后者是前者的加强。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>零次或多次匹配前面的字符或子表达式。例如，zo* 匹配&quot;z&quot;和&quot;zoo&quot;。* 等效于 {0,}。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>一次或多次匹配前面的字符或子表达式。例如，&quot;zo+&quot;与&quot;zo&quot;和&quot;zoo&quot;匹配，但与&quot;z&quot;不匹配。+ 等效于 {1,}。</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n 是非负整数。至少匹配 n 次。例如，&quot;o{2,}&quot;不匹配&quot;Bob&quot;中的&quot;o&quot;，而匹配&quot;foooood&quot;中的所有 o。&quot;o{1,}&quot;等效于&quot;o+&quot;。&quot;o{0,}&quot;等效于&quot;o*&quot;。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>?</td>
+<td>零次或一次匹配前面的字符或子表达式。例如，&quot;do(es)?&quot;匹配&quot;do&quot;或&quot;does&quot;中的&quot;do&quot;。? 等效于 {0,1}。</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m 和 n 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。例如，&quot;o{1,3}&quot;匹配&quot;fooooood&quot;中的头三个 o。'o{0,1}' 等效于 'o?'。注意：您不能将空格插入逗号和数字之间。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{n}</td>
+<td>n 是非负整数。正好匹配 n 次。例如，&quot;o{2}&quot;与&quot;Bob&quot;中的&quot;o&quot;不匹配，但与&quot;food&quot;中的两个&quot;o&quot;匹配。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="灵活匹配" tabindex="-1"> 灵活匹配</h3>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203111600378.png" alt=""></p>
+<h3 id="类" tabindex="-1"> \ 类</h3>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203111601726.png" alt=""></p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203111602725.png" alt=""></p>
+<h2 id="实例" tabindex="-1"> 实例</h2>
+<blockquote>
+<p>首先需要明确一个共识，java.util.regex 工具类并不能直接返回正则匹配结果，它只能返回正则匹配的偏移量。</p>
+</blockquote>
+<p>下面的例子说明如何从一个给定的字符串中找到数字串：</p>
+<div><pre><code><span>import</span> <span>java<span>.</span>util<span>.</span>regex<span>.</span></span><span>Matcher</span><span>;</span>
+<span>import</span> <span>java<span>.</span>util<span>.</span>regex<span>.</span></span><span>Pattern</span><span>;</span>
+ 
+<span>public</span> <span>class</span> <span>RegexMatches</span>
+<span>{</span>
+    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span> <span>String</span><span>[</span><span>]</span> args <span>)</span><span>{</span>
+ 
+      <span>// 按指定模式在字符串查找</span>
+      <span>String</span> line <span>=</span> <span>"Windows 10 Version 1607 for x64-based Systems"</span><span>;</span>
+      <span>String</span> pattern <span>=</span> <span>"Windows (?:10|7|8|9|11|Server|RT)"</span><span>;</span>
+ 
+      <span>// 创建 Pattern 对象</span>
+      <span>Pattern</span> compile <span>=</span> <span>Pattern</span><span>.</span><span>compile</span><span>(</span>pattern<span>)</span><span>;</span>
+ 
+      <span>// 现在创建 matcher 对象</span>
+      <span>Matcher</span> matcher <span>=</span> compile<span>.</span><span>matcher</span><span>(</span>line<span>)</span><span>;</span>
+      <span>while</span> <span>(</span>matcher<span>.</span><span>find</span><span>(</span> <span>)</span><span>)</span> <span>{</span>
+         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> line<span>.</span><span>substring</span><span>(</span>matcher<span>.</span><span>start</span><span>(</span><span>)</span><span>,</span> matcher<span>.</span><span>end</span><span>(</span><span>)</span><span>)</span> <span>)</span><span>;</span>
+      <span>}</span>
+   <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><blockquote>
+<p>参考文章</p>
+<p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/java/java-regular-expressions.html<ExternalLinkIcon/></a></p>
+</blockquote>
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" type="image/png"/>
+    </item>
     <item>
       <title>Windows CVE漏洞与补丁号对应关系</title>
       <link>https://www.cloaks.cn/cyber_security/cve_kb.html</link>
@@ -931,146 +1095,6 @@ acquiring 获得</p>
 </ol>
 ]]></content:encoded>
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
-    </item>
-    <item>
-      <title>计算机网络面试</title>
-      <link>https://www.cloaks.cn/blogs/test.html</link>
-      <guid>https://www.cloaks.cn/blogs/test.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">计算机网络面试</source>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <category>面试</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<CodeGroup>
-<CodeGroupItem title="yarn">
-<div><pre><code><span>yarn</span> <span>add</span> -D vuepress-theme-hope
-</code></pre><div aria-hidden="true"><span>1</span><br></div></div></CodeGroupItem>
-<CodeGroupItem title="npm" active>
-<div><pre><code><span>npm</span> i -D vuepress-theme-hope
-</code></pre><div aria-hidden="true"><span>1</span><br></div></div></CodeGroupItem>
-</CodeGroup>
-<p>脚注 1 链接<sup></sup>.</p>
-<p>脚注 2 链接<sup></sup>.</p>
-<p>行内的脚注<sup></sup> 定义.</p>
-<p>重复的页脚定义<sup></sup>.</p>
-<ul>
-<li><input type="checkbox"  disabled="disabled" id="task-item-0"><label for="task-item-0"> Plan A</label></li>
-<li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
-</ul>
-<p class='katex-block'><span><span><span aria-hidden="true"><span><span style="height:2.4em;vertical-align:-0.95em;"></span><span><span></span><span><span><span><span style="height:1.3714em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span style="margin-right:0.05556em;">∂</span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.05556em;">∂</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="margin-right:0.1667em;"></span><span><span style="top:0em;"><span>(</span></span><span><span></span><span><span><span><span style="height:1.3414em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span style="margin-right:0.03588em;">ω</span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03588em;">y</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.03588em;">ω</span></span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="top:0em;"><span>)</span></span></span><span style="margin-right:0.2778em;"></span><span>=</span><span style="margin-right:0.2778em;"></span></span><span><span style="height:3.0277em;vertical-align:-1.2777em;"></span><span><span style="top:0em;"><span>(</span></span><span><span></span><span><span><span><span style="height:1.3414em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span style="margin-right:0.03588em;">ω</span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03588em;">y</span><span><span><span><span style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.03588em;">ω</span></span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="top:0em;"><span>)</span></span></span><span style="margin-right:0.1667em;"></span><span><span style="top:0em;"><span>{</span></span><span>(</span><span>lo<span style="margin-right:0.01389em;">g</span></span><span style="margin-right:0.1667em;"></span><span style="margin-right:0.03588em;">y</span><span><span>)</span><span><span><span><span style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span></span></span></span></span><span style="margin-right:0.2222em;"></span><span>+</span><span style="margin-right:0.2222em;"></span><span><span><span><span style="height:1.6514em;"><span style="top:-1.8723em;margin-left:0em;"><span style="height:3.05em;"></span><span><span><span>i</span><span>=</span><span>1</span></span></span></span><span style="top:-3.05em;"><span style="height:3.05em;"></span><span><span>∑</span></span></span><span style="top:-4.3em;margin-left:0em;"><span style="height:3.05em;"></span><span><span style="margin-right:0.02778em;">r</span></span></span></span><span>​</span></span><span><span style="height:1.2777em;"><span></span></span></span></span></span><span style="margin-right:0.1667em;"></span><span><span></span><span><span><span><span style="height:1.5017em;"><span style="top:-2.314em;"><span style="height:3em;"></span><span><span><span style="margin-right:0.03588em;">ω</span><span><span><span><span style="height:0.7507em;"><span style="top:-2.989em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>i</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span style="height:3em;"></span><span style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span style="height:3em;"></span><span><span>(</span><span>−</span><span>1</span><span><span>)</span><span><span><span><span style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span>i</span></span></span></span></span></span></span></span><span style="margin-right:0.02778em;">r</span><span style="margin-right:0.1667em;"></span><span>⋯</span><span style="margin-right:0.1667em;"></span><span>(</span><span style="margin-right:0.02778em;">r</span><span style="margin-right:0.2222em;"></span><span>−</span><span style="margin-right:0.2222em;"></span><span>i</span><span style="margin-right:0.2222em;"></span><span>+</span><span style="margin-right:0.2222em;"></span><span>1</span><span>)</span><span>(</span><span>lo<span style="margin-right:0.01389em;">g</span></span><span style="margin-right:0.1667em;"></span><span style="margin-right:0.03588em;">y</span><span><span>)</span><span><span><span><span style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span style="height:2.7em;"></span><span><span><span style="margin-right:0.02778em;">r</span><span>−</span><span>i</span></span></span></span></span></span></span></span></span></span></span></span><span>​</span></span><span><span style="height:0.686em;"><span></span></span></span></span></span><span></span></span><span style="top:0em;"><span>}</span></span></span></span></span></span></span></p>
-<i>Content not supported</i><MermaidChart id="mermaid-382ee187" data-code="flowchart%20TB%0A%20%20%20%20c1--%3Ea2%0A%20%20%20%20subgraph%20one%0A%20%20%20%20a1--%3Ea2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20two%0A%20%20%20%20b1--%3Eb2%0A%20%20%20%20end%0A%20%20%20%20subgraph%20three%0A%20%20%20%20c1--%3Ec2%0A%20%20%20%20end%0A%20%20%20%20one%20--%3E%20two%0A%20%20%20%20three%20--%3E%20two%0A%20%20%20%20two%20--%3E%20c2%0A"></MermaidChart>
-<div id="code-demo-3c31404e"  data-title="Demo%20%E6%BC%94%E7%A4%BA"  data-code="%7B%22html%22%3A%22%3Ch1%3EVuePress%20Theme%20Hope%3C%2Fh1%3E%5Cn%3Cp%3E%3Cspan%20id%3D%5C%22very%5C%22%3E%E9%9D%9E%E5%B8%B8%3C%2Fspan%3E%E5%BC%BA%E5%A4%A7!%3C%2Fp%3E%5Cn%22%2C%22js%22%3A%22document.querySelector(%5C%22%23very%5C%22).addEventListener(%5C%22click%5C%22%2C%20()%20%3D%3E%20%7B%5Cn%20%20alert(%5C%22%E9%9D%9E%E5%B8%B8%E5%BC%BA%E5%A4%A7%5C%22)%3B%5Cn%7D)%3B%5Cn%22%2C%22css%22%3A%22span%20%7B%5Cn%20%20color%3A%20red%3B%5Cn%7D%5Cn%22%7D">
-  <div>
-    <div></div>
-  </div>
-  <div>
-    <div>
-<div><pre><code><span><span><span>&lt;</span>h1</span><span>></span></span>VuePress Theme Hope<span><span><span>&lt;/</span>h1</span><span>></span></span>
-<span><span><span>&lt;</span>p</span><span>></span></span><span><span><span>&lt;</span>span</span> <span>id</span><span><span>=</span><span>"</span>very<span>"</span></span><span>></span></span>非常<span><span><span>&lt;/</span>span</span><span>></span></span>强大!<span><span><span>&lt;/</span>p</span><span>></span></span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code>document<span>.</span><span>querySelector</span><span>(</span><span>"#very"</span><span>)</span><span>.</span><span>addEventListener</span><span>(</span><span>"click"</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>alert</span><span>(</span><span>"非常强大"</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><pre><code><span>span</span> <span>{</span>
-  <span>color</span><span>:</span> red<span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div>
-    </div>
-  </div>
-  <div></div>
-</div>
-<p><code>Approximates </code></p>
-<blockquote>
-<p>[!NOTE]
-Information the user should notice even if skimming</p>
-</blockquote>
-<blockquote>
-<p>[!TIP]
-Optional information to help a user be more successful</p>
-</blockquote>
-<blockquote>
-<p>[!IMPORTANT]
-Essential information required for user success</p>
-</blockquote>
-<blockquote>
-<p>[!CAUTION]
-Negative potential consequences of an action</p>
-</blockquote>
-<blockquote>
-<p>[!WARNING]
-Dangerous certain consequences of an action</p>
-</blockquote>
-<ul>
-<li>Approximates</li>
-</ul>
-<ul>
-<li>Approximates</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Column1</th>
-<th>Column2</th>
-<th>Column3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Row1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row2</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row4</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>:::row:::
-:::column:::</p>
-<pre><code>:::column-end:::
-:::column:::
-    
-:::column-end:::
-:::column:::
-    
-:::column-end:::    
-
-
-:::column span=&quot;&quot;:::
-    
-:::column-end:::    
-</code></pre>
-<p>:::row-end:::</p>
-<p><a href="/">project:</a></p>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener noreferrer">http://www.baidu.com<ExternalLinkIcon/></a></p>
-<p><a href="/blogs/linux.html#linux-">Linux 启动流程</a></p>
-<blockquote>
-<p>[!VIDEO https://channel9.msdn.com]</p>
-</blockquote>
-<p>:::no-loc text=&quot;&quot;:::</p>
-<hr>
-<section>
-<ol>
-<li id="footnote1"><p>脚注 <strong>可以包含特殊标记</strong></p>
-<p>也可以由多个段落组成 </p>
-</li>
-<li id="footnote2"><p>脚注文字。  </p>
-</li>
-<li id="footnote3"><p>Text of inline footnote </p>
-</li>
-</ol>
-</section>
-]]></content:encoded>
     </item>
     <item>
       <title>斐波那契数列</title>
@@ -2499,99 +2523,6 @@ class TreeNode:
     <span>}</span>
 <span>}</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>正则表达式</title>
-      <link>https://www.cloaks.cn/java/base/regex.html</link>
-      <guid>https://www.cloaks.cn/java/base/regex.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">正则表达式</source>
-      <description>&amp;lt;p&amp;gt;Java 正则表达式知识点梳理。&amp;lt;/p&amp;gt;
-</description>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <category>Java 基础</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>Java 正则表达式知识点梳理。</p>
-
-<h2 id="源码包" tabindex="-1"> 源码包</h2>
-<p>Java 提供了支持正则表达式的工具包：<code>java.util.regex</code></p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" alt="java.util.regex."></p>
-<ul>
-<li><strong>Pattern 类</strong></li>
-</ul>
-<p>pattern 对象是一个正则表达式的编译表示。Pattern 类没有公共构造方法。要创建一个 Pattern 对象，你必须首先调用其公共静态编译方法，它返回一个 Pattern 对象。该方法接受一个正则表达式作为它的第一个参数。</p>
-<ul>
-<li><strong>Matcher 类</strong></li>
-</ul>
-<p>Matcher 对象是对输入字符串进行解释和匹配操作的引擎。与Pattern 类一样，Matcher 也没有公共构造方法。你需要调用 Pattern 对象的 matcher 方法来获得一个 Matcher 对象。</p>
-<ul>
-<li><strong>PatternSyntaxException</strong></li>
-</ul>
-<p>PatternSyntaxException 是一个非强制异常类，它表示一个正则表达式模式中的语法错误。</p>
-<h2 id="捕获组" tabindex="-1"> 捕获组</h2>
-<p>捕获组是把多个字符当一个单独单元进行处理的方法，它通过对括号内的字符分组来创建。</p>
-<p>例如，正则表达式 (dog) 创建了单一分组，组里包含&quot;d&quot;，&quot;o&quot;，和&quot;g&quot;。</p>
-<p>捕获组是通过从左至右计算其开括号来编号。例如，在表达式（（A）（B（C））），有四个这样的组：</p>
-<ul>
-<li>
-<p>((A)(B(C)))</p>
-</li>
-<li>
-<p>(A)</p>
-</li>
-<li>
-<p>(B(C))</p>
-</li>
-<li>
-<p>(C)</p>
-</li>
-</ul>
-<p>可以通过调用 matcher 对象的 groupCount 方法来查看表达式有多少个分组。groupCount 方法返回一个 int 值，表示matcher对象当前有多个捕获组。</p>
-<p>还有一个特殊的组（group(0)），它总是代表整个表达式。该组不包括在 groupCount 的返回值中。</p>
-<h2 id="实例" tabindex="-1"> 实例</h2>
-<p>下面的例子说明如何从一个给定的字符串中找到数字串：</p>
-<div><pre><code><span>import</span> <span>java<span>.</span>util<span>.</span>regex<span>.</span></span><span>Matcher</span><span>;</span>
-<span>import</span> <span>java<span>.</span>util<span>.</span>regex<span>.</span></span><span>Pattern</span><span>;</span>
- 
-<span>public</span> <span>class</span> <span>RegexMatches</span>
-<span>{</span>
-    <span>public</span> <span>static</span> <span>void</span> <span>main</span><span>(</span> <span>String</span><span>[</span><span>]</span> args <span>)</span><span>{</span>
- 
-      <span>// 按指定模式在字符串查找</span>
-      <span>String</span> line <span>=</span> <span>"This order was placed for QT3000! OK?"</span><span>;</span>
-      <span>String</span> pattern <span>=</span> <span>"(\\D*)(\\d+)(.*)"</span><span>;</span>
- 
-      <span>// 创建 Pattern 对象</span>
-      <span>Pattern</span> r <span>=</span> <span>Pattern</span><span>.</span><span>compile</span><span>(</span>pattern<span>)</span><span>;</span>
- 
-      <span>// 现在创建 matcher 对象</span>
-      <span>Matcher</span> m <span>=</span> r<span>.</span><span>matcher</span><span>(</span>line<span>)</span><span>;</span>
-      <span>if</span> <span>(</span>m<span>.</span><span>find</span><span>(</span> <span>)</span><span>)</span> <span>{</span>
-         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>0</span><span>)</span> <span>)</span><span>;</span>
-         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>1</span><span>)</span> <span>)</span><span>;</span>
-         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>2</span><span>)</span> <span>)</span><span>;</span>
-         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"Found value: "</span> <span>+</span> m<span>.</span><span>group</span><span>(</span><span>3</span><span>)</span> <span>)</span><span>;</span> 
-      <span>}</span> <span>else</span> <span>{</span>
-         <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span><span>"NO MATCH"</span><span>)</span><span>;</span>
-      <span>}</span>
-   <span>}</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102221769.png" alt="RegexMatches groupCount."></p>
-<p>根据捕获组的介绍，我们可以知道 <code>(\\D*)(\\d+)(.*)</code> 可以分为以下三组：</p>
-<div><pre><code><span>(\\D*)</span><span>:</span> 匹配非数字字符串
-<span>(\\d+)</span><span>:</span> 匹配多个数字字符串
-<span>(.*)</span><span>:</span> 这个我目前也没看懂
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>这个解释应该是有些问题，还需要继续打磨。</p>
-<h2 id="正则表达式语法" tabindex="-1"> <a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">正则表达式语法<ExternalLinkIcon/></a></h2>
-<p>在其他语言中，<code>\\</code> 表示：我想要在正则表达式中插入一个普通的（字面上的）反斜杠，请不要给它任何特殊的意义。</p>
-<p>在 Java 中，<code>\\</code> 表示：我要插入一个正则表达式的反斜线，所以其后的字符具有特殊的意义。</p>
-<p>所以，在其他的语言中（如 Perl），一个反斜杠 \ 就足以具有转义的作用，而在 Java 中正则表达式中则需要有两个反斜杠才能被解析为其他语言中的转义作用。也可以简单的理解在 Java 的正则表达式中，两个 <code>\\</code> 代表其他语言中的一个 \，这也就是为什么表示一位数字的正则表达式是 <code>\\d</code>，而表示一个普通的反斜杠是 <code>\\</code>。</p>
-<blockquote>
-<p>参考文章</p>
-<p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/java/java-regular-expressions.html<ExternalLinkIcon/></a></p>
-<p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/java/java-regular-expressions.html<ExternalLinkIcon/></a></p>
-</blockquote>
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" type="image/png"/>
     </item>
     <item>
       <title>链表</title>
