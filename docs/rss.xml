@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 10 Mar 2022 14:28:24 GMT</pubDate>
-    <lastBuildDate>Thu, 10 Mar 2022 14:28:24 GMT</lastBuildDate>
+    <pubDate>Fri, 11 Mar 2022 03:04:03 GMT</pubDate>
+    <lastBuildDate>Fri, 11 Mar 2022 03:04:03 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -977,6 +977,87 @@ acquiring 获得</p>
   </div>
   <div></div>
 </div>
+<p><code>Approximates </code></p>
+<blockquote>
+<p>[!NOTE]
+Information the user should notice even if skimming</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]
+Optional information to help a user be more successful</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]
+Essential information required for user success</p>
+</blockquote>
+<blockquote>
+<p>[!CAUTION]
+Negative potential consequences of an action</p>
+</blockquote>
+<blockquote>
+<p>[!WARNING]
+Dangerous certain consequences of an action</p>
+</blockquote>
+<ul>
+<li>Approximates</li>
+</ul>
+<ul>
+<li>Approximates</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Column1</th>
+<th>Column2</th>
+<th>Column3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row4</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>:::row:::
+:::column:::</p>
+<pre><code>:::column-end:::
+:::column:::
+    
+:::column-end:::
+:::column:::
+    
+:::column-end:::    
+
+
+:::column span=&quot;&quot;:::
+    
+:::column-end:::    
+</code></pre>
+<p>:::row-end:::</p>
+<p><a href="/">project:</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener noreferrer">http://www.baidu.com<ExternalLinkIcon/></a></p>
+<p><a href="/blogs/linux.html#linux-">Linux 启动流程</a></p>
+<blockquote>
+<p>[!VIDEO https://channel9.msdn.com]</p>
+</blockquote>
+<p>:::no-loc text=&quot;&quot;:::</p>
 <hr>
 <section>
 <ol>
@@ -2433,7 +2514,7 @@ class TreeNode:
 
 <h2 id="源码包" tabindex="-1"> 源码包</h2>
 <p>Java 提供了支持正则表达式的工具包：<code>java.util.regex</code></p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" alt="java.util.regex"></p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102210633.png" alt="java.util.regex."></p>
 <ul>
 <li><strong>Pattern 类</strong></li>
 </ul>
@@ -2494,13 +2575,16 @@ class TreeNode:
       <span>}</span>
    <span>}</span>
 <span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102221769.png" alt="RegexMatches groupCount"></p>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><p><img src="https://gitee.com/biliit/pic-go/raw/master/202203102221769.png" alt="RegexMatches groupCount."></p>
 <p>根据捕获组的介绍，我们可以知道 <code>(\\D*)(\\d+)(.*)</code> 可以分为以下三组：</p>
 <div><pre><code><span>(\\D*)</span><span>:</span> 匹配非数字字符串
 <span>(\\d+)</span><span>:</span> 匹配多个数字字符串
 <span>(.*)</span><span>:</span> 这个我目前也没看懂
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>这个解释应该是有些问题，还需要继续打磨。</p>
 <h2 id="正则表达式语法" tabindex="-1"> <a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">正则表达式语法<ExternalLinkIcon/></a></h2>
+<p>在其他语言中，<code>\\</code> 表示：我想要在正则表达式中插入一个普通的（字面上的）反斜杠，请不要给它任何特殊的意义。</p>
+<p>在 Java 中，<code>\\</code> 表示：我要插入一个正则表达式的反斜线，所以其后的字符具有特殊的意义。</p>
+<p>所以，在其他的语言中（如 Perl），一个反斜杠 \ 就足以具有转义的作用，而在 Java 中正则表达式中则需要有两个反斜杠才能被解析为其他语言中的转义作用。也可以简单的理解在 Java 的正则表达式中，两个 <code>\\</code> 代表其他语言中的一个 \，这也就是为什么表示一位数字的正则表达式是 <code>\\d</code>，而表示一个普通的反斜杠是 <code>\\</code>。</p>
 <blockquote>
 <p>参考文章</p>
 <p><a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/java/java-regular-expressions.html<ExternalLinkIcon/></a></p>

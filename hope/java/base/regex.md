@@ -17,7 +17,7 @@ Java 正则表达式知识点梳理。
 
 Java 提供了支持正则表达式的工具包：`java.util.regex`
 
-![java.util.regex](https://gitee.com/biliit/pic-go/raw/master/202203102210633.png)
+![java.util.regex.](https://gitee.com/biliit/pic-go/raw/master/202203102210633.png)
 
 * **Pattern 类**
 
@@ -84,7 +84,7 @@ public class RegexMatches
 }
 ```
 
-![RegexMatches groupCount](https://gitee.com/biliit/pic-go/raw/master/202203102221769.png)
+![RegexMatches groupCount.](https://gitee.com/biliit/pic-go/raw/master/202203102221769.png)
 
 根据捕获组的介绍，我们可以知道 `(\\D*)(\\d+)(.*)` 可以分为以下三组：
 
@@ -97,6 +97,12 @@ public class RegexMatches
 这个解释应该是有些问题，还需要继续打磨。
 
 ## [正则表达式语法](https://www.runoob.com/java/java-regular-expressions.html)
+
+在其他语言中，`\\` 表示：我想要在正则表达式中插入一个普通的（字面上的）反斜杠，请不要给它任何特殊的意义。
+
+在 Java 中，`\\` 表示：我要插入一个正则表达式的反斜线，所以其后的字符具有特殊的意义。
+
+所以，在其他的语言中（如 Perl），一个反斜杠 \ 就足以具有转义的作用，而在 Java 中正则表达式中则需要有两个反斜杠才能被解析为其他语言中的转义作用。也可以简单的理解在 Java 的正则表达式中，两个 `\\` 代表其他语言中的一个 \，这也就是为什么表示一位数字的正则表达式是 `\\d`，而表示一个普通的反斜杠是 `\\`。
 
 > 参考文章
 >

@@ -108,3 +108,62 @@ span {
 ```
 
 :::
+
+
+`Approximates `
+
+> [!NOTE]
+> Information the user should notice even if skimming
+
+> [!TIP]
+> Optional information to help a user be more successful
+
+> [!IMPORTANT]
+> Essential information required for user success
+
+> [!CAUTION]
+> Negative potential consequences of an action
+
+> [!WARNING]
+> Dangerous certain consequences of an action
+
+
+  * Approximates 
+
+- Approximates 
+
+
+|Column1  |Column2  |Column3  |
+|---------|---------|---------|
+|Row1     |         |         |
+|Row2     |         |         |
+|Row3     |         |         |
+|Row4     |         |         |
+
+
+:::row:::
+    :::column:::
+        
+    :::column-end:::
+    :::column:::
+        
+    :::column-end:::
+    :::column:::
+        
+    :::column-end:::    
+
+
+    :::column span="":::
+        
+    :::column-end:::    
+:::row-end:::
+
+[project:](../README.md)
+
+[http://www.baidu.com](http://www.baidu.com)
+
+[Linux 启动流程](linux.md#linux-)
+
+> [!VIDEO https://channel9.msdn.com]
+
+:::no-loc text="":::
