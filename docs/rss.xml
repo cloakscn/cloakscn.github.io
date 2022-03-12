@@ -6,15 +6,16 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 12 Mar 2022 09:51:14 GMT</pubDate>
-    <lastBuildDate>Sat, 12 Mar 2022 09:51:14 GMT</lastBuildDate>
+    <pubDate>Sat, 12 Mar 2022 16:16:46 GMT</pubDate>
+    <lastBuildDate>Sat, 12 Mar 2022 16:16:46 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
-    <category>Nginx</category>
-    <category>Java 基础</category>
     <category>网络安全</category>
+    <category>Nginx</category>
+    <category>Linux</category>
+    <category>Java 基础</category>
     <category>网络</category>
     <category>参考</category>
     <category>问题总结</category>
@@ -23,6 +24,86 @@
     <category>微服务</category>
     <category>面试</category>
     <category>力扣</category>
+    <item>
+      <title>采取纵深防御策略 提升工控系统网络安全</title>
+      <link>https://www.cloaks.cn/cyber_security/defense_in_depth_strategies.html</link>
+      <guid>https://www.cloaks.cn/cyber_security/defense_in_depth_strategies.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">采取纵深防御策略 提升工控系统网络安全</source>
+      <description>&amp;lt;p&amp;gt; &amp;lt;/p&amp;gt;
+</description>
+      <category>网络安全</category>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p> </p>
+
+<p>工控系统作为关键基础设施不可分割的一部分，可简化电力、石油天然气、供水、交通及化工等重要行业部门的运营。</p>
+<p>日益增长的网络安全问题及其对工控系统的影响愈发凸显了关键基础设施所面临的重大风险。</p>
+<p>解决工控系统的网络安全问题，须对安全挑战与特定防护措施有清晰认识。</p>
+<p>全局法使用特定措施逐步增强安全，助力防护工控系统中的网络安全威胁与漏洞。这种方法一般被称为“纵深防御”，适用于工控系统，为优化网络安全防护提供了灵活、可用的框架。</p>
+<p>人们之所以关注控制系统的网络安全问题，一方面是因为某些系统沿用传统特性，另一方面是因为工控系统联网需求日益增长。</p>
+<p>在这种关注下，大量已知漏洞被发现，同时一些工控系统领域前所未见的新型威胁也浮出水面。</p>
+<p>许多老旧系统缺乏恰当的安防能力，无法抵御新型威胁，而现行网络安全方案由于会影响到系统可用性而无法使用。</p>
+<p>工控系统连接到企业、厂商或对等网络可加剧此问题。</p>
+<h2 id="现行工控系统架构概览" tabindex="-1"> 现行工控系统架构概览</h2>
+<p>曾经隔离的工控系统逐渐走向融合，助力企业简化并管理复杂的环境。在联网及向工控系统域添加 IT 组件时，如下情况可导致安全问题：</p>
+<ul>
+<li>
+<p>对于自动化与工控系统越来越依赖；</p>
+</li>
+<li>
+<p>与外部网络的不安全连接；</p>
+</li>
+<li>
+<p>使用的技术包含已知漏洞，在控制域造成前所未见的网络风险；</p>
+</li>
+<li>
+<p>缺乏与工控系统环境相关的网络安全业务案例；</p>
+</li>
+<li>
+<p>某些控制系统技术仅有有限的安全能力，这种能力一般仅在管理员发现（或不会阻碍流程）时才会启用；</p>
+</li>
+<li>
+<p>许多常用的控制系统通信协议缺乏基本的安全功能（如认证与授权）；</p>
+</li>
+<li>
+<p>关于工控系统、工控系统操作及安全漏洞的开源信息大量存在<sup></sup>。</p>
+</li>
+</ul>
+<p>长期以来，业界将控制系统的运营安全定义为系统安全有效运行的可靠性水平。将工控系统同外部（不可信）网络完全隔离，总体通信安全的范围被压缩至员工相关威胁（这里的员工指的是可物理访问设备或工厂车间的员工）。这样，信息基础设施内的大多数数据通信仅需要有限授权或安全监管。运行命令、指令与数据采集发生在封闭环境中，这个环境中的所有通信都受信任。一般情况下，命令或指令通过网络下发，预期在到达目标后执行授权功能，因为只有授权操作员才可以访问系统。</p>
+<h2 id="工控系统内的安全挑战" tabindex="-1"> 工控系统内的安全挑战</h2>
+<p>在基于传输控制协议/互联网协议（TCP/IP）的现代计算环境中（如对驱动控制系统运行的业务进行管理的企业基础设施），需解决技术相关漏洞问题。传统上，这些问题由企业的IT安全组织负责，根据重要信息资产的安全指导方案与运营计划进行工作。当工控系统从属于联动架构时，主要关注的问题就变成如何提供同时覆盖控制系统域的安全规程。现有基于网络的通信所产生的某些安全问题须在控制系统域解决，因为各厂商使用不同协议，再加上老旧系统固有的安全问题，也许很难保护关键业务系统免于遭受时下的网络攻击。</p>
+<p>开放的系统架构中存在的、可迁移至控制系统域的漏洞包括恶意软件（病毒、蠕虫等等）漏洞、通过操控代码提权、网络侦测与数据收集、隐蔽流量分析、通过或绕过边界防护非法入侵网络等。对于更为先进的系统，漏洞还包括恶意移动代码，如涉及 JavaScript、applet 小程序、VBScript 及 ActiveX 的恶意活动内容。成功入侵工控系统网络后，会出现新的问题，如控制系统协议反向工程、针对操作员控制台的攻击、非法访问受信任的对端网络与远程设施等。要将信息安全与信息保障完全引入控制系统域，必须了解传统 IT 架构与工控系统技术之间的关键差异。</p>
+<h2 id="工控系统的五个关键的安全措施" tabindex="-1"> 工控系统的五个关键的安全措施</h2>
+<p>以下是五个关键的安全措施，可推动工控系统环境中的网络安全活动。</p>
+<ul>
+<li>
+<p>安全指导方案。应针对控制系统及其各部件制定安全指导方案，定期评审，以便纳入当前威胁环境、系统功能以及所需的安全级别。</p>
+</li>
+<li>
+<p>阻止对资源和服务的访问。一般情况下，在网络中部署提供访问控制列表的<strong>边界设备</strong>如防火墙或代理服务器，提供该技术。而主通过机方面，该技术可部署<strong>基于主机</strong>的防火墙和杀毒软件实现。</p>
+</li>
+<li>
+<p>检测恶意活动。恶意活动检测可在网络或主机层面实现，通常需有经验的管理员对日志文件定期监控。IDS 是识别网络问题的常用手段，也可部署在单个主机上。尽量在主机上开启审计和事件日志功能。</p>
+</li>
+<li>
+<p>缓解可能出现的攻击。在很多情况下，无需处理漏洞，因为漏洞修复可能会使系统不可用或效率降低。通过缓解措施，管理员可控制对漏洞的访问，确保漏洞不被利用。通常，这一情况在制定临时技术方案，创建过滤器或运行具备特定配置的服务和应用时非常必要。</p>
+</li>
+<li>
+<p>解决核心问题。要解决核心安全问题，需经常更新、升级、安装软件漏洞补丁或移除有漏洞的应用。软件漏洞可能会存在于网络、操作系统或应用这三层中的任一层。厂商或开发人员应提供缓解措施（如果有的话）供管理员部署。</p>
+</li>
+</ul>
+<blockquote>
+<p>原文名称：<br>
+Recommended Practice: Improving Industrial Control Systems Cybersecurity with Defense-In-Depth Strategies</p>
+</blockquote>
+<hr>
+<section>
+<ol>
+<li id="footnote1"><p>对于有效保障网络与 IT 网络安全，这种方法可谓另辟蹊径。将新型 IT 架构与缺乏真正网络安全防护措施的隔离网络融合具有很大挑战。显然，使用路由器与交换机可将设备进行简单互联，但是个人的非法入侵会导致对系统的不受限访问。 </p>
+</li>
+</ol>
+</section>
+]]></content:encoded>
+    </item>
     <item>
       <title>Nginx 安装</title>
       <link>https://www.cloaks.cn/reference/nginx/install.html</link>
@@ -143,6 +224,90 @@ koi-utf                 nginx.conf          win-utf
   --with-zlib<span>=</span><span>..</span>/zlib-1.1.3
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div>]]></content:encoded>
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202203121728638.png" type="image/png"/>
+    </item>
+    <item>
+      <title>CentOS 7 防火墙常用命令</title>
+      <link>https://www.cloaks.cn/reference/linux/centos/firewalld.html</link>
+      <guid>https://www.cloaks.cn/reference/linux/centos/firewalld.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">CentOS 7 防火墙常用命令</source>
+      <description>&amp;lt;p&amp;gt; &amp;lt;/p&amp;gt;
+</description>
+      <category>Linux</category>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p> </p>
+
+<p>在 CentOs 7 中 firewalld,iptables,ebtables 这三种防火墙是共存的。</p>
+<p>但是默认情况下使用 firewalld 来管理 netfilter 子系统。</p>
+<h2 id="firewalld-的基本使用" tabindex="-1"> firewalld 的基本使用</h2>
+<div><pre><code><span># 启动</span>
+systemctl start firewalld
+<span># 关闭</span>
+systemctl stop firewalld
+<span># 查看状态</span>
+systemctl status firewalld 
+<span># 开机禁用 </span>
+systemctl disable firewalld
+<span># 开机启用</span>
+systemctl <span>enable</span> firewalld
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><p><strong>systemctl 是 CentOS 7 的服务管理工具中主要的工具</strong></p>
+<div><pre><code><span># 启动一个服务</span>
+systemctl start firewalld.service
+<span># 关闭一个服务</span>
+systemctl stop firewalld.service
+<span># 重启一个服务</span>
+systemctl restart firewalld.service
+<span># 显示一个服务的状态</span>
+systemctl status firewalld.service
+<span># 在开机时启用一个服务</span>
+systemctl <span>enable</span> firewalld.service
+<span># 在开机时禁用一个服务</span>
+systemctl disable firewalld.service
+<span># 查看服务是否开机启动</span>
+systemctl is-enabled firewalld.service
+<span># 查看已启动的服务列表</span>
+systemctl list-unit-files<span>|</span><span>grep</span> enabled
+<span># 查看启动失败的服务列表</span>
+systemctl --failed
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="配置-firewalld-cmd" tabindex="-1"> 配置 firewalld-cmd</h2>
+<div><pre><code><span># 查看防火墙版本： </span>
+firewall-cmd --version
+<span># 查看帮助： </span>
+firewall-cmd --help
+<span># 显示状态： </span>
+firewall-cmd --state
+<span># 查看所有打开的端口： </span>
+firewall-cmd --zone<span>=</span>public --list-ports
+<span># 更新防火墙规则： </span>
+firewall-cmd --reload
+<span># 查看区域信息:  </span>
+firewall-cmd --get-active-zones
+<span># 查看指定接口所属区域： </span>
+firewall-cmd --get-zone-of-interface<span>=</span>eth0
+<span># 拒绝所有包：</span>
+firewall-cmd --panic-on
+<span># 取消拒绝状态： </span>
+firewall-cmd --panic-off
+<span># 查看是否拒绝： </span>
+firewall-cmd --query-panic 
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><h2 id="端口的开放关闭操作" tabindex="-1"> 端口的开放关闭操作</h2>
+<div><pre><code><span># 添加</span>
+firewall-cmd --zone<span>=</span>public --add-port<span>=</span><span>80</span>/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）
+<span># 重新载入</span>
+firewall-cmd --reload
+<span># 查看端口是否开放</span>
+firewall-cmd --zone<span>=</span> public --query-port<span>=</span><span>80</span>/tcp
+<span># 删除已开放的端口</span>
+firewall-cmd --zone<span>=</span> public --remove-port<span>=</span><span>80</span>/tcp --permanent
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h2 id="调整默认策略" tabindex="-1"> 调整默认策略</h2>
+<p>默认拒绝所有访问，改成允许所有访问</p>
+<div><pre><code><span># 调整策略 是的其他端口可以访问</span>
+firewall-cmd --permanent --zone<span>=</span>public --set-target<span>=</span>ACCEPT
+firewall-cmd --reload
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h2 id="对某个ip开放多个端口" tabindex="-1"> 对某个IP开放多个端口</h2>
+<div><pre><code>firewall-cmd --permanent --add-rich-rule<span>=</span><span>"rule family="</span>ipv4<span>" source address="</span><span>10.159</span>.60.29<span>" port protocol="</span>tcp<span>" port="</span><span>1</span>:65535<span>" accept"</span>
+<span># 重启防火墙使设定生效</span>
+firewall-cmd --reload
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Java 读取文本文件</title>
@@ -536,26 +701,6 @@ file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
       <pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>本文简单介绍一下通过微软提供的接口建立一个自动化的 CVE&amp;KB 数据库任务。</p>
 
-<p>脚注 1 链接<sup></sup>.</p>
-<p>脚注 2 链接<sup></sup>.</p>
-<p>行内的脚注<sup></sup> 定义.</p>
-<p>重复的页脚定义<sup></sup>.</p>
-<ul>
-<li><input type="checkbox"  disabled="disabled" id="task-item-0"><label for="task-item-0"> Plan A</label></li>
-<li><input type="checkbox" checked="checked" disabled="disabled" id="task-item-1"><label for="task-item-1"> Plan B</label></li>
-</ul>
-<hr>
-<section>
-<ol>
-<li id="footnote1"><p>脚注 <strong>可以包含特殊标记</strong></p>
-<p>也可以由多个段落组成 </p>
-</li>
-<li id="footnote2"><p>脚注文字。  </p>
-</li>
-<li id="footnote3"><p>Text of inline footnote </p>
-</li>
-</ol>
-</section>
 ]]></content:encoded>
     </item>
     <item>

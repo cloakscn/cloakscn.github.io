@@ -14,10 +14,11 @@ export default defineThemeConfig({
 
   logo: "/logo.svg",
   pure: true,
-  // repo: "https://github.com/cloakscn/cloakscn.github.io",
-  repoDisplay: false,
-
-  docsDir: "demo/src",
+  repo: "https://github.com/cloakscn/cloakscn.github.io",
+  repoLabel: "GitHub",
+  repoDisplay: true,
+  
+  editLink: false,
 
   blog: {
     medias: {
