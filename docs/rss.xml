@@ -6,12 +6,13 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 11 Mar 2022 12:40:31 GMT</pubDate>
-    <lastBuildDate>Fri, 11 Mar 2022 12:40:31 GMT</lastBuildDate>
+    <pubDate>Sat, 12 Mar 2022 09:51:14 GMT</pubDate>
+    <lastBuildDate>Sat, 12 Mar 2022 09:51:14 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>Nginx</category>
     <category>Java 基础</category>
     <category>网络安全</category>
     <category>网络</category>
@@ -22,6 +23,127 @@
     <category>微服务</category>
     <category>面试</category>
     <category>力扣</category>
+    <item>
+      <title>Nginx 安装</title>
+      <link>https://www.cloaks.cn/reference/nginx/install.html</link>
+      <guid>https://www.cloaks.cn/reference/nginx/install.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">Nginx 安装</source>
+      <description>&amp;lt;p&amp;gt;使用源码编译安装，包括具体的编译参数信息。&amp;lt;/p&amp;gt;
+</description>
+      <category>Nginx</category>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>使用源码编译安装，包括具体的编译参数信息。</p>
+
+<p>正式开始前，编译环境 gcc g++ 开发库之类的需要提前装好，这里默认你已经装好。</p>
+<h2 id="准备环境" tabindex="-1"> 准备环境</h2>
+<p>ububtu平台编译环境可以使用以下指令</p>
+<div><pre><code><span>apt-get</span> <span>install</span> build-essential
+<span>apt-get</span> <span>install</span> libtool
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><p>centos 平台编译环境使用如下指令</p>
+<p>安装 make：</p>
+<div><pre><code>yum -y <span>install</span> gcc automake autoconf libtool <span>make</span>
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p>安装 g++</p>
+<div><pre><code>yum <span>install</span> gcc gcc-c++
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><h2 id="正式安装" tabindex="-1"> 正式安装</h2>
+<p>一般我们都需要先装 pcre, zlib，前者为了重写 rewrite，后者为了 gzip 压缩。</p>
+<h3 id="选定源码目录" tabindex="-1"> 选定源码目录</h3>
+<p>可以是任何目录，本文选定的是 /usr/local/src</p>
+<div><pre><code><span>cd</span> /usr/local/src
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><h3 id="安装-pcre-库" tabindex="-1"> 安装 PCRE 库</h3>
+<p>https://ftp.pcre.org/pub/pcre/ 下载最新的 PCRE 源码包，使用下面命令下载编译和安装 PCRE 包：</p>
+<div><pre><code><span>cd</span> /usr/local/src
+
+<span>wget</span> https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz 
+<span>tar</span> -zxvf pcre-8.44.tar.gz
+<span>cd</span> pcre-8.44
+./configure
+<span>make</span>
+<span>make</span> <span>install</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h3 id="安装-zlib-库" tabindex="-1"> 安装 zlib 库</h3>
+<p>http://zlib.net/zlib-1.2.11.tar.gz 下载最新的 zlib 源码包，使用下面命令下载编译和安装 zlib包：</p>
+<div><pre><code><span>cd</span> /usr/local/src
+
+<span>wget</span> http://zlib.net/zlib-1.2.11.tar.gz
+<span>tar</span> -zxvf zlib-1.2.11.tar.gz
+<span>cd</span> zlib-1.2.11
+./configure
+<span>make</span>
+<span>make</span> <span>install</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h3 id="安装-ssl-某些vps默认没装ssl" tabindex="-1"> 安装 ssl（某些vps默认没装ssl)</h3>
+<div><pre><code><span>cd</span> /usr/local/src
+<span>wget</span> https://www.openssl.org/source/openssl-1.1.1g.tar.gz
+<span>tar</span> -zxvf openssl-1.1.1g.tar.gz
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="安装-nginx" tabindex="-1"> 安装 Nginx</h3>
+<p>Nginx 一般有两个版本，分别是稳定版和开发版，您可以根据您的目的来选择这两个版本的其中一个，下面是把 Nginx 安装到 /usr/local/nginx 目录下的详细步骤：</p>
+<div><pre><code><span>cd</span> /usr/local/src
+<span>wget</span> http://nginx.org/download/nginx-1.18.0.tar.gz
+<span>tar</span> -zxvf nginx-1.18.0.tar.gz
+<span>cd</span> nginx-1.18.0
+
+./configure --sbin-path<span>=</span>/usr/local/nginx/nginx <span>\</span>
+--conf-path<span>=</span>/usr/local/nginx/nginx.conf <span>\</span>
+--pid-path<span>=</span>/usr/local/nginx/nginx.pid <span>\</span>
+--with-http_gzip_static_module <span>\</span>
+--with-http_stub_status_module <span>\</span>
+--with-file-aio <span>\</span>
+--with-http_realip_module <span>\</span>
+--with-http_ssl_module <span>\</span>
+--with-pcre<span>=</span>/usr/local/src/pcre-8.44 <span>\</span>
+--with-zlib<span>=</span>/usr/local/src/zlib-1.2.11 <span>\</span>
+--with-openssl<span>=</span>/usr/local/src/openssl-1.1.1g
+
+<span>make</span> -j2
+<span>make</span> <span>install</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><p><code>--with-pcre=/usr/local/src/pcre-8.44</code> 指的是pcre-8.44 的源码路径。</p>
+<p><code>--with-zlib=/usr/local/src/zlib-1.2.11</code> 指的是zlib-1.2.11 的源码路径。</p>
+<p>安装成功后 /usr/local/nginx 目录下如下</p>
+<div><pre><code>fastcgi.conf            koi-win             nginx.conf.default
+fastcgi.conf.default    logs                scgi_params
+fastcgi_params          mime.types          scgi_params.default
+fastcgi_params.default  mime.types.default  uwsgi_params
+html                    nginx               uwsgi_params.default
+koi-utf                 nginx.conf          win-utf
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="启动" tabindex="-1"> 启动</h2>
+<p>确保系统的 80 端口没被其他程序占用，运行 <code>/usr/local/nginx/nginx</code> 命令来启动 Nginx，</p>
+<div><pre><code><span>netstat</span> -ano<span>|</span><span>grep</span> <span>80</span>
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p>如果查不到结果后执行，有结果则忽略此步骤（ubuntu下必须用sudo启动，不然只能在前台运行）</p>
+<div><pre><code><span>sudo</span> /usr/local/nginx/nginx
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p>打开浏览器访问此机器的 IP，如果浏览器出现 Welcome to nginx! 则表示 Nginx 已经安装并运行成功。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203121728638.png" alt=""></p>
+<h2 id="nginx-编译选项" tabindex="-1"> nginx 编译选项</h2>
+<p>make 是用来编译的，它从 Makefile 中读取指令，然后编译。</p>
+<p>make install 是用来安装的，它也从 Makefile 中读取指令，安装到指定的位置。</p>
+<p>configure 命令是用来检测你的安装平台的目标特征的。它定义了系统的各个方面，包括 nginx 的被允许使用的连接处理的方法，比如它会检测你是不是有 CC 或 GCC，并不是需要 CC 或 GCC，它是个 shell 脚本，执行结束时，它会创建一个Makefile 文件。nginx 的 configure 命令支持以下参数：</p>
+<div><pre><code><span>--prefix=path</span><span>:</span> 定义一个目录，存放服务器上的文件，也就是 nginx 的安装目录。默认使用 /usr/local/nginx。
+<span>--sbin-path=path</span><span>:</span> 设置 nginx 的可执行文件的路径，默认为 prefix/sbin/nginx.
+<span>--conf-path=path</span><span>:</span> 设置在n ginx.conf 配置文件的路径。nginx 允许使用不同的配置文件启动，通过命令行中的 <span>-</span>c 选项。默认为 prefix/conf/nginx.conf.
+<span>--pid-path=path</span><span>:</span> 设置 nginx.pid 文件，将存储的主进程的进程号。安装完成后，可以随时改变的文件名，在 nginx.conf 配置文件中使用 PID 指令。默认情况下，文件名为 prefix/logs/nginx.pid.
+<span>--error-log-path=path</span><span>:</span> 设置主错误、警告、和诊断文件的名称。安装完成后，可以随时改变的文件名，在 nginx.conf 配置文件中使用的 error_log 指令。默认情况下，文件名为 prefix/logs/error.log.
+<span>--http-log-path=path</span><span>:</span> 设置主请求的 HTTP 服务器的日志文件的名称。安装完成后，可以随时改变的文件名 ，在 nginx.conf 配置文件中 使用的 access_log 指令。默认情况下，文件名为 prefix/logs/access.log.
+<span>--user=name</span><span>:</span> 设置 nginx 工作进程的用户。安装完成后，可以随时更改的名称在 nginx.conf 配置文件中 使用的 user 指令。默认的用户名是 nobody。
+<span>--group=name</span><span>:</span> 设置 nginx 工作进程的用户组。安装完成后，可以随时更改的名称在 nginx.conf 配置文件中 使用的  user 指令。默认的为非特权用户。
+<span>--with-select_module --without-select_module</span><span>:</span> 启用或禁用构建一个模块来允许服务器使用 select() 方法。该模块将自动建立，如果平台不支持的 kqueue，epoll，rtsig 或 /dev/poll。
+<span>--with-poll_module --without-poll_module</span><span>:</span> 启用或禁用构建一个模块来允许服务器使用 poll() 方法。该模块将自动建立，如果平台不支持的 kqueue，epoll，rtsig 或 /dev/poll。
+<span>--without-http_gzip_module</span><span>:</span> 不编译压缩的 HTTP 服务器的响应模块。编译并运行此模块需要 zlib 库。
+<span>--without-http_rewrite_module</span><span>:</span> 不编译重写模块。编译并运行此模块需要 PCRE 库支持。
+<span>--without-http_proxy_module</span><span>:</span> 不编译 http_proxy 模块。
+<span>--with-http_ssl_module</span><span>:</span> 使用 https 协议模块。默认情况下，该模块没有被构建。建立并运行此模块的 OpenSSL 库是必需的。
+<span>--with-pcre=path</span><span>:</span> 设置 PCRE 库的源码路径。PCRE 库的源码（版本4.4 <span>-</span> 8.30）需要从 PCRE 网站下载并解压。其余的工作是 Nginx 的 ./ configure 和 make 来完成。正则表达式使用在 location 指令和 ngx_http_rewrite_module 模块中。
+<span>--with-pcre-jit</span><span>:</span> 编译 PCRE 包含 “just<span>-</span>in<span>-</span>time compilation”（1.1.12中， pcre_jit指令）。
+<span>--with-zlib=path</span><span>:</span> 设置的 zlib 库的源码路径。要下载从 zlib（版本1.1.3 <span>-</span> 1.2.5）的并解压。其余的工作是 Nginx的 ./ configure 和 make 完成。ngx_http_gzip_module 模块需要使用 zlib 。
+<span>--with-cc-opt=parameters</span><span>:</span> 设置额外的参数将被添加到CFLAGS变量。例如<span>,</span>当你在 FreeBSD 上使用 PCRE 库时需要使用<span>:</span><span>-</span><span>-</span>with<span>-</span>cc<span>-</span>opt="<span>-</span>I /usr/local/include。如需要需要增加 select() 支持的文件数量<span>:</span><span>-</span><span>-</span>with<span>-</span>cc<span>-</span>opt="<span>-</span>D FD_SETSIZE=2048".
+<span>--with-ld-opt=parameters</span><span>:</span> 设置附加的参数，将用于在链接期间。例如，当在 FreeBSD 下使用该系统的 PCRE 库<span>,</span>应指定<span>:</span><span>-</span><span>-</span>with<span>-</span>ld<span>-</span>opt="<span>-</span>L /usr/local/lib"。
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><p>典型实例(下面为了展示需要写在多行，执行时内容需要在同一行)</p>
+<div><pre><code>./configure
+  --sbin-path<span>=</span>/usr/local/nginx/nginx
+  --conf-path<span>=</span>/usr/local/nginx/nginx.conf
+  --pid-path<span>=</span>/usr/local/nginx/nginx.pid
+  --with-http_ssl_module
+  --with-pcre<span>=</span><span>..</span>/pcre-4.4
+  --with-zlib<span>=</span><span>..</span>/zlib-1.1.3
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div>]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202203121728638.png" type="image/png"/>
+    </item>
     <item>
       <title>Java 读取文本文件</title>
       <link>https://www.cloaks.cn/java/base/file_reader.html</link>

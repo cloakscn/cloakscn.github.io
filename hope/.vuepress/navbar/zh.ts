@@ -3,7 +3,8 @@ import { defineNavbarConfig } from "vuepress-theme-hope";
 export const zh = defineNavbarConfig([
   "/",
   "/home",
-  { text: "镜像", icon: "snow", link: "https://mirrors.cloaks.cn" },
+  // { text: "镜像", icon: "snow", link: "https://mirrors.cloaks.cn" },
+  { text: "镜像", icon: "snow", link: "https://mirrors.tuna.tsinghua.edu.cn/" },
   {
     text: "索引",
     icon: "any",
@@ -49,7 +50,7 @@ export const zh = defineNavbarConfig([
       // "article12",
     ],
   },
-  { text: "订阅", icon: "rss", link: "/rss.xml" },
+  // { text: "订阅", icon: "rss", link: "/rss.xml" },
   // {
   //   text: "主题文档",
   //   icon: "note",

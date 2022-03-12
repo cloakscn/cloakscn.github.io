@@ -50,8 +50,16 @@ export const zh = defineSidebarConfig({
     {
       text: "名词解释",
       icon: "folder",
+      collapsable: true,
       // prefix: "/",
       children: ["cdn", "curl", "jupyter"],
+    },
+    {
+      text: "Nginx",
+      icon: "folder",
+      collapsable: true,
+      prefix: "nginx/",
+      children: ["install"],
     },
     // {
     //   text: "文章",
