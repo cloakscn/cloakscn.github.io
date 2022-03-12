@@ -50,7 +50,7 @@ export const zh = defineNavbarConfig([
       // "article12",
     ],
   },
-  // { text: "订阅", icon: "rss", link: "/rss.xml" },
+  { text: "Join Us", icon: "group", link: "//qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=1cqtgP&from=246610&biz=ka#/pc" },
   // {
   //   text: "主题文档",
   //   icon: "note",
