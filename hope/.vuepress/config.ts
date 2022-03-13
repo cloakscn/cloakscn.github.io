@@ -16,24 +16,16 @@ export default defineHopeConfig({
     ],
   ],
 
-  // locales: {
-  //   "/": {
-  //     lang: "en-US",
-  //     title: "Theme Demo",
-  //     description: "A demo for vuepress-theme-hope",
-  //   },
-  //   "/zh/": {
-  //     lang: "zh-CN",
-  //     title: "主题演示",
-  //     description: "vuepress-theme-hope 的演示",
-  //   },
-  // },
-
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: 'Cloaks',
+      title: 'Cloaks\' Blog',
       description: '热爱技术，乐于分享！',
+    },
+    "/en/": {
+      lang: "en-US",
+      title: "Cloaks\' Blog",
+      description: "the sun in my heart!",
     },
   },
 

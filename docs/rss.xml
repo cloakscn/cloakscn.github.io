@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 06:54:18 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 06:54:18 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 07:14:48 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 07:14:48 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -3189,6 +3189,50 @@ class TreeNode:
 ]]></content:encoded>
     </item>
     <item>
+      <title>反转链表</title>
+      <link>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
+      <guid>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">反转链表</source>
+      <description>&amp;nbsp
+</description>
+      <author>wy03290019@163.com (Cloaks)</author>
+      <content:encoded><![CDATA[<p>&amp;nbsp</p>
+
+<h1 id="反转链表" tabindex="-1"> 反转链表</h1>
+<blockquote>
+<p>题号：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca" target="_blank" rel="noopener noreferrer">200<ExternalLinkIcon/></a><br>
+描述：给定一个单链表的头结点pHead，长度为n，反转该链表后，返回新链表的表头。数据范围： n&lt;=1000<br>
+要求：空间复杂度 O(1)O(1) ，时间复杂度 O(n)O(n) 。如当输入链表{1,2,3}时，经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。</p>
+</blockquote>
+<h3 id="解题思路" tabindex="-1"> 解题思路</h3>
+<p>官方给的第二种解法很不错，大概意识从头结点开始把每一个结点用头插法的方式插入空指针pre中，这个反向指针的说法还是不好理解的。</p>
+<h3 id="算法实现" tabindex="-1"> 算法实现</h3>
+<div><pre><code><span>/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/</span>
+<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
+    <span>public</span> <span>ListNode</span> <span>ReverseList</span><span>(</span><span>ListNode</span> head<span>)</span> <span>{</span>
+        <span>ListNode</span> pre <span>=</span> <span>null</span><span>;</span>
+        <span>ListNode</span> cur <span>=</span> head<span>;</span>
+        <span>ListNode</span> next <span>=</span> <span>null</span><span>;</span>
+        <span>while</span> <span>(</span>cur <span>!=</span> <span>null</span><span>)</span> <span>{</span>
+            next <span>=</span> cur<span>.</span>next<span>;</span>
+            cur<span>.</span>next <span>=</span> pre<span>;</span>
+            pre <span>=</span> cur<span>;</span>
+            cur <span>=</span> next<span>;</span>
+        <span>}</span>
+        <span>return</span> pre<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>这是文章的标题</title>
       <link>https://www.cloaks.cn/lintcode/floor.html</link>
       <guid>https://www.cloaks.cn/lintcode/floor.html</guid>
@@ -3263,50 +3307,6 @@ tag:</p>
     <span>return</span> third<span>;</span>
 <span>}</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>反转链表</title>
-      <link>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
-      <guid>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">反转链表</source>
-      <description>&amp;nbsp
-</description>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[<p>&amp;nbsp</p>
-
-<h1 id="反转链表" tabindex="-1"> 反转链表</h1>
-<blockquote>
-<p>题号：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca" target="_blank" rel="noopener noreferrer">200<ExternalLinkIcon/></a><br>
-描述：给定一个单链表的头结点pHead，长度为n，反转该链表后，返回新链表的表头。数据范围： n&lt;=1000<br>
-要求：空间复杂度 O(1)O(1) ，时间复杂度 O(n)O(n) 。如当输入链表{1,2,3}时，经反转后，原链表变为{3,2,1}，所以对应的输出为{3,2,1}。</p>
-</blockquote>
-<h3 id="解题思路" tabindex="-1"> 解题思路</h3>
-<p>官方给的第二种解法很不错，大概意识从头结点开始把每一个结点用头插法的方式插入空指针pre中，这个反向指针的说法还是不好理解的。</p>
-<h3 id="算法实现" tabindex="-1"> 算法实现</h3>
-<div><pre><code><span>/*
-public class ListNode {
-    int val;
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}*/</span>
-<span>public</span> <span>class</span> <span>Solution</span> <span>{</span>
-    <span>public</span> <span>ListNode</span> <span>ReverseList</span><span>(</span><span>ListNode</span> head<span>)</span> <span>{</span>
-        <span>ListNode</span> pre <span>=</span> <span>null</span><span>;</span>
-        <span>ListNode</span> cur <span>=</span> head<span>;</span>
-        <span>ListNode</span> next <span>=</span> <span>null</span><span>;</span>
-        <span>while</span> <span>(</span>cur <span>!=</span> <span>null</span><span>)</span> <span>{</span>
-            next <span>=</span> cur<span>.</span>next<span>;</span>
-            cur<span>.</span>next <span>=</span> pre<span>;</span>
-            pre <span>=</span> cur<span>;</span>
-            cur <span>=</span> next<span>;</span>
-        <span>}</span>
-        <span>return</span> pre<span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
