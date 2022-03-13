@@ -1,0 +1,1 @@
+import{_ as e,o as t,a as o}from"./app.33734388.js";const r={},c={style:{height:"200px",width:"100%",background:"url(https://img.tt98.com/d/file/96kaifa/201906251420141/006.jpg) no-repeat scroll top center","background-size":"cover"}};function a(n,s){return t(),o("div",c)}var _=e(r,[["render",a]]);export{_ as default};

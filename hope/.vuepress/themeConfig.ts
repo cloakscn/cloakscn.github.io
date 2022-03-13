@@ -111,6 +111,14 @@ export default defineThemeConfig({
 
   plugins: {
 
+    comment: {
+      type: "giscus",
+      repo: "cloakscn/cloakscn.github.io",
+      repoId: "R_kgDOGswhtg",
+      category: "Announcements",
+      categoryId: "DIC_kwDOGswhts4COEtZ",
+    },
+
     
     blog: {
       autoExcerpt: true,

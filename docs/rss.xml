@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 12 Mar 2022 16:48:20 GMT</pubDate>
-    <lastBuildDate>Sat, 12 Mar 2022 16:48:20 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 04:09:22 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 04:09:22 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -29,13 +29,12 @@
       <link>https://www.cloaks.cn/cyber_security/defense_in_depth_strategies.html</link>
       <guid>https://www.cloaks.cn/cyber_security/defense_in_depth_strategies.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">采取纵深防御策略 提升工控系统网络安全</source>
-      <description>&amp;lt;p&amp;gt; &amp;lt;/p&amp;gt;
+      <description>工控系统作为关键基础设施不可分割的一部分，可简化电力、石油天然气、供水、交通及化工等重要行业部门的运营。
 </description>
       <category>网络安全</category>
       <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p> </p>
+      <content:encoded><![CDATA[<p>工控系统作为关键基础设施不可分割的一部分，可简化电力、石油天然气、供水、交通及化工等重要行业部门的运营。</p>
 
-<p>工控系统作为关键基础设施不可分割的一部分，可简化电力、石油天然气、供水、交通及化工等重要行业部门的运营。</p>
 <p>日益增长的网络安全问题及其对工控系统的影响愈发凸显了关键基础设施所面临的重大风险。</p>
 <p>解决工控系统的网络安全问题，须对安全挑战与特定防护措施有清晰认识。</p>
 <p>全局法使用特定措施逐步增强安全，助力防护工控系统中的网络安全威胁与漏洞。这种方法一般被称为“纵深防御”，适用于工控系统，为优化网络安全防护提供了灵活、可用的框架。</p>
@@ -109,7 +108,7 @@ Recommended Practice: Improving Industrial Control Systems Cybersecurity with De
       <link>https://www.cloaks.cn/reference/nginx/install.html</link>
       <guid>https://www.cloaks.cn/reference/nginx/install.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">Nginx 安装</source>
-      <description>&amp;lt;p&amp;gt;使用源码编译安装，包括具体的编译参数信息。&amp;lt;/p&amp;gt;
+      <description>使用源码编译安装，包括具体的编译参数信息。
 </description>
       <category>Nginx</category>
       <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
@@ -230,14 +229,14 @@ koi-utf                 nginx.conf          win-utf
       <link>https://www.cloaks.cn/reference/linux/centos/firewalld.html</link>
       <guid>https://www.cloaks.cn/reference/linux/centos/firewalld.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">CentOS 7 防火墙常用命令</source>
-      <description>&amp;lt;p&amp;gt; &amp;lt;/p&amp;gt;
+      <description>在 CentOs 7 中 firewalld,iptables,ebtables 这三种防火墙是共存的。
+但是默认情况下使用 firewalld 来管理 netfilter 子系统。
 </description>
       <category>Linux</category>
       <pubDate>Sat, 12 Mar 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p> </p>
-
-<p>在 CentOs 7 中 firewalld,iptables,ebtables 这三种防火墙是共存的。</p>
+      <content:encoded><![CDATA[<p>在 CentOs 7 中 firewalld,iptables,ebtables 这三种防火墙是共存的。</p>
 <p>但是默认情况下使用 firewalld 来管理 netfilter 子系统。</p>
+
 <h2 id="firewalld-的基本使用" tabindex="-1"> firewalld 的基本使用</h2>
 <div><pre><code><span># 启动</span>
 systemctl start firewalld
@@ -314,7 +313,7 @@ firewall-cmd --reload
       <link>https://www.cloaks.cn/java/base/file_reader.html</link>
       <guid>https://www.cloaks.cn/java/base/file_reader.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">Java 读取文本文件</source>
-      <description>&amp;lt;p&amp;gt;在 java 中有很多读取文本文件的方法。文本文件由字符组成，因此可以使用 Reader 类。在 java 中读取文本文件也有一些实用程序类。&amp;lt;/p&amp;gt;
+      <description>在 java 中有很多读取文本文件的方法。文本文件由字符组成，因此可以使用 Reader 类。在 java 中读取文本文件也有一些实用程序类。
 </description>
       <category>Java 基础</category>
       <pubDate>Fri, 11 Mar 2022 00:00:00 GMT</pubDate>
@@ -530,7 +529,7 @@ file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
       <link>https://www.cloaks.cn/java/base/regex.html</link>
       <guid>https://www.cloaks.cn/java/base/regex.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">正则表达式</source>
-      <description>&amp;lt;p&amp;gt;Java 正则表达式知识点梳理。&amp;lt;/p&amp;gt;
+      <description>Java 正则表达式知识点梳理。
 </description>
       <category>Java 基础</category>
       <pubDate>Fri, 11 Mar 2022 00:00:00 GMT</pubDate>
@@ -694,7 +693,7 @@ file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
       <link>https://www.cloaks.cn/cyber_security/cve_kb.html</link>
       <guid>https://www.cloaks.cn/cyber_security/cve_kb.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">Windows CVE漏洞与补丁号对应关系</source>
-      <description>&amp;lt;p&amp;gt;本文简单介绍一下通过微软提供的接口建立一个自动化的 CVE&amp;amp;KB 数据库任务。&amp;lt;/p&amp;gt;
+      <description>本文简单介绍一下通过微软提供的接口建立一个自动化的 CVE&amp;KB 数据库任务。
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>网络安全</category>
@@ -708,7 +707,7 @@ file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
       <link>https://www.cloaks.cn/reference/cdn.html</link>
       <guid>https://www.cloaks.cn/reference/cdn.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">CDN 内容分发网络</source>
-      <description>&amp;lt;p&amp;gt;CDN这个技术其实说起来并不复杂，最初的核心理念，就是将内容缓存在终端用户附近。&amp;lt;/p&amp;gt;
+      <description>CDN这个技术其实说起来并不复杂，最初的核心理念，就是将内容缓存在终端用户附近。
 </description>
       <category>网络</category>
       <pubDate>Mon, 07 Mar 2022 00:00:00 GMT</pubDate>
@@ -777,7 +776,7 @@ file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
       <link>https://www.cloaks.cn/reference/curl.html</link>
       <guid>https://www.cloaks.cn/reference/curl.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">CURL 命令</source>
-      <description>&amp;lt;p&amp;gt;该命令设计用于在没有用户交互的情况下工作。&amp;lt;/p&amp;gt;
+      <description>该命令设计用于在没有用户交互的情况下工作。
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>参考</category>
@@ -1039,7 +1038,7 @@ file<span>.</span><span>close</span><span>(</span><span>)</span><span>;</span>
       <link>https://www.cloaks.cn/reference/jupyter.html</link>
       <guid>https://www.cloaks.cn/reference/jupyter.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">jupyter 使用总结</source>
-      <description>&amp;lt;p&amp;gt;juyter notebook 使用总结&amp;lt;/p&amp;gt;
+      <description>juyter notebook 使用总结
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>参考</category>
@@ -1058,7 +1057,7 @@ pip <span>install</span> jupyter_nbextensions_configurator -i
       <link>https://www.cloaks.cn/blogs/linux.html</link>
       <guid>https://www.cloaks.cn/blogs/linux.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">Linux 问题总结</source>
-      <description>&amp;lt;p&amp;gt;Linux 问题总结。&amp;lt;/p&amp;gt;
+      <description>Linux 问题总结。
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>问题总结</category>
@@ -1113,7 +1112,7 @@ pip <span>install</span> jupyter_nbextensions_configurator -i
       <link>https://www.cloaks.cn/blogs/cet6.html</link>
       <guid>https://www.cloaks.cn/blogs/cet6.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">六级</source>
-      <description>&amp;lt;p&amp;gt;英语六级学习计划。&amp;lt;/p&amp;gt;
+      <description>英语六级学习计划。
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>英语</category>
@@ -1229,7 +1228,7 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/blogs/docker.html</link>
       <guid>https://www.cloaks.cn/blogs/docker.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">Docker</source>
-      <description>&amp;lt;p&amp;gt;Docker 容器化部署&amp;lt;/p&amp;gt;
+      <description>Docker 容器化部署
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>微服务</category>
@@ -1286,7 +1285,7 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/blogs/middleware.html</link>
       <guid>https://www.cloaks.cn/blogs/middleware.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">中间件</source>
-      <description>&amp;lt;p&amp;gt;简要介绍常见中间件&amp;lt;/p&amp;gt;
+      <description>简要介绍常见中间件
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>微服务</category>
@@ -3204,6 +3203,17 @@ public class ListNode {
     <span>}</span>
 <span>}</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>https://www.cloaks.cn/reference/</link>
+      <guid>https://www.cloaks.cn/reference/</guid>
+      <source url="https://www.cloaks.cn/rss.xml"></source>
+      <description>
+</description>
+      <author>wy03290019@163.com (Cloaks)</author>
+      <content:encoded><![CDATA[<div style="height:200px; width:100%; background:url(https://img.tt98.com/d/file/96kaifa/201906251420141/006.jpg) no-repeat scroll top center; background-size:cover"></div>
+]]></content:encoded>
     </item>
   </channel>
 </rss>

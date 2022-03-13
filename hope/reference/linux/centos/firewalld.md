@@ -15,13 +15,12 @@ tag:
   - 防火墙
 ---
 
-&nbsp;
-
-<!-- more -->
-
 在 CentOs 7 中 firewalld,iptables,ebtables 这三种防火墙是共存的。
 
 但是默认情况下使用 firewalld 来管理 netfilter 子系统。
+
+<!-- more -->
+
 
 ## firewalld 的基本使用
 
