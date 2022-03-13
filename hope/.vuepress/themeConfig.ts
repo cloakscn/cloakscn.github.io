@@ -18,7 +18,6 @@ export default defineThemeConfig({
   repo: "https://github.com/cloakscn/",
   repoLabel: "GitHub",
   repoDisplay: true,
-  
   editLink: false,
 
   blog: {
@@ -198,9 +197,11 @@ export default defineThemeConfig({
 
     pwa: {
       favicon: "/favicon.ico",
+      showInstall: true,
       cacheHTML: true,
       cachePic: true,
       appendBase: true,
+      update: "hint",
       // apple: {
       //   icon: "/assets/icon/apple-icon-152.png",
       //   statusBarColor: "black",
