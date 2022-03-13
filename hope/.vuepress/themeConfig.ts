@@ -198,10 +198,12 @@ export default defineThemeConfig({
     pwa: {
       favicon: "/favicon.ico",
       showInstall: true,
+      themeColor: "#2196f3",
+      maxSize: 4096,
       cacheHTML: true,
       cachePic: true,
       appendBase: true,
-      update: "hint",
+      update: 'hint',
       // apple: {
       //   icon: "/assets/icon/apple-icon-152.png",
       //   statusBarColor: "black",
