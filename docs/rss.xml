@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 12:04:37 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 12:04:37 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 12:22:01 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 12:22:01 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -3070,12 +3070,10 @@ class TreeNode:
       <guid>https://www.cloaks.cn/intro.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">关于我</source>
       <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[
-<h2 id="关于博客" tabindex="-1"> 关于博客</h2>
+      <content:encoded><![CDATA[<h2 id="关于博客" tabindex="-1"> 关于博客</h2>
 <p>我是 18 年开始创建的博客，其实，中途有离开过。</p>
 <p>那时，总对博客有些许兴趣，有一种难以说出的感觉。</p>
 <p>目前博客主要是分享我的想法，我的所见所闻等等,~在这里还是要感谢 Mr.Hope 提供 Vuepress 的主题，真的是太棒了~</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202203131959528.jpeg" alt=""></p>
 <h2 id="时光机" tabindex="-1"> 时光机</h2>
 <p><code>2018</code> 年我顺利考上了大学，虽然不是很好，不过也算是有人愿意收留，还不错。</p>
 <p>同年加入了学院实验室，开启了长达四年的求学之路。</p>
@@ -3092,7 +3090,6 @@ class TreeNode:
 <p>我建了一个 QQ 频道：<a href="https://qun.qq.com/qqweb/qunpro/share?_wv=3&amp;_wwv=128&amp;inviteCode=1cqtgP&amp;from=246610&amp;biz=ka#/pc" target="_blank" rel="noopener noreferrer">New Coder<ExternalLinkIcon/></a></p>
 <p>欢迎大家的加入！ヾ(≧▽≦*)o</p>
 ]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202203131959528.jpeg" type="image/jpeg"/>
     </item>
     <item>
       <title>链表</title>
