@@ -21,7 +21,7 @@ title: 关于我
 
 目前博客主要是分享我的想法，我的所见所闻等等,~在这里还是要感谢 Mr.Hope 提供 Vuepress 的主题，真的是太棒了~
 
-![](https://s.cn.bing.net/th?id=OHR.SpringForward_ZH-CN6154174266_UHD.jpg&rf=LaDigue_UHD.jpg&w=3840&h=2160&c=8&rs=1&o=3&r=0)
+![](https://gitee.com/biliit/pic-go/raw/master/202203131959528.jpeg)
 
 ## 时光机
 
