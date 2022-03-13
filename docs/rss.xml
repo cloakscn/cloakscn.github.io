@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 06:36:59 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 06:36:59 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 06:54:18 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 06:54:18 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -22,8 +22,8 @@
     <category>英语</category>
     <category>心得</category>
     <category>微服务</category>
-    <category>面试</category>
     <category>力扣</category>
+    <category>面试</category>
     <item>
       <title>采取纵深防御策略 提升工控系统网络安全</title>
       <link>https://www.cloaks.cn/cyber_security/defense_in_depth_strategies.html</link>
@@ -1348,248 +1348,6 @@ acquiring 获得</p>
 <h3 id="负载均衡" tabindex="-1"> 负载均衡</h3>
 <p>当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群提升并行处理能力。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。这时使用 <code>nginx</code> 实现了机器之间的负载均衡。</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>计算机网络面试</title>
-      <link>https://www.cloaks.cn/blogs/network.html</link>
-      <guid>https://www.cloaks.cn/blogs/network.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">计算机网络面试</source>
-      <description> 
-</description>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <category>面试</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p> </p>
-
-<h2 id="osi七层模型" tabindex="-1"> OSI七层模型</h2>
-<h3 id="物理层" tabindex="-1"> 物理层</h3>
-<p>建立、维护、断开物理连接</p>
-<h3 id="数据链路层" tabindex="-1"> 数据链路层</h3>
-<p>建立逻辑连接、进行硬件地址寻址、差错校验</p>
-<h3 id="网络层" tabindex="-1"> 网络层</h3>
-<p>进行逻辑地址寻址，实现不同网络之间的路径选择</p>
-<h3 id="传输层" tabindex="-1"> 传输层</h3>
-<p>定义传输数据的协议端口号，以及流控和差错校验</p>
-<p>常见协议：<strong>TCP、UDP</strong></p>
-<p>数据包一旦离开网卡即进入网络传输层</p>
-<p><strong>TCP三次握手</strong></p>
-<p>所谓三次握手(Three-way Handshake)，是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。</p>
-<p>三次握手的目的是连接服务器指定端口，建立TCP连接,并同步连接双方的序列号和确认号并交换 TCP 窗口大小信息.在socket编程中，客户端执行connect()时。将触发三次握手。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" alt=""></p>
-<p>第一次握手:
-客户端发送一个TCP的SYN标志位置1的包指明客户打算连接的服务器的端口，以及初始序号X,保存在包头的序列号(Sequence Number)字段里。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236854.png" alt=""></p>
-<p>第二次握手:
-服务器发回确认包(ACK)应答。即SYN标志位和ACK标志位均为1同时，将确认序号(Acknowledgement Number)设置为客户的I S N加1以.即X+1。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237932.png" alt=""></p>
-<p>第三次握手.
-客户端再次发送确认包(ACK) SYN标志位为0,ACK标志位为1.并且把服务器发来ACK的序号字段+1,放在确定字段中发送给对方.并且在数据段放写ISN的+1</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237689.png" alt=""></p>
-<p><strong>TCP四次握手</strong></p>
-<p>TCP的连接的拆除需要发送四个包，因此称为四次挥手(four-way handshake)。客户端或服务器均可主动发起挥手动作，在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
-<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061235996.png" alt=""></p>
-<h3 id="会话层" tabindex="-1"> 会话层</h3>
-<p>简历、管理、终止会话</p>
-<h3 id="表示层" tabindex="-1"> 表示层</h3>
-<p>数据表示、安全、压缩</p>
-<h3 id="应用层" tabindex="-1"> 应用层</h3>
-<p>网络服务与最终用户的一个接口</p>
-<h4 id="常见网络协议含义及端口" tabindex="-1"> 常见网络协议含义及端口</h4>
-<table>
-<thead>
-<tr>
-<th>协议</th>
-<th>含义</th>
-<th>端口</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FTP</td>
-<td>文件传输协议</td>
-<td>21</td>
-</tr>
-<tr>
-<td>Telnet</td>
-<td>远程登陆</td>
-<td>23</td>
-</tr>
-<tr>
-<td>SMTP</td>
-<td>简单邮件传输协议</td>
-<td>25</td>
-</tr>
-<tr>
-<td>POP3</td>
-<td>邮件接收协议</td>
-<td>110</td>
-</tr>
-<tr>
-<td>HTTP</td>
-<td>超文本传输协议</td>
-<td>80</td>
-</tr>
-<tr>
-<td>DNS</td>
-<td>域名解析</td>
-<td>53</td>
-</tr>
-</tbody>
-</table>
-<h4 id="http协议" tabindex="-1"> HTTP协议</h4>
-<h5 id="状态码" tabindex="-1"> 状态码</h5>
-<p>五类响应：1XX(信息类状态码) 2XX(成功状态码) 3XX(重定向状态码) 4XX(客户端错误状态码) 5XX(服务器错误状态码)</p>
-<p>常见状态码</p>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>成功</td>
-</tr>
-<tr>
-<td>204</td>
-<td>成功处理，报文不含内容</td>
-</tr>
-<tr>
-<td>206</td>
-<td>部分成功</td>
-</tr>
-<tr>
-<td>301</td>
-<td>永久性重定向</td>
-</tr>
-<tr>
-<td>302、307</td>
-<td>临时性重定向</td>
-</tr>
-<tr>
-<td>303</td>
-<td></td>
-</tr>
-<tr>
-<td>304</td>
-<td></td>
-</tr>
-<tr>
-<td>400</td>
-<td>请求错误</td>
-</tr>
-<tr>
-<td>401</td>
-<td>需要HTTP认证信息</td>
-</tr>
-<tr>
-<td>403</td>
-<td>请求拒绝</td>
-</tr>
-<tr>
-<td>404</td>
-<td>未找到请求地址</td>
-</tr>
-<tr>
-<td>500</td>
-<td>执行请求错误</td>
-</tr>
-<tr>
-<td>503</td>
-<td>超负载、停机维护</td>
-</tr>
-</tbody>
-</table>
-<h5 id="请求头-响应头" tabindex="-1"> 请求头/响应头</h5>
-<div><pre><code><span>Content-Type</span><span>:</span> 
-<span>Accept</span><span>:</span> 
-<span>Origin</span><span>:</span> 
-<span>Cache-Control</span><span>:</span> 
-<span>Cookie</span><span>:</span> 
-<span>User-Agent</span><span>:</span> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML<span>,</span> like Gecko) Chrome/96.0.4664.45 Safari/537.36
-<span>Referer</span><span>:</span> 
-<span>X-Forwarded-For</span><span>:</span> 
-<span>Access-Control-Allow-Origin</span><span>:</span> 允许特定域名访问
-<span>Last-Modify</span><span>:</span> 
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h5 id="请求方法" tabindex="-1"> 请求方法</h5>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>用于数据读取，幂等操作</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>向指定资源提交数据，非幂等操作</td>
-</tr>
-<tr>
-<td>HEAD</td>
-<td>向服务器请求头信息</td>
-</tr>
-<tr>
-<td>OPTIONS</td>
-<td>查看服务器支持HTTP请求方法，测试功能是否正常</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>请求服务器修改信息</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>请求服务器删除数据</td>
-</tr>
-<tr>
-<td>TRACE</td>
-<td>请求服务器回显信息，测试诊断服务器状态</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>
-<p>HTTP协议和GET和POST请求方法的区别</p>
-<ol>
-<li>
-<p>在进行后退操作时 GET 是无害的，但是 POST 请求会进行重新提交</p>
-</li>
-<li>
-<p>GET 可以收藏为书签，POST 不可以</p>
-</li>
-<li>
-<p>GET 可以被浏览器缓存，POST 不可以</p>
-</li>
-<li>
-<p>GET 可以被浏览器存到历史当中，POST 不可以</p>
-</li>
-<li>
-<p>GET URL限制为2038个字符，POST 没有限制</p>
-</li>
-<li>
-<p>GET 安全性较差</p>
-</li>
-</ol>
-</li>
-<li>
-<p>HTTPS 的工作原理</p>
-<ol>
-<li>
-<p>HTTPS 是一种基于 SSL/TLS 的 HTTP 协议，所有的HTTP数据都是在 SSL/TLS 协议封装之上传输的</p>
-</li>
-<li>
-<p>HTTPS 协议在 HTTP 协议的基础上，添加了 SSL/TLS 握手以及数据加密传输，也属于应用层协议</p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content:encoded>
-      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
     </item>
     <item>
       <title>斐波那契数列</title>
@@ -3020,13 +2778,274 @@ class TreeNode:
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>计算机网络面试</title>
+      <link>https://www.cloaks.cn/blogs/network.html</link>
+      <guid>https://www.cloaks.cn/blogs/network.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">计算机网络面试</source>
+      <description> 
+</description>
+      <author>wy03290019@163.com (Cloaks)</author>
+      <category>面试</category>
+      <pubDate>Tue, 19 Jan 1999 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p> </p>
+
+<h2 id="osi七层模型" tabindex="-1"> OSI七层模型</h2>
+<h3 id="物理层" tabindex="-1"> 物理层</h3>
+<p>建立、维护、断开物理连接</p>
+<h3 id="数据链路层" tabindex="-1"> 数据链路层</h3>
+<p>建立逻辑连接、进行硬件地址寻址、差错校验</p>
+<h3 id="网络层" tabindex="-1"> 网络层</h3>
+<p>进行逻辑地址寻址，实现不同网络之间的路径选择</p>
+<h3 id="传输层" tabindex="-1"> 传输层</h3>
+<p>定义传输数据的协议端口号，以及流控和差错校验</p>
+<p>常见协议：<strong>TCP、UDP</strong></p>
+<p>数据包一旦离开网卡即进入网络传输层</p>
+<p><strong>TCP三次握手</strong></p>
+<p>所谓三次握手(Three-way Handshake)，是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。</p>
+<p>三次握手的目的是连接服务器指定端口，建立TCP连接,并同步连接双方的序列号和确认号并交换 TCP 窗口大小信息.在socket编程中，客户端执行connect()时。将触发三次握手。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" alt=""></p>
+<p>第一次握手:
+客户端发送一个TCP的SYN标志位置1的包指明客户打算连接的服务器的端口，以及初始序号X,保存在包头的序列号(Sequence Number)字段里。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061236854.png" alt=""></p>
+<p>第二次握手:
+服务器发回确认包(ACK)应答。即SYN标志位和ACK标志位均为1同时，将确认序号(Acknowledgement Number)设置为客户的I S N加1以.即X+1。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237932.png" alt=""></p>
+<p>第三次握手.
+客户端再次发送确认包(ACK) SYN标志位为0,ACK标志位为1.并且把服务器发来ACK的序号字段+1,放在确定字段中发送给对方.并且在数据段放写ISN的+1</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061237689.png" alt=""></p>
+<p><strong>TCP四次握手</strong></p>
+<p>TCP的连接的拆除需要发送四个包，因此称为四次挥手(four-way handshake)。客户端或服务器均可主动发起挥手动作，在socket编程中，任何一方执行close()操作即可产生挥手操作。</p>
+<p><img src="https://gitee.com/biliit/pic-go/raw/master/202201061235996.png" alt=""></p>
+<h3 id="会话层" tabindex="-1"> 会话层</h3>
+<p>简历、管理、终止会话</p>
+<h3 id="表示层" tabindex="-1"> 表示层</h3>
+<p>数据表示、安全、压缩</p>
+<h3 id="应用层" tabindex="-1"> 应用层</h3>
+<p>网络服务与最终用户的一个接口</p>
+<h4 id="常见网络协议含义及端口" tabindex="-1"> 常见网络协议含义及端口</h4>
+<table>
+<thead>
+<tr>
+<th>协议</th>
+<th>含义</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FTP</td>
+<td>文件传输协议</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Telnet</td>
+<td>远程登陆</td>
+<td>23</td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td>简单邮件传输协议</td>
+<td>25</td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>邮件接收协议</td>
+<td>110</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>超文本传输协议</td>
+<td>80</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>域名解析</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<h4 id="http协议" tabindex="-1"> HTTP协议</h4>
+<h5 id="状态码" tabindex="-1"> 状态码</h5>
+<p>五类响应：1XX(信息类状态码) 2XX(成功状态码) 3XX(重定向状态码) 4XX(客户端错误状态码) 5XX(服务器错误状态码)</p>
+<p>常见状态码</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>204</td>
+<td>成功处理，报文不含内容</td>
+</tr>
+<tr>
+<td>206</td>
+<td>部分成功</td>
+</tr>
+<tr>
+<td>301</td>
+<td>永久性重定向</td>
+</tr>
+<tr>
+<td>302、307</td>
+<td>临时性重定向</td>
+</tr>
+<tr>
+<td>303</td>
+<td></td>
+</tr>
+<tr>
+<td>304</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>请求错误</td>
+</tr>
+<tr>
+<td>401</td>
+<td>需要HTTP认证信息</td>
+</tr>
+<tr>
+<td>403</td>
+<td>请求拒绝</td>
+</tr>
+<tr>
+<td>404</td>
+<td>未找到请求地址</td>
+</tr>
+<tr>
+<td>500</td>
+<td>执行请求错误</td>
+</tr>
+<tr>
+<td>503</td>
+<td>超负载、停机维护</td>
+</tr>
+</tbody>
+</table>
+<h5 id="请求头-响应头" tabindex="-1"> 请求头/响应头</h5>
+<div><pre><code><span>Content-Type</span><span>:</span> 
+<span>Accept</span><span>:</span> 
+<span>Origin</span><span>:</span> 
+<span>Cache-Control</span><span>:</span> 
+<span>Cookie</span><span>:</span> 
+<span>User-Agent</span><span>:</span> Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML<span>,</span> like Gecko) Chrome/96.0.4664.45 Safari/537.36
+<span>Referer</span><span>:</span> 
+<span>X-Forwarded-For</span><span>:</span> 
+<span>Access-Control-Allow-Origin</span><span>:</span> 允许特定域名访问
+<span>Last-Modify</span><span>:</span> 
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><h5 id="请求方法" tabindex="-1"> 请求方法</h5>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>用于数据读取，幂等操作</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>向指定资源提交数据，非幂等操作</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>向服务器请求头信息</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>查看服务器支持HTTP请求方法，测试功能是否正常</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>请求服务器修改信息</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>请求服务器删除数据</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>请求服务器回显信息，测试诊断服务器状态</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>HTTP协议和GET和POST请求方法的区别</p>
+<ol>
+<li>
+<p>在进行后退操作时 GET 是无害的，但是 POST 请求会进行重新提交</p>
+</li>
+<li>
+<p>GET 可以收藏为书签，POST 不可以</p>
+</li>
+<li>
+<p>GET 可以被浏览器缓存，POST 不可以</p>
+</li>
+<li>
+<p>GET 可以被浏览器存到历史当中，POST 不可以</p>
+</li>
+<li>
+<p>GET URL限制为2038个字符，POST 没有限制</p>
+</li>
+<li>
+<p>GET 安全性较差</p>
+</li>
+</ol>
+</li>
+<li>
+<p>HTTPS 的工作原理</p>
+<ol>
+<li>
+<p>HTTPS 是一种基于 SSL/TLS 的 HTTP 协议，所有的HTTP数据都是在 SSL/TLS 协议封装之上传输的</p>
+</li>
+<li>
+<p>HTTPS 协议在 HTTP 协议的基础上，添加了 SSL/TLS 握手以及数据加密传输，也属于应用层协议</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content:encoded>
+      <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201061236575.png" type="image/png"/>
+    </item>
+    <item>
       <title>关于我</title>
       <link>https://www.cloaks.cn/intro.html</link>
       <guid>https://www.cloaks.cn/intro.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">关于我</source>
       <author>wy03290019@163.com (Cloaks)</author>
       <content:encoded><![CDATA[
+<h2 id="关于博客" tabindex="-1"> 关于博客</h2>
+<p>我是 18 年开始创建的博客，其实，中途有离开过。</p>
+<p>那时，总对博客有些许兴趣，有一种难以说出的感觉。</p>
+<p>目前博客主要是分享我的想法，我的所见所闻等等,~在这里还是要感谢 Mr.Hope 提供 Vuepress 的主题，真的是太棒了~</p>
 <p><img src="https://s.cn.bing.net/th?id=OHR.SpringForward_ZH-CN6154174266_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;w=3840&amp;h=2160&amp;c=8&amp;rs=1&amp;o=3&amp;r=0" alt=""></p>
+<h2 id="时光机" tabindex="-1"> 时光机</h2>
+<p><code>2018</code> 年我顺利考上了大学，虽然不是很好，不过也算是有人愿意收留，还不错。</p>
+<p>同年加入了学院实验室，开启了长达四年的求学之路。</p>
+<p>像博客中所写：迎着风，往前冲！</p>
+<p>这就是我的四年，很精彩，但也有遗憾~</p>
+<p>时间的车轮滚滚向前，裹挟着我走进<code>烽台科技（北京）有限公司</code>，工控安全行业的引领者。</p>
+<p>2022 一直在路上 ( •̀ ω •́ )✧</p>
+<p>一个普通的开发者，不是大牛但心向远方！</p>
+<h2 id="作者声明" tabindex="-1"> 作者声明</h2>
+<p>本站使用 “Cloaks” 源自于陈奕迅先生演唱的披风~</p>
+<blockquote>
+<p>人不能飞于是才努力走，但没人说不准看天空。</p>
+</blockquote>
+<p>我建了一个 QQ 频道：<a href="https://qun.qq.com/qqweb/qunpro/share?_wv=3&amp;_wwv=128&amp;inviteCode=1cqtgP&amp;from=246610&amp;biz=ka#/pc" target="_blank" rel="noopener noreferrer">New Coder<ExternalLinkIcon/></a></p>
+<p>欢迎大家的加入！ヾ(≧▽≦*)o</p>
 ]]></content:encoded>
       <enclosure url="https://s.cn.bing.net/th?id=OHR.SpringForward_ZH-CN6154174266_UHD.jpg&rf=LaDigue_UHD.jpg&w=3840&h=2160&c=8&rs=1&o=3&r=0" type="image/"/>
     </item>
