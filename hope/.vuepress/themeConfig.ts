@@ -196,18 +196,14 @@ export default defineThemeConfig({
     },
 
     pwa: {
+      update: "hint",
       favicon: "/favicon.ico",
-      showInstall: true,
       themeColor: "#2196f3",
-      maxSize: 4096,
-      cacheHTML: true,
-      cachePic: true,
       appendBase: true,
-      update: 'hint',
-      // apple: {
-      //   icon: "/assets/icon/apple-icon-152.png",
-      //   statusBarColor: "black",
-      // },
+      apple: {
+        icon: "/assets/icon/apple-touch-icon.png",
+        statusBarColor: "black",
+      },
       msTile: {
         image: "/assets/icon/mstile-150x150.png",
         color: "#ffffff",
