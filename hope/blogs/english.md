@@ -8,6 +8,10 @@ tag:
   - 积累
 ---
 
+&nbsp;
+
+<!-- more -->
+
 ## 美文摘抄
 
 1. Attitude, not aptitude, determines altitude.

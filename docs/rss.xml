@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 06:35:17 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 06:35:17 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 06:36:59 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 06:36:59 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -1150,12 +1150,17 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/blogs/codingQuality.html</link>
       <guid>https://www.cloaks.cn/blogs/codingQuality.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">如何快速提高 Coding Quality</source>
+      <description>
+程序员的代码就是自己的脸面，比自己张什么样更重要！
+
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>心得</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>程序员的代码就是自己的脸面，比自己张什么样更重要！</p>
 </blockquote>
+
 <h2 id="coding-style" tabindex="-1"> Coding Style</h2>
 <ol>
 <li>
@@ -1253,10 +1258,14 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/blogs/english.html</link>
       <guid>https://www.cloaks.cn/blogs/english.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">英语</source>
+      <description> 
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>英语</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="美文摘抄" tabindex="-1"> 美文摘抄</h2>
+      <content:encoded><![CDATA[<p> </p>
+
+<h2 id="美文摘抄" tabindex="-1"> 美文摘抄</h2>
 <ol>
 <li>
 <p>Attitude, not aptitude, determines altitude.</p>
@@ -1345,10 +1354,14 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/blogs/network.html</link>
       <guid>https://www.cloaks.cn/blogs/network.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">计算机网络面试</source>
+      <description> 
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>面试</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="osi七层模型" tabindex="-1"> OSI七层模型</h2>
+      <content:encoded><![CDATA[<p> </p>
+
+<h2 id="osi七层模型" tabindex="-1"> OSI七层模型</h2>
 <h3 id="物理层" tabindex="-1"> 物理层</h3>
 <p>建立、维护、断开物理连接</p>
 <h3 id="数据链路层" tabindex="-1"> 数据链路层</h3>
