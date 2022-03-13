@@ -6,12 +6,13 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 07:14:48 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 07:14:48 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 07:22:10 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 07:22:10 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>力扣</category>
     <category>网络安全</category>
     <category>Nginx</category>
     <category>Linux</category>
@@ -22,8 +23,52 @@
     <category>英语</category>
     <category>心得</category>
     <category>微服务</category>
-    <category>力扣</category>
     <category>面试</category>
+    <item>
+      <title>爬台阶递归算法</title>
+      <link>https://www.cloaks.cn/lintcode/floor.html</link>
+      <guid>https://www.cloaks.cn/lintcode/floor.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">爬台阶递归算法</source>
+      <description>一个基础的递归思想。
+</description>
+      <category>力扣</category>
+      <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>一个基础的递归思想。</p>
+
+<h3 id="算法设计" tabindex="-1"> 算法设计</h3>
+<p>很长时间没有接触递归了，昨天突然遇到思维一下没有转过来😭</p>
+<ol>
+<li>
+<p>n=0 和 n=1 的时候 并没有其他可选择的，所以可以得出f(0)=0;f(1)=1;</p>
+</li>
+<li>
+<p>n&gt;=2时情况就变复杂起来，但是这个时候可以操作的步骤也就2种，也就是走1步(n-1)与走2步(n-2)。所以可以得到f(n)=f(n-1)+f(n-2);从当前状态转为下一状态的通用算法既可。</p>
+</li>
+<li>
+<p>验证，使用2以上的数字验证几次。</p>
+</li>
+</ol>
+<h3 id="算法实现" tabindex="-1"> 算法实现</h3>
+<p>使用递归的方法，本质上是穷举所有可以实现的</p>
+<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
+    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
+    <span>int</span> x <span>=</span> <span>f</span><span>(</span>n<span>-</span><span>1</span><span>)</span><span>+</span><span>f</span><span>(</span>n<span>-</span><span>2</span><span>)</span><span>;</span>
+    <span>return</span> x<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>针对这个问题我使用循环的方法实现了这个过程，这种方法相较于递归效率更高没有冗余计算</p>
+<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
+    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
+    <span>int</span> first<span>=</span><span>1</span><span>,</span>second<span>=</span><span>2</span><span>;</span>
+    <span>int</span> third<span>=</span><span>0</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i<span>=</span><span>3</span><span>;</span>i<span>&lt;=</span>n<span>;</span>i<span>++</span><span>)</span><span>{</span>
+        third <span>=</span> first<span>+</span>second<span>;</span>
+        first <span>=</span> second<span>;</span>
+        second <span>=</span> third<span>;</span>
+    <span>}</span>
+    <span>return</span> third<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>采取纵深防御策略 提升工控系统网络安全</title>
       <link>https://www.cloaks.cn/cyber_security/defense_in_depth_strategies.html</link>
@@ -3231,82 +3276,6 @@ public class ListNode {
     <span>}</span>
 <span>}</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>这是文章的标题</title>
-      <link>https://www.cloaks.cn/lintcode/floor.html</link>
-      <guid>https://www.cloaks.cn/lintcode/floor.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">这是文章的标题</source>
-      <description>icon: page
- 这是文章的标题
-title: 爬台阶递归算法
-date: 2022-03-13
-category: 力扣
-author: Cloaks
- 此页面会在文章列表置顶
-sticky: false
- 此页面会出现在首页的文章收藏板块中
-star: true
-tag:
-
-数据结构
-算法
-
-
-&amp;nbsp
-</description>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[<p>icon: page</p>
-<h1 id="这是文章的标题" tabindex="-1"> 这是文章的标题</h1>
-<p>title: 爬台阶递归算法
-date: 2022-03-13
-category: 力扣
-author: Cloaks</p>
-<h1 id="此页面会在文章列表置顶" tabindex="-1"> 此页面会在文章列表置顶</h1>
-<p>sticky: false</p>
-<h1 id="此页面会出现在首页的文章收藏板块中" tabindex="-1"> 此页面会出现在首页的文章收藏板块中</h1>
-<p>star: true
-tag:</p>
-<ul>
-<li>数据结构</li>
-<li>算法</li>
-</ul>
-<hr>
-<p>&amp;nbsp</p>
-
-<h3 id="算法设计" tabindex="-1"> 算法设计</h3>
-<p>很长时间没有接触递归了，昨天突然遇到思维一下没有转过来😭</p>
-<ol>
-<li>
-<p>n=0 和 n=1 的时候 并没有其他可选择的，所以可以得出f(0)=0;f(1)=1;</p>
-</li>
-<li>
-<p>n&gt;=2时情况就变复杂起来，但是这个时候可以操作的步骤也就2种，也就是走1步(n-1)与走2步(n-2)。所以可以得到f(n)=f(n-1)+f(n-2);从当前状态转为下一状态的通用算法既可。</p>
-</li>
-<li>
-<p>验证，使用2以上的数字验证几次。</p>
-</li>
-</ol>
-<h3 id="算法实现" tabindex="-1"> 算法实现</h3>
-<p>使用递归的方法，本质上是穷举所有可以实现的</p>
-<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
-    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
-    <span>int</span> x <span>=</span> <span>f</span><span>(</span>n<span>-</span><span>1</span><span>)</span><span>+</span><span>f</span><span>(</span>n<span>-</span><span>2</span><span>)</span><span>;</span>
-    <span>return</span> x<span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>针对这个问题我使用循环的方法实现了这个过程，这种方法相较于递归效率更高没有冗余计算</p>
-<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
-    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
-    <span>int</span> first<span>=</span><span>1</span><span>,</span>second<span>=</span><span>2</span><span>;</span>
-    <span>int</span> third<span>=</span><span>0</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i<span>=</span><span>3</span><span>;</span>i<span>&lt;=</span>n<span>;</span>i<span>++</span><span>)</span><span>{</span>
-        third <span>=</span> first<span>+</span>second<span>;</span>
-        first <span>=</span> second<span>;</span>
-        second <span>=</span> third<span>;</span>
-    <span>}</span>
-    <span>return</span> third<span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
