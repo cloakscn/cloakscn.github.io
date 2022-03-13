@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 12:22:01 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 12:22:01 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 12:31:12 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 12:31:12 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -3235,12 +3235,11 @@ class TreeNode:
       <link>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
       <guid>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">反转链表</source>
-      <description>&amp;nbsp
+      <description> 
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[<p>&amp;nbsp</p>
+      <content:encoded><![CDATA[<p> </p>
 
-<h1 id="反转链表" tabindex="-1"> 反转链表</h1>
 <blockquote>
 <p>题号：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca" target="_blank" rel="noopener noreferrer">200<ExternalLinkIcon/></a><br>
 描述：给定一个单链表的头结点pHead，长度为n，反转该链表后，返回新链表的表头。数据范围： n&lt;=1000<br>
