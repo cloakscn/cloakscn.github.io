@@ -3,9 +3,13 @@ home: true
 layout: Blog
 icon: alias
 title: 博客主页
-heroImage: /logo.svg
-heroText: Cloaks
 tagline: 热爱技术，乐于分享！
+bgImage: "https://www.mlvlog.com/wp-content/uploads/2020/08/PrwnaHS4_83514166_p0_master1200.jpg"
+# bgImageStyle: { 
+#     "background-size" : "cover",
+#     "background-position" : "center"
+# }
+heroText: Cloaks
 heroFullScreen: false
 # project:
 #   - type: project

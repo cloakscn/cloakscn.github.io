@@ -13,8 +13,9 @@ export default defineThemeConfig({
   iconPrefix: "iconfont icon-",
 
   logo: "/logo.svg",
-  pure: true,
-  repo: "https://github.com/cloakscn/cloakscn.github.io",
+  // pure: true,
+
+  repo: "https://github.com/cloakscn/",
   repoLabel: "GitHub",
   repoDisplay: true,
   
@@ -93,6 +94,7 @@ export default defineThemeConfig({
       blog: {
         description: "迎着风，往前冲",
         intro: "/intro.html",
+        avatar: "/avatar.png"
       },
 
       // page meta

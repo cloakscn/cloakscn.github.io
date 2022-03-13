@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 04:09:22 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 04:09:22 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 06:35:17 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 06:35:17 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -1583,13 +1583,21 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/lintcode/fibonacci.html</link>
       <guid>https://www.cloaks.cn/lintcode/fibonacci.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">斐波那契数列</source>
+      <description>
+题号：366
+描述：查找斐波纳契数列中第 N 个数。
+
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>题号：<a href="https://www.lintcode.com/problem/366/" target="_blank" rel="noopener noreferrer">366<ExternalLinkIcon/></a><br>
-描述：查找斐波纳契数列中第 N 个数。<br>
-所谓的斐波纳契数列是指：<br>
+描述：查找斐波纳契数列中第 N 个数。</p>
+</blockquote>
+
+<blockquote>
+<p>所谓的斐波纳契数列是指：<br>
 前2个数是 0 和 1 。<br>
 第 i 个数是第 i-1 个数和第i-2 个数的和。<br>
 斐波纳契数列的前10个数字是：<br>
@@ -1645,6 +1653,12 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/lintcode/longestPalindrome.html</link>
       <guid>https://www.cloaks.cn/lintcode/longestPalindrome.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">最长回文子串</source>
+      <description>
+题号：200
+描述：给出一个字符串（假设长度最长为1000），求出它的最长回文子串，你可以假定只有一个满足条件的最长回文串。
+挑战：时间复杂度可为O(n2)，你能将其优化为O(n)吗
+
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
@@ -1653,6 +1667,7 @@ acquiring 获得</p>
 描述：给出一个字符串（假设长度最长为1000），求出它的最长回文子串，你可以假定只有一个满足条件的最长回文串。<br>
 挑战：时间复杂度可为O(n2)，你能将其优化为O(n)吗</p>
 </blockquote>
+
 <h2 id="使用时间复杂度为o-n-3-的算法" tabindex="-1"> 使用时间复杂度为O(n^3)的算法</h2>
 <p>java 实现</p>
 <div><pre><code><span>class</span> <span>Solution</span> <span>{</span>
@@ -1769,14 +1784,18 @@ acquiring 获得</p>
 </code></pre><div aria-hidden="true"><span>1</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>LRU 算法 &amp;&amp; 爬台阶递归算法</title>
-      <link>https://www.cloaks.cn/lintcode/LRU.html</link>
-      <guid>https://www.cloaks.cn/lintcode/LRU.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">LRU 算法 &amp;&amp; 爬台阶递归算法</source>
+      <title>LRU 算法</title>
+      <link>https://www.cloaks.cn/lintcode/lru.html</link>
+      <guid>https://www.cloaks.cn/lintcode/lru.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">LRU 算法</source>
+      <description>&amp;nbsp
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
+      <content:encoded><![CDATA[<p>&amp;nbsp</p>
+
+<blockquote>
 <p>题号：<a href="https://www.lintcode.com/problem/134/" target="_blank" rel="noopener noreferrer">134<ExternalLinkIcon/></a><br>
 描述：为最近最少使用（LRU）缓存策略设计一个数据结构，它应该支持以下操作：获取数据和写入数据。</p>
 <ul>
@@ -1920,40 +1939,7 @@ cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <s
         <span>}</span>
     <span>}</span>
 <span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><h2 id="爬台阶递归算法" tabindex="-1"> 爬台阶递归算法</h2>
-<h3 id="算法设计-1" tabindex="-1"> 算法设计</h3>
-<p>很长时间没有接触递归了，昨天突然遇到思维一下没有转过来😭</p>
-<ol>
-<li>
-<p>n=0 和 n=1 的时候 并没有其他可选择的，所以可以得出f(0)=0;f(1)=1;</p>
-</li>
-<li>
-<p>n&gt;=2时情况就变复杂起来，但是这个时候可以操作的步骤也就2种，也就是走1步(n-1)与走2步(n-2)。所以可以得到f(n)=f(n-1)+f(n-2);从当前状态转为下一状态的通用算法既可。</p>
-</li>
-<li>
-<p>验证，使用2以上的数字验证几次。</p>
-</li>
-</ol>
-<h3 id="算法实现-1" tabindex="-1"> 算法实现</h3>
-<p>使用递归的方法，本质上是穷举所有可以实现的</p>
-<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
-    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
-    <span>int</span> x <span>=</span> <span>f</span><span>(</span>n<span>-</span><span>1</span><span>)</span><span>+</span><span>f</span><span>(</span>n<span>-</span><span>2</span><span>)</span><span>;</span>
-    <span>return</span> x<span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>针对这个问题我使用循环的方法实现了这个过程，这种方法相较于递归效率更高没有冗余计算</p>
-<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
-    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
-    <span>int</span> first<span>=</span><span>1</span><span>,</span>second<span>=</span><span>2</span><span>;</span>
-    <span>int</span> third<span>=</span><span>0</span><span>;</span>
-    <span>for</span><span>(</span><span>int</span> i<span>=</span><span>3</span><span>;</span>i<span>&lt;=</span>n<span>;</span>i<span>++</span><span>)</span><span>{</span>
-        third <span>=</span> first<span>+</span>second<span>;</span>
-        first <span>=</span> second<span>;</span>
-        second <span>=</span> third<span>;</span>
-    <span>}</span>
-    <span>return</span> third<span>;</span>
-<span>}</span>
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div>]]></content:encoded>
       <enclosure url="https://gitee.com/biliit/pic-go/raw/master/202201131455479.png" type="image/png"/>
     </item>
     <item>
@@ -1961,10 +1947,14 @@ cache<span>.</span><span>set</span><span>(</span><span>1</span><span>,</span> <s
       <link>https://www.cloaks.cn/lintcode/search.html</link>
       <guid>https://www.cloaks.cn/lintcode/search.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">查询</source>
+      <description> 
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="二分查找" tabindex="-1"> 二分查找</h2>
+      <content:encoded><![CDATA[<p> </p>
+
+<h2 id="二分查找" tabindex="-1"> 二分查找</h2>
 <blockquote>
 <p>时间复杂度 <code>O(log^n)</code></p>
 </blockquote>
@@ -2624,6 +2614,11 @@ class TreeNode:
       <link>https://www.cloaks.cn/lintcode/sortIntegers.html</link>
       <guid>https://www.cloaks.cn/lintcode/sortIntegers.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">排序算法</source>
+      <description>
+题号：463
+描述：给一组整数，按照升序排序，使用选择排序，冒泡排序，插入排序或者任何 O(n2) 的排序算法。
+
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
@@ -2631,6 +2626,7 @@ class TreeNode:
 <p>题号：<a href="https://www.lintcode.com/problem/463/" target="_blank" rel="noopener noreferrer">463<ExternalLinkIcon/></a><br>
 描述：给一组整数，按照升序排序，使用选择排序，冒泡排序，插入排序或者任何 O(n2) 的排序算法。</p>
 </blockquote>
+
 <h2 id="选择排序" tabindex="-1"> 选择排序</h2>
 <p>python</p>
 <div><pre><code><span>class</span> <span>Solution</span><span>:</span>
@@ -2717,10 +2713,14 @@ class TreeNode:
       <link>https://www.cloaks.cn/lintcode/twoPoint.html</link>
       <guid>https://www.cloaks.cn/lintcode/twoPoint.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">双指针算法</source>
+      <description> 
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>力扣</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="valid-palindrome" tabindex="-1"> Valid Palindrome</h2>
+      <content:encoded><![CDATA[<p> </p>
+
+<h2 id="valid-palindrome" tabindex="-1"> Valid Palindrome</h2>
 <blockquote>
 <p>题号：<a href="https://www.lintcode.com/problem/415/" target="_blank" rel="noopener noreferrer">415<ExternalLinkIcon/></a><br>
 描述：给定一个字符串，判断其是否为一个回文串。只考虑字母和数字，忽略大小写。<br>
@@ -3007,25 +3007,13 @@ class TreeNode:
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>Cloaks</title>
+      <title>关于我</title>
       <link>https://www.cloaks.cn/intro.html</link>
       <guid>https://www.cloaks.cn/intro.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">Cloaks</source>
+      <source url="https://www.cloaks.cn/rss.xml">关于我</source>
       <author>wy03290019@163.com (Cloaks)</author>
       <content:encoded><![CDATA[
 <p><img src="https://s.cn.bing.net/th?id=OHR.SpringForward_ZH-CN6154174266_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;w=3840&amp;h=2160&amp;c=8&amp;rs=1&amp;o=3&amp;r=0" alt=""></p>
-<p>君不见黄河之水天上来，奔流到海不复回。</p>
-<p>君不见高堂明镜悲白发，朝如青丝暮成雪。</p>
-<p>人生得意须尽欢，莫使金樽空对月。</p>
-<p>天生我材必有用，千金散尽还复来。</p>
-<p>烹羊宰牛且为乐，会须一饮三百杯。</p>
-<p>岑夫子，丹丘生，将进酒，杯莫停。</p>
-<p>与君歌一曲，请君为我倾耳听。</p>
-<p>钟鼓馔玉不足贵，但愿长醉不复醒。</p>
-<p>古来圣贤皆寂寞，惟有饮者留其名。</p>
-<p>陈王昔时宴平乐，斗酒十千恣欢谑。</p>
-<p>主人何为言少钱，径须沽取对君酌。</p>
-<p>五花马、千金裘，呼儿将出换美酒，与尔同销万古愁。</p>
 ]]></content:encoded>
       <enclosure url="https://s.cn.bing.net/th?id=OHR.SpringForward_ZH-CN6154174266_UHD.jpg&rf=LaDigue_UHD.jpg&w=3840&h=2160&c=8&rs=1&o=3&r=0" type="image/"/>
     </item>
@@ -3034,8 +3022,12 @@ class TreeNode:
       <link>https://www.cloaks.cn/dataStrcture/%E9%93%BE%E8%A1%A8.html</link>
       <guid>https://www.cloaks.cn/dataStrcture/%E9%93%BE%E8%A1%A8.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">链表</source>
+      <description> 
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[<h1 id="链表" tabindex="-1"> 链表</h1>
+      <content:encoded><![CDATA[<p> </p>
+
+<h1 id="链表" tabindex="-1"> 链表</h1>
 <p>优点：真正的动态，不需要处理固定容量的问题</p>
 <p>缺点：丧失了随机访问的能力</p>
 <h2 id="数据结构" tabindex="-1"> 数据结构</h2>
@@ -3165,12 +3157,92 @@ class TreeNode:
 ]]></content:encoded>
     </item>
     <item>
+      <title>这是文章的标题</title>
+      <link>https://www.cloaks.cn/lintcode/floor.html</link>
+      <guid>https://www.cloaks.cn/lintcode/floor.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">这是文章的标题</source>
+      <description>icon: page
+ 这是文章的标题
+title: 爬台阶递归算法
+date: 2022-03-13
+category: 力扣
+author: Cloaks
+ 此页面会在文章列表置顶
+sticky: false
+ 此页面会出现在首页的文章收藏板块中
+star: true
+tag:
+
+数据结构
+算法
+
+
+&amp;nbsp
+</description>
+      <author>wy03290019@163.com (Cloaks)</author>
+      <content:encoded><![CDATA[<p>icon: page</p>
+<h1 id="这是文章的标题" tabindex="-1"> 这是文章的标题</h1>
+<p>title: 爬台阶递归算法
+date: 2022-03-13
+category: 力扣
+author: Cloaks</p>
+<h1 id="此页面会在文章列表置顶" tabindex="-1"> 此页面会在文章列表置顶</h1>
+<p>sticky: false</p>
+<h1 id="此页面会出现在首页的文章收藏板块中" tabindex="-1"> 此页面会出现在首页的文章收藏板块中</h1>
+<p>star: true
+tag:</p>
+<ul>
+<li>数据结构</li>
+<li>算法</li>
+</ul>
+<hr>
+<p>&amp;nbsp</p>
+
+<h3 id="算法设计" tabindex="-1"> 算法设计</h3>
+<p>很长时间没有接触递归了，昨天突然遇到思维一下没有转过来😭</p>
+<ol>
+<li>
+<p>n=0 和 n=1 的时候 并没有其他可选择的，所以可以得出f(0)=0;f(1)=1;</p>
+</li>
+<li>
+<p>n&gt;=2时情况就变复杂起来，但是这个时候可以操作的步骤也就2种，也就是走1步(n-1)与走2步(n-2)。所以可以得到f(n)=f(n-1)+f(n-2);从当前状态转为下一状态的通用算法既可。</p>
+</li>
+<li>
+<p>验证，使用2以上的数字验证几次。</p>
+</li>
+</ol>
+<h3 id="算法实现" tabindex="-1"> 算法实现</h3>
+<p>使用递归的方法，本质上是穷举所有可以实现的</p>
+<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
+    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
+    <span>int</span> x <span>=</span> <span>f</span><span>(</span>n<span>-</span><span>1</span><span>)</span><span>+</span><span>f</span><span>(</span>n<span>-</span><span>2</span><span>)</span><span>;</span>
+    <span>return</span> x<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>针对这个问题我使用循环的方法实现了这个过程，这种方法相较于递归效率更高没有冗余计算</p>
+<div><pre><code><span>public</span> <span>static</span> <span>int</span> <span>f</span><span>(</span><span>int</span> n<span>)</span><span>{</span>
+    <span>if</span><span>(</span>n<span>&lt;=</span><span>2</span><span>)</span> <span>return</span> n<span>;</span>
+    <span>int</span> first<span>=</span><span>1</span><span>,</span>second<span>=</span><span>2</span><span>;</span>
+    <span>int</span> third<span>=</span><span>0</span><span>;</span>
+    <span>for</span><span>(</span><span>int</span> i<span>=</span><span>3</span><span>;</span>i<span>&lt;=</span>n<span>;</span>i<span>++</span><span>)</span><span>{</span>
+        third <span>=</span> first<span>+</span>second<span>;</span>
+        first <span>=</span> second<span>;</span>
+        second <span>=</span> third<span>;</span>
+    <span>}</span>
+    <span>return</span> third<span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>反转链表</title>
       <link>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
       <guid>https://www.cloaks.cn/nowcoder/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">反转链表</source>
+      <description>&amp;nbsp
+</description>
       <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[<h1 id="反转链表" tabindex="-1"> 反转链表</h1>
+      <content:encoded><![CDATA[<p>&amp;nbsp</p>
+
+<h1 id="反转链表" tabindex="-1"> 反转链表</h1>
 <blockquote>
 <p>题号：<a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca" target="_blank" rel="noopener noreferrer">200<ExternalLinkIcon/></a><br>
 描述：给定一个单链表的头结点pHead，长度为n，反转该链表后，返回新链表的表头。数据范围： n&lt;=1000<br>
@@ -3203,17 +3275,6 @@ public class ListNode {
     <span>}</span>
 <span>}</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title></title>
-      <link>https://www.cloaks.cn/reference/</link>
-      <guid>https://www.cloaks.cn/reference/</guid>
-      <source url="https://www.cloaks.cn/rss.xml"></source>
-      <description>
-</description>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <content:encoded><![CDATA[<div style="height:200px; width:100%; background:url(https://img.tt98.com/d/file/96kaifa/201906251420141/006.jpg) no-repeat scroll top center; background-size:cover"></div>
-]]></content:encoded>
     </item>
   </channel>
 </rss>

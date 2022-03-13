@@ -1,0 +1,1 @@
+import{_ as e,o as t,a as r,b as n}from"./app.fa35cf7f.js";const o={},s=n("img",{src:"https://s.cn.bing.net/th?id=OHR.SpringForward_ZH-CN6154174266_UHD.jpg&rf=LaDigue_UHD.jpg&w=3840&h=2160&c=8&rs=1&o=3&r=0",alt:""},null,-1),c=[s];function _(a,i){return t(),r("p",null,c)}var p=e(o,[["render",_]]);export{p as default};
