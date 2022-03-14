@@ -65,8 +65,16 @@ export const zh = defineSidebarConfig({
       text: "Linux",
       icon: "folder",
       collapsable: true,
-      prefix: "linux/centos/",
-      children: ["firewalld"],
+      prefix: "linux/",
+      children: [
+        "base",
+        {
+          text: "CentOS",
+          icon: "note",
+          prefix: "centos/",
+          collapsable: true,
+          children: ["firewalld"],
+        }],
     },
     // {
     //   text: "文章",
