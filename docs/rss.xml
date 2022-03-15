@@ -6,16 +6,16 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 13 Mar 2022 13:28:24 GMT</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 13:28:24 GMT</lastBuildDate>
+    <pubDate>Tue, 15 Mar 2022 14:33:35 GMT</pubDate>
+    <lastBuildDate>Tue, 15 Mar 2022 14:33:35 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>Linux</category>
     <category>力扣</category>
     <category>网络安全</category>
     <category>Nginx</category>
-    <category>Linux</category>
     <category>Java 基础</category>
     <category>网络</category>
     <category>参考</category>
@@ -24,6 +24,39 @@
     <category>心得</category>
     <category>微服务</category>
     <category>面试</category>
+    <item>
+      <title>Linux 基础命令</title>
+      <link>https://www.cloaks.cn/reference/linux/base.html</link>
+      <guid>https://www.cloaks.cn/reference/linux/base.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">Linux 基础命令</source>
+      <description>Linux 命令与工具。
+</description>
+      <category>Linux</category>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Linux 命令与工具。</p>
+
+<h2 id="用户与用户组管理" tabindex="-1"> 用户与用户组管理</h2>
+<p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。</p>
+<p>每个用户账号都拥有一个唯一的用户名和各自的口令。</p>
+<p>用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。</p>
+<p>实现用户账号的管理，要完成的工作主要有如下几个方面：</p>
+<ul>
+<li>用户账号的添加、删除与修改。</li>
+<li>用户口令的管理。</li>
+<li>用户组的管理。</li>
+</ul>
+<blockquote>
+<p>参考文章：<a href="https://www.runoob.com/linux/linux-user-manage.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/linux/linux-user-manage.html<ExternalLinkIcon/></a></p>
+</blockquote>
+<h2 id="文件管理" tabindex="-1"> 文件管理</h2>
+<h2 id="存储管理" tabindex="-1"> 存储管理</h2>
+<h2 id="进程管理" tabindex="-1"> 进程管理</h2>
+<h2 id="服务管理" tabindex="-1"> 服务管理</h2>
+<h2 id="软件包管理" tabindex="-1"> 软件包管理</h2>
+<h2 id="文本编辑器" tabindex="-1"> 文本编辑器</h2>
+]]></content:encoded>
+    </item>
     <item>
       <title>爬台阶递归算法</title>
       <link>https://www.cloaks.cn/lintcode/floor.html</link>
