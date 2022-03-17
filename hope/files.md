@@ -11,6 +11,7 @@ lastUpdated: false
 editLink: false
 contributors: false
 toc: false
+comment: false
 ---
 
 <div style="width: 100%; overflow: hidden">

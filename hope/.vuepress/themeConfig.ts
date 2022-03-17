@@ -127,12 +127,11 @@ export default defineThemeConfig({
     },
   },
 
-  // encrypt: {
-  //   config: {
-  //     "/guide/encrypt.html": ["1234"],
-  //     "/zh/guide/encrypt.html": ["1234"],
-  //   },
-  // },
+  encrypt: {
+    config: {
+      "/files.html": ["cloaks.cn"],
+    },
+  },
 
   plugins: {
 
