@@ -15,5 +15,5 @@ comment: false
 ---
 
 <div style="width: 100%; overflow: hidden">
-<iframe src="https://files.cloaks.cn" frameborder="0" width="102%" height="500px"></iframe>
+<iframe src="https://files.cloaks.cn" frameborder="0" width="105%" height="500px"></iframe>
 </div>
