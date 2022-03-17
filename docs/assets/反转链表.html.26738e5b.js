@@ -1,0 +1,24 @@
+import{_ as e,r as p,o as t,a as c,b as n,d as l,F as o,f as s,e as r}from"./app.db225c6e.js";const u={},i=n("p",null,"\xA0",-1),d=s("\u9898\u53F7\uFF1A"),b={href:"https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca",target:"_blank",rel:"noopener noreferrer"},k=s("200"),m=n("br",null,null,-1),_=s(" \u63CF\u8FF0\uFF1A\u7ED9\u5B9A\u4E00\u4E2A\u5355\u94FE\u8868\u7684\u5934\u7ED3\u70B9pHead\uFF0C\u957F\u5EA6\u4E3An\uFF0C\u53CD\u8F6C\u8BE5\u94FE\u8868\u540E\uFF0C\u8FD4\u56DE\u65B0\u94FE\u8868\u7684\u8868\u5934\u3002\u6570\u636E\u8303\u56F4\uFF1A n<=1000"),h=n("br",null,null,-1),x=s(" \u8981\u6C42\uFF1A\u7A7A\u95F4\u590D\u6742\u5EA6 O(1)O(1) \uFF0C\u65F6\u95F4\u590D\u6742\u5EA6 O(n)O(n) \u3002\u5982\u5F53\u8F93\u5165\u94FE\u8868{1,2,3}\u65F6\uFF0C\u7ECF\u53CD\u8F6C\u540E\uFF0C\u539F\u94FE\u8868\u53D8\u4E3A{3,2,1}\uFF0C\u6240\u4EE5\u5BF9\u5E94\u7684\u8F93\u51FA\u4E3A{3,2,1}\u3002"),f=r(`<h3 id="\u89E3\u9898\u601D\u8DEF" tabindex="-1"><a class="header-anchor" href="#\u89E3\u9898\u601D\u8DEF" aria-hidden="true">#</a> \u89E3\u9898\u601D\u8DEF</h3><p>\u5B98\u65B9\u7ED9\u7684\u7B2C\u4E8C\u79CD\u89E3\u6CD5\u5F88\u4E0D\u9519\uFF0C\u5927\u6982\u610F\u8BC6\u4ECE\u5934\u7ED3\u70B9\u5F00\u59CB\u628A\u6BCF\u4E00\u4E2A\u7ED3\u70B9\u7528\u5934\u63D2\u6CD5\u7684\u65B9\u5F0F\u63D2\u5165\u7A7A\u6307\u9488pre\u4E2D\uFF0C\u8FD9\u4E2A\u53CD\u5411\u6307\u9488\u7684\u8BF4\u6CD5\u8FD8\u662F\u4E0D\u597D\u7406\u89E3\u7684\u3002</p><h3 id="\u7B97\u6CD5\u5B9E\u73B0" tabindex="-1"><a class="header-anchor" href="#\u7B97\u6CD5\u5B9E\u73B0" aria-hidden="true">#</a> \u7B97\u6CD5\u5B9E\u73B0</h3><div class="language-java ext-java line-numbers-mode"><pre class="language-java"><code><span class="token comment">/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token class-name">ListNode</span> <span class="token class-name">ReverseList</span><span class="token punctuation">(</span><span class="token class-name">ListNode</span> head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">ListNode</span> pre <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token class-name">ListNode</span> next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+            cur<span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+            pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> next<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div>`,4);function v(w,N){const a=p("ExternalLinkIcon");return t(),c(o,null,[i,n("blockquote",null,[n("p",null,[d,n("a",b,[k,l(a)]),m,_,h,x])]),f],64)}var y=e(u,[["render",v]]);export{y as default};
