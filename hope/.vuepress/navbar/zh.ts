@@ -13,7 +13,7 @@ export const zh = defineNavbarConfig([
     {
       text: "私有源",
       icon: "snow",
-      link: "https://mirrors.cloaks.cn/"
+      link: "/files"
     }
   ]},
   {

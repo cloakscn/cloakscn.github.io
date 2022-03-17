@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 15 Mar 2022 14:33:35 GMT</pubDate>
-    <lastBuildDate>Tue, 15 Mar 2022 14:33:35 GMT</lastBuildDate>
+    <pubDate>Thu, 17 Mar 2022 05:23:18 GMT</pubDate>
+    <lastBuildDate>Thu, 17 Mar 2022 05:23:18 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -1634,8 +1634,8 @@ acquiring 获得</p>
     </item>
     <item>
       <title>LRU 算法</title>
-      <link>https://www.cloaks.cn/lintcode/lru.html</link>
-      <guid>https://www.cloaks.cn/lintcode/lru.html</guid>
+      <link>https://www.cloaks.cn/lintcode/LRU.html</link>
+      <guid>https://www.cloaks.cn/lintcode/LRU.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">LRU 算法</source>
       <description>&amp;nbsp
 </description>
