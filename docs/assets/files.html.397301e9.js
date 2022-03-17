@@ -1,0 +1,1 @@
+import{_ as e,o as t,a as s,b as o}from"./app.9a3bc5e3.js";const r={},c={style:{width:"100%",overflow:"hidden"}},a=o("iframe",{src:"https://files.cloaks.cn",frameborder:"0",width:"102%",height:"500px"},null,-1),_=[a];function n(i,d){return t(),s("div",c,_)}var f=e(r,[["render",n]]);export{f as default};
