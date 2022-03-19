@@ -11,16 +11,16 @@ bgImage: "https://www.mlvlog.com/wp-content/uploads/2020/08/PrwnaHS4_83514166_p0
 # }
 heroText: Cloaks
 heroFullScreen: false
-# project:
+projects:
 #   - type: project
 #     name: 项目名称
 #     desc: 项目详细描述
 #     link: https://你的项目链接
 
-#   - type: link
-#     name: 链接名称
-#     desc: 链接详细描述
-#     link: https://链接地址
+  - type: link
+    name: 树莓派
+    desc: Raspberry Pi 中文资讯站
+    link: https://shumeipai.nxez.com/
 
 #   - type: book
 #     name: 书籍名称

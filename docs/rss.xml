@@ -6,12 +6,13 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 17 Mar 2022 15:04:45 GMT</pubDate>
-    <lastBuildDate>Thu, 17 Mar 2022 15:04:45 GMT</lastBuildDate>
+    <pubDate>Sat, 19 Mar 2022 05:03:08 GMT</pubDate>
+    <lastBuildDate>Sat, 19 Mar 2022 05:03:08 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>微服务</category>
     <category>Linux</category>
     <category>力扣</category>
     <category>网络安全</category>
@@ -22,8 +23,62 @@
     <category>问题总结</category>
     <category>英语</category>
     <category>心得</category>
-    <category>微服务</category>
     <category>面试</category>
+    <item>
+      <title>Docker 常用服务安装</title>
+      <link>https://www.cloaks.cn/reference/docker.html</link>
+      <guid>https://www.cloaks.cn/reference/docker.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">Docker 常用服务安装</source>
+      <description>Docker 常用服务安装
+</description>
+      <category>微服务</category>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Docker 常用服务安装</p>
+
+<h2 id="脚本" tabindex="-1"> 脚本</h2>
+<div><pre><code><span># Mysql</span>
+<span>docker</span> run --name mysql -v /opt/data/mysql:/var/lib/mysql -p <span>3306</span>:3306 -e <span>MYSQL_ROOT_PASSWORD</span><span>=</span>Ycu061036 -d mysql:5.7.37
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># redis</span>
+<span>docker</span> run --name redis -p <span>6379</span>:6379 -d redis
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># rabbitmq</span>
+<span>docker</span> run -d --hostname my-rabbit --name rabbit -p <span>15672</span>:15672 -p <span>5672</span>:5672 rabbitmq:3.6.10-management
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># zookeeper</span>
+<span>docker</span> run --name zookeeper -v /opt/data/zksingle:/data -p <span>2181</span>:2181 -e <span>ZOO_LOG4J_PRPO</span><span>=</span><span>"INFO,ROLLINGFILE"</span> -d zookeeper:3.4.13
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># jenkins</span>
+<span>docker</span> run   --name jenkins-blueocean   -d   -p <span>8080</span>:8080   -p <span>50000</span>:50000   -v jenkins-data:/opt/data/jenkins_home   jenkinsci/blueocean
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><h2 id="gitlab-服务端搭建" tabindex="-1"> Gitlab 服务端搭建</h2>
+<p><strong>下载 Gitlab Docker 镜像</strong></p>
+<div><pre><code><span>docker</span> pull gitlab/gitlab-ce
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p><strong>运行如下命令来启动 Gitlab</strong></p>
+<p>需要注意的是我们的 Gitlab 的 http 服务运行在宿主机的 <code>1080</code> 端口上，这里我们将 Gitlab 的配置，日志以及数据目录映射到了宿主机的指定文件夹下，防止我们在重新创建容器后丢失数据。</p>
+<div><pre><code><span>docker</span> run --detach <span>\</span>
+  --publish <span>10443</span>:443 --publish <span>1080</span>:80 --publish <span>1022</span>:22 <span>\</span>
+  --name gitlab <span>\</span>
+  --restart always <span>\</span>
+  --volume /root/gitlab/config:/etc/gitlab <span>\</span>
+  --volume /root/gitlab/logs:/var/log/gitlab <span>\</span>
+  --volume /root/gitlab/data:/var/opt/gitlab <span>\</span>
+  gitlab/gitlab-ce:latest
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p><strong>开启防火墙指定端口</strong></p>
+<p>由于 Gitlab 运行在 1080 端口上，所以我们需要开放该端口，注意千万不要直接关闭防火墙，否则 Gitlab 会无法启动。</p>
+<h2 id="webdav-部署" tabindex="-1"> WebDav 部署</h2>
+<p><strong>下载 WebDav 镜像</strong></p>
+<div><pre><code><span>docker</span> pull bytemark/webdav
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p><strong>运行如下命令来启动 WebDav</strong></p>
+<ol>
+<li>部署基础的 WebDav 服务</li>
+</ol>
+<p>This example starts a WebDAV server on port 80. It can only be accessed with a single username and password.</p>
+<p>When using unencrypted HTTP, use <code>Digest</code> authentication (instead of <code>Basic</code>) to avoid sending plaintext passwords in the clear.</p>
+<p>To make sure your data doesn't get deleted, you'll probably want to create a persistent storage volume (<code>-v vol-webdav:/var/lib/dav</code>) or bind mount a directory (<code>-v /path/to/directory:/var/lib/dav</code>):</p>
+<div><pre><code><span>docker</span> run --restart always -v /srv/dav:/var/lib/dav <span>\</span>
+    -e <span>AUTH_TYPE</span><span>=</span>Digest -e <span>USERNAME</span><span>=</span>admin -e <span>PASSWORD</span><span>=</span>admin <span>\</span>
+    --publish <span>80</span>:80 -d bytemark/webdav
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><ol start="2">
+<li>部署基于 SLL 的 WebDav 服务</li>
+</ol>
+]]></content:encoded>
+    </item>
     <item>
       <title>Linux 基础命令</title>
       <link>https://www.cloaks.cn/reference/linux/base.html</link>
@@ -1305,31 +1360,6 @@ acquiring 获得</p>
 </li>
 </ol>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>https://www.cloaks.cn/blogs/docker.html</link>
-      <guid>https://www.cloaks.cn/blogs/docker.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">Docker</source>
-      <description>Docker 容器化部署
-</description>
-      <author>wy03290019@163.com (Cloaks)</author>
-      <category>微服务</category>
-      <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>Docker 容器化部署</p>
-
-<h2 id="脚本" tabindex="-1"> 脚本</h2>
-<div><pre><code><span># Mysql</span>
-<span>docker</span> run --name mysql -v /opt/data/mysql:/var/lib/mysql -p <span>3306</span>:3306 -e <span>MYSQL_ROOT_PASSWORD</span><span>=</span>Ycu061036 -d mysql:5.7.37
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># redis</span>
-<span>docker</span> run --name redis -p <span>6379</span>:6379 -d redis
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># rabbitmq</span>
-<span>docker</span> run -d --hostname my-rabbit --name rabbit -p <span>15672</span>:15672 -p <span>5672</span>:5672 rabbitmq:3.6.10-management
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># zookeeper</span>
-<span>docker</span> run --name zookeeper -v /opt/data/zksingle:/data -p <span>2181</span>:2181 -e <span>ZOO_LOG4J_PRPO</span><span>=</span><span>"INFO,ROLLINGFILE"</span> -d zookeeper:3.4.13
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><div><pre><code><span># jenkins</span>
-<span>docker</span> run   --name jenkins-blueocean   -d   -p <span>8080</span>:8080   -p <span>50000</span>:50000   -v jenkins-data:/opt/data/jenkins_home   jenkinsci/blueocean
-</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>英语</title>
