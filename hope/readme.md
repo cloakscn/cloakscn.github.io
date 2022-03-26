@@ -4,18 +4,14 @@ layout: Blog
 icon: alias
 title: 博客主页
 tagline: 热爱技术，乐于分享！
-bgImage: "https://www.mlvlog.com/wp-content/uploads/2020/08/PrwnaHS4_83514166_p0_master1200.jpg"
-# bgImageStyle: { 
-#     "background-size" : "cover",
-#     "background-position" : "center"
-# }
+bgImage: /bgImage/bgImage2.jpg
 heroText: Cloaks
 heroFullScreen: false
 projects:
-#   - type: project
-#     name: 项目名称
-#     desc: 项目详细描述
-#     link: https://你的项目链接
+  - type: link
+    name: 菜鸟教程
+    desc: 学的不仅是技术
+    link: https://runoob.com
 
   - type: link
     name: 树莓派
