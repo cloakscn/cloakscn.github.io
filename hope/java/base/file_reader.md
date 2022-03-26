@@ -10,7 +10,7 @@ sticky: false
 star: true
 tag:
   - Java
-  - Regex
+  - File
 ---
 
 在 java 中有很多读取文本文件的方法。文本文件由字符组成，因此可以使用 Reader 类。在 java 中读取文本文件也有一些实用程序类。
