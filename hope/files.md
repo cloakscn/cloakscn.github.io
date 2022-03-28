@@ -15,5 +15,5 @@ comment: false
 ---
 
 <div style="width: 100%; overflow: hidden">
-<iframe src="https://mirrors.cloaks.cn" frameborder="0" width="105%" height="500px"></iframe>
+<iframe src="http://www.itycu.cn:8082" frameborder="0" width="105%" height="500px"></iframe>
 </div>

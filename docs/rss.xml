@@ -6,24 +6,184 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 26 Mar 2022 14:30:04 GMT</pubDate>
-    <lastBuildDate>Sat, 26 Mar 2022 14:30:04 GMT</lastBuildDate>
+    <pubDate>Mon, 28 Mar 2022 13:08:40 GMT</pubDate>
+    <lastBuildDate>Mon, 28 Mar 2022 13:08:40 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>Java 基础</category>
     <category>微服务</category>
     <category>Linux</category>
     <category>力扣</category>
     <category>网络安全</category>
     <category>Nginx</category>
-    <category>Java 基础</category>
     <category>网络</category>
     <category>参考</category>
     <category>问题总结</category>
     <category>英语</category>
     <category>心得</category>
     <category>面试</category>
+    <item>
+      <title>Java 解析 JSON 的四种方式</title>
+      <link>https://www.cloaks.cn/java/base/parse_json.html</link>
+      <guid>https://www.cloaks.cn/java/base/parse_json.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">Java 解析 JSON 的四种方式</source>
+      <description>JSON是一种轻量级的数据交换格式，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于阅读和编写，同时也易于解析和生成，并有效地提升网络传输效率。
+</description>
+      <category>Java 基础</category>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>JSON是一种轻量级的数据交换格式，采用完全独立于编程语言的文本格式来存储和表示数据。简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。 易于阅读和编写，同时也易于解析和生成，并有效地提升网络传输效率。</p>
+
+<p>一个实体类：用于与JSON数据进行相互转换</p>
+<div><pre><code><span>public</span> <span>class</span> <span>Person</span> <span>{</span>
+    <span>private</span> <span>String</span> name<span>;</span>
+    <span>private</span> <span>String</span> sex<span>;</span>
+    <span>private</span> <span>int</span> age<span>;</span>
+    <span>public</span> <span>Person</span><span>(</span><span>String</span> name<span>,</span> <span>String</span> sex<span>,</span> <span>int</span> age<span>)</span> <span>{</span>
+        <span>this</span><span>.</span>name <span>=</span> name<span>;</span>
+        <span>this</span><span>.</span>sex <span>=</span> sex<span>;</span>
+        <span>this</span><span>.</span>age <span>=</span> age<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>String</span> <span>getName</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> name<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>String</span> <span>getSex</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> sex<span>;</span>
+    <span>}</span>
+    <span>public</span> <span>int</span> <span>getAge</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> age<span>;</span>
+    <span>}</span>
+    <span>@Override</span>
+    <span>public</span> <span>String</span> <span>toString</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> <span>"Person{name='"</span> <span>+</span> name <span>+</span> <span>'\''</span> <span>+</span> <span>", sex='"</span> <span>+</span> sex <span>+</span> <span>'\''</span> <span>+</span> <span>", age="</span> <span>+</span> age <span>+</span> <span>'}'</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><h2 id="传统写法" tabindex="-1"> 传统写法</h2>
+<p>有实体类生成 json 字符串</p>
+<div><pre><code><span>public</span> <span>Person</span> <span>getPerson</span><span>(</span><span>)</span><span>{</span>
+    <span>return</span> <span>new</span> <span>Person</span><span>(</span><span>"张三"</span><span>,</span> <span>"男"</span><span>,</span> <span>25</span><span>)</span><span>;</span>
+<span>}</span>
+<span>@Test</span>
+<span>public</span> <span>void</span> <span>EntityToJson</span><span>(</span><span>)</span><span>{</span>
+    <span>JSONObject</span> jsonObject <span>=</span> <span>new</span> <span>JSONObject</span><span>(</span><span>)</span><span>;</span>
+    jsonObject<span>.</span><span>put</span><span>(</span><span>"name"</span><span>,</span> <span>getPerson</span><span>(</span><span>)</span><span>.</span><span>getName</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    jsonObject<span>.</span><span>put</span><span>(</span><span>"sex"</span><span>,</span> <span>getPerson</span><span>(</span><span>)</span><span>.</span><span>getSex</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    jsonObject<span>.</span><span>put</span><span>(</span><span>"age"</span><span>,</span> <span>getPerson</span><span>(</span><span>)</span><span>.</span><span>getAge</span><span>(</span><span>)</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>jsonObject<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>由 json 字符串生成实体类</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>JsonToEntity</span><span>(</span><span>)</span><span>{</span>
+    <span>String</span> jsonString <span>=</span> <span>"{\"sex\":\"男\",\"name\":\"张三\",\"age\":25}"</span><span>;</span>
+    <span>JSONObject</span> jsonObject <span>=</span> <span>new</span> <span>JSONObject</span><span>(</span>jsonString<span>)</span><span>;</span>
+    <span>Person</span> person <span>=</span> <span>new</span> <span>Person</span><span>(</span>jsonObject<span>.</span><span>get</span><span>(</span><span>"name"</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span><span>,</span> jsonObject<span>.</span><span>get</span><span>(</span><span>"sex"</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span><span>,</span> <span>Integer</span><span>.</span><span>valueOf</span><span>(</span>jsonObject<span>.</span><span>get</span><span>(</span><span>"age"</span><span>)</span><span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>person<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="jackson-写法" tabindex="-1"> Jackson 写法</h2>
+<p>由实体类生成 json 字符串</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>EntityToJson</span><span>(</span><span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+    <span>Person</span> person <span>=</span> <span>new</span> <span>Person</span><span>(</span><span>"张三"</span><span>,</span> <span>"男"</span><span>,</span> <span>25</span><span>)</span><span>;</span>
+    <span>ObjectMapper</span> objectMapper <span>=</span> <span>new</span> <span>ObjectMapper</span><span>(</span><span>)</span><span>;</span>
+    <span>String</span> jsonString <span>=</span> objectMapper<span>.</span><span>writeValueAsString</span><span>(</span>person<span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>jsonString<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>由 json 字符串生成实体类</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>JsonToEntity</span><span>(</span><span>)</span> <span>throws</span> <span>IOException</span> <span>{</span>
+    <span>ObjectMapper</span> objectMapper <span>=</span> <span>new</span> <span>ObjectMapper</span><span>(</span><span>)</span><span>;</span>
+    <span>String</span> jsonString <span>=</span> <span>"{\"name\":\"张三\",\"sex\":\"男\",\"age\":25}"</span><span>;</span>
+    <span>Person</span> person <span>=</span> objectMapper<span>.</span><span>readValue</span><span>(</span>jsonString<span>,</span> <span>Person</span><span>.</span><span>class</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>person<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="利用-gson-方式" tabindex="-1"> 利用 GSON 方式</h2>
+<p>由实体类生成字符串</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>EntityToJson</span><span>(</span><span>)</span><span>{</span>
+    <span>Person</span> person <span>=</span> <span>new</span> <span>Person</span><span>(</span><span>"张三"</span><span>,</span> <span>"男"</span><span>,</span> <span>25</span><span>)</span><span>;</span>
+    <span>Gson</span> gson <span>=</span> <span>new</span> <span>Gson</span><span>(</span><span>)</span><span>;</span>
+    <span>String</span> jsonString <span>=</span> gson<span>.</span><span>toJson</span><span>(</span>person<span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>jsonString<span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>由 json 字符串生成实体类</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>JsonToEntity</span><span>(</span><span>)</span><span>{</span>
+    <span>String</span> jsonString <span>=</span> <span>"{\"name\":\"张三\",\"sex\":\"男\",\"age\":25}"</span><span>;</span>
+    <span>Gson</span> gson <span>=</span> <span>new</span> <span>Gson</span><span>(</span><span>)</span><span>;</span>
+    <span>Person</span> person <span>=</span> gson<span>.</span><span>fromJson</span><span>(</span>jsonString<span>,</span> <span>Person</span><span>.</span><span>class</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>person<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="利用-fastjson-方式" tabindex="-1"> 利用 FastJSON 方式</h2>
+<p>由实体类生成 json 字符串</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>EntityToJson</span><span>(</span><span>)</span><span>{</span>
+    <span>Person</span> person <span>=</span> <span>new</span> <span>Person</span><span>(</span><span>"张三"</span><span>,</span> <span>"男"</span><span>,</span> <span>25</span><span>)</span><span>;</span>
+    <span>Object</span> jsonString <span>=</span> JSON<span>.</span><span>toJSON</span><span>(</span>person<span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>jsonString<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>由 json 字符串生成实体类</p>
+<div><pre><code><span>@Test</span>
+<span>public</span> <span>void</span> <span>JsonToEntity</span><span>(</span><span>)</span><span>{</span>
+    <span>String</span> jsonString <span>=</span> <span>"{\"name\":\"张三\",\"sex\":\"男\",\"age\":25}"</span><span>;</span>
+    <span>Person</span> person <span>=</span> JSON<span>.</span><span>parseObject</span><span>(</span>jsonString<span>,</span> <span>Person</span><span>.</span><span>class</span><span>)</span><span>;</span>
+    <span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>person<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="几种方式比较" tabindex="-1"> 几种方式比较</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传统Json方式：</td>
+<td>复杂的Json数据转换成实体类存在缺陷，性能和功能不够完善</td>
+</tr>
+<tr>
+<td>Jackson方式：</td>
+<td>复杂的Json数据转换成实体类存在缺陷，性能和功能优于传统方式</td>
+</tr>
+<tr>
+<td>Gson方式：</td>
+<td>功能方面在几种方式中最优，性能方面不如Jackson方式</td>
+</tr>
+<tr>
+<td>FastJson方式：</td>
+<td>复杂的实体类转换成Json数据存在缺陷，解析json的速度优于其他方式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="q-a" tabindex="-1"> Q&amp;A</h2>
+<p><strong>Q1: 在不知道 key 的情况下获取 json 的 key 值</strong></p>
+<p>可以使用 <code>JsonObject.key()</code> 获取迭代器对象</p>
+<div><pre><code><span>String</span> json<span>=</span><span>"{'name':'angui','age':'23','like':'吃水果'}"</span><span>;</span>
+<span>JSONObject</span> j <span>=</span> JSON<span>.</span><span>parseObject</span><span>(</span>json<span>)</span><span>;</span>
+j<span>.</span><span>remove</span><span>(</span><span>"age"</span><span>)</span><span>;</span>
+<span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>json<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+<span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>j<span>.</span><span>toJSONString</span><span>(</span><span>)</span><span>)</span><span>;</span>
+
+<span>//将json转换为key=value&amp;key=value&amp;...的形式</span>
+<span>StringBuilder</span> sb <span>=</span> <span>new</span> <span>StringBuilder</span><span>(</span><span>)</span><span>;</span>
+<span>String</span> sbString<span>=</span><span>""</span><span>;</span>
+<span>try</span> <span>{</span>
+    <span><span>org<span>.</span>json<span>.</span></span>JSONObject</span> jsonObject <span>=</span> <span>new</span> <span><span>org<span>.</span>json<span>.</span></span>JSONObject</span><span>(</span>json<span>)</span><span>;</span>
+    <span>Iterator</span> iterator <span>=</span> jsonObject<span>.</span><span>keys</span><span>(</span><span>)</span><span>;</span>
+    <span>while</span><span>(</span>iterator<span>.</span><span>hasNext</span><span>(</span><span>)</span><span>)</span><span>{</span>
+        <span>String</span> key <span>=</span> <span>(</span><span>String</span><span>)</span> iterator<span>.</span><span>next</span><span>(</span><span>)</span><span>;</span>
+        sb<span>.</span><span>append</span><span>(</span><span>"&amp;"</span><span>+</span>key<span>)</span><span>;</span>
+        sb<span>.</span><span>append</span><span>(</span><span>"="</span><span>+</span>jsonObject<span>.</span><span>getString</span><span>(</span>key<span>)</span><span>)</span><span>;</span>
+    <span>}</span>
+    sb<span>.</span><span>append</span><span>(</span><span>"&amp;key"</span><span>)</span><span>;</span>
+    sbString <span>=</span> sb<span>.</span><span>substring</span><span>(</span><span>1</span><span>)</span><span>;</span>
+<span>}</span> <span>catch</span> <span>(</span><span>JSONException</span> e<span>)</span> <span>{</span>
+    e<span>.</span><span>printStackTrace</span><span>(</span><span>)</span><span>;</span>
+<span>}</span>
+<span>System</span><span>.</span>out<span>.</span><span>println</span><span>(</span>sbString<span>)</span><span>;</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Docker 常用服务安装</title>
       <link>https://www.cloaks.cn/reference/docker.html</link>
