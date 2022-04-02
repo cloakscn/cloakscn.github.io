@@ -6,12 +6,13 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 28 Mar 2022 13:08:40 GMT</pubDate>
-    <lastBuildDate>Mon, 28 Mar 2022 13:08:40 GMT</lastBuildDate>
+    <pubDate>Sat, 02 Apr 2022 07:41:00 GMT</pubDate>
+    <lastBuildDate>Sat, 02 Apr 2022 07:41:00 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>Spring</category>
     <category>Java 基础</category>
     <category>微服务</category>
     <category>Linux</category>
@@ -24,6 +25,418 @@
     <category>英语</category>
     <category>心得</category>
     <category>面试</category>
+    <item>
+      <title>如何把微服务项目拆分成单体应用</title>
+      <link>https://www.cloaks.cn/java/microservices2services.html</link>
+      <guid>https://www.cloaks.cn/java/microservices2services.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">如何把微服务项目拆分成单体应用</source>
+      <category>Spring</category>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="_1-修改-pom-文件" tabindex="-1"> 1. 修改 <code>pom</code> 文件</h2>
+<h3 id="修改-parent-标签内容" tabindex="-1"> 修改 <code>&lt;parent&gt;</code> 标签内容</h3>
+<div><pre><code><span>&lt;!-- 修改前 --></span>
+<span><span><span>&lt;</span>parent</span><span>></span></span>
+	<span><span><span>&lt;</span>groupId</span><span>></span></span>com.ruoyi<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+	<span><span><span>&lt;</span>artifactId</span><span>></span></span>ruoyi-modules<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;</span>version</span><span>></span></span>2.1.1<span><span><span>&lt;/</span>version</span><span>></span></span>
+<span><span><span>&lt;/</span>parent</span><span>></span></span>
+<span>&lt;!-- 修改后 --></span>
+<span><span><span>&lt;</span>parent</span><span>></span></span>
+	<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+	<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-parent<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;</span>version</span><span>></span></span>2.5.8<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;</span>relativePath</span> <span>/></span></span>
+<span><span><span>&lt;/</span>parent</span><span>></span></span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="删除与-spring-cloud-相关的依赖" tabindex="-1"> 删除与 <code>spring cloud</code> 相关的依赖</h3>
+<div><pre><code><span>&lt;!-- SpringCloud Ailibaba Nacos --></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+	<span><span><span>&lt;</span>groupId</span><span>></span></span>com.alibaba.cloud<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+	<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-cloud-starter-alibaba-nacos-discovery<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;</span>exclusions</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+			<span><span><span>&lt;</span>artifactId</span><span>></span></span>jsr305<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+			<span><span><span>&lt;</span>groupId</span><span>></span></span>com.google.code.findbugs<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+			<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-collections<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+			<span><span><span>&lt;</span>groupId</span><span>></span></span>commons-collections<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+			<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-lang<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+			<span><span><span>&lt;</span>groupId</span><span>></span></span>commons-lang<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+			<span><span><span>&lt;</span>artifactId</span><span>></span></span>HdrHistogram<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+			<span><span><span>&lt;</span>groupId</span><span>></span></span>org.hdrhistogram<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+	<span><span><span>&lt;/</span>exclusions</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+<span>&lt;!-- SpringCloud Ailibaba Nacos Config --></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+	<span><span><span>&lt;</span>groupId</span><span>></span></span>com.alibaba.cloud<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+	<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-cloud-starter-alibaba-nacos-config<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+<span>&lt;!-- SpringCloud Ailibaba Sentinel --></span>
+<span><span><span>&lt;</span>dependency</span><span>></span></span>
+	<span><span><span>&lt;</span>groupId</span><span>></span></span>com.alibaba.cloud<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+	<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-cloud-starter-alibaba-sentinel<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="添加基本依赖-可自行添加" tabindex="-1"> 添加基本依赖（可自行添加）</h3>
+<div><pre><code><span><span><span>&lt;</span>properties</span><span>></span></span>
+	<span><span><span>&lt;</span>project.build.sourceEncoding</span><span>></span></span>UTF-8<span><span><span>&lt;/</span>project.build.sourceEncoding</span><span>></span></span>
+	<span><span><span>&lt;</span>project.reporting.outputEncoding</span><span>></span></span>UTF-8<span><span><span>&lt;/</span>project.reporting.outputEncoding</span><span>></span></span>
+	<span><span><span>&lt;</span>java.version</span><span>></span></span>1.8<span><span><span>&lt;/</span>java.version</span><span>></span></span>
+	<span><span><span>&lt;</span>maven-jar-plugin.version</span><span>></span></span>3.1.1<span><span><span>&lt;/</span>maven-jar-plugin.version</span><span>></span></span>
+	<span><span><span>&lt;</span>mybatis.spring.boot.starter.version</span><span>></span></span>2.2.0<span><span><span>&lt;/</span>mybatis.spring.boot.starter.version</span><span>></span></span>
+	<span><span><span>&lt;</span>pagehelper.spring.boot.starter.version</span><span>></span></span>1.4.0<span><span><span>&lt;/</span>pagehelper.spring.boot.starter.version</span><span>></span></span>
+	<span><span><span>&lt;</span>fastjson.version</span><span>></span></span>1.2.79<span><span><span>&lt;/</span>fastjson.version</span><span>></span></span>
+	<span><span><span>&lt;</span>druid.version</span><span>></span></span>1.2.8<span><span><span>&lt;/</span>druid.version</span><span>></span></span>
+	<span><span><span>&lt;</span>commons.io.version</span><span>></span></span>2.11.0<span><span><span>&lt;/</span>commons.io.version</span><span>></span></span>
+	<span><span><span>&lt;</span>commons.fileupload.version</span><span>></span></span>1.4<span><span><span>&lt;/</span>commons.fileupload.version</span><span>></span></span>
+	<span><span><span>&lt;</span>commons.collections.version</span><span>></span></span>3.2.2<span><span><span>&lt;/</span>commons.collections.version</span><span>></span></span>
+	<span><span><span>&lt;</span>bitwalker.version</span><span>></span></span>1.21<span><span><span>&lt;/</span>bitwalker.version</span><span>></span></span>
+	<span><span><span>&lt;</span>jwt.version</span><span>></span></span>0.9.1<span><span><span>&lt;/</span>jwt.version</span><span>></span></span>
+	<span><span><span>&lt;</span>kaptcha.version</span><span>></span></span>2.3.2<span><span><span>&lt;/</span>kaptcha.version</span><span>></span></span>
+	<span><span><span>&lt;</span>swagger.version</span><span>></span></span>3.0.0<span><span><span>&lt;/</span>swagger.version</span><span>></span></span>
+	<span><span><span>&lt;</span>poi.version</span><span>></span></span>4.1.2<span><span><span>&lt;/</span>poi.version</span><span>></span></span>
+	<span><span><span>&lt;</span>oshi.version</span><span>></span></span>5.8.6<span><span><span>&lt;/</span>oshi.version</span><span>></span></span>
+	<span><span><span>&lt;</span>jna.version</span><span>></span></span>5.10.0<span><span><span>&lt;/</span>jna.version</span><span>></span></span>
+	<span><span><span>&lt;</span>velocity.version</span><span>></span></span>2.3<span><span><span>&lt;/</span>velocity.version</span><span>></span></span>
+	<span><span><span>&lt;</span>log4j2.version</span><span>></span></span>2.17.1<span><span><span>&lt;/</span>log4j2.version</span><span>></span></span>
+<span><span><span>&lt;/</span>properties</span><span>></span></span>
+<span>&lt;!-- SpringBoot 核心包 --></span>
+<span><span><span>&lt;</span>dependencies</span><span>></span></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- SpringBoot 测试 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-test<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>scope</span><span>></span></span>test<span><span><span>&lt;/</span>scope</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- SpringBoot 拦截器 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-aop<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- SpringBoot Web容器 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-web<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- spring-boot-devtools --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-devtools<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>optional</span><span>></span></span>true<span><span><span>&lt;/</span>optional</span><span>></span></span> <span>&lt;!-- 表示依赖不会传递 --></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- spring security 安全认证 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-security<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- redis 缓存操作 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-data-redis<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- pool 对象池 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.apache.commons<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-pool2<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- Mysql驱动包 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>mysql<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>mysql-connector-java<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>scope</span><span>></span></span>runtime<span><span><span>&lt;/</span>scope</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- SpringBoot集成mybatis框架 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.mybatis.spring.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>mybatis-spring-boot-starter<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${mybatis.spring.boot.starter.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- pagehelper 分页插件 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>com.github.pagehelper<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>pagehelper-spring-boot-starter<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${pagehelper.spring.boot.starter.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 阿里数据库连接池 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>com.alibaba<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>druid-spring-boot-starter<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${druid.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 自定义验证注解 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework.boot<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-boot-starter-validation<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 常用工具类 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.apache.commons<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-lang3<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- io常用工具类 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>commons-io<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-io<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${commons.io.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 文件上传工具类 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>commons-fileupload<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-fileupload<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${commons.fileupload.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 解析客户端操作系统、浏览器等 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>eu.bitwalker<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>UserAgentUtils<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${bitwalker.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 阿里JSON解析器 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>com.alibaba<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>fastjson<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${fastjson.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- Spring框架基本的核心工具--></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.springframework<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>spring-context-support<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- Token生成与解析--></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>io.jsonwebtoken<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>jjwt<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${jwt.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- Jaxb --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>javax.xml.bind<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>jaxb-api<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- Swagger3依赖 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>io.springfox<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>springfox-boot-starter<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${swagger.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusions</span><span>></span></span>
+			<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+				<span><span><span>&lt;</span>groupId</span><span>></span></span>io.swagger<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+				<span><span><span>&lt;</span>artifactId</span><span>></span></span>swagger-models<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+			<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusions</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 防止进入swagger页面报类型转换错误，排除3.0.0中的引用，手动增加1.6.2版本 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>io.swagger<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>swagger-models<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>1.6.2<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 获取系统信息 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>com.github.oshi<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>oshi-core<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${oshi.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- excel工具 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.apache.poi<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>poi-ooxml<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${poi.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- velocity代码生成使用模板 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.apache.velocity<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>velocity-engine-core<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${velocity.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- collections工具类 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>commons-collections<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>commons-collections<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${commons.collections.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 定时任务 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>org.quartz-scheduler<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>quartz<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusions</span><span>></span></span>
+			<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+				<span><span><span>&lt;</span>groupId</span><span>></span></span>com.mchange<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+				<span><span><span>&lt;</span>artifactId</span><span>></span></span>c3p0<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+			<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusions</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+
+	<span>&lt;!-- 验证码 --></span>
+	<span><span><span>&lt;</span>dependency</span><span>></span></span>
+		<span><span><span>&lt;</span>groupId</span><span>></span></span>com.github.penggle<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+		<span><span><span>&lt;</span>artifactId</span><span>></span></span>kaptcha<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+		<span><span><span>&lt;</span>version</span><span>></span></span>${kaptcha.version}<span><span><span>&lt;/</span>version</span><span>></span></span>
+		<span><span><span>&lt;</span>exclusions</span><span>></span></span>
+			<span><span><span>&lt;</span>exclusion</span><span>></span></span>
+				<span><span><span>&lt;</span>artifactId</span><span>></span></span>javax.servlet-api<span><span><span>&lt;/</span>artifactId</span><span>></span></span>
+				<span><span><span>&lt;</span>groupId</span><span>></span></span>javax.servlet<span><span><span>&lt;/</span>groupId</span><span>></span></span>
+			<span><span><span>&lt;/</span>exclusion</span><span>></span></span>
+		<span><span><span>&lt;/</span>exclusions</span><span>></span></span>
+	<span><span><span>&lt;/</span>dependency</span><span>></span></span>
+<span><span><span>&lt;/</span>dependencies</span><span>></span></span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br><span>82</span><br><span>83</span><br><span>84</span><br><span>85</span><br><span>86</span><br><span>87</span><br><span>88</span><br><span>89</span><br><span>90</span><br><span>91</span><br><span>92</span><br><span>93</span><br><span>94</span><br><span>95</span><br><span>96</span><br><span>97</span><br><span>98</span><br><span>99</span><br><span>100</span><br><span>101</span><br><span>102</span><br><span>103</span><br><span>104</span><br><span>105</span><br><span>106</span><br><span>107</span><br><span>108</span><br><span>109</span><br><span>110</span><br><span>111</span><br><span>112</span><br><span>113</span><br><span>114</span><br><span>115</span><br><span>116</span><br><span>117</span><br><span>118</span><br><span>119</span><br><span>120</span><br><span>121</span><br><span>122</span><br><span>123</span><br><span>124</span><br><span>125</span><br><span>126</span><br><span>127</span><br><span>128</span><br><span>129</span><br><span>130</span><br><span>131</span><br><span>132</span><br><span>133</span><br><span>134</span><br><span>135</span><br><span>136</span><br><span>137</span><br><span>138</span><br><span>139</span><br><span>140</span><br><span>141</span><br><span>142</span><br><span>143</span><br><span>144</span><br><span>145</span><br><span>146</span><br><span>147</span><br><span>148</span><br><span>149</span><br><span>150</span><br><span>151</span><br><span>152</span><br><span>153</span><br><span>154</span><br><span>155</span><br><span>156</span><br><span>157</span><br><span>158</span><br><span>159</span><br><span>160</span><br><span>161</span><br><span>162</span><br><span>163</span><br><span>164</span><br><span>165</span><br><span>166</span><br><span>167</span><br><span>168</span><br><span>169</span><br><span>170</span><br><span>171</span><br><span>172</span><br><span>173</span><br><span>174</span><br><span>175</span><br><span>176</span><br><span>177</span><br><span>178</span><br><span>179</span><br><span>180</span><br><span>181</span><br><span>182</span><br><span>183</span><br><span>184</span><br><span>185</span><br><span>186</span><br><span>187</span><br><span>188</span><br><span>189</span><br><span>190</span><br><span>191</span><br><span>192</span><br><span>193</span><br><span>194</span><br><span>195</span><br><span>196</span><br><span>197</span><br><span>198</span><br><span>199</span><br><span>200</span><br><span>201</span><br><span>202</span><br><span>203</span><br><span>204</span><br><span>205</span><br><span>206</span><br><span>207</span><br><span>208</span><br><span>209</span><br><span>210</span><br><span>211</span><br><span>212</span><br><span>213</span><br><span>214</span><br><span>215</span><br><span>216</span><br><span>217</span><br><span>218</span><br><span>219</span><br><span>220</span><br><span>221</span><br><span>222</span><br><span>223</span><br><span>224</span><br><span>225</span><br><span>226</span><br><span>227</span><br><span>228</span><br><span>229</span><br><span>230</span><br><span>231</span><br><span>232</span><br><span>233</span><br></div></div><h2 id="_2-修改-application-yml-application-propeties-文件" tabindex="-1"> 2. 修改 <code>application.yml/application.propeties</code> 文件</h2>
+<div><pre><code><span># 删除有关 Spring Cloud 的相关配置</span>
+<span>cloud</span><span>:</span>
+	<span>nacos</span><span>:</span>
+	  <span>discovery</span><span>:</span>
+		<span># 服务注册地址</span>
+		<span>server-addr</span><span>:</span> 127.0.0.1<span>:</span><span>8848</span>
+	  <span>config</span><span>:</span>
+		<span># 配置中心地址</span>
+		<span>server-addr</span><span>:</span> 127.0.0.1<span>:</span><span>8848</span>
+		<span># 配置文件格式</span>
+		<span>file-extension</span><span>:</span> yml
+		<span># 共享配置</span>
+		<span>shared-configs</span><span>:</span> application.$<span>{</span>spring.cloud.nacos.config.file<span>-</span>extension<span>}</span>
+		<span>group</span><span>:</span> $<span>{</span>spring.profiles.active<span>}</span>
+		<span>max-retry</span><span>:</span> <span>8</span>
+	<span>sentinel</span><span>:</span>
+	  <span># 取消控制台懒加载</span>
+	  <span>eager</span><span>:</span> <span>true</span>
+	  <span>transport</span><span>:</span>
+		<span># 控制台地址</span>
+		<span>dashboard</span><span>:</span> 127.0.0.1<span>:</span><span>8718</span>
+<span># 修改后</span>
+<span># Tomcat 端口</span>
+<span>server</span><span>:</span>
+  <span>port</span><span>:</span> <span>4001</span>
+<span># Spring 配置</span>
+<span>spring</span><span>:</span>
+  <span>servlet</span><span>:</span>
+    <span>multipart</span><span>:</span>
+      <span># 最大文件限制</span>
+      <span>max-file-size</span><span>:</span> 100MB
+      <span># 最大请求限制</span>
+      <span>max-request-size</span><span>:</span> 100MB
+  <span>application</span><span>:</span>
+    <span># 应用名称</span>
+    <span>name</span><span>:</span> ruoyi<span>-</span>vuln<span>-</span>evaluate
+  <span>profiles</span><span>:</span>
+    <span># 环境配置</span>
+    <span>active</span><span>:</span> dev
+
+  <span># kafka 消息队列</span>
+  <span>kafka</span><span>:</span>
+    <span># 服务器端口</span>
+    <span>bootstrap-servers</span><span>:</span> 172.17.1.25<span>:</span><span>9092</span>
+    <span># 生产者</span>
+    <span>producer</span><span>:</span>
+       <span># 设置大于0的值，则客户端会将发送失败的记录重新发送</span>
+      <span>retries</span><span>:</span> <span>3</span>
+      <span>batch-size</span><span>:</span> <span>16384</span>
+      <span>buffer-memory</span><span>:</span> <span>33554432</span>
+      <span>acks</span><span>:</span> <span>1</span>
+      <span># 指定消息key和消息体的编解码方式</span>
+      <span>key-serializer</span><span>:</span> org.apache.kafka.common.serialization.StringSerializer
+      <span>value-serializer</span><span>:</span> org.apache.kafka.common.serialization.StringSerializer
+    <span>consumer</span><span>:</span>
+      <span>group-id</span><span>:</span> CollectGroup
+      <span>enable-auto-commit</span><span>:</span> <span>false</span>
+      <span>auto-offset-reset</span><span>:</span> earliest
+      <span>key-deserializer</span><span>:</span> org.apache.kafka.common.serialization.StringDeserializer
+      <span>value-deserializer</span><span>:</span> org.apache.kafka.common.serialization.StringDeserializer
+    <span>listener</span><span>:</span>
+      <span># 自定义变量</span>
+      <span>vulnAnalysis</span><span>:</span>
+        <span># 主题</span>
+        <span>topics</span><span>:</span> test
+        <span># 消费组</span>
+        <span>groupId</span><span>:</span> CollectGroup
+      <span># 当每一条记录被消费者监听器（ListenerConsumer）处理之后提交</span>
+      <span># RECORD</span>
+      <span># 当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后提交</span>
+      <span># BATCH</span>
+      <span># 当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后，距离上次提交时间大于TIME时提交</span>
+      <span># TIME</span>
+      <span># 当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后，被处理record数量大于等于COUNT时提交</span>
+      <span># COUNT</span>
+      <span># TIME |　COUNT　有一个条件满足时提交</span>
+      <span># COUNT_TIME</span>
+      <span># 当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后, 手动调用Acknowledgment.acknowledge()后提交</span>
+      <span># MANUAL</span>
+      <span># 手动调用Acknowledgment.acknowledge()后立即提交，一般使用这种</span>
+      <span># MANUAL_IMMEDIATE</span>
+      <span>ack-mode</span><span>:</span> manual_immediate
+      <span>missing-topics-fatal</span><span>:</span> <span>false</span>
+
+  <span># 数据库配置</span>
+  <span>datasource</span><span>:</span>
+    <span>type</span><span>:</span> com.alibaba.druid.pool.DruidDataSource
+    <span>druid</span><span>:</span>
+      <span>driver-class-name</span><span>:</span> com.mysql.cj.jdbc.Driver
+      <span>url</span><span>:</span> jdbc<span>:</span>mysql<span>:</span>//172.17.1.25<span>:</span>3306/ry<span>-</span>cloud<span>?</span>useUnicode=true<span>&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true&amp;serverTimezone=GMT%2B8</span>
+      <span>username</span><span>:</span> root
+      <span>password</span><span>:</span> fengtai123
+
+  <span># redis 配置</span>
+  <span>redis</span><span>:</span>
+    <span>host</span><span>:</span> 172.17.1.25
+    <span>port</span><span>:</span> <span>6379</span>
+    <span>timeout</span><span>:</span> <span>60000</span>
+    <span>jedis</span><span>:</span>
+      <span>max-active</span><span>:</span> <span>8</span>
+      <span>min-idle</span><span>:</span> <span>0</span>
+      <span>max-idle</span><span>:</span> <span>8</span>
+      <span>max-wait</span><span>:</span> <span>-1</span>
+    <span>password</span><span>:</span>
+    <span>database</span><span>:</span> <span>1</span>
+
+<span># Mybatis配置</span>
+<span>mybatis-plus</span><span>:</span>
+  <span># 搜索指定包别名</span>
+  <span>typeAliasesPackage</span><span>:</span> com.ruoyi.<span>**.domain</span>
+  <span># 配置mapper的扫描，找到所有的mapper.xml映射文件</span>
+  <span>mapperLocations</span><span>:</span> classpath<span>*:mapper/**/*Mapper.xml</span>
+
+<span># pagehelper配置</span>
+<span>page</span><span>:</span>
+  <span>pageNum</span><span>:</span> <span>1</span>
+  <span>pageSize</span><span>:</span> <span>10</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br><span>74</span><br><span>75</span><br><span>76</span><br><span>77</span><br><span>78</span><br><span>79</span><br><span>80</span><br><span>81</span><br><span>82</span><br><span>83</span><br><span>84</span><br><span>85</span><br><span>86</span><br><span>87</span><br><span>88</span><br><span>89</span><br><span>90</span><br><span>91</span><br><span>92</span><br><span>93</span><br><span>94</span><br><span>95</span><br><span>96</span><br><span>97</span><br><span>98</span><br><span>99</span><br><span>100</span><br><span>101</span><br><span>102</span><br><span>103</span><br><span>104</span><br><span>105</span><br><span>106</span><br><span>107</span><br><span>108</span><br><span>109</span><br><span>110</span><br><span>111</span><br><span>112</span><br><span>113</span><br><span>114</span><br><span>115</span><br><span>116</span><br><span>117</span><br></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Java 解析 JSON 的四种方式</title>
       <link>https://www.cloaks.cn/java/base/parse_json.html</link>
@@ -1824,8 +2237,8 @@ acquiring 获得</p>
     </item>
     <item>
       <title>LRU 算法</title>
-      <link>https://www.cloaks.cn/lintcode/lru.html</link>
-      <guid>https://www.cloaks.cn/lintcode/lru.html</guid>
+      <link>https://www.cloaks.cn/lintcode/LRU.html</link>
+      <guid>https://www.cloaks.cn/lintcode/LRU.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">LRU 算法</source>
       <description>&amp;nbsp
 </description>

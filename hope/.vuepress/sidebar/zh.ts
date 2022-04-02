@@ -276,6 +276,8 @@ export const zh = defineSidebarConfig({
       prefix: "base/",
       children: ["regex", "file_reader", "parse_json"],
     },
+    "microservices2services",
+    
     // {
     //   text: "文章",
     //   icon: "note",

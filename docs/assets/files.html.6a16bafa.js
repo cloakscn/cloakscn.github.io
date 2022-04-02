@@ -1,1 +1,0 @@
-import{_ as e,o as t,a as o,b as r}from"./app.e3c119e0.js";const s={},c={style:{width:"100%",overflow:"hidden"}},_=r("iframe",{src:"http://www.itycu.cn:8082",frameborder:"0",width:"105%",height:"500px"},null,-1),a=[_];function n(i,d){return t(),o("div",c,a)}var f=e(s,[["render",n]]);export{f as default};
