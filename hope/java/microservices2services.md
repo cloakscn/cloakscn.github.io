@@ -351,7 +351,7 @@ spring:
   # kafka 消息队列
   kafka:
     # 服务器端口
-    bootstrap-servers: 172.17.1.25:9092
+    bootstrap-servers: 127.0.0.1:9092
     # 生产者
     producer:
        # 设置大于0的值，则客户端会将发送失败的记录重新发送
@@ -397,13 +397,13 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://172.17.1.25:3306/ry-cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      url: jdbc:mysql://127.0.0.1:3306/ry-cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
       username: root
-      password: fengtai123
+      password: root
 
   # redis 配置
   redis:
-    host: 172.17.1.25
+    host: 127.0.0.1
     port: 6379
     timeout: 60000
     jedis:

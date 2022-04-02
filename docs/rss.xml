@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 02 Apr 2022 08:23:09 GMT</pubDate>
-    <lastBuildDate>Sat, 02 Apr 2022 08:23:09 GMT</lastBuildDate>
+    <pubDate>Sat, 02 Apr 2022 09:24:11 GMT</pubDate>
+    <lastBuildDate>Sat, 02 Apr 2022 09:24:11 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -361,7 +361,7 @@
   <span># kafka 消息队列</span>
   <span>kafka</span><span>:</span>
     <span># 服务器端口</span>
-    <span>bootstrap-servers</span><span>:</span> 172.17.1.25<span>:</span><span>9092</span>
+    <span>bootstrap-servers</span><span>:</span> 127.0.0.1<span>:</span><span>9092</span>
     <span># 生产者</span>
     <span>producer</span><span>:</span>
        <span># 设置大于0的值，则客户端会将发送失败的记录重新发送</span>
@@ -407,13 +407,13 @@
     <span>type</span><span>:</span> com.alibaba.druid.pool.DruidDataSource
     <span>druid</span><span>:</span>
       <span>driver-class-name</span><span>:</span> com.mysql.cj.jdbc.Driver
-      <span>url</span><span>:</span> jdbc<span>:</span>mysql<span>:</span>//172.17.1.25<span>:</span>3306/ry<span>-</span>cloud<span>?</span>useUnicode=true<span>&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true&amp;serverTimezone=GMT%2B8</span>
+      <span>url</span><span>:</span> jdbc<span>:</span>mysql<span>:</span>//127.0.0.1<span>:</span>3306/ry<span>-</span>cloud<span>?</span>useUnicode=true<span>&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true&amp;serverTimezone=GMT%2B8</span>
       <span>username</span><span>:</span> root
-      <span>password</span><span>:</span> fengtai123
+      <span>password</span><span>:</span> root
 
   <span># redis 配置</span>
   <span>redis</span><span>:</span>
-    <span>host</span><span>:</span> 172.17.1.25
+    <span>host</span><span>:</span> 127.0.0.1
     <span>port</span><span>:</span> <span>6379</span>
     <span>timeout</span><span>:</span> <span>60000</span>
     <span>jedis</span><span>:</span>
