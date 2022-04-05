@@ -6,12 +6,13 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 02 Apr 2022 09:24:11 GMT</pubDate>
-    <lastBuildDate>Sat, 02 Apr 2022 09:24:11 GMT</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2022 05:09:26 GMT</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2022 05:09:26 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
+    <category>WebDav</category>
     <category>Spring</category>
     <category>Java 基础</category>
     <category>微服务</category>
@@ -25,6 +26,155 @@
     <category>英语</category>
     <category>心得</category>
     <category>面试</category>
+    <item>
+      <title>WebDav 搭建</title>
+      <link>https://www.cloaks.cn/blogs/webdav.html</link>
+      <guid>https://www.cloaks.cn/blogs/webdav.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">WebDav 搭建</source>
+      <description>WebDAV 基于 HTTP 协议的通信协议，在 GET、POST、HEAD 等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对 Web Server 直接读写，并支持写文件锁定 (Locking) 及解锁(Unlock)，还可以支持文件的版本控制。
+</description>
+      <author>wy03290019@163.com (Cloaks)</author>
+      <category>WebDav</category>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>WebDAV 基于 HTTP 协议的通信协议，在 GET、POST、HEAD 等几个HTTP标准方法以外添加了一些新的方法，使应用程序可对 Web Server 直接读写，并支持写文件锁定 (Locking) 及解锁(Unlock)，还可以支持文件的版本控制。</p>
+
+<p>常用的文件共享有三种：FTP、Samba、WebDAV，它们各有优缺点，了解后才能更好地根据自己的需求选择方案。</p>
+<ul>
+<li>
+<p>FTP 属于古老的文件共享方式了，因为安全性，现代浏览器最新已默认不能打开FTP协议。SFTP 在 FTP 基础上增加了加密，在 Linux 上安装 OpenSSH 后可以直接用 SFTP 协议传输。使用 SFTP 临时传送文件还可以，但做文件共享，性能不高，速度较慢。</p>
+</li>
+<li>
+<p>Samba 是 Linux 下 CIFS 协议的实现，优势在于对于小白使用简章，和 Windows 系统文件共享访问一样，不需要安装第三方软件，而且移动端也有大量 APP 支持。苹果手机文件 APP 中添加网络存储用的就是这种方式。Windows 下文件共享使用 445 端口，且不能更改。445 端口常常受黑客关照，在广域网上大多运营封掉了该端口，所以这种文件共享只适合在内网使用。</p>
+</li>
+<li>
+<p>WebDAV 基于 HTTP 协议的通信协议，在 GET、POST、HEAD 等几个 HTTP 标准方法以外添加了一些新的方法，使应用程序可对 Web Server 直接读写，并支持写文件锁定 (Locking) 及解锁 (Unlock)，还可以支持文件的版本控制。因为基于 HTTP，在广域网上共享文件有天然的优势，移动端文件管理 APP 也大多支持 WebDAV 协议。使用 HTTPS 还能保安全性。Apache 和Nginx 支持 WebDAV，可作为 WebDAV 文件共享服务器软件。也可以使用专门的 WebDAV 软件部署。</p>
+</li>
+</ul>
+<h2 id="几种安装方式" tabindex="-1"> 几种安装方式</h2>
+<p>之前有使用过 WebDav 服务，很多工具都对 WebDav 做了比较友好的支持，使用体验还不错。</p>
+<p>我目前在用的有：</p>
+<ul>
+<li>文件存储（RaiDriver、Solid Explorer）</li>
+<li>静读天下（阅读工具）</li>
+<li>Joplin（优秀的 Mardown 笔记软件）</li>
+<li>Zotero（文献管理工具）</li>
+</ul>
+<h3 id="docker-部署-推荐" tabindex="-1"> Docker 部署（推荐）</h3>
+<p>这个方法很简单，安装 Docker 环境，就可以部署</p>
+<h4 id="_1-安装-docker-环境" tabindex="-1"> 1. 安装 Docker 环境</h4>
+<p>安装命令如下：</p>
+<div><pre><code><span>curl</span> -fsSL https://get.docker.com <span>|</span> <span>bash</span> -s <span>docker</span> --mirror Aliyun
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p>也可以使用国内 daocloud 一键安装命令：</p>
+<div><pre><code><span>curl</span> -sSL https://get.daocloud.io/docker <span>|</span> <span>sh</span>
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><blockquote>
+<p>参考文章：<a href="https://www.runoob.com/docker/docker-tutorial.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/docker/docker-tutorial.html<ExternalLinkIcon/></a></p>
+</blockquote>
+<h4 id="_2-部署-webdav-服务" tabindex="-1"> 2. 部署 WebDav 服务</h4>
+<p>这个 Docker 镜像提供了 <code>Basic WebDAV server</code> 和 <code>Secure WebDAV with SSL</code> 两种部署方式。</p>
+<p>运行命令就可以完成部署，不懂的可以看参考文章。</p>
+<p><strong>Basic WebDAV server</strong></p>
+<div><pre><code><span>docker</span> run --restart always -v /srv/dav:/var/lib/dav <span>\</span>
+    -e <span>AUTH_TYPE</span><span>=</span>Digest -e <span>USERNAME</span><span>=</span>alice -e <span>PASSWORD</span><span>=</span>secret1234 <span>\</span>
+    --publish <span>80</span>:80 -d bytemark/webdav
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><strong>Secure WebDAV with SSL</strong></p>
+<p>虽然说镜像提供了基于 SSL 的校验模式，但是我没有成功复现😂</p>
+<p>因为Joplin 要求基于 SSL 的校验模式，所以我参考了另一篇<a href="https://blog.csdn.net/airenKKK/article/details/121058783" target="_blank" rel="noopener noreferrer">博客<ExternalLinkIcon/></a>，效果还不错。</p>
+<div><pre><code><span>docker</span> run --restart always -v /srv/dav:/var/lib/dav <span>\</span>
+    -e <span>AUTH_TYPE</span><span>=</span>Basic -e <span>USERNAME</span><span>=</span>test -e <span>PASSWORD</span><span>=</span>test <span>\</span>
+    -e <span>SSL_CERT</span><span>=</span>selfsigned --publish <span>443</span>:443 -d bytemark/webdav
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><blockquote>
+<p>参考文章：<a href="https://hub.docker.com/r/bytemark/webdav" target="_blank" rel="noopener noreferrer">https://hub.docker.com/r/bytemark/webdav<ExternalLinkIcon/></a></p>
+</blockquote>
+<h3 id="nginx-开启-webdav-服务" tabindex="-1"> Nginx 开启 WebDav 服务</h3>
+<p>我之前想要在树莓派上搭建这个服务用做本地网盘，为什么用这个可以看前边对常见文件共享的分析。</p>
+<p>由于树莓派的芯片不是常规的 <code>arm</code>，所以只能用编译安装了。</p>
+<p>参考文章省略了 <code>Nginx</code> 编译步骤，准备环境介绍也不清楚，可以参见我之前写的 <a href="/reference/nginx/install">Nginx 源码编译安装</a>。</p>
+<p><strong>编译命令</strong></p>
+<div><pre><code>./configure <span>\</span>
+    --with-threads <span>\</span>
+    --with-file-aio <span>\</span>
+    --with-http_ssl_module <span>\</span>
+    --with-http_v2_module <span>\</span>
+    --with-http_realip_module <span>\</span>
+    --with-http_addition_module <span>\</span>
+    --with-http_xslt_module<span>=</span>dynamic <span>\</span>
+    --with-http_image_filter_module<span>=</span>dynamic <span>\</span>
+    --with-http_geoip_module<span>=</span>dynamic <span>\</span>
+    --with-http_sub_module <span>\</span>
+    --with-http_dav_module <span>\</span>
+    --with-http_flv_module <span>\</span>
+    --with-http_mp4_module <span>\</span>
+    --with-http_gunzip_module <span>\</span>
+    --with-http_gzip_static_module <span>\</span>
+    --with-http_auth_request_module <span>\</span>
+    --with-http_random_index_module <span>\</span>
+    --with-http_secure_link_module <span>\</span>
+    --with-http_degradation_module <span>\</span>
+    --with-http_slice_module <span>\</span>
+    --with-http_stub_status_module <span>\</span>
+    --with-stream<span>=</span>dynamic <span>\</span>
+    --with-stream_ssl_module <span>\</span>
+    --with-stream_realip_module <span>\</span>
+    --with-stream_geoip_module<span>=</span>dynamic <span>\</span>
+    --with-stream_ssl_preread_module <span>\</span>
+    --with-compat  <span>\</span>
+    --with-pcre-jit <span>\</span>
+    --add-module<span>=</span><span>..</span>/nginx-dav-ext-module <span>\</span>
+    --add-module<span>=</span><span>..</span>/headers-more-nginx-module
+    <span>make</span> <span>&amp;&amp;</span> <span>make</span> <span>install</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br></div></div><p>命令中提到的 <code>nginx-dav-ext-module</code> <code>headers-more-nginx-module</code> 可以去 Github 上找</p>
+<p><strong>设置登录账号及密码</strong></p>
+<div><pre><code><span>echo</span> <span>"admin:<span><span>$(</span>openssl <span>passwd</span> <span>123456</span><span>)</span></span>"</span> <span>></span>/usr/local/nginx/conf/.davpasswd
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p><strong>Nginx 配置信息</strong></p>
+<div><pre><code>dav_ext_lock_zone <span>zone</span><span>=</span>davlock:10m<span>;</span>                   <span># DAV文件锁内存共享区</span>
+
+server <span>{</span>
+    listen <span>443</span> ssl http2<span>;</span>                             <span># 启用HTTPS及HTTP/2提升传输性能</span>
+    server_name  dav.nginxbar.org<span>;</span>
+    access_log  logs/webdav.access.log  main<span>;</span>
+    root    /root<span>;</span>
+   
+    ssl_certificate ssl/www_nginxbar_org.pem<span>;</span>         <span># 网站证书文件</span>
+    ssl_certificate_key ssl/www_nginxbar_org.key<span>;</span>     <span># 网站证书密钥文件</span>
+    ssl_password_file ssl/www_nginxbar_org.pass<span>;</span>      <span># 网站证书密钥密码文件</span>
+    ssl_session_cache shared:SSL:10m<span>;</span>                 <span># 会话缓存存储大小为10MB</span>
+    ssl_session_timeout  20m<span>;</span>                         <span># 会话缓存超时时间为20分钟</span>
+
+    client_max_body_size 20G<span>;</span>                         <span># 最大允许上传的文件大小</span>
+
+    location / <span>{</span>
+        autoindex on<span>;</span>
+        autoindex_localtime on<span>;</span>
+
+        <span>set</span> <span>$dest</span> <span>$http_destination</span><span>;</span>
+        <span>if</span> <span>(</span>-d <span>$request_filename</span><span>)</span> <span>{</span>                   <span># 对目录请求、对URI自动添加“/”</span>
+            rewrite ^<span>(</span>.*<span>[</span>^/<span>]</span><span>)</span>$ <span>$1</span>/<span>;</span>
+            <span>set</span> <span>$dest</span> <span>$dest</span>/<span>;</span>
+        <span>}</span>
+
+        <span>if</span> <span>(</span><span>$request_method</span> ~ <span>(</span>MOVE<span>|</span>COPY<span>))</span> <span>{</span> <span># 对MOVE|COPY方法强制添加Destination请求头</span>
+            more_set_input_headers <span>'Destination: $dest'</span><span>;</span>
+        <span>}</span>
+
+        <span>if</span> <span>(</span><span>$request_method</span> ~ MKCOL<span>)</span> <span>{</span>
+            rewrite ^<span>(</span>.*<span>[</span>^/<span>]</span><span>)</span>$ <span>$1</span>/ <span>break</span><span>;</span>
+        <span>}</span>
+
+        dav_methods PUT DELETE MKCOL COPY MOVE<span>;</span>      <span># DAV支持的请求方法</span>
+        dav_ext_methods PROPFIND OPTIONS LOCK UNLOCK<span>;</span><span># DAV扩展支持的请求方法</span>
+        dav_ext_lock <span>zone</span><span>=</span>davlock<span>;</span>                   <span># DAV扩展锁绑定的内存区域</span>
+        create_full_put_path  on<span>;</span>                    <span># 启用创建目录支持</span>
+        dav_access user:rw group:r all:r<span>;</span>            <span># 设置创建的文件及目录的访问权限</span>
+
+        auth_basic <span>"Authorized Users WebDAV"</span><span>;</span>
+        auth_basic_user_file /usr/local/nginx/conf/.davpasswd<span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><blockquote>
+<p>参考文章：<a href="https://www.weixueyuan.net/a/738.html" target="_blank" rel="noopener noreferrer">https://www.weixueyuan.net/a/738.html<ExternalLinkIcon/></a></p>
+</blockquote>
+]]></content:encoded>
+    </item>
     <item>
       <title>如何把微服务项目拆分成单体应用</title>
       <link>https://www.cloaks.cn/java/microservices2services.html</link>
@@ -1760,8 +1910,8 @@ pip <span>install</span> jupyter_nbextensions_configurator -i
     </item>
     <item>
       <title>Linux 问题总结</title>
-      <link>https://www.cloaks.cn/blogs/linux.html</link>
-      <guid>https://www.cloaks.cn/blogs/linux.html</guid>
+      <link>https://www.cloaks.cn/reference/linux/linux.html</link>
+      <guid>https://www.cloaks.cn/reference/linux/linux.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">Linux 问题总结</source>
       <description>Linux 问题总结。
 </description>
@@ -1856,16 +2006,12 @@ acquiring 获得</p>
       <link>https://www.cloaks.cn/blogs/codingQuality.html</link>
       <guid>https://www.cloaks.cn/blogs/codingQuality.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">如何快速提高 Coding Quality</source>
-      <description>
-程序员的代码就是自己的脸面，比自己张什么样更重要！
-
+      <description>我代码写的像诗一样优雅 👀
 </description>
       <author>wy03290019@163.com (Cloaks)</author>
       <category>心得</category>
       <pubDate>Wed, 19 Jan 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>程序员的代码就是自己的脸面，比自己张什么样更重要！</p>
-</blockquote>
+      <content:encoded><![CDATA[<p>我代码写的像诗一样优雅 👀</p>
 
 <h2 id="coding-style" tabindex="-1"> Coding Style</h2>
 <ol>

@@ -4,18 +4,10 @@ export const zh = defineNavbarConfig([
   "/",
   "/home",
   // { text: "镜像", icon: "snow", link: "https://mirrors.cloaks.cn" },
-  { text: "镜像", icon: "snow", children: [
-    {
-      text: "清华源",
-      icon: "snow",
-      link: "https://mirrors.tuna.tsinghua.edu.cn/"
-    },
-    {
-      text: "私有源",
-      icon: "snow",
-      link: "/files"
-    }
-  ]},
+  {
+    text: "镜像", icon: "snow",
+    link: "https://mirrors.tuna.tsinghua.edu.cn/"
+  },
   {
     text: "索引",
     icon: "any",
