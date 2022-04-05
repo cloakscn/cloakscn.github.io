@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 05 Apr 2022 05:09:26 GMT</pubDate>
-    <lastBuildDate>Tue, 05 Apr 2022 05:09:26 GMT</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2022 05:13:53 GMT</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2022 05:13:53 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -180,9 +180,13 @@ server <span>{</span>
       <link>https://www.cloaks.cn/java/microservices2services.html</link>
       <guid>https://www.cloaks.cn/java/microservices2services.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">如何把微服务项目拆分成单体应用</source>
+      <description>在开发微服务的过程中，我们可能会遇到需要将模块独立出来的需求，下面是我做的一些总结。
+</description>
       <category>Spring</category>
       <pubDate>Sat, 02 Apr 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="_1-修改-pom-文件" tabindex="-1"> 1. 修改 <code>pom</code> 文件</h2>
+      <content:encoded><![CDATA[<p>在开发微服务的过程中，我们可能会遇到需要将模块独立出来的需求，下面是我做的一些总结。</p>
+
+<h2 id="_1-修改-pom-文件" tabindex="-1"> 1. 修改 <code>pom</code> 文件</h2>
 <h3 id="修改-parent-标签内容" tabindex="-1"> 修改 <code>&lt;parent&gt;</code> 标签内容</h3>
 <div><pre><code><span>&lt;!-- 修改前 --></span>
 <span><span><span>&lt;</span>parent</span><span>></span></span>
