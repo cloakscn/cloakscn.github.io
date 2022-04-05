@@ -2,7 +2,7 @@
 home: true
 layout: Blog
 icon: alias
-title: 博客主页
+title: Cloaks' Blog
 tagline: 热爱技术，乐于分享！
 bgImage: /bgImage/bgImage2.jpg
 heroText: Cloaks

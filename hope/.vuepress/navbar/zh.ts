@@ -1,7 +1,7 @@
 import { defineNavbarConfig } from "vuepress-theme-hope";
 
 export const zh = defineNavbarConfig([
-  "/",
+  // "/",
   "/home",
   // { text: "镜像", icon: "snow", link: "https://mirrors.cloaks.cn" },
   {
