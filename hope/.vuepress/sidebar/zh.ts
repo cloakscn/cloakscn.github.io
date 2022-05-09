@@ -52,6 +52,7 @@ export const zh = defineSidebarConfig({
     // "",
     // "home",
     "docker",
+    "live_template",
     {
       text: "名词解释",
       icon: "folder",

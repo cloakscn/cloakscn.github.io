@@ -6,13 +6,14 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 07 May 2022 15:45:19 GMT</pubDate>
-    <lastBuildDate>Sat, 07 May 2022 15:45:19 GMT</lastBuildDate>
+    <pubDate>Mon, 09 May 2022 08:02:50 GMT</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 08:02:50 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
     <category>随笔</category>
+    <category>Reference</category>
     <category>WebDav</category>
     <category>Spring</category>
     <category>Java 基础</category>
@@ -44,13 +45,93 @@
 <p>For example imagine you want to know the longest streak of daily visits of your web site users . You start counting days starting from zero , that is the day you made your web site public , and set a bit with SETBIT every time the user visits the web site . As a bit index you simply take the current unix time , subtract the initial ofset , and divide by the number of seconds in a day ( normally ,3600*24).
 his way for each user you have a small string containing the visit information for each day . With BITCOUNT it is possible to easily get the number of days a given user visited the web site , while with a few BITPOs cals , or simply fetching and aalyzing the bitmap client - side , it is possible to easily compute the longest streak .</p>
 </blockquote>
-<p>百思不得其解，刚好电脑中安装了 <code>Redis Desktop Management</code>，抱着试一试的心态添加了官方提供的 <a href="https://t.me/RedisDesktopManager" target="_blank" rel="noopener noreferrer">Telegram<ExternalLinkIcon/></a> 群组，用自己蹩脚的英文问着这个问题。</p>
+<p>百思不得其解，刚好电脑中安装了 <code>Redis Desktop Management</code>，加了官方提供的 <a href="https://t.me/RedisDesktopManager" target="_blank" rel="noopener noreferrer">Telegram<ExternalLinkIcon/></a> 群组。</p>
 <p><img src="/assets/images/2022-05-07_232836.png" alt=""></p>
-<p>我是这样问的，看的出来我的英文表达的不是很好。</p>
 <p><img src="/assets/images/2022-05-07_233948.png" alt=""></p>
-<p>虽然只是很小的一件事，但是对我来讲是一次很有意义的经历所以把它记录下来。给我很大的感触是国外的圈子很活跃，大家都非常喜欢帮助别人，给我的印象很不错。</p>
+<p>虽然只是很小的一件事，但是对我来讲是一次很有意义的经历所以把它记录下来。</p>
 ]]></content:encoded>
       <enclosure url="https://www.cloaks.cn/assets/images/2022-05-07_232836.png" type="image/png"/>
+    </item>
+    <item>
+      <title>IDEA 注释模板</title>
+      <link>https://www.cloaks.cn/reference/live_template.html</link>
+      <guid>https://www.cloaks.cn/reference/live_template.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">IDEA 注释模板</source>
+      <description>IDEA 设置类注释和方法注释模板
+</description>
+      <category>Reference</category>
+      <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>IDEA 设置类注释和方法注释模板</p>
+
+<h2 id="_1-设置类注释模板" tabindex="-1"> 1. 设置类注释模板</h2>
+<p>点击 <code>File</code>&gt;<code>Settings</code>&gt;<code>File and Code Template</code>，如图所示：</p>
+<p><img src="/assets/images/2022-05-09_145849.png" alt=""></p>
+<p>将 <code>YourName</code> 替换为自己的姓名</p>
+<div><pre><code><span>/**
+ * 版本声明: Copyright (c) 2022 FengTaiSEC Corporation.
+ * <span>@brief</span> 
+ * <span>@author</span> YourName <span><span><span>&lt;</span>YourName@fengtaisec.com</span><span>></span></span>
+ * <span>@date</span> $<span>{</span>DATE<span>}</span> $<span>{</span>TIME<span>}</span>
+ * <span>@history</span>
+ */</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_2-设置方法注释模板" tabindex="-1"> 2. 设置方法注释模板</h2>
+<h3 id="_2-1-新建模板组" tabindex="-1"> 2.1 新建模板组</h3>
+<ol>
+<li>点击 <code>File</code>&gt;<code>Settings</code>&gt;<code>Live Template</code>，新建模板组，名字为 <code>UserDefine</code>。</li>
+</ol>
+<p><img src="/assets/images/2022-05-09_151410.png" alt=""></p>
+<h3 id="_2-2-新建模板" tabindex="-1"> 2.2 新建模板</h3>
+<p><img src="/assets/images/2022-05-09_152154.png" alt=""></p>
+<ol>
+<li>添加 Live Template。</li>
+<li>【强制】设置 Live Template Abbreviation 为 <code>*</code>。</li>
+<li>编辑模板描述。</li>
+<li>编辑模板内容。</li>
+</ol>
+<div><pre><code><span>*</span>
+$content$
+ <span>*</span><span>/</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br></div></div><ol start="5">
+<li>设置模板生效范围，Java 全选。</li>
+</ol>
+<p><img src="/assets/images/2022-05-09_152634.png" alt=""></p>
+<ol start="6">
+<li>选择 <code>Enter</code> 触发方式。</li>
+</ol>
+<p><img src="/assets/images/2022-05-09_152818.png" alt=""></p>
+<ol start="7">
+<li>设置变量内容。</li>
+</ol>
+<div><pre><code><span>groovyScript</span><span>(</span><span>"C:\\MethodTemplate.groovy"</span><span>,</span> <span>methodName</span><span>(</span><span>)</span><span>,</span> <span>methodParameters</span><span>(</span><span>)</span><span>,</span> <span>methodReturnType</span><span>(</span><span>)</span><span>,</span> <span>date</span><span>(</span><span>"yyyy-MM-dd"</span><span>)</span><span>,</span> <span>time</span><span>(</span><span>"HH:mm:ss"</span><span>)</span><span>)</span>
+</code></pre><div aria-hidden="true"><span>1</span><br></div></div><p><img src="/assets/images/2022-05-09_153047.png" alt=""></p>
+<ol start="8">
+<li><code>Apply</code> 并保存。</li>
+</ol>
+<h2 id="_3-配置-groovy-脚本" tabindex="-1"> 3. 配置 <code>Groovy</code> 脚本</h2>
+<p>下载 Groovy 脚本 <a href="https://itycu.lanzouu.com/ir7h404jkdfc" target="_blank" rel="noopener noreferrer"><code>MethodTemplate.groovy</code><ExternalLinkIcon/></a></p>
+<p>将该文件解压至 <code>C盘</code> 根目录</p>
+<blockquote>
+<p>如果想要自定义位置，请求修改 <code>Live Template</code> 中变量 Groovy 的位置。</p>
+</blockquote>
+<p>编辑 <code>MethodTemplate.groovy</code> 中的作者信息，替换 <code>YourName</code> 为自己的名字。</p>
+<h2 id="_4-使用" tabindex="-1"> 4. 使用</h2>
+<ol>
+<li>类注释模板的使用</li>
+</ol>
+<p>新建 Java 类时会自动创建类注释。</p>
+<p><img src="/assets/images/2022-05-09_155258.png" alt=""></p>
+<ol start="2">
+<li>方法注释模板的使用</li>
+</ol>
+<p>在 Java 方法上一行输入 <code>/**</code> 按 <code>Enter</code> 触发方法注释模板。</p>
+<p>无参方法注释</p>
+<p><img src="/assets/images/2022-05-09_155426.png" alt="无参构造"></p>
+<p>有参方法注释</p>
+<p><img src="/assets/images/2022-05-09_155628.png" alt="有参构造"></p>
+<p>多惨无返回方法注释</p>
+<p><img src="/assets/images/2022-05-09_155830.png" alt="多参构造"></p>
+]]></content:encoded>
+      <enclosure url="https://www.cloaks.cn/assets/images/2022-05-09_145849.png" type="image/png"/>
     </item>
     <item>
       <title>WebDav 搭建</title>
@@ -199,6 +280,18 @@ server <span>{</span>
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br></div></div><blockquote>
 <p>参考文章：<a href="https://www.weixueyuan.net/a/738.html" target="_blank" rel="noopener noreferrer">https://www.weixueyuan.net/a/738.html<ExternalLinkIcon/></a></p>
 </blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Apache POI 自动生成 Word 文档</title>
+      <link>https://www.cloaks.cn/java/apache_pio.html</link>
+      <guid>https://www.cloaks.cn/java/apache_pio.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">Apache POI 自动生成 Word 文档</source>
+      <description>全称Apache POI，使用Java编写的免费开源的跨平台的Java API。 是创建和维护操作各种符合 Office Open XML（OOXML）标准和微软的 OLE 2 复合文档格式（OLE2）的 Java API。用它可以使用 Java 读取和创建, 修改 MS Excel 文件. 而且, 还可以使用 Java 读取和创建 MS Word 和 MSPowerPoint 文件。Apache POI 提供 Java 操作 Excel 解决方案（适用于 Excel97-2008）。
+</description>
+      <category>Spring</category>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>全称Apache POI，使用Java编写的免费开源的跨平台的Java API。 是创建和维护操作各种符合 Office Open XML（OOXML）标准和微软的 OLE 2 复合文档格式（OLE2）的 Java API。用它可以使用 Java 读取和创建, 修改 MS Excel 文件. 而且, 还可以使用 Java 读取和创建 MS Word 和 MSPowerPoint 文件。Apache POI 提供 Java 操作 Excel 解决方案（适用于 Excel97-2008）。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -2413,8 +2506,8 @@ acquiring 获得</p>
     </item>
     <item>
       <title>LRU 算法</title>
-      <link>https://www.cloaks.cn/lintcode/lru.html</link>
-      <guid>https://www.cloaks.cn/lintcode/lru.html</guid>
+      <link>https://www.cloaks.cn/lintcode/LRU.html</link>
+      <guid>https://www.cloaks.cn/lintcode/LRU.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">LRU 算法</source>
       <description>&amp;nbsp
 </description>
