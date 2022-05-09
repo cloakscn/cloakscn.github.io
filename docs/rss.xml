@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 09 May 2022 08:09:47 GMT</pubDate>
-    <lastBuildDate>Mon, 09 May 2022 08:09:47 GMT</lastBuildDate>
+    <pubDate>Mon, 09 May 2022 08:46:30 GMT</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 08:46:30 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -104,7 +104,7 @@ $content$
 <p><img src="/assets/images/2022-05-09_155426.png" alt="无参构造"></p>
 <p>有参方法注释</p>
 <p><img src="/assets/images/2022-05-09_155628.png" alt="有参构造"></p>
-<p>多惨无返回方法注释</p>
+<p>多参无返回方法注释</p>
 <p><img src="/assets/images/2022-05-09_155830.png" alt="多参构造"></p>
 ]]></content:encoded>
       <enclosure url="https://www.cloaks.cn/assets/images/2022-05-09_145849.png" type="image/png"/>

@@ -101,6 +101,6 @@ groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), meth
 
 ![有参构造](/assets/images/2022-05-09_155628.png)
 
-多惨无返回方法注释
+多参无返回方法注释
 
 ![多参构造](/assets/images/2022-05-09_155830.png)
