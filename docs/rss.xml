@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 09 May 2022 09:47:14 GMT</pubDate>
-    <lastBuildDate>Mon, 09 May 2022 09:47:14 GMT</lastBuildDate>
+    <pubDate>Mon, 09 May 2022 09:51:41 GMT</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 09:51:41 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -40,7 +40,7 @@
       <content:encoded><![CDATA[<p>IDEA 设置类注释和方法注释模板</p>
 
 <h2 id="_1-设置类注释模板" tabindex="-1"> 1. 设置类注释模板</h2>
-<p>点击 <code>File</code>&gt;<code>Settings</code>&gt;<code>File and Code Template</code>，如图所示：</p>
+<p>点击 <code>File</code>&gt;<code>Settings</code>&gt;<code>Editor</code>&gt;<code>File and Code Template</code>，如图所示：</p>
 <p><img src="/assets/images/2022-05-09_145849.png" alt=""></p>
 <p>将 <code>YourName</code> 替换为自己的姓名</p>
 <div><pre><code><span>/**
@@ -53,7 +53,7 @@
 </code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h2 id="_2-设置方法注释模板" tabindex="-1"> 2. 设置方法注释模板</h2>
 <h3 id="_2-1-新建模板组" tabindex="-1"> 2.1 新建模板组</h3>
 <ol>
-<li>点击 <code>File</code>&gt;<code>Settings</code>&gt;<code>Live Template</code>，新建模板组，名字为 <code>UserDefine</code>。</li>
+<li>点击 <code>File</code>&gt;<code>Settings</code>&gt;<code>Editor</code>&gt;<code>Live Template</code>，新建模板组，名字为 <code>UserDefine</code>。</li>
 </ol>
 <p><img src="/assets/images/2022-05-09_151410.png" alt=""></p>
 <h3 id="_2-2-新建模板" tabindex="-1"> 2.2 新建模板</h3>

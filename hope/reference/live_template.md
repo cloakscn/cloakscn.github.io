@@ -16,7 +16,7 @@ IDEA 设置类注释和方法注释模板
 
 ## 1. 设置类注释模板
 
-点击 `File`>`Settings`>>`File and Code Template`，如图所示：
+点击 `File`>`Settings`>`Editor`>`File and Code Template`，如图所示：
 
 ![](/assets/images/2022-05-09_145849.png)
 
@@ -36,7 +36,7 @@ IDEA 设置类注释和方法注释模板
 
 ### 2.1 新建模板组
 
-1. 点击 `File`>`Settings`>`Live Template`，新建模板组，名字为 `UserDefine`。
+1. 点击 `File`>`Settings`>`Editor`>`Live Template`，新建模板组，名字为 `UserDefine`。
 
 ![](/assets/images/2022-05-09_151410.png)
 
@@ -103,4 +103,4 @@ groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), meth
 
 多参无返回方法注释
 
-![多参构造](/assets/images/2022-05-09_155830.png)
+![多参构造](/assets/images/2022-05-09_155830.png)
