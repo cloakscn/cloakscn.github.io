@@ -9,12 +9,13 @@ export const zh = defineSidebarConfig({
     "middleware",
     "network",
     "webdav",
-    // {
-    //   text: "如何使用",
-    //   icon: "creative",
-    //   prefix: "guide/",
-    //   children: ["", "page", "markdown", "disable", "encrypt"],
-    // },
+    {
+      text: "随笔",
+      icon: "note",
+      prefix: "",
+      collapsable: true,
+      children: ["20220507"],
+    },
     // {
     //   text: "文章",
     //   icon: "note",

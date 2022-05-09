@@ -6,14 +6,14 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 09 May 2022 08:02:50 GMT</pubDate>
-    <lastBuildDate>Mon, 09 May 2022 08:02:50 GMT</lastBuildDate>
+    <pubDate>Mon, 09 May 2022 08:09:47 GMT</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 08:09:47 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
-    <category>随笔</category>
     <category>Reference</category>
+    <category>随笔</category>
     <category>WebDav</category>
     <category>Spring</category>
     <category>Java 基础</category>
@@ -29,30 +29,6 @@
     <category>心得</category>
     <category>面试</category>
     <item>
-      <title>一次大胆的尝试</title>
-      <link>https://www.cloaks.cn/blogs/20220507.html</link>
-      <guid>https://www.cloaks.cn/blogs/20220507.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">一次大胆的尝试</source>
-      <description>今天很开心
-</description>
-      <category>随笔</category>
-      <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>今天很开心</p>
-
-<p>在浏览 <code>Redis</code> 官网的过程中，看到一个以前没有见过的概念 <a href="https://redis.io/docs/manual/data-types/data-types-tutorial/#bitmaps" target="_blank" rel="noopener noreferrer"><code>BitMaps</code><ExternalLinkIcon/></a>。</p>
-<p>官网举了一个例子，原文是这样的：</p>
-<blockquote>
-<p>For example imagine you want to know the longest streak of daily visits of your web site users . You start counting days starting from zero , that is the day you made your web site public , and set a bit with SETBIT every time the user visits the web site . As a bit index you simply take the current unix time , subtract the initial ofset , and divide by the number of seconds in a day ( normally ,3600*24).
-his way for each user you have a small string containing the visit information for each day . With BITCOUNT it is possible to easily get the number of days a given user visited the web site , while with a few BITPOs cals , or simply fetching and aalyzing the bitmap client - side , it is possible to easily compute the longest streak .</p>
-</blockquote>
-<p>百思不得其解，刚好电脑中安装了 <code>Redis Desktop Management</code>，加了官方提供的 <a href="https://t.me/RedisDesktopManager" target="_blank" rel="noopener noreferrer">Telegram<ExternalLinkIcon/></a> 群组。</p>
-<p><img src="/assets/images/2022-05-07_232836.png" alt=""></p>
-<p><img src="/assets/images/2022-05-07_233948.png" alt=""></p>
-<p>虽然只是很小的一件事，但是对我来讲是一次很有意义的经历所以把它记录下来。</p>
-]]></content:encoded>
-      <enclosure url="https://www.cloaks.cn/assets/images/2022-05-07_232836.png" type="image/png"/>
-    </item>
-    <item>
       <title>IDEA 注释模板</title>
       <link>https://www.cloaks.cn/reference/live_template.html</link>
       <guid>https://www.cloaks.cn/reference/live_template.html</guid>
@@ -60,7 +36,7 @@ his way for each user you have a small string containing the visit information f
       <description>IDEA 设置类注释和方法注释模板
 </description>
       <category>Reference</category>
-      <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
+      <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>IDEA 设置类注释和方法注释模板</p>
 
 <h2 id="_1-设置类注释模板" tabindex="-1"> 1. 设置类注释模板</h2>
@@ -132,6 +108,30 @@ $content$
 <p><img src="/assets/images/2022-05-09_155830.png" alt="多参构造"></p>
 ]]></content:encoded>
       <enclosure url="https://www.cloaks.cn/assets/images/2022-05-09_145849.png" type="image/png"/>
+    </item>
+    <item>
+      <title>一次大胆的尝试</title>
+      <link>https://www.cloaks.cn/blogs/20220507.html</link>
+      <guid>https://www.cloaks.cn/blogs/20220507.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">一次大胆的尝试</source>
+      <description>今天很开心
+</description>
+      <category>随笔</category>
+      <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>今天很开心</p>
+
+<p>在浏览 <code>Redis</code> 官网的过程中，看到一个以前没有见过的概念 <a href="https://redis.io/docs/manual/data-types/data-types-tutorial/#bitmaps" target="_blank" rel="noopener noreferrer"><code>BitMaps</code><ExternalLinkIcon/></a>。</p>
+<p>官网举了一个例子，原文是这样的：</p>
+<blockquote>
+<p>For example imagine you want to know the longest streak of daily visits of your web site users . You start counting days starting from zero , that is the day you made your web site public , and set a bit with SETBIT every time the user visits the web site . As a bit index you simply take the current unix time , subtract the initial ofset , and divide by the number of seconds in a day ( normally ,3600*24).
+his way for each user you have a small string containing the visit information for each day . With BITCOUNT it is possible to easily get the number of days a given user visited the web site , while with a few BITPOs cals , or simply fetching and aalyzing the bitmap client - side , it is possible to easily compute the longest streak .</p>
+</blockquote>
+<p>百思不得其解，刚好电脑中安装了 <code>Redis Desktop Management</code>，加了官方提供的 <a href="https://t.me/RedisDesktopManager" target="_blank" rel="noopener noreferrer">Telegram<ExternalLinkIcon/></a> 群组。</p>
+<p><img src="/assets/images/2022-05-07_232836.png" alt=""></p>
+<p><img src="/assets/images/2022-05-07_233948.png" alt=""></p>
+<p>虽然只是很小的一件事，但是对我来讲是一次很有意义的经历所以把它记录下来。</p>
+]]></content:encoded>
+      <enclosure url="https://www.cloaks.cn/assets/images/2022-05-07_232836.png" type="image/png"/>
     </item>
     <item>
       <title>WebDav 搭建</title>
