@@ -6,8 +6,8 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 09 May 2022 08:46:30 GMT</pubDate>
-    <lastBuildDate>Mon, 09 May 2022 08:46:30 GMT</lastBuildDate>
+    <pubDate>Mon, 09 May 2022 09:47:14 GMT</pubDate>
+    <lastBuildDate>Mon, 09 May 2022 09:47:14 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
@@ -78,7 +78,7 @@ $content$
 <ol start="7">
 <li>设置变量内容。</li>
 </ol>
-<div><pre><code><span>groovyScript</span><span>(</span><span>"C:\\MethodTemplate.groovy"</span><span>,</span> <span>methodName</span><span>(</span><span>)</span><span>,</span> <span>methodParameters</span><span>(</span><span>)</span><span>,</span> <span>methodReturnType</span><span>(</span><span>)</span><span>,</span> <span>date</span><span>(</span><span>"yyyy-MM-dd"</span><span>)</span><span>,</span> <span>time</span><span>(</span><span>"HH:mm:ss"</span><span>)</span><span>)</span>
+<div><pre><code><span>groovyScript</span><span>(</span><span>"C:\\MethodTemplate.groovy"</span><span>,</span> <span>methodName</span><span>(</span><span>)</span><span>,</span> <span>methodParameters</span><span>(</span><span>)</span><span>,</span> <span>methodParameterTypes</span><span>(</span><span>)</span><span>,</span> <span>methodReturnType</span><span>(</span><span>)</span><span>,</span> <span>date</span><span>(</span><span>"yyyy-MM-dd"</span><span>)</span><span>,</span> <span>time</span><span>(</span><span>"HH:mm:ss"</span><span>)</span><span>)</span>
 </code></pre><div aria-hidden="true"><span>1</span><br></div></div><p><img src="/assets/images/2022-05-09_153047.png" alt=""></p>
 <ol start="8">
 <li><code>Apply</code> 并保存。</li>

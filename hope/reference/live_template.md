@@ -16,7 +16,7 @@ IDEA 设置类注释和方法注释模板
 
 ## 1. 设置类注释模板
 
-点击 `File`>`Settings`>`File and Code Template`，如图所示：
+点击 `File`>`Settings`>>`File and Code Template`，如图所示：
 
 ![](/assets/images/2022-05-09_145849.png)
 
@@ -64,7 +64,7 @@ $content$
 7. 设置变量内容。
 
 ```java
-groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), methodReturnType(), date("yyyy-MM-dd"), time("HH:mm:ss"))
+groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), methodParameterTypes(), methodReturnType(), date("yyyy-MM-dd"), time("HH:mm:ss"))
 ```
 
 ![](/assets/images/2022-05-09_153047.png)
@@ -103,4 +103,4 @@ groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), meth
 
 多参无返回方法注释
 
-![多参构造](/assets/images/2022-05-09_155830.png)
+![多参构造](/assets/images/2022-05-09_155830.png)
