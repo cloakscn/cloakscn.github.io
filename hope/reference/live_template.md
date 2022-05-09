@@ -64,7 +64,7 @@ $content$
 7. 设置变量内容。
 
 ```java
-groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), methodParameterTypes(), methodReturnType(), date("yyyy-MM-dd"), time("HH:mm:ss"))
+groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), methodReturnType(), date("yyyy-MM-dd"), time("HH:mm:ss"))
 ```
 
 ![](/assets/images/2022-05-09_153047.png)
@@ -73,7 +73,7 @@ groovyScript("C:\\MethodTemplate.groovy", methodName(), methodParameters(), meth
 
 ## 3. 配置 `Groovy` 脚本
 
-下载 Groovy 脚本 [`MethodTemplate.groovy`](https://itycu.lanzouu.com/ir7h404jkdfc)
+下载 Groovy 脚本 [`MethodTemplate.groovy`](https://itycu.lanzouu.com/iuH4004jte5c)
 
 将该文件解压至 `C盘` 根目录
 
