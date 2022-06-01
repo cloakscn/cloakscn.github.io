@@ -6,14 +6,15 @@
     <link>https://cloaks.cn</link>
     <description>The Sun in My Heart!</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 12 May 2022 01:49:43 GMT</pubDate>
-    <lastBuildDate>Thu, 12 May 2022 01:49:43 GMT</lastBuildDate>
+    <pubDate>Wed, 01 Jun 2022 03:03:00 GMT</pubDate>
+    <lastBuildDate>Wed, 01 Jun 2022 03:03:00 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>MIT Licensed | Copyright © 2018-present Cloaks</copyright>
     <ttl>360</ttl>
     <category>Reference</category>
     <category>随笔</category>
+    <category>Golang</category>
     <category>WebDav</category>
     <category>Spring</category>
     <category>Java 基础</category>
@@ -110,15 +111,15 @@ $content$
       <enclosure url="https://www.cloaks.cn/assets/images/2022-05-09_145849.png" type="image/png"/>
     </item>
     <item>
-      <title>一次大胆的尝试</title>
+      <title>Good Job</title>
       <link>https://www.cloaks.cn/blogs/20220507.html</link>
       <guid>https://www.cloaks.cn/blogs/20220507.html</guid>
-      <source url="https://www.cloaks.cn/rss.xml">一次大胆的尝试</source>
-      <description>今天很开心
+      <source url="https://www.cloaks.cn/rss.xml">Good Job</source>
+      <description>认识自己！
 </description>
       <category>随笔</category>
       <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>今天很开心</p>
+      <content:encoded><![CDATA[<p>认识自己！</p>
 
 <p>在浏览 <code>Redis</code> 官网的过程中，看到一个以前没有见过的概念 <a href="https://redis.io/docs/manual/data-types/data-types-tutorial/#bitmaps" target="_blank" rel="noopener noreferrer"><code>BitMaps</code><ExternalLinkIcon/></a>。</p>
 <p>官网举了一个例子，原文是这样的：</p>
@@ -132,6 +133,104 @@ his way for each user you have a small string containing the visit information f
 <p>虽然只是很小的一件事，但是对我来讲是一次很有意义的经历所以把它记录下来。</p>
 ]]></content:encoded>
       <enclosure url="https://www.cloaks.cn/assets/images/2022-05-07_232836.png" type="image/png"/>
+    </item>
+    <item>
+      <title>循环与函数：牛顿法求平均值</title>
+      <link>https://www.cloaks.cn/blogs/go/loops_and_functions.html</link>
+      <guid>https://www.cloaks.cn/blogs/go/loops_and_functions.html</guid>
+      <source url="https://www.cloaks.cn/rss.xml">循环与函数：牛顿法求平均值</source>
+      <description>为了练习函数与循环，我们来实现一个平方根函数：用牛顿法实现平方根函数。
+</description>
+      <category>Golang</category>
+      <pubDate>Sat, 07 May 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>为了练习函数与循环，我们来实现一个平方根函数：用牛顿法实现平方根函数。</p>
+
+<p>计算机通常使用循环来计算 x 的平方根。从某个猜测的值 z 开始，我们可以根据 z² 与 x 的近似度来调整 z，产生一个更好的猜测：</p>
+<p><span><span><i>Content not supported</i></span><span aria-hidden="true"><span><span style="height:0.6667em;vertical-align:-0.0833em;"></span><span style="margin-right:0.04398em;">z</span><span>−</span><span style="margin-right:0.2778em;"></span><span>=</span><span style="margin-right:0.2778em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span>(</span><span style="margin-right:0.04398em;">z</span><span style="margin-right:0.2222em;"></span><span>∗</span><span style="margin-right:0.2222em;"></span></span><span><span style="height:0.6667em;vertical-align:-0.0833em;"></span><span style="margin-right:0.04398em;">z</span><span style="margin-right:0.2222em;"></span><span>−</span><span style="margin-right:0.2222em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span>x</span><span>)</span><span>/</span><span>(</span><span>2</span><span style="margin-right:0.2222em;"></span><span>∗</span><span style="margin-right:0.2222em;"></span></span><span><span style="height:1em;vertical-align:-0.25em;"></span><span style="margin-right:0.04398em;">z</span><span>)</span></span></span></span></p>
+<p>重复调整的过程，猜测的结果会越来越精确，得到的答案也会尽可能接近实际的平方根。</p>
+<p>在提供的 <code>func Sqrt</code> 中实现它。无论输入是什么，对 z 的一个恰当的猜测为 1。 要开始，请重复计算 10 次并随之打印每次的 z 值。观察对于不同的值 x（1、2、3 ...）， 你得到的答案是如何逼近结果的，猜测提升的速度有多快。</p>
+<p>提示：用类型转换或浮点数语法来声明并初始化一个浮点数值：</p>
+<div><pre><code>z <span>:=</span> <span>1.0</span>
+z <span>:=</span> <span>float64</span><span>(</span><span>1</span><span>)</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br></div></div><p>然后，修改循环条件，使得当值停止改变（或改变非常小）的时候退出循环。观察迭代次数大于还是小于 10。 尝试改变 z 的初始猜测，如 x 或 x/2。你的函数结果与标准库中的 <a href="https://go-zh.org/pkg/math/#Sqrt" target="_blank" rel="noopener noreferrer"><code>math.Sqrt</code><ExternalLinkIcon/></a> 接近吗？</p>
+<p>（<em>注：</em> 如果你对该算法的细节感兴趣，上面的 z² − x 是 z² 到它所要到达的值（即 x）的距离， 除以的 2z 为 z² 的导数，我们通过 z² 的变化速度来改变 z 的调整量。 这种通用方法叫做<a href="https://zh.wikipedia.org/wiki/%E7%89%9B%E9%A1%BF%E6%B3%95" target="_blank" rel="noopener noreferrer">牛顿法<ExternalLinkIcon/></a>。 它对很多函数，特别是平方根而言非常有效。）</p>
+<p><strong>参考代码</strong></p>
+<div><pre><code><span>package</span> main
+
+<span>import</span> <span>(</span>
+	<span>"fmt"</span>
+	<span>"math"</span>
+<span>)</span>
+
+<span>func</span> <span>Sqrt</span><span>(</span>x <span>float64</span><span>)</span> <span>float64</span> <span>{</span>
+	z <span>:=</span> <span>1.0</span>
+	<span>for</span> i <span>:=</span> <span>0</span><span>;</span> i <span>&lt;</span> <span>10</span><span>;</span> i<span>++</span> <span>{</span>
+		z <span>-=</span> <span>(</span>z<span>*</span>z <span>-</span> x<span>)</span> <span>/</span> <span>(</span><span>2</span> <span>*</span> z<span>)</span>
+		fmt<span>.</span><span>Println</span><span>(</span><span>"num is "</span><span>,</span> i<span>,</span> z<span>)</span>
+	<span>}</span>
+	<span>return</span> z
+<span>}</span>
+
+<span>func</span> <span>main</span><span>(</span><span>)</span> <span>{</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"Sqrt(2) result is:"</span><span>,</span> <span>Sqrt</span><span>(</span><span>2</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"math.Sqrt(2) result is:"</span><span>,</span> math<span>.</span><span>Sqrt</span><span>(</span><span>2</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"Sqrt(4) result is:"</span><span>,</span> <span>Sqrt</span><span>(</span><span>4</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"math.Sqrt(4) result is:"</span><span>,</span> math<span>.</span><span>Sqrt</span><span>(</span><span>4</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"Sqrt(6) result is:"</span><span>,</span> <span>Sqrt</span><span>(</span><span>6</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"math.Sqrt(6) result is:"</span><span>,</span> math<span>.</span><span>Sqrt</span><span>(</span><span>6</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"Sqrt(8) result is:"</span><span>,</span> <span>Sqrt</span><span>(</span><span>8</span><span>)</span><span>)</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"math.Sqrt(8) result is:"</span><span>,</span> math<span>.</span><span>Sqrt</span><span>(</span><span>8</span><span>)</span><span>)</span>
+<span>}</span>
+</code></pre><div><br><br><br><br><br><br><br><br><br><br><div>&nbsp;</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><p><strong>结果</strong></p>
+<div><pre><code>num is  <span>0</span> <span>1.5</span>
+num is  <span>1</span> <span>1.4166666666666667</span>
+num is  <span>2</span> <span>1.4142156862745099</span>
+num is  <span>3</span> <span>1.4142135623746899</span>
+num is  <span>4</span> <span>1.4142135623730951</span>
+num is  <span>5</span> <span>1.414213562373095</span>
+num is  <span>6</span> <span>1.4142135623730951</span>
+num is  <span>7</span> <span>1.414213562373095</span>
+num is  <span>8</span> <span>1.4142135623730951</span>
+num is  <span>9</span> <span>1.414213562373095</span>
+<span>Sqrt</span><span>(</span><span>2</span><span>)</span> result is<span>:</span> <span>1.414213562373095</span>
+math<span>.</span><span>Sqrt</span><span>(</span><span>2</span><span>)</span> result is<span>:</span> <span>1.4142135623730951</span>
+num is  <span>0</span> <span>2.5</span>
+num is  <span>1</span> <span>2.05</span>
+num is  <span>2</span> <span>2.000609756097561</span>
+num is  <span>3</span> <span>2.0000000929222947</span>
+num is  <span>4</span> <span>2.000000000000002</span>
+num is  <span>5</span> <span>2</span>
+num is  <span>6</span> <span>2</span>
+num is  <span>7</span> <span>2</span>
+num is  <span>8</span> <span>2</span>
+num is  <span>9</span> <span>2</span>
+<span>Sqrt</span><span>(</span><span>4</span><span>)</span> result is<span>:</span> <span>2</span>
+math<span>.</span><span>Sqrt</span><span>(</span><span>4</span><span>)</span> result is<span>:</span> <span>2</span>
+num is  <span>0</span> <span>3.5</span>
+num is  <span>1</span> <span>2.607142857142857</span>
+num is  <span>2</span> <span>2.454256360078278</span>
+num is  <span>3</span> <span>2.4494943716069653</span>
+num is  <span>4</span> <span>2.4494897427875517</span>
+num is  <span>5</span> <span>2.449489742783178</span>
+num is  <span>6</span> <span>2.449489742783178</span>
+num is  <span>7</span> <span>2.449489742783178</span>
+num is  <span>8</span> <span>2.449489742783178</span>
+num is  <span>9</span> <span>2.449489742783178</span>
+<span>Sqrt</span><span>(</span><span>6</span><span>)</span> result is<span>:</span> <span>2.449489742783178</span>
+math<span>.</span><span>Sqrt</span><span>(</span><span>6</span><span>)</span> result is<span>:</span> <span>2.449489742783178</span>
+num is  <span>0</span> <span>4.5</span>
+num is  <span>1</span> <span>3.138888888888889</span>
+num is  <span>2</span> <span>2.843780727630285</span>
+num is  <span>3</span> <span>2.8284685718801468</span>
+num is  <span>4</span> <span>2.8284271250498643</span>
+num is  <span>5</span> <span>2.8284271247461903</span>
+num is  <span>6</span> <span>2.82842712474619</span>
+num is  <span>7</span> <span>2.8284271247461903</span>
+num is  <span>8</span> <span>2.82842712474619</span>
+num is  <span>9</span> <span>2.8284271247461903</span>
+<span>Sqrt</span><span>(</span><span>8</span><span>)</span> result is<span>:</span> <span>2.8284271247461903</span>
+math<span>.</span><span>Sqrt</span><span>(</span><span>8</span><span>)</span> result is<span>:</span> <span>2.8284271247461903</span>
+</code></pre><div aria-hidden="true"><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>WebDav 搭建</title>
@@ -2506,8 +2605,8 @@ acquiring 获得</p>
     </item>
     <item>
       <title>LRU 算法</title>
-      <link>https://www.cloaks.cn/lintcode/LRU.html</link>
-      <guid>https://www.cloaks.cn/lintcode/LRU.html</guid>
+      <link>https://www.cloaks.cn/lintcode/lru.html</link>
+      <guid>https://www.cloaks.cn/lintcode/lru.html</guid>
       <source url="https://www.cloaks.cn/rss.xml">LRU 算法</source>
       <description>&amp;nbsp
 </description>

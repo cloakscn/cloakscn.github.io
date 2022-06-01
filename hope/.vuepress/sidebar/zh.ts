@@ -16,6 +16,13 @@ export const zh = defineSidebarConfig({
       collapsable: true,
       children: ["20220507"],
     },
+    {
+      text: "Golang",
+      icon: "note",
+      prefix: "go/",
+      collapsable: true,
+      children: ["loops_and_functions"],
+    },
     // {
     //   text: "文章",
     //   icon: "note",
