@@ -1,19 +1,17 @@
 ---
 title: 策略模式
 date: 2023-02-25 17:18:47
-sticky: 8
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 策略模式是一种行为设计模式， 它能让你定义一系列算法， 并将每种算法分别放入独立的类中， 以使算法的对象能够相互替换。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/strategy/structure.png)
-</div>
-</div>
 
 1. **上下文 （Context）** 维护指向具体策略的引用， 且仅通过策略接口与该对象进行交流。
 2. **策略 （Strategy）** 接口是所有具体策略的通用接口， 它声明了一个上下文用于执行策略的方法。

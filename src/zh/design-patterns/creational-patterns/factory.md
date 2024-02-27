@@ -1,20 +1,17 @@
 ---
 title: 工厂模式
 date: 2023-02-25 17:18:47
-sticky: 1
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 创建型模式
 ---
 
 工厂方法模式是一种创建型设计模式， 其在父类中提供一个创建对象的方法， 允许子类决定实例化对象的类型。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 80%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/factory-method/structure.png)
-</div>
-</div>
 
 1. 产品 （Product） 将会对接口进行声明。 对于所有由创建者及其子类构建的对象， 这些接口都是通用的。
 2. 具体产品 （Concrete Products） 是产品接口的不同实现。

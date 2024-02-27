@@ -1,20 +1,17 @@
 ---
 title: 适配器模式
 date: 2023-02-25 17:18:47
-sticky: 1
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 建造者模式
 ---
 
 适配器模式是一种结构型设计模式， 它能使接口不兼容的对象能够相互合作。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/adapter/structure-object-adapter.png?id=33dffbe3aece294162440c7ddd3d5d4f)
-</div>
-</div>
 
 1. **客户端 （Client）** 是包含当前程序业务逻辑的类。
 2. **客户端接口 （Client Interface）** 描述了其他类与客户端代码合作时必须遵循的协议。

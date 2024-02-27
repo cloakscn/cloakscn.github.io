@@ -1,20 +1,17 @@
 ---
 title: 原型模式
 date: 2023-02-25 17:18:47
-sticky: 4
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 创建型模式
 ---
 
 原型模式是一种创建型设计模式， 使你能够复制已有对象， 而又无需使代码依赖它们所属的类。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 80%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/prototype/structure.png?id=088102c5e9785ff45debbbce86f4df81)
-</div>
-</div>
 
 1. 原型 （Prototype） 接口将对克隆方法进行声明。 在绝大多数情况下， 其中只会有一个名为 clone克隆的方法。
 2. 具体原型 （Concrete Prototype） 类将实现克隆方法。 除了将原始对象的数据复制到克隆体中之外， 该方法有时还需处理克隆过程中的极端情况， 例如克隆关联对象和梳理递归依赖等等。

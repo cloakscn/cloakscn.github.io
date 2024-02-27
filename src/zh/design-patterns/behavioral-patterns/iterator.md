@@ -1,19 +1,17 @@
 ---
 title: 迭代器模式
 date: 2023-02-25 17:18:47
-sticky: 3
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 迭代器模式是一种行为设计模式， 让你能在不暴露集合底层表现形式 （列表、 栈和树等） 的情况下遍历集合中所有的元素。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/iterator/structure.png?id=35ea851f8f6bbe51d79eb91e6e6519d0)
-</div>
-</div>
 
 1. **迭代器 （Iterator）** 接口声明了遍历集合所需的操作： 获取下一个元素、 获取当前位置和重新开始迭代等。
 2. **具体迭代器 （Concrete Iterators）** 实现遍历集合的一种特定算法。 迭代器对象必须跟踪自身遍历的进度。 这使得多个迭代器可以相互独立地遍历同一集合。

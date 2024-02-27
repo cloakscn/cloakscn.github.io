@@ -1,8 +1,10 @@
 ---
 title: 单例模式
 date: 2023-02-25 17:18:47
-sticky: 10
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 创建型模式
 ---
 
 > 引自·[REFACTORING·GURU](https://refactoringguru.cn/)

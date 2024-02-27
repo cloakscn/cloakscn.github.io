@@ -1,20 +1,17 @@
 ---
 title: 抽象工厂模式
 date: 2023-5-6 18:47:11
-sticky: 2
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 创建型模式
 ---
 
 抽象工厂模式是一种创建型设计模式， 它能创建一系列相关的对象， 而无需指定其具体类。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 80%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/abstract-factory/structure.png)
-</div>
-</div>
 
 1. 抽象产品 （Abstract Product） 为构成系列产品的一组不同但相关的产品声明接口。
 2. 具体产品 （Concrete Product） 是抽象产品的多种不同类型实现。 所有变体 （维多利亚/现代） 都必须实现相应的抽象产品 （椅子/沙发）。

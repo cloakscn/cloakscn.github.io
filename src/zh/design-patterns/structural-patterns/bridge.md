@@ -1,20 +1,17 @@
 ---
 title: 桥接模式
 date: 2023-02-25 17:18:47
-sticky: 2
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 建造者模式
 ---
 
 桥接模式是一种结构型设计模式， 可将一个大类或一系列紧密相关的类拆分为抽象和实现两个独立的层次结构， 从而能在开发时分别使用。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/bridge/structure-zh.png?id=8f6df21bea5074e798d6a4330c1ffcf9)
-</div>
-</div>
 
 1. **抽象部分 （Abstraction）** 提供高层控制逻辑， 依赖于完成底层实际工作的实现对象。
 2. **实现部分 （Implementation）** 为所有具体实现声明通用接口。 抽象部分仅能通过在这里声明的方法与实现对象交互。

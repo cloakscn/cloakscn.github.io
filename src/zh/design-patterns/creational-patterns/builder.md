@@ -1,20 +1,17 @@
 ---
 title: 生成器模式
 date: 2023-02-25 17:18:47
-sticky: 3
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 创建型模式
 ---
 
 生成器模式是一种创建型设计模式， 使你能够分步骤创建复杂对象。 该模式允许你使用相同的创建代码生成不同类型和形式的对象。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/builder/structure.png)
-</div>
-</div>
 
 1. 生成器 （Builder） 接口声明在所有类型生成器中通用的产品构造步骤。
 2. 具体生成器 （Concrete Builders） 提供构造过程的不同实现。 具体生成器也可以构造不遵循通用接口的产品。

@@ -1,19 +1,17 @@
 ---
 title: 访问者模式
 date: 2023-02-25 17:18:47
-sticky: 10
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 访问者模式是一种行为设计模式， 它能将算法与其所作用的对象隔离开来。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/visitor/structure-zh.png)
-</div>
-</div>
 
 1. **访问者 （Visitor）** 接口声明了一系列以对象结构的具体元素为参数的访问者方法。 如果编程语言支持重载， 这些方法的名称可以是相同的， 但是其参数一定是不同的。
 2. **具体访问者 （Concrete Visitor）** 会为不同的具体元素类实现相同行为的几个不同版本。

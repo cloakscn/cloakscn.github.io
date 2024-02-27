@@ -1,20 +1,17 @@
 ---
 title: 组合模式
 date: 2023-02-25 17:18:47
-sticky: 3
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 建造者模式
 ---
 
 组合模式是一种结构型设计模式， 你可以使用它将对象组合成树状结构， 并且能像使用独立对象一样使用它们。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/composite/structure-zh.png)
-</div>
-</div>
 
 1. **组件 （Component）** 接口描述了树中简单项目和复杂项目所共有的操作。
 2. **叶节点 （Leaf）** 是树的基本结构， 它不包含子项目。

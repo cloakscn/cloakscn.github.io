@@ -1,19 +1,17 @@
 ---
 title: 状态模式
 date: 2023-02-25 17:18:47
-sticky: 7
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 状态模式是一种行为设计模式， 让你能在一个对象的内部状态变化时改变其行为， 使其看上去就像改变了自身所属的类一样。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/state/structure-zh.png?id=9d132abe67abef895172aad954f1daaf)
-</div>
-</div>
 
 1. **上下文 （Context）** 保存了对于一个具体状态对象的引用， 并会将所有与该状态相关的工作委派给它。 上下文通过状态接口与状态对象交互， 且会提供一个设置器用于传递新的状态对象。
 2. **状态 （State）** 接口会声明特定于状态的方法。 这些方法应能被其他所有具体状态所理解， 因为你不希望某些状态所拥有的方法永远不会被调用。

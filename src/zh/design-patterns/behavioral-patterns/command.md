@@ -1,19 +1,17 @@
 ---
 title: 命令模式
 date: 2023-02-25 17:18:47
-sticky: 2
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 命令模式是一种行为设计模式， 它可将请求转换为一个包含与请求相关的所有信息的独立对象。 该转换让你能根据不同的请求将方法参数化、 延迟请求执行或将其放入队列中， 且能实现可撤销操作。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/command/structure.png)
-</div>
-</div>
 
 1. **发送者 （Sender）**——亦称 “触发者 （Invoker）”——类负责对请求进行初始化， 其中必须包含一个成员变量来存储对于命令对象的引用。 发送者触发命令， 而不向接收者直接发送请求。 注意， 发送者并不负责创建命令对象： 它通常会通过构造函数从客户端处获得预先生成的命令。
 2. **命令 （Command）** 接口通常仅声明一个执行命令的方法。

@@ -1,20 +1,17 @@
 ---
 title: 外观模式
 date: 2023-02-25 17:18:47
-sticky: 5
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 建造者模式
 ---
 
 外观模式是一种结构型设计模式， 能为程序库、 框架或其他复杂类提供一个简单的接口。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/facade/structure.png)
-</div>
-</div>
 
 1. **外观 （Facade）** 提供了一种访问特定子系统功能的便捷方式， 其了解如何重定向客户端请求， 知晓如何操作一切活动部件。
 2. **创建附加外观 （Additional Facade）** 类可以避免多种不相关的功能污染单一外观， 使其变成又一个复杂结构。 客户端和其他外观都可使用附加外观。

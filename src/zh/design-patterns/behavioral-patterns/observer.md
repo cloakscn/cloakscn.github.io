@@ -1,19 +1,17 @@
 ---
 title: 观察者模式
 date: 2023-02-25 17:18:47
-sticky: 6
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 观察者模式是一种行为设计模式， 允许你定义一种订阅机制， 可在对象事件发生时通知多个 “观察” 该对象的其他对象。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![观察者模式结构](https://refactoringguru.cn/images/patterns/diagrams/observer/structure.png)
-</div>
-</div>
 
 1. **发布者 （Publisher）** 会向其他对象发送值得关注的事件。 事件会在发布者自身状态改变或执行特定行为后发生。 发布者中包含一个允许新订阅者加入和当前订阅者离开列表的订阅构架。
 2. 当新事件发生时， 发送者会遍历订阅列表并调用每个订阅者对象的通知方法。 该方法是在订阅者接口中声明的。

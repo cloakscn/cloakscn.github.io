@@ -1,7 +1,10 @@
 ---
 title: 备忘录模式
 date: 2023-02-25 17:18:47
-sticky: 5
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 备忘录模式是一种行为设计模式， 允许在不暴露对象实现细节的情况下保存和恢复对象之前的状态。
@@ -10,12 +13,7 @@ sticky: 5
 
 ### 基于嵌套类的实现
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/memento/structure1.png)
-</div>
-</div>
 
 > 该模式的经典实现方式依赖于许多流行编程语言 （例如 C++、 C# 和 Java） 所支持的嵌套类。
 

@@ -1,19 +1,17 @@
 ---
 title: 责任链模式
 date: 2023-02-25 17:18:47
-sticky: 1
+category:
+  - 设计模式
+tag:
+  - 行为模式
 ---
 
 责任链模式是一种行为设计模式， 允许你将请求沿着处理者链进行发送。 收到请求后， 每个处理者均可对请求进行处理， 或将其传递给链上的下个处理者。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![责任链模式结构](https://refactoringguru.cn/images/patterns/diagrams/chain-of-responsibility/structure.png)
-</div>
-</div>
 
 1. **处理者 （Handler）** 声明了所有具体处理者的通用接口。 该接口通常仅包含单个方法用于请求处理， 但有时其还会包含一个设置链上下个处理者的方法。
 2. **基础处理者 （Base Handler）** 是一个可选的类， 你可以将所有处理者共用的样本代码放置在其中。

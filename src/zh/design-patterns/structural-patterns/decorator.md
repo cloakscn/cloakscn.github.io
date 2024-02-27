@@ -1,20 +1,17 @@
 ---
 title: 装饰模式
 date: 2023-02-25 17:18:47
-sticky: 4
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 建造者模式
 ---
 
 装饰模式是一种结构型设计模式， 允许你通过将对象放入包含行为的特殊封装对象中来为原对象绑定新的行为。
 
 ## 模式结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/decorator/structure.png)
-</div>
-</div>
 
 1. **部件 （Component）** 声明封装器和被封装对象的公用接口。
 2. **具体部件 （Concrete Component）** 类是被封装对象所属的类。 它定义了基础行为， 但装饰类可以改变这些行为。

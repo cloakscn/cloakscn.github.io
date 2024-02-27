@@ -1,20 +1,17 @@
 ---
 title: 代理模式
 date: 2023-02-25 17:18:47
-sticky: 10
-toc: 3
+category:
+  - 设计模式
+tag:
+  - 建造者模式
 ---
 
 **代理模式**是一种结构型设计模式， 让你能够提供对象的替代品或其占位符。 代理控制着对于原对象的访问， 并允许在将请求提交给对象前后进行一些处理。
 
 ## 逻辑结构
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 60%; float: right">
-<div>
-
 ![](https://refactoringguru.cn/images/patterns/diagrams/proxy/structure-indexed-2x.png)
-</div>
-</div>
 
 1. **服务接口** （Service Interface） 声明了服务接口。 代理必须遵循该接口才能伪装成服务对象。
 2. **服务** （Service） 类提供了一些实用的业务逻辑。
