@@ -1,0 +1,65 @@
+---
+title: Apache POI
+date: 2023-01-05 16:20:59
+tags: POI
+---
+
+## 简介
+
+`A Java library for reading and writing Microsoft Office binary and OOXML file formats.`
+用于读取和写入 Microsoft Office 二进制和 OOXML 文件格式的 Java 库。
+
+<!-- more -->
+
+`The Apache POI Project's mission is to create and maintain Java APIs for manipulating various file formats based upon the Office Open XML standards (OOXML) and Microsoft's OLE 2 Compound Document format (OLE2). In short, you can read and write MS Excel files using Java. In addition, you can read and write MS Word and MS PowerPoint files using Java. Apache POI is your Java Excel solution (for Excel 97-2008). We have a complete API for porting other OOXML and OLE2 formats and welcome others to participate.`
+Apache POI 项目的任务是创建和维护 Java API，以便根据 Office Open XML 标准 (OOXML) 和 Microsoft 的 OLE 2 复合文档格式 (OLE2) 处理各种文件格式。简而言之，您可以使用 Java 读写 MS Excel 文件。此外，您还可以使用 Java 读写 MS Word 和 MS PowerPoint 文件。 Apache POI 是您的 Java Excel 解决方案（适用于 Excel 97-2008）。我们有完整的 API 用于移植其他 OOXML 和 OLE2 格式，欢迎其他人参与。
+
+`OLE2 files include most Microsoft Office files such as XLS, DOC, and PPT as well as MFC serialization API based file formats. The project provides APIs for the OLE2 Filesystem (POIFS) and OLE2 Document Properties (HPSF).`
+OLE2 文件包括大多数 Microsoft Office 文件，例如 XLS、DOC 和 PPT 以及基于 MFC 序列化 API 的文件格式。该项目为 OLE2 文件系统 (POIFS) 和 OLE2 文档属性 (HPSF) 提供 API。
+
+`Office OpenXML Format is the new standards based XML file format found in Microsoft Office 2007 and 2008. This includes XLSX, DOCX and PPTX. The project provides a low level API to support the Open Packaging Conventions using openxml4j.`
+Office OpenXML 格式是 Microsoft Office 2007 和 2008 中基于新标准的 XML 文件格式。这包括 XLSX、DOCX 和 PPTX。该项目提供了一个低级 API 来支持使用 openxml4j 的开放打包约定。
+
+`For each MS Office application there exists a component module that attempts to provide a common high level Java api to both OLE2 and OOXML document formats. This is most developed for Excel workbooks (SS=HSSF+XSSF). Work is progressing for Word documents (WP=HWPF+XWPF) and PowerPoint presentations (SL=HSLF+XSLF).`
+对于每个 MS Office 应用程序，都存在一个组件模块，它试图为 OLE2 和 OOXML 文档格式提供通用的高级 Java api。这是为 Excel 工作簿 (SS=HSSF+XSSF) 开发的。 Word 文档 (WP=HWPF+XWPF) 和 PowerPoint 演示文稿 (SL=HSLF+XSLF) 的工作正在进行中。
+
+`The project has some support for Outlook (HSMF). Microsoft opened the specifications to this format in October 2007. We would welcome contributions.`
+该项目对 Outlook (HSMF) 有一些支持。 Microsoft 于 2007 年 10 月开放了此格式的规范。我们欢迎贡献。
+
+`There are also projects for Visio (HDGF and XDGF), TNEF (HMEF), and Publisher (HPBF).`
+还有用于 Visio（HDGF 和 XDGF）、TNEF (HMEF) 和 Publisher (HPBF) 的项目。
+
+## 组件
+
+`This library includes the following components, roughly in descending order of maturity:`
+该库包括以下组件，大致按成熟度降序排列：
+
+* Excel spreadsheets (Common SS = HSSF, XSSF, and SXSSF)
+* PowerPoint slideshows (Common SL = HSLF and XSLF)
+* [Word processing documents👈](https://cloaks.cn/2023/01/05/poi-word-process/) (Common WP = HWPF and XWPF)
+* Outlook email (HSMF and HMEF)
+* Visio diagrams (HDGF and XDGF)
+* Publisher (HPBF)
+
+
+* Excel 电子表格（常见 SS = HSSF、XSSF 和 SXSSF）
+* PowerPoint 幻灯片（常见 SL = HSLF 和 XSLF）
+* [Word 处理文档👈](https://cloaks.cn/2023/01/05/poi-word-process/)（常见 WP = HWPF 和 XWPF）
+* Outlook 电子邮件（HSMF 和 HMEF）
+* Visio 图表（HDGF 和 XDGF）
+* Publisher ( HPBF)
+
+`And lower-level, supporting components:`
+以及较低级别的支持组件：
+
+* `OLE2 Filesystem (POIFS)`
+* `OLE2 Document Properties (HPSF)`
+* `TNEF (HMEF) for Outlook winmail.dat files`
+* `OpenXML4J (OOXML)`
+
+
+* OLE2 文件系统 (POIFS)
+* OLE2 文档属性 (HPSF)
+* TNEF (HMEF) for Outlook winmail.dat 文件
+* OpenXML4J (OOXML)
+
