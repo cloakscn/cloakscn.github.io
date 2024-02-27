@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: 博客主页
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
+heroImage: logo.jpg
 heroText: 热土_
 heroFullScreen: false
 tagline: 你好，世界！

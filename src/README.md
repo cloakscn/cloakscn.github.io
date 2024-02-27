@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: Blog Home
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
+heroImage: logo.jpg
 heroText: Return_
 tagline: Hello, World!
 heroFullScreen: false
