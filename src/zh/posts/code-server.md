@@ -1,0 +1,61 @@
+---
+title: 云办公最佳实践_Code Server
+tags:
+  - 原创
+date: 2024-02-27
+---
+
+这是一个可以运行在任何设备的 Vscode 解决方案，我认为应该是现有所有产品中最好的没有之一。
+
+记得去年只有 Vscode 官方的 for web，部署起来略显复杂，没想到不到一年，有人才已经对其作了进一步封装。
+
+个人用来还不错，比如读者正在浏览的博客，正是我在平板上使用 code server 远程部署迁移的。还是很激动的，毕竟闲置多时的平板得以再次利用，以后出门不用背笔记本了，哈哈！闲话不多说，进入正题哈。
+
+<!-- more -->
+
+## 前置条件
+
+长话短说，最低配置要求：启用 WebSockets、1 GB RAM 和 2 个 vCPU 的 Linux 计算机（需要自己买一台服务器）
+
+## 开始
+
+有四种方法可以开始：
+
+1. 使用安装脚本，它可以自动执行大部分过程。如果可能，该脚本使用系统包管理器；
+2. 手动安装代码服务器；
+3. 使用 coder/coder 将代码服务器部署到您的团队；
+4. 使用我们的一键按钮和指南将代码服务器部署到服务器。
+
+如果你使用脚本安装，你可以执行命令查看，脚本在安装过程中做了什么。
+
+```shell
+curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run
+```
+
+执行命令开始安装：
+
+```shell
+curl -fsSL https://code-server.dev/install.sh | sh
+```
+
+完成后，安装脚本会打印出运行和启动代码服务器的说明。
+
+## 配置
+
+执行 `sudo systemctl enabled code-server@$USER` 注册为开机自启动。
+
+创建一个配置文件，如有的话直接修改就好：
+
+`vim ~/.config/code-server/config.yaml` 编辑配置文件如下。
+
+```shell
+bind-addr: 127.0.0.1:8080
+auth: password
+password: 修改成你的密码
+cert: false
+```
+
+编辑完重启服务 `sudo systemctl restart code-server@$USER`
+
+> 更多信息访问[官网](https://coder.com/docs/code-server/latest)
+
