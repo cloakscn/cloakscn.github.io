@@ -116,6 +116,9 @@ export default hopeTheme({
   // hotReload: true,
 
   plugins: {
+    searchPro: true,
+    copyright: true,
+
     blog: true,
 
     // install @waline/client before enabling it

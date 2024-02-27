@@ -5,7 +5,7 @@ icon: home
 title: Blog Home
 heroImage: logo.jpg
 heroText: Return_
-tagline: Hello, World!
+tagline: Hello, World!<br/>English version with translation support by Chat GPt 3.5
 heroFullScreen: false
 # projects:
 #   - icon: project
@@ -40,6 +40,7 @@ heroFullScreen: false
 
 # footer: customize your footer text
 ---
+
 
 <!-- This is a blog home page demo.
 
