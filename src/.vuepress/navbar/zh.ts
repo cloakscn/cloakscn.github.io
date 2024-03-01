@@ -17,11 +17,11 @@ export const zhNavbar = navbar([
         icon: "pen-to-square",
         link: "design-patterns/",
       },
-      // {
-      //   text: "重构",
-      //   icon: "pen-to-square",
-      //   link: "refactoring/",
-      // },
+      {
+        text: "重构",
+        icon: "pen-to-square",
+        link: "refactoring/",
+      },
     ]
   },
 ]);
