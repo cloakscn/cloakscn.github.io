@@ -1,6 +1,6 @@
 ---
 title: 封装字段
-date: 2023-02-18 19:42:17
+date: 2024-02-29
 order: 10
 category:
   - 重构
