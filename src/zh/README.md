@@ -7,6 +7,7 @@ heroImage: logo.jpg
 heroText: 热土_
 heroFullScreen: false
 tagline: 你好，世界！
+bgImage: https://images.wallpaperscraft.com/image/single/silhouette_wall_screens_1067807_2560x1080.jpg
 # projects:
 #   - icon: project
 #     name: 项目名称

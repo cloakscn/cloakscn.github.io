@@ -7,6 +7,7 @@ heroImage: logo.jpg
 heroText: Return_
 tagline: Hello, World!<br/>English version with translation support by Chat GPt 3.5
 heroFullScreen: false
+bgImage: https://images.wallpaperscraft.com/image/single/silhouette_wall_screens_1067807_2560x1080.jpg
 # projects:
 #   - icon: project
 #     name: project name
