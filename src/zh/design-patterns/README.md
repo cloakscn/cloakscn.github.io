@@ -1,6 +1,7 @@
 ---
 title: 设计模式
 date: 2023-02-25 17:18:47
+star: true
 ---
 
 > 引自·[REFACTORING·GURU](https://refactoringguru.cn/)

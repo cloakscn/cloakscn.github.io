@@ -6,7 +6,6 @@ category:
 dir:
   order: 2
   link: true
-  index: false
 ---
 
 <Catalog />

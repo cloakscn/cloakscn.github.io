@@ -3,7 +3,6 @@ title: 解决方案
 index: false
 dir:
   order: 3
-  index: false
 ---
 
 <Catalog />
