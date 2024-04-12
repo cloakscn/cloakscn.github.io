@@ -101,8 +101,6 @@ export default hopeTheme({
       //   editLink: "Edit this page on GitHub",
       // },
     },
-
-   
   },
 
   // encrypt: {
@@ -130,7 +128,7 @@ export default hopeTheme({
     // },
 
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["Badge", "VPCard", "BiliBili", "PDF"],
     },
 
     // all features are enabled for demo, only preserve features you need here
@@ -178,7 +176,7 @@ export default hopeTheme({
       gfm: true,
 
       // install katex before enabling it
-      // katex: true,
+      katex: true,
 
       // install mathjax-full before enabling it
       // mathjax: true,
