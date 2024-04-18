@@ -3,7 +3,6 @@ title: linux-command-watch
 date: 2022-12-10 17:47:44
 category:
 	- Linux
- 	- 命令
 ---
 
 
