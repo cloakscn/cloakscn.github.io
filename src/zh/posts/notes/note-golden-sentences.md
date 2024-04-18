@@ -1,7 +1,7 @@
 ---
 title: 日积月累
 date: 2022-12-15 11:45:16
-categories:
+category:
 - 札记
 tags: 
 ---

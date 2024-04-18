@@ -1,7 +1,7 @@
 ---
 title: Service Mesh
 date: 2023-02-16 13:24:32
-categories: Notes
+category: Notes
 tags: 
 - Service Governance
 - Microservices

@@ -1,7 +1,7 @@
 ---
 title: Thread-related
 date: 2023-02-27 13:44:34
-categories:
+category:
    - Notes
 tags: 
    - Operating System

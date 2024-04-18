@@ -1,6 +1,6 @@
 ---
 title: linux_command_lshw
-categories:
+category:
   - Linux
   - 命令
 tags:

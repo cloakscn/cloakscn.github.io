@@ -2,7 +2,7 @@
 title: 二分查找
 date: 2023-02-04 20:34:54
 mathjax: true
-categories: 算法
+category: 算法
 tags:
 ---
 

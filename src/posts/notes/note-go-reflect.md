@@ -1,7 +1,7 @@
 ---
 title: About Go Reflection
 date: 2023-03-26 18:05:30
-categories: Notes
+category: Notes
 tags:
   - Go
 ---

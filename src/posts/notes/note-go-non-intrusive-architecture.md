@@ -1,7 +1,7 @@
 ---
 title: About Non-Intrusive Architecture
 date: 2023-03-26 22:41:06
-categories: Notes
+category: Notes
 tags:
   - Go
 ---

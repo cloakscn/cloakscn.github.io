@@ -1,7 +1,7 @@
 ---
 title: 递归/回溯
 date: 2023-02-14 19:46:04
-categories: 算法
+category: 算法
 tags:
 ---
 

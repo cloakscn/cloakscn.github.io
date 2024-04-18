@@ -1,7 +1,7 @@
 ---
 title: 双指针
 date: 2023-02-05 17:22:25
-categories: 算法
+category: 算法
 tags:
 ---
 

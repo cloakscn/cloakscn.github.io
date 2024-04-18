@@ -1,6 +1,6 @@
 ---
 title: 关于 var CommandLine = func() func {} 的遐想
-categories: 札记
+category: 札记
 tags:
   - Go
 date: 2023-04-14 17:00:47

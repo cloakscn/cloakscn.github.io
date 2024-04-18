@@ -1,7 +1,7 @@
 ---
 title: Developing and Publishing Modules
 date: 2023-04-07 10:07:39
-categories: Notes
+category: Notes
 tags:
   - Go
 ---

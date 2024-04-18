@@ -1,7 +1,7 @@
 ---
 title: Service Mesh
 date: 2023-02-16 13:24:32
-categories: 札记
+category: 札记
 tags: 
 - 服务治理
 - 微服务

@@ -1,7 +1,8 @@
 ---
 title: data-acquisition-hardware
 date: 2022-12-10 19:16:23
-categories:
+category:
+  - Linux
 tags: 数据采集
 ---
 

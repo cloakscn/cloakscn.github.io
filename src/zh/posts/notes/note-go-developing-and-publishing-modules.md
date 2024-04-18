@@ -1,7 +1,7 @@
 ---
 title: Developing and publishing modules
 date: 2023-04-07 10:07:39
-categories: 札记
+category: 札记
 tags:
   - Go
 ---

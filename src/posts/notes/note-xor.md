@@ -1,7 +1,7 @@
 ---
 title: XOR Operation
 date: 2023-03-05 20:03:24
-categories: Notes
+category: Notes
 tags: Logical Operations
 ---
 

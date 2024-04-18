@@ -1,7 +1,7 @@
 ---
 title: 深度优先搜索
 date: 2023-02-14 12:45:59
-categories: 算法
+category: 算法
 tags:
 ---
 

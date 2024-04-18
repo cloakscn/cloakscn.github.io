@@ -1,7 +1,7 @@
 ---
 title: 异或运算
 date: 2023-03-05 20:03:24
-categories: 札记
+category: 札记
 tags: 逻辑运算
 ---
 

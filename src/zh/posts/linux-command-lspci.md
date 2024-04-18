@@ -2,7 +2,7 @@
 title: linux-command-lspci
 date: 2022-12-09 18:28:32
 update: 2022-12-14 22:28:32
-categories:
+category:
 	- Linux
  	- 命令
 ---

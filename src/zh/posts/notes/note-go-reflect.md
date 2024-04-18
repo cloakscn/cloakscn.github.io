@@ -1,7 +1,7 @@
 ---
 title: 关于 Go 反射
 date: 2023-03-26 18:05:30
-categories: 札记
+category: 札记
 tags:
   - Go
 ---

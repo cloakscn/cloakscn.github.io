@@ -1,7 +1,7 @@
 ---
 title: 滑动窗口
 date: 2023-02-03 23:39:48
-categories: 算法
+category: 算法
 tags:
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 关于非侵入式架构
 date: 2023-03-26 22:41:06
-categories: 札记
+category: 札记
 tags:
   - Go
 ---

@@ -1,7 +1,7 @@
 ---
 title: 广度优先搜索
 date: 2023-02-13 21:26:47
-categories: 算法
+category: 算法
 tags:
 cover: https://pic.leetcode-cn.com/1618546629-CFzVFM-BFS.gif
 ---

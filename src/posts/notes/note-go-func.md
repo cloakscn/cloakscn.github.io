@@ -1,6 +1,6 @@
 ---
 title: Contemplations on `var CommandLine = func() func {}`
-categories: Notes
+category: Notes
 tags:
   - Go
 date: 2023-04-14 17:00:47

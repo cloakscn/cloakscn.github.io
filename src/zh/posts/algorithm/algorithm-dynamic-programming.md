@@ -1,7 +1,7 @@
 ---
 title: 动态规划
 date: 2023-02-19 22:51:05
-categories: 算法
+category: 算法
 tags:
 ---
 

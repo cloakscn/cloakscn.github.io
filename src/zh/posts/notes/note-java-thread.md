@@ -1,7 +1,7 @@
 ---
 title: 线程相关
 date: 2023-02-27 13:44:34
-categories:
+category:
    - 札记
 tags: 
    - 操作系统

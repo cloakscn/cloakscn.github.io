@@ -1,7 +1,7 @@
 ---
 title: Istio Architecture
 date: 2023-02-16 12:04:46
-categories: Notes
+category: Notes
 tags: 
 - Service Governance
 - Microservices

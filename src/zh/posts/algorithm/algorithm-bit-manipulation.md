@@ -1,7 +1,7 @@
 ---
 title: 位运算
 date: 2023-02-20 15:55:47
-categories: 算法
+category: 算法
 tags:
 ---
 
