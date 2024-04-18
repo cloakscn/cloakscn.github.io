@@ -2,7 +2,6 @@
 title: linux_command_lshw
 category:
   - Linux
-  - 命令
 tags:
   - 硬件采集
 date: 2022-12-12 17:12:40
