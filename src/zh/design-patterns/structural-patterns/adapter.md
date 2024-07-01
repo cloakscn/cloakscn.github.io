@@ -21,9 +21,7 @@ tag:
 
 ## 类适配器
 
-<div style="display: flex; flex-direction: row; justify-content: center; zoom: 100%; float: right">
-<div>![](https://refactoringguru.cn/images/patterns/diagrams/adapter/structure-class-adapter.png?id=e1c60240508146ed3b98ac562cc8e510)</div>
-</div>
+![](https://refactoringguru.cn/images/patterns/diagrams/adapter/structure-class-adapter.png?id=e1c60240508146ed3b98ac562cc8e510)
 
 这一实现使用了继承机制： 适配器同时继承两个对象的接口。 请注意， 这种方式仅能在支持多重继承的编程语言中实现， 例如 C++。
 
