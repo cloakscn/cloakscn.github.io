@@ -1,0 +1,9 @@
+site_name: Cloaks
+site_url: https://cloaks.cn
+theme:
+#  name: readthedocs
+  name: material
+
+nav:
+  - Home: index.md
+  - About: about.md
