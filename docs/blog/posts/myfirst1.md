@@ -1,12 +1,12 @@
 ---
 date:
   created: 2023-12-31
-draft: true
 pin: true
 categories:
   - Holidays
 authors:
-  - team
+  - squidfunk
+  - cloaks
 tags:
   - new year
   - hogmanay

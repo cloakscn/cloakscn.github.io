@@ -7,3 +7,7 @@ authors:
     name: Martin Donath
     description: Creator
     avatar: https://github.com/squidfunk.png
+  cloaks:
+    name: Cloaks
+    description: We hope you are all having fun and wish you all the best for the new year!
+    avatar: assets/avatar.jpg

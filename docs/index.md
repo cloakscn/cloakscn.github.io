@@ -1,55 +1,9 @@
-# Welcome to MkDocs
+# 欢迎来到我的世界！！！
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+!!! info ""
 
-## Commands
+        都说时势造英雄，英雄的诞生不是因为英雄本身，而是因为这不公的世界。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+For full documentation visit [squidfunk.github.io](https://squidfunk.github.io/mkdocs-material/).
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+> 长太息以掩涕兮，哀民生之多艰。
