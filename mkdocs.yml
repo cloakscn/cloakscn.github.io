@@ -179,9 +179,10 @@ nav:
       - index.md
       - about.md
   - 高级架构师:
-      # - ruankao/index.md
+      - ruankao/index.md
       - ruankao/sa.md
       - ruankao/sd.md
+      - ruankao/db.md
   # - Getting started:
   #     - Installation: getting-started.md
   #     - Creating your site: creating-your-site.md

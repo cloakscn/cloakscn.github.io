@@ -53,7 +53,7 @@
 
 ### 关键路径
 
-![img_4.png](img_4.png)
+![img_4.png](images/img_4.png)
 
 **总浮动时间：** 在不延误 **项目完工时间** 且不违反进度约束因素的前提下，活动可以从最早开始时间推迟或延迟的时间量，就是该活动的进度灵活性。正常情况下关键活动的总浮动时间为零。
 
@@ -95,13 +95,13 @@ flowchart LR
 
 #### 配置项的版本
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 #### 质量管理
 
 
 
-![](img_1.png)
+![](images/img_1.png)
 
 #### 风险管理
 
@@ -114,7 +114,7 @@ flowchart LR
 * 风险应对计划编制
 * 风险监控：监控风险计划的执行，检测参与风险
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 在信息系统项目中，从宏观上看风险可以分为项目风险、技术风险和商业风险。
 
@@ -122,7 +122,7 @@ flowchart LR
 * 技术风险
 * 商业风险
 
-![img_3.png](img_3.png)
+![img_3.png](images/img_3.png)
 ## 信息安全 
 
 * 对称加密
