@@ -28,9 +28,9 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-minify-plugin
       - run: mkdocs gh-deploy --force
-      - name: Deploy to Vercel
-        run: |
-          npm install -g vercel
-          vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+#      - name: Deploy to Vercel
+#        run: |
+#          npm install -g vercel
+#          vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+#        env:
+#          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
