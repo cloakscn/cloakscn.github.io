@@ -2,9 +2,8 @@
 site_name: Cloaks | Return
 site_url: https://www.cloaks.cn
 site_author: Cloaks
-  # site_description: >-
-  # Write your documentation in Markdown and create a professional static site in
-# minutes – searchable, customizable, in 60+ languages, for all devices
+site_description: >-
+  都说时势造英雄，英雄的诞生不是因为英雄本身，而是因为这不公的世界。
 
 # Repository
 repo_name: cloakscn/cloakscn.github.io
