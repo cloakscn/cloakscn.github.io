@@ -2,9 +2,9 @@
 site_name: Cloaks | Return
 site_url: https://www.cloaks.cn
 site_author: Cloaks
-# site_description: >-
+  # site_description: >-
   # Write your documentation in Markdown and create a professional static site in
-  # minutes – searchable, customizable, in 60+ languages, for all devices
+# minutes – searchable, customizable, in 60+ languages, for all devices
 
 # Repository
 repo_name: cloakscn/cloakscn.github.io
@@ -17,6 +17,7 @@ copyright: Copyright &copy; 2018 - 2024 Cloaks 晋ICP备19014927号-3
 theme:
   name: material
   language: zh
+  custom_dir: overrides
   features:
     - announce.dismiss
     - content.action.edit
@@ -75,14 +76,14 @@ theme:
 # Plugins
 plugins:
   # - offline
-  - blog:
-      authors_profiles: true
-  # - social:
-      # cards_layout_options:
-        # font_family: Noto Sans SC
-        # logo: docs/assets/logo.jpg
-        # background_color: "#ff1493"
-        # background_image: null
+  - blog
+    #      authors_profiles: true
+    # - social:
+    # cards_layout_options:
+    # font_family: Noto Sans SC
+    # logo: docs/assets/logo.jpg
+    # background_color: "#ff1493"
+  # background_image: null
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
@@ -157,18 +158,30 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  # math support
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
 
 not_in_nav: |
   /tutorials/**/*.md
 
 # Page tree
 nav:
-  - 首页: index.md
+  - 首页:
+      - index.md
+      - about.md
   - 高级架构师:
       # - ruankao/index.md
       - ruankao/sa.md
       - ruankao/sd.md
-      - runakao/pm.md
   # - Getting started:
   #     - Installation: getting-started.md
   #     - Creating your site: creating-your-site.md
