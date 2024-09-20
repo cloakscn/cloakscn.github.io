@@ -183,6 +183,9 @@ nav:
       - ruankao/sa.md
       - ruankao/sd.md
       - ruankao/db.md
+      - ruankao/web.md
+  - 设计模式: design-patterns
+  - 重构: refactoring
   # - Getting started:
   #     - Installation: getting-started.md
   #     - Creating your site: creating-your-site.md
