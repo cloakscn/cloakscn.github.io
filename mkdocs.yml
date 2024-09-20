@@ -17,7 +17,7 @@ copyright: Copyright &copy; 2018 - 2024 Cloaks 晋ICP备19014927号-3
 theme:
   name: material
   language: zh
-#  custom_dir: overrides
+  custom_dir: overrides
   font:
     text: Roboto
     code: Roboto Mono
