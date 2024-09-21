@@ -193,6 +193,7 @@ nav:
       - ruankao/sd.md
       - ruankao/db.md
       - ruankao/web.md
+      - ruankao/paper.md
   - 设计模式: design-patterns
   - 重构: refactoring
   # - Getting started:

@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a10a3fef-3d87-432b-9691-d5d9cda4ba83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_18.png" afterDir="false" />
+    <list default="true" id="a10a3fef-3d87-432b-9691-d5d9cda4ba83" name="Changes" comment="impr: 常规更新">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/refactoring/techniques/moving-features-between-objects/move-field.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/refactoring/techniques/moving-features-between-objects/move-field.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ruankao/web.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/web.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ruankao/lunwen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/lunwen.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +71,25 @@
       <option name="presentableId" value="Default" />
       <updated>1726754255851</updated>
       <workItem from="1726754258099" duration="21297000" />
-      <workItem from="1726918647996" duration="4133000" />
+      <workItem from="1726918647996" duration="6731000" />
     </task>
+    <task id="LOCAL-00001" summary="impr: 常规更新">
+      <option name="closed" value="true" />
+      <created>1726928833016</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726928833016</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="impr: 常规更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="impr: 常规更新" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
