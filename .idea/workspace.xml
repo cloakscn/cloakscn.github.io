@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a10a3fef-3d87-432b-9691-d5d9cda4ba83" name="Changes" comment="" />
+    <list default="true" id="a10a3fef-3d87-432b-9691-d5d9cda4ba83" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/refactoring/techniques/moving-features-between-objects/move-field.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/refactoring/techniques/moving-features-between-objects/move-field.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ruankao/web.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/web.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,10 +28,10 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2mIBYB1PPe3sTZFB1TZWarNEvUW" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -33,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "git-widget-placeholder": "mkdocs",
+    "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -67,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726754255851</updated>
       <workItem from="1726754258099" duration="21297000" />
+      <workItem from="1726918647996" duration="4133000" />
     </task>
     <servers />
   </component>
