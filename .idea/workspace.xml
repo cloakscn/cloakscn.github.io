@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a10a3fef-3d87-432b-9691-d5d9cda4ba83" name="Changes" comment="impr: 常规更新">
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_25.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/ruankao/lunwen.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/lunwen.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ruankao/paper.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/paper.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,23 +39,23 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "git-widget-placeholder": "master",
-    "go.import.settings.migrated": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Settings.Markdown.SmartKeys",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown.SmartKeys&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/ruankao/images" />
@@ -72,6 +79,7 @@
       <updated>1726754255851</updated>
       <workItem from="1726754258099" duration="21297000" />
       <workItem from="1726918647996" duration="6731000" />
+      <workItem from="1726983057834" duration="5360000" />
     </task>
     <task id="LOCAL-00001" summary="impr: 常规更新">
       <option name="closed" value="true" />
