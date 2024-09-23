@@ -216,6 +216,10 @@ nav:
       - 论文写作:
           - ruankao/paper.md
           - ruankao/hierarchical.md
+      - 补充知识:
+          - ruankao/other/intellectual-property-rights.md
+          - ruankao/other/applied-mathematics.md
+          - ruankao/other/professional-english.md
   - 设计模式: design-patterns
   - 重构: refactoring
   # - Getting started:
