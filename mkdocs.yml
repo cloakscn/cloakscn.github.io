@@ -202,7 +202,7 @@ nav:
   - 首页:
       - index.md
       - about.md
-  - 高级架构师:
+  - 高级架构师（草稿）:
       - ruankao/index.md
       - 综合知识:
           - ruankao/reliability.md
@@ -220,8 +220,8 @@ nav:
           - ruankao/other/intellectual-property-rights.md
           - ruankao/other/applied-mathematics.md
           - ruankao/other/professional-english.md
-  - 设计模式: design-patterns
-  - 重构: refactoring
+  - 设计模式（草稿）: design-patterns
+  - 重构（草稿）: refactoring
   # - Getting started:
   #     - Installation: getting-started.md
   #     - Creating your site: creating-your-site.md
