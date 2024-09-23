@@ -78,7 +78,13 @@ theme:
 # Plugins
 plugins:
   # - offline
-  - blog
+  - tags
+  - blog:
+      blog_toc: true
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      post_slugify_separator: _
     #      authors_profiles: true
     # - social:
     # cards_layout_options:
