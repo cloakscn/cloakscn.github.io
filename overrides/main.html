@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {% block announce %}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3907145727941275"
-     crossorigin="anonymous"></script>
 Welcome to <strong>Cloask | Return</strong> Home
+{% endblock %}
+
+{% block scripts %}
+  <!-- Add scripts that need to run before here -->
+  {{ super() }}
+  <!-- Add scripts that need to run afterwards here -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3907145727941275"
+     crossorigin="anonymous"></script>
 {% endblock %}
