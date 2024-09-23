@@ -131,6 +131,8 @@ extra:
       link: mailto:wy03290019@gmail.com
     - icon: material/google-analytics
       link: https://analytics.google.com/analytics/web/#/p299634585/reports/intelligenthome?params=_u..nav%3Dmaui
+    - icon: simple/googleadsense
+      link: https://www.google.com/adsense/new/u/0/pub-3907145727941275/onboarding
 # Extensions
 markdown_extensions:
   - abbr
