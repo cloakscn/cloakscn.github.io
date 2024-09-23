@@ -211,6 +211,7 @@ nav:
           - ruankao/web.md
       - 论文写作:
           - ruankao/paper.md
+          - ruankao/hierarchical.md
   - 设计模式: design-patterns
   - 重构: refactoring
   # - Getting started:
