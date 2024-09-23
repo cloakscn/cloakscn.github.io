@@ -204,11 +204,13 @@ nav:
       - ruankao/index.md
       - 综合知识:
           - ruankao/reliability.md
+          - ruankao/future.md
       - 案例分析:
           - ruankao/sa.md
           - ruankao/sd.md
           - ruankao/db.md
           - ruankao/web.md
+          - ruankao/sa-evolution.md
       - 论文写作:
           - ruankao/paper.md
           - ruankao/hierarchical.md
