@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a10a3fef-3d87-432b-9691-d5d9cda4ba83" name="Changes" comment="impr: 常规更新">
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/ruankao/reliability.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/ruankao/img_30.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ruankao/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ruankao/reliability.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ruankao/reliability.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +77,7 @@
       <workItem from="1726754258099" duration="21297000" />
       <workItem from="1726918647996" duration="6731000" />
       <workItem from="1726983057834" duration="8150000" />
+      <workItem from="1727019966777" duration="1692000" />
     </task>
     <task id="LOCAL-00001" summary="impr: 常规更新">
       <option name="closed" value="true" />
