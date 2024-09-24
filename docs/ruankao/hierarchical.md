@@ -19,6 +19,7 @@ MVC 是一种软件设计模式。MVC 把一个应用的输入、处理、输出
 * 易于构建功能强大的用户界面；
 * 增加应用的可拓展性、强壮性、灵活性。
 
+
 1. MVP（Model-View-Presenter）模式
 
 在 MVP 模式中 Model 提供数据，View 负责显示，`Controller/Presenter` 负责逻辑的处理。MVP 不仅仅避免了 View 和 Model 之间的耦合，还进一步降低了 Presenter 对 View 的依赖。
