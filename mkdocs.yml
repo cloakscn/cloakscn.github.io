@@ -78,6 +78,7 @@ theme:
 # Plugins
 plugins:
   # - offline
+  - glightbox
   - tags
   - blog:
       blog_toc: true
