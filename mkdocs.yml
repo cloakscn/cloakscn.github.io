@@ -211,10 +211,11 @@ nav:
       - about.md
   - 高级架构师（编制中）:
       - ruankao/index.md
-      - ruankao/network.md
       - 综合知识:
           - ruankao/reliability.md
           - ruankao/future.md
+          - ruankao/network.md
+          - ruankao/software engineering.md
       - 案例分析:
           - ruankao/sa.md
           - ruankao/sd.md
