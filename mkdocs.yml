@@ -235,7 +235,7 @@ nav:
   - 设计模式（编制中）: 
       - design-patterns/index.md
       - 行为模式:
-          - desgn-patterns/command.md
+          - desgn-patterns/behavioral-patterns/command.md
   - 重构（编制中）: refactoring
   # - Getting started:
   #     - Installation: getting-started.md
