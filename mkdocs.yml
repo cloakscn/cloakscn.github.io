@@ -215,6 +215,7 @@ nav:
           - ruankao/reliability.md
           - ruankao/future.md
           - ruankao/network.md
+          - ruankao/system engineering.md
           - ruankao/software engineering.md
       - 案例分析:
           - ruankao/sa.md
