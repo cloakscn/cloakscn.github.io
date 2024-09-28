@@ -211,6 +211,7 @@ nav:
       - about.md
   - 高级架构师（编制中）:
       - ruankao/index.md
+      - ruankao/network.md
       - 综合知识:
           - ruankao/reliability.md
           - ruankao/future.md
