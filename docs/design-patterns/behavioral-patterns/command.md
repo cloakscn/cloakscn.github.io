@@ -1,17 +1,10 @@
----
-title: 命令模式
-date: 2023-02-25 17:18:47
-category:
-  - 设计模式
-tag:
-  - 行为模式
----
+# 命令模式
 
 命令模式是一种行为设计模式， 它可将请求转换为一个包含与请求相关的所有信息的独立对象。 该转换让你能根据不同的请求将方法参数化、 延迟请求执行或将其放入队列中， 且能实现可撤销操作。
 
 ## 模式结构
 
-![](https://refactoringguru.cn/images/patterns/diagrams/command/structure.png)
+![](images/behavioral-patterns/command-structure.png)
 
 1. **发送者 （Sender）**——亦称 “触发者 （Invoker）”——类负责对请求进行初始化， 其中必须包含一个成员变量来存储对于命令对象的引用。 发送者触发命令， 而不向接收者直接发送请求。 注意， 发送者并不负责创建命令对象： 它通常会通过构造函数从客户端处获得预先生成的命令。
 2. **命令 （Command）** 接口通常仅声明一个执行命令的方法。
@@ -52,38 +45,44 @@ tag:
 
 注意我们是如何将相同请求封装进多个请求者的。 我们也可以采用相同的方式来处理其他命令。 创建独立命令对象的优势在于可将 UI 逻辑与底层业务逻辑解耦。 这样就无需为每个请求者开发不同的处理者了。 命令对象中包含执行所需的全部信息， 所以也可用于延迟执行。
 
-```go device.go: 接收者接口
-package main
+=== "device.go 接收者接口"
 
-type Device interface {
-    on()
-    off()
-}
-```
+    ```go
+    package main
+    
+    type Device interface {
+        on()
+        off()
+    }
+    ```
 
-```go tv.go: 具体接收者
-package main
+=== "device.go: 接收者接口"
 
-import "fmt"
-
-type Tv struct {
-    isRunning bool
-}
-
-func (t *Tv) on() {
-    t.isRunning = true
-    fmt.Println("Turning tv on")
-}
-
-func (t *Tv) off() {
-    t.isRunning = false
-    fmt.Println("Turning tv off")
-}
-```
+    ```go 
+    package main
+    
+    import "fmt"
+    
+    type Tv struct {
+        isRunning bool
+    }
+    
+    func (t *Tv) on() {
+        t.isRunning = true
+        fmt.Println("Turning tv on")
+    }
+    
+    func (t *Tv) off() {
+        t.isRunning = false
+        fmt.Println("Turning tv off")
+    }
+    ```
 
 1. 声明仅有一个执行方法的命令接口。
 
-    ```go  command.go: 命令接口
+=== "command.go: 命令接口"
+
+    ```go  
     package main
 
     type Command interface {
@@ -93,7 +92,9 @@ func (t *Tv) off() {
 
 2. 抽取请求并使之成为实现命令接口的具体命令类。 每个类都必须有一组成员变量来保存请求参数和对于实际接收者对象的引用。 所有这些变量的数值都必须通过命令构造函数进行初始化。
 
-    ```go onCommand.go: 具体接口
+=== "onCommand.go: 具体接口"
+
+    ```go 
     package main
 
     type OnCommand struct {
@@ -120,7 +121,9 @@ func (t *Tv) off() {
 3. 找到担任发送者职责的类。 在这些类中添加保存命令的成员变量。 发送者只能通过命令接口与其命令进行交互。 发送者自身通常并不创建命令对象， 而是通过客户端代码获取。
 4. 修改发送者使其执行命令， 而非直接将请求发送给接收者。
 
-    ```go button.go: 请求者
+=== "button.go: 请求者"
+
+    ```go 
     package main
 
     type Button struct {
@@ -137,36 +140,40 @@ func (t *Tv) off() {
     * 创建命令， 如有需要可将其关联至接收者。
     * 创建发送者并将其与特定命令关联。
 
-```go  main.go: 客户端代码
-package main
+=== "main.go: 客户端代码"
 
-func main() {
-    tv := &Tv{}
+    ```go  
+    package main
 
-    onCommand := &OnCommand{
-        device: tv,
+    func main() {
+        tv := &Tv{}
+
+        onCommand := &OnCommand{
+            device: tv,
+        }
+
+        offCommand := &OffCommand{
+            device: tv,
+        }
+
+        onButton := &Button{
+            command: onCommand,
+        }
+        onButton.press()
+
+        offButton := &Button{
+            command: offCommand,
+        }
+        offButton.press()
     }
+    ```
 
-    offCommand := &OffCommand{
-        device: tv,
-    }
+=== "output.txt: 执行结果"
 
-    onButton := &Button{
-        command: onCommand,
-    }
-    onButton.press()
-
-    offButton := &Button{
-        command: offCommand,
-    }
-    offButton.press()
-}
-```
-
-```go output.txt: 执行结果
-Turning tv on
-Turning tv off
-```
+    ```go 
+    Turning tv on
+    Turning tv off
+    ```
 
 ## 优缺点
 
