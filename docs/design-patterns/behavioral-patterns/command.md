@@ -4,7 +4,7 @@
 
 ## 模式结构
 
-![](images/behavioral-patterns/command-structure.png)
+![](../images/behavioral-patterns/command-structure.png)
 
 1. **发送者 （Sender）**——亦称 “触发者 （Invoker）”——类负责对请求进行初始化， 其中必须包含一个成员变量来存储对于命令对象的引用。 发送者触发命令， 而不向接收者直接发送请求。 注意， 发送者并不负责创建命令对象： 它通常会通过构造函数从客户端处获得预先生成的命令。
 2. **命令 （Command）** 接口通常仅声明一个执行命令的方法。
