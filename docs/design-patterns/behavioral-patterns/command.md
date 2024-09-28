@@ -59,7 +59,7 @@
     }
     ```
 
-=== "device.go: 接收者接口"
+=== "tv.go: 具体接受者"
 
     ```go 
     package main
