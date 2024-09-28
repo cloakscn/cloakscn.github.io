@@ -48,38 +48,38 @@
 
 注意我们是如何将相同请求封装进多个请求者的。 我们也可以采用相同的方式来处理其他命令。 创建独立命令对象的优势在于可将 UI 逻辑与底层业务逻辑解耦。 这样就无需为每个请求者开发不同的处理者了。 命令对象中包含执行所需的全部信息， 所以也可用于延迟执行。
 
-=== "device.go 接收者接口"
+    === "device.go 接收者接口"
 
-    ```go
-    package main
-    
-    type Device interface {
-        on()
-        off()
-    }
-    ```
+        ```go
+        package main
+        
+        type Device interface {
+            on()
+            off()
+        }
+        ```
 
-=== "tv.go: 具体接受者"
+    === "tv.go: 具体接受者"
 
-    ```go 
-    package main
-    
-    import "fmt"
-    
-    type Tv struct {
-        isRunning bool
-    }
-    
-    func (t *Tv) on() {
-        t.isRunning = true
-        fmt.Println("Turning tv on")
-    }
-    
-    func (t *Tv) off() {
-        t.isRunning = false
-        fmt.Println("Turning tv off")
-    }
-    ```
+        ```go 
+        package main
+        
+        import "fmt"
+        
+        type Tv struct {
+            isRunning bool
+        }
+        
+        func (t *Tv) on() {
+            t.isRunning = true
+            fmt.Println("Turning tv on")
+        }
+        
+        func (t *Tv) off() {
+            t.isRunning = false
+            fmt.Println("Turning tv off")
+        }
+        ```
 
 1. 声明仅有一个执行方法的命令接口。
 
