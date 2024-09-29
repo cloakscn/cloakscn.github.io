@@ -1,13 +1,10 @@
----
-title: 观察者模式
-date: 2023-02-25 17:18:47
-category:
-  - 设计模式
-tag:
-  - 行为模式
----
+# 观察者模式
 
 观察者模式是一种行为设计模式， 允许你定义一种订阅机制， 可在对象事件发生时通知多个 “观察” 该对象的其他对象。
+
+!!! tip "2009 综合知识 61"
+
+    根据题干描述，可以看出本题的核心在于对某个具有固定结构的活动节点需要多种处理能力，且处理能力可扩展，也就是说要求在不改变原来类结构（活动节点）的基础上增加新功能。对照 4 个选项，发现访问者模式最符合要求。
 
 ## 模式结构
 
@@ -47,7 +44,9 @@ tag:
 1. 仔细检查你的业务逻辑， 试着将其拆分为两个部分： 独立于其他代码的核心功能将作为发布者； 其他代码则将转化为一组订阅类。
 2. 声明订阅者接口。 该接口至少应声明一个 update方法。
 
-    ```go 📄subject.go: 主体
+=== "📄 subject.go: 主体"
+
+    ```go 
     package main
 
     type Subject interface {
@@ -57,7 +56,9 @@ tag:
     }
     ```
 
-    ```go 📄 observer.go: 观察者
+=== "📄 observer.go: 观察者"
+
+    ```go 
     package main
 
     type Observer interface {
@@ -66,7 +67,9 @@ tag:
     }
     ```
 
-    ```go 📄customer.go: 具体观察者
+=== "📄 customer.go: 具体观察者"
+
+    ```go 
     package main
 
     import "fmt"
@@ -90,7 +93,9 @@ tag:
    但是， 如果你需要在现有的类层次结构中应用该模式， 则可以考虑使用组合的方式： 将订阅逻辑放入一个独立的对象， 然后让所有实际订阅者使用该对象。
 5. 创建具体发布者类。 每次发布者发生了重要事件时都必须通知所有的订阅者。
 
-    ```go 📄item.go: 具体主体
+=== "📄 item.go: 具体主体"
+
+    ```go 
     package main
 
     import "fmt"
@@ -106,11 +111,13 @@ tag:
             name: name,
         }
     }
+
     func (i *Item) updateAvailability() {
         fmt.Printf("Item %s is now in stock\n", i.name)
         i.inStock = true
         i.notifyAll()
     }
+
     func (i *Item) register(o Observer) {
         i.observerList = append(i.observerList, o)
     }
@@ -142,28 +149,32 @@ tag:
    但还有另一种选择。 订阅者接收到通知后直接从通知中获取所有数据。 在这种情况下， 发布者必须通过更新方法将自身传递出去。 另一种不太灵活的方式是通过构造函数将发布者与订阅者永久性地连接起来。
 7. 客户端必须生成所需的全部订阅者， 并在相应的发布者处完成注册工作。
 
-```go 📄main.go: 客户端代码
-package main
+=== "📄 main.go: 客户端代码"
 
-func main() {
+    ```go 
+    package main
 
-    shirtItem := newItem("Nike Shirt")
+    func main() {
 
-    observerFirst := &Customer{id: "abc@gmail.com"}
-    observerSecond := &Customer{id: "xyz@gmail.com"}
+        shirtItem := newItem("Nike Shirt")
 
-    shirtItem.register(observerFirst)
-    shirtItem.register(observerSecond)
+        observerFirst := &Customer{id: "abc@gmail.com"}
+        observerSecond := &Customer{id: "xyz@gmail.com"}
 
-    shirtItem.updateAvailability()
-}
-```
+        shirtItem.register(observerFirst)
+        shirtItem.register(observerSecond)
 
-```go 📄output.txt: 执行结果
-Item Nike Shirt is now in stock
-Sending email to customer abc@gmail.com for item Nike Shirt
-Sending email to customer xyz@gmail.com for item Nike Shirt
-```
+        shirtItem.updateAvailability()
+    }
+    ```
+
+=== "📄 output.txt: 执行结果"
+
+    ```go 
+    Item Nike Shirt is now in stock
+    Sending email to customer abc@gmail.com for item Nike Shirt
+    Sending email to customer xyz@gmail.com for item Nike Shirt
+    ```
 
 ## 优缺点
 
@@ -174,12 +185,12 @@ Sending email to customer xyz@gmail.com for item Nike Shirt
 
 ## 与其他模式的关系
 
-* **责任链模式**、 **命令模式**、 **中介者模式**和**观察者模式**用于处理请求发送者和接收者之间的不同连接方式：
+* **责任链模式**、 **命令模式**、 **中介者模式** 和 **观察者模式** 用于处理请求发送者和接收者之间的不同连接方式：
   * 责任链按照顺序将请求动态传递给一系列的潜在接收者， 直至其中一名接收者对请求进行处理。
   * 命令在发送者和请求者之间建立单向连接。
   * 中介者清除了发送者和请求者之间的直接连接， 强制它们通过一个中介对象进行间接沟通。
   * 观察者允许接收者动态地订阅或取消接收请求。
-* **中介者**和**观察者**之间的区别往往很难记住。 在大部分情况下， 你可以使用其中一种模式， 而有时可以同时使用。 让我们来看看如何做到这一点。
+* **中介者** 和 **观察者** 之间的区别往往很难记住。 在大部分情况下， 你可以使用其中一种模式， 而有时可以同时使用。 让我们来看看如何做到这一点。
   * 中介者的主要目标是消除一系列系统组件之间的相互依赖。 这些组件将依赖于同一个中介者对象。 观察者的目标是在对象之间建立动态的单向连接， 使得部分对象可作为其他对象的附属发挥作用。
   * 有一种流行的中介者模式实现方式依赖于观察者。 中介者对象担当发布者的角色， 其他组件则作为订阅者， 可以订阅中介者的事件或取消订阅。 当中介者以这种方式实现时， 它可能看上去与观察者非常相似。
   * 当你感到疑惑时， 记住可以采用其他方式来实现中介者。 例如， 你可永久性地将所有组件链接到同一个中介者对象。 这种实现方式和观察者并不相同， 但这仍是一种中介者模式。
