@@ -218,7 +218,7 @@ nav:
           - ruankao/system engineering.md
           - ruankao/software engineering.md
       - 案例分析:
-          - ruankao/sa.md
+          - ruankao/software architecture.md
           - ruankao/sd.md
           - ruankao/db.md
           - ruankao/web.md
