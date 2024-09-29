@@ -94,7 +94,7 @@
 
 === "main.go: 客户端代码"
 
-```go 
+    ```go 
     package main
 
     import "fmt"
@@ -119,7 +119,7 @@
 
 === "output.txt: 执行结果"
 
-    ```go 
+    ```plain
     Price of veggeMania with tomato and cheese topping is 32
     ```
 
