@@ -220,7 +220,7 @@ nav:
       - 案例分析:
           - ruankao/software architecture.md
           - ruankao/sd.md
-          - ruankao/db.md
+          - ruankao/database-design.md
           - ruankao/web.md
           - ruankao/sa-evolution.md
       - 论文写作:
