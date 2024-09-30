@@ -36,7 +36,7 @@ theme:
     - content.tooltips
     - header.autohide
     - navigation.path
-    - navigation.expand
+    # - navigation.expand
     - navigation.footer
     - navigation.indexes
     # instant loading https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
