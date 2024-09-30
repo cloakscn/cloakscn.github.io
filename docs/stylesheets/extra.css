@@ -1,0 +1,17 @@
+h1,
+h2,
+h3 {
+    counter-increment: section;
+}
+
+h1::before {
+    content: counter(section) ". ";
+}
+
+h2::before {
+    content: counter(section) "." counter(section, decimal) ". ";
+}
+
+h3::before {
+    content: counter(section) "." counter(section, decimal) "." counter(section, decimal) ". ";
+}
