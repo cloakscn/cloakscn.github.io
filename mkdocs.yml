@@ -14,6 +14,8 @@ copyright: Copyright &copy; 2018 - 2024 Cloaks 晋ICP备19014927号-3
 
 # Configuration
 theme:
+  icon:
+    annotation: material/arrow-right-circle
   name: material
   language: zh
   custom_dir: overrides

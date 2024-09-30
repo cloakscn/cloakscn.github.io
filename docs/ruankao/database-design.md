@@ -83,6 +83,14 @@
 
 上述 4 种范式之间有如下联系：$BCNF  \sub 3NF \sub 2NF \sub 1NF$。
 
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+{ .annotate }
+
+1.  :man_raising_hand: I'm an annotation! (1)
+    { .annotate }
+
+    1.  :woman_raising_hand: I'm an annotation as well!
+
 #### 模式分解
 
 在数据库设计中，**模式分解（Schema Decomposition）** 是指将复杂或冗余的数据库表结构分解为更小、更简洁的表，以确保数据的一致性、减少冗余和避免异常（anomalies）。这种技术通常与 **范式化（Normalization）** 过程相关，目的是创建一个结构良好的数据库设计。
