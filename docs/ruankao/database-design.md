@@ -85,15 +85,7 @@
 
 上述 4 种范式之间有如下联系：$BCNF  \sub 3NF \sub 2NF \sub 1NF$。
 
-Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
-{ .annotate }
-
-1.  :man_raising_hand: I'm an annotation! (1)
-    { .annotate }
-
-    1.  :woman_raising_hand: I'm an annotation as well!
-
-#### 模式分解
+#### 模式分解的方法
 
 在数据库设计中，**模式分解（Schema Decomposition）** 是指将复杂或冗余的数据库表结构分解为更小、更简洁的表，以确保数据的一致性、减少冗余和避免异常（anomalies）。这种技术通常与 **范式化（Normalization）** 过程相关，目的是创建一个结构良好的数据库设计。
 
@@ -102,17 +94,9 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 1. **识别不必要的数据冗余**：例如，重复存储相同信息。
 2. **分解表**：将一个包含冗余数据的大表分解为多个更小的表，使每个表只包含单一的实体或主题。
 3. **保持数据依赖**：通过定义外键保持表之间的关系，确保分解后的表能够正确关联。
-4. **无损分解**：分解后的关系能够还原出原关系模式，不能还原就是有损分解。
 
-    当分解为两个关系模式，可以通过以下定理判断是否无损分解：
 
-    定理：如果 $R$ 的分解为 $p=\{R1,R2\}$，$F$ 为 $R$ 所满足的函数依赖集合，分解 $p$ 具有无损连接性的充分必要条件是 $R1 \cap R2 \rightarrow (R1-R2)$ 或者 $R1 \cap R2 \rightarrow (R2-R1)$
-
-    当分解关系为三个及以上的关系模式时，可以通过表格法求解：
-
-    ![alt text](image-3.png)
-
-#### 模式分解的步骤
+**模式分解的步骤**
 
 1. **确定函数依赖（Functional Dependencies）**：
    在模式分解之前，首先需要确定关系中的函数依赖。函数依赖定义了哪些字段的值由哪些其他字段的值唯一确定。
@@ -126,7 +110,7 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 3. **分解表**：
    根据确定的函数依赖和范式，分解表。目标是将原来的表分解成多个满足范式化要求的表。例如，如果表中的某些字段存在部分依赖或传递依赖，可以通过分解这些字段到新的表中来消除这些依赖。
 
-#### 例子
+**例子**
 
 假设有一个表 `Orders`，记录订单信息：
 
@@ -134,33 +118,33 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 Orders(OrderID, CustomerName, CustomerAddress, ProductID, ProductName, Quantity)
 ```
 
-**问题：**
+=== "问题"
 
-- 该表中包含了客户信息和产品信息，存在冗余，比如同一客户可能会多次下单，导致客户信息重复存储。
-- 另外，可能还存在更新异常，如果客户的地址变化，需要修改多个记录。
+      * 该表中包含了客户信息和产品信息，存在冗余，比如同一客户可能会多次下单，导致客户信息重复存储。
+      * 另外，可能还存在更新异常，如果客户的地址变化，需要修改多个记录。
 
-**分解过程：**
+=== "分解过程"
 
-1. 识别冗余：客户信息和产品信息在多次订单中重复存储。
-2. 分解表：
+      1. 识别冗余：客户信息和产品信息在多次订单中重复存储。
+      2. 分解表：
 
-=== "订单表"
+            === "订单表"
 
-     ```plaintext
-     Orders(OrderID, CustomerID, ProductID, Quantity)
-     ```
+                ```plaintext
+                Orders(OrderID, CustomerID, ProductID, Quantity)
+                ```
 
-=== "客户表"
+            === "客户表"
 
-     ```plaintext
-     Customers(CustomerID, CustomerName, CustomerAddress)
-     ```
+                ```plaintext
+                Customers(CustomerID, CustomerName, CustomerAddress)
+                ```
 
-=== "产品表"
+            === "产品表"
 
-     ```plaintext
-     Products(ProductID, ProductName)
-     ```
+                ```plaintext
+                Products(ProductID, ProductName)
+                ```
 
 这样，通过分解，我们消除了冗余和更新异常，数据库结构更简洁且易于维护。
 
@@ -182,6 +166,16 @@ Orders(OrderID, CustomerName, CustomerAddress, ProductID, ProductName, Quantity)
 无损连接是数据库模式分解中的一个关键目标，确保在范式化过程中不会丢失信息。
 
 #### 无损连接的判定方法
+
+4. **无损分解**：分解后的关系能够还原出原关系模式，不能还原就是有损分解。
+
+    当分解为两个关系模式，可以通过以下定理判断是否无损分解：
+
+    定理：如果 $R$ 的分解为 $p=\{R1,R2\}$，$F$ 为 $R$ 所满足的函数依赖集合，分解 $p$ 具有无损连接性的充分必要条件是 $R1 \cap R2 \rightarrow (R1-R2)$ 或者 $R1 \cap R2 \rightarrow (R2-R1)$
+
+    当分解关系为三个及以上的关系模式时，可以通过表格法求解：
+
+    ![alt text](image-3.png)
 
 无损连接判定主要通过以下几种方式进行：
 
