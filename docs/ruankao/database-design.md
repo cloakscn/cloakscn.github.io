@@ -79,9 +79,9 @@
 | 第三范式（3NF） | 当 $2NF$ 消除了非主属性对主码的传递函数依赖，则称为 $3NF$。                                    |
 | BC 范式（BCNF） | 如果关系模式 $R \in 1NF$，且每个属性都不传递依赖于 $$ 的候选码，那么称 $R$ 是 $BCNF$ 模式。           |
 
-{ .annotate }
+!!! tip
 
-1.  符号 `∈` 表示“属于”（is an element of），用于表示某个元素属于一个集合。例如，在表达 式 $ x \in A $ 中，意思是“元素 $ x $ 是集合 $ A $ 的一个成员”。它常用于集合论和数学中，表示元素与集合之间的关系。
+    符号 `∈` 表示“属于”（is an element of），用于表示某个元素属于一个集合。例如，在表达 式 $ x \in A $ 中，意思是“元素 $ x $ 是集合 $ A $ 的一个成员”。它常用于集合论和数学中，表示元素与集合之间的关系。
 
 上述 4 种范式之间有如下联系：$BCNF  \sub 3NF \sub 2NF \sub 1NF$。
 
@@ -110,46 +110,43 @@
 3. **分解表**：
    根据确定的函数依赖和范式，分解表。目标是将原来的表分解成多个满足范式化要求的表。例如，如果表中的某些字段存在部分依赖或传递依赖，可以通过分解这些字段到新的表中来消除这些依赖。
 
+!!!+ example "例子"
 
-**例子**
+    假设有一个表 `Orders`，记录订单信息：
 
-假设有一个表 `Orders`，记录订单信息：
+    ```plaintext
+    Orders(OrderID, CustomerName, CustomerAddress, ProductID, ProductName, Quantity)
+    ```
 
-```plaintext
-Orders(OrderID, CustomerName, CustomerAddress, ProductID, ProductName, Quantity)
-```
+    **问题：**
 
-**问题：**
+    - 该表中包含了客户信息和产品信息，存在冗余，比如同一客户可能会多次下单，导致客户信息重复存储。
+    - 另外，可能还存在更新异常，如果客户的地址变化，需要修改多个记录。
 
-- 该表中包含了客户信息和产品信息，存在冗余，比如同一客户可能会多次下单，导致客户信息重复存储。
-- 另外，可能还存在更新异常，如果客户的地址变化，需要修改多个记录。
+    **分解过程：**
 
-**分解过程：**
+    1. 识别冗余：客户信息和产品信息在多次订单中重复存储。
+    2. 分解表：
 
-1. 识别冗余：客户信息和产品信息在多次订单中重复存储。
-2. 分解表：
+    === "订单表"
 
-=== "订单表"
+        ```plaintext
+        Orders(OrderID, CustomerID, ProductID, Quantity)
+        ```
 
-     ```plaintext
-     Orders(OrderID, CustomerID, ProductID, Quantity)
-     ```
+    === "客户表"
 
-=== "客户表"
+        ```plaintext
+        Customers(CustomerID, CustomerName, CustomerAddress)
+        ```
 
-     ```plaintext
-     Customers(CustomerID, CustomerName, CustomerAddress)
-     ```
+    === "产品表"
 
-=== "产品表"
+        ```plaintext
+        Products(ProductID, ProductName)
+        ```
 
-     ```plaintext
-     Products(ProductID, ProductName)
-     ```
-
-这样，通过分解，我们消除了冗余和更新异常，数据库结构更简洁且易于维护。
-
----
+    这样，通过分解，我们消除了冗余和更新异常，数据库结构更简洁且易于维护。
 
 ##### 模式分解的优点
 
