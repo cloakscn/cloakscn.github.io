@@ -11,14 +11,14 @@ tags:
 
 ## 经典解法
 
-* [深度优先搜索](/algorithm-depth-first-search)
-* [广度优先搜索](/algorithm-breadth-first-search)
-* [二分查找](/algorithm-binary-search)
-* [递归/回溯](/algorithm-recursion)
-* [滑动窗口](/algorithm-sliding-window)
-* [动态规划](/algorithm-dynamic-programming)
-* [位运算](/algorithm-bit-manipulation)
-* [双指针](/algorithm-two-pointers)
+* [深度优先搜索](./algorithm-depth-first-search.md)
+* [广度优先搜索](./algorithm-breadth-first-search.md)
+* [二分查找](./algorithm-binary-search.md)
+* [递归/回溯](./algorithm-recursion.md)
+* [滑动窗口](./algorithm-sliding-window.md)
+* [动态规划](./algorithm-dynamic-programming.md)
+* [位运算](./algorithm-bit-manipulation.md)
+* [双指针](./algorithm-two-pointers.md)
 
 ## 问题汇总
 

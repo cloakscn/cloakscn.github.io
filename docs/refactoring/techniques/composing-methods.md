@@ -244,7 +244,7 @@ double basePrice() {
 **如何重构？**
 
 1. 确保该变量在方法中仅被声明一次并且仅被使用一次。如果不是，请使用 [Split Temporary Variable](#split-temporary-variable) 以确保该变量仅用于存储表达式的结果。
-2. 使用 [Extract Method](#extract-method) 将感兴趣的表达式放入新方法中。确保此方法仅返回一个值并且不会更改对象的状态。如果该方法影响对象的可见状态，请使用 [Separate Query from Modifier](simplifying-method-calls#separate-query-from-modifier)。
+2. 使用 [Extract Method](#extract-method) 将感兴趣的表达式放入新方法中。确保此方法仅返回一个值并且不会更改对象的状态。如果该方法影响对象的可见状态，请使用 [Separate Query from Modifier](./simplifying-method-calls/separate-query-from-modifier.md)。
 3. 将变量替换为对新方法的查询。
 
 ---

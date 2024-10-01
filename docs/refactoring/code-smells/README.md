@@ -8,7 +8,6 @@ dir:
   link: true
 ---
 
-<Catalog />
 
 <!-- ## 臃肿的代码
 

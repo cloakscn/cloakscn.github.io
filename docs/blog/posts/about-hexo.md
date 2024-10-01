@@ -60,7 +60,7 @@ tags:
 
 首页展示效果
 
-![](/assets/images/about-hexo/image-20221217000842772.png)
+![](images/about-hexo/image-20221217000842772.png)
 
 * 实现原理
 

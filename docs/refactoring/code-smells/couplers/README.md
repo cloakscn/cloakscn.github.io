@@ -6,5 +6,3 @@ dir:
   order: 5
   link: true
 ---
-
-<Catalog />

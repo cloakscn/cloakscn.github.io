@@ -41,7 +41,7 @@ For more details see watch(1).
 watch tail /var/log/nginx/access.log
 ```
 
-![watch tail /var/log/nginx/access.log](/assets/images/linux-command-watch/watch_tail_log.png)
+![watch tail /var/log/nginx/access.log](images/linux-command-watch/watch_tail_log.png)
 
 你可以使用 `-n` 开关改变并指定时间间隔。要想每 10 秒检测日志文件，试试这个。
 
@@ -59,7 +59,7 @@ watch -n 10 tail /var/log/your_log_file
 watch -n 1 sensors
 ```
 
-![watch_sensors](/assets/images/linux-command-watch/watch_sensors.png)
+![watch_sensors](images/linux-command-watch/watch_sensors.png)
 
 可以使用管道命令结合 `grep` 检索指定信息，如：`sensors | grep temp | awk '{ print $2 }'`
 
@@ -69,4 +69,4 @@ watch -n 1 sensors
 watch -n1 "sensors | grep temp | awk '{ print $2 }'"
 ```
 
-![pipe_sensors](/assets/images/linux-command-watch/pipe_sensors.png)
+![pipe_sensors](images/linux-command-watch/pipe_sensors.png)

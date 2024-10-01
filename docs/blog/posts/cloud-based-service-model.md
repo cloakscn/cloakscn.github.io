@@ -12,7 +12,7 @@ date: 2023-06-13 15:52:37
 
 云计算的 5 个特征是网络接入、弹性、资源池化、可计量的服务以及按需自服务。
 
-![云堆栈](/assets/images/cloud-based-service-model/cloud stack.png)
+![云堆栈](images/cloud-based-service-model/cloud stack.png)
 
 **云堆栈**底层是传统的数据中心，虽然可能应用了一些虚拟化的技术，但还没有任何云计算的特征。
 
@@ -20,7 +20,7 @@ date: 2023-06-13 15:52:37
 * **PaaS：**以服务的方式交付计算平台和解决方案包。PaaS 服务消除了购买、管理底层硬件和软件以及部署这些主机所带来的成本与复杂度，使应用的部署变得更容易。
 * **SaaS：**消费者能够使用提供商运行在云基础设施上的应用，并可通过类似 Web浏览器(如基于 Web的电子邮件)等瘦客户端界面在各种客户端设备上访问这些应用。除了一些有限的特定于用户的应用配置的设置之外，消费者不会直接对底层云基础设施进行管理或控制，这包括网络、服务器、操作系统、存储，甚至单个应用的功能。
 
-![NIST 的云计算定义](/assets/images/cloud-based-service-model/nist.png)
+![NIST 的云计算定义](images/cloud-based-service-model/nist.png)
 
 ## 部署模式
 
