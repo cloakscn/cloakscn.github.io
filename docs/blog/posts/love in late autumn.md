@@ -1,6 +1,5 @@
 ---
 date: 2024-10-02
-draft: true
 authors:
   - cloaks
 categories:
