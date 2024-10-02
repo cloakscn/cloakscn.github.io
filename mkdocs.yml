@@ -221,6 +221,7 @@ nav:
           - ruankao/software engineering.md
       - 案例分析:
           - ruankao/software architecture.md
+          - ruankao/system-quality-attributes-and-architecture-assessment.md
           - ruankao/sd.md
           - ruankao/database-design.md
           - ruankao/web.md
