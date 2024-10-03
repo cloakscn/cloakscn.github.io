@@ -214,6 +214,7 @@ nav:
   - 高级架构师（编制中）:
       - ruankao/index.md
       - 综合知识:
+          - ruankao/computer.md
           - ruankao/reliability.md
           - ruankao/future.md
           - ruankao/network.md
