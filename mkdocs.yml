@@ -217,12 +217,14 @@ nav:
   - 高级架构师（编制中）:
       - ruankao/index.md
       - 综合知识:
-          - ruankao/computer.md
+          - ruankao/computer-basics.md
+          - ruankao/embedded-basics.md
           - ruankao/reliability.md
           - ruankao/future.md
           - ruankao/network.md
           - ruankao/system engineering.md
           - ruankao/software engineering.md
+          - ruankao/enterprise-informatization.md
       - 案例分析:
           - ruankao/software architecture.md
           - ruankao/system-quality-attributes-and-architecture-assessment.md
