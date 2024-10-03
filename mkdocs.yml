@@ -102,6 +102,9 @@ plugins:
 
 # Additional configuration
 extra:
+  music:
+    - 2049303780 # 需要人培
+    - 2032222526 # 老情歌
   consent:
     title: Cookie consent | Cookie 同意
     description: >-
