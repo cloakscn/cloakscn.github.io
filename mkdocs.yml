@@ -22,8 +22,10 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/favicon.ico
-  logo: assets/logo.png
+  # favicon: assets/favicon.ico
+  # logo: assets/logo.png
+  favicon: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/templates/.icons/fontawesome/solid/terminal.svg
+  logo: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/templates/.icons/fontawesome/solid/terminal.svg
   features:
     - announce.dismiss
     - content.action.edit
@@ -102,9 +104,7 @@ plugins:
 
 # Additional configuration
 extra:
-  music:
-    - 2049303780 # 需要人培
-    - 2032222526 # 老情歌
+  music: 8074820398 # 侧耳倾听
   consent:
     title: Cookie consent | Cookie 同意
     description: >-

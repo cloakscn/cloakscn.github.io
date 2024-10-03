@@ -6,8 +6,21 @@ Welcome to <strong>Cloask | Return</strong> Home
 
 {% block content %}
 {{ super() }}
-<iframe style="position: fixed; bottom: 15%; right: 0;" frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52
-  src="//music.163.com/outchain/player?type=2&id={{ page.meta.music | default(config.extra.music[0]) }}&auto=0&height=32"></iframe>
+
+{% if config.extra.music %}
+<link rel="stylesheet" href="{{ 'assets/stylesheets/music.css' | url }}">
+
+{% if page.meta.music %}
+<iframe class="music" frameborder="no" marginwidth="0" marginheight="0"
+  src="//music.163.com/outchain/player?type=2&id={{ page.meta.music }}&auto=0&height=86">
+</iframe>
+{% else %}
+<iframe class="music" frameborder="no" marginwidth="0" marginheight="0"
+  src="//music.163.com/outchain/player?type=0&id={{ config.extra.music }}&auto=0&height=430">
+</iframe>
+{% endif %}
+{% endif %}
+
 {% endblock %}
 
 
