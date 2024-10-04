@@ -246,6 +246,8 @@ nav:
       - 行为模式:
           - design-patterns/behavioral-patterns/command.md
           - design-patterns/behavioral-patterns/observer.md
+      - 创建型模式:
+          - design-patterns/creational-patterns/factory.md
       - 建造者模式:
           - design-patterns/structural-patterns/decorator.md
   - 重构（编制中）: refactoring/index.md
