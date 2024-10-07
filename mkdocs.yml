@@ -104,7 +104,7 @@ plugins:
 
 # Additional configuration
 extra:
-  music: 8074820398 # 侧耳倾听
+  # music: 8074820398 # 侧耳倾听
   consent:
     title: Cookie consent | Cookie 同意
     description: >-
