@@ -25,9 +25,11 @@ tag:
 * **当一些对象和其他对象紧密耦合以致难以对其进行修改时， 可使用中介者模式。**
 
     该模式让你将对象间的所有关系抽取成为一个单独的类， 以使对于特定组件的修改工作独立于其他组件。
+
 * **当组件因过于依赖其他组件而无法在不同应用中复用时， 可使用中介者模式。**
 
     应用中介者模式后， 每个组件不再知晓其他组件的情况。 尽管这些组件无法直接交流， 但它们仍可通过中介者对象进行间接交流。 如果你希望在不同应用中复用一个组件， 则需要为其提供一个新的中介者类。
+
 * **如果为了能在不同情景下复用一些基本行为， 导致你需要被迫创建大量组件子类时，可使用中介者模式。**
 
     由于所有组件间关系都被包含在中介者中， 因此你无需修改组件就能方便地新建中介者类以定义新的组件合作方式。
@@ -41,149 +43,163 @@ tag:
 
     如果你希望在不同情景下复用组件类， 那么该接口将非常重要。 只要组件使用通用接口与其中介者合作， 你就能将该组件与不同实现中的中介者进行连接。
 
-    ```go mediator.go: 中介者接口
-    package main
+    === "mediator.go: 中介者接口"
 
-    type Mediator interface {
-        canArrive(Train) bool
-        notifyAboutDeparture()
-    }
-    ```
+        ```go 
+        package main
+
+        type Mediator interface {
+            canArrive(Train) bool
+            notifyAboutDeparture()
+        }
+        ```
 
 3. 实现具体中介者类。 该类可从自行保存其下所有组件的引用中受益。
 
-    ```go stationManager.go: 具体中介者
-    package main
+    === "stationManager.go: 具体中介者"
 
-    type StationManager struct {
-        isPlatformFree bool
-        trainQueue     []Train
-    }
+        ```go 
+        package main
 
-    func newStationManger() *StationManager {
-        return &StationManager{
-            isPlatformFree: true,
+        type StationManager struct {
+            isPlatformFree bool
+            trainQueue     []Train
         }
-    }
 
-    func (s *StationManager) canArrive(t Train) bool {
-        if s.isPlatformFree {
-            s.isPlatformFree = false
-            return true
+        func newStationManger() *StationManager {
+            return &StationManager{
+                isPlatformFree: true,
+            }
         }
-        s.trainQueue = append(s.trainQueue, t)
-        return false
-    }
 
-    func (s *StationManager) notifyAboutDeparture() {
-        if !s.isPlatformFree {
-            s.isPlatformFree = true
+        func (s *StationManager) canArrive(t Train) bool {
+            if s.isPlatformFree {
+                s.isPlatformFree = false
+                return true
+            }
+            s.trainQueue = append(s.trainQueue, t)
+            return false
         }
-        if len(s.trainQueue) > 0 {
-            firstTrainInQueue := s.trainQueue[0]
-            s.trainQueue = s.trainQueue[1:]
-            firstTrainInQueue.permitArrival()
+
+        func (s *StationManager) notifyAboutDeparture() {
+            if !s.isPlatformFree {
+                s.isPlatformFree = true
+            }
+            if len(s.trainQueue) > 0 {
+                firstTrainInQueue := s.trainQueue[0]
+                s.trainQueue = s.trainQueue[1:]
+                firstTrainInQueue.permitArrival()
+            }
         }
-    }
-    ```
+        ```
 
 4. 你可以更进一步， 让中介者负责组件对象的创建和销毁。 此后， 中介者可能会与工厂或外观类似。
 5. 组件必须保存对于中介者对象的引用。 该连接通常在组件的构造函数中建立， 该函数会将中介者对象作为参数传递。
 
-    ```go train.go: 组件
-    package main
+    === "train.go: 组件"
 
-    type Train interface {
-        arrive()
-        depart()
-        permitArrival()
-    }
-    ```
+        ```go 
+        package main
 
-    ```go passengerTrain.go: 具体组件
-    package main
-
-    import "fmt"
-
-    type PassengerTrain struct {
-        mediator Mediator
-    }
-
-    func (g *PassengerTrain) arrive() {
-        if !g.mediator.canArrive(g) {
-            fmt.Println("PassengerTrain: Arrival blocked, waiting")
-            return
+        type Train interface {
+            arrive()
+            depart()
+            permitArrival()
         }
-        fmt.Println("PassengerTrain: Arrived")
-    }
+        ```
 
-    func (g *PassengerTrain) depart() {
-        fmt.Println("PassengerTrain: Leaving")
-        g.mediator.notifyAboutDeparture()
-    }
+    === "passengerTrain.go: 具体组件"
 
-    func (g *PassengerTrain) permitArrival() {
-        fmt.Println("PassengerTrain: Arrival permitted, arriving")
-        g.arrive()
-    }
-    ```
+        ```go 
+        package main
 
-    ```go freightTrain.go: 具体组件
-    package main
+        import "fmt"
 
-    import "fmt"
-
-    type FreightTrain struct {
-        mediator Mediator
-    }
-
-    func (g *FreightTrain) arrive() {
-        if !g.mediator.canArrive(g) {
-            fmt.Println("FreightTrain: Arrival blocked, waiting")
-            return
+        type PassengerTrain struct {
+            mediator Mediator
         }
-        fmt.Println("FreightTrain: Arrived")
-    }
 
-    func (g *FreightTrain) depart() {
-        fmt.Println("FreightTrain: Leaving")
-        g.mediator.notifyAboutDeparture()
-    }
+        func (g *PassengerTrain) arrive() {
+            if !g.mediator.canArrive(g) {
+                fmt.Println("PassengerTrain: Arrival blocked, waiting")
+                return
+            }
+            fmt.Println("PassengerTrain: Arrived")
+        }
 
-    func (g *FreightTrain) permitArrival() {
-        fmt.Println("FreightTrain: Arrival permitted")
-        g.arrive()
-    }
-    ```
+        func (g *PassengerTrain) depart() {
+            fmt.Println("PassengerTrain: Leaving")
+            g.mediator.notifyAboutDeparture()
+        }
+
+        func (g *PassengerTrain) permitArrival() {
+            fmt.Println("PassengerTrain: Arrival permitted, arriving")
+            g.arrive()
+        }
+        ```
+
+    === "freightTrain.go: 具体组件"
+
+        ```go 
+        package main
+
+        import "fmt"
+
+        type FreightTrain struct {
+            mediator Mediator
+        }
+
+        func (g *FreightTrain) arrive() {
+            if !g.mediator.canArrive(g) {
+                fmt.Println("FreightTrain: Arrival blocked, waiting")
+                return
+            }
+            fmt.Println("FreightTrain: Arrived")
+        }
+
+        func (g *FreightTrain) depart() {
+            fmt.Println("FreightTrain: Leaving")
+            g.mediator.notifyAboutDeparture()
+        }
+
+        func (g *FreightTrain) permitArrival() {
+            fmt.Println("FreightTrain: Arrival permitted")
+            g.arrive()
+        }
+        ```
 
 6. 修改组件代码， 使其可调用中介者的通知方法， 而非其他组件的方法。 然后将调用其他组件的代码抽取到中介者类中， 并在中介者接收到该组件通知时执行这些代码。
 
-```go main.go: 客户端代码
-package main
+    === "main.go: 客户端代码"
 
-func main() {
-    stationManager := newStationManger()
+        ```go 
+        package main
 
-    passengerTrain := &PassengerTrain{
-        mediator: stationManager,
-    }
-    freightTrain := &FreightTrain{
-        mediator: stationManager,
-    }
+        func main() {
+            stationManager := newStationManger()
 
-    passengerTrain.arrive()
-    freightTrain.arrive()
-    passengerTrain.depart()
-}
-```
+            passengerTrain := &PassengerTrain{
+                mediator: stationManager,
+            }
+            freightTrain := &FreightTrain{
+                mediator: stationManager,
+            }
 
-```go output.txt: 执行结果
-PassengerTrain: Arrived
-FreightTrain: Arrival blocked, waiting
-PassengerTrain: Leaving
-FreightTrain: Arrival permitted
-FreightTrain: Arrived
-```
+            passengerTrain.arrive()
+            freightTrain.arrive()
+            passengerTrain.depart()
+        }
+        ```
+
+    === "output.txt: 执行结果"
+
+        ```go 
+        PassengerTrain: Arrived
+        FreightTrain: Arrival blocked, waiting
+        PassengerTrain: Leaving
+        FreightTrain: Arrival permitted
+        FreightTrain: Arrived
+        ```
 
 ## 优缺点
 
@@ -196,15 +212,19 @@ FreightTrain: Arrived
 
 ## 与其他模式的关系
 
-* **责任链模式**、 **命令模式**、 **中介者模式**和**观察者模式**用于处理请求发送者和接收者之间的不同连接方式：
-  * 责任链按照顺序将请求动态传递给一系列的潜在接收者， 直至其中一名接收者对请求进行处理。
-  * 命令在发送者和请求者之间建立单向连接。
-  * 中介者清除了发送者和请求者之间的直接连接， 强制它们通过一个中介对象进行间接沟通。
-  * 观察者允许接收者动态地订阅或取消接收请求。
-* **外观模式**和**中介者**的职责类似： 它们都尝试在大量紧密耦合的类中组织起合作。
-  * 外观为子系统中的所有对象定义了一个简单接口， 但是它不提供任何新功能。 子系统本身不会意识到外观的存在。 子系统中的对象可以直接进行交流。
-  * 中介者将系统中组件的沟通行为中心化。 各组件只知道中介者对象， 无法直接相互交流。
-* **中介者**和**观察者**之间的区别往往很难记住。 在大部分情况下， 你可以使用其中一种模式， 而有时可以同时使用。 让我们来看看如何做到这一点。
+* **责任链模式**、 **命令模式**、 **中介者模式** 和 **观察者模式** 用于处理请求发送者和接收者之间的不同连接方式：
+
+    * 责任链按照顺序将请求动态传递给一系列的潜在接收者， 直至其中一名接收者对请求进行处理。
+    * 命令在发送者和请求者之间建立单向连接。
+    * 中介者清除了发送者和请求者之间的直接连接， 强制它们通过一个中介对象进行间接沟通。
+    * 观察者允许接收者动态地订阅或取消接收请求。
+
+* **外观模式** 和 **中介者** 的职责类似： 它们都尝试在大量紧密耦合的类中组织起合作。
+
+    * 外观为子系统中的所有对象定义了一个简单接口， 但是它不提供任何新功能。 子系统本身不会意识到外观的存在。 子系统中的对象可以直接进行交流。
+    * 中介者将系统中组件的沟通行为中心化。 各组件只知道中介者对象， 无法直接相互交流。
+
+* **中介者** 和 **观察者** 之间的区别往往很难记住。 在大部分情况下， 你可以使用其中一种模式， 而有时可以同时使用。 让我们来看看如何做到这一点。
 
     中介者的主要目标是消除一系列系统组件之间的相互依赖。 这些组件将依赖于同一个中介者对象。 观察者的目标是在对象之间建立动态的单向连接， 使得部分对象可作为其他对象的附属发挥作用。
 

@@ -51,139 +51,155 @@ tag:
 
 2. 了解客户端的业务需求， 并在抽象基类中定义它们。
 
-    ```go computer.go: 抽象
-    package main
+    === "computer.go: 抽象"
 
-    type Computer interface {
-        Print()
-        SetPrinter(Printer)
-    }
-    ```
+        ```go 
+        package main
+
+        type Computer interface {
+            Print()
+            SetPrinter(Printer)
+        }
+        ```
 
 3. 确定在所有平台上都可执行的业务。 并在通用实现接口中声明抽象部分所需的业务。
 
-    ```go printer.go: 实施
-    package main
+    === "printer.go: 实施"
 
-    type Printer interface {
-        PrintFile()
-    }
-    ```
+        ```go 
+        package main
 
-    ```go epson.go: 具体实施
-    package main
+        type Printer interface {
+            PrintFile()
+        }
+        ```
 
-    import "fmt"
+    === "epson.go: 具体实施"
 
-    type Epson struct {
-    }
+        ```go 
+        package main
 
-    func (p *Epson) PrintFile() {
-        fmt.Println("Printing by a EPSON Printer")
-    }
-    ```
+        import "fmt"
 
-    ```go hp.go: 具体实施
-    package main
+        type Epson struct {
+        }
 
-    import "fmt"
+        func (p *Epson) PrintFile() {
+            fmt.Println("Printing by a EPSON Printer")
+        }
+        ```
 
-    type Hp struct {
-    }
+    === "hp.go: 具体实施"
 
-    func (p *Hp) PrintFile() {
-        fmt.Println("Printing by a HP Printer")
-    }
-    ```
+        ```go 
+        package main
+
+        import "fmt"
+
+        type Hp struct {
+        }
+
+        func (p *Hp) PrintFile() {
+            fmt.Println("Printing by a HP Printer")
+        }
+        ```
 
 4. 为你域内的所有平台创建实现类， 但需确保它们遵循实现部分的接口。
 5. 在抽象类中添加指向实现类型的引用成员变量。 抽象部分会将大部分工作委派给该成员变量所指向的实现对象。
 
-    ```go mac.go: 精确抽象
-    package main
+    === "mac.go: 精确抽象"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Mac struct {
-        printer Printer
-    }
+        import "fmt"
 
-    func (m *Mac) Print() {
-        fmt.Println("Print request for mac")
-        m.printer.PrintFile()
-    }
+        type Mac struct {
+            printer Printer
+        }
 
-    func (m *Mac) SetPrinter(p Printer) {
-        m.printer = p
-    }
-    ```
+        func (m *Mac) Print() {
+            fmt.Println("Print request for mac")
+            m.printer.PrintFile()
+        }
 
-    ```go windows.go: 精确抽象
-    package main
+        func (m *Mac) SetPrinter(p Printer) {
+            m.printer = p
+        }
+        ```
 
-    import "fmt"
+    === "windows.go: 精确抽象"
+    
+        ```go 
+        package main
 
-    type Windows struct {
-        printer Printer
-    }
+        import "fmt"
 
-    func (w *Windows) Print() {
-        fmt.Println("Print request for windows")
-        w.printer.PrintFile()
-    }
+        type Windows struct {
+            printer Printer
+        }
 
-    func (w *Windows) SetPrinter(p Printer) {
-        w.printer = p
-    }
-    ```
+        func (w *Windows) Print() {
+            fmt.Println("Print request for windows")
+            w.printer.PrintFile()
+        }
+
+        func (w *Windows) SetPrinter(p Printer) {
+            w.printer = p
+        }
+        ```
 
 6. 如果你的高层逻辑有多个变体， 则可通过扩展抽象基类为每个变体创建一个精确抽象。
 7. 客户端代码必须将实现对象传递给抽象部分的构造函数才能使其能够相互关联。 此后， 客户端只需与抽象对象进行交互， 无需和实现对象打交道。
 
-```go main.go: 客户端代码
-package main
+    === "main.go: 客户端代码"
 
-import "fmt"
+        ```go 
+        package main
 
-func main() {
+        import "fmt"
 
-    hpPrinter := &Hp{}
-    epsonPrinter := &Epson{}
+        func main() {
 
-    macComputer := &Mac{}
+            hpPrinter := &Hp{}
+            epsonPrinter := &Epson{}
 
-    macComputer.SetPrinter(hpPrinter)
-    macComputer.Print()
-    fmt.Println()
+            macComputer := &Mac{}
 
-    macComputer.SetPrinter(epsonPrinter)
-    macComputer.Print()
-    fmt.Println()
+            macComputer.SetPrinter(hpPrinter)
+            macComputer.Print()
+            fmt.Println()
 
-    winComputer := &Windows{}
+            macComputer.SetPrinter(epsonPrinter)
+            macComputer.Print()
+            fmt.Println()
 
-    winComputer.SetPrinter(hpPrinter)
-    winComputer.Print()
-    fmt.Println()
+            winComputer := &Windows{}
 
-    winComputer.SetPrinter(epsonPrinter)
-    winComputer.Print()
-    fmt.Println()
-}
-```
+            winComputer.SetPrinter(hpPrinter)
+            winComputer.Print()
+            fmt.Println()
 
-```go output.txt: 执行结果
-Print request for mac
-Printing by a HP Printer
+            winComputer.SetPrinter(epsonPrinter)
+            winComputer.Print()
+            fmt.Println()
+        }
+        ```
 
-Print request for mac
-Printing by a EPSON Printer
+    === "output.txt: 执行结果"
 
-Print request for windows
-Printing by a HP Printer
+        ```go 
+        Print request for mac
+        Printing by a HP Printer
 
-Print request for windows
-```
+        Print request for mac
+        Printing by a EPSON Printer
+
+        Print request for windows
+        Printing by a HP Printer
+
+        Print request for windows
+        ```
 
 ## 优缺点
 
@@ -196,7 +212,7 @@ Print request for windows
 
 ## 与其他模式的关系
 
-* **桥接模式**通常会于**开发前期**进行设计， 使你能够将程序的各个部分独立开来以便开发。 另一方面， **适配器模式**通常在**已有程序中使用**， 让相互不兼容的类能很好地合作。
-* **桥接**、 **状态模式**和**策略模式** （在某种程度上包括适配器） 模式的接口非常相似。 实际上， 它们都基于**组合模式**——即将工作委派给其他对象， 不过也各自解决了不同的问题。 模式并不只是以特定方式组织代码的配方， 你还可以使用它们来和其他开发者讨论模式所解决的问题。
-* 你可以将**抽象工厂模式**和**桥接**搭配使用。 如果由桥接定义的抽象只能与特定实现合作， 这一模式搭配就非常有用。 在这种情况下， 抽象工厂可以对这些关系进行封装， 并且对客户端代码隐藏其复杂性。
-* 你可以结合使用**生成器模式**和**桥接模式**： 主管类负责抽象工作， 各种不同的生成器负责实现工作。
+* **桥接模式** 通常会于 **开发前期** 进行设计， 使你能够将程序的各个部分独立开来以便开发。 另一方面， **适配器模式** 通常在 **已有程序中使用**， 让相互不兼容的类能很好地合作。
+* **桥接**、 **状态模式** 和 **策略模式** （在某种程度上包括适配器） 模式的接口非常相似。 实际上， 它们都基于 **组合模式** ——即将工作委派给其他对象， 不过也各自解决了不同的问题。 模式并不只是以特定方式组织代码的配方， 你还可以使用它们来和其他开发者讨论模式所解决的问题。
+* 你可以将 **抽象工厂模式** 和 **桥接** 搭配使用。 如果由桥接定义的抽象只能与特定实现合作， 这一模式搭配就非常有用。 在这种情况下， 抽象工厂可以对这些关系进行封装， 并且对客户端代码隐藏其复杂性。
+* 你可以结合使用 **生成器模式** 和 **桥接模式**： 主管类负责抽象工作， 各种不同的生成器负责实现工作。

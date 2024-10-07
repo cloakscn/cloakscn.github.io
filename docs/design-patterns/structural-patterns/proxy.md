@@ -7,7 +7,7 @@ tag:
   - 建造者模式
 ---
 
-**代理模式**是一种结构型设计模式， 让你能够提供对象的替代品或其占位符。 代理控制着对于原对象的访问， 并允许在将请求提交给对象前后进行一些处理。
+**代理模式** 是一种结构型设计模式， 让你能够提供对象的替代品或其占位符。 代理控制着对于原对象的访问， 并允许在将请求提交给对象前后进行一些处理。
 
 ## 逻辑结构
 
@@ -50,130 +50,142 @@ tag:
 
 Nginx 这样的 Web 服务器可充当应用程序服务器的代理：
 
-* 提供了对应用程序服务器的受控访问权限。
-* 可限制速度。
-* 可缓存请求。
+  * 提供了对应用程序服务器的受控访问权限。
+  * 可限制速度。
+  * 可缓存请求。
+
+---
 
 1. 如果没有现成的服务接口， 你就需要创建一个接口来实现代理和服务对象的可交换性。 从服务类中抽取接口并非总是可行的， 因为你需要对服务的所有客户端进行修改， 让它们使用接口。 备选计划是将代理作为服务类的子类， 这样代理就能继承服务的所有接口了。
 2. 创建代理类， 其中必须包含一个存储指向服务的引用的成员变量。 通常情况下， 代理负责创建服务并对其整个生命周期进行管理。 在一些特殊情况下， 客户端会通过构造函数将服务传递给代理。
 
-    ```go 📄nginx.go: 代理
-    package main
+    === "📄nginx.go: 代理"
 
-    type Nginx struct {
-        application       *Application
-        maxAllowedRequest int
-        rateLimiter       map[string]int
-    }
+        ```go 
+        package main
 
-    func newNginxServer() *Nginx {
-        return &Nginx{
-            application:       &Application{},
-            maxAllowedRequest: 2,
-            rateLimiter:       make(map[string]int),
+        type Nginx struct {
+            application       *Application
+            maxAllowedRequest int
+            rateLimiter       map[string]int
         }
-    }
 
-    func (n *Nginx) handleRequest(url, method string) (int, string) {
-        allowed := n.checkRateLimiting(url)
-        if !allowed {
-            return 403, "Not Allowed"
+        func newNginxServer() *Nginx {
+            return &Nginx{
+                application:       &Application{},
+                maxAllowedRequest: 2,
+                rateLimiter:       make(map[string]int),
+            }
         }
-        return n.application.handleRequest(url, method)
-    }
 
-    func (n *Nginx) checkRateLimiting(url string) bool {
-        if n.rateLimiter[url] == 0 {
-            n.rateLimiter[url] = 1
+        func (n *Nginx) handleRequest(url, method string) (int, string) {
+            allowed := n.checkRateLimiting(url)
+            if !allowed {
+                return 403, "Not Allowed"
+            }
+            return n.application.handleRequest(url, method)
         }
-        if n.rateLimiter[url] > n.maxAllowedRequest {
-            return false
+
+        func (n *Nginx) checkRateLimiting(url string) bool {
+            if n.rateLimiter[url] == 0 {
+                n.rateLimiter[url] = 1
+            }
+            if n.rateLimiter[url] > n.maxAllowedRequest {
+                return false
+            }
+            n.rateLimiter[url] = n.rateLimiter[url] + 1
+            return true
         }
-        n.rateLimiter[url] = n.rateLimiter[url] + 1
-        return true
-    }
-    ```
+        ```
 
 3. 根据需求实现代理方法。 在大部分情况下， 代理在完成一些任务后应将工作委派给服务对象。
 
-    ```go 📄server.go: 主体
-    package main
+    === "📄server.go: 主体"
 
-    type server interface {
-        handleRequest(string, string) (int, string)
-    }
-    ```
+        ```go 
+        package main
 
-    ```go 📄application.go: 真实主体
-    package main
+        type server interface {
+            handleRequest(string, string) (int, string)
+        }
+        ```
 
-    type Application struct {
-    }
+    === "📄application.go: 真实主体"
 
-    func (a *Application) handleRequest(url, method string) (int, string) {
-        if url == "/app/status" && method == "GET" {
-            return 200, "Ok"
+        ```go 
+        package main
+
+        type Application struct {
         }
 
-        if url == "/create/user" && method == "POST" {
-            return 201, "User Created"
+        func (a *Application) handleRequest(url, method string) (int, string) {
+            if url == "/app/status" && method == "GET" {
+                return 200, "Ok"
+            }
+
+            if url == "/create/user" && method == "POST" {
+                return 201, "User Created"
+            }
+            return 404, "Not Ok"
         }
-        return 404, "Not Ok"
-    }
-    ```
+        ```
 
 4. 可以考虑新建一个构建方法来判断客户端可获取的是代理还是实际服务。 你可以在代理类中创建一个简单的静态方法， 也可以创建一个完整的工厂方法。
 5. 可以考虑为服务对象实现延迟初始化。
 
-```go 📄main.go: 客户端代码
-package main
+    === "📄main.go: 客户端代码"
 
-import "fmt"
+        ```go 
+        package main
 
-func main() {
+        import "fmt"
 
-    nginxServer := newNginxServer()
-    appStatusURL := "/app/status"
-    createuserURL := "/create/user"
+        func main() {
 
-    httpCode, body := nginxServer.handleRequest(appStatusURL, "GET")
-    fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
+            nginxServer := newNginxServer()
+            appStatusURL := "/app/status"
+            createuserURL := "/create/user"
 
-    httpCode, body = nginxServer.handleRequest(appStatusURL, "GET")
-    fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
+            httpCode, body := nginxServer.handleRequest(appStatusURL, "GET")
+            fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
 
-    httpCode, body = nginxServer.handleRequest(appStatusURL, "GET")
-    fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
+            httpCode, body = nginxServer.handleRequest(appStatusURL, "GET")
+            fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
 
-    httpCode, body = nginxServer.handleRequest(createuserURL, "POST")
-    fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
+            httpCode, body = nginxServer.handleRequest(appStatusURL, "GET")
+            fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
 
-    httpCode, body = nginxServer.handleRequest(createuserURL, "GET")
-    fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
-}
-```
+            httpCode, body = nginxServer.handleRequest(createuserURL, "POST")
+            fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
 
-```go 📄output.txt: 执行结果
-Url: /app/status
-HttpCode: 200
-Body: Ok
+            httpCode, body = nginxServer.handleRequest(createuserURL, "GET")
+            fmt.Printf("\nUrl: %s\nHttpCode: %d\nBody: %s\n", appStatusURL, httpCode, body)
+        }
+        ```
 
-Url: /app/status
-HttpCode: 200
-Body: Ok
+    === "📄output.txt: 执行结果"
 
-Url: /app/status
-HttpCode: 403
-Body: Not Allowed
+        ```go 
+        Url: /app/status
+        HttpCode: 200
+        Body: Ok
 
-Url: /app/status
-HttpCode: 201
-Body: User Created
+        Url: /app/status
+        HttpCode: 200
+        Body: Ok
 
-Url: /app/status
-HttpCode: 404
-Body: Not Ok
-```
+        Url: /app/status
+        HttpCode: 403
+        Body: Not Allowed
+
+        Url: /app/status
+        HttpCode: 201
+        Body: User Created
+
+        Url: /app/status
+        HttpCode: 404
+        Body: Not Ok
+        ```
 
 ## 优缺点
 
@@ -186,6 +198,6 @@ Body: Not Ok
 
 ## 与其他模式的关系
 
-* **适配器模式**能为被封装对象提供不同的接口， **代理模式**能为对象提供相同的接口， **装饰模式**则能为对象提供加强的接口。
-* **外观模式**与**代理**的相似之处在于它们都缓存了一个复杂实体并自行对其进行初始化。 *代理*与其服务对象遵循同一接口， 使得自己和服务对象可以互换， 在这一点上它与*外观*不同。
-* **装饰**和**代理**有着相似的结构， 但是其意图却非常不同。 这两个模式的构建都基于组合原则， 也就是说一个对象应该将部分工作委派给另一个对象。 两者之间的不同之处在于代理通常自行管理其服务对象的生命周期， 而装饰的生成则总是由客户端进行控制。
+* **适配器模式** 能为被封装对象提供不同的接口，**代理模式** 能为对象提供相同的接口，**装饰模式** 则能为对象提供加强的接口。
+* **外观模式** 与 **代理** 的相似之处在于它们都缓存了一个复杂实体并自行对其进行初始化。*代理* 与其服务对象遵循同一接口，使得自己和服务对象可以互换，在这一点上它与*外观*不同。
+* **装饰** 和 **代理** 有着相似的结构，但是其意图却非常不同。这两个模式的构建都基于组合原则，也就是说一个对象应该将部分工作委派给另一个对象。两者之间的不同之处在于代理通常自行管理其服务对象的生命周期，而装饰的生成则总是由客户端进行控制。

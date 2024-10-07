@@ -53,14 +53,16 @@ tag:
 
     确定客户端如何将请求数据传递给方法。 最灵活的方式是将请求转换为对象， 然后将其以参数的形式传递给处理函数。
 
-    ```go 📄department.go: 处理者接口
-    package main
+    === "📄department.go: 处理者接口"
 
-    type Department interface {
-        execute(*Patient)
-        setNext(Department)
-    }
-    ```
+        ```go 
+        package main
+
+        type Department interface {
+            execute(*Patient)
+            setNext(Department)
+        }
+        ```
 
 2. 为了在具体处理者中消除重复的样本代码， 你可以根据处理者接口创建抽象处理者基类。
 
@@ -72,101 +74,109 @@ tag:
     * 是否自行处理这个请求。
     * 是否将该请求沿着链进行传递。
 
-    ```go 📄reception.go: 具体处理者
-    package main
+    === "📄reception.go: 具体处理者"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Reception struct {
-        next Department
-    }
+        import "fmt"
 
-    func (r *Reception) execute(p *Patient) {
-        if p.registrationDone {
-            fmt.Println("Patient registration already done")
+        type Reception struct {
+            next Department
+        }
+
+        func (r *Reception) execute(p *Patient) {
+            if p.registrationDone {
+                fmt.Println("Patient registration already done")
+                r.next.execute(p)
+                return
+            }
+            fmt.Println("Reception registering patient")
+            p.registrationDone = true
             r.next.execute(p)
-            return
         }
-        fmt.Println("Reception registering patient")
-        p.registrationDone = true
-        r.next.execute(p)
-    }
 
-    func (r *Reception) setNext(next Department) {
-        r.next = next
-    }
-    ```
+        func (r *Reception) setNext(next Department) {
+            r.next = next
+        }
+        ```
+    
+    === "📄doctor.go: 具体处理者"
 
-    ```go 📄doctor.go: 具体处理者
-    package main
+        ```go 
+        package main
 
-    import "fmt"
+        import "fmt"
 
-    type Doctor struct {
-        next Department
-    }
+        type Doctor struct {
+            next Department
+        }
 
-    func (d *Doctor) execute(p *Patient) {
-        if p.doctorCheckUpDone {
-            fmt.Println("Doctor checkup already done")
+        func (d *Doctor) execute(p *Patient) {
+            if p.doctorCheckUpDone {
+                fmt.Println("Doctor checkup already done")
+                d.next.execute(p)
+                return
+            }
+            fmt.Println("Doctor checking patient")
+            p.doctorCheckUpDone = true
             d.next.execute(p)
-            return
         }
-        fmt.Println("Doctor checking patient")
-        p.doctorCheckUpDone = true
-        d.next.execute(p)
-    }
 
-    func (d *Doctor) setNext(next Department) {
-        d.next = next
-    }
-    ```
+        func (d *Doctor) setNext(next Department) {
+            d.next = next
+        }
+        ```
 
-    ```go 📄medical.go: 具体处理者
-    package main
+    === "📄medical.go: 具体处理者"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Medical struct {
-        next Department
-    }
+        import "fmt"
 
-    func (m *Medical) execute(p *Patient) {
-        if p.medicineDone {
-            fmt.Println("Medicine already given to patient")
+        type Medical struct {
+            next Department
+        }
+
+        func (m *Medical) execute(p *Patient) {
+            if p.medicineDone {
+                fmt.Println("Medicine already given to patient")
+                m.next.execute(p)
+                return
+            }
+            fmt.Println("Medical giving medicine to patient")
+            p.medicineDone = true
             m.next.execute(p)
-            return
         }
-        fmt.Println("Medical giving medicine to patient")
-        p.medicineDone = true
-        m.next.execute(p)
-    }
 
-    func (m *Medical) setNext(next Department) {
-        m.next = next
-    }
-    ```
-
-    ```go 📄cashier.go: 具体处理者
-    package main
-
-    import "fmt"
-
-    type Cashier struct {
-        next Department
-    }
-
-    func (c *Cashier) execute(p *Patient) {
-        if p.paymentDone {
-            fmt.Println("Payment Done")
+        func (m *Medical) setNext(next Department) {
+            m.next = next
         }
-        fmt.Println("Cashier getting money from patient patient")
-    }
+        ```
 
-    func (c *Cashier) setNext(next Department) {
-        c.next = next
-    }
-    ```
+    === "📄cashier.go: 具体处理者"
+
+        ```go 
+        package main
+
+        import "fmt"
+
+        type Cashier struct {
+            next Department
+        }
+
+        func (c *Cashier) execute(p *Patient) {
+            if p.paymentDone {
+                fmt.Println("Payment Done")
+            }
+            fmt.Println("Cashier getting money from patient patient")
+        }
+
+        func (c *Cashier) setNext(next Department) {
+            c.next = next
+        }
+        ```
 
 4. 客户端可以自行组装链， 或者从其他对象处获得预先组装好的链。 在后一种情况下， 你必须实现工厂类以根据配置或环境设置来创建链。
 5. 客户端可以触发链中的任意处理者， 而不仅仅是第一个。 请求将通过链进行传递， 直至某个处理者拒绝继续传递， 或者请求到达链尾。
@@ -175,49 +185,55 @@ tag:
     * 部分请求可能无法到达链尾。
     * 其他请求可能直到链尾都未被处理。
 
-```go 📄patient.go
-package main
+    === "📄patient.go"
 
-type Patient struct {
-    name              string
-    registrationDone  bool
-    doctorCheckUpDone bool
-    medicineDone      bool
-    paymentDone       bool
-}
-```
+        ```go 
+        package main
 
-```go 📄main.go: 客户端代码
-package main
+        type Patient struct {
+            name              string
+            registrationDone  bool
+            doctorCheckUpDone bool
+            medicineDone      bool
+            paymentDone       bool
+        }
+        ```
 
-func main() {
+    === "📄main.go: 客户端代码"
 
-    cashier := &Cashier{}
+        ```go 
+        package main
 
-    //Set next for medical department
-    medical := &Medical{}
-    medical.setNext(cashier)
+        func main() {
 
-    //Set next for doctor department
-    doctor := &Doctor{}
-    doctor.setNext(medical)
+            cashier := &Cashier{}
 
-    //Set next for reception department
-    reception := &Reception{}
-    reception.setNext(doctor)
+            //Set next for medical department
+            medical := &Medical{}
+            medical.setNext(cashier)
 
-    patient := &Patient{name: "abc"}
-    //Patient visiting
-    reception.execute(patient)
-}
-```
+            //Set next for doctor department
+            doctor := &Doctor{}
+            doctor.setNext(medical)
 
-```go 📄output.txt: 执行结果
-Reception registering patient
-Doctor checking patient
-Medical giving medicine to patient
-Cashier getting money from patient patient
-```
+            //Set next for reception department
+            reception := &Reception{}
+            reception.setNext(doctor)
+
+            patient := &Patient{name: "abc"}
+            //Patient visiting
+            reception.execute(patient)
+        }
+        ```
+
+    === "📄output.txt: 执行结果"
+
+        ```go 
+        Reception registering patient
+        Doctor checking patient
+        Medical giving medicine to patient
+        Cashier getting money from patient patient
+        ```
 
 ## 优缺点
 
@@ -229,14 +245,18 @@ Cashier getting money from patient patient
 
 ## 与其他模式的关系
 
-* **责任链模式**、 **命令模式**、 **中介者模式**和**观察者模式**用于处理请求发送者和接收者之间的不同连接方式：
-  * 责任链按照顺序将请求动态传递给一系列的潜在接收者， 直至其中一名接收者对请求进行处理。
-  * 命令在发送者和请求者之间建立单向连接。
-  * 中介者清除了发送者和请求者之间的直接连接， 强制它们通过一个中介对象进行间接沟通。
-  * 观察者允许接收者动态地订阅或取消接收请求。
-* **责任链**通常和**组合模式**结合使用。 在这种情况下， 叶组件接收到请求后， 可以将请求沿包含全体父组件的链一直传递至对象树的底部。
-* **责任链**的管理者可使用**命令模式**实现。 在这种情况下， 你可以对由请求代表的同一个上下文对象执行许多不同的操作。
+* **责任链模式**、 **命令模式**、 **中介者模式** 和 **观察者模式** 用于处理请求发送者和接收者之间的不同连接方式：
+
+    * 责任链按照顺序将请求动态传递给一系列的潜在接收者， 直至其中一名接收者对请求进行处理。
+    * 命令在发送者和请求者之间建立单向连接。
+    * 中介者清除了发送者和请求者之间的直接连接， 强制它们通过一个中介对象进行间接沟通。
+    * 观察者允许接收者动态地订阅或取消接收请求。
+
+* **责任链** 通常和 **组合模式** 结合使用。 在这种情况下， 叶组件接收到请求后， 可以将请求沿包含全体父组件的链一直传递至对象树的底部。
+* **责任链** 的管理者可使用 **命令模式** 实现。 在这种情况下， 你可以对由请求代表的同一个上下文对象执行许多不同的操作。
 
     还有另外一种实现方式， 那就是请求自身就是一个命令对象。 在这种情况下， 你可以对由一系列不同上下文连接而成的链执行相同的操作。
-* **责任链**和**装饰模式**的类结构非常相似。 两者都依赖递归组合将需要执行的操作传递给一系列对象。 但是， 两者有几点重要的不同之处。
-    责任链的管理者可以相互独立地执行一切操作， 还可以随时停止传递请求。 另一方面， 各种装饰可以在遵循基本接口的情况下扩展对象的行为。 此外， 装饰无法中断请求的传递。
+
+* **责任链** 和 **装饰模式** 的类结构非常相似。 两者都依赖递归组合将需要执行的操作传递给一系列对象。 但是， 两者有几点重要的不同之处。
+
+    责任链的管理者可以相互独立地执行一切操作， 还可以随时停止传递请求。 另一方面， 各种装饰可以在遵循基本接口的情况下扩展对象的行为。 此外，装饰无法中断请求的传递。
