@@ -8,14 +8,14 @@
 
 === "友链"
 
-<div class="grid cards" markdown>
+    <div class="grid cards" markdown>
 
--   ![黑山羊日志](https://avatars.githubusercontent.com/u/42677744?v=4){ width=64 .lg .middle } <h2><a href="https://z2devil.cn/note" target="_blank">黑山羊日志</a></h2>
+    -   ![黑山羊日志](https://avatars.githubusercontent.com/u/42677744?v=4){ width=64 .lg .middle } <h2><a href="https://z2devil.cn/note" target="_blank">黑山羊日志</a></h2>
 
-    ---
+        ---
 
-    你好，我是 Devil。我是一个有游戏梦🎮、喜欢设计✒️的前端工程师💻。
-    
-    I am a frontend engineer 💻 with a dream of making games 🎮 and a passion for design ✒️.
+        你好，我是 Devil。我是一个有游戏梦🎮、喜欢设计✒️的前端工程师💻。
+        
+        I am a frontend engineer 💻 with a dream of making games 🎮 and a passion for design ✒️.
 
-</div>
+    </div>
