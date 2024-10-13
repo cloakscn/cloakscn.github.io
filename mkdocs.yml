@@ -154,7 +154,7 @@ markdown_extensions:
   - footnotes
   - md_in_html
   - toc:
-      permalink: true
+      # permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -199,7 +199,9 @@ markdown_extensions:
       generic: true
 
 extra_javascript:
-  - javascripts/katex.js
+  - assets/javascripts/katex.js
+  - assets/javascripts/mermaid.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11.3.0/dist/mermaid.min.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
