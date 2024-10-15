@@ -254,6 +254,7 @@ nav:
       - 创建型模式:
           - design-patterns/creational-patterns/factory.md
       - 建造者模式:
+          - design-patterns/structural-patterns/composite.md
           - design-patterns/structural-patterns/proxy.md
           - design-patterns/structural-patterns/decorator.md
           - design-patterns/structural-patterns/bridge.md

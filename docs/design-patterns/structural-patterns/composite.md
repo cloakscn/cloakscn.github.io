@@ -9,6 +9,15 @@ tag:
 
 组合模式是一种结构型设计模式， 你可以使用它将对象组合成树状结构， 并且能像使用独立对象一样使用它们。
 
+???+ info "2011 综合知识 33,34"
+
+    组合（Composite）模式又称为整体-部分（Part whole）模式，属于对象的结构模式。在组合模式中，通过组合多个对象形成树形结构以表示整体部分的结构层次。组合模式对单个对象（即叶子对象）和组合对象（即容器对象）的使用具有一致性。
+    
+    * 类 Component 为组合中的对象声明接口，在适当的情况下，实现所有类共有接口的缺省行为，声明一个接口用于访问和管理 Component 的子部件；
+    * 类 Leaf 在组合中表示叶结点对象，叶结点没有子结点；
+    * 类 Composite 定义有子部件的那些部件的行为，存储子部件，并在 Component 接口中实现与子部件有关的操作；
+    * 类 Client 通过 Component 接口操纵组合部件的对象。
+
 ## 模式结构
 
 ![](https://refactoringguru.cn/images/patterns/diagrams/composite/structure-zh.png)
@@ -17,9 +26,11 @@ tag:
 2. **叶节点 （Leaf）** 是树的基本结构， 它不包含子项目。
 
     一般情况下， 叶节点最终会完成大部分的实际工作， 因为它们无法将工作指派给其他部分。
+
 3. **容器 （Container）**——又名 “组合 （Composite）”——是包含叶节点或其他容器等子项目的单位。 容器不知道其子项目所属的具体类， 它只通过通用的组件接口与其子项目交互。
 
     容器接收到请求后会将工作分配给自己的子项目， 处理中间结果， 然后将最终结果返回给客户端。
+
 4. **客户端 （Client）** 通过组件接口与所有项目交互。 因此， 客户端能以相同方式与树状结构中的简单或复杂项目交互。
 
 ## 应用场景
@@ -41,96 +52,106 @@ tag:
 1. 确保应用的核心模型能够以树状结构表示。 尝试将其分解为简单元素和容器。 记住， 容器必须能够同时包含简单元素和其他容器。
 2. 声明组件接口及其一系列方法， 这些方法对简单和复杂元素都有意义。
 
-    ```go file.go: 组件接口
-    package main
+    === "file.go: 组件接口"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type File struct {
-        name string
-    }
+        import "fmt"
 
-    func (f *File) search(keyword string) {
-        fmt.Printf("Searching for keyword %s in file %s\n", keyword, f.name)
-    }
+        type File struct {
+            name string
+        }
 
-    func (f *File) getName() string {
-        return f.name
-    }
-    ```
+        func (f *File) search(keyword string) {
+            fmt.Printf("Searching for keyword %s in file %s\n", keyword, f.name)
+        }
+
+        func (f *File) getName() string {
+            return f.name
+        }
+        ```
 
 3. 创建一个叶节点类表示简单元素。 程序中可以有多个不同的叶节点类。
 
-    ```go component.go: 叶子
-    package main
+    === "component.go: 叶子"
 
-    type Component interface {
-        search(string)
-    }
-    ```
+        ```go 
+        package main
+
+        type Component interface {
+            search(string)
+        }
+        ```
 
 4. 创建一个容器类表示复杂元素。 在该类中， 创建一个数组成员变量来存储对于其子元素的引用。 该数组必须能够同时保存叶节点和容器， 因此请确保将其声明为组合接口类型。
 
     实现组件接口方法时， 记住容器应该将大部分工作交给其子元素来完成。
 
-    ```go folder.go: 组合
-    package main
+    === "folder.go: 组合"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Folder struct {
-        components []Component
-        name       string
-    }
+        import "fmt"
 
-    func (f *Folder) search(keyword string) {
-        fmt.Printf("Serching recursively for keyword %s in folder %s\n", keyword, f.name)
-        for _, composite := range f.components {
-            composite.search(keyword)
+        type Folder struct {
+            components []Component
+            name       string
         }
-    }
 
-    func (f *Folder) add(c Component) {
-        f.components = append(f.components, c)
-    }
-    ```
+        func (f *Folder) search(keyword string) {
+            fmt.Printf("Serching recursively for keyword %s in folder %s\n", keyword, f.name)
+            for _, composite := range f.components {
+                composite.search(keyword)
+            }
+        }
+
+        func (f *Folder) add(c Component) {
+            f.components = append(f.components, c)
+        }
+        ```
 
 5. 最后， 在容器中定义添加和删除子元素的方法。
 
     记住， 这些操作可在组件接口中声明。 这将会违反接口隔离原则， 因为叶节点类中的这些方法为空。 但是， 这可以让客户端无差别地访问所有元素， 即使是组成树状结构的元素。
 
-```go main.go: 客户端代码
-package main
+    === "main.go: 客户端代码"
 
-func main() {
-    file1 := &File{name: "File1"}
-    file2 := &File{name: "File2"}
-    file3 := &File{name: "File3"}
+        ```go 
+        package main
 
-    folder1 := &Folder{
-        name: "Folder1",
-    }
+        func main() {
+            file1 := &File{name: "File1"}
+            file2 := &File{name: "File2"}
+            file3 := &File{name: "File3"}
 
-    folder1.add(file1)
+            folder1 := &Folder{
+                name: "Folder1",
+            }
 
-    folder2 := &Folder{
-        name: "Folder2",
-    }
-    folder2.add(file2)
-    folder2.add(file3)
-    folder2.add(folder1)
+            folder1.add(file1)
 
-    folder2.search("rose")
-}
-```
+            folder2 := &Folder{
+                name: "Folder2",
+            }
+            folder2.add(file2)
+            folder2.add(file3)
+            folder2.add(folder1)
 
-```go output.txt: 执行结果
-Serching recursively for keyword rose in folder Folder2
-Searching for keyword rose in file File2
-Searching for keyword rose in file File3
-Serching recursively for keyword rose in folder Folder1
-Searching for keyword rose in file File1
-```
+            folder2.search("rose")
+        }
+        ```
+
+    === "output.txt: 执行结果"
+
+        ```go 
+        Serching recursively for keyword rose in folder Folder2
+        Searching for keyword rose in file File2
+        Searching for keyword rose in file File3
+        Serching recursively for keyword rose in folder Folder1
+        Searching for keyword rose in file File1
+        ```
 
 ## 优缺点
 
@@ -141,15 +162,16 @@ Searching for keyword rose in file File1
 
 ## 与其他模式的关系
 
-* **桥接模式**、 **状态模式**和**策略模式** （在某种程度上包括**适配器模式**） 模式的接口非常相似。 实际上， 它们都基于**组合模式**——即将工作委派给其他对象， 不过也各自解决了不同的问题。 模式并不只是以特定方式组织代码的配方， 你还可以使用它们来和其他开发者讨论模式所解决的问题。
-* 你可以在创建复杂**组合**树时使用**生成器模式**， 因为这可使其构造步骤以递归的方式运行。
-* **责任链模式**通常和**组合模式**结合使用。 在这种情况下， 叶组件接收到请求后， 可以将请求沿包含全体父组件的链一直传递至对象树的底部。
-* 你可以使用**迭代器模式**来遍历**组合**树。
-* 你可以使用**访问者模式**对整个**组合**树执行操作。
-* 你可以使用**享元模式**实现**组合**树的共享叶节点以节省内存。
-* **组合**和**装饰模式**的结构图很相似， 因为两者都依赖递归组合来组织无限数量的对象。
+* **桥接模式**、 **状态模式** 和 **策略模式** （在某种程度上包括 **适配器模式**） 模式的接口非常相似。 实际上， 它们都基于 **组合模式** ——即将工作委派给其他对象， 不过也各自解决了不同的问题。 模式并不只是以特定方式组织代码的配方， 你还可以使用它们来和其他开发者讨论模式所解决的问题。
+* 你可以在创建复杂 **组合** 树时使用 **生成器模式**， 因为这可使其构造步骤以递归的方式运行。
+* **责任链模式** 通常和 **组合模式** 结合使用。 在这种情况下， 叶组件接收到请求后， 可以将请求沿包含全体父组件的链一直传递至对象树的底部。
+* 你可以使用 **迭代器模式** 来遍历 **组合** 树。
+* 你可以使用 **访问者模式** 对整个 **组合** 树执行操作。
+* 你可以使用 **享元模式** 实现 **组合** 树的共享叶节点以节省内存。
+* **组合** 和 **装饰模式** 的结构图很相似， 因为两者都依赖递归组合来组织无限数量的对象。
 
     装饰类似于组合， 但其只有一个子组件。 此外还有一个明显不同： 装饰为被封装对象添加了额外的职责， 组合仅对其子节点的结果进行了 “求和”。
 
     但是， 模式也可以相互合作： 你可以使用装饰来扩展组合树中特定对象的行为。
-* 大量使用**组合**和**装饰**的设计通常可从对于**原型模式**的使用中获益。 你可以通过该模式来复制复杂结构， 而非从零开始重新构造。
+
+* 大量使用 **组合** 和 **装饰** 的设计通常可从对于 **原型模式** 的使用中获益。 你可以通过该模式来复制复杂结构， 而非从零开始重新构造。
