@@ -84,6 +84,10 @@ plugins:
   # - offline
   - glightbox
   - tags
+      # tags_file: blog/tags.md
+      # tags_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        # kwds:
+          # case: lower
   - blog:
       blog_toc: true
       post_slugify: !!python/object/apply:pymdownx.slugs.slugify
