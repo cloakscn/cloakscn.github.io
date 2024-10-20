@@ -24,12 +24,15 @@ tag:
 * **当你想使用对象中各种不同的算法变体， 并希望能在运行时切换算法时， 可使用策略模式。**
 
     策略模式让你能够将对象关联至可以不同方式执行特定子任务的不同子对象， 从而以间接方式在运行时更改对象行为。
+
 * **当你有许多仅在执行某些行为时略有不同的相似类时， 可使用策略模式。**
 
     策略模式让你能将不同行为抽取到一个独立类层次结构中， 并将原始类组合成同一个， 从而减少重复代码。
+    
 * **如果算法在上下文的逻辑中不是特别重要， 使用该模式能将类的业务逻辑与其算法实现细节隔离开来。**
 
     策略模式让你能将各种算法的代码、 内部数据和依赖关系与其他代码隔离开来。 不同客户端可通过一个简单接口执行算法， 并能在运行时进行切换。
+
 * **当类中使用了复杂条件运算符以在同一算法的不同变体中切换时， 可使用该模式。**
 
     策略模式将所有继承自同样接口的算法抽取到独立类中， 因此不再需要条件语句。 原始对象并不实现所有算法的变体， 而是将执行工作委派给其中的一个独立算法对象。
@@ -51,131 +54,146 @@ tag:
 1. 从上下文类中找出修改频率较高的算法 （也可能是用于在运行时选择某个算法变体的复杂条件运算符）。
 2. 声明该算法所有变体的通用策略接口。
 
-    ```go evictionAlgo.go: 策略接口
-    package main
+    === "evictionAlgo.go: 策略接口"
 
-    type EvictionAlgo interface {
-        evict(c *Cache)
-    }
-    ```
+        ```go 
+        package main
+
+        type EvictionAlgo interface {
+            evict(c *Cache)
+        }
+        ```
 
 3. 将算法逐一抽取到各自的类中， 它们都必须实现策略接口。
 
-    ```go fifo.go: 具体策略
-    package main
+    === "fifo.go: 具体策略"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Fifo struct {
-    }
+        import "fmt"
 
-    func (l *Fifo) evict(c *Cache) {
-        fmt.Println("Evicting by fifo strtegy")
-    }
-    ```
+        type Fifo struct {
+        }
 
-    ```go lru.go: 具体策略
-    package main
+        func (l *Fifo) evict(c *Cache) {
+            fmt.Println("Evicting by fifo strtegy")
+        }
+        ```
 
-    import "fmt"
+    === "lru.go: 具体策略"
 
-    type Lru struct {
-    }
+        ```go 
+        package main
 
-    func (l *Lru) evict(c *Cache) {
-        fmt.Println("Evicting by lru strtegy")
-    }
-    ```
+        import "fmt"
 
-    ```go lfu.go: 具体策略
-    package main
+        type Lru struct {
+        }
 
-    import "fmt"
+        func (l *Lru) evict(c *Cache) {
+            fmt.Println("Evicting by lru strtegy")
+        }
+        ```
 
-    type Lfu struct {
-    }
+    === "lfu.go: 具体策略"
 
-    func (l *Lfu) evict(c *Cache) {
-        fmt.Println("Evicting by lfu strtegy")
-    }
-    ```
+        ```go 
+        package main
+
+        import "fmt"
+
+        type Lfu struct {
+        }
+
+        func (l *Lfu) evict(c *Cache) {
+            fmt.Println("Evicting by lfu strtegy")
+        }
+        ```
 
 4. 在上下文类中添加一个成员变量用于保存对于策略对象的引用。 然后提供设置器以修改该成员变量。 上下文仅可通过策略接口同策略对象进行交互， 如有需要还可定义一个接口来让策略访问其数据。
 
-    ```go cache.go: 背景
-    package main
+    === "cache.go: 背景"
 
-    type Cache struct {
-        storage      map[string]string
-        evictionAlgo EvictionAlgo
-        capacity     int
-        maxCapacity  int
-    }
+        ```go cache.go: 背景
+        package main
 
-    func initCache(e EvictionAlgo) *Cache {
-        storage := make(map[string]string)
-        return &Cache{
-            storage:      storage,
-            evictionAlgo: e,
-            capacity:     0,
-            maxCapacity:  2,
+        type Cache struct {
+            storage      map[string]string
+            evictionAlgo EvictionAlgo
+            capacity     int
+            maxCapacity  int
         }
-    }
 
-    func (c *Cache) setEvictionAlgo(e EvictionAlgo) {
-        c.evictionAlgo = e
-    }
-
-    func (c *Cache) add(key, value string) {
-        if c.capacity == c.maxCapacity {
-            c.evict()
+        func initCache(e EvictionAlgo) *Cache {
+            storage := make(map[string]string)
+            return &Cache{
+                storage:      storage,
+                evictionAlgo: e,
+                capacity:     0,
+                maxCapacity:  2,
+            }
         }
-        c.capacity++
-        c.storage[key] = value
-    }
 
-    func (c *Cache) get(key string) {
-        delete(c.storage, key)
-    }
+        func (c *Cache) setEvictionAlgo(e EvictionAlgo) {
+            c.evictionAlgo = e
+        }
 
-    func (c *Cache) evict() {
-        c.evictionAlgo.evict(c)
-        c.capacity--
-    }
-    ```
+        func (c *Cache) add(key, value string) {
+            if c.capacity == c.maxCapacity {
+                c.evict()
+            }
+            c.capacity++
+            c.storage[key] = value
+        }
+
+        func (c *Cache) get(key string) {
+            delete(c.storage, key)
+        }
+
+        func (c *Cache) evict() {
+            c.evictionAlgo.evict(c)
+            c.capacity--
+        }
+        ```
 
 5. 客户端必须将上下文类与相应策略进行关联， 使上下文可以预期的方式完成其主要工作。
 
-```go main.go: 客户端代码
-package main
 
-func main() {
-    lfu := &Lfu{}
-    cache := initCache(lfu)
+    === "main.go: 客户端代码"
 
-    cache.add("a", "1")
-    cache.add("b", "2")
+        ```go 
+        package main
 
-    cache.add("c", "3")
+        func main() {
+            lfu := &Lfu{}
+            cache := initCache(lfu)
 
-    lru := &Lru{}
-    cache.setEvictionAlgo(lru)
+            cache.add("a", "1")
+            cache.add("b", "2")
 
-    cache.add("d", "4")
+            cache.add("c", "3")
 
-    fifo := &Fifo{}
-    cache.setEvictionAlgo(fifo)
+            lru := &Lru{}
+            cache.setEvictionAlgo(lru)
 
-    cache.add("e", "5")
+            cache.add("d", "4")
 
-}
-```
+            fifo := &Fifo{}
+            cache.setEvictionAlgo(fifo)
 
-```go output.txt: 执行结果
-Evicting by lfu strtegy
-Evicting by lru strtegy
-Evicting by fifo strtegy
-```
+            cache.add("e", "5")
+
+        }
+        ```
+
+    === "output.txt: 执行结果"
+
+        ```go 
+        Evicting by lfu strtegy
+        Evicting by lru strtegy
+        Evicting by fifo strtegy
+        ```
 
 ## 优缺点
 
@@ -188,10 +206,10 @@ Evicting by fifo strtegy
 
 ## 与其他模式的关系
 
-* **桥接模式**、 **状态模式**和**策略模式** （在某种程度上包括**适配器模式**） 模式的接口非常相似。 实际上， 它们都基于**组合模式**——即将工作委派给其他对象， 不过也各自解决了不同的问题。 模式并不只是以特定方式组织代码的配方， 你还可以使用它们来和其他开发者讨论模式所解决的问题。
-* **命令模式**和**策略**看上去很像， 因为两者都能通过某些行为来参数化对象。 但是， 它们的意图有非常大的不同。
+* **桥接模式**、 **状态模式** 和 **策略模式** （在某种程度上包括 **适配器模式** ） 模式的接口非常相似。 实际上， 它们都基于 **组合模式** ——即将工作委派给其他对象， 不过也各自解决了不同的问题。 模式并不只是以特定方式组织代码的配方， 你还可以使用它们来和其他开发者讨论模式所解决的问题。
+* **命令模式** 和 **策略** 看上去很像， 因为两者都能通过某些行为来参数化对象。 但是， 它们的意图有非常大的不同。
   * 你可以使用命令来将任何操作转换为对象。 操作的参数将成为对象的成员变量。 你可以通过转换来延迟操作的执行、 将操作放入队列、 保存历史命令或者向远程服务发送命令等。
   * 另一方面， 策略通常可用于描述完成某件事的不同方式， 让你能够在同一个上下文类中切换算法。
-* **装饰模式**可让你更改对象的外表， **策略**则让你能够改变其本质。
-* **模板方法模式**基于继承机制： 它允许你通过扩展子类中的部分内容来改变部分算法。 **策略**基于**组合**机制： 你可以通过对相应行为提供不同的策略来改变对象的部分行为。 模板方法在类层次上运作， 因此它是静态的。 策略在对象层次上运作， 因此允许在运行时切换行为。
-* **状态**可被视为**策略**的扩展。 两者都基于**组合**机制： 它们都通过将部分工作委派给 “帮手” 对象来改变其在不同情景下的行为。 策略使得这些对象相互之间完全独立， 它们不知道其他对象的存在。 但状态模式没有限制具体状态之间的依赖， 且允许它们自行改变在不同情景下的状态。
+* **装饰模式** 可让你更改对象的外表， **策略** 则让你能够改变其本质。
+* **模板方法模式** 基于继承机制： 它允许你通过扩展子类中的部分内容来改变部分算法。 **策略** 基于 **组合** 机制： 你可以通过对相应行为提供不同的策略来改变对象的部分行为。 模板方法在类层次上运作， 因此它是静态的。 策略在对象层次上运作， 因此允许在运行时切换行为。
+* **状态** 可被视为 **策略** 的扩展。 两者都基于 **组合** 机制： 它们都通过将部分工作委派给 “帮手” 对象来改变其在不同情景下的行为。 策略使得这些对象相互之间完全独立， 它们不知道其他对象的存在。 但状态模式没有限制具体状态之间的依赖， 且允许它们自行改变在不同情景下的状态。

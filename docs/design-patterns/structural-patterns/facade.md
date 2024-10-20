@@ -18,6 +18,7 @@ tag:
 3. **复杂子系统 （Complex Subsystem）** 由数十个不同对象构成。 如果要用这些对象完成有意义的工作， 你必须深入了解子系统的实现细节， 比如按照正确顺序初始化对象和为其提供正确格式的数据。
 
     子系统类不会意识到外观的存在， 它们在系统内运作并且相互之间可直接进行交互。
+
 4. **客户端 （Client）** 使用外观代替对子系统对象的直接调用。
 
 ## 应用场景
@@ -47,227 +48,243 @@ tag:
 1. 考虑能否在现有子系统的基础上提供一个更简单的接口。 如果该接口能让客户端代码独立于众多子系统类， 那么你的方向就是正确的。
 2. 在一个新的外观类中声明并实现该接口。 外观应将客户端代码的调用重定向到子系统中的相应对象处。 如果客户端代码没有对子系统进行初始化， 也没有对其后续生命周期进行管理， 那么外观必须完成此类工作。
 
-    ```go walletFacade.go: 外观
-    package main
+    === "walletFacade.go: 外观"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type WalletFacade struct {
-        account      *Account
-        wallet       *Wallet
-        securityCode *SecurityCode
-        notification *Notification
-        ledger       *Ledger
-    }
+        import "fmt"
 
-    func newWalletFacade(accountID string, code int) *WalletFacade {
-        fmt.Println("Starting create account")
-        walletFacacde := &WalletFacade{
-            account:      newAccount(accountID),
-            securityCode: newSecurityCode(code),
-            wallet:       newWallet(),
-            notification: &Notification{},
-            ledger:       &Ledger{},
-        }
-        fmt.Println("Account created")
-        return walletFacacde
-    }
-
-    func (w *WalletFacade) addMoneyToWallet(accountID string, securityCode int, amount int) error {
-        fmt.Println("Starting add money to wallet")
-        err := w.account.checkAccount(accountID)
-        if err != nil {
-            return err
-        }
-        err = w.securityCode.checkCode(securityCode)
-        if err != nil {
-            return err
-        }
-        w.wallet.creditBalance(amount)
-        w.notification.sendWalletCreditNotification()
-        w.ledger.makeEntry(accountID, "credit", amount)
-        return nil
-    }
-
-    func (w *WalletFacade) deductMoneyFromWallet(accountID string, securityCode int, amount int) error {
-        fmt.Println("Starting debit money from wallet")
-        err := w.account.checkAccount(accountID)
-        if err != nil {
-            return err
+        type WalletFacade struct {
+            account      *Account
+            wallet       *Wallet
+            securityCode *SecurityCode
+            notification *Notification
+            ledger       *Ledger
         }
 
-        err = w.securityCode.checkCode(securityCode)
-        if err != nil {
-            return err
+        func newWalletFacade(accountID string, code int) *WalletFacade {
+            fmt.Println("Starting create account")
+            walletFacacde := &WalletFacade{
+                account:      newAccount(accountID),
+                securityCode: newSecurityCode(code),
+                wallet:       newWallet(),
+                notification: &Notification{},
+                ledger:       &Ledger{},
+            }
+            fmt.Println("Account created")
+            return walletFacacde
         }
-        err = w.wallet.debitBalance(amount)
-        if err != nil {
-            return err
+
+        func (w *WalletFacade) addMoneyToWallet(accountID string, securityCode int, amount int) error {
+            fmt.Println("Starting add money to wallet")
+            err := w.account.checkAccount(accountID)
+            if err != nil {
+                return err
+            }
+            err = w.securityCode.checkCode(securityCode)
+            if err != nil {
+                return err
+            }
+            w.wallet.creditBalance(amount)
+            w.notification.sendWalletCreditNotification()
+            w.ledger.makeEntry(accountID, "credit", amount)
+            return nil
         }
-        w.notification.sendWalletDebitNotification()
-        w.ledger.makeEntry(accountID, "debit", amount)
-        return nil
-    }
-    ```
+
+        func (w *WalletFacade) deductMoneyFromWallet(accountID string, securityCode int, amount int) error {
+            fmt.Println("Starting debit money from wallet")
+            err := w.account.checkAccount(accountID)
+            if err != nil {
+                return err
+            }
+
+            err = w.securityCode.checkCode(securityCode)
+            if err != nil {
+                return err
+            }
+            err = w.wallet.debitBalance(amount)
+            if err != nil {
+                return err
+            }
+            w.notification.sendWalletDebitNotification()
+            w.ledger.makeEntry(accountID, "debit", amount)
+            return nil
+        }
+        ```
 
 3. 如果要充分发挥这一模式的优势， 你必须确保所有客户端代码仅通过外观来与子系统进行交互。 此后客户端代码将不会受到任何由子系统代码修改而造成的影响， 比如子系统升级后， 你只需修改外观中的代码即可。
 
-    ```go account.go: 复杂子系统的组成部分
-    package main
+    === "account.go: 复杂子系统的组成部分"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Account struct {
-        name string
-    }
+        import "fmt"
 
-    func newAccount(accountName string) *Account {
-        return &Account{
-            name: accountName,
+        type Account struct {
+            name string
         }
-    }
 
-    func (a *Account) checkAccount(accountName string) error {
-        if a.name != accountName {
-            return fmt.Errorf("Account Name is incorrect")
+        func newAccount(accountName string) *Account {
+            return &Account{
+                name: accountName,
+            }
         }
-        fmt.Println("Account Verified")
-        return nil
-    }
-    ```
 
-    ```go securityCode.go: 复杂子系统的组成部分
-    package main
-
-    import "fmt"
-
-    type SecurityCode struct {
-        code int
-    }
-
-    func newSecurityCode(code int) *SecurityCode {
-        return &SecurityCode{
-            code: code,
+        func (a *Account) checkAccount(accountName string) error {
+            if a.name != accountName {
+                return fmt.Errorf("Account Name is incorrect")
+            }
+            fmt.Println("Account Verified")
+            return nil
         }
-    }
+        ```
 
-    func (s *SecurityCode) checkCode(incomingCode int) error {
-        if s.code != incomingCode {
-            return fmt.Errorf("Security Code is incorrect")
+    === "securityCode.go: 复杂子系统的组成部分"
+
+        ```go 
+        package main
+
+        import "fmt"
+
+        type SecurityCode struct {
+            code int
         }
-        fmt.Println("SecurityCode Verified")
-        return nil
-    }
-    ```
 
-    ```go wallet.go: 复杂子系统的组成部分
-    package main
-
-    import "fmt"
-
-    type Wallet struct {
-        balance int
-    }
-
-    func newWallet() *Wallet {
-        return &Wallet{
-            balance: 0,
+        func newSecurityCode(code int) *SecurityCode {
+            return &SecurityCode{
+                code: code,
+            }
         }
-    }
 
-    func (w *Wallet) creditBalance(amount int) {
-        w.balance += amount
-        fmt.Println("Wallet balance added successfully")
-        return
-    }
-
-    func (w *Wallet) debitBalance(amount int) error {
-        if w.balance < amount {
-            return fmt.Errorf("Balance is not sufficient")
+        func (s *SecurityCode) checkCode(incomingCode int) error {
+            if s.code != incomingCode {
+                return fmt.Errorf("Security Code is incorrect")
+            }
+            fmt.Println("SecurityCode Verified")
+            return nil
         }
-        fmt.Println("Wallet balance is Sufficient")
-        w.balance = w.balance - amount
-        return nil
-    }
-    ```
+        ```
 
-    ```go ledger.go: 复杂子系统的组成部分
-    package main
+    === "wallet.go: 复杂子系统的组成部分"
 
-    import "fmt"
+        ```go 
+        package main
 
-    type Ledger struct {
-    }
+        import "fmt"
 
-    func (s *Ledger) makeEntry(accountID, txnType string, amount int) {
-        fmt.Printf("Make ledger entry for accountId %s with txnType %s for amount %d\n", accountID, txnType, amount)
-        return
-    }
-    ```
+        type Wallet struct {
+            balance int
+        }
 
-    ```go notification.go: 复杂子系统的组成部分
-    package main
+        func newWallet() *Wallet {
+            return &Wallet{
+                balance: 0,
+            }
+        }
 
-    import "fmt"
+        func (w *Wallet) creditBalance(amount int) {
+            w.balance += amount
+            fmt.Println("Wallet balance added successfully")
+            return
+        }
 
-    type Notification struct {
-    }
+        func (w *Wallet) debitBalance(amount int) error {
+            if w.balance < amount {
+                return fmt.Errorf("Balance is not sufficient")
+            }
+            fmt.Println("Wallet balance is Sufficient")
+            w.balance = w.balance - amount
+            return nil
+        }
+        ```
 
-    func (n *Notification) sendWalletCreditNotification() {
-        fmt.Println("Sending wallet credit notification")
-    }
+    === "ledger.go: 复杂子系统的组成部分"
 
-    func (n *Notification) sendWalletDebitNotification() {
-        fmt.Println("Sending wallet debit notification")
-    }
-    ```
+        ```go 
+        package main
+
+        import "fmt"
+
+        type Ledger struct {
+        }
+
+        func (s *Ledger) makeEntry(accountID, txnType string, amount int) {
+            fmt.Printf("Make ledger entry for accountId %s with txnType %s for amount %d\n", accountID, txnType, amount)
+            return
+        }
+        ```
+
+    === "notification.go: 复杂子系统的组成部分"
+
+        ```go 
+        package main
+
+        import "fmt"
+
+        type Notification struct {
+        }
+
+        func (n *Notification) sendWalletCreditNotification() {
+            fmt.Println("Sending wallet credit notification")
+        }
+
+        func (n *Notification) sendWalletDebitNotification() {
+            fmt.Println("Sending wallet debit notification")
+        }
+        ```
 
 4. 如果外观变得过于臃肿， 你可以考虑将其部分行为抽取为一个新的专用外观类。
 
-```go main.go: 客户端代码
-package main
+    === "main.go: 客户端代码"
 
-import (
-    "fmt"
-    "log"
-)
+        ```go 
+        package main
 
-func main() {
-    fmt.Println()
-    walletFacade := newWalletFacade("abc", 1234)
-    fmt.Println()
+        import (
+            "fmt"
+            "log"
+        )
 
-    err := walletFacade.addMoneyToWallet("abc", 1234, 10)
-    if err != nil {
-        log.Fatalf("Error: %s\n", err.Error())
-    }
+        func main() {
+            fmt.Println()
+            walletFacade := newWalletFacade("abc", 1234)
+            fmt.Println()
 
-    fmt.Println()
-    err = walletFacade.deductMoneyFromWallet("abc", 1234, 5)
-    if err != nil {
-        log.Fatalf("Error: %s\n", err.Error())
-    }
-}
-```
+            err := walletFacade.addMoneyToWallet("abc", 1234, 10)
+            if err != nil {
+                log.Fatalf("Error: %s\n", err.Error())
+            }
 
-```go output.txt: 执行结果
-Starting create account
-Account created
+            fmt.Println()
+            err = walletFacade.deductMoneyFromWallet("abc", 1234, 5)
+            if err != nil {
+                log.Fatalf("Error: %s\n", err.Error())
+            }
+        }
+        ```
 
-Starting add money to wallet
-Account Verified
-SecurityCode Verified
-Wallet balance added successfully
-Sending wallet credit notification
-Make ledger entry for accountId abc with txnType credit for amount 10
+    === "output.txt: 执行结果"
 
-Starting debit money from wallet
-Account Verified
-SecurityCode Verified
-Wallet balance is Sufficient
-Sending wallet debit notification
-Make ledger entry for accountId abc with txnType debit for amount 5
-```
+        ```go 
+        Starting create account
+        Account created
+
+        Starting add money to wallet
+        Account Verified
+        SecurityCode Verified
+        Wallet balance added successfully
+        Sending wallet credit notification
+        Make ledger entry for accountId abc with txnType credit for amount 10
+
+        Starting debit money from wallet
+        Account Verified
+        SecurityCode Verified
+        Wallet balance is Sufficient
+        Sending wallet debit notification
+        Make ledger entry for accountId abc with txnType debit for amount 5
+        ```
 
 ## 优缺点
 
@@ -277,11 +294,13 @@ Make ledger entry for accountId abc with txnType debit for amount 5
 
 ## 与其他模式的关系
 
-* **外观模式**为现有对象定义了一个新接口， **适配器模式**则会试图运用已有的接口。 适配器通常只封装一个对象， 外观通常会作用于整个对象子系统上。
-* 当只需对客户端代码隐藏子系统创建对象的方式时， 你可以使用**抽象工厂模式**来**代替外观**。
-* **享元模式**展示了如何生成大量的小型对象， **外观**则展示了如何用一个对象来代表整个子系统。
-* **外观**和**中介者模式**的职责类似： 它们都尝试在大量紧密耦合的类中组织起合作。
-  * 外观为子系统中的所有对象定义了一个简单接口， 但是它不提供任何新功能。 子系统本身不会意识到外观的存在。 子系统中的对象可以直接进行交流。
-  * 中介者将系统中组件的沟通行为中心化。 各组件只知道中介者对象， 无法直接相互交流。
-* **外观**类通常可以转换为**单例模式**类， 因为在大部分情况下一个外观对象就足够了。
-* **外观**与**代理模式**的相似之处在于它们都缓存了一个复杂实体并自行对其进行初始化。 代理与其服务对象遵循同一接口， 使得自己和服务对象可以互换， 在这一点上它与外观不同。
+* **外观模式** 为现有对象定义了一个新接口， **适配器模式** 则会试图运用已有的接口。 适配器通常只封装一个对象， 外观通常会作用于整个对象子系统上。
+* 当只需对客户端代码隐藏子系统创建对象的方式时， 你可以使用 **抽象工厂模式** 来 **代替外观**。
+* **享元模式** 展示了如何生成大量的小型对象，**外观** 则展示了如何用一个对象来代表整个子系统。
+* **外观** 和 **中介者模式** 的职责类似： 它们都尝试在大量紧密耦合的类中组织起合作。
+
+    * 外观为子系统中的所有对象定义了一个简单接口， 但是它不提供任何新功能。 子系统本身不会意识到外观的存在。 子系统中的对象可以直接进行交流。
+    * 中介者将系统中组件的沟通行为中心化。 各组件只知道中介者对象， 无法直接相互交流。
+
+* **外观** 类通常可以转换为 **单例模式** 类， 因为在大部分情况下一个外观对象就足够了。
+* **外观** 与 **代理模式** 的相似之处在于它们都缓存了一个复杂实体并自行对其进行初始化。 代理与其服务对象遵循同一接口， 使得自己和服务对象可以互换， 在这一点上它与外观不同。
