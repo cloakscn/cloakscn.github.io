@@ -226,11 +226,11 @@ nav:
           - ruankao/basics computer.md
           - ruankao/basics embedded.md
           - ruankao/basics network.md
+          - ruankao/basics enterprise-informatization.md
+          - ruankao/basics information security.md
           - ruankao/basics system engineering.md
-          - ruankao/software engineering.md
-          - ruankao/enterprise-informatization.md
-          - ruankao/information security.md
-          - ruankao/database-design.md
+          - ruankao/basics software engineering.md
+          - ruankao/basics database-design.md
           - ruankao/intellectual property rights.md
       - 案例分析:
           - ruankao/information-system-architecture.md
