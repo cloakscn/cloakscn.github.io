@@ -246,6 +246,7 @@ nav:
           - ruankao/hierarchical.md
           - ruankao/cloud-native.md
           - ruankao/service-oriented.md
+          - ruankao/communication system architecture design theory and practice.md
   - 设计模式（编制中）: 
       - design-patterns/index.md
       - 创建型模式:
