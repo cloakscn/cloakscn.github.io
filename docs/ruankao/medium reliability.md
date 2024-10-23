@@ -2,7 +2,7 @@
 
 ## 软件可靠性基本概念（重要）
 
-![img_26.png](img_26.png)
+![img_26.png](images/img_26.png)
 
 软件可靠性是软件产品在规定的条件下和规定的时间区间完成规定功能的能力。
 
@@ -19,13 +19,13 @@
 * 平均恢复前时间（MTTR）：
 * 平均故障间隔时间（MTBF）：
 
-![img_27.png](img_27.png)
+![img_27.png](images/img_27.png)
 
-![img_28.png](img_28.png)
+![img_28.png](images/img_28.png)
 
 ## 软件可靠性建模
 
-![img_29.png](img_29.png)
+![img_29.png](images/img_29.png)
 
 ## 软件可靠性管理
 
@@ -41,7 +41,7 @@
 
 ### 系统配置技术
 
-![img_30.png](img_30.png)
+![img_30.png](images/img_30.png)
 
 ## 软件可靠性测试
 

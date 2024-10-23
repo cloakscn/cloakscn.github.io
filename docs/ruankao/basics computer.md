@@ -108,7 +108,7 @@ music: 2032222526 # 老情歌
 
 磁盘调度算法
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 | 磁盘调度算法           | 描述 |
 | ---------------------- | ---- |
@@ -190,21 +190,21 @@ music: 2032222526 # 老情歌
 
 1. 分区存储管理
 
-    ![alt text](image-13.png)
+    ![alt text](images/image-13.png)
 
     所谓分区存储组织，就是整存，将某进程运行所需的内存整体一起分配给它，然后再执行。主要有以下三种分区方式：
 
     * **固定分区：**
     * **可变分区：**
 
-    ![alt text](image-14.png)
+    ![alt text](images/image-14.png)
 
     * **可重定位分区：** 可以解决碎片问题，移动所有已经分配好的区域，使其成为一个连续的区域，这样其他外部细小的分区碎片可以合并为大的分区，满足作业要求。只在外部作业请求空间得不到满足时进行。
  
 2. 分页存储管理
-    ![alt text](image-15.png)
+    ![alt text](images/image-15.png)
 
-    ![alt text](image-16.png)
+    ![alt text](images/image-16.png)
 
     |页面置换算法|描述|
     |--|--|
@@ -215,15 +215,15 @@ music: 2032222526 # 老情歌
 
     **快表**
 
-    ![alt text](image-17.png)
+    ![alt text](images/image-17.png)
 
 3. 分段存储管理 
 
-    ![alt text](image-18.png)  
+    ![alt text](images/image-18.png)  
 
 4. 段页式存储管理
 
-    ![alt text](image-19.png)
+    ![alt text](images/image-19.png)
 
 ???+ info "2010 综合知识 2"
 

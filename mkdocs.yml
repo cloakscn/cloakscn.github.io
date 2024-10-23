@@ -222,7 +222,7 @@ nav:
       - about.md
   - 高级架构师（编制中）:
       - ruankao/index.md
-      - 综合知识:
+      - 基础知识:
           - ruankao/basics computer.md
           - ruankao/basics embedded.md
           - ruankao/basics network.md
@@ -231,22 +231,23 @@ nav:
           - ruankao/basics system engineering.md
           - ruankao/basics software engineering.md
           - ruankao/basics database-design.md
-          - ruankao/intellectual property rights.md
-      - 案例分析:
-          - ruankao/information-system-architecture.md
-          - ruankao/software architecture.md
-          - ruankao/reliability.md
-          - ruankao/system-quality-attributes-and-architecture-assessment.md
-          - ruankao/web.md
-          - ruankao/software architecture evolution.md
-          - ruankao/security architecture.md
+          - ruankao/basics intellectual property rights.md
+      - 中级知识:
+          - ruankao/medium software architecture.md
+          - ruankao/medium reliability.md
+          - ruankao/medium system-quality-attributes-and-architecture-assessment.md
+          - ruankao/medium software architecture evolution.md
+          - ruankao/medium future.md
+      - 高级知识:
+          - ruankao/advanced web.md
+          - ruankao/advanced information-system-architecture.md
+          - ruankao/advanced security architecture.md
+          - ruankao/advanced cloud-native.md
+          - ruankao/advanced service-oriented.md
+          - ruankao/advanced hierarchical.md
+          - ruankao/advanced communication system architecture design theory and practice.md
       - 论文写作:
           - ruankao/paper.md
-          - ruankao/future.md
-          - ruankao/hierarchical.md
-          - ruankao/cloud-native.md
-          - ruankao/service-oriented.md
-          - ruankao/communication system architecture design theory and practice.md
   - 设计模式（编制中）: 
       - design-patterns/index.md
       - 创建型模式:

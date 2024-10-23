@@ -26,7 +26,7 @@ OSI/RM 七层模型见表如下：
 
 Internet 协议的组要协议及其层次关系见表如下：
 
-![alt text](image-31.png)
+![alt text](images/image-31.png)
 
 #### 应用层协议
 

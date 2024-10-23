@@ -51,8 +51,8 @@
 
 ##### 2013 年真题
 
-![alt text](image-34.png)
-![alt text](image-35.png)
+![alt text](images/image-34.png)
+![alt text](images/image-35.png)
 
 ### 关系数据库设计基本理论
 
@@ -302,16 +302,16 @@
 
 ???+ example "2012 综合知识 7,8"
 
-    ![alt text](image-27.png)
+    ![alt text](images/image-27.png)
 
-    ![alt text](image-28.png)
+    ![alt text](images/image-28.png)
 
 #### 真题
 
 ##### 2012 年真题
 
-![alt text](image-32.png)
-![alt text](image-33.png)
+![alt text](images/image-32.png)
+![alt text](images/image-33.png)
 
 ### 事务管理
 
@@ -485,7 +485,7 @@ ORM 把数据库映射成对象，如：
 | 存储容量     | 向上扩展                 | 向外扩展                 |
 | 可靠性       | B树、哈希等              | 键值索引                 |
 
-![img_3.png](img_3.png)
+![img_3.png](images/img_33.png)
 
 ### 数据库缓存技术
 
@@ -501,7 +501,7 @@ ORM 把数据库映射成对象，如：
 
 ### 不规范化带来的 4 大问题
 
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
 1. 数据冗余
     
@@ -519,7 +519,7 @@ ORM 把数据库映射成对象，如：
 
 ### 反规范化技术
 
-![img_6.png](img_6.png)
+![img_6.png](images/img_6.png)
 
 规范花设计后，数据库设计者希望牺牲部分规范化来提高性能和复杂度。
 
@@ -535,7 +535,7 @@ ORM 把数据库映射成对象，如：
 
 ### 分布式数据库
 
-![img_7.png](img_7.png)
+![img_7.png](images/img_7.png)
 
 是由一组数据组成的，这组数据分布在计算机网络的不同计算机上，网络中的每个节点具有独立处理能力（称为场地自治），它可以执行局部应用，同时，每个节点也能通过网络通信子系统执行全局应用。分布式数据库系统是在集中式数据库系统技术基础上发展起来的，具有如下特点：
 
@@ -546,7 +546,7 @@ ORM 把数据库映射成对象，如：
 
 **分布式数据库优点**
 
-![img_8.png](img_8.png)
+![img_8.png](images/img_8.png)
 
 ### 商业智能
 
@@ -558,7 +558,7 @@ ORM 把数据库映射成对象，如：
 
 数据仓库（Data Warehouse）是一个面向主题的、集成的、相对稳定且随时间变化的数据集合，用于支持管理决策。数据仓库的关键特征是：面向主题、集成的、非易失的、时变的。
 
-![img_9.png](img_9.png)
+![img_9.png](images/img_9.png)
 
 **数据仓库的结构通常包含四个层次**
 
@@ -569,12 +569,12 @@ ORM 把数据库映射成对象，如：
 
 **传统数据库与数据仓库的比较**
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 OLTP 与 OLAP 的比较：OLTP 即联机事务处理，就是我们经常说的关系数据库的基础；OLAP
 即联机分析处理，是数据仓库的核心部分。
 
-![alt text](image-21.png)
+![alt text](images/image-21.png)
 
 #### 数据挖掘
 

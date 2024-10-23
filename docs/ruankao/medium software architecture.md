@@ -270,8 +270,8 @@ ABSD 方法具有三个基础：**功能的分解**、**通过选择体系结构
 
 <div class="grid cards" markdown>
 
-- ![仓库体系结构风格](image-24.png)
-- ![黑板体系结构风格](image-25.png)
+- ![仓库体系结构风格](images/image-24.png)
+- ![黑板体系结构风格](images/image-25.png)
 
 </div>
 
