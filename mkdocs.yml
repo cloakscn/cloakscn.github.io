@@ -259,6 +259,7 @@ nav:
           - design-patterns/structural-patterns/decorator.md
           - design-patterns/structural-patterns/bridge.md
       - 行为模式:
+          - design-patterns/behavioral-patterns/template-method.md
           - design-patterns/behavioral-patterns/state.md
           - design-patterns/behavioral-patterns/strategy.md
           - design-patterns/behavioral-patterns/chain-of-responsibility.md

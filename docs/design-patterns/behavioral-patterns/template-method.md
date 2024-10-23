@@ -43,151 +43,161 @@ tag:
 1. 分析目标算法， 确定能否将其分解为多个步骤。 从所有子类的角度出发， 考虑哪些步骤能够通用， 哪些步骤各不相同。
 2. 创建抽象基类并声明一个模板方法和代表算法步骤的一系列抽象方法。 在模板方法中根据算法结构依次调用相应步骤。 可用 `final` 最终修饰模板方法以防止子类对其进行重写。
 
-    ```go otp.go: 模板方法
-    package main
+    === "otp.go: 模板方法"
 
-    type IOtp interface {
-        genRandomOTP(int) string
-        saveOTPCache(string)
-        getMessage(string) string
-        sendNotification(string) error
-    }
+        ```go 
+        package main
 
-    // type otp struct {
-    // }
-
-    // func (o *otp) genAndSendOTP(iOtp iOtp, otpLength int) error {
-    //  otp := iOtp.genRandomOTP(otpLength)
-    //  iOtp.saveOTPCache(otp)
-    //  message := iOtp.getMessage(otp)
-    //  err := iOtp.sendNotification(message)
-    //  if err != nil {
-    //      return err
-    //  }
-    //  return nil
-    // }
-
-    type Otp struct {
-        iOtp IOtp
-    }
-
-    func (o *Otp) genAndSendOTP(otpLength int) error {
-        otp := o.iOtp.genRandomOTP(otpLength)
-        o.iOtp.saveOTPCache(otp)
-        message := o.iOtp.getMessage(otp)
-        err := o.iOtp.sendNotification(message)
-        if err != nil {
-            return err
+        type IOtp interface {
+            genRandomOTP(int) string
+            saveOTPCache(string)
+            getMessage(string) string
+            sendNotification(string) error
         }
-        return nil
-    }
-    ```
 
-    ```go sms.go: 具体实施
-    package main
+        // type otp struct {
+        // }
 
-    import "fmt"
+        // func (o *otp) genAndSendOTP(iOtp iOtp, otpLength int) error {
+        //  otp := iOtp.genRandomOTP(otpLength)
+        //  iOtp.saveOTPCache(otp)
+        //  message := iOtp.getMessage(otp)
+        //  err := iOtp.sendNotification(message)
+        //  if err != nil {
+        //      return err
+        //  }
+        //  return nil
+        // }
 
-    type Sms struct {
-        Otp
-    }
+        type Otp struct {
+            iOtp IOtp
+        }
 
-    func (s *Sms) genRandomOTP(len int) string {
-        randomOTP := "1234"
-        fmt.Printf("SMS: generating random otp %s\n", randomOTP)
-        return randomOTP
-    }
+        func (o *Otp) genAndSendOTP(otpLength int) error {
+            otp := o.iOtp.genRandomOTP(otpLength)
+            o.iOtp.saveOTPCache(otp)
+            message := o.iOtp.getMessage(otp)
+            err := o.iOtp.sendNotification(message)
+            if err != nil {
+                return err
+            }
+            return nil
+        }
+        ```
 
-    func (s *Sms) saveOTPCache(otp string) {
-        fmt.Printf("SMS: saving otp: %s to cache\n", otp)
-    }
+    === "sms.go: 具体实施"
 
-    func (s *Sms) getMessage(otp string) string {
-        return "SMS OTP for login is " + otp
-    }
+        ```go 
+        package main
 
-    func (s *Sms) sendNotification(message string) error {
-        fmt.Printf("SMS: sending sms: %s\n", message)
-        return nil
-    }
-    ```
+        import "fmt"
 
-    ```go email.go: 具体实施
-    package main
+        type Sms struct {
+            Otp
+        }
 
-    import "fmt"
+        func (s *Sms) genRandomOTP(len int) string {
+            randomOTP := "1234"
+            fmt.Printf("SMS: generating random otp %s\n", randomOTP)
+            return randomOTP
+        }
 
-    type Email struct {
-        Otp
-    }
+        func (s *Sms) saveOTPCache(otp string) {
+            fmt.Printf("SMS: saving otp: %s to cache\n", otp)
+        }
 
-    func (s *Email) genRandomOTP(len int) string {
-        randomOTP := "1234"
-        fmt.Printf("EMAIL: generating random otp %s\n", randomOTP)
-        return randomOTP
-    }
+        func (s *Sms) getMessage(otp string) string {
+            return "SMS OTP for login is " + otp
+        }
 
-    func (s *Email) saveOTPCache(otp string) {
-        fmt.Printf("EMAIL: saving otp: %s to cache\n", otp)
-    }
+        func (s *Sms) sendNotification(message string) error {
+            fmt.Printf("SMS: sending sms: %s\n", message)
+            return nil
+        }
+        ```
 
-    func (s *Email) getMessage(otp string) string {
-        return "EMAIL OTP for login is " + otp
-    }
+    === "email.go: 具体实施"
 
-    func (s *Email) sendNotification(message string) error {
-        fmt.Printf("EMAIL: sending email: %s\n", message)
-        return nil
-    }
-    ```
+        ```go 
+        package main
+
+        import "fmt"
+
+        type Email struct {
+            Otp
+        }
+
+        func (s *Email) genRandomOTP(len int) string {
+            randomOTP := "1234"
+            fmt.Printf("EMAIL: generating random otp %s\n", randomOTP)
+            return randomOTP
+        }
+
+        func (s *Email) saveOTPCache(otp string) {
+            fmt.Printf("EMAIL: saving otp: %s to cache\n", otp)
+        }
+
+        func (s *Email) getMessage(otp string) string {
+            return "EMAIL OTP for login is " + otp
+        }
+
+        func (s *Email) sendNotification(message string) error {
+            fmt.Printf("EMAIL: sending email: %s\n", message)
+            return nil
+        }
+        ```
 
 3. 虽然可将所有步骤全都设为抽象类型， 但默认实现可能会给部分步骤带来好处， 因为子类无需实现那些方法。
 4. 可考虑在算法的关键步骤之间添加钩子。
 5. 为每个算法变体新建一个具体子类， 它必须实现所有的抽象步骤， 也可以重写部分可选步骤。
 
-```go main.go: 客户端代码
-package main
+    === "main.go: 客户端代码"
 
-import "fmt"
+        ```go 
+        package main
 
-func main() {
-    // otp := otp{}
+        import "fmt"
 
-    // smsOTP := &sms{
-    //  otp: otp,
-    // }
+        func main() {
+            // otp := otp{}
 
-    // smsOTP.genAndSendOTP(smsOTP, 4)
+            // smsOTP := &sms{
+            //  otp: otp,
+            // }
 
-    // emailOTP := &email{
-    //  otp: otp,
-    // }
-    // emailOTP.genAndSendOTP(emailOTP, 4)
-    // fmt.Scanln()
-    smsOTP := &Sms{}
-    o := Otp{
-        iOtp: smsOTP,
-    }
-    o.genAndSendOTP(4)
+            // smsOTP.genAndSendOTP(smsOTP, 4)
 
-    fmt.Println("")
-    emailOTP := &Email{}
-    o = Otp{
-        iOtp: emailOTP,
-    }
-    o.genAndSendOTP(4)
-}
-```
+            // emailOTP := &email{
+            //  otp: otp,
+            // }
+            // emailOTP.genAndSendOTP(emailOTP, 4)
+            // fmt.Scanln()
+            smsOTP := &Sms{}
+            o := Otp{
+                iOtp: smsOTP,
+            }
+            o.genAndSendOTP(4)
 
-```go output.txt: 执行结果
-SMS: generating random otp 1234
-SMS: saving otp: 1234 to cache
-SMS: sending sms: SMS OTP for login is 1234
+            fmt.Println("")
+            emailOTP := &Email{}
+            o = Otp{
+                iOtp: emailOTP,
+            }
+            o.genAndSendOTP(4)
+        }
+        ```
 
-EMAIL: generating random otp 1234
-EMAIL: saving otp: 1234 to cache
-EMAIL: sending email: EMAIL OTP for login is 1234
-```
+    === "output.txt: 执行结果"
+
+        ```go 
+        SMS: generating random otp 1234
+        SMS: saving otp: 1234 to cache
+        SMS: sending sms: SMS OTP for login is 1234
+
+        EMAIL: generating random otp 1234
+        EMAIL: saving otp: 1234 to cache
+        EMAIL: sending email: EMAIL OTP for login is 1234
+        ```
 
 ## 优缺点
 
@@ -199,5 +209,5 @@ EMAIL: sending email: EMAIL OTP for login is 1234
 
 ## 与其他模式的关系
 
-* **工厂方法模式**是**模板方法模式**的一种特殊形式。 同时， 工厂方法可以作为一个大型模板方法中的一个步骤。
-* **模板方法**基于继承机制： 它允许你通过扩展子类中的部分内容来改变部分算法。 **策略模式**基于组合机制： 你可以通过对相应行为提供不同的策略来改变对象的部分行为。 模板方法在类层次上运作， 因此它是静态的。 策略在对象层次上运作， 因此允许在运行时切换行为。
+* **工厂方法模式** 是 **模板方法模式** 的一种特殊形式。 同时， 工厂方法可以作为一个大型模板方法中的一个步骤。
+* **模板方法** 基于继承机制： 它允许你通过扩展子类中的部分内容来改变部分算法。 **策略模式** 基于组合机制： 你可以通过对相应行为提供不同的策略来改变对象的部分行为。 模板方法在类层次上运作， 因此它是静态的。 策略在对象层次上运作， 因此允许在运行时切换行为。
