@@ -1,6 +1,6 @@
 # Web 应用开发（重要）
 
-![img_10.png](images/img_10.png)
+![img_10.png](images/image-48.png)
 
 ## Web 技术演变
 
@@ -59,32 +59,32 @@ flowchart LR
 
 ## 面向服务架构 SOA
 
-![img_18.png](images/img_18.png)
+![img_18.png](images/image-56.png)
 
 ## Q&A
 
 ### CDN 内容分发网络
 
-![img_11.png](images/img_11.png)
+![img_11.png](images/image-49.png)
 
 ### REST 表述性状态传递
 
-![img_12.png](images/img_12.png)
+![img_12.png](images/image-50.png)
 
 ### 微服务架构
 
-![img_13.png](images/img_13.png)
+![img_13.png](images/image-51.png)
 
-![img_14.png](images/img_14.png)
+![img_14.png](images/image-52.png)
 
 ### 扩展标记语言 XML
 
-![img_15.png](images/img_15.png)
+![img_15.png](images/image-53.png)
 
 ### JSON 轻量级数据交换格式
 
-![img_16.png](images/img_16.png)
+![img_16.png](images/image-54.png)
 
 ### 无状态服务
 
-![img_17.png](images/img_17.png)
+![img_17.png](images/image-55.png)

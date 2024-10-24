@@ -118,7 +118,7 @@ ABSD 方法具有三个基础：**功能的分解**、**通过选择体系结构
 
 传统的软件开发模型开发效率较低，ABSDM 模型把整个基于体系结构的软件开发过程划分为体系结构需求、设计、文档化、复审、实现和演化六个子过程。
 
-![基于体系结构的软件开发过程](./images/Architecture-Based%20Software%20Development%20Process.png)
+![基于体系结构的软件开发过程](./images/image-81.png)
 
 1. 体系结构需求
 
@@ -202,7 +202,7 @@ ABSD 方法具有三个基础：**功能的分解**、**通过选择体系结构
 | 批处理体系结构风格 | 每个处理步骤是一个独立的程序，每一步必须在前一步结束后才能开始，且数据必须是完整，以整体的方式传递。                     |
 | 管道和过滤器       | 把系统分为几个序贯地处理步骤，每个步骤之间通过数据流连接，一个步骤的输出是另一个步骤的输入，每个处理步骤都有输入和输出。 |
 
-![管道和过滤器风格](./images/pipe-and-filter-styles.png)
+![管道和过滤器风格](./images/image-78.png)
 
 ### 调用/返回体系结构风格
 
@@ -220,8 +220,8 @@ ABSD 方法具有三个基础：**功能的分解**、**通过选择体系结构
 
 <div class="grid cards" markdown>
 
-- ![数据抽象和面向对象组](./images/object-oriented.png)
-- ![层次型结构风格](./images/hierarchical-structure-style.png)
+- ![数据抽象和面向对象组](./images/image-77.png)
+- ![层次型结构风格](./images/image-86.png)
 
 </div>
 
@@ -290,8 +290,8 @@ ABSD 方法具有三个基础：**功能的分解**、**通过选择体系结构
 
 <div class="grid cards" markdown>
 
-- ![解释器体系结构风格](./images/interpreter-architecture-style.png)
-- ![规则系统体系结构风格](./images/rule-system-architecture-style.png)
+- ![解释器体系结构风格](./images/image-76.png)
+- ![规则系统体系结构风格](./images/image-79.png)
 
 </div>
 
@@ -328,7 +328,7 @@ ABSD 方法具有三个基础：**功能的分解**、**通过选择体系结构
 
 C2 风格通过连接件连接构件或某个构件组，构件与构件之间无连接。
 
-![C2 风格](./images/c2-style.png)
+![C2 风格](./images/image-82.png)
 ---
 
 !!! tip "2009 综合知识 57,58,59"
