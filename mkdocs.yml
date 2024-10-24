@@ -239,13 +239,13 @@ nav:
           - ruankao/medium software architecture evolution.md
           - ruankao/medium future.md
       - 高级知识:
-          - ruankao/advanced web.md
           - ruankao/advanced information-system-architecture.md
-          - ruankao/advanced security architecture.md
+          - ruankao/advanced hierarchical.md
           - ruankao/advanced cloud-native.md
           - ruankao/advanced service-oriented.md
-          - ruankao/advanced hierarchical.md
           - ruankao/advanced communication system architecture design theory and practice.md
+          - ruankao/advanced security architecture.md
+          - ruankao/advanced web.md
       - 论文写作:
           - ruankao/paper.md
   - 设计模式（编制中）: 
