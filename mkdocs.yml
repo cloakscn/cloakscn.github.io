@@ -10,7 +10,7 @@ repo_name: cloakscn/cloakscn.github.io
 repo_url: https://github.com/cloakscn/cloakscn.github.io
 
 # Copyright
-copyright: Copyright &copy; 2018 - 2024 Cloaks 晋ICP备19014927号-3
+copyright: Copyright &copy; 2018 - 2024 Cloaks <a href="https://beian.miit.gov.cn/" target="_blank">晋ICP备19014927号-3</a>
 
 # Configuration
 theme:
