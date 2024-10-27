@@ -6,7 +6,7 @@
 
 大部分的应用会分成表现层（或称为展示层）、中间层（或称为业务层）、访问层（或称为持久层）和数据层。
 
-![常用的层次式架构](images/image-9.png){ align=left }
+![常用的层次式架构](images/image-9.png){ align=left width="400" }
 
 采用分层架构设计的一个特点就是关注点分离。每层中的组件只负责本层的逻辑，组件的划分也很容易明确组件的角色和职责，比较容易开发、测试、管理和维护。层次式体系结构是一个可靠的通用的架构，但是设计时要注意以下两点：
 
@@ -35,9 +35,9 @@
 
 ## 表现层框架设计
 
-### MVC（Model-View-Controller）模式
+### MVC 模式
 
-MVC 是一种软件设计模式。MVC 把一个应用的 **输入、处理、输出** 流程按照视图、控制、模型的方式进行分离，形成了控制器、模型、视图 3 个核心模块。其中：
+MVC（Model-View-Controller）是一种软件设计模式。MVC 把一个应用的 **输入、处理、输出** 流程按照视图、控制、模型的方式进行分离，形成了控制器、模型、视图 3 个核心模块。其中：
 
 * 控制器（Controller）：接受用户的输入，并调用模型和视图去完成用户的需求；
 * 模型（Model）：应用程序的主体部分，表示业务数据和业务逻辑；
@@ -52,9 +52,9 @@ MVC 是一种软件设计模式。MVC 把一个应用的 **输入、处理、输
 * 易于构建功能强大的用户界面；
 * 增加应用的可拓展性、强壮性、灵活性。
 
-### MVP（Model-View-Presenter）模式
+### MVP 模式
 
-在 MVP 模式中 Model 提供数据，View 负责显示，`Controller/Presenter` 负责逻辑的处理。MVP 不仅仅避免了 View 和 Model 之间的耦合，还进一步降低了 Presenter 对 View 的依赖。
+在 MVP（Model-View-Presenter）模式中 Model 提供数据，View 负责显示，`Controller/Presenter` 负责逻辑的处理。MVP 不仅仅避免了 View 和 Model 之间的耦合，还进一步降低了 Presenter 对 View 的依赖。
 
 ![MVP 设计模式](images/image-6.png)
 
