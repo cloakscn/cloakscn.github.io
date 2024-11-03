@@ -220,7 +220,7 @@ nav:
   - 首页:
       - index.md
       - about.md
-  - 高级架构师（编制中）:
+  - 高级架构师:
       - ruankao/index.md
       - 基础知识:
           - ruankao/basics computer.md
@@ -243,6 +243,7 @@ nav:
           - ruankao/advanced hierarchical.md
           - ruankao/advanced cloud-native.md
           - ruankao/advanced service-oriented.md
+          - ruankao/advanced embedded.md
           - ruankao/advanced communication system architecture.md
           - ruankao/advanced security architecture.md
           - ruankao/advanced web.md
