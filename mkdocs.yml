@@ -38,20 +38,17 @@ theme:
     - content.tooltips
     - header.autohide
     - navigation.path
-    # - navigation.expand
     - navigation.footer
     - navigation.indexes
-    # instant loading https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
     - navigation.instant
-    # instant prefetch https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-prefetching
     - navigation.instant.prefetch
-    # progress indicator https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#progress-indicator
     - navigation.instant.progress
-    - navigation.prune
     - navigation.sections
+    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
+    - navigation.prune
     - navigation.tracking
     - search.highlight
     - search.share
