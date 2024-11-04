@@ -231,8 +231,8 @@ nav:
           - ruankao/basics intellectual property rights.md
       - 中级知识:
           - ruankao/medium software architecture.md
-          - ruankao/medium reliability.md
           - ruankao/medium system-quality-attributes-and-architecture-assessment.md
+          - ruankao/medium reliability.md
           - ruankao/medium software architecture evolution.md
           - ruankao/medium future.md
       - 高级知识:
