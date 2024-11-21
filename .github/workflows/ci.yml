@@ -11,23 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+
+      - name: Cache built site
+        uses: actions/cache@v4
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: squidfunk/mkdocs-material
-      # - uses: actions/cache@v4
-        # with:
-          # key: mkdocs-material-${{ env.cache_id }}
-          # path: .cache
-          # restore-keys: |
-            # mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-minify-plugin
-      - run: pip install mkdocs-glightbox
-      - run: pip install "mkdocs-material[imaging]"
-      - run: mkdocs gh-deploy --force
+          key: mkdocs-material-${{ env.cache_id }}
+          path: site
+          restore-keys: |
+            mkdocs-material-site-
+
+      - name: Build and Deploy using MkDocs
+        run: |
+          docker run --rm \
+            -v $(pwd):/docs \
+            cloaks/mkdocs:latest \
+            gh-deploy --force
