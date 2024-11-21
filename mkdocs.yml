@@ -22,10 +22,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  # favicon: assets/favicon.ico
-  # logo: assets/logo.png
-  favicon: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/templates/.icons/fontawesome/solid/terminal.svg
-  logo: https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/templates/.icons/fontawesome/solid/terminal.svg
+  favicon: assets/terminal.svg
+  logo: assets/terminal.svg
   features:
     - announce.dismiss
     - content.action.edit
@@ -78,6 +76,7 @@ theme:
 
 # Plugins
 plugins:
+  # - meta
   # - offline
   - glightbox
   - tags
@@ -92,12 +91,12 @@ plugins:
           case: lower
       post_slugify_separator: _
     #      authors_profiles: true
-    # - social:
-    # cards_layout_options:
-    # font_family: Noto Sans SC
-    # logo: docs/assets/logo.jpg
-    # background_color: "#ff1493"
-  # background_image: null
+  - social:
+      cards_layout_options:
+        font_family: Noto Sans SC
+        logo: assets/terminal.svg
+        background_color: "#ff1493"
+        # background_image: null
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
