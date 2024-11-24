@@ -1,0 +1,75 @@
+{% extends "main.html" %}
+{% block header %}{% endblock %}
+{% block tabs %}
+{{ super() }}
+<style>
+    .md-header {
+        position: initial
+    }
+
+    .md-main__inner {
+        margin: 0
+    }
+
+    .md-content {
+        display: none
+    }
+
+    @media screen and (min-width:60em) {
+        .md-sidebar--secondary {
+            display: none
+        }
+    }
+
+    @media screen and (min-width:76.25em) {
+        .md-sidebar--primary {
+            display: none
+        }
+    }
+
+    .main {
+        height: 100vh;
+        margin-bottom: -55px;
+        font-family: Arial, sans-serif;
+        background-image: url('assets/cover2.jpg');
+        /* 背景图片 */
+        background-attachment: fixed;
+        /* 背景固定 */
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+
+    .rellax {
+        height: 50vh;
+        color: white;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .title {
+        background-color: #4051b557;
+        padding-top: 50vh;
+        height: 100vh;
+        color: var(--md-primary-bg-color);
+    }
+</style>
+<section class="mdx-container">
+    <section class="main">
+        <div class="mdx-hero__inner title">
+            <div class="md-grid md-typeset">
+                <h1 style="color: white;">欢迎来到我的世界！ Return | Cloaks</h1>
+                <p style="width: 50vw;">{{ config.site_description }}.</p>
+                <a href="{{ 'blog/' | url }}" title="我的博客" class="md-button md-button--primary">
+                    前往博客
+                </a>
+                <a href="{{ 'about/' | url }}" title="关于我的故事" class="md-button">
+                    关于我
+                </a>
+            </div>
+        </div>
+    </section>
+</section>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
