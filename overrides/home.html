@@ -53,13 +53,21 @@
         color: var(--md-primary-bg-color);
         padding-left: 10vw;
     }
+
+    .truncate {
+      display: -webkit-box;
+      -webkit-box-orient: vertical; /* 垂直排列内容 */
+      overflow: hidden; /* 隐藏溢出内容 */
+      text-overflow: ellipsis; /* 添加省略号 */
+      -webkit-line-clamp: 5; /* 限制显示的行数，根据行高调整 */
+    }
 </style>
 <section class="mdx-container">
     <section class="main">
         <div class="mdx-hero__inner title">
             <div class="md-grid md-typeset">
-                <h1 style="color: white;">欢迎来到我的世界！ Return | Cloaks</h1>
-                <p style="width: 50vw;">{{ config.site_description }}.</p>
+                <h1 style="color: white;">欢迎来到我的世界！<br/>Return | Cloaks</h1>
+                <p class="truncate" style="width: 50vw;">{{ config.site_description }}.</p>
                 <a href="{{ 'blog/' | url }}" title="我的博客" class="md-button md-button--primary">
                     前往博客
                 </a>
@@ -74,7 +82,7 @@
 
     <script>
         // 页面加载完成后，立即滚动到页面底部
-        window.scrollTo(0, document.body.scrollHeight);
+            window.scrollTo(0, document.body.scrollHeight);
     </script>
 </section>
 {% endblock %}
