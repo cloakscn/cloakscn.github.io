@@ -1,5 +1,4 @@
 {% extends "main.html" %}
-{% block header %}{% endblock %}
 {% block tabs %}
 {{ super() }}
 <style>
@@ -69,7 +68,14 @@
                 </a>
             </div>
         </div>
+
+
     </section>
+
+    <script>
+        // 页面加载完成后，立即滚动到页面底部
+        window.scrollTo(0, document.body.scrollHeight);
+    </script>
 </section>
 {% endblock %}
 {% block content %}{% endblock %}
