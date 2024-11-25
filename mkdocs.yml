@@ -91,7 +91,7 @@ plugins:
       cards_layout_options:
         font_family: Noto Sans SC
         logo: assets/terminal.svg
-        background_color: "#ff1493"
+        # background_color: "#ff1493"
         # background_image: null
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
