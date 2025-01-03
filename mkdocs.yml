@@ -88,13 +88,10 @@ plugins:
       post_slugify_separator: _
       post_url_date_format: yyyy/MM
       post_url_format: "{date}/{file}"
-    #      authors_profiles: true
   - social:
       cards_layout_options:
         font_family: Noto Sans SC
         logo: assets/terminal.svg
-        # background_color: "#ff1493"
-        # background_image: null
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
