@@ -1,3 +1,5 @@
 {
-    "commentTranslate.source": "Google"
+    "commentTranslate.source": "Google",
+    "editor.accessibilityPageSize": 18,
+    "editor.fontSize": 18
 }
