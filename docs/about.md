@@ -36,10 +36,17 @@ comments: true
 
 想了解更多？欢迎扫码加我的社群，一起聊技术、聊生活，当然也可以访问我的个人主页来看看我的技术分享！
 
-<figure markdown="span">
-  ![社群二维码](assets/profile.png){ width="300" align="left" }
-  <figcaption>社群二维码【备注社群】</figcaption>
-</figure>
+
+<div class="grid cards" markdown>
+- <figure markdown="span">
+    ![社群二维码](assets/profile.png){ width="300" align="left" }
+    <figcaption>我的微信【备注社群】</figcaption>
+  </figure>
+
+- <figure markdown="span">
+    ![社群二维码](assets/group.webp){ width="300" align="left" }
+  </figure>
+</div>
 
 个人主页：[https://www.cloaks.cn](https://www.cloaks.cn)
 
