@@ -62,18 +62,22 @@ comments: true
 
     <div class="grid cards" markdown>
 
-    -   ![黑山羊日志](https://avatars.githubusercontent.com/u/42677744?v=4){ width=64 .lg .middle } <h2><a href="https://z2devil.cn/note" target="_blank">黑山羊日志</a></h2>
+    - <a href="https://z2devil.cn/note" target="_blank">黑山羊日志</a>
 
         ---
 
         你好，我是 Devil。我是一个有游戏梦🎮、喜欢设计✒️的前端工程师💻。
         
-        I am a frontend engineer 💻 with a dream of making games 🎮 and a passion for design ✒️.
-
-    - ![易水哲.](https://anheng.tech/images/icon/logo1.jpg){ width=64 .lg .middle } <h2><a href="https://anheng.tech/" target="_blank">易水哲.</a></h2>
+    - <a href="https://anheng.tech/" target="_blank">易水哲.</a>
 
         ---
 
         人生须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。
 
+    - <a href="https://writings.sh" target="_blank">春水煎茶</a>
+
+        ---
+
+        王超的个人博客。
+        
     </div>
