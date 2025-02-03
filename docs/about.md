@@ -44,7 +44,7 @@ comments: true
   </figure>
 
 - <figure markdown="span">
-    ![社群二维码](assets/group.webp){ width="300" align="left" }
+    ![社群二维码](assets/group.jpg){ width="300" align="left" }
   </figure>
 </div>
 
