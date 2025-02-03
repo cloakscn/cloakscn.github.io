@@ -140,6 +140,8 @@ extra:
           note: >-
             感谢您的反馈！使用我们的<a href="..." target="_blank" rel="noopener">反馈表</a>帮助我们改进此页面。
   social:
+    - icon: simple/rss
+      link: https://cloaks.cn/feed_rss_created.xml
     - icon: fontawesome/brands/github
       link: https://github.com/cloakscn
     - icon: fontawesome/brands/docker
