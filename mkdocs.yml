@@ -89,7 +89,7 @@ plugins:
           case: lower
       post_slugify_separator: _
       post_url_date_format: yyyy/MM
-      post_url_format: "{date}/{file}"
+      post_url_format: "posts/{date}/{file}"
   - rss:
       match_path: blog/posts/.* 
       date_from_meta:
