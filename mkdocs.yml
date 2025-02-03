@@ -101,7 +101,7 @@ plugins:
   - social:
       cards_layout_options:
         font_family: Noto Sans SC
-        logo: assets/terminal.svg
+        logo: assets/favicon.ico
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
