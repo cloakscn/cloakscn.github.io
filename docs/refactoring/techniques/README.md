@@ -7,7 +7,7 @@ dir:
 
 <Catalog />
 
-<!-- ## [Composing Methods](./composing-methods)
+## [Composing Methods](./composing-methods)
 
 重构的大部分工作都是为了正确组成方法。在大多数情况下，过长的方法是万恶之源。这些方法中变幻莫测的代码掩盖了执行逻辑，使方法极难理解，甚至难以改变。
 
@@ -104,4 +104,4 @@ dir:
 |      |      |          |
 |      |      |          |
 |      |      |          |
-|      |      |          | -->
+|      |      |          |
