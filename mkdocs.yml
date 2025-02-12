@@ -305,5 +305,7 @@ nav:
                   - refactoring/techniques/simplifying-method-calls/replace-parameter-with-method-call.md
                   - refactoring/techniques/simplifying-method-calls/preserve-whole-object.md
                   - refactoring/techniques/simplifying-method-calls/remove-parameter.md
+                  - refactoring/techniques/simplifying-method-calls/introduce-parameter-object.md
+                  - refactoring/techniques/simplifying-method-calls/add-parameter.md
   - 博客:
       - blog/index.md

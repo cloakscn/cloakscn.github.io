@@ -85,8 +85,8 @@ dir:
 * [保留整个对象](./simplifying-method-calls/preserve-whole-object.md)
 * [引入参数对象](./simplifying-method-calls/introduce-parameter-object.md) 
 * [删除参数](./simplifying-method-calls/remove-parameter.md)
+* [添加参数](./simplifying-method-calls/add-parameter.md)
 <!-- | [Rename Method](./rename-method)                                                     | 方法的名称并不能解释该方法的作用。               | 重新命名方法。                                                               | -->
-<!-- | [Add Parameter](./add-parameter)                                                     | 方法没有足够的数据来执行某些操作。               | 创建一个新参数以传递必要的数据。                                             | -->
 <!-- | [Separate Query from Modifier](./separate-query-from-modifier)                       | 你有一个返回值但也改变对象内部某些东西的方法吗？ | 将该方法拆分为两个单独的方法。如您所料，其中一个应该返回值，另一个修改对象。 | -->
 <!-- | [Parameterize Method](./add-parameter)                                               |                                                  |                                                                              | -->
 
