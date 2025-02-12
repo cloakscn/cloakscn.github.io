@@ -1,40 +1,42 @@
----
-title: 提取方法
-date: 2024-02-28
-order: 1
-category:
-  - 重构
----
+# 提取方法
 
-## 问题
+<div class="grid cards" markdown>
 
-你有一个可以组合在一起的代码片段。
+- 问题
 
-```java
-void printOwing() {
-  printBanner();
+    ---
 
-  // Print details.
-  System.out.println("name: " + name);
-  System.out.println("amount: " + getOutstanding());
-}
-```
+    你有一个可以组合在一起的代码片段。
 
-## 解决方法
+    ```java
+    void printOwing() {
+      printBanner();
 
-将此代码移至单独的新方法（或函数），并用对该方法的调用替换旧代码。
+      // Print details.
+      System.out.println("name: " + name);
+      System.out.println("amount: " + getOutstanding());
+    }
+    ```
 
-```java
-void printOwing() {
-  printBanner();
-  printDetails(getOutstanding());
-}
+- 解决方法
 
-void printDetails(double outstanding) {
-  System.out.println("name: " + name);
-  System.out.println("amount: " + outstanding);
-}
-```
+    ---
+
+    将此代码移至单独的新方法（或函数），并用对该方法的调用替换旧代码。
+
+    ```java
+    void printOwing() {
+      printBanner();
+      printDetails(getOutstanding());
+    }
+
+    void printDetails(double outstanding) {
+      System.out.println("name: " + name);
+      System.out.println("amount: " + outstanding);
+    }
+    ```
+
+</div>
 
 ## 为什么重构？
 
@@ -42,11 +44,11 @@ void printDetails(double outstanding) {
 
 除了消除代码中的粗糙边缘之外，提取方法也是许多其他重构方法中的一个步骤。
 
-## 好处
+=== "好处"
 
-- 更具可读性的代码！请务必为新方法指定一个描述该方法用途的名称：createOrder()、renderCustomerInfo() 等。
-- 减少代码重复。通常，在方法中找到的代码可以在程序的其他地方重用。因此，您可以通过调用新方法来替换重复项。
-- 隔离代码的独立部分，这意味着出现错误的可能性较小（例如修改了错误的变量）。
+  - 更具可读性的代码！请务必为新方法指定一个描述该方法用途的名称：createOrder()、renderCustomerInfo() 等。
+  - 减少代码重复。通常，在方法中找到的代码可以在程序的其他地方重用。因此，您可以通过调用新方法来替换重复项。
+  - 隔离代码的独立部分，这意味着出现错误的可能性较小（例如修改了错误的变量）。
 
 ## 如何重构？
 

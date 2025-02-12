@@ -18,7 +18,7 @@ dir:
 | [Long Method](./bloaters/long-method)                 | 一个方法包含了太多的代码行。一般来说，任何超过十行的方法都应该让你开始问问题。                                                                                                                               |
 | [Large Class](./bloaters/large-class)                 | 一个类包含许多字段/方法/代码行。                                                                                                                                                                             |
 | [Primitive Obsession](./bloaters/primitive-obsession) | 对简单的任务使用基元而不是小对象（如货币、范围、电话号码的特殊字符串等）。 <br/> 使用常量来编码信息（如常量USER_ADMIN_ROLE = 1，用来指代具有管理员权限的用户）。<br/> 使用字符串常量作为数据阵列中的字段名。 |
-| [Long Parameter List](./bloaters/long-parameter-list) | 一个方法的参数超过三或四个。                                                                                                                                                                                 |
+| [长参数列表](./bloaters/long-parameter-list) | 一个方法的参数超过三或四个。                                                                                                                                                                                 |
 | [Data Clumps](./bloaters/data-clumps)                 | 有时，代码的不同部分包含相同的变量组（如连接到数据库的参数）。这些团块应该被变成它们自己的类。                                                                                                               |
 
 ## 滥用面向对象的开发模式
@@ -31,7 +31,7 @@ dir:
 | [Temporary Field](./object-orientation-abusers/)                               | 临时字段只有在某些情况下才能获得它们的值（因此是对象所需要的）。在这些情况之外，它们是空的。                     |
 | [Refused Bequest](./object-orientation-abusers/)                               | 如果子类仅使用从其父类继承的某些方法和属性，则层次结构不平衡。不需要的方法可能只是未使用或被重新定义并发出异常。 |
 | [Alternative Classes with Different Interfaces](./object-orientation-abusers/) | 两个类执行相同的功能但具有不同的方法名称。                                                                       |
-
+<!-- 
 ## Change Preventers
 
 如果您需要在代码中的一个地方更改某些内容，那么您也必须在其他地方进行许多更改。结果，程序开发变得更加复杂和昂贵。
@@ -70,4 +70,4 @@ dir:
 
 | 名称                                        | 特征                                                                                         |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [Incomplete Library Class](./other-smells/) | 第三方库迟早会停止满足用户需求。问题的唯一解决方案——更改库——通常是不可能的，因为库是只读的。 | 
+| [Incomplete Library Class](./other-smells/) | 第三方库迟早会停止满足用户需求。问题的唯一解决方案——更改库——通常是不可能的，因为库是只读的。 |  -->
