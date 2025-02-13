@@ -1,5 +1,5 @@
 ---
-title: 删除设置方法
+title: 删除设置方法*
 date: 2023-03-01
 order: 10
 category:

@@ -295,6 +295,8 @@ nav:
                   - refactoring/code-smells/bloaters/primitive-obsession.md
                   - refactoring/code-smells/bloaters/long-parameter-list.md
                   - refactoring/code-smells/bloaters/data-clumps.md
+              - Dispensables:
+                  - refactoring/code-smells/dispensables/data-class.md
           - 解决方案:
               - refactoring/techniques/index.md
               - Composing Methods:
@@ -303,11 +305,19 @@ nav:
                   - refactoring/techniques/composing-methods/split-temporary-variable.md
               - Moving Features between Objects:
                   - refactoring/techniques/moving-features-between-objects/move-method.md
+              - Organizing Data:
+                  - refactoring/techniques/organizing-data/encapsulate-field.md
+                  - refactoring/techniques/organizing-data/encapsulate-collection.md
+                  # - refactoring/techniques/organizing-data/self-encapsulate-field.md
+                  # - refactoring/techniques/organizing-data/replace-type-code-with-subclass.md
               - 简化方法调用:
                   - refactoring/techniques/simplifying-method-calls/replace-parameter-with-method-call.md
                   - refactoring/techniques/simplifying-method-calls/preserve-whole-object.md
                   - refactoring/techniques/simplifying-method-calls/remove-parameter.md
                   - refactoring/techniques/simplifying-method-calls/introduce-parameter-object.md
                   - refactoring/techniques/simplifying-method-calls/add-parameter.md
+                  - refactoring/techniques/simplifying-method-calls/remove-setting-method.md
+                  - refactoring/techniques/simplifying-method-calls/hide-method.md
+                  - refactoring/techniques/simplifying-method-calls/separate-query-from-modifier.md
   - 博客:
       - blog/index.md

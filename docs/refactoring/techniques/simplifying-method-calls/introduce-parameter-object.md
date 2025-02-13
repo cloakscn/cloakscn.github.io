@@ -1,4 +1,4 @@
-# 引入参数对象*
+# 引入参数对象
 
 <div class="grid cards" markdown>
 

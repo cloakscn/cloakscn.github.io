@@ -29,20 +29,19 @@
 | [Divergent Change](./change-preventers/)                 | 当您对类进行更改时，您会发现自己不得不更改许多不相关的方法。例如，在添加新产品类型时，您必须更改查找、显示和订购产品的方法。 |
 | [Shotgun Surgery](./change-preventers/)                  | 进行任何修改都需要对许多不同的类进行许多小的更改。                                                                           |
 | [Parallel Inheritance Hierarchies](./change-preventers/) | 每当您为一个类创建子类时，您会发现自己需要为另一个类创建子类。                                                               |
+-->
 
 ## Dispensables
 
 一个可有可无的东西是没有意义和不需要的东西，如果没有它会使代码更干净、更高效和更容易理解。
 
-| 名称                                      | 特征                                                                                                                                                             |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Comments](./dispensables/)               | 一个方法充满了解释性注释。                                                                                                                                       |
-| [Duplicate Code](./dispensables/)         | 两个代码片段看起来几乎相同。                                                                                                                                     |
-| [Lazy Class](./dispensables/)             | 理解和维护类总是花费时间和金钱。因此，如果某个类不足以引起您的注意，则应将其删除。                                                                               |
-| [Data Class](./dispensables/)             | 数据类是指仅包含字段和用于访问它们的粗略方法（getter 和 setter）的类。这些只是其他类使用的数据的容器。这些类不包含任何附加功能，也不能独立地操作它们拥有的数据。 |
-| [Dead Code](./dispensables/)              | 不再使用变量、参数、字段、方法或类（通常是因为它们已过时）。                                                                                                     |
-| [Speculative Generality](./dispensables/) | 存在未使用的类、方法、字段或参数。                                                                                                                               |
-
+<!-- | [Comments](./dispensables/)               | 一个方法充满了解释性注释。                                                                                                                                       | -->
+<!-- | [Duplicate Code](./dispensables/)         | 两个代码片段看起来几乎相同。                                                                                                                                     | -->
+<!-- | [Lazy Class](./dispensables/)             | 理解和维护类总是花费时间和金钱。因此，如果某个类不足以引起您的注意，则应将其删除。                                                                               | -->
+* [Data Class](./dispensables/data-class.md)             
+<!-- | [Dead Code](./dispensables/)              | 不再使用变量、参数、字段、方法或类（通常是因为它们已过时）。                                                                                                     | -->
+<!-- | [Speculative Generality](./dispensables/) | 存在未使用的类、方法、字段或参数。                                                                                                                               | -->
+<!--
 ## Couplers
 
 该组中的所有特征都会导致类之间的过度耦合，或者显示如果耦合被过度委托取代会发生什么。
