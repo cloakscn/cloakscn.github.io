@@ -1,22 +1,24 @@
----
-title: 封装集合
-date: 2024-02-29
-order: 11
-category:
-  - 重构
----
+# 封装集合
 
-## 问题
+<div class="grid cards" markdown>
 
-类包含一个集合字段以及一个用于处理集合的简单 getter 和 setter。
+- 问题
 
-![](https://refactoringguru.cn/images/refactoring/diagrams/Encapsulate%20Collection%20-%20Before.png =x150)
+    ---
 
-## 解决方法
+    类包含一个集合字段以及一个用于处理集合的简单 getter 和 setter。
 
-将 getter 返回值设置为只读，并创建用于添加/删除集合元素的方法。
+    ![](https://refactoringguru.cn/images/refactoring/diagrams/Encapsulate%20Collection%20-%20Before.png)
 
-![](https://refactoringguru.cn/images/refactoring/diagrams/Encapsulate%20Collection%20-%20After.png =x150)
+- 解决方法
+
+    ---
+
+    将 getter 返回值设置为只读，并创建用于添加/删除集合元素的方法。
+
+    ![](https://refactoringguru.cn/images/refactoring/diagrams/Encapsulate%20Collection%20-%20After.png)
+
+</div>
 
 ## 为什么重构？
 
@@ -28,7 +30,7 @@ category:
 
 这样的协议正确地封装了一个集合，最终降低了所有者类和客户端代码之间的关联程度。
 
-## 好处
+=== "好处"
 
 - 集合字段封装在一个类中。当调用 getter 时，它会返回集合的副本，这可以防止在不知道包含集合的类的情况下意外更改或覆盖集合元素。
 - 如果集合元素包含在基本类型（例如数组）内，您可以创建更方便的方法来处理集合。

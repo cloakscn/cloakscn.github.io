@@ -1,22 +1,24 @@
----
-title: 重命名方法
-date: 2023-02-18 14:24:12
-order: 1
-category:
-  - 重构
----
+# 重命名方法
 
-## 问题
+<div class="grid cards" markdown>
 
-方法的名称并不能解释该方法的作用。
+- 问题
 
-![](https://refactoringguru.cn/images/refactoring/diagrams/Rename%20Method%20-%20Before.png =x150)
+    ---
 
-## 解决方法
+    方法的名称并不能解释该方法的作用。
 
-重命名该方法。
+    ![](https://refactoringguru.cn/images/refactoring/diagrams/Rename%20Method%20-%20Before.png)
 
-![](https://refactoringguru.cn/images/refactoring/diagrams/Rename%20Method%20-%20After.png =x150)
+- 解决方法
+
+    ---
+
+    重命名该方法。
+
+    ![](https://refactoringguru.cn/images/refactoring/diagrams/Rename%20Method%20-%20After.png)
+
+</div>
 
 ## 为什么重构？
 
@@ -24,9 +26,9 @@ category:
 
 或者，也许该方法一开始命名得很好，但随着其功能的增长，方法名称不再是一个好的描述符。
 
-## 好处
+=== "好处"
 
-代码可读性。尝试为新方法指定一个能够反映其功能的名称。像 createOrder()、renderCustomerInfo() 等。
+    代码可读性。尝试为新方法指定一个能够反映其功能的名称。像 createOrder()、renderCustomerInfo() 等。
 
 ## 如何重构？
 
