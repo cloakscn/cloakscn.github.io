@@ -319,5 +319,6 @@ nav:
                   - refactoring/techniques/simplifying-method-calls/remove-setting-method.md
                   - refactoring/techniques/simplifying-method-calls/hide-method.md
                   - refactoring/techniques/simplifying-method-calls/separate-query-from-modifier.md
+                  - refactoring/techniques/simplifying-method-calls/rename-method.md
   - 博客:
       - blog/index.md

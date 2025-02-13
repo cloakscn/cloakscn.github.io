@@ -77,6 +77,7 @@ dir:
 * [删除设置方法](./simplifying-method-calls/remove-setting-method.md)
 * [隐藏方法](./simplifying-method-calls/hide-method.md)
 * [拆分查询和修改](./simplifying-method-calls/separate-query-from-modifier.md)
+* [重命名方法](./simplifying-method-calls/rename-method.md)
 <!-- | [Rename Method](./rename-method)                                                     | 方法的名称并不能解释该方法的作用。               | 重新命名方法。                                                               | -->
 <!-- | [Separate Query from Modifier](./separate-query-from-modifier)                       | 你有一个返回值但也改变对象内部某些东西的方法吗？ | 将该方法拆分为两个单独的方法。如您所料，其中一个应该返回值，另一个修改对象。 | -->
 <!-- | [Parameterize Method](./add-parameter)                                               |                                                  |                                                                              | -->

@@ -1,17 +1,20 @@
-# 隐藏方法*
+# 隐藏方法
 
-## 问题
+<div class="grid cards" markdown>
 
-方法不被其他类使用，或者仅在其自己的类层次结构中使用。
+- 问题
 
-![](https://refactoringguru.cn/images/refactoring/diagrams/Hide%20Method%20-%20Before.png =x150)
+    ---
 
-## 解决方法
+    方法不被其他类使用，或者仅在其自己的类层次结构中使用。
 
-将方法设置为私有或受保护。
+- 解决方法
 
-![](https://refactoringguru.cn/images/refactoring/diagrams/Hide%20Method%20-%20After.png =x150)
+    ---
 
+    将方法设置为私有或受保护。
+
+</div>
 
 ## 为什么重构？
 
