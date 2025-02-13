@@ -290,11 +290,11 @@ nav:
           - 什么代码需要重构？:
               - refactoring/code-smells/index.md
               - 臃肿的代码:
-                  - refactoring/code-smells/bloaters/long-method.md
-                  - refactoring/code-smells/bloaters/large-class.md
-                  - refactoring/code-smells/bloaters/primitive-obsession.md
+                  # - refactoring/code-smells/bloaters/long-method.md
+                  # - refactoring/code-smells/bloaters/large-class.md
+                  # - refactoring/code-smells/bloaters/primitive-obsession.md
                   - refactoring/code-smells/bloaters/long-parameter-list.md
-                  - refactoring/code-smells/bloaters/data-clumps.md
+                  # - refactoring/code-smells/bloaters/data-clumps.md
               - Dispensables:
                   - refactoring/code-smells/dispensables/data-class.md
           - 解决方案:

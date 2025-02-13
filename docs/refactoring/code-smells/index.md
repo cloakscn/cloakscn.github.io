@@ -2,11 +2,11 @@
 
 臃肿的代码、方法和类已经增加到如此巨大的比例，以至于它们很难工作。通常情况下，这些气味不会马上出现，而是随着程序的发展而不断积累（特别是当没有人努力去消除它们时）。
 
-* [Long Method](./bloaters/long-method.md)                 
-* [Large Class](./bloaters/large-class.md)                 
-* [Primitive Obsession](./bloaters/primitive-obsession.md) 
+<!-- * [Long Method](./bloaters/long-method.md)                  -->
+<!-- * [Large Class](./bloaters/large-class.md)                  -->
+<!-- * [Primitive Obsession](./bloaters/primitive-obsession.md)  -->
 * [长参数列表](./bloaters/long-parameter-list.md) 
-* [Data Clumps](./bloaters/data-clumps.md)                 
+<!-- * [Data Clumps](./bloaters/data-clumps.md)                  -->
 
 <!-- 
 ## 滥用面向对象的开发模式
