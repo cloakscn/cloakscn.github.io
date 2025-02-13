@@ -20,24 +20,22 @@ dir:
 | [Remove Assignments to Parameters](./composing-methods#remove-assignments-to-parameters)   | 将某个值分配给方法主体中的参数。                                   | 使用局部变量而不是参数。                                                                                     |
 | [Replace Method with Method Object](./composing-methods#replace-method-with-method-object) | 您有一个长方法，其中局部变量交织在一起，以至于您无法应用提取方法。 | 将方法转换为单独的类，以便局部变量成为类的字段。然后，可以将该方法拆分为同一类中的多个方法。                 |
 | [Substitute Algorithm](./composing-methods#substitute-algorithm)                           | 所以你想用一个新的算法替换现有的算法吗？                           | 将实现算法的方法的主体替换为新算法。                                                                         |
-
-## [Moving Features between Objects](./moving-features-between-objects)
+-->
+## Moving Features between Objects
 
 即使您以不太完美的方式在不同的类之间分配了功能，仍然有希望。
 
 这些重构技术展示了如何在类之间安全地移动功能、创建新类以及对公共访问隐藏实现细节。
 
-| 方法                                                                                       | 问题                                                                     | 解决办法                                                                                                                           |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [Move Method](./moving-features-between-objects#move-method)                               | 一个方法在另一个类中比在它自己的类中使用得更多。                         | 在最常使用该方法的类中创建一个新方法，然后将代码从旧方法移到那里。将原始方法的代码转换为对其他类中新方法的引用，或者将其完全删除。 |
-| [Move Field](./moving-features-between-objects#move-field)                                 | 一个字段在另一个类中比在它自己的类中使用得更多。                         | 在新类中创建一个字段并将旧字段的所有用户重定向到它。                                                                               |
-| [Extract Class](./moving-features-between-objects#extract-class)                           | 当一个类做两个类的工作时，就会产生尴尬。                                 | 相反，创建一个新类并将负责相关功能的字段和方法放入其中。                                                                           |
-| [Inline Class](./moving-features-between-objects#inline-class)                             | 一个类几乎什么也不做，也不负责任何事情，也没有计划为它承担额外的责任。   | 将所有特征从类移动到另一个类。                                                                                                     |
-| [Hide Delegate](./moving-features-between-objects#hide-delegate)                           | 客户端从对象 A 的字段或方法中获取对象 B。然后客户端调用对象B的一个方法。 | 在类 A 中创建一个新方法，将调用委托给对象 B。现在客户端不知道或不依赖于类 B。                                                      |
-| [Remove Middle Man](./moving-features-between-objects#remove-middle-man)                   | 一个类有太多的方法可以简单地委托给其他对象。                             | 删除这些方法，强制客户端直接调用结束方法。                                                                                         |
-| [✨ Introduce Foreign Method](./moving-features-between-objects#introduce-foreign-method)   | 实用程序类不包含您需要的方法，您不能将该方法添加到类中。                 | 将方法添加到客户端类并将实用程序类的对象作为参数传递给它。                                                                         |
-| [✨ Introduce Local Extension](./moving-features-between-objects#introduce-local-extension) | 实用程序类不包含您需要的某些方法。但是你不能将这些方法添加到类中。       | 创建一个包含这些方法的新类，并使其成为实用程序类的子类或包装类。                                                                   |
-
+* [Move Method](./moving-features-between-objects/move-method.md)                               
+<!-- | [Move Field](./moving-features-between-objects#move-field)                                 | 一个字段在另一个类中比在它自己的类中使用得更多。                         | 在新类中创建一个字段并将旧字段的所有用户重定向到它。                                                                               | -->
+<!-- | [Extract Class](./moving-features-between-objects#extract-class)                           | 当一个类做两个类的工作时，就会产生尴尬。                                 | 相反，创建一个新类并将负责相关功能的字段和方法放入其中。                                                                           | -->
+<!-- | [Inline Class](./moving-features-between-objects#inline-class)                             | 一个类几乎什么也不做，也不负责任何事情，也没有计划为它承担额外的责任。   | 将所有特征从类移动到另一个类。                                                                                                     | -->
+<!-- | [Hide Delegate](./moving-features-between-objects#hide-delegate)                           | 客户端从对象 A 的字段或方法中获取对象 B。然后客户端调用对象B的一个方法。 | 在类 A 中创建一个新方法，将调用委托给对象 B。现在客户端不知道或不依赖于类 B。                                                      | -->
+<!-- | [Remove Middle Man](./moving-features-between-objects#remove-middle-man)                   | 一个类有太多的方法可以简单地委托给其他对象。                             | 删除这些方法，强制客户端直接调用结束方法。                                                                                         | -->
+<!-- | [✨ Introduce Foreign Method](./moving-features-between-objects#introduce-foreign-method)   | 实用程序类不包含您需要的方法，您不能将该方法添加到类中。                 | 将方法添加到客户端类并将实用程序类的对象作为参数传递给它。                                                                         | -->
+<!-- | [✨ Introduce Local Extension](./moving-features-between-objects#introduce-local-extension) | 实用程序类不包含您需要的某些方法。但是你不能将这些方法添加到类中。       | 创建一个包含这些方法的新类，并使其成为实用程序类的子类或包装类。                                                                   | -->
+<!--
 ## [Organizing Data](./organizing-data)
 
 这些重构技术有助于数据处理，用丰富的类功能替换原语。

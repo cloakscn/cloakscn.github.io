@@ -301,6 +301,8 @@ nav:
                   - refactoring/techniques/composing-methods/extract-method.md
                   - refactoring/techniques/composing-methods/replace-temp-with-query.md
                   - refactoring/techniques/composing-methods/split-temporary-variable.md
+              - Moving Features between Objects:
+                  - refactoring/techniques/moving-features-between-objects/move-method.md
               - 简化方法调用:
                   - refactoring/techniques/simplifying-method-calls/replace-parameter-with-method-call.md
                   - refactoring/techniques/simplifying-method-calls/preserve-whole-object.md
