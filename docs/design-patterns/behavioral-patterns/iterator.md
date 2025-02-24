@@ -11,7 +11,7 @@ tag:
 
 ## 模式结构
 
-![](https://refactoringguru.cn/images/patterns/diagrams/iterator/structure.png?id=35ea851f8f6bbe51d79eb91e6e6519d0)
+![](images/image-1.png)
 
 1. **迭代器 （Iterator）** 接口声明了遍历集合所需的操作： 获取下一个元素、 获取当前位置和重新开始迭代等。
 2. **具体迭代器 （Concrete Iterators）** 实现遍历集合的一种特定算法。 迭代器对象必须跟踪自身遍历的进度。 这使得多个迭代器可以相互独立地遍历同一集合。
@@ -26,9 +26,11 @@ tag:
 * **当集合背后为复杂的数据结构， 且你希望对客户端隐藏其复杂性时 （出于使用便利性或安全性的考虑）， 可以使用迭代器模式。**
 
     迭代器封装了与复杂数据结构进行交互的细节， 为客户端提供多个访问集合元素的简单方法。 这种方式不仅对客户端来说非常方便， 而且能避免客户端在直接与集合交互时执行错误或有害的操作， 从而起到保护集合的作用。
+
 * **使用该模式可以减少程序中重复的遍历代码。**
 
     重要迭代算法的代码往往体积非常庞大。 当这些代码被放置在程序业务逻辑中时， 它会让原始代码的职责模糊不清， 降低其可维护性。 因此， 将遍历代码移到特定的迭代器中可使程序代码更加精炼和简洁。
+
 * **如果你希望代码能够遍历不同的甚至是无法预知的数据结构，可以使用迭代器模式。**
 
     该模式为集合和迭代器提供了一些通用接口。 如果你在代码中使用了这些接口， 那么将其他实现了这些接口的集合和迭代器传递给它时， 它仍将可以正常运行。
@@ -39,125 +41,144 @@ tag:
 
 1. 声明迭代器接口。 该接口必须提供至少一个方法来获取集合中的下个元素。 但为了使用方便， 你还可以添加一些其他方法， 例如获取前一个元素、 记录当前位置和判断迭代是否已结束。
 
-    ```go iterator.go: 迭代器
-    package main
+    === "iterator.go: 迭代器"
 
-    type Iterator interface {
-        hasNext() bool
-        getNext() *User
-    }
-    ```
+        ```go 
+        package main
+
+        type Iterator interface {
+            hasNext() bool
+            getNext() *User
+        }
+        ```
 
 2. 声明集合接口并描述一个获取迭代器的方法。 其返回值必须是迭代器接口。 如果你计划拥有多组不同的迭代器， 则可以声明多个类似的方法。
 
-    ```go collection.go: 集合
-    package main
+    === "collection.go: 集合"
+        
+        ```go 
+        package main
 
-    type Collection interface {
-        createIterator() Iterator
-    }
-    ```
+        type Collection interface {
+            createIterator() Iterator
+        }
+        ```
 
 3. 为希望使用迭代器进行遍历的集合实现具体迭代器类。 迭代器对象必须与单个集合实体链接。 链接关系通常通过迭代器的构造函数建立。
 
-    ```go userIterator.go: 具体迭代器
-    package main
+    === "userIterator.go: 具体迭代器"
 
-    type UserIterator struct {
-        index int
-        users []*User
-    }
+        ```go 
+        package main
 
-    func (u *UserIterator) hasNext() bool {
-        if u.index < len(u.users) {
-            return true
+        type UserIterator struct {
+            index int
+            users []*User
         }
-        return false
 
-    }
-    func (u *UserIterator) getNext() *User {
-        if u.hasNext() {
-            user := u.users[u.index]
-            u.index++
-            return user
+        func (u *UserIterator) hasNext() bool {
+            if u.index < len(u.users) {
+                return true
+            }
+            return false
+
         }
-        return nil
-    }
-    ```
+        func (u *UserIterator) getNext() *User {
+            if u.hasNext() {
+                user := u.users[u.index]
+                u.index++
+                return user
+            }
+            return nil
+        }
+        ```
 
 4. 在你的集合类中实现集合接口。 其主要思想是针对特定集合为客户端代码提供创建迭代器的快捷方式。 集合对象必须将自身传递给迭代器的构造函数来创建两者之间的链接。
 
-    ```go userCollection.go: 具体集合
-    package main
+    === "userCollection.go: 具体集合"
 
-    type UserCollection struct {
-        users []*User
-    }
+        ```go 
+        package main
 
-    func (u *UserCollection) createIterator() Iterator {
-        return &UserIterator{
-            users: u.users,
+        type UserCollection struct {
+            users []*User
         }
-    }
-    ```
+
+        func (u *UserCollection) createIterator() Iterator {
+            return &UserIterator{
+                users: u.users,
+            }
+        }
+        ```
 
 5. 检查客户端代码， 使用迭代器替代所有集合遍历代码。 每当客户端需要遍历集合元素时都会获取一个新的迭代器。
 
-```go user.go: 客户端代码
-package main
+    === "user.go: 客户端代码"
 
-type User struct {
-    name string
-    age  int
-}
-```
+        ```go 
+        package main
 
-```go main.go: 客户端代码
-package main
+        type User struct {
+            name string
+            age  int
+        }
+        ```
 
-import "fmt"
+    === "main.go: 客户端代码"
 
-func main() {
+        ```go 
+        package main
 
-    user1 := &User{
-        name: "a",
-        age:  30,
-    }
-    user2 := &User{
-        name: "b",
-        age:  20,
-    }
+        import "fmt"
 
-    userCollection := &UserCollection{
-        users: []*User{user1, user2},
-    }
+        func main() {
 
-    iterator := userCollection.createIterator()
+            user1 := &User{
+                name: "a",
+                age:  30,
+            }
+            user2 := &User{
+                name: "b",
+                age:  20,
+            }
 
-    for iterator.hasNext() {
-        user := iterator.getNext()
-        fmt.Printf("User is %+v\n", user)
-    }
-}
-```
+            userCollection := &UserCollection{
+                users: []*User{user1, user2},
+            }
 
-```go output.txt: 执行结果
-User is &{name:a age:30}
-User is &{name:b age:20}
-```
+            iterator := userCollection.createIterator()
+
+            for iterator.hasNext() {
+                user := iterator.getNext()
+                fmt.Printf("User is %+v\n", user)
+            }
+        }
+        ```
+
+    === "output.txt: 执行结果"
+
+        ```go 
+        User is &{name:a age:30}
+        User is &{name:b age:20}
+        ```
 
 ## 优缺点
 
-| 优点                                                                                         | 缺点                                                            |
-| -------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| 单一职责原则。 通过将体积庞大的遍历算法代码抽取为独立的类， 你可对客户端代码和集合进行整理。 | 如果你的程序只与简单的集合进行交互， 应用该模式可能会矫枉过正。 |
-| 开闭原则。 你可实现新型的集合和迭代器并将其传递给现有代码， 无需修改现有代码。               | 对于某些特殊集合， 使用迭代器可能比直接遍历的效率低。           |
-| 你可以并行遍历同一集合， 因为每个迭代器对象都包含其自身的遍历状态。                          |                                                                 |
-| 相似的， 你可以暂停遍历并在需要时继续。                                                      |                                                                 |
+=== "优点"
+
+    * 单一职责原则。 通过将体积庞大的遍历算法代码抽取为独立的类， 你可对客户端代码和集合进行整理。
+    * 开闭原则。 你可实现新型的集合和迭代器并将其传递给现有代码， 无需修改现有代码。 
+    * 你可以并行遍历同一集合， 因为每个迭代器对象都包含其自身的遍历状态。 
+
+=== "缺点"
+
+    * 如果你的程序只与简单的集合进行交互， 应用该模式可能会矫枉过正。 
+    * 对于某些特殊集合， 使用迭代器可能比直接遍历的效率低。
+    * 相似的， 你可以暂停遍历并在需要时继续。
 
 ## 与其他模式的关系
 
-* 你可以使用**迭代器模式**来遍历**组合模式**树。
-* 你可以同时使用**工厂方法模式**和**迭代器**来让子类集合返回不同类型的迭代器， 并使得迭代器与集合相匹配。
-* 你可以同时使用**备忘录模式**和**迭代器**来获取当前迭代器的状态， 并且在需要的时候进行回滚。
-* 可以同时使用**访问者模式**和**迭代器**来遍历复杂数据结构， 并对其中的元素执行所需操作， 即使这些元素所属的类完全不同。
+* 你可以使用 **迭代器模式** 来遍历 **组合模式** 树。
+* 你可以同时使用 **工厂方法模式** 和 **迭代器** 来让子类集合返回不同类型的迭代器， 并使得迭代器与集合相匹配。
+* 你可以同时使用 **备忘录模式** 和 **迭代器** 来获取当前迭代器的状态， 并且在需要的时候进行回滚。
+* 可以同时使用 **[访问者模式](./visitor.md)** 和 **迭代器** 来遍历复杂数据结构， 并对其中的元素执行所需操作， 即使这些元素所属的类完全不同。
