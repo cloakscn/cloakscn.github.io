@@ -280,6 +280,8 @@ nav:
               - design-patterns/behavioral-patterns/command.md
               - design-patterns/behavioral-patterns/observer.md
               - design-patterns/behavioral-patterns/mediator.md
+              - design-patterns/behavioral-patterns/visitor.md
+              - design-patterns/behavioral-patterns/iterator.md
       - 重构: 
           - refactoring/index.md
           - 什么是重构:
