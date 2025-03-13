@@ -1,4 +1,6 @@
 {
     "editor.accessibilityPageSize": 14,
     "editor.fontSize": 14,
+    "commentTranslate.source": "Google",
+    "commentTranslate.targetLanguage": "zh-CN",
 }
