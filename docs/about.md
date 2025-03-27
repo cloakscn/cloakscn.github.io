@@ -102,5 +102,11 @@ comments: true
         ---
 
         王超的个人博客。
+
+    - <a href="https://coolshell.cn/articles/author/haoel" target="_blank">陈皓</a>
+
+        ---
+
+        陈皓的个人博客。
         
     </div>
