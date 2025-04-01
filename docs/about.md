@@ -68,8 +68,7 @@ comments: true
 
 如果你对区块链技术、分布式系统或任何技术话题感兴趣，想了解更多？欢迎扫码加我的社群，一起聊技术、聊生活，当然也可以访问我的个人主页来看看我的技术分享！
 
-
-![社群二维码](assets/group.png){ width="300" }
+邮箱：cloaks@qq.com
 
 个人主页：[https://www.cloaks.cn](https://www.cloaks.cn)
 
