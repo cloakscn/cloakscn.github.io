@@ -136,324 +136,324 @@ class Application is
 
 实现一个粗糙的单例非常简单。 你仅需隐藏构造函数并实现一个静态的构建方法即可。
 
-##### 📄Singleton.java: 单例
+=== "📄Singleton.java: 单例"
 
-```java
-package refactoring_guru.singleton.example.non_thread_safe;
+    ```java
+    package refactoring_guru.singleton.example.non_thread_safe;
 
-public final class Singleton {
-    private static Singleton instance;
-    public String value;
+    public final class Singleton {
+        private static Singleton instance;
+        public String value;
 
-    private Singleton(String value) {
-        // The following code emulates slow initialization.
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
+        private Singleton(String value) {
+            // The following code emulates slow initialization.
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            this.value = value;
         }
-        this.value = value;
-    }
 
-    public static Singleton getInstance(String value) {
-        if (instance == null) {
-            instance = new Singleton(value);
-        }
-        return instance;
-    }
-}
-```
-
-##### 📄DemoSingleThread.java: 客户端代码
-
-```java
-package refactoring_guru.singleton.example.non_thread_safe;
-
-public class DemoSingleThread {
-    public static void main(String[] args) {
-        System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
-                "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
-                "RESULT:" + "\n");
-        Singleton singleton = Singleton.getInstance("FOO");
-        Singleton anotherSingleton = Singleton.getInstance("BAR");
-        System.out.println(singleton.value);
-        System.out.println(anotherSingleton.value);
-    }
-}
-```
-
-##### 📄OutputDemoSingleThread.txt: 执行结果
-
-```java
-If you see the same value, then singleton was reused (yay!)
-If you see different values, then 2 singletons were created (booo!!)
-
-RESULT:
-
-FOO
-FOO
-```
-
-#### 基础单例（多线程）
-
-相同的类在多线程环境中会出错。 多线程可能会同时调用构建方法并获取多个单例类的实例。
-
-##### 📄Singleton.java: 单例
-
-```java
-package refactoring_guru.singleton.example.non_thread_safe;
-
-public final class Singleton {
-    private static Singleton instance;
-    public String value;
-
-    private Singleton(String value) {
-        // The following code emulates slow initialization.
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
-        this.value = value;
-    }
-
-    public static Singleton getInstance(String value) {
-        if (instance == null) {
-            instance = new Singleton(value);
-        }
-        return instance;
-    }
-}
-```
-
-##### 📄DemoMultiThread.java: 客户端代码
-
-```java
-package refactoring_guru.singleton.example.non_thread_safe;
-
-public class DemoMultiThread {
-    public static void main(String[] args) {
-        System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
-                "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
-                "RESULT:" + "\n");
-        Thread threadFoo = new Thread(new ThreadFoo());
-        Thread threadBar = new Thread(new ThreadBar());
-        threadFoo.start();
-        threadBar.start();
-    }
-
-    static class ThreadFoo implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("FOO");
-            System.out.println(singleton.value);
-        }
-    }
-
-    static class ThreadBar implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("BAR");
-            System.out.println(singleton.value);
-        }
-    }
-}
-```
-
-##### 📄OutputDemoSingleThread.txt: 执行结果
-
-```java
-If you see the same value, then singleton was reused (yay!)
-If you see different values, then 2 singletons were created (booo!!)
-
-RESULT:
-
-FOO
-BAR
-```
-
-#### 采用延迟加载的线程安全单例
-
-为了解决这个问题， 你必须在创建首个单例对象时对线程进行同步。
-
-##### 📄Singleton.java: 单例
-
-```java
-package refactoring_guru.singleton.example.thread_safe;
-
-public final class Singleton {
-    // The field must be declared volatile so that double check lock would work
-    // correctly.
-    private static volatile Singleton instance;
-
-    public String value;
-
-    private Singleton(String value) {
-        this.value = value;
-    }
-
-    public static Singleton getInstance(String value) {
-        // The approach taken here is called double-checked locking (DCL). It
-        // exists to prevent race condition between multiple threads that may
-        // attempt to get singleton instance at the same time, creating separate
-        // instances as a result.
-        //
-        // It may seem that having the `result` variable here is completely
-        // pointless. There is, however, a very important caveat when
-        // implementing double-checked locking in Java, which is solved by
-        // introducing this local variable.
-        //
-        // You can read more info DCL issues in Java here:
-        // https://refactoring.guru/java-dcl-issue
-        Singleton result = instance;
-        if (result != null) {
-            return result;
-        }
-        synchronized(Singleton.class) {
+        public static Singleton getInstance(String value) {
             if (instance == null) {
                 instance = new Singleton(value);
             }
             return instance;
         }
     }
-}
-```
+    ```
 
-##### 📄DemoMultiThread.java: 客户端代码
+=== "📄DemoSingleThread.java: 客户端代码"
 
-```java
-package refactoring_guru.singleton.example.thread_safe;
+    ```java
+    package refactoring_guru.singleton.example.non_thread_safe;
 
-public class DemoMultiThread {
-    public static void main(String[] args) {
-        System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
-                "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
-                "RESULT:" + "\n");
-        Thread threadFoo = new Thread(new ThreadFoo());
-        Thread threadBar = new Thread(new ThreadBar());
-        threadFoo.start();
-        threadBar.start();
-    }
-
-    static class ThreadFoo implements Runnable {
-        @Override
-        public void run() {
+    public class DemoSingleThread {
+        public static void main(String[] args) {
+            System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
+                    "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
+                    "RESULT:" + "\n");
             Singleton singleton = Singleton.getInstance("FOO");
+            Singleton anotherSingleton = Singleton.getInstance("BAR");
             System.out.println(singleton.value);
+            System.out.println(anotherSingleton.value);
         }
     }
+    ```
 
-    static class ThreadBar implements Runnable {
-        @Override
-        public void run() {
-            Singleton singleton = Singleton.getInstance("BAR");
-            System.out.println(singleton.value);
+=== "📄OutputDemoSingleThread.txt: 执行结果"
+
+    ```java
+    If you see the same value, then singleton was reused (yay!)
+    If you see different values, then 2 singletons were created (booo!!)
+
+    RESULT:
+
+    FOO
+    FOO
+    ```
+
+#### 基础单例（多线程）
+
+相同的类在多线程环境中会出错。 多线程可能会同时调用构建方法并获取多个单例类的实例。
+
+=== "📄Singleton.java: 单例"
+
+    ```java
+    package refactoring_guru.singleton.example.non_thread_safe;
+
+    public final class Singleton {
+        private static Singleton instance;
+        public String value;
+
+        private Singleton(String value) {
+            // The following code emulates slow initialization.
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            this.value = value;
+        }
+
+        public static Singleton getInstance(String value) {
+            if (instance == null) {
+                instance = new Singleton(value);
+            }
+            return instance;
         }
     }
-}
-```
+    ```
 
-##### 📄OutputDemoSingleThread.txt: 执行结果
+=== "📄DemoMultiThread.java: 客户端代码"
 
-```java
-If you see the same value, then singleton was reused (yay!)
-If you see different values, then 2 singletons were created (booo!!)
+    ```java
+    package refactoring_guru.singleton.example.non_thread_safe;
 
-RESULT:
+    public class DemoMultiThread {
+        public static void main(String[] args) {
+            System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
+                    "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
+                    "RESULT:" + "\n");
+            Thread threadFoo = new Thread(new ThreadFoo());
+            Thread threadBar = new Thread(new ThreadBar());
+            threadFoo.start();
+            threadBar.start();
+        }
 
-BAR
-BAR
-```
+        static class ThreadFoo implements Runnable {
+            @Override
+            public void run() {
+                Singleton singleton = Singleton.getInstance("FOO");
+                System.out.println(singleton.value);
+            }
+        }
+
+        static class ThreadBar implements Runnable {
+            @Override
+            public void run() {
+                Singleton singleton = Singleton.getInstance("BAR");
+                System.out.println(singleton.value);
+            }
+        }
+    }
+    ```
+
+=== "📄OutputDemoSingleThread.txt: 执行结果"
+
+    ```java
+    If you see the same value, then singleton was reused (yay!)
+    If you see different values, then 2 singletons were created (booo!!)
+
+    RESULT:
+
+    FOO
+    BAR
+    ```
+
+#### 采用延迟加载的线程安全单例
+
+为了解决这个问题， 你必须在创建首个单例对象时对线程进行同步。
+
+=== "📄Singleton.java: 单例"
+
+    ```java
+    package refactoring_guru.singleton.example.thread_safe;
+
+    public final class Singleton {
+        // The field must be declared volatile so that double check lock would work
+        // correctly.
+        private static volatile Singleton instance;
+
+        public String value;
+
+        private Singleton(String value) {
+            this.value = value;
+        }
+
+        public static Singleton getInstance(String value) {
+            // The approach taken here is called double-checked locking (DCL). It
+            // exists to prevent race condition between multiple threads that may
+            // attempt to get singleton instance at the same time, creating separate
+            // instances as a result.
+            //
+            // It may seem that having the `result` variable here is completely
+            // pointless. There is, however, a very important caveat when
+            // implementing double-checked locking in Java, which is solved by
+            // introducing this local variable.
+            //
+            // You can read more info DCL issues in Java here:
+            // https://refactoring.guru/java-dcl-issue
+            Singleton result = instance;
+            if (result != null) {
+                return result;
+            }
+            synchronized(Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton(value);
+                }
+                return instance;
+            }
+        }
+    }
+    ```
+
+=== "📄DemoMultiThread.java: 客户端代码"
+
+    ```java
+    package refactoring_guru.singleton.example.thread_safe;
+
+    public class DemoMultiThread {
+        public static void main(String[] args) {
+            System.out.println("If you see the same value, then singleton was reused (yay!)" + "\n" +
+                    "If you see different values, then 2 singletons were created (booo!!)" + "\n\n" +
+                    "RESULT:" + "\n");
+            Thread threadFoo = new Thread(new ThreadFoo());
+            Thread threadBar = new Thread(new ThreadBar());
+            threadFoo.start();
+            threadBar.start();
+        }
+
+        static class ThreadFoo implements Runnable {
+            @Override
+            public void run() {
+                Singleton singleton = Singleton.getInstance("FOO");
+                System.out.println(singleton.value);
+            }
+        }
+
+        static class ThreadBar implements Runnable {
+            @Override
+            public void run() {
+                Singleton singleton = Singleton.getInstance("BAR");
+                System.out.println(singleton.value);
+            }
+        }
+    }
+    ```
+
+=== "📄OutputDemoSingleThread.txt: 执行结果"
+
+    ```java
+    If you see the same value, then singleton was reused (yay!)
+    If you see different values, then 2 singletons were created (booo!!)
+
+    RESULT:
+
+    BAR
+    BAR
+    ```
 
 ### Go
 
-#### 📄single.go: 单例
+=== "📄single.go: 单例"
 
-```go
-package main
+    ```go
+    package main
 
-import (
-    "fmt"
-    "sync"
-)
+    import (
+        "fmt"
+        "sync"
+    )
 
-var lock = &sync.Mutex{}
+    var lock = &sync.Mutex{}
 
-type single struct {
-}
+    type single struct {
+    }
 
-var singleInstance *single
+    var singleInstance *single
 
-func getInstance() *single {
-    if singleInstance == nil {
-        lock.Lock()
-        defer lock.Unlock()
+    func getInstance() *single {
         if singleInstance == nil {
-            fmt.Println("Creating single instance now.")
-            singleInstance = &single{}
+            lock.Lock()
+            defer lock.Unlock()
+            if singleInstance == nil {
+                fmt.Println("Creating single instance now.")
+                singleInstance = &single{}
+            } else {
+                fmt.Println("Single instance already created.")
+            }
         } else {
             fmt.Println("Single instance already created.")
         }
-    } else {
-        fmt.Println("Single instance already created.")
+
+        return singleInstance
     }
+    ```
 
-    return singleInstance
-}
-```
+=== "📄main.go: 客户端代码"
 
-#### 📄main.go: 客户端代码
+    ```go
+    package main
 
-```go
-package main
+    import (
+        "fmt"
+    )
 
-import (
-    "fmt"
-)
+    func main() {
 
-func main() {
+        for i := 0; i < 30; i++ {
+            go getInstance()
+        }
 
-    for i := 0; i < 30; i++ {
-        go getInstance()
+        // Scanln is similar to Scan, but stops scanning at a newline and
+        // after the final item there must be a newline or EOF.
+        fmt.Scanln()
     }
+    ```
 
-    // Scanln is similar to Scan, but stops scanning at a newline and
-    // after the final item there must be a newline or EOF.
-    fmt.Scanln()
-}
-```
+=== "📄output.txt: 执行结果"
 
-#### 📄output.txt: 执行结果
-
-```go
-Creating single instance now.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-Single instance already created.
-```
+    ```go
+    Creating single instance now.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    Single instance already created.
+    ```

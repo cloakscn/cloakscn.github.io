@@ -264,6 +264,8 @@ nav:
       - 设计模式: 
           - design-patterns/index.md
           - 创建型模式:
+              - design-patterns/creational-patterns/singleton.md
+              - design-patterns/creational-patterns/prototype.md
               - design-patterns/creational-patterns/factory.md
               - design-patterns/creational-patterns/abstract-factory.md
           - 建造者模式:
