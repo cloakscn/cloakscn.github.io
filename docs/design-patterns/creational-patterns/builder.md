@@ -27,13 +27,13 @@ tag:
 
     生成器模式让你可以分步骤生成对象， 而且允许你仅使用必须的步骤。 应用该模式后， 你再也不需要将几十个参数塞进构造函数里了。
 
-```java
-class Pizza {
-Pizza(int size) { …… }
-Pizza(int size, boolean cheese) { …… }
-Pizza(int size, boolean cheese, boolean pepperoni) { …… }
-// ……
-```
+    ```java
+    class Pizza {
+    Pizza(int size) { …… }
+    Pizza(int size, boolean cheese) { …… }
+    Pizza(int size, boolean cheese, boolean pepperoni) { …… }
+    // ……
+    ```
 
 * **当你希望使用代码创建不同形式的产品（例如石头或木头房屋）时，可使用生成器模式。**
 
@@ -52,7 +52,7 @@ Pizza(int size, boolean cheese, boolean pepperoni) { …… }
 1. 清晰地定义通用步骤， 确保它们可以制造所有形式的产品。 否则你将无法进一步实施该模式。
 2. 在基本生成器接口中声明这些步骤。
 
-    ```go iBuilder.go: 生成器接口
+    ```go 
     package main
 
     type IBuilder interface {
@@ -78,148 +78,160 @@ Pizza(int size, boolean cheese, boolean pepperoni) { …… }
 
     不要忘记实现获取构造结果对象的方法。 你不能在生成器接口中声明该方法， 因为不同生成器构造的产品可能没有公共接口， 因此你就不知道该方法返回的对象类型。 但是， 如果所有产品都位于单一类层次中， 你就可以安全地在基本接口中添加获取生成对象的方法。
 
-    ```go normalBuilder.go: 具体生成器
-    package main
+    === "normalBuilder.go: 具体生成器"
 
-    type NormalBuilder struct {
-        windowType string
-        doorType   string
-        floor      int
-    }
+        ```go 
+        package main
 
-    func newNormalBuilder() *NormalBuilder {
-        return &NormalBuilder{}
-    }
-
-    func (b *NormalBuilder) setWindowType() {
-        b.windowType = "Wooden Window"
-    }
-
-    func (b *NormalBuilder) setDoorType() {
-        b.doorType = "Wooden Door"
-    }
-
-    func (b *NormalBuilder) setNumFloor() {
-        b.floor = 2
-    }
-
-    func (b *NormalBuilder) getHouse() House {
-        return House{
-            doorType:   b.doorType,
-            windowType: b.windowType,
-            floor:      b.floor,
+        type NormalBuilder struct {
+            windowType string
+            doorType   string
+            floor      int
         }
-    }
-    ```
 
-    ```go iglooBuilder.go: 具体生成器
-    package main
-
-    type IglooBuilder struct {
-        windowType string
-        doorType   string
-        floor      int
-    }
-
-    func newIglooBuilder() *IglooBuilder {
-        return &IglooBuilder{}
-    }
-
-    func (b *IglooBuilder) setWindowType() {
-        b.windowType = "Snow Window"
-    }
-
-    func (b *IglooBuilder) setDoorType() {
-        b.doorType = "Snow Door"
-    }
-
-    func (b *IglooBuilder) setNumFloor() {
-        b.floor = 1
-    }
-
-    func (b *IglooBuilder) getHouse() House {
-        return House{
-            doorType:   b.doorType,
-            windowType: b.windowType,
-            floor:      b.floor,
+        func newNormalBuilder() *NormalBuilder {
+            return &NormalBuilder{}
         }
-    }
-    ```
 
-    ```go house.go: 产品
-    package main
+        func (b *NormalBuilder) setWindowType() {
+            b.windowType = "Wooden Window"
+        }
 
-    type House struct {
-        windowType string
-        doorType   string
-        floor      int
-    }
-    ```
+        func (b *NormalBuilder) setDoorType() {
+            b.doorType = "Wooden Door"
+        }
+
+        func (b *NormalBuilder) setNumFloor() {
+            b.floor = 2
+        }
+
+        func (b *NormalBuilder) getHouse() House {
+            return House{
+                doorType:   b.doorType,
+                windowType: b.windowType,
+                floor:      b.floor,
+            }
+        }
+        ```
+
+    === "iglooBuilder.go: 具体生成器"
+
+        ```go 
+        package main
+
+        type IglooBuilder struct {
+            windowType string
+            doorType   string
+            floor      int
+        }
+
+        func newIglooBuilder() *IglooBuilder {
+            return &IglooBuilder{}
+        }
+
+        func (b *IglooBuilder) setWindowType() {
+            b.windowType = "Snow Window"
+        }
+
+        func (b *IglooBuilder) setDoorType() {
+            b.doorType = "Snow Door"
+        }
+
+        func (b *IglooBuilder) setNumFloor() {
+            b.floor = 1
+        }
+
+        func (b *IglooBuilder) getHouse() House {
+            return House{
+                doorType:   b.doorType,
+                windowType: b.windowType,
+                floor:      b.floor,
+            }
+        }
+        ```
+
+    === "house.go: 产品"
+
+        ```go 
+        package main
+
+        type House struct {
+            windowType string
+            doorType   string
+            floor      int
+        }
+        ```
 
 4. 考虑创建主管类。 它可以使用同一生成器对象来封装多种构造产品的方式。
 
-    ```go director.go: 主管
-    package main
+    === "director.go: 主管"
 
-    type Director struct {
-        builder IBuilder
-    }
+        ```go 
+        package main
 
-    func newDirector(b IBuilder) *Director {
-        return &Director{
-            builder: b,
+        type Director struct {
+            builder IBuilder
         }
-    }
 
-    func (d *Director) setBuilder(b IBuilder) {
-        d.builder = b
-    }
+        func newDirector(b IBuilder) *Director {
+            return &Director{
+                builder: b,
+            }
+        }
 
-    func (d *Director) buildHouse() House {
-        d.builder.setDoorType()
-        d.builder.setWindowType()
-        d.builder.setNumFloor()
-        return d.builder.getHouse()
-    }
-    ```
+        func (d *Director) setBuilder(b IBuilder) {
+            d.builder = b
+        }
+
+        func (d *Director) buildHouse() House {
+            d.builder.setDoorType()
+            d.builder.setWindowType()
+            d.builder.setNumFloor()
+            return d.builder.getHouse()
+        }
+        ```
 
 5. 客户端代码会同时创建生成器和主管对象。 构造开始前， 客户端必须将生成器对象传递给主管对象。 通常情况下， 客户端只需调用主管类构造函数一次即可。 主管类使用生成器对象完成后续所有制造任务。 还有另一种方式， 那就是客户端可以将生成器对象直接传递给主管类的制造方法。
 
-    ```go main.go: 客户端代码
-    package main
+    === "main.go: 客户端代码"
 
-    import "fmt"
+        ```go 
+        package main
 
-    func main() {
-        normalBuilder := getBuilder("normal")
-        iglooBuilder := getBuilder("igloo")
+        import "fmt"
 
-        director := newDirector(normalBuilder)
-        normalHouse := director.buildHouse()
+        func main() {
+            normalBuilder := getBuilder("normal")
+            iglooBuilder := getBuilder("igloo")
 
-        fmt.Printf("Normal House Door Type: %s\n", normalHouse.doorType)
-        fmt.Printf("Normal House Window Type: %s\n", normalHouse.windowType)
-        fmt.Printf("Normal House Num Floor: %d\n", normalHouse.floor)
+            director := newDirector(normalBuilder)
+            normalHouse := director.buildHouse()
 
-        director.setBuilder(iglooBuilder)
-        iglooHouse := director.buildHouse()
+            fmt.Printf("Normal House Door Type: %s\n", normalHouse.doorType)
+            fmt.Printf("Normal House Window Type: %s\n", normalHouse.windowType)
+            fmt.Printf("Normal House Num Floor: %d\n", normalHouse.floor)
 
-        fmt.Printf("\nIgloo House Door Type: %s\n", iglooHouse.doorType)
-        fmt.Printf("Igloo House Window Type: %s\n", iglooHouse.windowType)
-        fmt.Printf("Igloo House Num Floor: %d\n", iglooHouse.floor)
+            director.setBuilder(iglooBuilder)
+            iglooHouse := director.buildHouse()
 
-    }
-    ```
+            fmt.Printf("\nIgloo House Door Type: %s\n", iglooHouse.doorType)
+            fmt.Printf("Igloo House Window Type: %s\n", iglooHouse.windowType)
+            fmt.Printf("Igloo House Num Floor: %d\n", iglooHouse.floor)
 
-    ```go output.txt: 执行结果
-    Normal House Door Type: Wooden Door
-    Normal House Window Type: Wooden Window
-    Normal House Num Floor: 2
+        }
+        ```
 
-    Igloo House Door Type: Snow Door
-    Igloo House Window Type: Snow Window
-    Igloo House Num Floor: 1
-    ```
+    === "output.txt: 执行结果"
+
+        ```go 
+        Normal House Door Type: Wooden Door
+        Normal House Window Type: Wooden Window
+        Normal House Num Floor: 2
+
+        Igloo House Door Type: Snow Door
+        Igloo House Window Type: Snow Window
+        Igloo House Num Floor: 1
+        ```
 
 6. 只有在所有产品都遵循相同接口的情况下， 构造结果可以直接通过主管类获取。 否则， 客户端应当通过生成器获取构造结果。
 
@@ -233,8 +245,8 @@ Pizza(int size, boolean cheese, boolean pepperoni) { …… }
 
 ## 与其他模式的关系
 
-* 在许多设计工作的初期都会使用**工厂方法模式** （较为简单， 而且可以更方便地通过子类进行定制）， 随后演化为使用**抽象工厂模式**、 **原型模式**或**生成器模式** （更灵活但更加复杂）。
-* **生成器**重点关注如何分步生成复杂对象。 **抽象工厂**专门用于生产一系列相关对象。 抽象工厂会马上返回产品， 生成器则允许你在获取产品前执行一些额外构造步骤。
-* 你可以在创建复杂**组合模式**树时使用**生成器**， 因为这可使其构造步骤以递归的方式运行。
-* 你可以结合使用**生成器**和**桥接模式**： 主管类负责抽象工作， 各种不同的生成器负责实现工作。
-* **抽象工厂**、 **生成器**和**原型**都可以用**单例模式**来实现。
+* 在许多设计工作的初期都会使用 **工厂方法模式** （较为简单， 而且可以更方便地通过子类进行定制）， 随后演化为使用 **抽象工厂模式**、 **原型模式** 或 **生成器模式** （更灵活但更加复杂）。
+* **生成器** 重点关注如何分步生成复杂对象。 **抽象工厂** 专门用于生产一系列相关对象。 抽象工厂会马上返回产品， 生成器则允许你在获取产品前执行一些额外构造步骤。
+* 你可以在创建复杂 **组合模式** 树时使用 **生成器**， 因为这可使其构造步骤以递归的方式运行。
+* 你可以结合使用 **生成器** 和 **桥接模式**： 主管类负责抽象工作， 各种不同的生成器负责实现工作。
+* **抽象工厂**、 **生成器** 和 **原型** 都可以用 **单例模式** 来实现。
